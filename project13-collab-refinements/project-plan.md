@@ -187,3 +187,12 @@ These are future actual reviews, not assumed approvals. Use the default
 two-contributor separation with reviewers supplied by the Operator; no Autonomous
 execution, new subagents or fictional author/reviewer identities. Candidate delivery
 is distinct from integration, published release and accepted research effectiveness.
+
+## Issue6 scope clarification — 2026-10-19
+
+Operator review narrows the source assignment to explicit role/model selection,
+retaining useful existing records and execution reliability. Mandatory budget
+questions and a new research-preservation/evaluation programme are out of scope.
+See slice01's cc-prompt-iteration01.md. Existing historical records and the earlier
+research pilot/gates remain intact. Version1.9: this dated clarification supersedes
+the broader issue6 wording above; independent PR/Operator review remains required.

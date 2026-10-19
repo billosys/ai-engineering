@@ -22,4 +22,4 @@ research criteria/statuses retained open; no framework-wide adoption or third ru
 
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 |---|---|---|---|---|---|---|---|
-|P13-06|Issue6 guidance candidate preserves ledgers/research records, passes real package gates and receives independent PR/Operator review|slice01-autonomous-mode-reliability/ledger.md, actual source/PR and reviewer evidence|serious|Operator implementation request2026-10-19|open|—|Candidate implementation authorized; independent acceptance and any future trial remain pending|
+|P13-06|Issue6 guidance candidate preserves full ledgers/useful existing records, passes real package gates and receives independent PR/Operator review|slice01-autonomous-mode-reliability/ledger.md, actual source/PR and reviewer evidence|serious|Operator implementation request2026-10-19|open|—|Iteration01 Operator correction removes mandatory budget/research programme; independent acceptance remains pending; earlier research gates unchanged|

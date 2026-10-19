@@ -1,7 +1,7 @@
 ---
 status: active
 created: 2026-10-19
-version: 1.0
+version: 1.1
 related: ["billosys/ai-engineering#6"]
 ---
 # Autonomous Mode reliability and research records
@@ -70,3 +70,23 @@ Source11013b5d is committed/pushed; PR7 is open against main. All native local g
 pass, with categorized warnings disclosed. cc-prompt.md is returned for review;
 no numbered correction issued yet. Independent acceptance, actual CI outcome
 and any future real trial remain separate. See closing-report.md for row walk.
+
+## Iteration01 — current assignment and superseding scope, 2026-10-19
+
+Current assignment: cc-prompt-iteration01.md. Initial cc-prompt.md and its returned
+candidate remain preserved. Operator feedback explicitly supersedes the mandatory
+expenditure approval and research-preservation expansion described above. Current
+scope is model selection, retained useful records and reliable execution, with no
+required budget response or extra archival/reconstruction work. Existing iteration
+and investigation limits remain. Supporting artifacts follow the existing unmet-
+need rule; this correction reuses artifacts/execution.md. No historical artifacts
+are removed or reorganized. Issue6 and PR7 current descriptions must reflect this
+clarification. Required independent reviews and Operator acceptance remain pending.
+
+### Iteration01 return
+
+Source 63a80f1de8a90e1fa366fe7407e5fe18ff66d3ae is committed/pushed to PR7. Current assignment returned for the
+Operator-supplied independent reviewers. See the current handoff at the top of
+closing-report.md; the initial report/prompt and all earlier evidence remain.
+Current PR CI passed at63a80f1d; the actual check link is in artifacts/execution.md.
+Independent reviews and Operator acceptance remain pending.

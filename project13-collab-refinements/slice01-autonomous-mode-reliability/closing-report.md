@@ -1,3 +1,33 @@
+# Current handoff — Iteration01, 2026-10-19
+
+Current assignment: cc-prompt-iteration01.md, returned for independent PR review.
+Source 63a80f1de8a90e1fa366fe7407e5fe18ff66d3ae, pushed to codex/autonomous-mode-reliability / PR7.
+This supersedes the broader contract in the unchanged initial handoff below.
+All results here are implementer-attested; independent/Operator acceptance is pending.
+
+|Row|Current result / evidence|Remaining gate|
+|---|---|---|
+|S01|Explicit role/model/relevant-settings selection, scoped approval and unavailable/substitution handling; no mandatory budget response|Independent semantic review|
+|S02|One implementer + independent reviewer default, justified extra contexts, stable ownership retained|Independent review|
+|S03|Compact full-backed preflight and automatic CI/action authority retained|Independent review|
+|S04|Useful existing records and distinct observations retained; existing records first, optional unmet-need supporting files; accumulated records untouched|Independent comparison with initial candidate|
+|S05|Full ledger/independent/higher-scale gates retained; correction-review contract unchanged|Independent review|
+|S06|Real substrate, actual populations and retained/fresh/candidate/integrated distinctions retained|Independent review|
+|S07|Real check-skills/check-package-paths both0;25 source/25 packages,0 version errors/0 hard path failures;620 warnings/3 exceptions; diff check0|Independent review; current PR CI passed|
+|S08|No required archival/reconstruction/evaluation programme; separate research remains separately agreed|Independent scope review|
+|S09|Source committed/pushed; issue6/PR7 revised to the narrowed current purpose and criteria|Published bodies/head read back successfully; independent review pending|
+|S10|No independent verdict fabricated; Operator-supplied reviewers remain next owners|Actual independent verdicts and Operator acceptance|
+
+Existing iteration/investigation limits are preserved. Original observations in
+issue6 remain verbatim; its dated clarification supersedes broader requirements.
+Native outputs append to existing final-check logs in artifacts/; no fresh inventory,
+ZIP snapshot, patch copy, configuration export or capture tool was produced.
+Existing proposed skill versions are unreleased candidates; current history entries
+now describe the narrowed contract and retain the dated correction's provenance.
+No live trial, general effectiveness, release, merge or installation is claimed.
+
+## Historical initial handoff (preserved)
+
 # CC candidate handoff — Autonomous Mode reliability
 
 Current assignment: cc-prompt.md (initial Operator implementation request).

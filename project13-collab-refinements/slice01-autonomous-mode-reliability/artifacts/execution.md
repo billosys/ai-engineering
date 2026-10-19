@@ -74,3 +74,55 @@ plan EOF blank. The commit command continued after the check; that was a command
 sequencing mistake, not a passing all-file check. Raw evidence remains unchanged;
 the authored plan EOF was corrected. Source diff-check was independently0 before
 source commit and is distinct from whitespace inside archived observation data.
+
+
+## Iteration01 — Operator scope correction, 2026-10-19
+
+Authority: direct Operator correction and issue6 comment6272158086 / PR7
+comment6272160635. This supersedes the initial mandatory expenditure process and
+expanded research-record requirements, without deleting the original observations.
+Required intake: current Project13/slice plans and ledgers, full feedback bodies,
+canonical model/authority/preflight/closure sections, PM layout and existing
+supporting-artifact rule, affected contributor packets and entrypoints, prompt
+preflight/template, ledger traceability, real validation and stewardship sections.
+Scoped source delta and current metadata/history ownership were inspected.
+
+Contract readback: mandatory explicit role-to-model/relevant-settings selection,
+carried scope and substitution handling; no budget response or routine archival/
+reconstruction requirement. Existing records/Git/logs first; optional supporting
+files only for unmet decision, verification, reproducibility or access needs.
+Preserve distinct failures/retries/independent observations and every ledger gate.
+Existing iteration and separate investigation limits remain binding. No new agents,
+model/config exports, inventories, snapshots or live trial are needed for this edit.
+
+Source 63a80f1de8a90e1fa366fe7407e5fe18ff66d3ae /27 changed files, commit/push on the existing dedicated branch.
+All seven owning current-version history entries carry the dated review correction;
+unreleased candidate versions retained. Native commands run against the real source:
+make check-skills0; make check-package-paths0. First correction and subsequent
+prose-wrap passes are both retained as appended sections of the existing final-check
+logs; initial observations and exit files were not overwritten. Final source and
+fresh packages:25 skills/25 packages,0 version-contract errors,0 hard path failures,
+620 warnings,3 explicit exceptions. The initial candidate reported621 warnings;
+no blanket claim that these are identical baseline warnings. git diff --check0.
+
+Static inspection of all affected source routes and the generated standalone
+engineering-methods/project-management and composed mode sections confirms the
+narrowed model and optional-artifact contracts. Cases checked: missing/inherited
+approval holds role work; same-model explicit selection allowed; unavailable or
+unapproved substitutions resolved; unchanged assignments carry approval; omitted
+budget does not block; volunteered limits honored; distinct observations retained
+without one file per observation; supporting artifacts require an unmet need.
+Existing independent repair review, ledger row/composition/closure and retained-
+evidence applicability rules remain binding. These are self-checks, not independent
+acceptance or a behavioral trial. Original issue observation section was compared
+verbatim before publishing its amended scope. Untracked knowledge/lfe/ untouched;
+CLAUDE.md remains an AGENTS.md symlink. A sandboxed GitHub read failed network
+access; authorized network access then confirmed prior CI success at11013b5d and
+unchanged remote head before this source push. Current CI is a separate observation.
+
+Published readback: issue6 and PR7 current bodies matched the submitted amendments;
+PR head63a80f1de8a90e1fa366fe7407e5fe18ff66d3ae matches source. CI's real
+Validate and build skill bundles check completed SUCCESS,2026-10-19T17:34:07Z:
+https://github.com/billosys/ai-engineering/actions/runs/39295103341/job/118205444395.
+PR description updated with this CI observation. Reviewer/Operator acceptance remains
+pending. No source changes after the local gates; prior report/observations preserved.
