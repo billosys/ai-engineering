@@ -498,3 +498,91 @@ confirms all criterion/status cells and non-row text unchanged; only Evidence/No
 changed. SOURCE committed-diff whitespace and PLANNING whitespace checks pass.
 No tracked source changes remain after the source commit. These are local checks,
 not remote link, hosted rendering or independent semantic acceptance.
+
+## Iteration01 current CC return — 2026-10-19
+
+Assignment: preserved [cc-prompt-iteration01.md](../cc-prompt-iteration01.md),
+issued in PLANNING `fc0d917fcf0e8af9ca4a0e2afd7f522657eb4fb5` after initial return
+`1aaacafd5072c0c5ef06d24cfd4719504e28a066`. SOURCE before
+`1c3be08c6f206e8ed09d2dbe8068479e64bb7723`; repaired SOURCE **`ed825a63a573b7da50874e3a632764e8d570ab8e`**.
+CC `/root/s28_cc` implemented and self-checked; independent CDC acceptance and
+closing remain pending. Everything above is preserved initial history, including
+its known F01, original row proposals and actual capture/process uncertainty.
+This section states the current implementation return; it is not a second verdict.
+
+### Intake, readback and repair
+
+Loaded full actual I01 prompt, current slice plan/ledger and independent review,
+whole current tonal-contrast before editing, posts/colour-contrast Quick/Core and
+the affected batch/closing passages. Checked actual input equality for all22 retained governing/operative inputs,
+including current AGENTS/framework and applicable skills/guides, against
+initial SOURCE; current Project1.75 and Arc1.76 remain byte-identical to the
+originally loaded plans through their actual Version History headers at287/167.
+Initial prompt, batch and closing report equal immutable1aaacafd. Existing
+methodology/AM/intake, graph/CQ/evidence, design and closing guidance therefore
+retains the same scope actually read earlier; no unrelated histories or corpus
+were reread or claimed newly inspected. No required output truncated in this pass.
+
+Readback sent before edits: one literal Common Confusions paragraph only;
+distinguish chromatic attributes from light-dark difference and recognise the
+linked accessibility card’s broader rendered-pair usage. Retain metadata, all
+other card/source/guide bytes, owner/history, graph/CQs and8package inputs; no
+micro bump or build. Preserve S28-03 independent done; propose remaining rows
+using fresh exact-reversal/card/package checks and append-only3path return.
+
+The exact issued replacement is now at tonal-contrast line151:
+
+> **Clarification**: Chromatic contrast concerns differences in attributes such as hue and chroma; tonal contrast concerns light-dark differences. They can vary independently in a selected comparison. “Colour contrast” is also used more broadly: the linked accessibility card evaluates rendered foreground/background pairs using WCAG relative luminance. Hue or chroma difference alone does not prove an applicable contrast pass.
+
+The whole repaired card was read again. Its Quick/Core, WCAG conditions, actual
+posts/colour-contrast comparison and final clarification now use compatible
+senses. Tonal-contrast D2/D4 and the affected D5 comparator meaning receive this
+bounded current correction; other reviewed outcomes and the nine CQ requirement
+accounting remain as previously scoped. This is an analytic/terminological repair,
+not new source-fidelity, browser, perception or accessibility-conformance proof.
+All13 original-dependent fidelity outcomes remain unassessed/input-blocked.
+
+### Fresh proof and retained proof
+
+- Exact issued old/new paragraph match and inverse byte replacement pass. Undoing
+  only this paragraph produces the complete initial tonal-contrast object.
+- Exactly one changed source path and one line replaced; all7,079 other tracked
+  objects out of7,080 match initial SOURCE exactly. Thus all12other target cards,
+ 161sources,6guides, owner/history/Makefile and other objects are preserved.
+- Raw metadata, literal Source Reference, headings, prior reported quoted wording
+  and examples match; LF/one-final-newline and whitespace checks pass.
+- All8actual retained ZIP Markdown members equal repaired committed SOURCE and
+  their initial objects. No package input or Makefile changed. Archive SHA256
+  remains `4349bbd3685e1cf9b1c81a89ca6cb65976c837a0e5fff492fe98b43989cd93cf`.
+- Initial successful captured native gates retain applicability only to these
+  unchanged inputs. No Make/build/install/browser/AT/hosted/perception operation
+  was run in I01. The first initial version-run capture/non-overlap uncertainty
+  remains disclosed; no new pristine-sequencing or fresh-native claim is made.
+- Prior graph/model/CQ results retain their actual scope because their source
+  constructs, quantities, memberships and warrants are unchanged except this
+  explicitly checked comparator clarification. No new global coverage claim.
+
+### Current row proposals and handoff
+
+| Row | Current CC disposition | Limit |
+|---|---|---|
+| S28-01 | Proposed done for bounded available-evidence corrections, now including F01. |13D1unassessed; independent review required. |
+| S28-02 | Proposed done for bounded local reconciliation, now including comparator terminology. |Global/unreviewed question/source coverage remains owned as above. |
+| S28-03 | Retain independently accepted done, with exact current input bridge. |No new self-acceptance or native-build claim. |
+| S28-04 | Proposed done for current truthful return and preservation of initial history/limits. |CDC verdict/retrospective/close remain pending. |
+
+SOURCE commit allowlist is only
+`knowledge/design/concept-cards/art-and-visual-perception/tonal-contrast.md`;
+both required trailers are present. PLANNING return allowlist remains only this
+append, closing-report append and ledger Evidence/Notes cells. Initial batch and
+closing bytes remain literal prefixes, and criterion/status/non-row ledger text
+are unchanged from issuedfc0d917f. The return’s actual commit hash follows in the
+handoff; no self-hash receipt commit. No new supporting artifact, scope/plan/gate
+change, successor, final1.1.0, main edit, merge, push or publication.
+
+Final I01 return check: exact three planning paths, preserved batch/report byte
+prefixes, ledger Evidence/Notes-only and unchanged criterion/status/non-row text
+pass. Scoped four-file local check:26links,6fragments,LF/one-final-newline pass;
+source and planning whitespace pass. One planning-note edit helper initially
+used the wrong relative path and returned FileNotFoundError without mutation;
+corrected absolute-path edit succeeded. No failed semantic/native test is hidden.

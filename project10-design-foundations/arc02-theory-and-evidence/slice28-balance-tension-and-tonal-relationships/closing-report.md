@@ -124,3 +124,52 @@ unilateral plan/criterion/status/sequence change. Scope-as-specified versus
 scope-as-delivered is13cards+2ownerpaths and3planningoutputs, all populations and
 examples retained; pending contrast repair, independent acceptance and higher gates
 are disclosed. No successor, arc closure or final1.1.0 is claimed.
+
+## Iteration01 current return — 2026-10-19
+
+This section supersedes the pending-F01 implementation state above while preserving
+that complete initial report as history. Executed preserved
+[Iteration01](cc-prompt-iteration01.md), issued PLANNINGfc0d917f. Repaired SOURCE
+**`ed825a63a573b7da50874e3a632764e8d570ab8e`**, parent1c3be08c, dedicated
+`codex/project10-arc02-autonomous`. CC `/root/s28_cc` is the implementer;
+independent CDC verdict, closing and retrospective remain required.
+
+Exactly the issued one-paragraph clarification in
+`knowledge/design/concept-cards/art-and-visual-perception/tonal-contrast.md`
+now distinguishes chromatic hue/chroma attributes, tonal light-dark difference,
+and the broader rendered foreground/background pair sense of “colour contrast.”
+It explicitly retains that hue/chroma alone proves no applicable contrast pass.
+Whole repaired card and actual posts endpoint Quick/Core were read and compared.
+The [current batch section](artifacts/batch-record.md#iteration01-current-cc-return--2026-10-19)
+records intake/readback, actual correction, fresh/retained checks and unchanged limits.
+
+Fresh proof: exact literal replacement/inverse restores the complete prior card;
+7,079 other tracked objects unchanged; raw metadata/refs/headings/quotes/examples,
+LF/EOF/whitespace pass. All8retained archive Markdown payloads still equal current
+committed SOURCE and initial inputs; Makefile unchanged. No additional micro bump
+or new Make/build/browser/AT/hosted operation. Retain the captured initial native
+gates at their original scope and the first capture/non-overlap uncertainty.
+All13D1fidelity outcomes, full233/global/eight-live/composition/Operator/final1.1.0/
+release and retained Slice25 unrun/environment limits remain unchanged.
+
+| Row | Current CC proposal/status treatment |
+|---|---|
+| S28-01 | Proposed done for supported correction scope including F01; remains open for independent acceptance,13original fidelity outcomes unassessed. |
+| S28-02 | Proposed done for local graph/body/question scope including the repaired comparator meaning; remains open for independent acceptance/global gaps retained. |
+| S28-03 | Retain CDC’s independently accepted done, with unchanged operative/package-input proof at current source. |
+| S28-04 | Proposed done for the truthful current return, exact scopes/limits and preserved prior history; remains open for independent acceptance. |
+
+SOURCE commit contains only the one named card, with both Codex/Billo AI trailers.
+PLANNING commit contains exactly `artifacts/batch-record.md` append,
+`closing-report.md` append and `ledger.md` Evidence/Notes changes only; actual
+commit identity is returned after commit without a receipt-only chain. This
+report’s prior bytes and the batch’s prior bytes are literal prefixes. The
+supporting-artifact inventory remains one existing batch; no new artifact.
+
+Bubble-up: the anticipated F01 terminology repair now has a bounded committed
+candidate and exact source/package bridge. No new structural dependency, scope
+choice or parent-plan change was discovered. Nothing from the original contract
+is silently dropped; unresolved originals/global/behavior/composition and
+independent/Operator gates remain with their recorded owners. CDC owns the
+independent verdict and any closing/retrospective/advance action; none is claimed
+by this CC return.
