@@ -1,16 +1,16 @@
 ---
 slice: slice24-colour-models-and-evidence-boundaries
-status: active
+status: closed
 depends-on: [accepted colour math, current technical primary evidence; book fidelity unavailable]
 ---
 
 # Slice24 — Colour Models and Evidence Boundaries
 
-Revision **1.2**, opened 2026-10-18; Project 1.75/current Arc02 Autonomous Mode.
+Revision **1.3**, opened 2026-10-18; Project 1.75/current Arc02 Autonomous Mode.
 CDC `/root`; implementing CC `/root/s24_cc`; separate independent review in
 `cdc-verification.md`. SOURCE `/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/design-arc02-autonomous` branch
 `codex/project10-arc02-autonomous`, pin `da9cb76c0fdfb3a6e66b20ed0670d485d6e1b079`; planning predecessor `d80e27710ec87b43aa0afafdbd0857369ce51373`.
-Adding commit issues [prompt](cc-prompt.md); four open [criteria](ledger.md).
+Adding commit issues [prompt](cc-prompt.md); four independently done [criteria](ledger.md).
 
 ## Delivery and limits
 
@@ -56,9 +56,23 @@ Existing sequential native checks, fresh design 8/8 committed-member comparison,
 whole owner/history and exact scope checks apply. CDC independent review and
 retrospective follow. No main merge, push, publication, Arc04 or final 1.1.0 bump.
 
+## Independent closure — 2026-10-18
+
+All four bounded criteria independently accepted by named reviewer
+`/root/s24_review` at SOURCE154a5b76/CC return72f2c482; coordinating CDC `/root`
+has inspected the full record and accepts the roll-up. [Verification](cdc-verification.md)
+preserves initial F01 and actual Iteration02 resolution. Nineteen supported card
+corrections,two live guides and owning1.0.21 delivered on the task branch. Exact
+current8/8 package proof and retained applicability are explicit. [Retrospective](cdc-retrospective.md)
+records both the corrected author direction and late intake deviation.
+No new scope/dependency/parent criterion change emerged. Continue the ready
+live-method/actual-behavior batch with its own exact source pin. Original/capture
+fidelity,131 other book-card reviews,global union,behavior/hosted/composition,
+Operator and release gates remain; no full233 acceptance or final1.1.0 bump.
+
 ## Assignment history
 
-- Current: [Iteration02](cc-prompt-iteration02.md), source e95d5867/CC return
+- Final / independently accepted: [Iteration02](cc-prompt-iteration02.md), source e95d5867/CC return
   c5e03c2b. Independent reviewer `/root/s24_review` accepts S24-02/03/04 at that
   exact bounded state; S24-01 remains open for the manifesto Weber epigraph.
   One literal guide replacement and affected fresh package proof only. CDC
@@ -75,6 +89,9 @@ retrospective follow. No main merge, push, publication, Arc04 or final 1.1.0 bum
   within the recorded remaining-Arc02 authorization. CDC owns acceptance.
 
 ## Version History
+
+- 1.3 (2026-10-18): Close after independent Iteration02 acceptance; preserve
+  both real findings/process history and proceed with ready live-use work.
 
 - 1.2 (2026-10-18): Apply independent three-done/one-open review and issue the
   one-guide Weber correction. Record late intake deviation truthfully; no scope

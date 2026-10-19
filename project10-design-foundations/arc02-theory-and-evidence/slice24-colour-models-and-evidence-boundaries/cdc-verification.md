@@ -210,3 +210,98 @@ All 150 book-original and 83 web-capture/lineage gates remain with their
 existing owners. Current technical definitions and local navigation cannot
 discharge those gates. No source repair, ledger/plan closure, commit, main edit,
 merge, push or publication was performed by this reviewer.
+
+## Iteration02 independent review — current verdict, 2026-10-18
+
+Actual reviewer remains `/root/s24_review`, independent of implementing CC
+`/root/s24_cc`, with CDC `/root` coordinating. Assignment:
+`cc-prompt-iteration02.md` at planning
+`4e3e99caa8936fbd0895d84219340c444e6620f2`. Reviewed source:
+**154a5b766286966b8d6a649db2b45726dc497175**, parent e95d5867. Reviewed
+CC planning packet: **72f2c482d73aff05d25e122aed37a9023ac89a71**.
+
+**Current verdict: F01 is resolved; all four bounded criteria are accepted
+at this candidate.** This supersedes the earlier candidate's changes-required
+verdict while preserving that finding and its evidence. Ledger application,
+retrospective and actual slice close remain CDC duties; this reviewer has
+not edited those records or committed anything.
+
+### Fresh affected checks
+
+Read the complete preserved Iteration02 prompt and the actual appended batch
+and closing-report sections. Inspected the committed source diff, new epigraph
+with its unchanged principle body, and foundations' scoped Weber paragraph.
+The new `design.md:86–89` explicitly identifies a discrimination task/range,
+positive intensity and fitted fraction, and labels its attribution “After
+Weber (model summary).” It is a scoped model paraphrase and asserts no exact
+1834 quotation. This addresses F01 without changing the principle or adding
+a research obligation. No further substantive finding arose from the repair.
+
+Independent byte/object queries established:
+
+- The source changes exactly one allowed path. Its only change is the exact
+  issued literal block, once. Reversing it recovers the entire e95d5867
+  manifesto blob, SHA256
+  `bc82a04aa32ca982d43075015efc74567c5fc59937f268165c413e3ba9c3bb04`.
+  New blob SHA256 is
+  `edc04be29accee5bfb350a3b9664bb6f4be73d440a145fb88e77f3554bfba721`.
+- The complete tracked path set is unchanged and all **7079 other tracked
+  source objects** are identical, including every card/header, source,
+  other guide, SKILL/history, helper, schema and packaging input. Owning
+  metadata/history remain 1.0.21 unchanged; no guide version label is added.
+- Both commits carry the two required co-author trailers. CC's planning
+  commit changes exactly the three allowed files, retains the complete
+  predecessor batch/report as prefixes, and preserves ledger criteria and
+  statuses open/done/done/done. The source checkout is clean; source delta
+  whitespace and LF/single-EOF checks pass. No heading, anchor or link changes
+  invalidate earlier route evidence.
+
+Inspected both actual raw logs, `/private/tmp/s24_i2_package_paths.log` and
+`/private/tmp/s24_i2_design.log`, rather than relying solely on the return.
+The former records native version/build dependencies and final results:
+25 source skills/25 packages/0 errors; 25 ZIPs/402 Markdown files/0 hard path
+failures; 606 warnings at 605 locations, three exceptions and 808 skipped
+external URLs. The separate fresh design log records successful archive
+completion with 8 Markdown payloads, 10 entries including directories and
+132038 uncompressed bytes. These are the actual CC command logs; they are
+not relabelled as reviewer-executed Make runs.
+
+Independent package inspection freshly compares **8/8 Markdown members**
+against exact committed source 154a5b76 and reproduces ZIP SHA256
+`123dd4fbdebce82d64cc1f66c96f57fc5ca397ca2bbc623191cade9c7b507380`.
+All members match, including the repaired manifesto. No build rerun was
+needed after these passing checks; the reviewer encountered no new failure.
+
+### Explicit retained applicability and four-row walk
+
+The earlier independently reproduced 19-card/five-dimension, 79-premise,
+124 typed/124 separate body/132 target-incidence and 22 membership/five-CQ
+results retain their original e95d5867 review revision and method. The complete
+object comparison establishes that their source and semantic inputs did not
+change. The one scoped epigraph repair cannot affect those claims, the 34
+raw/typed metadata corrections, protected populations or conditional witnesses.
+No original source, dependency, acceptance criterion or relevant method changed.
+Those results are retained, not represented as newly executed or re-read.
+Affected manifesto correctness and current package integration were checked
+fresh above. Prior help/description and other unaffected proof retain their
+original provenance; fresh native version/build dependencies are distinguished
+in the inspected current logs.
+
+| Row | Independent disposition at 154a5b76 | Basis |
+|---|---|---|
+| S24-01 | **done, reproduced/reconciled** | Earlier complete source review retained at unchanged inputs; fresh exact epigraph/context inspection resolves the sole residual F01. Historical fidelity remains unavailable. |
+| S24-02 | **done, retained independent evidence** | All relevant card/metadata/definition/record inputs are identical; prior actual semantic, edge/direction and CQ assessments remain applicable. |
+| S24-03 | **done, reproduced plus retained evidence** | Fresh one-path/7079-object comparison and whole-manifesto reversal preserve exact scope and all previously checked populations/representations. |
+| S24-04 | **done, reproduced at current integration scope** | Current actual native logs, fresh independent 8/8 committed payload comparison/hash, unchanged owner/history and fresh commit/format checks establish affected integration. |
+
+The current return accounts for the one-block assignment and all four rows;
+its sole supporting artifact remains the existing batch record. No new arc
+scope, sequence or input dependency was discovered. The earlier late-intake
+deviation and its independent assessment remain historical; this correction
+does not fabricate a pre-edit receipt or erase that limitation.
+
+All original-fidelity, full-corpus union, actual browser/AT/hosted/empirical,
+composition, Operator and release/1.1.0 gates remain outside this bounded
+acceptance. CDC owns retrospective and closure. This reviewer changed only
+this verification record and performed no source repair, other planning edit,
+commit, ledger closure, merge, push or publication.
