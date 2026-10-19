@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slice25 retained behavior — 39cf41933fa297a5fd2330ba9523497103b18336 — illustrative constants</title>
+<style>
+/* Fixture-only inputs; no adopting-project defaults or installed assets. */
+:root {
+  --space-s: 1rem;
+  --space-l: 2rem;
+  --space-s-l: clamp(1rem, 2vw, 2rem);
+  --space-l-xl: clamp(1.5rem, 3vw, 3rem);
+  --space-s-m: clamp(1rem, 2vw, 1.5rem);
+  --prose-measure: 60ch;
+  --example-step-0: clamp(1.000000rem, calc(0.958333rem + 0.208333vi), 1.125000rem);
+  color: #000;
+  background: #fff;
+  font-family: system-ui, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-size: 1rem; line-height: 1.5; }
+header, main, footer, nav, section, article, aside, fieldset { min-inline-size: 0; }
+h1 { font-size: 2rem; line-height: 1.2; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.2rem; }
+h1, h2, h3, p, a, label, li, figcaption, code { overflow-wrap: anywhere; }
+a { color: #000; text-decoration: underline; }
+:focus { outline: 3px solid #000; outline-offset: 3px; }
+header, footer, .specimens { padding: 1rem; }
+section { margin-block: 2rem; }
+fieldset { margin: 0; border: 1px solid #000; padding: 1rem; }
+label { display: block; margin-block: .5rem; }
+button, input { font: inherit; max-inline-size: 100%; }
+input[type="checkbox"] { inline-size: 1.2rem; block-size: 1.2rem; vertical-align: middle; }
+input[type="text"] { inline-size: 22rem; color: #000; background: #fff; border: 2px solid #000; padding: .5rem; }
+html:has(#enlarge:checked) { font-size: 200%; }
+/* Deliberate author overrides; these are not native zoom or OS settings. */
+html:has(#spacing:checked) body * {
+  line-height: 1.5 !important;
+  letter-spacing: .12em !important;
+  word-spacing: .16em !important;
+}
+html:has(#spacing:checked) p + p { margin-block-start: 2em !important; }
+/* Exact retained entrypoint declarations. */
+.stack { display: flex; flex-direction: column; gap: var(--space-s); }
+.with-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-l);
+}
+.with-sidebar > .sidebar { flex-basis: 20rem; flex-grow: 1; }
+.with-sidebar > .main { flex-basis: 0; flex-grow: 999; min-inline-size: 55%; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: var(--space-s-m);
+}
+/* Exact worked book declarations from Layout. */
+.page {
+  max-inline-size: 1200px;
+  margin-inline: auto;
+  padding-inline: var(--space-s-l);
+  box-sizing: border-box;
+}
+.book-hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-l-xl);
+}
+.book-hero > .cover {
+  flex-basis: clamp(200px, 30%, 400px);
+  flex-grow: 0;
+  align-self: start;
+  min-inline-size: 0;
+  aspect-ratio: 2 / 3;
+}
+.book-hero > .cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.book-hero > .info {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: 55%;
+  overflow-wrap: anywhere;
+}
+.book-description {
+  max-inline-size: var(--prose-measure);
+  margin-inline: auto;
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+  gap: var(--space-s-m);
+}
+/* Exact scoped paragraph candidate from Type; inherited fixture system font. */
+.prose {
+  font-size: 1rem;
+  line-height: 1.35;
+  max-width: 65ch;
+  text-align: start;
+}
+
+.prose p { margin: 0; }
+.prose p + p { margin-block-start: .75em; }
+/* Fixture presentation support, without replacing copied layout algorithms. */
+.cover { margin: 0; }
+.cover img { display: block; }
+.related-grid article, .grid article, .stack > p, .with-sidebar > * { padding: .75rem; border: 1px solid #000; min-inline-size: 0; }
+.stack > p { margin: 0; }
+.table-region, .sizing-region, .font-width-region { overflow-x: auto; max-inline-size: 100%; padding: .5rem; border: 1px solid #000; }
+table { border-collapse: collapse; color: #000; background: #fff; }
+caption { text-align: start; font-weight: bold; }
+th, td { text-align: start; padding: .5rem; border: 1px solid #000; }
+.wide-table { min-inline-size: 50rem; }
+.sizing-parent { width: 300px; }
+.sizing-box { padding-inline: 20px; border: 2px solid #000; margin-block: .5rem; }
+.content-box { box-sizing: content-box; width: 200px; }
+.border-box { box-sizing: border-box; width: 200px; }
+.auto-box { box-sizing: content-box; width: auto; }
+.reel { overflow-x: auto; border: 1px solid #000; padding: .5rem; }
+.reel ol { display: flex; gap: 1rem; margin: 0; padding: 1rem; list-style-position: inside; }
+.reel li { flex: 0 0 14rem; min-inline-size: 0; padding: .5rem; border: 1px solid #000; }
+@media (max-width: 40rem) {
+  .reel ol { flex-wrap: wrap; }
+  .reel li { flex-basis: 100%; }
+}
+/* Optional decoration: essential text is always outside the clip. */
+.decorative-window { display: block; width: min(100%, 12rem); height: auto; clip-path: circle(38%); transition: clip-path .25s; }
+@media (hover: hover) {
+  .decorative-link:hover .decorative-window { clip-path: circle(50%); }
+}
+.decorative-link:focus .decorative-window { clip-path: circle(50%); }
+.decorative-mark { display: inline-block; width: 2rem; height: .5rem; background: #000; }
+@supports (animation-timeline: view()) {
+  .decorative-mark { animation: drift linear both; animation-timeline: view(); }
+}
+@keyframes drift { from { transform: translateX(0); } to { transform: translateX(1rem); } }
+@media (prefers-reduced-motion: reduce) {
+  .decorative-mark { animation: none; transform: none; }
+  .decorative-window { transition: none; }
+}
+html:has(#motion:checked) .decorative-mark { animation: none; transform: none; }
+html:has(#motion:checked) .decorative-window { transition: none; }
+.action { color: #fff; background: #000; border: 2px solid #000; padding: .5rem 1rem; }
+.action:hover { background: #222; }
+.action:focus { outline-color: #000; outline-offset: 4px; }
+input::placeholder { color: #666; opacity: 1; }
+.known-failure { color: #777; background: #fff; font-size: 1rem; font-weight: 400; }
+.alpha-text { color: rgb(0 0 0 / 50%); background: #fff; }
+.inactive { color: #777; background: #fff; padding: .5rem; border: 1px solid #777; }
+.fluid-probe { font-size: var(--example-step-0); }
+@font-face { font-family: ProofMissing; src: url('missing-proof-font.woff2') format('woff2'); font-display: swap; }
+.failure-sample { font-family: ProofMissing, sans-serif; }
+.fixed-fallback { font-family: sans-serif; }
+@font-face {
+  font-family: ProofLocal;
+  src: local('.SFNS-Regular');
+  font-weight: 1 1000;
+  font-stretch: 30% 150%;
+  font-style: normal;
+}
+.axis-sample { display: inline-block; white-space: nowrap; font-family: ProofLocal, sans-serif; font-size: 1rem; font-weight: 400; font-optical-sizing: none; }
+.axis-75 { font-variation-settings: 'wdth' 75, 'opsz' 28, 'wght' 400; }
+.axis-125 { font-variation-settings: 'wdth' 125, 'opsz' 28, 'wght' 400; }
+</style>
+</head>
+<body>
+<header>
+<h1>Retained behavior specimen</h1>
+<p>Source revision <code>39cf41933fa297a5fd2330ba9523497103b18336</code>. All numeric values here are illustrative test constants, not product defaults. Browser observations are pending independent execution.</p>
+<nav aria-label="Specimen sections"><a href="#book">Book composition</a> · <a href="#primitives">Retained primitives</a> · <a href="#semantics">Reading and interaction</a> · <a href="#colour">Colour pairs</a> · <a href="#fonts">Font failure and axes</a></nav>
+<fieldset>
+<legend>Authored diagnostic controls</legend>
+<label><input type="checkbox" id="enlarge"> Enlarge text to 200% (author override)</label>
+<label><input type="checkbox" id="spacing"> Apply text spacing overrides</label>
+<label><input type="checkbox" id="motion"> Preview reduced motion (author override)</label>
+<p>Checkbox states are visible native DOM states. Enlargement changes the root CSS size; it is not browser zoom or a native font preference test. Motion preview is not the OS Reduce Motion preference. No settings are changed.</p>
+<p>Spacing applies line height 1.5, letter spacing .12em and word spacing .16em to descendants, and a 2em gap between successive paragraphs (p + p), including the scoped reading sample.</p>
+</fieldset>
+</header>
+<main id="main">
+<section class="page" id="book" aria-labelledby="book-heading">
+<h2 id="book-heading">Layout: worked book composition</h2>
+<div class="book-hero">
+<figure class="cover"><img alt="Illustrative book cover: a black rectangle with a white open-book motif" width="200" height="300" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='300' viewBox='0 0 200 300'%3E%3Crect width='200' height='300' fill='black'/%3E%3Cpath d='M35 80L100 95L165 80V210L100 225L35 210Z' fill='white'/%3E%3Cpath d='M100 95V225' stroke='black' stroke-width='4'/%3E%3C/svg%3E"></figure>
+<div class="info">
+<h3>The Long Road Home: Essays on Reading, Remembering, and the Places We Carry Through Uncertain Seasons</h3>
+<p>By Alex Rivers · Illustrative publication date: 18 October 2026</p>
+<p>Long token: <span>catalogue.example.invalid/reading/averylongunbrokencatalogueidentifier1234567890abcdefghijk</span></p>
+<a href="#description">Read the book description</a>
+</div>
+</div>
+<article class="book-description prose" id="description" lang="en" aria-label="Book description and paragraph sample">
+<p id="reading-sample">Reading sample at 1rem: A book begins in a particular place, but a reader brings other places to it. This paragraph tests a real passage, ordinary punctuation, and wrapping at the widths under review.</p>
+<p>The second paragraph keeps its text available when line height, word spacing, letter spacing and following-paragraph gaps change. A measure in ch is a candidate to inspect with the actual font; it is not a literal count of every character.</p>
+<p>The third paragraph adds enough continuous prose to reveal the flow of this composition. The cover and information share a wrapping layout, while the description has its own centered measure. No fixed height clips the reading.</p>
+</article>
+<h3>Related reading</h3>
+<div class="related-grid">
+<article><h3>Small Places, Long Memories</h3><p>A related title with a short description.</p><a href="#description">Read about Small Places</a></article>
+<article><h3>Notes from a Very Long Journey through the Ordinary</h3><p>A longer card title tests intrinsic wrapping.</p><a href="#description">Read the Journey notes</a></article>
+<article><h3>The Open Window</h3><p>Third related title, in meaningful source order.</p><a href="#description">Read about the Window</a></article>
+</div>
+</section>
+<div class="specimens">
+<section id="primitives" aria-labelledby="primitives-heading">
+<h2 id="primitives-heading">Entrypoint: three retained primitives</h2>
+<h3>Stack</h3><div class="stack"><p>First item</p><p>Second item with a longer line to inspect</p><p>Third item</p></div>
+<h3>Sidebar</h3><div class="with-sidebar"><aside class="sidebar"><h3>Section navigation</h3><a href="#description">Description</a></aside><article class="main"><h3>Main reading role</h3><p>A flexible main region with a longtitleandcatalogueidentifierthathasnospaces1234567890. Check this at enlargement and narrow widths.</p></article></div>
+<h3>Intrinsic Grid</h3><div class="grid"><article><h3>First grid item</h3><p>Current 250px candidate track.</p></article><article><h3>Second grid item with more content</h3><p>The minimum is constrained to the container.</p></article><article><h3>Third item</h3><p>Meaningful content order remains.</p></article></div>
+</section>
+<section aria-labelledby="sizing-heading">
+<h2 id="sizing-heading">Contained fixed sizing control</h2>
+<p>This 300px demonstration is outside the ordinary page-reflow proof. Expected border-box widths: content-box 244px; border-box 200px; auto 300px for this horizontal normal block case. Each has 20px padding per inline side and 2px border per side.</p>
+<div class="sizing-region" role="region" aria-label="Fixed box-sizing demonstration, horizontally scrollable" tabindex="0"><div class="sizing-parent"><div class="sizing-box content-box" id="sizing-content">200px content box</div><div class="sizing-box border-box" id="sizing-border">200px border box</div><div class="sizing-box auto-box" id="sizing-auto">Auto normal block width</div></div></div>
+</section>
+<section id="semantics" aria-labelledby="semantic-heading">
+<h2 id="semantic-heading">Reading and interaction</h2>
+<p>Headings and links state their purpose; the main landmark and source order remain meaningful. These DOM and keyboard specimens cannot establish screen-reader announcements or all navigation tasks.</p>
+<table><caption>Simple publication data</caption><thead><tr><th scope="col">Title</th><th scope="col">Year</th></tr></thead><tbody><tr><th scope="row">The Long Road Home</th><td>2026</td></tr><tr><th scope="row">The Open Window</th><td>2025</td></tr></tbody></table>
+<h3>Wide data with explicit contained overflow</h3>
+<div class="table-region" role="region" aria-label="Detailed publication table, horizontally scrollable" tabindex="0"><table class="wide-table"><caption>Wide comparison data; scroll this region</caption><thead><tr><th scope="col">Title</th><th scope="col">Publication</th><th scope="col">Reading context</th><th scope="col">Editorial note</th></tr></thead><tbody><tr><th scope="row">The Long Road Home</th><td>October 2026</td><td>Extended essays</td><td>Illustrative comparison information remains available through contained scrolling.</td></tr></tbody></table></div>
+<h3>Six-item Reel with an ordinary narrow reading list</h3>
+<p>At 800px normal size this region is intended to overflow: focus it and press ArrowRight, recording the actual scroll delta. At narrow widths its items wrap into a list. Optional scroll snapping is omitted.</p>
+<div class="reel" id="reel" role="region" aria-label="Six related reading items, horizontally scrollable at wider widths" tabindex="0"><ol><li><a href="#description">First reading</a></li><li><a href="#description">Second reading</a></li><li><a href="#description">Third reading</a></li><li><a href="#description">Fourth reading</a></li><li><a href="#description">Fifth reading</a></li><li><a href="#description">Sixth reading</a></li></ol></div>
+<details id="native-disclosure"><summary>Publication and source details</summary><p>This is an ordinary native details disclosure. Inspect keyboard Return/Space behavior and its actual open state.</p></details>
+<h3>Decorative clipping with an always-visible linked label</h3>
+<a class="decorative-link" href="#description"><svg class="decorative-window" viewBox="0 0 200 100" aria-hidden="true"><rect width="200" height="100" fill="black"/><circle cx="100" cy="50" r="30" fill="white"/></svg><span id="always-visible-label">Read the essay through the open window</span></a>
+<p><span class="decorative-mark" aria-hidden="true"></span> Essential text is visible at rest and without animation support. The preview disables optional movement and clip transitions.</p>
+</section>
+<section id="colour" aria-labelledby="colour-heading">
+<h2 id="colour-heading">Colour pairs and known failure</h2>
+<p id="ordinary-pair">Ordinary black text on white, assuming opaque sRGB: expected contrast 21:1. <a id="pair-link" href="#description">Underlined reading link</a> has the same pair and a visible black focus outline.</p>
+<button class="action" id="pair-button" type="button">Specimen action</button>
+<p>Action default: white on black. Hover: white on #222. Focus: black outline against the white surround, separate from text contrast. This is a state witness with no submission action.</p>
+<label for="pair-input">Publication search (active input)</label><input type="text" id="pair-input" placeholder="Search titles">
+<p>Active placeholder: #666 on white, opacity 1; it is not the inactive-control exception.</p>
+<p class="known-failure" id="known-failure">KNOWN FAILURE AT BASELINE NORMAL-TEXT SIZE: #777 on white, expected 4.4780894536:1, below 4.5:1 at the 16px baseline. At 32px enlargement this sample qualifies as large-scale text with a different threshold; do not call every state a normal-text failure. This intentional baseline failure prevents a whole-fixture conformance claim.</p>
+<p class="alpha-text" id="alpha-pair">50% black alpha text over white. Named assumption: ordinary sRGB output/compositing, with no blend mode, filter, image or HDR. Resolve this pair before calculation; record the actual browser values.</p>
+<button class="inactive" id="inactive-button" type="button" disabled>Unavailable until publication</button>
+<p>Inactive exception context: this disabled button is actually unavailable. Its incidental text falls under the SC 1.4.3 inactive-UI exception; that does not exempt the active input's placeholder. Themes, forced colours and full-page conformance are untested.</p>
+</section>
+<section aria-labelledby="fluid-heading">
+<h2 id="fluid-heading">Arithmetic-only fluid font probe</h2>
+<p>Only this separately labelled diagnostic uses the guide's exact --example-step-0 expression; ordinary reading remains rem-based. It is not a typography recommendation or zoom-suitability proof.</p>
+<p class="fluid-probe" id="fluid-probe">Fluid arithmetic probe: measure my computed font size.</p>
+<p>At root 16px / inline viewport 800px, expected 16.999992px; at root 32px / 800px, expected 32.33332px. Root doubling does not double this viewport-dependent probe. Derive expectations from actual inputs if they differ.</p>
+</section>
+<section id="fonts" aria-labelledby="font-heading">
+<h2 id="font-heading">Font failure and available-axis probe</h2>
+<p>ProofMissing intentionally requests missing-proof-font.woff2 in this directory. Record an actual font-face error/404 and readable fallback; a CSS family request alone is not proof.</p>
+<p class="failure-sample" id="font-failure" lang="en">Café naïve façade — “Reading” 0123456789; punctuation &amp; accents.</p>
+<p class="fixed-fallback" id="font-comparison" lang="en">Café naïve façade — “Reading” 0123456789; punctuation &amp; accents.</p>
+<p class="failure-sample" lang="ar" dir="rtl">قراءة وكتابة ١٢٣٤٥</p>
+<p>Separate optional local probe: ProofLocal requests local('.SFNS-Regular'). Read-only SFNS.ttf metadata supplied wdth 30/100/150, opsz 17/28/96 and wght 1/400/1000. No hidden GRAD request. Metadata is not a browser face-load witness; if unavailable, record unavailable.</p>
+<div class="font-width-region" role="region" aria-label="Contained nowrap font-axis diagnostic" tabindex="0"><p>wdth 75: <span class="axis-sample axis-75" id="axis-75">Reading 0123456789</span></p><p>wdth 125: <span class="axis-sample axis-125" id="axis-125">Reading 0123456789</span></p></div>
+<p>Both identical strings request opsz 28/wght 400. Record actual face status and rendered widths; computed settings alone do not establish that the axis was used. Script coverage beyond these strings remains untested.</p>
+</section>
+</div>
+</main>
+<footer><p>Standalone HTML/CSS fixture. No scripts, external network assets, copied fonts, native preference changes, browser zoom, AT or conformance claim. Independent observations and fresh-context identity specimens remain pending.</p><a href="#main">Return to the main specimen</a></footer>
+</body>
+</html>
