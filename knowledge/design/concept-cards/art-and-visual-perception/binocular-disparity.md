@@ -27,76 +27,74 @@ related:
   - "depth-gradient-principle"
 contrasts_with:
   - "monocular-depth-cues"
-answers_questions:
-  - "What are the gestalt principles of perceptual grouping, and how does each one work?"
+answers_questions: []
 rosetta_stone:
   -
     domain: "engineering"
     concept: "Stereoscopic 3D displays, VR headsets, anaglyph rendering"
     rating: "rigorous"
-    note: "VR headsets and stereoscopic displays are direct engineering implementations of binocular disparity — each eye receives a slightly different image matched to the disparity that would arise from actual spatial depth."
+    note: "Rigorous only for routing defined distinct views to the eyes. Actual fusion, comfort, accommodation and device performance remain untested."
   -
     domain: "mathematics"
     concept: "Trigonometric parallax — angular difference as function of depth and interocular distance"
     rating: "rigorous"
-    note: "Binocular disparity is geometrically the angular difference in object position between the two eyes, which varies as arctan(d/D) where d is interocular distance and D is viewing distance."
-css_implementation:
-  -
-    property: "N/A for standard screens"
-    example: "/* Binocular disparity requires different images per eye — VR/WebXR, not CSS */"
-    support: "experimental"
+    note: "For symmetric midline geometry θ(Z)=2atan(b/(2Z)); signed δ=θ(Z)−θ(Zf). The bd/D² expression is a small-baseline, small-offset approximation, not an exact universal retinal formula."
+css_implementation: []
 ---
 
 # Quick Definition
 
-Binocular disparity is the depth cue arising from the slightly different retinal images received by the left and right eyes when viewing the same object. The visual system fuses these disparate images into a single, unified three-dimensional percept through stereoscopic depth perception.
+Binocular disparity describes differences between left- and right-eye images. Stereo delivery can use such differences to support a depth percept, but delivery geometry, actual fusion and comfortable viewing are separate questions.
 
 # Core Definition
 
-Arnheim explains: "When the two eyes look at the same objects, they will receive different images. The two spots will be farther apart for the left eye than for the right eye" (p. 484). This disparity arises from the spatial parallax — the difference in angle of view from two eyes separated by approximately 6.5 cm.
+This presents the represented Arnheim account alongside current analytic qualifications. Original edition, pages, quotations, figures, experiments, physiology and historical claims remain unassessed; the technical constructions below do not certify source fidelity.
 
-The mechanism follows the same simplicity principle that governs all depth perception: "Confronted by two different images, the sense of sight faces a dilemma. The stimulus pattern recorded by the retinas is invariable, but here again the third dimension offers an avenue of freedom, which permits the fusion of the two flat images into one three-dimensional image. Thus once again, three-dimensionality is brought about by the tendency toward simplification and tension reduction" (p. 486).
+Arnheim reports two-eye image differences, eye-alternation demonstrations and Julesz random-dot stereograms. He explains fusion through his simplicity account; that explanation is not newly verified physiology. Spatial/binocular parallax and temporal/motion parallax are related changes of viewpoint, not identical cues. An ordinary single-view image on a flat screen differs from a flat substrate delivering distinct eye views through stereoscopic arrangements. No result here establishes that a particular device supplies accurate or comfortable stereopsis or varying accommodation.
 
-Arnheim also discusses temporal parallax (motion parallax): the same depth-creating mechanism operates when a viewer moves, receiving different images at different moments. This is effective for perceiving depth in physical space but reveals the flatness of a picture.
+Retained wording from the represented account (original fidelity unassessed):
 
-Key limitation for pictorial/screen applications: binocular disparity cannot be exploited in flat pictures — on the contrary, it reveals the flatness of the surface. Only holography and stereoscopic displays can properly exploit binocular disparity as a depth cue.
+"When the two eyes look at the same objects, they will receive different images. The two spots will be farther apart for the left eye than for the right eye"
+
+"Confronted by two different images, the sense of sight faces a dilemma. The stimulus pattern recorded by the retinas is invariable, but here again the third dimension offers an avenue of freedom, which permits the fusion of the two flat images into one three-dimensional image. Thus once again, three-dimensionality is brought about by the tendency toward simplification and tension reduction"
 
 # Prerequisites
 
-- **Pictorial Space** — Binocular disparity is one depth cue among many; in pictorial representation it is unavailable, making it the principal distinction between depth in physical space and depth in pictures.
+- **Pictorial Space** — Pictorial spatial readings supply the vocabulary for this particular cue or convention.
 
 # Key Properties
 
-1. Requires two eyes — a purely binocular depth cue; monocular depth cues operate without it.
-2. Most effective at close distances (within a few meters); diminishes with distance as the disparity angle becomes negligible.
-3. Can operate on random-dot stereograms with no monocular cues at all (Bela Julesz's work, cited by Arnheim).
-4. In flat pictures, spatial and temporal parallax reveal the flatness — they are counter-depth cues, not depth cues.
-5. Only holography and stereoscopic displays fully implement binocular disparity.
-6. Can interact with monocular cues: binocular disparity can make figure-ground effects visible even when no contour distinguishes the areas (texture-based stereograms).
+1. Distinct eye views are needed for disparity-based stereo delivery.
+2. A fixed physical screen can deliver separated views using suitable optics or viewing arrangements.
+3. The sign and reference convention for disparity must be defined.
+4. A large unsigned disparity is not a universal nearer rule.
+5. Random-dot depth and eye-alternation demonstrations remain source reports.
 
 # Construction / Recognition
 
 ## To Construct/Create (for stereoscopic media):
-1. Render two slightly different views of the scene — one for the left eye, one for the right.
-2. The horizontal offset of each object corresponds to its intended depth: larger offset = closer to viewer.
-3. Objects at the "screen plane" have zero disparity; objects in front have opposite-direction disparity; objects behind have same-direction disparity.
+
+1. Specify left/right eye positions, fixation and projection model.
+2. Deliver the intended view to each eye with the actual display arrangement.
+3. Evaluate actual fusion, comfort and task performance separately; these checks are unrun here.
 
 ## To Identify/Recognise:
-1. In physical space: close one eye — if the apparent positions of nearby objects shift relative to distant ones when alternating eyes, that is the binocular disparity cue operating.
-2. In design: assess whether the output medium supports stereoscopic display (VR, 3D cinema, stereoscope).
+
+1. Distinguish single-view presentation from per-eye delivery.
+2. An eye-alternation demonstration can reveal relative angular changes, without measuring fusion.
+3. Name the fixation depth and signed convention before interpreting disparity.
 
 # Context & Application
 
-- **Typical contexts**: VR/AR experiences, 3D cinema, stereoscopic photography, autostereoscopic displays.
-- **Common applications**: VR headsets (HMDs) implement binocular disparity as their primary depth cue. Flat screen design cannot exploit this cue; all depth on flat screens is monocular.
+VR, stereoscopes, anaglyphs, 3D cinema and autostereoscopic displays provide delivery examples. There is no CSS feature status for binocular perception itself. CSS can participate in authoring content, but optics/delivery determine which eye receives it. Neither a flat substrate nor a VR label settles the actual percept.
 
 ## Cross-Domain Connections
 
-**Engineering → RIGOROUS**: VR headsets deliver separate left-eye and right-eye renders with precisely calculated disparity. The interocular distance (IPD) and the convergence angle encode the depth: larger disparity encodes proximity, smaller disparity encodes distance. This is a direct engineering implementation of the physiological mechanism Arnheim describes.
-
-**Mathematics → RIGOROUS**: Binocular disparity is geometrically the angular parallax between the two eyes' views: δ ≈ d × b / D² where d = object depth offset, b = interocular distance (~6.5cm), D = viewing distance. This trigonometric relationship is exact and forms the mathematical basis of all stereoscopic rendering.
+**Engineering → RIGOROUS**, limited to the defined delivery construction: separate specified views can be routed to separate eyes, without guaranteeing observer fusion. **Mathematics → RIGOROUS**, limited to a symmetric midline model: eye baseline b>0, axial target Z>0 and fixation Zf>0 give θ(Z)=2atan(b/(2Z)), signed disparity δ=θ(Z)−θ(Zf). For b=.065m, Zf=1m, Z=.5m gives +.0648402503rad; Z=2m gives −.0324799893rad. For small b/D and a small nearer offset d from fixation D, δ≈bd/D², with sign reversed for a farther offset. This is an approximation, not universal atan(d/D) or a model of all off-axis retinal disparities.
 
 # Examples
+
+Source-specific examples and quotations below are retained as reports with their original wording and locators. They are not independently checked historical, experimental or universal claims. Applied examples are qualified design proposals.
 
 **Example 1** (p. 484): "When the two eyes look at the same objects, they will receive different images. In the present case the two spots will be farther apart for the left eye than for the right eye." — Arnheim
 
@@ -106,39 +104,47 @@ Key limitation for pictorial/screen applications: binocular disparity cannot be 
 
 # Relationships
 
+These are scoped reading connections. Builds Upon supports understanding; Enables names a possible downstream use; Related is an association; Contrasts With names a comparison. They do not establish universal causes, subtypes or verified historical sequences. Ordinary downstream uses are not invented card identities.
+
 ## Builds Upon
-- **Pictorial Space** — Binocular disparity is one of the depth cue mechanisms; it is the dominant one in physical space but absent in flat pictures.
-- **Simplicity Principle** — Binocular fusion follows the same simplicity principle: combining disparate images into a single 3D percept is simpler than maintaining two conflicting flat images.
+
+- **Pictorial Space** — Compare single-view pictorial cues with per-eye image differences; no all-scene dominance follows.
+- **Simplicity Principle** — The represented simplicity explanation is not independently established physiology.
 
 ## Enables
-- **VR/Stereoscopic Design** — Binocular disparity is the primary depth cue exploited in VR.
-- **Stereoscopic Depth without Monocular Cues** — Random-dot stereograms demonstrate depth perception from disparity alone.
+
+- **VR/Stereoscopic Design** — Separate eye views supply a stereo-delivery construction; actual fusion and comfort remain untested.
+- **Stereoscopic Depth without Monocular Cues** — Julesz’s random-dot cases remain reported examples requiring original conditions.
 
 ## Related
-- **Motion Parallax** — The temporal analogue of binocular disparity: different images at different viewer positions.
-- **Monocular Depth Cues** — The complementary set of depth cues that work in flat pictures where binocular disparity is absent.
+
+- **Motion Parallax** — Motion parallax changes views over time; it is related, not identical, to eye-separated delivery.
+- **Monocular Depth Cues** — The local enumerated monocular family includes overlap, size, atmosphere, perspective, texture and deformation.
 
 ## Contrasts With
-- **Monocular Depth Cues** (overlap, size gradient, atmospheric perspective, linear perspective, texture gradient, deformation) — All operate without binocular information and are the only depth cues available in flat pictorial representation.
+
+- **Monocular Depth Cues** (overlap, size gradient, atmospheric perspective, linear perspective, texture gradient, deformation) — That family works without separated eye images; flat substrates can nevertheless deliver stereo using an appropriate arrangement.
 
 # Common Errors
 
-- **Error**: Assuming flat screen design can exploit binocular disparity.
-  **Correction**: Standard flat screens deliver the same image to both eyes. All depth on flat screens is monocular. Binocular disparity is only available in stereoscopic display systems.
+- **Error**: Assuming a flat screen cannot supply stereo, or that every stereo device guarantees depth comfort.
+  **Correction**: Inspect per-eye delivery and then the actual observer/device outcome.
 
-- **Error**: Treating VR depth perception as equivalent to pictorial depth.
-  **Correction**: VR exploits binocular disparity (plus motion parallax and accommodation), making it fundamentally more compelling than pictorial depth. The mechanisms are different in kind, not just degree.
+- **Error**: Treating VR as a guarantee of accommodation cues or stronger depth.
+  **Correction**: Identify what the particular display actually delivers; do not transfer the geometric construction to physiology.
 
 # Common Confusions
 
-- **Confusion**: Depth of field / blur in photography simulates binocular depth.
-  **Clarification**: Depth of field blur is a monocular cue (atmospheric perspective via focus gradient), not binocular. It works on flat screens precisely because it does not require two eyes.
+- **Confusion**: Blur or motion parallax is binocular disparity.
+  **Clarification**: Defocus and temporal viewpoint change are distinct; ordinary single-view pictorial cues do not require separated eye images.
 
 # Source Reference
 
 Chapter V: Space, "Art and Visual Perception," pp. 474–496 (Help From Physical Space section).
 
 # Verification Notes
+
+The bullets below are preserved historical extraction assertions, not current verification. Frozen confidence, cross-reference, source-reading and OCR claims do not settle original-dependent fidelity. Current same-context review supports only the explicitly scoped technical constructions, contextual teaching and local comparisons; it establishes no browser, observer, comfort or physiological result.
 
 - Definition source: Synthesised from discussion in Chapter V (Space), pp. 474–496
 - Confidence rationale: Medium — Arnheim discusses binocular disparity as part of a broader discussion of physiological depth cues; coverage is less extended than for pictorial depth cues

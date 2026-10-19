@@ -34,7 +34,6 @@ contrasts_with:
   - "isometric-perspective"
   - "flat-pictorial-space"
 answers_questions:
-  - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
 rosetta_stone:
@@ -42,79 +41,78 @@ rosetta_stone:
     domain: "mathematics"
     concept: "Projective geometry — vanishing points, cross-ratio, perspective transform"
     rating: "rigorous"
-    note: "Linear perspective is geometrically identical to a projective transformation: parallel lines map to convergent lines through a vanishing point, and the cross-ratio of four collinear points is preserved under projection."
+    note: "Rigorous for nondegenerate planar projective maps and defined direction families; general 3D projection is not invertible. Cross-ratios require four distinct collinear points and valid domains."
   -
     domain: "mathematics"
     concept: "Linear interpolation / perspective-correct interpolation"
     rating: "rigorous"
-    note: "Rendering linear perspective in 3D graphics requires perspective-correct interpolation (1/z interpolation), not linear interpolation, to avoid the 'swimming textures' artifact — a direct consequence of projective geometry."
+    note: "For screen barycentric λ and nonzero homogeneous w, affine-on-triangle attributes use q=(Σλq/w)/(Σλ/w), with nonzero denominator. This is not every CSS animation or arbitrary linear interpolation."
 css_implementation:
   -
     property: "perspective"
-    example: "perspective: 800px; /* sets viewing distance for CSS 3D transforms */"
+    example: "perspective: 800px; /* parent perspective on 3D-transformed children */"
     support: "baseline"
   -
     property: "transform: perspective()"
-    example: "transform: perspective(600px) rotateY(30deg);"
+    example: "transform: perspective(600px) rotateY(30deg); /* self transform arrangement */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Linear (central) perspective is the geometric system in which parallel lines converging toward one or more vanishing points on the horizon creates a compelling illusion of deep pictorial space. It is the most geometrically precise and historically dominant system of spatial representation in Western art.
+Central perspective maps scene points through a finite projection centre onto an image plane. Each direction family has its own vanishing behavior; appropriate horizontal families share a level horizon, while image-parallel directions have no finite vanishing point.
 
 # Core Definition
 
-Arnheim describes central perspective as emerging from two roots: (1) the internal pictorial need for spatial unity, and (2) the Renaissance demand for mechanically correct, objectively verifiable depictions of physical space. "Central perspective is at the same time by far the most realistic way of rendering optical space, and therefore should be expected to be not an esoteric refinement reserved to the happy few, but the method suggested most naturally to everyone by the evidence of visual experience" (p. 616).
+This presents the represented Arnheim account alongside current analytic qualifications. Original edition, pages, quotations, figures, experiments, physiology and historical claims remain unassessed; the technical constructions below do not certify source fidelity.
 
-The key principle is that parallel lines in three-dimensional space, when projected onto a picture plane, converge toward a common vanishing point on the horizon. This convergence produces a powerful size gradient and obliqueness gradient simultaneously, making linear perspective the most compelling monocular depth cue available in pictorial representation.
+Arnheim discusses pictorial integration, Renaissance representation and artists’ departures from strict construction. The Alberti visual-pyramid account places the eye at the ray apex; a direction-family vanishing point is an image location, not that eye. The pinhole model clarifies projection without establishing that every camera or lens implements an exact pinhole. One-point and two-point are special scene/view cases among the aliases. No current strongest-cue, once-in-history or universal cultural conclusion is inferred.
 
-The "visual pyramid" model (Alberti, 1435): light rays from every point of the object converge at the observer's eye. A perpendicular picture plane intersects this pyramid, producing the perspective projection. This is the theoretical basis of both central perspective and the photographic camera.
+Retained wording from the represented account (original fidelity unassessed):
 
-Arnheim importantly notes that linear perspective is "not a faithful projection" in practical use. Artists and architects systematically deviate from strict rules to avoid "unsightly distortions" — modifying convergences, keeping some elements frontal, adjusting the vanishing point location for compositional rather than geometric reasons.
+"Central perspective is at the same time by far the most realistic way of rendering optical space, and therefore should be expected to be not an esoteric refinement reserved to the happy few, but the method suggested most naturally to everyone by the evidence of visual experience"
 
 # Prerequisites
 
-- **Pictorial Space** — Linear perspective is the most powerful system for creating pictorial space.
-- **Size Gradient** — Linear perspective generates size gradients as a geometric consequence.
-- **Depth Gradient Principle** — Linear perspective is the most systematic application of the gradient principle.
+- **Pictorial Space** — Pictorial spatial readings supply the vocabulary for this particular cue or convention.
+- **Size Gradient** — Comparable-size assumptions and projected scale support this spatial comparison.
+- **Depth Gradient Principle** — Systematic image-quality changes supply a comparison framework, not a law that every cue is a gradient.
 
 # Key Properties
 
-1. Parallel lines in depth converge to a single vanishing point on the horizon.
-2. Objects diminish in size at a rate of 1/d (inverse of distance) — a geometric consequence of the projection.
-3. One-point perspective: one vanishing point; two-point: two; three-point: three (for oblique views of tall objects).
-4. Prescribes a "correct" viewpoint — the station point and viewing distance at which the image appears undistorted.
-5. In practice, artists deviate from strict rules to serve expression and composition.
-6. Creates pyramidal space (Arnheim's term) — a perceptual world in which size and distance are inverse-proportional.
-7. Historically unique: discovered only once in human history, in Renaissance Italy, unlike isometric perspective which is independently reinvented worldwide.
-8. Imparts a specific symbolic meaning: a world converging to a center, oriented toward an individual viewer.
+1. For camera coordinates (X,Y,Z), Z>0 and focal length f>0, x=fX/Z and y=fY/Z.
+2. A frontoparallel linear extent L at common Z projects to fL/Z.
+3. Direction families with nonzero camera-axis component have finite vanishing points under this model.
+4. Only suitable horizontal-world-plane families meet on the level horizon.
+5. Several direction-family vanishing points can be mutually consistent.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Establish a horizon line at eye level.
-2. All horizontal parallels going into depth converge to a single vanishing point (one-point) or two (two-point) on the horizon.
-3. Verticals remain vertical (in one- and two-point); converge to a third VP above/below in three-point.
-4. Apply size reduction at rate proportional to distance from station point (1/d).
+
+1. Specify camera, image plane and coordinate conventions.
+2. Group edges by 3D direction rather than sending all parallels to one point.
+3. Use the appropriate horizon for level horizontal directions.
+4. Apply depth scaling in camera-axis Z, not arbitrary Euclidean distance.
 
 ## To Identify/Recognise:
-1. Find parallel edges (floor, ceiling, table edges, walls) — do they converge?
-2. Locate the vanishing point where they converge — on the horizon line.
-3. Does the scene feel as if it "rushes" to or from the viewer? That is the pyramidal dynamic of central perspective.
+
+1. Identify candidate direction families and their projected convergence.
+2. Check whether each has a finite vanishing point and whether it is a horizontal family.
+3. Inspect size changes and geometry separately from symbolic emphasis.
+4. During an audit, check unintended spatial conflicts without requiring strict photographic realism.
 
 # Context & Application
 
-- **Typical contexts**: Architecture visualisation, illustration, game environments, photography (all cameras produce perspective), film cinematography, product rendering.
-- **Common applications**: Creating depth in UI backgrounds, environmental illustrations, map interfaces, 3D UI frameworks. CSS perspective and transform-style: preserve-3d implement literal perspective projection for UI elements.
+Illustration, architecture, spatial maps, games and CSS transformed scenes can use central perspective. A focal arrangement can contribute attention without deciding the full hierarchy. A local perspective audit cannot replace the complete ordered interface audit. Accurate, calm, flat and stylized imagery remain available according to the task.
 
 ## Cross-Domain Connections
 
-**Mathematics → RIGOROUS**: Linear perspective is a projective transformation. Vanishing points are the projective images of points at infinity. The cross-ratio of four collinear points is preserved under projection — this is the foundation of projective geometry and a fundamental mathematical invariant of perspective drawing.
-
-**Mathematics → RIGOROUS**: CSS perspective and 3D rendering use perspective-correct interpolation (interpolating in 1/z space) rather than linear interpolation. This directly implements the projective geometry of linear perspective. Naive linear interpolation in screen space produces incorrect, "swimming" effects.
+**Mathematics → RIGOROUS**, within stated domains: a central projection ℝ³→ℝ² loses depth. A nondegenerate mapping between planes can instead be a homography, preserving incidence and cross-ratio for four distinct collinear points where the map is defined; collapse and poles require care. **Mathematics → RIGOROUS**, for projected triangles and attributes affine on the original triangle: screen barycentric λi and nonzero homogeneous wi give q=(Σλiqi/wi)/(Σλi/wi), with nonzero denominator. This is perspective-correct attribute interpolation, not a claim that all CSS animation interpolates 1/Z. [CSS Transforms 2](https://www.w3.org/TR/css-transforms-2/#perspective-property) distinguishes parent perspective on 3D-transformed children from a self perspective() transform.
 
 # Examples
+
+Source-specific examples and quotations below are retained as reports with their original wording and locators. They are not independently checked historical, experimental or universal claims. Applied examples are qualified design proposals.
 
 **Example 1** (p. 612): "Central perspective is so violent and intricate a deformation of the normal shape of things that it came about only as the final result of prolonged exploration and in response to very particular cultural needs." — Arnheim
 
@@ -124,49 +122,57 @@ Arnheim importantly notes that linear perspective is "not a faithful projection"
 
 **Example 4** (p. 704): Henry Moore's Tube Shelter Perspective — "the objectively static theme of two rows of sleepers in an underground tube acquires through perspective contraction the dramatic impact appropriate to the representation of an air-raid shelter."
 
-**Example 5** (CSS): `perspective: 800px` sets a viewing distance and enables all child elements to be projected according to central perspective rules. This is the same Alberti visual pyramid model, implemented in CSS.
+**Example 5** (CSS): Parent perspective:800px supplies a shared perspective to 3D-transformed children, as distinct from each child’s own perspective() function. It does not give every untransformed child a new 3D arrangement.
 
 # Relationships
 
+These are scoped reading connections. Builds Upon supports understanding; Enables names a possible downstream use; Related is an association; Contrasts With names a comparison. They do not establish universal causes, subtypes or verified historical sequences. Ordinary downstream uses are not invented card identities.
+
 ## Builds Upon
-- **Size Gradient** — Linear perspective produces a size gradient as a geometric consequence; it is the geometrically precise version of the size gradient.
-- **Depth Gradient Principle** — Linear perspective is the most systematic application of gradients to depth.
-- **Isometric Perspective** — Linear perspective emerged historically from isometric perspective through the need for greater spatial integration.
+
+- **Size Gradient** — The pinhole model produces a size gradient along camera-axis Z.
+- **Depth Gradient Principle** — It supplies defined geometric changes to compare with gradient readings.
+- **Isometric Perspective** — The preserved extends connection elaborates the contrast of parallel and central systems, not a mathematical subtype or independently verified history.
 
 ## Enables
-- **Pyramidal Space** — The perceptual consequence of linear perspective — a world in which size and distance are inverse-proportional.
-- **Vanishing Point Symbolism** — The location and number of vanishing points carry compositional and symbolic meanings.
+
+- **Pyramidal Space** — Arnheim’s pyramidal reading is compared with the defined projection, without a perceptual metric theorem.
+- **Vanishing Point Symbolism** — Focal placement can carry intended or attributed meaning without a universal code.
 
 ## Related
-- **Size Gradient** — Linear perspective generates size gradients.
-- **Texture Gradient** — A checkerboard floor in perspective is simultaneously a texture gradient and a linear perspective demonstration.
-- **Atmospheric Perspective** — Typically combined with linear perspective in representational painting.
+
+- **Size Gradient** — Comparable frontoparallel extents obey fL/Z in the stated model.
+- **Texture Gradient** — A projected checkerboard can combine convergence and texture changes.
+- **Atmospheric Perspective** — Atmospheric effects can accompany geometry but require distinct medium assumptions.
 
 ## Contrasts With
-- **Isometric Perspective** — Isometric keeps parallel lines parallel; linear perspective makes them converge. Isometric describes a segment of an endless world; linear perspective describes a pyramidal, centered world with a viewpoint.
-- **Flat Pictorial Space** — Denies spatial depth; linear perspective maximises it.
+
+- **Isometric Perspective** — Parallel and central projections preserve different relations and have different scale behavior.
+- **Flat Pictorial Space** — Flat/composite conventions can preserve selected information without maximizing or eliminating depth.
 
 # Common Errors
 
-- **Error**: Applying perspective mechanically without adjustment.
-  **Correction**: Arnheim documents extensively that artists systematically deviate from strict geometric perspective rules to avoid distortions and serve compositional needs. Strict mechanical perspective often looks wrong.
+- **Error**: Sending all parallel lines to one horizon point or using 1/d for arbitrary radial distance.
+  **Correction**: Specify direction families and axial Z.
 
-- **Error**: Equating perspective with "realistic" or "correct" representation.
-  **Correction**: Perspective is one spatial system among several (isometric, Egyptian/frontal). Each has different perceptual properties and different symbolic/expressive meanings. Central perspective implies a viewer-centered world with a focal hierarchy — a culturally specific convention, not a universal truth.
+- **Error**: Treating strict perspective as the only correct representation.
+  **Correction**: Choose it, a parallel view, flat/composite aspects or deliberate departures for the actual information and expression.
 
 # Common Confusions
 
-- **Confusion**: Central perspective is the most natural or universal system for depicting space.
-  **Clarification**: Arnheim shows it is the most historically unusual — discovered only once in human history. Isometric perspective is far more universal, appearing spontaneously worldwide. Central perspective is culturally specific and requires deliberate learning.
+- **Confusion**: The vanishing point is the eye or where space ends.
+  **Clarification**: It is the image of a direction at infinity; the eye is the finite projection centre.
 
-- **Confusion**: The vanishing point is where space ends.
-  **Clarification**: The vanishing point represents infinity — the place where parallel lines "meet" at an infinitely far distance. It simultaneously represents the closest-to-viewer point (apex of the observer's visual pyramid) and infinity in the pictorial world.
+- **Confusion**: Multiple vanishing points prove ambiguity.
+  **Clarification**: Different direction families normally have different points. Historical discovery and symbolism remain attributed source interpretations.
 
 # Source Reference
 
 Chapter V: Space, "Art and Visual Perception," pp. 590–765 (Toward a Convergence of Space, The Two Roots of Central Perspective, Not a Faithful Projection, Pyramidal Space, The Symbolism of a Focused World, Centrality and Infinity).
 
 # Verification Notes
+
+The bullets below are preserved historical extraction assertions, not current verification. Frozen confidence, cross-reference, source-reading and OCR claims do not settle original-dependent fidelity. Current same-context review supports only the explicitly scoped technical constructions, contextual teaching and local comparisons; it establishes no browser, observer, comfort or physiological result.
 
 - Definition source: Synthesised from extensive discussion in Chapter V, pp. 590–765; multiple direct quotations
 - Confidence rationale: High — linear perspective is one of the most extensively and precisely discussed topics in the chapter

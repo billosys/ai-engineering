@@ -24,7 +24,7 @@ prerequisites:
 extends: []
 related:
   - "depth-levels"
-  - "transparency-perceptual"
+  - "perceptual-transparency"
   - "size-gradient"
 contrasts_with:
   - "size-gradient"
@@ -37,67 +37,73 @@ rosetta_stone:
   -
     domain: "engineering"
     concept: "z-index / CSS stacking context"
-    rating: "rigorous"
-    note: "Overlap is the perceptual mechanism that z-index exploits: the element with higher z-index visually occludes elements below, establishing the 'in front of' relationship."
+    rating: "structural"
+    note: "Paint order can yield occlusion only with intersecting painted geometry and appropriate alpha in comparable contexts. It supplies no global distance or semantic priority."
 css_implementation:
   -
     property: "z-index"
-    example: "z-index: 2; /* overlaps z-index: 1 elements */"
+    example: "position: relative; z-index: 2; /* eligible paint order in relevant context */"
     support: "baseline"
   -
     property: "position"
-    example: "position: absolute; /* enables z-index-based overlap */"
+    example: "position: absolute; /* layout choice; painted intersection/alpha determine hiding */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Overlap (occlusion) is a depth cue in which one object appears to lie in front of another because its contour interrupts and hides part of the second object. The interrupted object is perceived as complete and continuing behind the occluding one.
+Occluding overlap can cue depth when one visible boundary interrupts another form and that form is read as continuing behind it. Paint order, actual occlusion and perceived depth are separate conditions.
 
 # Core Definition
 
-Arnheim explains overlap as arising from the perceptual drive toward simplicity. When one shape interrupts the contour of another, the incomplete shape appears to continue behind the occluding element — because completing the shape produces a structurally simpler percept than accepting an irregular fragment. "When one of the components actually cuts off a part of the other, the perceptual urge to see a superposition becomes compelling because it serves to complete the incomplete shape" (p. 280).
+This presents the represented Arnheim account alongside current analytic qualifications. Original edition, pages, quotations, figures, experiments, physiology and historical claims remain unassessed; the technical constructions below do not certify source fidelity.
 
-The mechanism depends on the principle of good continuation and closure: the occluded shape is seen as the simplest complete form of which the visible fragment is a projection. The occluding element claims the shared boundary; the occluded element is left without a border at the intersection and is therefore seen as continuing behind.
+Arnheim explains superposition through a preference for complete regular forms over irregular fragments. Good continuation can guide a hidden-contour reading; amodal completion behind an occluder is related to, but not identical with, visible closure of a gap. Helmholtz’s uninterrupted-contour heuristic is reported here with the surrounding global-structure qualification. The Philostratus and Kopfermann cases remain source reports, not proof that overlap always dominates physical depth, other cues or attention.
 
-Helmholtz's rule (cited by Arnheim): the object whose contour continues uninterrupted at the intersection is perceived as lying in front. This is a useful heuristic but the overall structural simplicity of the shapes determines the outcome.
+Retained wording from the represented account (original fidelity unassessed):
+
+"When one of the components actually cuts off a part of the other, the perceptual urge to see a superposition becomes compelling because it serves to complete the incomplete shape"
 
 # Prerequisites
 
-- **Figure-Ground** — The occluding element acts as figure; the occluded element's ground-like continuation behind it is the mechanism of perceived depth.
-- **Pictorial Space** — Overlap is one of the primary constructors of pictorial space.
+- **Figure-Ground** — Contour ownership and region separation supply the comparison used here.
+- **Pictorial Space** — Pictorial spatial readings supply the vocabulary for this particular cue or convention.
 
 # Key Properties
 
-1. The occluding element claims the shared contour; the occluded element is borderless at the junction and is perceived as complete-but-hidden.
-2. The depth cue derives from simplicity: the visual system chooses the interpretation (superposition) that yields the most regular, complete shapes.
-3. Overlap is the simplest and most unambiguous depth cue — it works without size variation, perspective, or atmospheric effects.
-4. It creates visual tension: the occluded shape "strives" to free itself from the interference with its completeness. This tension is a source of visual dynamics.
-5. The perceptual effect of overlap can override actual physical depth: Kopfermann's experiment showed overlap perception dominating even when physical distances contradicted it.
+1. Opaque painted overlap can hide part of a rear form.
+2. A visible contour interruption can support completion behind it without determining unique hidden geometry.
+3. Transparency can retain information from both regions.
+4. A shadow can suggest layering without being the object’s literal occlusion of another contour.
+5. No universal cue-strength, calmness or intensity ranking is established.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Position element A so its boundary interrupts the contour of element B.
-2. Ensure A's contour continues smoothly at the intersection (no break).
-3. The element with the simpler, more complete shape will typically be perceived as in front.
-4. Use overlap to sequence elements in depth without perspective: overlapping series (A over B over C) create a depth chain.
+
+1. If opaque depth order helps, position one painted region across another.
+2. Check contour interruption and whether the hidden content remains understandable.
+3. Compare separation, transparency and overlap for the supplied task.
+4. Use semantics and states to establish interaction rather than assuming a foreground object is clickable.
 
 ## To Identify/Recognise:
-1. Find points where contours meet and one line stops while the other continues.
-2. The element with the continuing contour is perceptually in front.
-3. If both contours are interrupted at the junction (mutual overlap), ambiguity or tension results.
+
+1. Locate contour junctions and interruptions.
+2. Distinguish rendered masking from the inferred complete form.
+3. Inspect alpha and context where the boundary is weak.
+4. During an audit, compare intended order, hidden content and actual overlay states.
 
 # Context & Application
 
-- **Typical contexts**: UI layering (cards, modals, tooltips, floating elements), illustration, data visualisation (overlapping bars, scatter plots), poster design, icon design.
-- **Common applications**: Drop shadows simulate overlap by implying that an element is above its background. Modal dialogs overlap the underlying content. Navigation menus overlap page content. In data viz, overlapping elements signal the same spatial region being claimed by multiple data points.
+Cards, modals, menus, illustrations and charts can use overlap. A FAB may occlude list content and suggest a separate layer, but the button still needs an appropriate role, label, focus behavior and placement that preserves the task. Overlap can be calm or energetic; it is not forbidden in data tables.
 
 ## Cross-Domain Connections
 
-**Engineering → RIGOROUS**: CSS z-index and stacking contexts directly implement overlap. When two positioned elements occupy the same screen coordinates, the one with higher z-index occludes the other — precisely the perceptual mechanism Arnheim describes. Box-shadow is a visual cue that implies overlap (the casting element is above the receiving surface).
+**Engineering → STRUCTURAL**: z-index orders eligible boxes within relevant stacking contexts. Contexts are atomic groups, so a child at 999 in a lower parent cannot outrank a higher sibling context at 2. Occlusion also needs intersecting painted geometry and appropriate alpha. Position:absolute is one arrangement, not the sole way to overlap. Shadows are optional cues, not physical distance or priority.
 
 # Examples
+
+Source-specific examples and quotations below are retained as reports with their original wording and locators. They are not independently checked historical, experimental or universal claims. Applied examples are qualified design proposals.
 
 **Example 1** (p. 280): "When one of the components actually cuts off a part of the other, the perceptual urge to see a superposition becomes compelling because it serves to complete the incomplete shape." — Arnheim
 
@@ -105,48 +111,56 @@ Helmholtz's rule (cited by Arnheim): the object whose contour continues uninterr
 
 **Example 3** (p. 316): Kopfermann's experiment: a larger triangle seen overlapping a smaller one in a composite view even when physically the smaller is in front, demonstrating that overlap perception can override physical reality.
 
-**Example 4** (UI): A floating action button in a mobile app overlaps the list below it. The overlap tells users the FAB is a separate, elevated interactive layer.
+**Example 4** (UI): A floating action button can visibly hide part of a list. This suggests separation only in context and does not supply its label, semantics, focus behavior or task priority.
 
 # Relationships
 
+These are scoped reading connections. Builds Upon supports understanding; Enables names a possible downstream use; Related is an association; Contrasts With names a comparison. They do not establish universal causes, subtypes or verified historical sequences. Ordinary downstream uses are not invented card identities.
+
 ## Builds Upon
-- **Figure-Ground** — Overlap depends on the ability of one surface to claim a contour while another is left borderless.
-- **Simplicity Principle (Gestalt)** — The visual system chooses the simplest interpretation: complete shapes in superposition over irregular fragments in the same plane.
+
+- **Figure-Ground** — An occluding surface can claim a contour while another is read as continuing behind.
+- **Simplicity Principle (Gestalt)** — Good continuation and simplicity can favor a hidden-form candidate; amodal completion is not identical with visible closure.
 
 ## Enables
-- **Depth Levels** — Overlap is the primary mechanism for creating chains of depth levels.
-- **Perceptual Transparency** — A special case of overlap where the occluded surface remains visible through the occluding one.
-- **Visual Tension** — The striving of the occluded shape for completeness generates perceptual dynamics.
+
+- **Depth Levels** — Occlusion can organize several front/behind relations.
+- **Perceptual Transparency** — A visible-through layer is an overlapping case with different visibility.
+- **Visual Tension** — The represented account uses tension expressively; overlap need not always intensify it.
 
 ## Related
-- **Size Gradient** — Often accompanies overlap to reinforce spatial ordering.
-- **Depth Levels** — Overlap is how multiple depth levels are constructed.
+
+- **Size Gradient** — Scale and occlusion can be compared or combined under scene assumptions.
+- **Depth Levels** — Occluding relations can contribute a multilevel depth reading.
 
 ## Contrasts With
-- **Size Gradient** — Size gradient works through scaling, overlap works through interruption; they are independent depth cues that typically reinforce each other.
-- **Atmospheric Perspective** — Works through degradation of clarity, not occlusion.
+
+- **Size Gradient** — Scaling and contour interruption are different observations; conditional independence is not implied.
+- **Atmospheric Perspective** — Haze/contrast change differs from contour interruption, although they can co-occur.
 
 # Common Errors
 
-- **Error**: Assuming that the physically closer element will always appear in front visually.
-  **Correction**: Perceptual overlap is determined by contour continuity and shape simplicity, not physical distance. Arnheim's Kopfermann example shows physical distance can be overruled.
+- **Error**: Equating a physically nearer or higher-z element with guaranteed perceived frontness.
+  **Correction**: Check actual painted overlap, context and reading. The Kopfermann report illustrates a particular conflict.
 
-- **Error**: Ignoring the visual tension generated by overlap when designing layouts.
-  **Correction**: Overlapping elements create dynamic tension. When tension is undesirable (calm layouts, data tables), avoid overlap. When energy and depth are desired, use overlap deliberately.
+- **Error**: Assuming overlap always creates unwanted tension.
+  **Correction**: Judge the actual composition and task.
 
 # Common Confusions
 
-- **Confusion**: Overlap and z-index are the same concept.
-  **Clarification**: z-index controls rendering order but does not by itself create the perceptual depth cue. The visual experience of depth from overlap requires the occluding element to visibly interrupt the contour of the occluded one.
+- **Confusion**: Overlap is the same as z-index.
+  **Clarification**: Paint order can produce visible interruption; perceived occlusion needs the relevant geometry and context.
 
-- **Confusion**: Any element placed on top of another creates overlap depth.
-  **Clarification**: Only when the top element visibly interrupts the contour of the bottom element does the depth cue operate. If both elements are fully visible with no boundary interruption (e.g., a transparent overlay), other depth cues (transparency, shadow) must carry the depth information.
+- **Confusion**: Completion means visible closure.
+  **Clarification**: Continuing a hidden contour is an amodal reading; filling a visible gap and reading a closed outline are related but distinct.
 
 # Source Reference
 
 Chapter V: Space, "Art and Visual Perception," pp. 278–316 (Depth by Overlapping section).
 
 # Verification Notes
+
+The bullets below are preserved historical extraction assertions, not current verification. Frozen confidence, cross-reference, source-reading and OCR claims do not settle original-dependent fidelity. Current same-context review supports only the explicitly scoped technical constructions, contextual teaching and local comparisons; it establishes no browser, observer, comfort or physiological result.
 
 - Definition source: Synthesised from Arnheim's detailed discussion of overlap, pp. 278–316; Helmholtz rule quoted directly
 - Confidence rationale: Arnheim's treatment is precise and extensively illustrated with figures and experiments

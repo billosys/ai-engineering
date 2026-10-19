@@ -31,80 +31,75 @@ contrasts_with: []
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
-  - "An admin panel organises its UI by database tables — Users page, Orders page, Products page, each showing all columns in a table. Users complain they can't get their work done efficiently. Diagnose the fundamental mistake and propose the restructuring principle."
 rosetta_stone:
   -
     domain: "music"
-    concept: "Tonic-centered vs. modal harmony — implied focal hierarchy"
+    concept: "Center-directed musical and visual organization (scoped analogy)"
     rating: "structural"
-    note: "Central perspective's converging focal point is analogous to tonic-centered harmony — all musical material implies a hierarchical return to the tonic, as all perspective lines return to the vanishing point. Isometric perspective corresponds to modal or non-functional harmony — no single pitch hierarchy, all directions equal."
-css_implementation:
-  -
-    property: "N/A — symbolic/expressive card"
-    example: "/* Choose between perspective (viewer-centered, hierarchical) and isometric (neutral, panoramic) for UI spatial system */"
-    support: "baseline"
+    note: "A chosen tonic-directed phrase and center-directed image share an organizational analogy. Modal music can have a centre and hierarchy; several direction-family points can be geometrically consistent. No universal symbolic equivalence follows."
+css_implementation: []
 ---
 
 # Quick Definition
 
-The choice of spatial system in a visual composition carries symbolic and expressive meaning: central perspective implies a viewer-centered, hierarchically focused world; isometric perspective implies a neutral, centerless, self-contained world; and the placement of vanishing points encodes relationships between authority, individuality, and order.
+Arnheim interprets spatial systems and focal placements expressively: a centered perspective, panoramic parallel view or frontal composition can suggest different relations to a viewer. These are contextual readings, not universal cultural codes.
 
 # Core Definition
 
-Arnheim develops the symbolic meanings of spatial systems in depth, arguing that the geometric properties of each system are inseparable from their expressive character.
+This presents the represented Arnheim account alongside current analytic qualifications. Original edition, pages, quotations, figures, experiments, physiology and historical claims remain unassessed; the technical constructions below do not certify source fidelity.
 
-**Central perspective — symbolism**: "Central perspective... acknowledges the viewer... Its principal structural lines are a system of beams that issue from a focus within the picture space and deny the existence of the frontal plane as they rush forward and break through it" (p. 723). The perspective funnel "opens like a flower toward the observer" — the world is presented to the viewer, focused for their eye. This implies a humanist-individualist world view: reality is constituted by the viewpoint of an observer.
+The represented source connects a focused world with hierarchy, contrasts centered and eccentric organizations, and discusses Chinese/Japanese landscapes and the flat Egyptian method. Preserve that historical account without turning Western individualism, Eastern philosophy or a viewer’s response into a geometric law. Leonardo’s centered Last Supper and Tintoretto’s eccentric one are concrete compositional interpretations; Canaletto’s outside-frame focus supplies another. Palladio’s maestà e grandezza remains a represented label for the intended grandeur of the centered example, not an audience guarantee. Several vanishing points belonging to different direction families do not by themselves imply relativism or fragmentation.
 
-The vanishing point location carries further meaning:
-- **Central vanishing point** (Leonardo's Last Supper): hierarchical unity — the world converges to a single authority. Palladio's term: maestà e grandezza.
-- **Eccentric vanishing point**: tension between individual agency and governing law; dramatic conflict.
-- **Outside-frame vanishing point** (Canaletto): the world continues beyond the viewer; accidental frame cutting.
+Retained wording from the represented account (original fidelity unassessed):
 
-**Isometric perspective — symbolism**: "Symbolically, such a centered world suits a hierarchical conception of human existence. It would hardly fit the Taoist or Zen philosophies of the East, which express themselves in the centerless continuum of the Chinese and Japanese landscapes shaped by isometric perspective" (p. 733). Isometric implies: the world exists independently of the viewer; there is no privileged viewpoint; space continues endlessly in all directions; the observer is not positioned as the focal point.
+"Central perspective... acknowledges the viewer... Its principal structural lines are a system of beams that issue from a focus within the picture space and deny the existence of the frontal plane as they rush forward and break through it"
 
-**Flat/Egyptian method**: "makes the picture face the viewer like a flat wall, generously exposing all its content to his exploration but at the same time excluding him. It is a self-contained, closed world" (p. 721).
+"opens like a flower toward the observer"
+
+"Symbolically, such a centered world suits a hierarchical conception of human existence. It would hardly fit the Taoist or Zen philosophies of the East, which express themselves in the centerless continuum of the Chinese and Japanese landscapes shaped by isometric perspective"
+
+"makes the picture face the viewer like a flat wall, generously exposing all its content to his exploration but at the same time excluding him. It is a self-contained, closed world"
 
 # Prerequisites
 
-- **Linear Perspective** — Understanding the geometry of central perspective.
-- **Isometric Perspective** — Understanding the properties of parallel projection.
-- **Pictorial Space** — The symbolic meanings derive from the perceptual properties of each spatial system.
+- **Linear Perspective** — The defined central projection supplies camera-axis scale and direction-family convergence.
+- **Isometric Perspective** — Parallel/oblique and strict equal-axis constructions provide a comparison with central projection.
+- **Pictorial Space** — Pictorial spatial readings supply the vocabulary for this particular cue or convention.
 
 # Key Properties
 
-1. Central perspective: viewer-centered, hierarchical, focused, individual viewpoint, implies a world that converges to a center.
-2. Isometric perspective: centerless, panoramic, self-contained, viewer-independent, implies a world that exists independently of any observer.
-3. Flat/Egyptian: wall-like, self-contained, excludes the viewer while exposing content.
-4. Vanishing point position encodes hierarchy: central = absolute authority; eccentric = tension between individual and governing order; multiple = relativism.
-5. Cultural correlates: Western individualism → central perspective; Eastern collectivism/Zen → isometric; medieval absolutism → hierarchical flat arrangement.
+1. Geometric focus and semantic authority are different.
+2. Focal placement can contribute to attention with other composition cues.
+3. Intent and actual audience interpretation require separate evidence.
+4. Panoramic parallel views can still have strong compositional centres.
+5. A flat treatment can be expressive, useful and accessible without a symbolic guarantee.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Choose spatial system based on intended expression:
-   - Central perspective: dramatism, individualism, viewer engagement, hierarchy.
-   - Isometric: neutrality, systematic overview, equality of viewpoints, engineering clarity.
-   - Flat: directness, accessibility, democratic presentation, modernist flatness.
-2. For central perspective: choose vanishing point position deliberately:
-   - Centre of frame = maximum stability, authority, grandeur.
-   - Off-centre = dynamic tension, conflict between individual and order.
-   - Outside frame = expansiveness, ongoing world beyond the frame.
+
+1. Start from the supplied identity, content and desired expression.
+2. Compare centered, eccentric, panoramic or flat arrangements for that brief.
+3. Describe an intended reading as a proposal, not a universal meaning.
+4. Preserve deliberate ambiguity when useful.
 
 ## To Identify/Recognise:
-1. Identify the spatial system (parallel vs. convergent lines).
-2. For central perspective: locate the vanishing point — central, eccentric, or outside frame?
-3. Assess the symbolic register: does the composition feel hierarchical (centred) or tension-filled (eccentric)?
+
+1. Identify the spatial construction and compositional focal elements separately.
+2. Locate vanishing points by direction family.
+3. In an audit, compare intended expression with visible composition and actual audience/task evidence where available.
 
 # Context & Application
 
-- **Typical contexts**: Brand visual identity, illustration direction, app UI spatial language, editorial design, architectural visualisation.
-- **Common applications**: A banking app might use isometric perspective for its product illustrations (systematic, neutral, tool-like) while using a centred, symmetrical hierarchy in its UI composition (trustworthy, stable, authority). An editorial illustration contrasting individual resistance to authority might use an eccentric vanishing point to create tension. A product showcase might use isometric views to convey systematic completeness and engineering precision.
+Identity imagery, editorial illustration, product views and interface composition can use these comparisons. A banking product illustration could propose a systematic overview, but an isometric view does not prove neutrality or trust. This card contributes focal emphasis to hierarchy and an intentional-expression comparison to audit; it does not diagnose a database-led admin workflow or supply the full ordered audit. The subject has no CSS feature compatibility record.
 
 ## Cross-Domain Connections
 
-**Music → STRUCTURAL**: Tonal (functional) harmony has a single tonic as gravity center — all chords imply movement toward or away from the tonic. This is analogous to central perspective's single vanishing point. Modal or atonal music has no single hierarchy — analogous to isometric perspective's centerless, equally-weighted directions. The composer's choice of tonal system is symbolically equivalent to the artist's choice of spatial system.
+**Music → STRUCTURAL**: A chosen tonic-directed phrase and a chosen center-directed image can both organize expectation around a centre. Modal music can have a strong centre and hierarchy, and tonal music need not make every event a simple return. A central projection can have several direction-family points. This is a scoped compositional analogy, not symbolic equivalence or an all-music/visual law.
 
 # Examples
+
+Source-specific examples and quotations below are retained as reports with their original wording and locators. They are not independently checked historical, experimental or universal claims. Applied examples are qualified design proposals.
 
 **Example 1** (p. 723): "With central perspective, the relation to the viewer changes. Its principal structural lines are a system of beams that issue from a focus within the picture space and deny the existence of the frontal plane as they rush forward and break through it." — Arnheim
 
@@ -118,36 +113,44 @@ The vanishing point location carries further meaning:
 
 # Relationships
 
+These are scoped reading connections. Builds Upon supports understanding; Enables names a possible downstream use; Related is an association; Contrasts With names a comparison. They do not establish universal causes, subtypes or verified historical sequences. Ordinary downstream uses are not invented card identities.
+
 ## Builds Upon
-- **Linear Perspective** — The spatial properties that carry the symbolic content.
-- **Isometric Perspective** — The contrasting spatial system with its own symbolic register.
+
+- **Linear Perspective** — Central geometry supplies one configuration for an expressive reading.
+- **Isometric Perspective** — Parallel views supply a comparison, without universal neutrality.
 
 ## Enables
-- **Compositional Intention** — Understanding spatial symbolism allows designers to choose spatial systems deliberately.
-- **Brand Spatial Language** — The spatial system of illustrations and compositions is part of brand voice.
+
+- **Compositional Intention** — Spatial choices can be made for an explicit intended expression.
+- **Brand Spatial Language** — The supplied identity and audience govern a proposed spatial voice.
 
 ## Related
-- **Spatial Ambiguity/Paradox** — Deliberate mixing of spatial systems (de Chirico) is a symbolic statement about fragmented modern reality.
-- **Pyramidal Space** — The perceptual structure that carries the central perspective's symbolic weight.
+
+- **Spatial Ambiguity/Paradox** — De Chirico’s deliberate conflict is a represented reading, not every mixture’s universal symbolic meaning.
+- **Pyramidal Space** — Arnheim’s contracting-space account is one context for his symbolic interpretation.
 
 ## Contrasts With
-- Nothing specific — this card discusses the contrasts between systems.
+
+- No named contrast — The systems are compared within this card; no extra typed contrast is recorded.
 
 # Common Errors
 
-- **Error**: Choosing a spatial system for illustration style based on trend rather than meaning.
-  **Correction**: The spatial system is a meaning-carrying choice. Isometric product illustrations in a banking app imply systematic, engineering-level precision. Central perspective illustrations imply a human, viewer-centered experience. The choice should align with brand intent.
+- **Error**: Selecting a spatial style solely because a universal meaning is alleged.
+  **Correction**: Compare it with the brief and actual content; state symbolic readings as intended or attributed, with audience evidence separate.
 
 # Common Confusions
 
-- **Confusion**: Perspective is "realistic" and therefore neutral or value-free.
-  **Clarification**: Arnheim explicitly argues that central perspective is a culturally specific, symbolically loaded spatial system — not a neutral or universal "correct" representation. The Renaissance invention of central perspective was inseparable from specific cultural values (individualism, scientific objectivity).
+- **Confusion**: Projection geometry dictates culture or audience meaning.
+  **Clarification**: Arnheim’s interpretations provide a historical expressive lens. Geometric centre, intended authority and actual reading are distinct.
 
 # Source Reference
 
 Chapter V: Space, "Art and Visual Perception," pp. 719–764 (The Symbolism of a Focused World; Centrality and Infinity).
 
 # Verification Notes
+
+The bullets below are preserved historical extraction assertions, not current verification. Frozen confidence, cross-reference, source-reading and OCR claims do not settle original-dependent fidelity. Current same-context review supports only the explicitly scoped technical constructions, contextual teaching and local comparisons; it establishes no browser, observer, comfort or physiological result.
 
 - Definition source: Synthesised from Arnheim's detailed discussion, pp. 719–764; key quotes cited
 - Confidence rationale: High — Arnheim develops the symbolic interpretation explicitly and at length

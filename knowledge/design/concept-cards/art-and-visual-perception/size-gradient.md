@@ -29,83 +29,86 @@ related:
 contrasts_with:
   - "overlap-depth-cue"
 answers_questions:
-  - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "How does Stevens's Power Law (ψ = k × Iⁿ) with its compressive exponent for visual area (n ≈ 0.7) explain why perceived size doesn't scale linearly — and what does this imply for icon sizing, spacing scales, and data visualisation?"
 rosetta_stone:
   -
     domain: "mathematics"
-    concept: "Power laws (Stevens: ψ = k × Iⁿ, n ≈ 0.7 for visual area)"
-    rating: "rigorous"
-    note: "Perceived size does not scale linearly with physical size; the size-gradient-to-depth mapping is non-linear, meaning equal physical size reductions do not produce equal perceived depth steps."
+    concept: "Fitted psychophysical magnitude models — area versus length/depth"
+    rating: "structural"
+    note: "A chosen ψ=kI^.7 example gives a response ratio 2^.7≈1.6245 for doubling I. No fitted observer or transfer to font length, spacing or depth is supplied."
   -
     domain: "mathematics"
     concept: "Projective geometry — projective scaling"
     rating: "rigorous"
-    note: "In central perspective, size diminishes according to 1/d (inverse distance law from projective geometry), making the size gradient a precise geometric consequence of the viewing pyramid."
+    note: "For common axial Z>0 and frontoparallel extent L, image length is fL/Z; a planar frontoparallel area A scales as f²A/Z². Arbitrary radial distance or tilt changes the assumptions."
 css_implementation:
   -
     property: "transform: scale()"
-    example: "transform: scale(0.8); /* suggests recession */"
+    example: "transform: scale(.8); /* scales geometry; may suggest recession in context */"
     support: "baseline"
   -
     property: "font-size"
-    example: "font-size: clamp(0.75rem, 2vw, 1rem); /* size hierarchy implies depth/distance */"
+    example: "font-size: clamp(.75rem, 2vw, 1rem); /* illustrative size range; inspect text enlargement and actual hierarchy */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-The size gradient is a monocular depth cue in which objects of equal physical size appear smaller as they recede in depth. The systematic decrease in apparent size with distance signals spatial recession and creates the perception of depth.
+A decrease in projected sizes of comparable objects can support recession in depth. Size variation can also encode importance, category or measured data; the context determines whether it suggests distance.
 
 # Core Definition
 
-Arnheim explains size gradient as a special case of the general principle that gradients create depth. "The size gradient is one of the early devices to represent depth in pictures. Children soon learn that when figures are made larger they look closer" (p. 564).
+This presents the represented Arnheim account alongside current analytic qualifications. Original edition, pages, quotations, figures, experiments, physiology and historical claims remain unassessed; the technical constructions below do not certify source fidelity.
 
-The mechanism operates through the simplicity principle: the visual system interprets a gradient of diminishing sizes as a set of equal-sized objects receding into depth, because this interpretation is structurally simpler than perceiving a chaotic array of different-sized objects at the same distance.
+Arnheim’s Seurat figures, cardboard-square sequence and Van Gogh chairs illustrate size and location used for depth. Regularity may clarify the represented interpretation, but irregular real scenes and deliberately varied designs remain valid. Constancy, projected size and magnitude judgments are separate. The general claim that size and distance are strictly correlated in every percept is not established by an Emmert-law label.
 
-Arnheim emphasises the critical role of regularity: "The more regular the gradient, the stronger its effect" (p. 556). Irregular size variation disrupts the gradient and weakens or destroys the depth cue because the visual system cannot determine whether size differences reflect distance or actual differences in object size.
+Retained wording from the represented account (original fidelity unassessed):
 
-"Gradients create depth because they give unequal things a chance to look equal" (p. 566) — objects that are physically different sizes look equal when depth is perceived, which is the simpler percept.
+"The size gradient is one of the early devices to represent depth in pictures. Children soon learn that when figures are made larger they look closer"
+
+"The more regular the gradient, the stronger its effect"
+
+"Gradients create depth because they give unequal things a chance to look equal"
 
 # Prerequisites
 
-- **Pictorial Space** — The size gradient is one of the core mechanisms that constructs pictorial space.
+- **Pictorial Space** — Pictorial spatial readings supply the vocabulary for this particular cue or convention.
 
 # Key Properties
 
-1. Regular, monotone size decrease is the essential condition for the depth cue to function.
-2. Irregular size variation weakens or destroys the gradient's depth-creating power.
-3. The steepness of the gradient determines perceived depth range: steeper gradients produce deeper-looking space.
-4. A size gradient combined with a height gradient (position higher in the picture plane) strongly reinforces the depth effect.
-5. Size gradient is the foundational mechanism of linear perspective: convergence in perspective is the consequence of size diminishment along the depth dimension.
-6. Size and distance are strictly correlated in perception (Emmert's Law): an element seen as farther will be perceived as larger even if physically the same size.
+1. Comparable physical sizes are an assumption behind size-based depth inference.
+2. A regular sequence does not guarantee a depth percept.
+3. Camera-axis depth determines pinhole scale under the stated model.
+4. Linear length and area scale differently.
+5. Typography size can organize hierarchy without representing physical depth.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Establish a sequence of identical or similar elements across the composition.
-2. Systematically reduce their apparent size from foreground to background.
-3. Ensure the reduction is regular and monotone — any irregularity will weaken the depth effect.
-4. Combine with a height gradient (lower in picture = closer) and overlap for maximum depth effect.
+
+1. Decide whether size represents distance, importance or quantitative data.
+2. For a spatial illustration, use comparable objects and stated projection assumptions.
+3. Inspect actual hierarchy and legibility rather than requiring a regular modular scale.
+4. Preserve measured chart quantities without arbitrary perceptual compensation.
 
 ## To Identify/Recognise:
-1. Find repeated similar elements that decrease in size across the composition.
-2. Check if the decrease is regular (implies space) or irregular (implies actual size differences).
-3. Note whether other depth cues (height in plane, overlap) reinforce the size gradient.
+
+1. Identify what varies: projected length, area, font size or data value.
+2. Check the comparability and scene assumptions.
+3. Compare scale with other cues without requiring a fixed cue bundle.
 
 # Context & Application
 
-- **Typical contexts**: Illustration, photography, data visualisation, UI hierarchy, typography scales.
-- **Common applications**: Representing spatial recession in illustrations; visual hierarchy in UI (larger elements appear more important/foreground); typographic hierarchy (display > heading > body > caption); icon sizing in a system; chart scales in data viz.
+Type scales, icons, charts and illustrations use size for different tasks. A heading can attract attention through size and weight without being a near object. This contributes a size distinction to hierarchy; complete role choice still needs the task. For a specified magnitude model ψ=kI^.7, doubling I gives 2^.7≈1.6245 times the response. This chosen example explains compression mathematically; it does not fit any observer, icon, font, spacing scale or depth judgment.
 
 ## Cross-Domain Connections
 
-**Mathematics → RIGOROUS**: Stevens's Power Law (ψ = k × Iⁿ) with exponent n ≈ 0.7 for visual area means that perceived size compresses with increasing physical size. This means a visual scale that doubles physical sizes will not produce a doubling of perceived size — spacing scales (e.g., 4px, 8px, 16px, 32px) may need to be steeper than geometric to produce perceptually equal steps.
-
-**Mathematics → RIGOROUS**: Projective geometry establishes that in a central perspective system, apparent size decreases as 1/d (inverse of distance). This makes the size gradient a mathematically precise consequence of the perspective projection — not a perceptual convention, but an optical law.
+**Mathematics → STRUCTURAL**: Psychophysical power models need a defined stimulus/response, range and fitted exponent. An area exponent cannot automatically govern linear font sizes, spacing or perceived distance. **Mathematics → RIGOROUS**, under pinhole assumptions: a frontoparallel extent L at common axial depth Z>0 projects to fL/Z; a frontoparallel planar patch of area A projects to f²A/Z² at fixed f. Doubling Z halves length and quarters area. Arbitrary tilted patches and Euclidean radial distances need different treatment.
 
 # Examples
+
+Source-specific examples and quotations below are retained as reports with their original wording and locators. They are not independently checked historical, experimental or universal claims. Applied examples are qualified design proposals.
 
 **Example 1** (p. 564): "Georges Seurat in his best-known painting, An Afternoon on the Grande Jatte, organizes the distance dimension by distributing figures of decreasing size over the entire field."
 
@@ -113,48 +116,56 @@ Arnheim emphasises the critical role of regularity: "The more regular the gradie
 
 **Example 3** (p. 556): Van Gogh's two chairs — "they vary in nothing but size and location" yet display a strong depth effect.
 
-**Example 4** (UI hierarchy): A type scale uses font-size as a size gradient within a vertical hierarchy — h1 is "closer" (more prominent/foreground), body text is "farther" (recessive). The scale must be regular to convey consistent hierarchy.
+**Example 4** (UI hierarchy): A type hierarchy can use larger headings and smaller supporting text without depicting depth. Optical adjustments and contextual sizes remain available; no mandatory regular scale or area-exponent compensation follows.
 
 # Relationships
 
+These are scoped reading connections. Builds Upon supports understanding; Enables names a possible downstream use; Related is an association; Contrasts With names a comparison. They do not establish universal causes, subtypes or verified historical sequences. Ordinary downstream uses are not invented card identities.
+
 ## Builds Upon
-- **Pictorial Space** — The size gradient is one of the primary mechanisms through which pictorial space is constructed.
-- **Simplicity Principle** — Equal elements seen at different sizes are interpreted as equal elements at different depths (simpler than unequal elements at the same depth).
+
+- **Pictorial Space** — Comparable projected sizes can support a spatial reading.
+- **Simplicity Principle** — A simpler equal-object spatial candidate can compete with physically unequal flat objects.
 
 ## Enables
-- **Linear Perspective** — Convergence is the geometric consequence of the size gradient along parallel lines.
-- **Visual Hierarchy** — Size is a primary cue for importance/foreground-ness in design; larger = more prominent.
+
+- **Linear Perspective** — Central projection produces a size gradient under stated camera geometry, rather than being deduced from any size array.
+- **Visual Hierarchy** — Size can contribute attention according to content and task, without a mandatory foreground rank.
 
 ## Related
-- **Texture Gradient** — A fine-grained version of the size gradient: texture elements become smaller with distance.
-- **Atmospheric Perspective** — A companion depth cue that adds haze alongside size reduction.
-- **Height in Picture Plane** — A positional gradient that typically accompanies the size gradient in landscape compositions.
-- **Overlap** — Typically accompanies size gradient; the two reinforce each other.
+
+- **Texture Gradient** — Texture marks can shrink under projection; density and orientation provide additional comparisons.
+- **Atmospheric Perspective** — Medium-related contrast changes can accompany projected size change.
+- **Height in Picture Plane** — Ground contacts can rise toward the horizon under stated heights.
+- **Overlap** — Contour interruption can combine with scale without guaranteed agreement.
 
 ## Contrasts With
-- **Overlap** — Overlap signals depth through contour interruption; size gradient signals it through scalar reduction. They are independent cues that typically operate together.
+
+- **Overlap** — Occlusion and size reduction are distinct observations; neither is assumed conditionally independent.
 
 # Common Errors
 
-- **Error**: Using irregular size variation to suggest depth.
-  **Correction**: Depth from size requires regular, monotone decrease. Irregular size variation signals physical size difference, not spatial depth.
+- **Error**: Applying a visual-area exponent to prescribe steeper typography or spacing.
+  **Correction**: State the intended task and fit or evaluate its own response; the example supplies no mandatory compensation.
 
-- **Error**: Assuming that a type scale with even mathematical ratios (e.g., 1.25 modular scale) produces perceptually even steps.
-  **Correction**: Due to Stevens's Power Law (n ≈ 0.7 for area perception), mathematically regular scales may not be perceptually even. Larger steps may be needed at the top of the scale to produce perceptually equivalent steps.
+- **Error**: Treating every irregular size array as a failed depth cue.
+  **Correction**: Objects can differ physically, encode data or be deliberately composed.
 
 # Common Confusions
 
-- **Confusion**: Smaller = less important in UI design.
-  **Clarification**: Smaller elements appear more recessive (farther away) which in depth terms means less salient, but this is a design principle choice, not a perceptual rule. Context determines whether small means "less important" or simply "secondary level."
+- **Confusion**: Smaller always means less important or farther.
+  **Clarification**: The role and scene determine interpretation.
 
-- **Confusion**: The size gradient only works with identical repeated elements.
-  **Clarification**: While identical elements produce the clearest gradient, the cue works for any similar objects. The visual system evaluates size against an expected norm; variation from norm signals depth.
+- **Confusion**: Size constancy, power-law magnitude estimation and projection are one law.
+  **Clarification**: They concern different quantities and evidence; no automatic transfer follows.
 
 # Source Reference
 
 Chapter V: Space, "Art and Visual Perception," pp. 538–588 (Gradients Create Depth section).
 
 # Verification Notes
+
+The bullets below are preserved historical extraction assertions, not current verification. Frozen confidence, cross-reference, source-reading and OCR claims do not settle original-dependent fidelity. Current same-context review supports only the explicitly scoped technical constructions, contextual teaching and local comparisons; it establishes no browser, observer, comfort or physiological result.
 
 - Definition source: Synthesised from Arnheim's discussion, pp. 538–588; key quotes cited
 - Confidence rationale: Arnheim's treatment is explicit and precise; multiple examples support the core claims

@@ -29,88 +29,90 @@ related:
 contrasts_with:
   - "isometric-perspective"
   - "flat-pictorial-space"
-answers_questions:
-  - "What are the gestalt principles of perceptual grouping, and how does each one work?"
-  - "How does Stevens's Power Law (ψ = k × Iⁿ) with its compressive exponent for visual area (n ≈ 0.7) explain why perceived size doesn't scale linearly — and what does this imply for icon sizing, spacing scales, and data visualisation?"
+answers_questions: []
 rosetta_stone:
   -
     domain: "mathematics"
     concept: "Non-Euclidean geometry — inhomogeneous space where equal-sized objects are not perceived as equal"
-    rating: "rigorous"
-    note: "Pyramidal space is a non-Euclidean perceptual geometry: two objects of equal physical size at different depths are perceived as both different AND the same size simultaneously — an apparent paradox resolved by the non-homogeneous spatial framework."
+    rating: "structural"
+    note: "Non-Euclidean names Arnheim’s represented visual-space account; no perceptual metric is defined or measured here."
   -
     domain: "mathematics"
     concept: "Projective geometry — the projective plane, where parallel lines meet at infinity"
     rating: "rigorous"
-    note: "The vanishing point in pyramidal space is the projective-geometry 'point at infinity' — parallel lines meeting at infinity is a defining feature of projective geometry."
+    note: "Rigorous only for the stated projective construction: a direction at infinity maps to its image vanishing point when not image-parallel. The eye apex remains a different point."
   -
     domain: "engineering"
     concept: "Perspective-correct rendering, depth buffer (z-buffer), perspective division"
-    rating: "rigorous"
-    note: "3D graphics engines implement pyramidal space through perspective division (dividing by z) and the z-buffer — the direct computational implementation of the pyramidal perceptual space Arnheim describes."
+    rating: "structural"
+    note: "Perspective division projects coordinates and a z-buffer handles visibility. Neither proves the subjective contracting-space account."
 css_implementation:
   -
     property: "perspective"
-    example: "perspective: 500px; /* viewing distance defines pyramid apex to picture plane distance */"
+    example: "perspective: 500px; /* parameter for CSS projection, not perceived distance */"
     support: "baseline"
   -
     property: "transform-style: preserve-3d"
-    example: "transform-style: preserve-3d; /* enables true 3D pyramidal space for child elements */"
+    example: "transform-style: preserve-3d; /* participates in child 3D rendering; grouping/flattening conditions still apply */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Pyramidal space is the perceptual geometry created by central perspective, in which the visual world is structured like an infinite pyramid converging to a point at the viewer's eye. In this space, objects simultaneously look both different in size (smaller with distance) and the same size — a genuine visual paradox resolved by the non-Euclidean nature of perspective space.
+Pyramidal space is Arnheim’s account of simultaneously experiencing projected contraction and represented sameness in perspective. Its non-Euclidean visual-space alias names that source account, not a measured metric or proof that projective space is a perceptual geometry.
 
 # Core Definition
 
-Arnheim introduces pyramidal space to explain the genuine visual paradox of perspective perception: "We see depth, but we see convergence at the same time. And the perceptual phenomena occurring in that convergent world are processed by the nervous system, in relation to the spatial framework" (p. 684).
+This presents the represented Arnheim account alongside current analytic qualifications. Original edition, pages, quotations, figures, experiments, physiology and historical claims remain unassessed; the technical constructions below do not certify source fidelity.
 
-The paradox: "When we look into the canyon of a city street we see parallel rows of buildings extending into depth, but we also see convergence. The buildings close to us look larger than the ones farther away on the distance gradient, but they also look the same size. Or we stand before a Renaissance painting: the figures in the foreground look larger than the ones in the background, but we also see them as alike. This confusing contradiction is... a genuine visual paradox: those objects look different and alike at the same time" (p. 672).
+Arnheim discusses buildings or painted figures looking both smaller and alike, invoking Gibson’s scale remark and a contracting pyramidal framework. This is a reported perceptual interpretation rather than a supplied metric, neural mechanism or theorem. A visual pyramid has its finite ray apex at the eye; direction-family vanishing points lie on the image plane. The camera’s 3D projection and an observer’s constancy reading must remain separate.
 
-The resolution: Arnheim proposes imagining a "pyramidal world" — a non-Euclidean geometry in which the space itself converges. In such a world, objects of "equal size" (equal in the pyramid's metric) appear both smaller as they recede AND the same size, because the spatial metric itself is contracting. "Scale, not size, is actually what remains constant in perception" (Gibson, cited by Arnheim, p. 684).
+Retained wording from the represented account (original fidelity unassessed):
 
-This is not a psychological failure but a genuine property of perceptual space: the visual system processes visual experience in relation to the spatial framework of the perspective pyramid, not in a Euclidean framework where all equal things look equal.
+"We see depth, but we see convergence at the same time. And the perceptual phenomena occurring in that convergent world are processed by the nervous system, in relation to the spatial framework"
+
+"When we look into the canyon of a city street we see parallel rows of buildings extending into depth, but we also see convergence. The buildings close to us look larger than the ones farther away on the distance gradient, but they also look the same size. Or we stand before a Renaissance painting: the figures in the foreground look larger than the ones in the background, but we also see them as alike. This confusing contradiction is... a genuine visual paradox: those objects look different and alike at the same time"
+
+"Scale, not size, is actually what remains constant in perception"
 
 # Prerequisites
 
-- **Linear Perspective** — Pyramidal space is the perceptual world created by linear perspective.
-- **Size Gradient** — The size reduction with distance is the foundational phenomenon that pyramidal space explains.
+- **Linear Perspective** — The defined central projection supplies camera-axis scale and direction-family convergence.
+- **Size Gradient** — Comparable-size assumptions and projected scale support this spatial comparison.
 
 # Key Properties
 
-1. In pyramidal space, size and distance are inversely proportional — but perceived as "equal at different scales."
-2. The paradox (equal AND different) is not a perceptual error but a consequence of a non-homogeneous spatial framework.
-3. The vanishing point is simultaneously (a) a tangible point on the canvas surface and (b) the point at infinity where parallels meet — an inherent spatial paradox.
-4. "Newtonian oases": within a frontal plane, space is approximately Euclidean; at depth, it becomes pyramidal.
-5. The steepness of perspective compression increases toward the center of the visual field (where most convergence occurs), creating a gradient of spatial compression.
-6. Cultural implications: central perspective implies a viewer-centered, hierarchically focused world — symbolically opposite to the centerless, viewer-independent world of isometric perspective.
+1. Projected linear extent can vary as 1/Z under a specified pinhole model.
+2. Projected size and interpreted object size are different quantities.
+3. No perceptual metric is defined by the word non-Euclidean here.
+4. The eye apex is not an image vanishing point.
+5. Projection, visibility/z-buffering and symbolic interpretation are separate operations.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Any image with strong linear perspective creates pyramidal space.
-2. The stronger the convergence (steeper perspective), the more extreme the pyramidal compression.
-3. The vanishing point is the "apex" of the pyramid within the picture space.
+
+1. Choose a defined central projection if that geometry serves the picture.
+2. Compare apparent contraction with intended represented size.
+3. Use dramatic or calm spatial treatments according to the brief, without a guaranteed observer response.
 
 ## To Identify/Recognise:
-1. Find a composition with strong parallel-line convergence.
-2. Note the dual visual experience: the converging elements look smaller AND equal at the same time.
-3. The center of the image (near the vanishing point) should feel spatially compressed.
+
+1. Find direction-family convergence and size changes.
+2. Distinguish measured image dimensions from perceived represented size.
+3. Check whether a claimed paradox is geometric impossibility or a dual reading.
 
 # Context & Application
 
-- **Typical contexts**: Understanding perspective photography, film composition, 3D UI environments, VR/AR spatial design.
-- **Common applications**: Baroque and dramatic cinematography uses steep pyramidal compression (wide-angle lenses) to create spatial tension. Architectural vistas designed with pyramidal compression feel grander. In data visualisation, 3D charts use perspective projection to create a pyramidal space — which distorts the perceived sizes of data values and is therefore generally avoided for accurate data representation.
+Moore’s Tube Shelter Perspective, Baroque vistas, Piranesi and Van Gogh’s rooms are expressive comparisons. For charts, perspective can make equal spatial marks project to unequal lengths. Prefer directly comparable encodings when accurate comparison is needed, while spatial data may justify a spatial view. No universal dramatic-lens or all-chart prohibition follows.
 
 ## Cross-Domain Connections
 
-**Mathematics → RIGOROUS**: Pyramidal space is projective geometry made perceptual. The vanishing point is the projective point at infinity (the equivalence class of all parallel lines in that direction). The convergence of parallels is the defining property of the projective plane compared to the Euclidean plane. Arnheim's pyramidal space is essentially a description of the projective plane as a perceptual experience.
-
-**Mathematics → RIGOROUS**: 3D graphics implements pyramidal space through perspective projection and the z-buffer. The perspective division step (dividing x and y coordinates by z) converts world-space coordinates to screen-space, producing exactly the size diminishment with distance that defines pyramidal space.
+**Mathematics → STRUCTURAL**: Arnheim’s contracting-space description is not a defined non-Euclidean metric. **Mathematics → RIGOROUS**, for the stated projective construction: a direction at infinity maps to a finite vanishing point when its camera-axis component is nonzero; image-parallel directions remain at infinity. This is not an identity between the projective plane and subjective space. **Engineering → STRUCTURAL**: Perspective division in a defined camera model supplies projected coordinates; a depth buffer chooses visibility among fragments. Neither establishes the reported perceptual paradox.
 
 # Examples
+
+Source-specific examples and quotations below are retained as reports with their original wording and locators. They are not independently checked historical, experimental or universal claims. Applied examples are qualified design proposals.
 
 **Example 1** (p. 672): "The buildings close to us look larger than the ones farther away on the distance gradient, but they also look the same size. Or we stand before a Renaissance painting: the figures in the foreground look larger than the ones in the background, but we also see them as alike. This confusing contradiction is... a genuine visual paradox." — Arnheim
 
@@ -122,37 +124,48 @@ This is not a psychological failure but a genuine property of perceptual space: 
 
 # Relationships
 
+These are scoped reading connections. Builds Upon supports understanding; Enables names a possible downstream use; Related is an association; Contrasts With names a comparison. They do not establish universal causes, subtypes or verified historical sequences. Ordinary downstream uses are not invented card identities.
+
 ## Builds Upon
-- **Linear Perspective** — Pyramidal space is the perceptual world created by linear perspective projection.
-- **Size Gradient** — The size-distance relationship is the perceptual content of pyramidal space.
+
+- **Linear Perspective** — This elaborates Arnheim’s reading of central perspective rather than a theorem of subjective geometry.
+- **Size Gradient** — Projected contraction and represented sameness are distinguished.
 
 ## Enables
-- **Dramatic Spatial Compression** — The expressive use of steep perspective gradients (Baroque architectural vistas, Piranesi etchings, Van Gogh's rooms).
-- **Non-Euclidean Spatial Intuitions** — Arnheim uses pyramidal space to show that human perceptual space is not Euclidean — it is metric-dependent.
+
+- **Dramatic Spatial Compression** — Baroque vistas, Piranesi etchings and Van Gogh’s rooms offer expressive comparisons without guaranteed observer effects.
+- **Non-Euclidean Spatial Intuitions** — The non-Euclidean label names a reported framework without a defined perceptual metric.
 
 ## Related
-- **Size Gradient** — The basic perceptual fact that pyramidal space explains.
-- **Depth Gradient Principle** — Steep gradients produce dramatic pyramidal compression.
+
+- **Size Gradient** — The defined fL/Z relation is geometry; the dual reading is a separate account.
+- **Depth Gradient Principle** — Gradient variation can contribute compression imagery without a fixed depth-response law.
 
 ## Contrasts With
-- **Isometric Perspective** — Isometric space is homogeneous — equal objects always look equal. Pyramidal space is inhomogeneous — equal objects look equal AND different depending on position in the pyramid.
-- **Flat Pictorial Space** — Zero depth; no pyramid.
+
+- **Isometric Perspective** — Parallel projection avoids depth-dependent scaling; that does not prove all equal objects look equal.
+- **Flat Pictorial Space** — Frontal/shallow treatments reduce convergence without proving zero perceived depth.
 
 # Common Errors
 
-- **Error**: Using 3D perspective charts in data visualisation.
-  **Correction**: Pyramidal space distorts perceived data values — bars in the background look smaller than bars of equal value in the foreground. This creates systematic misreadings. Use 2D charts for accurate data representation.
+- **Error**: Reading perspective-distorted chart lengths as directly comparable values.
+  **Correction**: Check the encoding and viewing geometry; use an accurate comparator or choose a simpler view when comparison is the task.
 
 # Common Confusions
 
-- **Confusion**: The paradox (looking both equal and different) is a perceptual error to be corrected.
-  **Clarification**: Arnheim argues this is not an error but a genuine property of the non-Euclidean perceptual space created by perspective. It would be "corrected" only if we could eliminate perspective from human vision — which would mean perceiving the world in Euclidean terms, losing much of our spatial richness.
+- **Confusion**: Calling visual space non-Euclidean defines its metric.
+  **Clarification**: It names Arnheim’s account here. No fitted perceptual metric or proof of what every observer sees is supplied.
+
+- **Confusion**: preserve-3d guarantees true perceived 3D.
+  **Clarification**: It participates in a CSS 3D rendering arrangement; ancestor flattening and actual transforms matter, and perception remains a separate outcome.
 
 # Source Reference
 
 Chapter V: Space, "Art and Visual Perception," pp. 654–692 (Pyramidal Space section).
 
 # Verification Notes
+
+The bullets below are preserved historical extraction assertions, not current verification. Frozen confidence, cross-reference, source-reading and OCR claims do not settle original-dependent fidelity. Current same-context review supports only the explicitly scoped technical constructions, contextual teaching and local comparisons; it establishes no browser, observer, comfort or physiological result.
 
 - Definition source: Synthesised from Arnheim's extended discussion, pp. 654–692; key quotes cited
 - Confidence rationale: High — Arnheim develops pyramidal space as a sustained theoretical concept with explicit analysis

@@ -180,3 +180,12 @@ do not guarantee outcomes across content, users or browsers.
 
 - Corrected form, projection, constancy, orientation, size, medium and representation teaching across twenty-one connected cards, preserving reported examples and historical source wording.
 - Scoped developmental and formal analogies, corrected local relationship and question coverage, and retained unresolved original fidelity and actual behavior limits.
+
+## Version 1.0.27 - 2026-10-19
+
+- Corrected connected spatial organization, depth-cue, projection, stereo,
+  compositing and gradient teaching with defined models and contextual UI use.
+- Reconciled existing local relationships, aliases and question contributions;
+  retained source reports and their unresolved original-fidelity limits.
+- Corrected scoped mapping/compatibility metadata and removed non-feature CSS
+  records without adding cards, fields or a mandatory spatial design system.

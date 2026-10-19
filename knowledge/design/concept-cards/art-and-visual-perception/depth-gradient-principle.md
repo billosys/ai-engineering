@@ -29,91 +29,85 @@ related:
   - "height-in-picture-plane"
 contrasts_with:
   - "flat-pictorial-space"
-answers_questions:
-  - "What are the gestalt principles of perceptual grouping, and how does each one work?"
-  - "How does Stevens's Power Law (ψ = k × Iⁿ) with its compressive exponent for visual area (n ≈ 0.7) explain why perceived size doesn't scale linearly — and what does this imply for icon sizing, spacing scales, and data visualisation?"
+answers_questions: []
 rosetta_stone:
   -
     domain: "mathematics"
     concept: "Monotonic functions, rate of change, derivatives"
     rating: "structural"
-    note: "A depth-creating gradient is a monotonic function of position — the rate of change (steepness) determines perceived depth range; a non-monotone function (irregular gradient) fails to create depth."
+    note: "Monotone and constant-rate functions differ: d(1/Z)/dZ=−1/Z². A scalar gradient does not uniquely determine perceived depth or surface curvature."
   -
     domain: "mathematics"
-    concept: "Power laws (Stevens: ψ = k × Iⁿ)"
-    rating: "rigorous"
-    note: "The perceptual response to size gradients follows Stevens's Power Law — perceived depth does not scale linearly with physical gradient steepness, implying designers must use steeper physical gradients to produce proportionally deeper perceived space."
+    concept: "Fitted psychophysical response models (limits of transfer)"
+    rating: "structural"
+    note: "A fitted area response cannot automatically predict depth, typography or spacing. State stimulus, response, range and fitted parameters before transfer."
 css_implementation:
   -
     property: "CSS custom properties for spacing scales"
-    example: "--space-1: 4px; --space-2: 8px; --space-3: 16px; --space-4: 32px; /* geometric scale creates consistent perceived steps */"
+    example: "--space-1: 4px; --space-2: 8px; --space-3: 16px; --space-4: 32px; /* optional values; not a depth or perceptual-equality law */"
     support: "baseline"
   -
     property: "filter: blur() with gradient"
-    example: "/* Use opacity/blur gradients to create atmospheric recession */"
+    example: "filter: blur(2px); /* uniform smoothing; a spatial gradient needs actual variation */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-The depth gradient principle states that any perceptual quality that changes systematically and regularly across a composition creates the perception of spatial depth. Gradients of size, texture density, brightness, saturation, sharpness, motion speed, or obliqueness all signal recession into depth.
+A systematic change in an image quality can support a spatial reading under appropriate scene assumptions. Regularity, monotonicity and constant rate are different; no gradient guarantees depth or uniquely identifies surface shape.
 
 # Core Definition
 
-Arnheim, building on Gibson, states: "A gradient is the gradual increase or decrease of some perceptual quality in space and time" (p. 542). The depth-creating mechanism is universal across gradient types: the visual system interprets a regular gradient as equal elements receding into depth rather than as physically different elements at the same distance, because the former is the structurally simpler interpretation.
+This presents the represented Arnheim account alongside current analytic qualifications. Original edition, pages, quotations, figures, experiments, physiology and historical claims remain unassessed; the technical constructions below do not certify source fidelity.
 
-"Gradients create depth because they give unequal things a chance to look equal" (p. 566). If a gradient is successfully perceived as a depth indicator, elements that vary in size, texture density, or brightness are seen as perceptually equal (the same size, texture, or brightness) at different depths. This is the mechanism of size constancy, texture constancy, and brightness constancy — all are consequences of the gradient principle.
+Arnheim, building on Gibson, discusses changes of size, texture, brightness, saturation, sharpness and obliqueness. His regular cardboard squares, irregular size variations, telegraph poles and Rembrandt halo illustrate context-dependent readings. The halo and tilted-cardboard cases resist the inference that every orderly change produces depth. Gradients can support interpreting differently projected marks as similar scene elements; this does not establish one mechanism for size, brightness and texture constancy.
 
-Key conditions:
-1. **Regularity**: the gradient must change at a constant rate for maximum depth effect. Irregular gradients weaken or destroy depth perception.
-2. **Steepness**: a steeper gradient produces a deeper-looking space.
-3. **Visual articulation**: precise, geometrically clear gradients are more effective than naturalistic/photographic ones.
-4. **Directionality**: multiple gradients acting in the same spatial direction reinforce each other multiplicatively.
+Retained wording from the represented account (original fidelity unassessed):
 
-Arnheim notes that not all gradients create depth: a radial brightness gradient (halo from a center) does not create depth because the frontal circular pattern cannot be seen as the projection of a simpler 3D structure.
+"A gradient is the gradual increase or decrease of some perceptual quality in space and time"
+
+"Gradients create depth because they give unequal things a chance to look equal"
 
 # Prerequisites
 
-- **Pictorial Space** — Depth gradients are the primary constructors of pictorial space.
-- **Size Gradient** — The most basic instance of the gradient principle.
+- **Pictorial Space** — Pictorial spatial readings supply the vocabulary for this particular cue or convention.
+- **Size Gradient** — Comparable-size assumptions and projected scale support this spatial comparison.
 
 # Key Properties
 
-1. Any perceptual quality can form a depth gradient: size, texture, brightness, saturation, sharpness, obliqueness, colour, motion speed.
-2. Regularity is essential: constant rate of change = strongest depth effect.
-3. Steepness determines perceived depth range: steeper gradients = deeper space.
-4. Multiple gradients reinforcing each other produce dramatically stronger depth effects than any single gradient alone.
-5. A sudden change in gradient rate creates a surface edge (two surfaces at different inclinations).
-6. A gap in the gradient creates a depth discontinuity — a spatial leap rather than smooth recession.
-7. The gradient principle is foundational to linear perspective (which is the most geometrically regulated gradient system).
+1. A monotone sequence can have nonconstant rate.
+2. A pinhole 1/Z size function has derivative −1/Z² for Z>0.
+3. A derivative sign is not a concavity/relief classifier for an image.
+4. Scene variation and projection can both change a texture or size sequence.
+5. Overlap and binocular disparity are not all instances of a scalar spatial gradient.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Select one or more perceptual qualities to serve as depth carriers (size, blur, saturation, etc.).
-2. Arrange them to change at a regular rate from foreground to background.
-3. For greater depth effect: steepen the gradient and use multiple qualities simultaneously.
-4. Use sudden gradient changes to create surface edges or spatial leaps.
-5. Ensure gradient direction is consistent — contradictory gradient directions produce ambiguity or flatness.
+
+1. Choose a scene quantity and intended spatial interpretation.
+2. Specify which image quality changes and along what coordinate.
+3. Compare alternative flat or physically varying interpretations.
+4. Combine cues only where useful; no compensation scale is implied.
 
 ## To Identify/Recognise:
-1. Find any quality that changes systematically in space (size, blur, colour, density).
-2. Is the change regular/monotone? That is a depth gradient.
-3. How steep is the change? Steeper = deeper perceived space.
-4. What depth is implied: foreground near (coarser, larger, sharper, more saturated) and background far?
+
+1. Identify the changing quality and coordinate.
+2. Distinguish regularity, monotonicity and constant derivative.
+3. Check whether the actual scene assumptions support a depth inference.
+4. Retain halo or other non-depth interpretations when appropriate.
 
 # Context & Application
 
-- **Typical contexts**: Any design system using visual hierarchy, spacing scales, typographic scales, elevation systems, data visualisation.
-- **Common applications**: Design token spacing scales use a gradient principle — larger spacing values are "closer" (more prominent, more breathing room); smaller values are "recessive" (denser, more background). Typography scales similarly. Material Design's elevation system uses shadow spread and opacity as a gradient-based depth system.
+Gradients can aid illustrations, textures and spatial UI treatments. A list of spacing tokens 4/8/16/32 is a scale of design values, not necessarily a spatial gradient across an image or a depth percept. Typography and chart scales need their own task and evidence.
 
 ## Cross-Domain Connections
 
-**Mathematics → STRUCTURAL**: A depth-creating gradient is a monotonic function: f(position) = perceptual_quality. The first derivative determines steepness (rate of depth change); a zero derivative = flat surface at one depth; positive derivative = receding surface; sign change = concave or convex surface. The calculus of gradients directly describes pictorial depth structure.
-
-**Mathematics → RIGOROUS**: Stevens's Power Law governs how perceptual responses scale with physical gradient magnitudes. For visual area (n ≈ 0.7), perceived depth change compresses relative to physical gradient size — a design system needs physically larger gradient steps at larger scales to produce perceptually equal depth steps. This has direct implications for spacing scales (4/8/16/32 geometric series may underperform at the top).
+**Mathematics → STRUCTURAL**: For f(Z)=1/Z on Z>0, f′(1)=−1 and f′(2)=−.25: orderly recession need not mean constant derivative. A scalar gradient alone does not uniquely determine relief. **Mathematics → STRUCTURAL**: A psychophysical ψ=kIⁿ model needs a defined response, stimulus, range and fitted k,n. A chosen visual-area exponent .7 cannot be transferred to depth, type or spacing; no mandatory steeper scale follows.
 
 # Examples
+
+Source-specific examples and quotations below are retained as reports with their original wording and locators. They are not independently checked historical, experimental or universal claims. Applied examples are qualified design proposals.
 
 **Example 1** (p. 542): "James J. Gibson was the first to draw attention to the depth-creating power of gradients. He emphasized texture gradients, such as the gradually changing density of grain or shading, the coarser texture being correlated with nearness, the finer with distance." — Arnheim
 
@@ -127,44 +121,52 @@ Arnheim notes that not all gradients create depth: a radial brightness gradient 
 
 # Relationships
 
+These are scoped reading connections. Builds Upon supports understanding; Enables names a possible downstream use; Related is an association; Contrasts With names a comparison. They do not establish universal causes, subtypes or verified historical sequences. Ordinary downstream uses are not invented card identities.
+
 ## Builds Upon
-- **Pictorial Space** — Gradients are one of the primary constructors of pictorial depth.
-- **Simplicity Principle** — The gradient creates depth because depth interpretation is simpler than a physically varied flat array.
+
+- **Pictorial Space** — Systematic image changes are one possible contribution to pictorial space.
+- **Simplicity Principle** — Arnheim’s simpler-spatial-candidate account supplies an interpretation, not a necessary mechanism.
 
 ## Enables
-- **Size Gradient** — A specific application of the gradient principle to object scale.
-- **Texture Gradient** — A specific application to surface texture density.
-- **Atmospheric Perspective** — A specific application to brightness, saturation, and sharpness.
-- **Linear Perspective** — The most geometrically precise gradient system.
-- **Design Token Scales** — Spacing and typographic scales in design systems embody the gradient principle.
+
+- **Size Gradient** — Size is one quality that can vary spatially.
+- **Texture Gradient** — Texture density/scale is another quality with scene assumptions.
+- **Atmospheric Perspective** — Atmospheric contrast and colour changes provide a distinct physical/rendering context.
+- **Linear Perspective** — Central projection supplies specific geometric gradients rather than a universal perceptual law.
+- **Design Token Scales** — Token scales are design values; they do not necessarily form an image-depth gradient.
 
 ## Related
-- **All Depth Cues** — Overlap, deformation, size, texture, atmospheric, height-in-plane — all are specific applications of the gradient principle.
+
+- **All Depth Cues** — Compare the enumerated depth cues while keeping overlap, stereo and gradient constructions distinct.
 
 ## Contrasts With
-- **Flat Pictorial Space** — Denies gradients to maintain flatness.
+
+- **Flat Pictorial Space** — Flat treatments can use gradients without requiring a depth reading.
 
 # Common Errors
 
-- **Error**: Using an irregular gradient and expecting depth to be perceived.
-  **Correction**: Depth requires regular, monotone gradient change. Irregular variation signals physical difference, not spatial depth.
+- **Error**: Requiring constant-rate gradients for depth or treating any derivative sign change as concavity.
+  **Correction**: State the projection and scene; both irregular real scenes and smooth flat designs are possible.
 
-- **Error**: Using a single weak gradient when strong depth is needed.
-  **Correction**: Combine multiple gradients (size + blur + saturation + overlap) acting in the same direction for maximum depth effect.
-
-- **Error**: Assuming linear design token scales produce perceptually equal steps.
-  **Correction**: Stevens's Power Law means perceptual response to size/area is compressive (n ≈ 0.7). Geometric scales may feel perceptually uneven. Test with actual visual evaluation, not just mathematical ratios.
+- **Error**: Deriving token-scale compensation from a supplied area exponent.
+  **Correction**: Fit an appropriate model or inspect the actual task; the exponent supplies no depth law.
 
 # Common Confusions
 
-- **Confusion**: Only size and blur gradients create depth.
-  **Clarification**: Any perceptual quality can create a depth gradient — motion speed, colour saturation, hue, obliqueness. The principle is general. This is why film can create depth through motion gradients; why music can imply spatial depth through volume gradients.
+- **Confusion**: Every depth cue is a gradient.
+  **Clarification**: Overlap and stereo can be compared with gradient cues without becoming the same construction.
+
+- **Confusion**: Monotone means constant derivative.
+  **Clarification**: The 1/Z witness is monotone and smooth, with changing derivative.
 
 # Source Reference
 
 Chapter V: Space, "Art and Visual Perception," pp. 538–590 (Gradients Create Depth section).
 
 # Verification Notes
+
+The bullets below are preserved historical extraction assertions, not current verification. Frozen confidence, cross-reference, source-reading and OCR claims do not settle original-dependent fidelity. Current same-context review supports only the explicitly scoped technical constructions, contextual teaching and local comparisons; it establishes no browser, observer, comfort or physiological result.
 
 - Definition source: Synthesised from Arnheim's extended discussion, pp. 538–590; key quotes cited
 - Confidence rationale: High — Arnheim treats gradients as the general principle of which all specific depth cues are instances; this framing is explicit and systematic

@@ -35,75 +35,78 @@ rosetta_stone:
   -
     domain: "engineering"
     concept: "CSS viewport, overflow: hidden, aspect-ratio, container queries"
-    rating: "rigorous"
-    note: "The viewport and CSS overflow control directly implement the picture-frame/window distinction — overflow:hidden creates a 'window' frame while overflow:visible allows content to extend beyond the frame like a figure."
+    rating: "structural"
+    note: "Overflow and clipping control geometry; aspect ratio and container queries have different functions. None uniquely assigns window-like or picture-object ownership."
 css_implementation:
   -
     property: "overflow"
-    example: "overflow: hidden; /* frame = figure: content clipped at boundary */ overflow: visible; /* frame = ground: content can extend beyond */"
+    example: "overflow: hidden; /* clips overflow; inspect content and focus visibility */"
     support: "baseline"
   -
     property: "aspect-ratio"
-    example: "aspect-ratio: 16/9; /* defines the frame proportions */"
+    example: "aspect-ratio: 16 / 9; /* illustrative preferred box ratio */"
     support: "baseline"
   -
     property: "clip-path"
-    example: "clip-path: inset(0); /* sharp frame edge = frame as figure */"
+    example: "clip-path: inset(0); /* clips paint; does not assign perceptual ownership */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-The boundary of a picture, card, or viewport can be perceived either as a "window" frame (figure) through which an unbounded space is glimpsed, or as the edge of a "picture-object" (the picture as figure against the wall). This perceptual choice determines the spatial character of the enclosed content and the viewer's relationship to it.
+A picture boundary can support a window-like reading of an ongoing world or the reading of a bounded picture-object against a surround. These conventions can coexist at different nested boundaries.
 
 # Core Definition
 
-Arnheim traces the historical shift in the perceptual function of the picture frame. In Renaissance painting, as pictorial space deepened, the frame was conceived as a window: "The frame was thought of as a window, through which the observer peeped into an outer world, confined by the opening of the peephole but unbounded in itself" (p. 204). In this reading, the frame is the figure, the pictorial space is the ground extending boundlessly behind it.
+This presents the represented Arnheim account alongside current analytic qualifications. Original edition, pages, quotations, figures, experiments, physiology and historical claims remain unassessed; the technical constructions below do not certify source fidelity.
 
-As modern painting shifted toward flatness and surface emphasis, the picture became an object in its own right. The picture is now the figure, lying in front of the wall — the frame becomes the contour of the picture-object, not the opening of a window. "Pictorial space was no longer boundless but tended to end at the edges of the composition... The picture was no longer ground behind the frame, but figure" (p. 206).
+Arnheim contrasts the Renaissance window account with the modern picture-as-object account. He also discusses architectural windows, cornices and moldings as compositional choices. Cropping, margins and frame weight can contribute to these readings but do not determine exclusive ownership: a bounded card can contain a cropped photograph that suggests a continuing world. The reported historical interpretation is distinct from a current usability or perceptual result.
 
-This distinction has direct architectural and UI application: Arnheim analyses windows in buildings using the same logic. A window that is a "hole in the wall" perceptually conflicts with figure-ground expectations — the dark hole would be figure, but it is functionally a ground (opening). Traditional architectural solutions (cornices, moldings) gave the window frame its own figure quality to resolve the paradox.
+Retained wording from the represented account (original fidelity unassessed):
 
-Two contrasting approaches to composition boundary:
-1. **Frame-as-window**: contents extend beyond the frame; the frame cuts through objects. The frame is figure; content is background extending behind it. Implies an ongoing world beyond.
-2. **Frame-as-border**: the composition ends at the frame edge; the picture is a bounded, self-contained object. The picture is figure against the wall.
+"The frame was thought of as a window, through which the observer peeped into an outer world, confined by the opening of the peephole but unbounded in itself"
+
+"Pictorial space was no longer boundless but tended to end at the edges of the composition... The picture was no longer ground behind the frame, but figure"
 
 # Prerequisites
 
-- **Figure-Ground** — The picture frame/window distinction is a specific application of figure-ground logic to composition boundaries.
-- **Pictorial Space** — Whether pictorial space is "boundless" (window) or "bounded" (picture-object) determines which perceptual convention applies.
+- **Figure-Ground** — Contour ownership and region separation supply the comparison used here.
+- **Pictorial Space** — Pictorial spatial readings supply the vocabulary for this particular cue or convention.
 
 # Key Properties
 
-1. When the frame is figure: the pictorial space is an unbounded ground extending behind the window; the pictorial world continues beyond the frame.
-2. When the picture is figure: the pictorial space ends at the frame; the picture is a bounded object against the wall.
-3. The two conventions are perceptually and compositionally incompatible — mixing them creates spatial confusion.
-4. Deep pictorial space (Renaissance painting, photography) supports the window convention.
-5. Flat pictorial space (modern painting, flat UI) supports the picture-as-figure convention.
-6. Heavy frames signal window (frame = figure); thin frames or frameless mounts signal picture-as-figure.
+1. The relevant boundary and level of nesting must be named.
+2. A crop can suggest continuation beyond an edge.
+3. A picture can also read as an object within a larger composition.
+4. Heavy/thin frames and margins are possible cues, not guaranteed classifiers.
+5. Clipping geometry differs from perceptual contour ownership.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Decide which convention is intended: window (unbounded space) or picture-object (bounded surface).
-2. For window: use heavy frame, allow elements to be "cut" by the edge, imply space continuing beyond the boundary.
-3. For picture-object: use thin or no frame, contain all elements within the boundary, treat edges as compositional limits not spatial windows.
+
+1. Choose what each boundary should communicate.
+2. Crop or contain content according to its information and intended reading.
+3. Allow nested window and object conventions when useful.
 
 ## To Identify/Recognise:
-1. Does content extend to and get cut by the edge? (Window convention)
-2. Does content avoid the edge, with clear margins? (Picture-object convention)
-3. Does the frame seem to belong to the picture or to the wall?
+
+1. Locate the image, card and viewport boundaries separately.
+2. Inspect crop, margins and surrounding space.
+3. Ask which ongoing-world or bounded-object readings they support.
+4. In an audit, check that clipping preserves essential content and focus visibility.
 
 # Context & Application
 
-- **Typical contexts**: Card design, modal/dialog design, image cropping, viewport layout, component boundary design.
-- **Common applications**: Card components in UI embody the picture-as-figure convention — the card is a bounded, self-contained object floating against the page background. Image crops can use either convention: bleed images (extending to edge) invoke the window; images with clear margins invoke picture-object. Modal dialogs use picture-as-figure: they are bounded objects floating over the page.
+Image crops, cards, dialogs and viewports can use both conventions. A card with radius 8px and overflow:hidden may contain a window-like crop while remaining a bounded object on the page. Such nesting is not intrinsically contradictory. Radius and frame weight need the actual composition.
 
 ## Cross-Domain Connections
 
-**Engineering → RIGOROUS**: CSS `overflow: hidden` creates the window-as-figure convention — content is clipped at the frame boundary, implying it continues beyond. `overflow: visible` allows content to extend past boundaries. `clip-path` creates complex frame shapes. The CSS `contain` property and container queries define explicit frame/boundary contexts that directly implement the picture-boundary spatial logic.
+**Engineering → STRUCTURAL**: overflow and clip-path control paint clipping, aspect-ratio participates in box sizing, and container queries select styles under query conditions. These are separate CSS operations; none chooses figure-ground ownership or uniquely implements a frame/window convention.
 
 # Examples
+
+Source-specific examples and quotations below are retained as reports with their original wording and locators. They are not independently checked historical, experimental or universal claims. Applied examples are qualified design proposals.
 
 **Example 1** (p. 204): "The frame was thought of as a window, through which the observer peeped into an outer world, confined by the opening of the peephole but unbounded in itself." — Arnheim
 
@@ -117,36 +120,44 @@ Two contrasting approaches to composition boundary:
 
 # Relationships
 
+These are scoped reading connections. Builds Upon supports understanding; Enables names a possible downstream use; Related is an association; Contrasts With names a comparison. They do not establish universal causes, subtypes or verified historical sequences. Ordinary downstream uses are not invented card identities.
+
 ## Builds Upon
-- **Figure-Ground** — Frame/picture perceptual function is a figure-ground question: which element claims the boundary?
-- **Pictorial Space** — The depth of pictorial space determines which frame convention is perceptually natural.
+
+- **Figure-Ground** — Boundary ownership helps compare window-like and picture-object readings.
+- **Pictorial Space** — Depth cues can support a convention without determining it.
 
 ## Enables
-- **Compositional Strategy** — The choice of frame/window convention determines compositional decisions (whether elements touch edges, whether margins are needed, whether content bleeds).
+
+- **Compositional Strategy** — Crop, margins and bleed can serve intended compositional relations.
 
 ## Related
-- **Negative Space** — Margins and gutters around picture-as-figure elements are their negative space.
-- **Flat Pictorial Space** — Flat design supports the picture-as-figure convention.
-- **Perspective Symbolism** — Deep perspectival space supports the window convention.
+
+- **Negative Space** — Margins and gutters are intervening compositional regions.
+- **Flat Pictorial Space** — Frontal compositions can support bounded-object readings while allowing nested crops.
+- **Perspective Symbolism** — An ongoing-world reading can carry intended expression, without a universal symbolic effect.
 
 ## Contrasts With
-- Nothing specific — this card describes two conventions in contrast to each other.
+
+- No named contrast — The two conventions are compared locally and can be nested.
 
 # Common Errors
 
-- **Error**: Mixing window and picture-as-figure conventions within a single composition without intention.
-  **Correction**: Choose one convention and apply it consistently. If images bleed to the card edge (window), the card boundary should feel like a frame. If images are contained within a card with padding (picture-as-figure), all content should respect the margin.
+- **Error**: Treating every mixture of conventions as confusion.
+  **Correction**: Identify each boundary and intended relation. Nested conventions are valid; inspect unintended clipping or unclear relationships in the actual task.
 
 # Common Confusions
 
-- **Confusion**: The frame/border of a UI component is neutral.
-  **Clarification**: The boundary of any UI component carries spatial meaning — it is either a window opening or a picture-object edge. The weight, radius, and relationship of content to that boundary communicates which convention is in play.
+- **Confusion**: overflow:hidden means frame-as-figure and overflow:visible means frame-as-ground.
+  **Clarification**: Those values control overflow painting; perceptual ownership also depends on visible composition and context.
 
 # Source Reference
 
 Chapter V: Space, "Art and Visual Perception," pp. 202–214 (Frames and Windows section).
 
 # Verification Notes
+
+The bullets below are preserved historical extraction assertions, not current verification. Frozen confidence, cross-reference, source-reading and OCR claims do not settle original-dependent fidelity. Current same-context review supports only the explicitly scoped technical constructions, contextual teaching and local comparisons; it establishes no browser, observer, comfort or physiological result.
 
 - Definition source: Synthesised from Arnheim's discussion, pp. 202–214; key quotes cited
 - Confidence rationale: High — Arnheim gives frames and windows a dedicated section with precise historical analysis

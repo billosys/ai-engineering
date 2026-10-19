@@ -31,76 +31,69 @@ related:
   - "depth-levels"
 contrasts_with:
   - "unambiguous-depth"
-answers_questions:
-  - "What are the gestalt principles of perceptual grouping, and how does each one work?"
+answers_questions: []
 rosetta_stone:
   -
     domain: "mathematics"
     concept: "Multistable systems — systems with multiple stable equilibria"
     rating: "structural"
-    note: "Ambiguous figures are perceptual multistable systems: the visual system oscillates between two or more stable interpretations, as a ball might oscillate between two energy minima in a double-well potential."
-css_implementation:
-  -
-    property: "N/A — spatial paradox is an anti-pattern for UI"
-    example: "/* Avoid conflicting z-index/depth cues — they create spatial confusion */"
-    support: "baseline"
+    note: "Multiple stable interpretations resemble attractors, but no energy function, transition law or measured switching model is supplied."
+css_implementation: []
 ---
 
 # Quick Definition
 
-Spatial ambiguity occurs when a visual pattern contains depth cues that support two or more incompatible spatial interpretations simultaneously. Spatial paradox occurs when the implied spatial structures contradict each other or violate geometric consistency.
+Spatial ambiguity admits several possible spatial readings; spatial paradox joins locally plausible relations that cannot form the claimed global geometry. Both can serve expressive, puzzle or interface purposes when used deliberately.
 
 # Core Definition
 
-Arnheim identifies several sources of spatial ambiguity and paradox in visual representation:
+This presents the represented Arnheim account alongside current analytic qualifications. Original edition, pages, quotations, figures, experiments, physiology and historical claims remain unassessed; the technical constructions below do not certify source fidelity.
 
-**Ambiguity from figure-ground reversal**: When figure-ground factors are evenly balanced (Attneave's "multistability"), the spatial assignment of planes oscillates between two interpretations. The Rubin goblet is the canonical example.
+Arnheim discusses Rubin reversals, multiple Arp plane readings, de Chirico’s conflicting setting and cube, and cubist local frameworks. Distinct vanishing points alone are not a contradiction: different direction families in one camera have different points. A geometric inconsistency requires checking the actual claimed directions and projection. An observer need not alternate or experience dissonance in every ambiguous image. The goblet quotation below is retained as extracted, without inventing an OCR repair.
 
-**Ambiguity from competing depth cues**: When multiple depth cues point to different depth interpretations, the percept becomes unstable. Arnheim describes this in the Arp woodcut where multiple spatial readings (1 to 4 planes) are equally viable.
+Retained wording from the represented account (original fidelity unassessed):
 
-**Paradox from conflicting spatial systems**: When elements within the same picture use incompatible spatial conventions — central perspective for one object, isometric for another — spatial contradiction results. Arnheim analyses de Chirico extensively: "The mysterious, dreamlike quality of what at first glance looks like a straight realistic composition is obtained essentially by deviating from perspective rules" (p. 784). The setting uses convergent perspective; the statue sits on an isometric cube. The contradiction produces disorientation.
-
-**Deliberate artistic use**: Surrealists used spatial paradox to disorient and disturb. De Chirico created architectural impossibilities. Escher's impossible figures exploit the rules of spatial perception systematically to create paradoxes that cannot be resolved.
-
-**Design implication**: Unintentional spatial ambiguity creates confusion and cognitive load. Intentional spatial paradox is a sophisticated tool for creating mystery, tension, or surprise.
+"The mysterious, dreamlike quality of what at first glance looks like a straight realistic composition is obtained essentially by deviating from perspective rules"
 
 # Prerequisites
 
-- **Pictorial Space** — Must understand how pictorial space is constructed to understand how it can be undermined.
-- **Figure-Ground** — Source of reversible-figure ambiguity.
-- **Linear Perspective** — Understanding perspective rules is needed to understand how their violation creates paradox.
-- **Isometric Perspective** — Mixing isometric and perspective is the primary source of spatial contradiction.
+- **Pictorial Space** — Pictorial spatial readings supply the vocabulary for this particular cue or convention.
+- **Figure-Ground** — Contour ownership and region separation supply the comparison used here.
+- **Linear Perspective** — The defined central projection supplies camera-axis scale and direction-family convergence.
+- **Isometric Perspective** — Parallel/oblique and strict equal-axis constructions provide a comparison with central projection.
 
 # Key Properties
 
-1. Ambiguity arises when multiple depth interpretations are equally supported by the visual evidence.
-2. Paradox arises when different parts of an image use incompatible spatial systems.
-3. Both ambiguity and paradox are perceptually unstable — the viewer oscillates between interpretations or experiences cognitive dissonance.
-4. Unintentional ambiguity/paradox creates confusion; intentional use creates artistic tension or surreal effect.
-5. Three possible resolutions when two spatial systems conflict: (a) one system dominates; (b) the other system dominates; (c) neither yields and the image splits into independent spatial systems.
+1. Several plausible readings need not form an impossible geometry.
+2. Multiple direction-family vanishing points can be consistent.
+3. Local consistency need not imply global realizability.
+4. Intentional ambiguity can serve art, games, identity or other tasks.
 
 # Construction / Recognition
 
 ## To Construct/Create (intentionally):
-1. Introduce two incompatible spatial systems: e.g., set the background in convergent perspective, an object in isometric.
-2. Or: balance figure-ground factors equally so that two readings are equally stable.
-3. Or: make an object appear to occupy two incompatible spatial positions simultaneously (Escher stairs).
+
+1. Choose the competing readings or global impossibility intentionally.
+2. Check which local relations make each reading plausible.
+3. Keep task-critical controls and information understandable at rest.
 
 ## To Identify/Recognise:
-1. Find elements in the same image using different spatial conventions (convergent vs. parallel lines).
-2. Check if vanishing points are consistent — multiple inconsistent vanishing points signal ambiguity.
-3. Ask: does the image have a clear, singular depth structure, or do different readings seem equally valid?
+
+1. Identify the claimed camera/projection and edge direction families.
+2. Check whether differing vanishing points belong to the same or different families.
+3. Distinguish ambiguous ownership from impossible global connections.
 
 # Context & Application
 
-- **Typical contexts**: Surrealist art, optical illusion design, puzzle design, logo ambiguity, figure-ground reversals in brand identity.
-- **Common applications in design**: In UI design, spatial ambiguity is almost always an error. Consistent z-index conventions, consistent shadow/blur systems, and consistent depth cue treatment prevent unintentional spatial confusion. In logo design, ambiguous figure-ground (FedEx arrow, World Wildlife Fund logo) is deliberate and celebrated. In game design (Monument Valley), spatial paradox is the central mechanic.
+Surrealist art, Escher stairs, Monument Valley and identity designs use ambiguity. A UI can also use stylization without a universal single-mode policy. This theoretical subject has no CSS feature compatibility record; actual stacking, shadow and state choices require their own review.
 
 ## Cross-Domain Connections
 
-**Mathematics → STRUCTURAL**: Perceptually ambiguous figures are analogous to multistable dynamical systems — systems with two or more attractors. The visual system is attracted to one stable interpretation, then flips to the other, as a ball rolls from one energy minimum to another. The relative depth of the two attractors (i.e., how strongly each interpretation satisfies the simplicity principle) determines the frequency of switching.
+**Mathematics → STRUCTURAL**: Multiple stable interpretations resemble attractors in a dynamical-system analogy. No energy function, transition law, noise model or calibrated switching data is supplied; a double-well picture does not determine switching frequency or physiological mechanism.
 
 # Examples
+
+Source-specific examples and quotations below are retained as reports with their original wording and locators. They are not independently checked historical, experimental or universal claims. Applied examples are qualified design proposals.
 
 **Example 1** (p. 784): De Chirico's The Lassitude of the Infinite — "The mysterious, dreamlike quality... is obtained essentially by deviating from perspective rules. The setting as a whole is drawn in focused perspective, whereas the statue rests on an isometric cube." — Arnheim
 
@@ -112,40 +105,48 @@ Arnheim identifies several sources of spatial ambiguity and paradox in visual re
 
 # Relationships
 
+These are scoped reading connections. Builds Upon supports understanding; Enables names a possible downstream use; Related is an association; Contrasts With names a comparison. They do not establish universal causes, subtypes or verified historical sequences. Ordinary downstream uses are not invented card identities.
+
 ## Builds Upon
-- **Figure-Ground** — The reversible-figure case of figure-ground is the simplest form of spatial ambiguity.
-- **Pictorial Space** — Spatial ambiguity/paradox is the failure or deliberate disruption of coherent pictorial space.
-- **Linear Perspective** — Violation of perspective rules is the primary mechanism for spatial paradox.
-- **Isometric Perspective** — Mixing isometric and convergent systems creates the classic spatial contradiction.
+
+- **Figure-Ground** — Reversible ownership supplies a local ambiguous case.
+- **Pictorial Space** — Compare coherent, competing and impossible spatial readings.
+- **Linear Perspective** — A defined perspective model helps distinguish genuine inconsistency from several consistent direction families.
+- **Isometric Perspective** — Parallel and central constructions can be compared or deliberately juxtaposed; mixture alone is not proof of impossibility.
 
 ## Enables
-- **Surrealist/Paradoxical Design** — The deliberate use of spatial contradiction for artistic effect.
+
+- **Surrealist/Paradoxical Design** — Contradiction can be used intentionally for expression.
 
 ## Related
-- **Contour Rivalry** — A specific case of spatial ambiguity where two surfaces compete for a shared boundary.
-- **Perceptual Transparency** — Ambiguous cases of transparency where two depth interpretations are possible.
+
+- **Contour Rivalry** — Rivalry is a specific competing-boundary case.
+- **Perceptual Transparency** — A layer may admit competing visible-through interpretations.
 
 ## Contrasts With
-- **Unambiguous Depth** — When all depth cues point to a single coherent spatial interpretation.
+
+- **Unambiguous Depth** — Unambiguous-depth names a selected coherent-reading condition under stated cues, not a new resolved card.
 
 # Common Errors
 
-- **Error**: Mixing spatial conventions unintentionally.
-  **Correction**: In UI design, maintain a single coherent spatial system: if using flat design, avoid depth cues entirely; if using elevation, apply it consistently with a single convention (Material Design elevation, iOS blur depth system).
+- **Error**: Diagnosing paradox from every pair of vanishing points or mixed visual styles.
+  **Correction**: Check the geometry and intended task first.
 
-- **Error**: Assuming spatial ambiguity is always an error.
-  **Correction**: Deliberate spatial ambiguity in logo design, identity design, and game design is a sophisticated tool. The error is unintentional ambiguity, not ambiguity per se.
+- **Error**: Treating ambiguity as always defective.
+  **Correction**: Preserve expressive ambiguity when it serves the brief; test task-critical interpretation separately.
 
 # Common Confusions
 
-- **Confusion**: Depth ambiguity only occurs in abstract or artistic contexts.
-  **Clarification**: Spatial ambiguity can occur in any UI with inconsistent depth cues — mismatched shadows, conflicting z-index and visual depth signals, elements that appear to float at indeterminate depths.
+- **Confusion**: A high z-index or shadow system guarantees unambiguous depth.
+  **Clarification**: Paint order and intended depth reading differ; inspect the actual visible result.
 
 # Source Reference
 
 Chapter V: Space, "Art and Visual Perception," pp. 766–802 (Playing With the Rules section; Cubism discussion).
 
 # Verification Notes
+
+The bullets below are preserved historical extraction assertions, not current verification. Frozen confidence, cross-reference, source-reading and OCR claims do not settle original-dependent fidelity. Current same-context review supports only the explicitly scoped technical constructions, contextual teaching and local comparisons; it establishes no browser, observer, comfort or physiological result.
 
 - Definition source: Synthesised from discussion in Chapter V (Space), pp. 766–802; key quotes cited
 - Confidence rationale: Medium — Arnheim discusses this through specific art examples rather than as a systematic treatment; synthesised from multiple passages
