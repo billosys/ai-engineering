@@ -201,3 +201,9 @@ static/temporal motion, physical/interpretive force, gaze, reference geometry an
 expression-theory distinctions. Preserve attributed examples and unavailable-
 original limits; reconcile existing local relationships, question components and
 ordered analogy/CSS metadata without new fields or curriculum.
+
+## Version 1.0.30 — 2026-10-19
+
+Clarify the worked book composition’s local page-wrapper attribution, distinct
+from Every Layout’s unverified paid Container definition. No CSS or paid
+primitive recipe was introduced.
