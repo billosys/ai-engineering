@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Slice25 retained behavior — 39cf41933fa297a5fd2330ba9523497103b18336 — illustrative constants</title>
+<title>Slice25 retained behavior — 494a4b95f8a7a424deedb062f0a2870ca9ce0794 — illustrative constants</title>
 <style>
 /* Fixture-only inputs; no adopting-project defaults or installed assets. */
 :root {
@@ -114,6 +114,8 @@ html:has(#spacing:checked) p + p { margin-block-start: 2em !important; }
 table { border-collapse: collapse; color: #000; background: #fff; }
 caption { text-align: start; font-weight: bold; }
 th, td { text-align: start; padding: .5rem; border: 1px solid #000; }
+.simple-table { inline-size: 100%; table-layout: fixed; }
+.simple-table caption, .simple-table th, .simple-table td { overflow-wrap: anywhere; }
 .wide-table { min-inline-size: 50rem; }
 .sizing-parent { width: 300px; }
 .sizing-box { padding-inline: 20px; border: 2px solid #000; margin-block: .5rem; }
@@ -170,7 +172,7 @@ input::placeholder { color: #666; opacity: 1; }
 <body>
 <header>
 <h1>Retained behavior specimen</h1>
-<p>Source revision <code>39cf41933fa297a5fd2330ba9523497103b18336</code>. All numeric values here are illustrative test constants, not product defaults. Browser observations are pending independent execution.</p>
+<p>Source revision <code>494a4b95f8a7a424deedb062f0a2870ca9ce0794</code>. All numeric values here are illustrative test constants, not product defaults. Browser observations are pending independent execution.</p>
 <nav aria-label="Specimen sections"><a href="#book">Book composition</a> · <a href="#primitives">Retained primitives</a> · <a href="#semantics">Reading and interaction</a> · <a href="#colour">Colour pairs</a> · <a href="#fonts">Font failure and axes</a></nav>
 <fieldset>
 <legend>Authored diagnostic controls</legend>
@@ -220,7 +222,7 @@ input::placeholder { color: #666; opacity: 1; }
 <section id="semantics" aria-labelledby="semantic-heading">
 <h2 id="semantic-heading">Reading and interaction</h2>
 <p>Headings and links state their purpose; the main landmark and source order remain meaningful. These DOM and keyboard specimens cannot establish screen-reader announcements or all navigation tasks.</p>
-<table><caption>Simple publication data</caption><thead><tr><th scope="col">Title</th><th scope="col">Year</th></tr></thead><tbody><tr><th scope="row">The Long Road Home</th><td>2026</td></tr><tr><th scope="row">The Open Window</th><td>2025</td></tr></tbody></table>
+<table class="simple-table"><caption>Simple publication data</caption><thead><tr><th scope="col">Title</th><th scope="col">Year</th></tr></thead><tbody><tr><th scope="row">The Long Road Home</th><td>2026</td></tr><tr><th scope="row">The Open Window</th><td>2025</td></tr></tbody></table>
 <h3>Wide data with explicit contained overflow</h3>
 <div class="table-region" role="region" aria-label="Detailed publication table, horizontally scrollable" tabindex="0"><table class="wide-table"><caption>Wide comparison data; scroll this region</caption><thead><tr><th scope="col">Title</th><th scope="col">Publication</th><th scope="col">Reading context</th><th scope="col">Editorial note</th></tr></thead><tbody><tr><th scope="row">The Long Road Home</th><td>October 2026</td><td>Extended essays</td><td>Illustrative comparison information remains available through contained scrolling.</td></tr></tbody></table></div>
 <h3>Six-item Reel with an ordinary narrow reading list</h3>

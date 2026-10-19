@@ -343,3 +343,115 @@ outermost width constraint. The claim was retained from baseline under the issue
 recipe, not newly verified. CDC owns the proposed repair to distinguish the local
 .page illustration from an unsupported named-primitive role. No source repair,
 new acceptance, or claim of source warrant was made on receipt of this finding.
+
+## Iteration01 — current CC correction return
+
+2026-10-18. Executed [cc-prompt-iteration01.md](../cc-prompt-iteration01.md),
+issued planning `0dde0ed47ebae8e42ab409406292bff98ed19bc3`, against SOURCE
+`39cf41933fa297a5fd2330ba9523497103b18336` and initial CC return
+`ce195ffff553a7a65347b4d67a8d3600ac812760`. Final correction SOURCE
+**`494a4b95f8a7a424deedb062f0a2870ca9ce0794`**, same dedicated branch/worktree.
+This section is current for the CC return; all preceding initial-attempt text,
+hashes, failed case and prospective protocol remain historical and preserved.
+The current independent review owns the actual verdict. S25-04 remains done at
+its independently accepted initial scope;01/02/03 remain open.
+
+### Iteration01 intake and contract readback
+
+Revalidated the source branch/pin and planning issue before edits. Read current
+project1.75 completely through its actual Version History header at287 (bounded
+1–160 and161–287), then arc1.70 through its actual header159, including the
+Autonomous authority; complete current slice plan/ledger, independent review,
+Iteration01 prompt and fixture were loaded. Applicable framework2.8.0, domain,
+CC intake and native-gate rules remain loaded from this same execution context.
+
+Receipt clarification: the initial1–296project/1–169arc read ranges extended
+beyond the actual287/159body boundaries into history. Calling those larger
+numbers the “actual Version History boundary” was inaccurate. The complete
+active bodies, including Autonomous authority, were covered; the current
+287/159read ranges and actual headers were independently confirmed by CDC.
+The original table is retained as history; no missing authority or new intake
+investigation is inferred from that range-label correction.
+
+Pre-edit contract readback sent to CDC: replace only the exact Container/Frame
+wording and fifth approach heading, then only add the simple-table class and two
+scoped CSS rules, with a source-pin update after the source commit. Preserve all
+other bytes, owner/history1.0.22, earlier failed specimen identity and protocols.
+S25-04's prior independent acceptance does not self-accept changed integration;
+actual browser/identity proof remains CDC, not a static check or simulated pass.
+No external source, font, new helper or release work is authorized.
+
+### Iteration01 exact correction and proof
+
+- F01: Container's paid definition is explicitly a reading pointer; the .page
+  wrapper is this guide's own width-constraint illustration. All13names remain.
+  Frame now “constrains media to a chosen aspect ratio.” No paid content acquired.
+- F03: fifth heading is “Decorative Pacing with Scroll-Driven Animation”; body
+  and all other monoculture bytes remain unchanged.
+- F02: simple semantic publication table now has class simple-table; only
+  inline-size100%/table-layout:fixed and scoped caption/th/td
+  overflow-wrap:anywhere were added. All text/caption/header scopes, wide-table
+  region, retained algorithms/inputs and native controls remain unchanged.
+  No clipping or new ordinary-prose overflow exception. Actual browser repair
+  outcome is pending CDC's rerun of the retained12states.
+
+Exact reverse-replacement checks reconstructed both39cf4193source files byte for
+byte. Reversing the two CSS additions/simple-table class and current hash in the
+fixture reconstructs the issued0dde0ed4fixture byte for byte. Thus the initial
+failed fixture remains recoverable in Git at `ce195fff`/`0dde0ed4` with SHA256
+`7096d102c5749acc878577f92d2feb8a51c01e93b0527c7bcc67ac4a15b8a73e`.
+No prior failure was erased or converted to success. Final corrected passages,
+fixture and diff were inspected; exact Stack/Sidebar/Grid/book/prose CSS blocks
+are unchanged and present. The source algorithm is not altered to mask failure.
+
+Full tracked tree comparison from39cf4193 to494a4b95:7080objects, exactly2changed,
+**7078unchanged**, with identical path sets and unchanged modes/object identities
+for every protected object, including all233whole cards,161sources,owner/history,
+other4guides and all build/schema/helpers. This is object preservation, not new
+semantic/fidelity acceptance. Source diff is only6insertions/5deletions.
+
+Validation was sequential, using the existing root venv SKILL_PYTHON, no install:
+
+| Check | Actual outcome |
+|---|---|
+| make check-package-paths; /tmp/s25-i01-check-package-paths.log |exit0;25source skills/25packages/0version errors;25zips/402Markdown/0hard failures/606warnings/3explicit exceptions. Warning buckets/605locations unchanged from initial record. |
+| separate fresh make design; /tmp/s25-i01-design.log |exit0;8Markdown payloads in10entries, matching final committed source8/8. |
+| Description/metadata gate applicability |Initial check-skills retained: entrypoint/description and owning metadata/history are unchanged objects. Design360chars remains above300editorial target, within hard limit. No gratuitous duplicate suite. |
+| Exact local/source checks |Reverse scope, retained CSS, LF/EOF, no script/global hiding and full7080object comparison passed. Planning local links/fragments/status preservation checked before its scoped commit. |
+| Scoped source commit |Two issued paths only, both required trailers; source worktree clean after commit. Approved shared-metadata write, no failed native run in this iteration. |
+
+Fresh correction ZIP SHA256:
+`1e7f1fd5cc50d746e20fbd02ec2eb2a21d857676893d1b0032e40d42fa499ad9`.
+This new artifact identity does not replace the initial ZIP record above.
+
+### Iteration01 final eight-file payload pin
+
+All rows below identify SOURCE494a4b95, not the historical39cf4193table.
+Root uses these final bytes for the unchanged prospective identity protocol.
+
+| Committed source path | SHA256 |
+|---|---|
+| knowledge/design/SKILL.md | `f20df1d28d0bd63c5d4c60892e7881392be885ea80e7895a5e85ee458ff68914` |
+| knowledge/design/version-history.md | `6627930e01186e68a2b713cb7af6d69bf0b99baef53318f0f6313656e6233cc1` |
+| knowledge/design/guides/design.md | `edc04be29accee5bfb350a3b9664bb6f4be73d440a145fb88e77f3554bfba721` |
+| knowledge/design/guides/foundations-of-design.md | `a126b43ea12ed651902528313dced6430616fa5be28528dd39eee7fcf03d05e0` |
+| knowledge/design/guides/layout.md | `1794936d8bceb16aef21e724161238e8633bf6fd6593f6c7eae41a9299c8fec0` |
+| knowledge/design/guides/breaking-the-layout-monoculture.md | `041e535aa2573371dcb811a1405fec805bee87dc5204d9ae03a250c5bf9661c1` |
+| knowledge/design/guides/type.md | `ae0dc737a83ddfd069e27614989ad0aa33681927d218ff522beb21f82ef6c904` |
+| knowledge/design/guides/colour.md | `00c51e4b831648f67c3cea7e4519a9b4acf6574c7848a927b87d5e53537ad434` |
+
+Current fixture SHA256: `ef0ab2de4ffe224896dbc561e5ea99137ab5ab2ae2deadb7e22af1339b7682f1`.
+
+### Iteration01 proof and four-row return
+
+| Row | Current CC disposition / next owner |
+|---|---|
+| S25-01 |F01/F03 and Frame clarification implemented; source proposal awaits independent CDC review. Open. |
+| S25-02 |F02 scoped repair delivered with exact static preservation checks. Actual final12cell and remaining keyboard/focus/pair/motion/font/axis proof pending CDC; no browser pass claimed. Open. |
+| S25-03 |Prospective protocol/earlier records preserved; new final8payload hashes supplied. All3actual fresh-context responses/qualitative judgments remain pending CDC. Open. |
+| S25-04 |Done only at initial39cf4193scope by CDC; unchanged7078objects and current fresh8/8package attested for changed integration, awaiting current CDC review. Status preserved. |
+
+No new supporting artifact: exactly the same batch and fixture. Planning changes
+are confined to these two, an appended current closing-report section and ledger
+Evidence/Notes only. All earlier attempts/protocol text remain intact. No closure,
+successor, new source input, release, push, merge or native preference mutation.

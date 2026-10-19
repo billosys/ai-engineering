@@ -98,3 +98,43 @@ old history preserved. Both prospective protocols and fixture constants are
 present. Actual12browser cells and three fresh-context responses are explicitly
 pending CDC, not silently omitted or self-accepted. CDC owns independent review,
 actual executions, accepted dispositions and any further issued iteration.
+
+## Iteration01 — current CC return
+
+Executed [cc-prompt-iteration01.md](cc-prompt-iteration01.md), issued at
+planning0dde0ed4. Source baseline39cf4193; correction SOURCE
+**`494a4b95f8a7a424deedb062f0a2870ca9ce0794`**. Initial return and failure history above remain unchanged.
+The current scoped planning commit contains this append and is identified by its
+actual full hash in the contributor handoff. No closure is claimed.
+
+F01 Container is now an explicit paid-definition reading pointer; the .page
+width wrapper is a local illustration, and Frame wording is scoped. F03's
+heading now names decorative pacing. F02 adds only the simple-table class and
+the issued fixed-layout/wrapping CSS; text/caption/header semantics, retained
+examples, wide-table region and controls remain unchanged. Exact reverse edits
+recover the earlier source/failed fixture bytes. [Current batch evidence](artifacts/batch-record.md#iteration01--current-cc-correction-return)
+retains the initial failure, corrects the boundary-label receipt and pins the
+new eight-file payload without rewriting history.
+
+| Row | Current disposition / next owner |
+|---|---|
+| S25-01 |Open; source repairs implemented, independent CDC review pending. |
+| S25-02 |Open; scoped fixture repair delivered, actual final browser12cell/remaining behavior checks pending CDC. |
+| S25-03 |Open; final payload pinned, all3actual fresh-context results and review pending CDC. |
+| S25-04 |Done at initial39cf4193scope only; current7078unchanged-object/fresh8of8integration evidence attested for CDC review. |
+
+Sequential make check-package-paths and separate fresh make design exited0.
+25source skills/25packages/0version errors;25zips/402Markdown/0hard failures,
+606warnings/3explicit exceptions retained. All8archive Markdown payloads match
+committed source. ZIP SHA256
+`1e7f1fd5cc50d746e20fbd02ec2eb2a21d857676893d1b0032e40d42fa499ad9`.
+Unchanged metadata/description retains the initial description gate. Complete
+tracked-object comparison:7080total,2changed,7078identical; no1.0.22bump. Both
+source trailers present; source commit changed only Layout and Monoculture.
+
+Scope-as-issued versus delivered: exact2source paths and4planning outputs;
+existing two supporting artifacts only. Preserved all other source objects,
+initial packet/protocol/failure history and ledger statuses/criteria. No new
+dependency or structural arc change. CDC owns actual browser/identity execution,
+review/acceptance and further handoff; source-fidelity/global/Operator/release
+gates remain unchanged. No closure, successor, publication, merge or push.
