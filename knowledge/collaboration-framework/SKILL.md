@@ -110,7 +110,10 @@ For Operator-selected **Autonomous Mode**, read the
 and [execution rules](../project-management/guides/README.md#autonomous-mode)
 before acting. CDC selects and adapts contributor arrangements, works through
 the authorized arc by default using Expedited Mode, commits on a dedicated
-non-default source branch, and obtains independent review. Project-wide scope
+non-default source branch, and obtains independent review for substantive work.
+One-Contributor is a limited option for simple, clearly defined, low-risk,
+low-effort tasks; it cannot waive existing review gates. Retrospectives remain
+mandatory in all three contributor methods. Project-wide scope
 requires an explicit override. Preserve ledgers, bubble-up and closing
 retrospectives; pause and surface plan decisions when new information leaves
 too much ambiguity. Operator gates remain binding.

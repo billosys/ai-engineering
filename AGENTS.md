@@ -105,7 +105,8 @@ On explicit Operator selection, follow the canonical mode in
 rules in `knowledge/project-management/guides/README.md`. CDC may select and
 revise contributor arrangements within the recorded authorization. Default to
 a named arc; whole-project execution needs an explicit override. Use a dedicated
-non-default source branch, independent review, preserved prompts/ledgers,
+non-default source branch, independent review for substantive work and existing
+gates, preserved prompts/ledgers,
 bubble-up and CDC slice/arc/project retrospectives. Routine authorized handoffs
 need not use human relay; tool permissions and Operator decision gates remain
 binding. Pause and surface plan choices when new evidence leaves too much

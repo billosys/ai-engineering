@@ -328,8 +328,9 @@ evidence when independent review occurs.
 Autonomous Mode is an explicitly Operator-authorized execution mode for an
 approved plan. The primary assistant acts as CDC, owns the integrated result,
 and works through complete arcs using Expedited Mode. It is compatible with
-Two-Contributor and Three-Contributor arrangements; it is not permission for
-one context to implement and independently accept its own work.
+One-, Two- and Three-Contributor arrangements, with One-Contributor restricted
+to the simple-work exception below. It is not permission for one context to
+implement and independently accept its own work.
 
 ### Authorization and boundaries
 
@@ -360,7 +361,8 @@ of that slice or for subsequent work. This is an explicit exception to the
 normal Operator-only workflow-transition rule; it does not permit changes to
 scope, architecture, acceptance criteria or evidence requirements.
 
-Use either of these patterns, adding CRC when useful:
+Use Two- or Three-Contributor arrangements for substantive work, following
+either of these patterns and adding CRC when useful:
 
 - Assign implementation to a CC subagent, then have CDC or an independent CRC
   inspect the actual diff and reproduce the required evidence.
@@ -368,8 +370,37 @@ Use either of these patterns, adding CRC when useful:
   briefed reviewer context. That reviewer owns its verification judgment;
   CDC records coordination and follow-through without claiming self-acceptance.
 
-Name the actual implementer and independent verifier, their authority and the
-verification filename convention in the plan. Reviewer subagents need not be
+**Limited One-Contributor use.** CDC may choose the One-Contributor method for
+an individual task or slice that is simple, clearly defined, low risk and low
+effort, where proportionate validation can readily establish the intended
+result. Examples include a straightforward README update, minor documentation
+correction or mechanical file rename. These are examples, not automatic
+exemptions: a small diff can alter a critical contract, and a rename can affect
+integration. Judge consequences, uncertainty and dependencies rather than file
+type, line count or convenience. Do not downgrade a substantive arc wholesale
+because some of its tasks are simple.
+
+Record the bounded scope, why One-Contributor is appropriate, applicable checks
+and any existing independent-review gates in the current plan/task record.
+Report results as self-checked, never independently verified. All required
+slice, arc and project retrospectives remain mandatory; neither a retrospective
+nor successful self-checks replaces independent verification where required.
+Keep existing ledgers and closure artifacts without inventing separate actors,
+handoffs or reviewer verdicts for work performed in one context.
+
+One-Contributor is not a fallback for unavailable reviewers, unfavorable
+findings, exhausted iteration budgets, time pressure or avoiding quality work.
+Switching cannot waive an existing gate or dispose of unresolved findings.
+If unexpected coupling, uncertainty, consequential behavior or effort makes
+the task no longer fit this exception, reassess before proceeding with the
+affected work: move to Two- or Three-Contributor execution and obtain independent
+review of the affected candidate, or pause for an Operator decision when the
+plan itself needs clarification. CDC may make the staffing change within the
+recorded authorization; carry forward findings, evidence and iteration counts.
+Independent arc/project composition and Operator gates remain unchanged.
+
+For multi-contributor work, name the actual implementer and independent verifier,
+their authority and the verification filename convention in the plan. Reviewer subagents need not be
 permanent CRCs. Use the existing workflow-specific records, identifying the
 actual author/context and evidence; never sign a review as though CDC performed
 an independent pass over CDC's own implementation. Apply the same separation
