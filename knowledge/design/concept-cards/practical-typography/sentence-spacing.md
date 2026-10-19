@@ -32,69 +32,68 @@ css_implementation: []
 
 # Quick Definition
 
-Sentence spacing is the convention of using exactly one space between sentences — never two — which is the settled custom of professional typographers, supported by all major typography authorities.
+Sentence spacing concerns the spaces separating sentences. Butterick recommends one space for his prose typesetting convention; this is contextual editorial guidance, not the definition of all sentence spacing or a universal readability law.
 
 # Core Definition
 
-Butterick is unequivocal: "Always put exactly one space between sentences. Or more generally: put exactly one space after any punctuation."
+Butterick recommends: “Always put exactly one space between sentences.” He reports Bringhurst's “Use a single word space between sentences” (The Elements of Typographic Style, 4th ed., p. 29), Felici's statement that separating sentences with two word spaces “has no place in typesetting” (The Complete Manual of Typography, p. 80), and Chicago's advice to leave “a single character space, not two spaces” (16th ed., rule 2.9). These are quotations reported by the prepared page, not independently checked originals or proof of universal consensus. His argument that extra spaces can disturb page texture is not an empirical result established here.
 
-The two-space convention is a typewriter-era habit: "using two spaces is an obsolete habit." He notes that the one-space rule is not a matter of opinion or argument: "One option has the support of typography authorities and professional practice; the other option does not."
-
-He backs this with citations from Bringhurst (*The Elements of Typographic Style*: "Use a single word space between sentences"), Felici (*The Complete Manual of Typography*: "The typewriter tradition of separating sentences with two word spaces after a period has no place in typesetting"), and *The Chicago Manual of Style* (rule 2.9).
+The prepared page acknowledges disputed origins for double spacing, permits two spaces in monospaced/typewriter-style text, and advises accepting a workplace requirement when resisting would endanger employment. Its broad phrase about spacing after punctuation concerns his prose convention: do not apply it to decimal points, URLs, code or languages with other conventions.
 
 # Prerequisites
 
-- **Typewriter Habits** — Double sentence spacing is typewriter habit #2.
+- **Typewriter Habits** — Checklist item #2 supplies the source's editorial context; it does not settle the disputed history of sentence spacing.
 
 # Key Properties
 
-1. **One space, always**: "Always put exactly one space between sentences."
-2. **Professional consensus**: Supported by Bringhurst, Felici, and Chicago Manual of Style.
-3. **Not debatable**: "It's not a matter of argument."
-4. **White-space rivers**: Extra spaces "disrupt the balance of white space" and can create visible "rivers" across a page.
-5. **One exception**: Tolerable (though still unnecessary) in monospaced/typewriter fonts.
-6. **Empirical test**: "Pick up any book, newspaper, or magazine and tell me how many spaces there are between sentences."
+1. **Source recommendation**: Use one space between prose sentences when adopting Butterick's convention.
+2. **Reported authorities**: The page cites Bringhurst's single-word-space advice, Felici's objection to typewriter-style double spacing, and Chicago's advice for sentences and colons. Their originals were not independently checked here.
+3. **Convention can change**: Butterick acknowledges earlier spacing practices differed; his insistence is a position about the practice he recommends.
+4. **Texture argument**: Extra spaces and possible white-space rivers are his visual explanation, not a newly observed rendering or controlled readability finding.
+5. **Exceptions**: The source tolerates two spaces in monospaced text and separately yields to the described workplace requirement. Respect actual house style and protected data.
+6. **Display differs from storage**: CSS may collapse or preserve spaces for rendering without rewriting underlying document data. Stored space counts alone do not establish a visible gap.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Type one space after every period, question mark, exclamation point, and colon.
-2. If converting existing documents, use search-and-replace to change double spaces to single.
+1. Identify prose sentence boundaries, language and the adopting editorial rule. If using this convention, type one space between sentences; punctuation inside `3.14`, URLs or code has a different role.
+2. For existing text, constrain edits to intended prose and inspect them. Do not bulk-collapse spaces in preformatted material, quoted data, code or deliberate alignment.
+3. For web output, check the effective `white-space` behavior. `normal`, `nowrap` and `pre-line` collapse consecutive spaces; `pre`, `pre-wrap` and `break-spaces` preserve them with different wrapping/end-of-line rules. These are rendering rules, not source-text replacement.
 
 ## To Identify/Recognise:
-1. Double-spaced sentences create visible gaps in the text that disrupt the even texture.
-2. Across a full page, double spacing creates "rivers" of white space.
+1. Inspect stored text and the rendered paragraph separately. Two stored U+0020 spaces between words can collapse under `white-space: normal` and be preserved under `pre-wrap`; this does not promise a fixed physical gap.
+2. Judge the actual page texture in its font, layout and language. Do not infer visible rivers or readability effects just from character counts.
 
 # Context & Application
 
-- **Typical contexts**: All typeset text — documents, web content, print.
-- **Common applications**: Every piece of writing where sentences follow sentences.
-- **Historical note**: Whether the two-space convention originated with typewriters or earlier is debated, but "it doesn't matter. Because either way, it's not part of today's typographic practice."
+- **Typical contexts**: Edited prose where Butterick's single-space convention is adopted.
+- **Common applications**: Sentence boundaries and applicable prose punctuation, subject to language, house style and data preservation.
+- **Historical note**: Butterick explicitly acknowledges competing accounts of the two-space habit's origins. This review does not settle that history or research competing readability claims.
 
 # Examples
 
-**Example 1** (one-space-between-sentences): Same paragraph shown with one space (looks balanced) vs. two spaces (extra gaps visible).
+**Example 1** (one-space-between-sentences): The prepared page presents the same paragraph with one space, two spaces and a monospaced variant. Butterick describes the extra gaps as disrupting balance; this is his illustration, not a rendering observation reproduced in this card.
 
-**Example 2** (one-space-between-sentences): "I have no idea why so many writers resist the one-space rule. If you're skeptical, pick up any book, newspaper, or magazine and tell me how many spaces there are between sentences."
+**Example 2** (one-space-between-sentences): Butterick invites skeptical readers to inspect books, newspapers and magazines and argues for professional custom. That invitation is not a survey proving all publications use one space. For a technical contrast, `A.  B.` stores two spaces after the period; CSS can collapse them for display or preserve them without changing those stored characters.
 
 # Relationships
 
 ## Builds Upon
-- **Typewriter Habits** — Double spacing is typewriter habit #2.
+- **Typewriter Habits** — Item #2 supplies the source's single-space recommendation and checklist context, while the sentence-spacing page retains history and usage exceptions.
 
 ## Related
-- **Curly Quotes** — Another typewriter-era correction (habit #1).
-- **Hyphens and Dashes** — Another character-level correction (habit #3).
+- **Curly Quotes** — Checklist item #1 is another prose-composition choice; both require protecting literal code/data.
+- **Hyphens and Dashes** — Checklist item #3 similarly distinguishes intended prose punctuation from literal character sequences.
 
 # Common Errors
 
-- **Error**: Using two spaces between sentences because "that's how I was taught."
-  **Correction**: "Your documents are governed by the same rules of typography as any professionally typeset book, newspaper, or magazine." All use one space.
+- **Error**: Turning the one-space recommendation into a global space-removal operation or a claim that all professionals always agree.
+  **Correction**: Apply the chosen prose convention within its language and house style; retain exceptions and protected text, and distinguish Butterick's reported authority from independent verification.
 
 # Common Confusions
 
-- **Confusion**: Two spaces are better for readability.
-  **Clarification**: Butterick addresses this directly: the extra spaces "disrupt the balance of white space." One space is the professional standard without exception in proportional fonts.
+- **Confusion**: A source's single-space preference proves better readability, or two stored spaces guarantee a visibly doubled gap.
+  **Clarification**: This page supplies editorial advice and an illustration, not general empirical proof. CSS whitespace processing and actual font/layout determine display; neither rewrites stored data.
 
 # Source Reference
 
@@ -102,9 +101,7 @@ He backs this with citations from Bringhurst (*The Elements of Typographic Style
 
 # Verification Notes
 
-- Definition source: Direct quotes from one-space-between-sentences.md.
-- Confidence rationale: High — absolute rule with extensive justification and citations.
-- Uncertainties: None.
-- Cross-reference status: All referenced slugs correspond to planned cards.
-- Rosetta Stone check: Checked against 0010 tables. No direct mappings found.
-- OCR issues: None — HTML conversion.
+- Available source: complete prepared one-space-between-sentences.md, including reported authorities, disputed origins, monospaced and workplace exceptions. Original editions/capture fidelity and independently checked authority quotations remain unresolved under P10-11.
+- Technical distinction: [CSS Text Level 3, §3 and §4 opening](https://www.w3.org/TR/css-text-3/#white-space-property) separates collapse/preservation for rendering from underlying document data. No browser, visual comparison, cognitive study or conformance test was run.
+- Historical extraction confidence stays unchanged and does not establish universal custom or readability benefit.
+- Three local relationships retain their checklist/literal-text premises. CQ1 membership stays recorded, but sentence spacing alone does not define visual hierarchy or all its properties.

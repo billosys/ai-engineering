@@ -125,3 +125,12 @@ do not guarantee outcomes across content, users or browsers.
   decimal approximation 1.618 and correct its scale arithmetic and metadata.
 - Retain original-source, historical, perceptual, full-corpus, and hosted-review
   limits explicitly; this correction does not establish release acceptance.
+
+## Version 1.0.19 - 2026-10-18
+
+- Corrected four punctuation/typewriter-habit cards with language and editorial
+  scope, literal code/data preservation, source exceptions and bounded local
+  relationship/CQ support.
+- Added a punctuation and meaningful-text method to the packaged type guide;
+  distinguished semantic quotation/generated marks from stored punctuation and
+  whitespace rendering from document data. No browser/AT behavior was tested.
