@@ -350,10 +350,96 @@ canonical separate `planning` branch/worktree for plans and evidence. Check
 branch and worktree identity again after a handoff or context recovery.
 Autonomous Mode authorizes local commits within scope; pushing, merging,
 publishing and other approval-gated actions need their own authorization.
+Inspect automatic pipeline effects before triggering them: an authorized push
+or PR can initiate publication, cloud changes or notifications. Obtain authority
+for those effects or use an authorized nonpublishing route; absence of a manual
+publish/deploy command does not establish absence of external effects.
+
+### Mandatory Operator model and expenditure selection
+
+Before Autonomous role work, explicitly ask the Operator which models to use
+for the planned roles and what expenditure boundaries apply. Mode selection,
+an application's default, a parent model and an inherited setting do not answer
+this question. Use the current context for the necessary preflight and selection
+dialogue; do not dispatch contributors or begin dependent execution while this
+gate is unresolved. It also applies to the limited One-Contributor arrangement.
+
+Ask for the actual roles needed, normally coordination/planning, implementation
+and independent review, with investigation or integration when separately
+assigned. A compact question is:
+
+> Which provider/deployment, model and reasoning/effort settings should each
+> planned role use? What spend limit or approval threshold and concurrency do
+> you authorize, and are any bounded substitutions or escalations allowed?
+
+Proposed defaults can help the Operator decide, but require explicit confirmation.
+The Operator may choose the same model for all roles. Keep this contract
+provider/model-agnostic; name only choices the environment actually supports,
+or disclose that availability has not been established. Record the answer and
+its effective scope in the governing plan, for example:
+
+| Role / actual context when assigned | Provider/deployment, requested model and selectable settings | Operator approval / authorized scope |
+| --- | --- | --- |
+| Each planned role | Explicit choice; distinguish requested from reported identity | Decision reference, limits and any bounded fallback policy |
+
+Record an agreed limit/approval threshold or an explicit choice of no cap, and
+the authorized concurrency. Explain which controls the runtime can enforce;
+do not promise a hard monetary cap without enforcement. Any pricing estimate
+needs a current source and assumptions; distinguish estimates from measured
+usage/charges and mark unavailable data as unknown.
+
+Check that the approved choices can be applied before each affected dispatch.
+If a requested model or cost-relevant control cannot be honored, pause that role
+and ask; do not silently substitute, inherit or downgrade. If the coordinator's
+approved model requires a handoff, arrange it through authorized tools or leave
+execution held. Unreported backend identity remains explicitly unknown; it is
+not evidence that a requested model was applied or a reason to invent an identity.
+
+Carry approval through its recorded scope rather than asking again for an
+unchanged authorized assignment. Changes of provider/model, reasoning effort,
+concurrency or expenditure outside that scope need renewed approval unless a
+precise bounded policy already covers them. CDC's adaptive staffing authority
+does not grant unrestricted spending authority. Preserve approval/configuration
+history and actual observed contributor settings under the
+[research-record contract](../../project-management/guides/02-canonical-planning-worktree.md#evidence-batches-and-research-records).
+
+### Execution preflight and stable inputs
+
+Keep one compact current preflight in the governing plan or assignment, linking
+to complete backing records. Establish before dependent work:
+
+- authorized outcome/endpoint, current prompt, ledger rows, instruction/skill
+  sources and revisions, unresolved decisions and their next-action owners;
+- actual repository/worktree/branch/revision and relevant dirty inputs,
+  protected changes, permitted mutations and separate external-action authority;
+- implementer, independent verifier, approved role/model/settings and expenditure,
+  mutation/index owner, required real gates and durable evidence home;
+- consequential prerequisites: actual runtime/shell/configuration, published
+  dependency/image availability and repository API/lint constraints where used.
+
+A short preflight is an entrypoint into the full contract, not reduced required
+reading. Revalidate changed facts after handoff, rebase or context recovery;
+preserve prior states and name remaining limits. Apply the
+[prompt intake contract](./07-implementation-prompt-authoring.md#required-reading-and-cc-intake).
+
+Give each mutable worktree one mutation owner. Sequence installs, generation,
+edits and loaders/scanners that need stable inputs; disjoint write paths alone
+do not establish compatibility with a recursive loader. Parallel mutable work
+needs separate worktrees or an explicitly justified noninterfering arrangement.
+Record ownership handoffs and input state before checks. Name Make targets
+explicitly, establish output ownership before cleanup and preserve unknown-owner
+outputs. Follow [real substrate validation](../../testing/guides/03-validation-gates.md#execution-substrate-and-observation-populations).
 
 ### Adaptive contributor arrangements
 
 The Operator delegates contributor selection to CDC for the authorized scope.
+Default to one implementer and one independent reviewer for substantive work;
+CDC may coordinate and review another context's implementation. Add a context
+for a named risk, bounded agreed investigation, safely separable workstream or
+separation-of-authorship need, with ownership, return contract and exit condition.
+Available capacity alone is not a staffing rationale. Additional staffing must
+remain within the Operator-approved role/model, concurrency and expenditure
+scope; resolve missing choices before dispatch.
 CDC chooses according to complexity, risk, coupling and the need for independent
 attention at project, arc, slice or iteration scale. A dedicated CRC is optional.
 CDC may revise the arrangement after a slice or review, for another iteration
@@ -441,6 +527,14 @@ Pause and surface an exhausted budget rather than looping indefinitely.
 ### Ledgers, closure and discretion to pause
 
 Maintain ledgers, bubble-up findings and source/plan coherence throughout.
+An evidence batch is an observation grouping/index, not a new acceptance scale.
+Preserve every row, original observation, independent reproduction and
+higher-scale composition gate. Use the existing canonical artifact homes and
+[durable record rules](../../project-management/guides/02-canonical-planning-worktree.md#evidence-batches-and-research-records);
+derive mechanical facts and link their witnesses rather than maintain competing
+current accounts. Evidence retention in correction review follows
+[work-verification](../../work-verification/guides/05-independent-verification.md#evidence-during-correction-review),
+with original identities and reviewer applicability judgments preserved.
 CDC performs the Three-Contributor retrospective duties at every slice, arc
 and project close regardless of the contributor arrangement selected here.
 Use the existing `cdc-retrospective.md` placement and analysis contracts;

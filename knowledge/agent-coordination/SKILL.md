@@ -7,7 +7,7 @@ description: |
   lookup task can be delegated without outsourcing design judgment.
 license: MIT
 metadata:
-  version: "1.3.0"
+  version: "2.0.0"
   hermes:
     tags: [ai-engineering, collaboration, subagents, delegation]
     category: meta-skills
@@ -34,8 +34,10 @@ delegation. Existing independent-review requirements still apply.
 In Operator-authorized [Autonomous Mode](../engineering-methods/guides/01-engineering-methodology.md#autonomous-mode),
 CDC may assign implementation and independent review to contributor subagents,
 select or change the arrangement, and retain integrated accountability. Load the
-mode definition and the contributor packet requirements below. This exception
-does not turn lookup returns into acceptance or waive independent verification.
+mode definition, mandatory Operator role/model/expenditure approval and the
+contributor packet requirements below. Default to one implementer and one
+independent reviewer, justify extra contexts and keep mutation ownership explicit.
+This exception does not turn lookup returns into acceptance or waive independent verification.
 
 Read only the guide needed for the work:
 

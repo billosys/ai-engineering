@@ -8,7 +8,7 @@ description: |
   review finding into a detailed, domain-guided CC implementation prompt.
 license: MIT
 metadata:
-  version: "1.18.0"
+  version: "2.0.0"
   hermes:
     tags: [ai-engineering, methodology, sdlc, knowledge-substrate]
     category: meta-skills
@@ -30,8 +30,11 @@ scope and evidence honesty; self-checks are not independent acceptance.
 For Operator-selected [Autonomous Mode](./guides/01-engineering-methodology.md#autonomous-mode),
 read the canonical authorization and contributor-transition rules before acting.
 CDC selects and adapts contributor arrangements within the authorized arc by
-default; whole-project execution requires an explicit override. Independent
-review, branch isolation, closing retrospectives and ambiguity pauses apply.
+default; whole-project execution requires an explicit override. Before execution,
+explicitly obtain the Operator's role/model/settings and expenditure choices;
+defaults and inheritance do not satisfy this gate. Default to one implementer
+and one independent reviewer, with stable workspace ownership and full durable
+evidence. Independent review, branch isolation, closing retrospectives and ambiguity pauses apply.
 
 For CDC retrospectives at slice, arc and project close in the Three-Contributor
 Workflow or Autonomous Mode, load [methodology-stewardship](../methodology-stewardship/SKILL.md).

@@ -1,5 +1,9 @@
 # Testing Version History
 
+## Version 1.3.0 - 2026-10-19
+
+Add real execution-substrate and selected-population guidance: actual shells/targets/paths and consumers, stable loader inputs, complete relevant inventories, explicit zero-test/loading/timeout outcomes and automatic CI effects. Preserve original observations and mandatory gates without requiring new validation machinery.
+
 ## Version 1.2.0 - 2026-09-28
 
 Added proportionate proof selection: use the smallest adequate set of real

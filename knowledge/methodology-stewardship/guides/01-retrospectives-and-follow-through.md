@@ -128,6 +128,34 @@ review or research actually consumes accepted handoffs before claiming goal
 displacement. Observe the cost of this retrospective work too. Avoid per-file
 bureaucracy, arbitrary caps, or cleanup based solely on volume.
 
+### Research usefulness and reconstruction
+
+Improvements to execution or evidence handling must preserve full ledger
+coverage, independent verification, original observations and long-term research
+value. Use the canonical
+[record contract](../../project-management/guides/02-canonical-planning-worktree.md#evidence-batches-and-research-records)
+for inputs/instructions, source/environment and model/settings provenance,
+commands/results, failed attempts, decisions and original/superseding references.
+A batch index and concise current view supplement the mandatory per-scale records.
+
+At an agreed evaluation point, ask a fresh reviewer to reconstruct an actual
+failed attempt, its repair, the accepted candidate and decision reasons from the
+retained authorized records, including independent review and remaining gates.
+Record missing inputs, access/redaction limits and unresolved identities. Check
+portability beyond local paths and expiring hosted links; a short trial cannot
+establish multi-year durability. Preserve earlier observations and record
+corrections or migrations with explicit mapping/provenance.
+
+For a bounded Operator-approved trial, predeclare the question, consumer, scope,
+budget, quality invariants and stopping condition. Observe row completeness,
+traceability/reconstruction quality, actual Operator interruptions, coordination
+failures, correction causes and repeated checks. Record available time/usage by
+role and requested/observed model configuration; unavailable is not zero. Separate
+necessary validation, justified new scope and avoidable rework. Fewer corrections,
+files or tokens alone cannot establish success. Changes of staffing/model or task
+scope are confounds unless intentionally studied; follow scientific-methods for
+comparisons and do not start a trial merely because guidance recommends one.
+
 ## From recommendation to evaluated change
 
 Recommend the smallest change justified by the evidence and name its likely

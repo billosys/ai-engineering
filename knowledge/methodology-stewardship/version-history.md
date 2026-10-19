@@ -1,5 +1,9 @@
 # Methodology Stewardship Version History
 
+## Version 1.2.0 - 2026-10-19
+
+Add reconstruction-oriented research-record evaluation and bounded follow-through: original attempts and decisions, model/configuration provenance, portability/access limits and actual operational observations. Preserve full ledger quality and avoid inferring efficiency, multi-year durability or causal model benefits from record size or unrun trials.
+
 ## Version 1.1.0 - 2026-10-18
 
 Extended mandatory CDC slice, arc and project retrospectives to Autonomous

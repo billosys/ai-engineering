@@ -1,5 +1,9 @@
 # Version History
 
+## Version 3.0.0 - 2026-10-19
+
+Apply the mandatory Operator model/expenditure gate in Autonomous execution and contributor records. Define durable evidence batches as indexes into existing canonical artifact homes, never replacement acceptance units: preserve original failed/successful and independent observations, derive mechanical facts with provenance, retain requested/observed settings and protect long-term reconstruction. Preserve all issued prompts, per-scale ledgers and historical records. The required selection gate changes the prior execution contract.
+
 ## Version 2.20.0 - 2026-10-18
 
 Added Autonomous Mode execution and authorization boundaries to Expedited Mode

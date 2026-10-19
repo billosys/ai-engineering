@@ -7,7 +7,7 @@ description: |
   independent reproduced verification.
 license: MIT
 metadata:
-  version: "2.7.0"
+  version: "2.8.0"
   hermes:
     tags: [ai-engineering, ledger, verification, evidence]
     category: meta-skills
@@ -17,7 +17,10 @@ metadata:
 
 Use this component when the unit of work has a ledger or when evidence strength
 matters. It owns the closure discipline, row-by-row verification, evidence
-levels, and proposed-done versus independently verified distinction.
+levels, and proposed-done versus independently verified distinction. Generated
+views and evidence indexes preserve every row and distinct original observation;
+use the [durable record contract](../project-management/guides/02-canonical-planning-worktree.md#evidence-batches-and-research-records)
+without weakening independent or higher-scale acceptance.
 
 One-contributor work can report proportionate self-checks without creating a
 new independent gate for a non-ledgered task. Existing ledger and review gates

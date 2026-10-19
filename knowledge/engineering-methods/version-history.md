@@ -1,5 +1,9 @@
 # Engineering Methods Version History
 
+## Version 2.0.0 - 2026-10-19
+
+Require an explicit Operator role/provider/model/settings and expenditure/concurrency decision before Autonomous role work, with held unavailable choices and approval-scoped substitutions. Define compact complete-backed preflight, stable worktree ownership, justified extra contexts and automatic pipeline authority. Preserve the limited One-Contributor exception, independent acceptance, ledgers and research records. The mandatory pre-dispatch gate changes the prior execution contract.
+
 ## Version 1.18.0 - 2026-10-18
 
 Defined Autonomous Mode alongside contributor workflows. Delegated arrangement
