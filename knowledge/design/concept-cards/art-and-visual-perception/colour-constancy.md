@@ -28,77 +28,75 @@ related:
 contrasts_with: []
 answers_questions:
   - "How does the visual-elements concept of 'value' (light-dark range) connect to colour theory's 'lightness' and to contrast as a design principle?"
-  - "A dark-mode implementation simply inverts all colours. Text on some backgrounds becomes unreadable. What went wrong?"
   - "How do you ensure a coloured status badge communicates its meaning without relying solely on colour? What redundant encoding strategies exist?"
 rosetta_stone:
   -
     domain: "mathematics"
     concept: "Von Kries adaptation model (diagonal matrix in cone space)"
     rating: "rigorous"
-    note: "The visual system's colour constancy is computationally modelled as a diagonal scaling matrix in cone-response space (von Kries model), multiplying each cone channel by an adaptation gain — a linear algebra operation."
+    note: "For fixed invertible response basis M and nonzero source-white responses, D=diag((M w_dest)/(M w_source)) gives y=M^-1 D M x and maps source white to destination white. This is a linear model step, not a complete biological account or full nonlinear colour pipeline."
   -
     domain: "engineering"
     concept: "White balance / colour temperature correction in cameras"
     rating: "structural"
-    note: "Camera white balance implements an engineered version of colour constancy: a matrix transform corrects for the spectral bias of the illuminant, mimicking the visual system's perceptual normalisation."
-css_implementation:
-  -
-    property: "filter: color-matrix / backdrop-filter"
-    example: "/* CSS cannot directly reproduce colour constancy; awareness informs design decisions about ambient light */"
-    support: "baseline"
+    note: "White balance estimates an illuminant and adjusts an image under engineered assumptions; it does not establish identical biological computations or unique reflectance recovery."
+css_implementation: []
 ---
 
 # Quick Definition
 
-Colour constancy is the perceptual tendency to perceive the colours of objects as stable despite changes in the spectral composition of the illuminating light — the visual system discounts the colour cast of the illuminant to recover the object's "true" colour.
+Colour constancy is a conditional tendency for object-colour identity to remain relatively stable under changed illumination. It does not recover a unique "true" reflectance or make colour coding reliable by itself.
 
 # Core Definition
 
-Colour constancy is the perceptual mechanism by which the visual system maintains a stable perception of an object's hue despite changes in the chromatic quality of the illumination. A red apple looks red in warm (yellow-orange) tungsten light, in neutral daylight, and in cool (blue-shifted) overcast light, even though the wavelength distribution reaching the eye is substantially different in each case. The visual system estimates the illuminant's colour and normalises the percept accordingly.
+This presents the represented Arnheim account. Exact edition, pages, quotations, named examples, figures, experiments, historical claims and physiological explanations remain unassessed against the unavailable original. Current analytic qualifications do not certify source fidelity.
+
+Colour constancy describes a conditional tendency toward stable object-colour appearance across changes in illumination. A red apple can retain its red identity under different illuminants while shade, saturation and light-dark appearance still change. Illumination context and adaptation can contribute; this is not a complete computation specified by the represented account.
 
 Arnheim discusses colour constancy extensively in the context of animal and human behaviour: "Color constancy is aided by the physiological fact that the retina adapts to the given illumination... Confronted with a green light, the eyes decrease their response to greenness" (Chapter VII, p. 376). He cites the Katz and Revesz experiment with chickens — trained to peck white grains, they continued to peck white grains even under blue illumination, demonstrating colour constancy across species.
 
 However, Arnheim also identifies the limits and side effects: adaptation makes us perceive the dominant colour as "normal" (more colourless), and this same mechanism that preserves constancy also causes colour perception to be most vulnerable to environmental change. He describes Helson and Koffka's adaptation effects, where the dominant colour is perceived as grey (neutral) while greys that deviate from average brightness shift toward the complementary.
 
-Note: Arnheim's account is phenomenological (1954/1974). The mathematical model of colour constancy (von Kries adaptation, Bradford/CAT02 chromatic adaptation transforms) developed through the 1970s–2000s and is not discussed by Arnheim.
+The current matrix illustration below is an added model. Its exact occurrence, absence or chronology in the unavailable original is not established; no claim that Arnheim predates every von Kries formalisation is made.
 
 # Prerequisites
 
-- **Hue** — Colour constancy is the stability of hue perception under varying illumination.
-- **Saturation** — Saturation as well as hue is subject to constancy mechanisms.
-- **Tonal value** — Brightness constancy operates alongside colour constancy.
+- **Hue** — Supplies chromatic-character vocabulary.
+- **Saturation** — Supplies a distinct appearance comparison.
+- **Tonal value** — Supplies light-dark context alongside chromatic stability.
 
 # Key Properties
 
-1. **Illuminant discounting** — The visual system estimates the illuminant's colour and subtracts its effect, recovering the object's approximate reflectance colour.
-2. **Chromatic adaptation** — Cone sensitivity adjusts selectively to the dominant colour of the field, reducing its contribution to the percept (analogous to brightness adaptation).
-3. **Approximate, not perfect** — Constancy is partial; under unusual or extreme illuminants, colour shifts are noticeable. Tungsten-lit paintings differ significantly from daylight-lit versions.
-4. **Limits in art** — Artists must account for constancy failures: a painting's colours under tungsten lighting differ from the artist's daylight intent (Arnheim cites Monet and Van Gogh).
-5. **Grey-point normalisation** — The visual system tends to perceive the average of the scene as neutral ("grey world" assumption), which produces systematic errors when the average is not neutral.
+1. **Conditional stability** — Familiar identity can persist while shade and expression change.
+2. **Adaptation** — Selective response changes can contribute without being the whole constancy phenomenon.
+3. **Illumination ambiguity** — Observations alone do not uniquely determine reflectance and illuminant.
+4. **Viewing conditions** — The represented Monet/Van Gogh example warns that exhibition light can change appearance.
+5. **Model assumptions** — The "grey world" and "white patch" estimates are engineered assumptions; they are not universal visual-system laws.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. When designing for screen: the display emits its own light and the ambient illumination affects perception. Test designs under multiple ambient conditions.
-2. For print: specify colours with awareness of the illuminant under which the work will be viewed (standard illuminant D65 for daylight, D50 for graphic arts).
-3. White balance in photography/video is an engineered implementation of colour constancy: set the white point so the illuminant's colour is removed from the image.
+1. Compare the actual display/print and ambient illumination. D50/D65 references serve specified workflows, not a universal viewing prescription.
+2. If using a camera or image correction, identify its estimated source white and intended target white.
+3. Treat an SVG feColorMatrix or a camera transform as engineered filtering, not a CSS implementation of biological constancy.
 
 ## To Identify/Recognise:
-1. Colour constancy is working when you perceive the "correct" colour of familiar objects under coloured lighting.
-2. Constancy fails when: (a) lighting is very strongly coloured; (b) the scene provides no familiar reference objects; (c) the illuminant colour is unusual and the visual system cannot estimate it.
+1. Compare object identity and residual shifts across stated illuminants.
+2. Describe missing scene context and extreme casts without assuming a guaranteed failure condition.
 
 # Context & Application
 
-- **Typical contexts**: Photography white balance, print production (standard illuminants D50/D65), display calibration, environmental design (retail lighting for food/textile colour), museum and gallery lighting.
-- **Common applications**: Camera white balance settings; ICC colour profile rendering intents; museum lighting standards (to preserve intended colour appearance); UI design tested across different ambient conditions.
+Photography, display/print workflows and gallery lighting require stated illuminants and viewing conditions. For interfaces or data graphics, preserve actual semantic roles and pair checks; colour constancy cannot ensure a badge is understood. Pair an error colour with visible “Error” text, a meaningful icon/shape or a pattern where appropriate, and ensure that the same information remains available without colour.
 
 ## Cross-Domain Connections
 
-**Mathematics → RIGOROUS**: The von Kries chromatic adaptation model represents colour constancy as a diagonal matrix operation in cone-response space: `[L', M', S'] = diag(1/L_w, 1/M_w, 1/S_w) × [L, M, S]`, where subscript w denotes white-point cone responses. Modern CATs (Bradford, CAT02, CAT16) extend this with a non-diagonal matrix for improved accuracy. This is a direct application of linear algebra to perceptual normalisation — Grassmann's laws ensure the chain of transforms is linear. Arnheim (1954) predates these formalisations entirely; his account is purely phenomenological.
+**Mathematics → RIGOROUS**: Choose an invertible linear-response basis M and source/target whites w_source,w_dest with nonzero source responses. Set D=diag((Mw_dest)/(Mw_source)) componentwise, then y=M⁻¹DMx maps w_source to w_dest. Fixed M,D gives a linear step. It does not estimate a unique illuminant, establish a biological mechanism or make a full colour pipeline linear; encoding and other appearance operations can be nonlinear.
 
-**Engineering → STRUCTURAL**: Camera auto-white-balance is engineered colour constancy. The camera estimates the scene illuminant (often using the "grey world" or "white patch" assumption) and applies a gain matrix to correct for it, analogous to the visual system's cone adaptation. The trade-off (and limitation) is identical: both systems assume the illuminant can be estimated from the scene and both can be fooled by unusual dominant colours.
+**Engineering → STRUCTURAL**: White balance estimates an illuminant and adjusts image channels under an engineering model. Its assumptions and failure modes need inspection; the analogy does not establish identical biological operations. ICC rendering intent, display calibration and ambient adaptation are separate choices.
 
 # Examples
+
+These are retained reported examples from the existing extraction, not independently verified quotations, figures, experiments or historical conclusions.
 
 **Example 1** (p. 376): Katz and Revesz chicken experiment — chickens trained to peck white grains continued to peck correctly when white grains were illuminated by blue light, demonstrating colour constancy even in non-human animals.
 
@@ -109,33 +107,33 @@ Note: Arnheim's account is phenomenological (1954/1974). The mathematical model 
 # Relationships
 
 ## Builds Upon
-- **Hue, saturation** — Constancy mechanisms operate on chromatic dimensions.
-- **Brightness constancy** — A parallel mechanism; the two operate together.
+- **Hue, saturation** — Supply chromatic appearance distinctions.
+- **Brightness constancy** — A parallel stability comparison; tonal value supplies the light-dark vocabulary.
 
 ## Enables
-- **Reliable colour communication** — Colour coding (in signage, UI, data viz) depends on constancy for its effectiveness across different viewing conditions.
-- **Cross-illuminant colour identification** — We identify the "same" colour across changing environments.
+- **Reliable colour communication** — Constancy can help recognition, but redundancy and actual pair/state checks are still needed.
+- **Cross-illuminant colour identification** — Conditional identity across viewing changes.
 
 ## Related
-- **Brightness constancy** — The parallel mechanism for achromatic value stability.
-- **Simultaneous contrast** — Contrast modifies perceived colour; constancy maintains its overall identity.
-- **Colour temperature** — Illuminant colour temperature is what the constancy mechanism discounts.
+- **Brightness constancy** — Achromatic and chromatic stability are related, without one proven shared algorithm.
+- **Simultaneous contrast** — Contextual shifts can coexist with identity stability.
+- **Colour temperature** — Artistic warmth and physical illuminant chromaticity differ; constancy is not a Kelvin-subtraction rule.
 
 ## Contrasts With
-- **Adaptation effects** — Prolonged exposure without scene context breaks constancy and produces colour shifts (afterimages, tinting).
+- **Adaptation effects** — Sensitivity changes and aftereffects can interact with constancy; they are not simply its opposite or always its failure.
 
 # Common Errors
 
 - **Error**: Assuming colours specified in RGB hex will appear identical across all viewing conditions.
-  **Correction**: Screen displays, print media, and ambient lighting all interact with colour constancy mechanisms. Colours must be validated in the intended viewing condition (or specified with appropriate colour management profiles).
+  **Correction**: The specified coordinates, display/print rendering, surrounding field and observer adaptation differ. Check the intended conditions; a profile is not an all-condition guarantee.
 
 - **Error**: Designing data visualisations with colour coding tested only under one ambient condition.
-  **Correction**: Strong ambient colour casts (e.g., warm office lighting, outdoor sunlight) shift perceived hue of saturated colours; test with multiple illuminants and consider redundant encoding beyond colour alone.
+  **Correction**: Check relevant conditions and encode meaning redundantly. A status badge can show visible “Error” text plus a distinct icon/shape; data series can use labels/patterns. Colour alone must not be the only cue. This conceptual repair does not prove keyboard, contrast or rendered accessibility outcomes.
 
 # Common Confusions
 
 - **Confusion**: "Colour constancy means we see colours exactly the same in all conditions."
-  **Clarification**: Constancy is partial and approximate. Under strongly coloured illuminants, noticeable shifts occur. The mechanism preserves colour identity well within normal illuminant variation but fails under extreme conditions.
+  **Clarification**: Constancy is partial and approximate. Strong casts, scene context and adaptation can affect identity and appearance; neither a normal-range success nor an extreme-condition failure is guaranteed.
 
 - **Confusion**: "Setting display white point handles colour constancy."
   **Clarification**: Display white point calibration corrects for the display's own colour bias but cannot account for ambient illumination hitting the display surface or the viewer's adaptation state.
@@ -145,6 +143,10 @@ Note: Arnheim's account is phenomenological (1954/1974). The mathematical model 
 Chapter VII: Color, "Art and Visual Perception," pp. 374–377 (section "Shape and Color").
 
 # Verification Notes
+
+Current bounded review separates appearance, model coordinates and rendering operations as explained above. Technical corrections and local relationship/CQ decisions are same-context proposals; original fidelity and actual rendered/observer outcomes remain unassessed. Extraction-confidence metadata is unchanged.
+
+Legacy extraction notes below are preserved as historical assertions from the predecessor card, **not current verification results**. In particular, their equivalence, chronology, physiology and “Verified” claims are not adopted by this review.
 
 - Definition source: Synthesised from pp. 376–377. The Katz/Revesz example and the Helson/Koffka effects are explicitly discussed. The Monet/Van Gogh consequence is on p. 377.
 - Confidence rationale: High — colour constancy is explicitly discussed with multiple experiments cited. Arnheim's phenomenological account is consistent with modern perceptual science.

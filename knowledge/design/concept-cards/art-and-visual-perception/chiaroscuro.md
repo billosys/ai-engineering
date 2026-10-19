@@ -32,13 +32,12 @@ contrasts_with:
   - "flat-colour"
 answers_questions:
   - "How does the visual-elements concept of 'value' (light-dark range) connect to colour theory's 'lightness' and to contrast as a design principle?"
-  - "What are the gestalt principles of perceptual grouping, and how does each one work?"
 rosetta_stone:
   -
     domain: "engineering"
     concept: "Gradient / ramp (smooth continuous value change)"
     rating: "structural"
-    note: "Chiaroscuro is implemented as a brightness gradient; in CSS this maps directly to radial/linear gradients applied to surface colour."
+    note: "A CSS gradient supplies a chosen ramp for pictorial shading. It does not solve light transport, require universal smoothness or prove volume perception."
 css_implementation:
   -
     property: "background: linear-gradient() / radial-gradient()"
@@ -56,50 +55,51 @@ css_implementation:
 
 # Quick Definition
 
-Chiaroscuro is the pictorial technique of rendering three-dimensional volume and spatial depth through systematic gradation from light to shadow — the controlled orchestration of brightness values to model form.
+Chiaroscuro uses organised light and shadow to depict volume, depth and compositional relationships. Smooth gradations are one technique; sharp cast shadows and multiple light sources can also be coherent.
 
 # Core Definition
 
+This presents the represented Arnheim account. Exact edition, pages, quotations, named examples, figures, experiments, historical claims and physiological explanations remain unassessed against the unavailable original. Current analytic qualifications do not certify source fidelity.
+
 Chiaroscuro (Italian: "light-dark") is the visual art technique of using value gradients — transitions from highlight through middle tones to shadow — to create the impression of three-dimensional volume on a two-dimensional surface. Arnheim treats it as a perceptual phenomenon as much as a technique: the graduated brightness across a surface reveals spatial orientation, curvature, and depth, because "all gradients have the power to create depth, and gradients of brightness are among the most efficient" (Chapter VI, p. 359).
 
-In Arnheim's account, chiaroscuro functions through two main mechanisms: (1) attached shadows that lie on the object itself and model its volume, and (2) the broader illumination system that organises the spatial relationships of a whole composition. He traces the development of chiaroscuro from Leonardo da Vinci ("the father of chiaroscuro," per Wölfflin) through Titian, Rubens, Delacroix, to Cézanne, noting that it was in tension with colour organisation: "when painters began to create volume and space by means of illumination effects, this technique of chiaroscuro was soon found to disturb color composition" (p. 365).
+In the represented Arnheim account, chiaroscuro is discussed through two pictorial aspects: (1) attached shadows that lie on the object itself and model its volume, and (2) the broader illumination system that organises the spatial relationships of a whole composition. He traces the development of chiaroscuro from Leonardo da Vinci ("the father of chiaroscuro," per Wölfflin) through Titian, Rubens, Delacroix, to Cézanne, noting that it was in tension with colour organisation: "when painters began to create volume and space by means of illumination effects, this technique of chiaroscuro was soon found to disturb color composition" (p. 365).
 
 # Prerequisites
 
-- **Tonal value** — Chiaroscuro is the orchestrated use of the value scale; the value dimension is the raw material.
+- **Tonal value** — Supplies light-dark relationships for pictorial modelling and composition.
 
 # Key Properties
 
-1. **Gradient structure** — Effective chiaroscuro requires a smooth, continuous gradient — not sharp, arbitrary value jumps.
-2. **Single light-source logic** — The gradient must follow a coherent directional logic to read as illumination; multiple contradictory sources create confusion.
-3. **Attached vs. cast shadows** — Attached shadows model the object's own form; cast shadows describe spatial relationships between objects.
-4. **Shadow as transparent film** — Perceptually, shadow overlays object colour as a transparent layer; hard shadow edges break this transparency and flatten form.
-5. **Spatial depth** — Value gradients from light to dark organise objects in pictorial space; lateral illumination is the most effective for revealing three-dimensional form.
+1. **Tonal modelling** — Gradients can suggest curvature; their reading depends on form and context.
+2. **Lighting coherence** — A dominant light is a useful exercise, not a universal single-source requirement.
+3. **Attached/cast distinction** — Attached shading models the object; cast shadows can suggest relations between objects.
+4. **Transparency reading** — The reported Hering "transparent film" demonstration concerns a specific border manipulation; hard shadows can also read as lighting.
+5. **Composition** — Light/dark masses can organise depth and emphasis without prescribing every picture.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Identify a single dominant light direction.
-2. Map surface orientation: surfaces facing the light are brightest; surfaces turning away gradually darken.
-3. Ensure gradients are smooth and continuous — avoid sharp arbitrary edges.
-4. Use diffuse shadow borders (blurred/gradient edges) to maintain the "transparent film" quality.
-5. Organise highlights, mid-tones, and shadows into a coherent "bunch of grapes" — unified light and shadow masses rather than scattered spots.
+1. Choose the depicted geometry and lighting; one dominant direction can simplify an exercise.
+2. Compare facing, turning and occluded surfaces; choose gradients and shadow edges appropriate to the model.
+3. Use soft transitions for a softly lit rounded form, or sharper boundaries when justified by geometry and source extent.
+4. Try Titian's reported "bunch of grapes" grouping as one compositional strategy.
 
 ## To Identify/Recognise:
-1. Look for a coherent directional gradient across surfaces that implies a light source.
-2. Check that the gradient reads as volume (roundness or recession) rather than as a flat pattern.
-3. Evaluate shadow quality: soft, blurred borders suggest illumination; hard geometric edges suggest flat colour change.
+1. Ask whether value organisation suggests volume or a deliberate flat pattern.
+2. Assess attached shading and cast shadows together; edge softness alone cannot classify them.
 
 # Context & Application
 
-- **Typical contexts**: Illustration, icon design (3D-style), photography, product visualisation, character design, UI elements with depth (neumorphism, material design shadows).
-- **Common applications**: Creating the perception of three-dimensional form on flat surfaces; directing attention via light/dark contrast; establishing compositional unity through organised light-mass grouping.
+Illustration, photography and product rendering use tonal modelling; flat icons and calm interfaces remain valid choices. A CSS gradient, inset shadow or drop-shadow can illustrate a lighting convention without solving 3D light transport or proving perceived volume.
 
 ## Cross-Domain Connections
 
-**Engineering → STRUCTURAL**: A brightness gradient is directly analogous to a programmatic ramp function. In CSS, chiaroscuro is implemented via `linear-gradient()` or `radial-gradient()` applied to backgrounds or pseudo-elements, with gradient stops corresponding to highlight and shadow values. The key parameter is gradient smoothness — abrupt stops produce "wrong" chiaroscuro.
+**Engineering → STRUCTURAL**: A gradient is a programmable ramp. CSS linear/radial gradients can depict selected highlight-to-shadow transitions; abrupt stops are not automatically wrong, and a drop-shadow follows a silhouette while box-shadow follows a box. These are rendering tools, not complete chiaroscuro or perception models.
 
 # Examples
+
+These are retained reported examples from the existing extraction, not independently verified quotations, figures, experiments or historical conclusions.
 
 **Example 1** (p. 359): Gehrcke and Lau's cone experiment — a whitewashed cone viewed from its axis appeared as a flat white disk under even illumination. Only when lateral light introduced a brightness gradient did the three-dimensional cone become visible.
 
@@ -112,44 +112,48 @@ In Arnheim's account, chiaroscuro functions through two main mechanisms: (1) att
 # Relationships
 
 ## Builds Upon
-- **Tonal value** — Chiaroscuro orchestrates the value scale; the value dimension is its raw material.
+- **Tonal value** — Supplies the scale; chiaroscuro elaborates its pictorial use, rather than being a physical subtype.
 
 ## Enables
-- **Form perception** — Three-dimensional volume becomes visible through chiaroscuro gradients.
-- **Spatial depth** — Cast shadows and value gradients create recession and projection.
-- **Compositional unity** — Grouped light and shadow masses unify complex compositions.
-- **Symbolic light** — The realistic rendering of illumination enables its use as expressive and symbolic device (Rembrandt).
+- **Form perception** — Tonal modelling is one volume cue.
+- **Spatial depth** — Cast shadows and gradients can suggest depth.
+- **Compositional unity** — Light-mass grouping can connect areas.
+- **Symbolic light** — Depicted lighting can serve expressive purposes, as in the represented Rembrandt account.
 
 ## Related
-- **Tonal contrast** — Chiaroscuro uses contrast, but its distinctive feature is the gradient (smooth transition), not abrupt contrast.
-- **Luminosity** — Chiaroscuro creates the dark fields against which luminous elements glow.
-- **Shadow** — Both attached and cast shadows are components of the chiaroscuro system.
+- **Tonal contrast** — Differences and gradients both contribute; sharp transitions are not excluded.
+- **Luminosity** — Dark fields can support glow, without being necessary for every luminous reading.
+- **Shadow** — Attached and cast shadows can participate.
 
 ## Contrasts With
-- **Silhouette** — Silhouette uses flat, undifferentiated dark against light (or vice versa) without internal gradation.
-- **Flat colour** — Flat colour assigns uniform value to each area without gradation; precludes chiaroscuro.
+- **Silhouette** — Local pictorial-treatment construct: an undifferentiated figure shape against a field, without internal modelling.
+- **Flat colour** — Local pictorial-treatment construct: uniform areas without internal gradation; can coexist with shadow shapes elsewhere.
 
 # Common Errors
 
 - **Error**: Using hard-edged shadows to model form.
-  **Correction**: Hard shadow edges destroy the "transparent film" quality; perceptually they read as dark patches painted on the object, not as shadows. Soft, blurred edges maintain the chiaroscuro illusion.
+  **Correction**: A hard edge is not inherently wrong: point-like lights can cast sharp shadows. The reported Hering outline manipulation can change a particular transparency reading; choose edges for the actual lighting and geometry.
 
 - **Error**: Multiple contradictory light sources with equal weight.
-  **Correction**: Multiple sources that conflict in direction produce incomprehensible gradients. Establish a hierarchy: one motivating source dominates; supporting sources are clearly weaker.
+  **Correction**: Assess whether the depicted sources and gradients make sense together. One motivating source is a useful simplification; several real or expressive sources can be intentional.
 
 # Common Confusions
 
 - **Confusion**: "Chiaroscuro is just high contrast."
-  **Clarification**: Chiaroscuro requires a gradient — smooth tonal modelling. High contrast without a coherent gradient is tonal contrast, not chiaroscuro. The gradient is what models form.
+  **Clarification**: Tonal contrast is broader. Chiaroscuro organises light/shadow to model or compose; a high-contrast flat pattern need not do so, and smoothness alone does not prove volume.
 
 - **Confusion**: "Shadows painted in black are traditional chiaroscuro."
-  **Clarification**: Black shadows grey-out and muddy local colour, as painters from Leonardo onward discovered. The resolution was to define shadows as colour modifications (coloured shadows), not monochromatic darkening.
+  **Clarification**: Black and coloured shadows are choices. Pigment, illumination, local colour and expressive aim affect the result; neither black nor any complement is a universally correct shadow recipe.
 
 # Source Reference
 
 Chapter VI: Light, "Art and Visual Perception," pp. 359–366 (sections "Light Creates Space," "Shadows," "Painting without Lighting").
 
 # Verification Notes
+
+Current bounded review separates appearance, model coordinates and rendering operations as explained above. Technical corrections and local relationship/CQ decisions are same-context proposals; original fidelity and actual rendered/observer outcomes remain unassessed. Extraction-confidence metadata is unchanged.
+
+Legacy extraction notes below are preserved as historical assertions from the predecessor card, **not current verification results**. In particular, their equivalence, chronology, physiology and “Verified” claims are not adopted by this review.
 
 - Definition source: Synthesised from the "Light Creates Space" section and the broader discussion of shadows and illumination. Arnheim describes chiaroscuro explicitly as a pictorial technique with perceptual underpinnings.
 - Confidence rationale: High — chiaroscuro is a central topic of Chapter VI; Arnheim's treatment is explicit and detailed.

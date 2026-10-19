@@ -14,8 +14,6 @@ pdf_page: 371
 section: "Interaction of Color"
 extraction_confidence: "medium"
 aliases:
-  - "chroma"
-  - "purity"
   - "colour intensity"
   - "vividness"
 prerequisites:
@@ -36,119 +34,124 @@ answers_questions:
 rosetta_stone:
   -
     domain: "mathematics"
-    concept: "Chroma (C) in cylindrical colour spaces (OKLCH)"
+    concept: "Saturation versus OKLCH chroma (distinct attributes)"
     rating: "rigorous"
-    note: "In OKLCH, chroma C is the radial distance from the achromatic axis, directly representing saturation in a perceptually uniform space."
+    note: "C=hypot(a,b) is an exact Oklab polar-coordinate relation. CIE saturation uses own brightness while CIE chroma uses an achromatic reference; neither is universally equal to C or a perceptually uniform slider."
 css_implementation:
   -
     property: "chroma (in oklch)"
-    example: "color: oklch(0.6 0.25 150); /* chroma = 0.25, high saturation */"
+    example: "color: oklch(0.6 0.25 150); /* C=0.25 model coordinate; check output gamut */"
     support: "baseline"
   -
     property: "saturation (in hsl)"
-    example: "color: hsl(150 80% 45%); /* saturation = 80% */"
+    example: "color: hsl(150 80% 45%); /* HSL S=80%, distinct from CIE saturation */"
     support: "baseline"
   -
     property: "filter: saturate()"
-    example: "filter: saturate(1.5);"
+    example: "filter: saturate(1.5); /* RGB matrix effect, not a measured appearance gain */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Saturation is the dimension of colour experience that describes how vivid or chromatic a colour is — how much pure hue it contains versus how much grey or neutrality dilutes it.
+Saturation describes colourfulness relative to an area's own brightness in CIE appearance terminology. Ordinary “vividness” and “colour intensity” are search vocabulary, while HSL/HSV S, OKLCH C and purity have distinct model or source meanings.
 
 # Core Definition
 
-Saturation (also termed chroma or purity) is the degree to which a colour's hue quality is expressed in its full intensity, as opposed to being diluted by grey or white. A fully saturated red is the most intensely red possible at a given lightness; a desaturated red is a dull, greyish pink or grey. Arnheim addresses saturation as a key dimension of colour that interacts with hue and brightness to determine colour character and distinctiveness.
+This presents the represented Arnheim account. Exact edition, pages, quotations, named examples, figures, experiments, historical claims and physiological explanations remain unassessed against the unavailable original. Current analytic qualifications do not certify source fidelity.
 
-He notes that "the distinctness of color depends more upon brightness than upon hue" (p. 389) and explicitly treats saturation as a distinct dimension: colours can be related not only by hue but "also be related only through their brightness or saturation, not as hues" (Chapter VII, p. 382). In discussing colour contrast, he states: "Relations between hues cannot be described adequately without reference to saturation and brightness" (p. 389).
+Saturation, chroma and purity are related vocabulary, not interchangeable technical definitions. CIE saturation compares colourfulness with the area's own brightness; CIE chroma uses the brightness of a similarly illuminated achromatic reference. Oklab polar C=hypot(a,b) is an exact coordinate, not a context-free absolute colourfulness measure. HSL S and HSV S are different encoded-RGB parameters.
 
-Arnheim also discusses the concept under the related term "purity": "If we examine the raw material of color gradations... we observe that certain colors are distinguished by their purity... an orange or a green looks pure when it is only itself, e.g., without an admixture that would make us speak of a reddish orange or a yellowish green" (p. 379). He carefully distinguishes perceptual purity from physical/spectral purity.
+The represented Arnheim account discusses relations among attributes: "the distinctness of color depends more upon brightness than upon hue" (p. 389); colours can "also be related only through their brightness or saturation, not as hues" (p. 382); and "Relations between hues cannot be described adequately without reference to saturation and brightness" (p. 389). These are source-attributed observations, not proofs of perceptual independence.
 
-Note: Arnheim's treatment is phenomenological (1954/1974) and predates the mathematical formalisation of chroma in CIELAB (1976) and OKLCH (2020).
+Arnheim's represented use of "purity" also concerns hue admixture: "If we examine the raw material of color gradations... we observe that certain colors are distinguished by their purity... an orange or a green looks pure when it is only itself, e.g., without an admixture that would make us speak of a reddish orange or a yellowish green" (p. 379). Hue irreducibility, spectral/colorimetric purity and saturation must therefore remain distinct. The historical passage survives without making purity or chroma a strict alias.
 
 # Prerequisites
 
-- **Hue** — Saturation is the degree of expression of a colour's hue; without hue identity, there is nothing to saturate or desaturate.
+- **Hue** — Supplies chromatic character; the appearance/model definition determines how saturation is interpreted.
 
 # Key Properties
 
-1. **Chromatic intensity** — High saturation = vivid, fully chromatic; low saturation = dull, grey-like.
-2. **Zero saturation = achromatic** — At zero saturation, all hues converge to grey (at their respective lightness level).
-3. **Independent of hue** — Any hue can have any level of saturation.
-4. **Interacts with value** — Very dark or very light colours are perceptually limited in achievable saturation; mid-lightness colours can achieve the highest chromaticity.
-5. **Perceptually distinct from lightness** — Desaturation is not the same as darkening; a desaturated colour is greyer, not darker.
+1. **Definition/reference** — CIE saturation uses own brightness; CIE chroma uses a similarly illuminated achromatic reference.
+2. **Model parameters** — HSL S, HSV S and OKLCH C have different formulas and scales.
+3. **Neutral coordinate** — OKLCH C=0 or normalized HSL S=0 defines a model neutral, with hue undefined/powerless.
+4. **Gamut dependence** — Available chroma varies with lightness, hue and destination gamut; no universal chroma maximum follows.
+5. **Appearance interaction** — Holding numeric L while changing C/S need not preserve perceived lightness or contrast.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Start with a fully saturated hue (a pure pigment or the maximum chroma at a given H/L in OKLCH).
-2. Reduce saturation by mixing in grey (or in digital: reduce the C/chroma value in OKLCH, or the S value in HSL).
-3. Monitor that only saturation changes, not lightness — desaturating should not darken the colour.
+1. Name the appearance attribute or model parameter being changed.
+2. In Oklab polar form compute C=hypot(a,b); varying it at fixed L/h is a coordinate construction.
+3. In HSL identify S and L explicitly; HSL exposes relationships for authoring while hex stores the same sRGB colours as encoded channels.
+4. Inspect gamut and actual text/background/state pairs after changes; no vividness setting substitutes for redundant meaning.
 
 ## To Identify/Recognise:
-1. Ask: is this colour vivid (high saturation) or dull/greyish (low saturation)?
-2. Convert to HSL or OKLCH and inspect the S/chroma value.
-3. Squinting does not suppress saturation the way it does tonal differences; instead, compare chromatic intensity directly.
+1. Compare vividness in the stated context, without treating a slider value as an observer measurement.
+2. Distinguish a neutral coordinate, a low-chroma colour and a source's use of "pure".
 
 # Context & Application
 
-- **Typical contexts**: Palette construction (brand, UI, data viz), colour hierarchy, emotional tone, accessibility.
-- **Common applications**: High saturation for emphasis, alerts, and calls to action; low saturation for backgrounds and supporting text; systematic saturation reduction for disabled/inactive states.
+Palette emphasis, data graphics and states can use vivid/dull differences if they serve the task. Do not convey disabled/error meaning by saturation alone: an unavailable action can show visible “Unavailable” text with its real input state, and an error badge can show “Error” plus a meaningful icon/shape. Preserve legible labels and actual inactive versus active semantics; this small application does not implement or verify a whole widget.
 
 ## Cross-Domain Connections
 
-**Mathematics → RIGOROUS**: In OKLCH, saturation corresponds to the chroma axis C (the radial distance from the neutral grey axis in the Oklab colour space). This is a mathematically precise, perceptually uniform encoding: equal changes in C correspond to equal perceived changes in chromatic intensity. Arnheim's phenomenological account predates this formalisation; his observation that colours can be related "through their saturation" anticipates the chroma dimension without specifying it mathematically.
+**Mathematics → RIGOROUS**: C=hypot(a,b) and a=Ccos(h), b=Csin(h) are literal Oklab polar-coordinate identities. They do not equate C with CIE saturation or guarantee equal-looking C steps. HSL S derives from encoded-RGB extrema; changing it at fixed HSL L can change relative luminance. Numeric parameter separation is not perceptual orthogonality.
 
 # Examples
 
-**Example 1** (p. 379): Arnheim's discussion of colour purity — "an orange or a green looks pure when it is only itself, e.g., without an admixture that would make us speak of a reddish orange." Purity here is saturation: the degree to which the hue is unmixed and fully expressed.
+These are retained reported examples from the existing extraction, not independently verified quotations, figures, experiments or historical conclusions.
 
-**Example 2** (p. 389): Liebmann's experiment — placing a red figure on a green background of equal brightness makes boundaries "fluid, soft, colloidal." The colour boundary is visible because the hues differ, but the perceptual separation weakens. Adding saturation contrast (not just hue) strengthens figure-ground.
+**Example 1** (p. 379): Arnheim's discussion of colour purity — "an orange or a green looks pure when it is only itself, e.g., without an admixture that would make us speak of a reddish orange." This reported purity example concerns hue admixture; it is not a definition equating purity with CIE saturation or OKLCH chroma.
 
-**Example 3** (p. 382): In describing mixtures of primaries, Arnheim notes that pure primaries "can be related only through their brightness or saturation, not as hues" — establishing saturation as an independent relational axis between colours.
+**Example 2** (p. 389): Liebmann's experiment — placing a red figure on a green background of equal brightness makes boundaries "fluid, soft, colloidal." The colour boundary is visible because the hues differ, but the perceptual separation weakens. The represented observation does not establish a universal saturation adjustment or adequate text contrast.
+
+**Example 3** (p. 382): In describing mixtures of primaries, Arnheim notes that pure primaries "can be related only through their brightness or saturation, not as hues" — a reported comparison "through their saturation", not proof of perceptual independence.
 
 # Relationships
 
 ## Builds Upon
-- **Hue** — Saturation is the degree to which a hue is expressed; it presupposes a hue to saturate.
+- **Hue** — Supplies chromatic character for the vividness comparison, not a universal logical dependency for every saturation definition.
 
 ## Enables
-- **Colour harmony** — Saturation parity or controlled saturation contrast is a key tool in palette construction.
-- **Simultaneous contrast** — Contrast effects alter perceived saturation as well as hue.
-- **Colour weight** — Highly saturated colours tend to carry more visual weight and attract more attention.
+- **Colour harmony** — Controlled vividness comparisons can serve a palette.
+- **Simultaneous contrast** — Context can affect apparent saturation.
+- **Colour weight** — Vividness may affect influence without a fixed attention/weight ranking.
 
 ## Related
-- **Tonal value** — The light-dark dimension; orthogonal to saturation (a dark colour can be highly saturated).
-- **Achromatic colour** — The limit state of zero saturation; white, grey, and black are achromatic.
-- **Simultaneous contrast** — Contrast effects can shift perceived saturation as well as hue.
+- **Tonal value** — A distinct light-dark description; not universally orthogonal.
+- **Achromatic colour** — A neutral appearance/coordinate limit under stated conditions.
+- **Simultaneous contrast** — Appearance shifts require actual context.
 
 ## Contrasts With
-- **Tonal value** — Value describes lightness/darkness; saturation describes chromatic purity/intensity.
-- **Achromatic colour** — Achromatic colours have zero saturation by definition.
+- **Tonal value** — Light-dark appearance versus defined relative colourfulness/model parameter.
+- **Achromatic colour** — No perceived hue, distinguished from partial desaturation.
 
 # Common Errors
 
 - **Error**: Equating desaturation with darkening (reducing saturation to make a colour "less prominent").
-  **Correction**: Desaturation shifts a colour toward grey at the same lightness; darkening reduces lightness. Both reduce prominence but in different ways with different perceptual effects.
+  **Correction**: They change different model coordinates, but appearance and prominence can interact. Holding HSL L or OKLCH L does not ensure constant relative luminance or perceived lightness.
 
 - **Error**: Assuming maximum HSL saturation (S=100%) means maximum perceptual saturation.
-  **Correction**: HSL saturation is not perceptually uniform and not gamut-aware. At the same HSL saturation, different hues appear perceptually different in intensity. OKLCH chroma is more reliable for perceptually consistent saturation.
+  **Correction**: HSL's parameter is model-specific. OKLCH C is a useful coordinate with hue/lightness/gamut limits, not an equal-intensity guarantee.
 
 # Common Confusions
 
 - **Confusion**: "Saturation and brightness are the same — a bright colour is saturated."
-  **Clarification**: Saturation and brightness are independent. A bright yellow can be desaturated (a pale, washed-out yellow); a dark navy is low-brightness but can be high-saturation. They are orthogonal dimensions.
+  **Clarification**: Brightness is an appearance attribute; saturation relates colourfulness to own brightness. A model can vary parameters separately without making perception universally independent.
 
 - **Confusion**: "Chroma and saturation are the same thing."
-  **Clarification**: In common usage, often treated as synonyms. Technically, chroma is the absolute chromatic intensity (used in CIELAB/OKLCH), while saturation in some models (HSL) is chroma relative to the maximum achievable at that lightness. The distinction matters in implementation but not in Arnheim's phenomenological account.
+  **Clarification**: Their CIE reference brightnesses differ. HSL/HSV parameters and Oklab C also differ from those appearance terms; no universal C/L or common slider conversion is supplied.
 
 # Source Reference
 
 Chapter VII: Color, "Art and Visual Perception," pp. 379–389 (sections "The Generative Primaries," "Fundamental Primaries," "Syntax of Combinations," "Interaction of Color").
 
 # Verification Notes
+
+Current bounded review separates appearance, model coordinates and rendering operations as explained above. Technical corrections and local relationship/CQ decisions are same-context proposals; original fidelity and actual rendered/observer outcomes remain unassessed. Extraction-confidence metadata is unchanged.
+
+Legacy extraction notes below are preserved as historical assertions from the predecessor card, **not current verification results**. In particular, their equivalence, chronology, physiology and “Verified” claims are not adopted by this review.
 
 - Definition source: Synthesised from distributed discussion. Arnheim treats saturation/purity as a key dimension throughout Chapter VII but does not isolate it in a single definitional passage.
 - Confidence rationale: Medium — the concept is clearly present and used technically, but Arnheim's treatment is embedded in broader discussion rather than systematically defined.

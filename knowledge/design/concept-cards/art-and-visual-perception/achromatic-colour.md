@@ -37,7 +37,7 @@ rosetta_stone:
     domain: "mathematics"
     concept: "The achromatic axis (L axis) in cylindrical colour spaces"
     rating: "rigorous"
-    note: "Achromatic colours occupy the central axis of OKLCH/CIELAB where chroma C = 0; the lightness L axis is the full achromatic dimension."
+    note: "C=0 is the exact neutral-axis construction in polar Oklab; CIELAB uses its own neutral axis. This geometry does not guarantee neutral appearance in every context or identify all lightness coordinates."
 css_implementation:
   -
     property: "filter: grayscale()"
@@ -45,75 +45,79 @@ css_implementation:
     support: "baseline"
   -
     property: "color (neutral values)"
-    example: "color: oklch(0.5 0 0); /* mid-grey, zero chroma */"
+    example: "color: oklch(0.5 0 0); /* chosen neutral coordinate, not a context-free appearance */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Achromatic colours are those with no hue quality — white, black, and all shades of grey — existing purely on the light-dark dimension without any chromatic content.
+Achromatic colours have no perceived hue: white, black and greys. A model can define a neutral axis, but a neutral coordinate does not guarantee a context-free neutral appearance.
 
 # Core Definition
 
-Achromatic colours (from Greek: "without colour") are the class of visual experiences consisting of white, black, and all intermediate greys. They possess only one colour dimension — tonal value — and have zero saturation/chroma. Arnheim establishes this distinction early in Chapter VII when discussing the most fundamental level of colour organisation: "The most elementary nomenclature distinguishes only between darkness and lightness, and all colors are classified according to this simple dichotomy" (p. 373). This is the base level — before any hue categories emerge — at which the entire world of colour reduces to the achromatic scale.
+This presents the represented Arnheim account. Exact edition, pages, quotations, named examples, figures, experiments, historical claims and physiological explanations remain unassessed against the unavailable original. Current analytic qualifications do not certify source fidelity.
 
-Arnheim also treats the achromatic scale as carrying expressive weight in its own right. Odilon Redon's famous defence of "his blacks" — "One must respect black. Nothing prostitutes it. It does not please the eye or awaken another sense. It is the agent of the mind even more than the beautiful color of the palette" — illustrates the expressive power of achromatic work.
+Achromatic colours (Greek: "without colour") describe white, black and intermediate greys. They can vary in light-dark appearance without a discernible hue. Tonal value is a useful pictorial description; CIE brightness and lightness, HSL L and OKLCH L are distinct attributes or coordinates.
 
-In design and colour science, achromatic colours occupy the central axis of cylindrical colour models (OKLCH, CIELAB, HSL), where chroma/saturation equals zero and only lightness varies.
+Arnheim's represented Chapter VII account connects elementary colour naming to darkness/lightness: "The most elementary nomenclature distinguishes only between darkness and lightness, and all colors are classified according to this simple dichotomy" (p. 373). This reported linguistic example does not prove that all perception begins with an achromatic stage.
+
+Odilon Redon's defence of "his blacks" — "One must respect black. Nothing prostitutes it. It does not please the eye or awaken another sense. It is the agent of the mind even more than the beautiful color of the palette" — preserves the expressive point: achromatic work can carry rich formal meaning.
+
+In Oklab's polar form, C=hypot(a,b)=0 defines its neutral axis and hue is undefined there. CIELAB has a corresponding neutral axis in its own coordinates; CSS HSL uses S=0 for neutral sRGB. These are different models, not one universal lightness or saturation scale.
 
 # Prerequisites
 
-- **Tonal value** — Achromatic colours are defined entirely by their position on the value scale.
+- **Tonal value** — Supplies light-dark appearance comparisons among neutral regions.
 
 # Key Properties
 
-1. **Zero saturation** — No hue content; achromatic colours cannot be shifted toward any chromatic direction.
-2. **Value only** — The sole dimension of variation among achromatic colours is lightness (black = 0, white = maximum).
-3. **Chromatic neutrality** — Achromatic colours do not shift perceived hue in simultaneous contrast the way chromatic colours do (though they do affect perceived lightness).
-4. **Maximum contrast anchors** — Black and white provide the extreme anchors of the value scale, making them the strongest contrast elements in any composition.
-5. **Expressive register** — Achromatic work (drawing, engraving, black-and-white photography) can achieve full formal and emotional expression without chromatic colour.
+1. **No perceived hue** — The appearance is neutral in the stated context; neighbouring colours and adaptation can change that reading.
+2. **Model neutral axes** — OKLCH C=0, CIELAB a*=b*=0 and normalized HSL S=0 describe different coordinate constructions.
+3. **Light-dark variation** — Greys differ in appearance; black/white endpoints are relative to the medium and viewing context.
+4. **Contrast anchors** — Opaque sRGB black/white is 21:1; a nominal neutral is not automatically an adequate text/background pair.
+5. **Expressive register** — Drawing, engraving and black-and-white photography retain form and expressive differences.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Specify zero chroma (C = 0 in OKLCH, S = 0 in HSL) at any lightness value.
-2. In pigment: mix complementary colours in equal proportion (produces grey), or use black/white pigment directly.
-3. In digital: set R = G = B in RGB space.
+1. Choose a declared model: OKLCH C=0 or CSS HSL S=0 gives a neutral coordinate.
+2. For a neutral sRGB coordinate set encoded R=G=B; physical paint mixtures require material/illumination checks. Equal complements do not guarantee grey.
+3. Choose light-dark relationships for the task and check actual rendered pairs.
 
 ## To Identify/Recognise:
-1. A colour with no discernible hue quality — it cannot be described as "reddish" or "bluish."
-2. Converting to HSL shows S = 0 or H = undefined.
-3. In OKLCH: C = 0 at any L value.
+1. Ask whether a hue is discernible in the viewing context, such as "reddish" or "bluish."
+2. In OKLCH, C=0 makes hue undefined; in HSL S=0 makes hue powerless. A stored hue angle alone does not establish chromatic appearance.
 
 # Context & Application
 
-- **Typical contexts**: Black-and-white photography and film, engraving, typographic design, monochromatic UI, dark/light mode neutral palettes.
-- **Common applications**: Neutral backgrounds and text colours that don't shift perceived hue of adjacent chromatic elements; high-contrast legibility anchors (black text on white); establishing visual hierarchy through value alone.
+Black-and-white photography, engraving and neutral interface palettes use light-dark relations without requiring chromatic accents. Neutral surfaces can still alter neighbouring appearance; check actual text, icons and states instead of assuming neutrality removes interaction.
 
 # Examples
 
+These are retained reported examples from the existing extraction, not independently verified quotations, figures, experiments or historical conclusions.
+
 **Example 1** (p. 371–372): Odilon Redon's three decades of "blacks" — charcoal drawings and lithographs — demonstrating that achromatic media sustain complete expressive and formal richness without colour.
 
-**Example 2** (p. 373): Berlin and Kay's anthropological data — the most elementary colour nomenclature systems distinguish only dark from light, confirming that the achromatic dimension is the perceptual foundation of all colour organisation.
+**Example 2** (p. 373): Berlin and Kay's anthropological data — the most elementary colour nomenclature systems distinguish only dark from light, a reported colour-naming comparison, not proof of a universal perceptual foundation.
 
-**Example 3** (p. 374): "Shape and Color" section — Arnheim notes that a black triangle is as black as a black square, showing that achromatic colour is independent of shape, while chromatic qualities interact more complexly with context.
+**Example 3** (p. 374): "Shape and Color" section — Arnheim notes that a black triangle is as black as a black square, a reported comparison of shape and colour descriptions, not universal independence from context.
 
 # Relationships
 
 ## Builds Upon
-- **Tonal value** — Achromatic colour is essentially pure tonal value expression.
+- **Tonal value** — Supplies the light-dark comparison; this card elaborates its achromatic case, not a physical subtype.
 
 ## Enables
-- **Tonal contrast** — Achromatic colour provides the clearest and most unambiguous tonal contrast.
-- **Chromatic neutrality** — Achromatic backgrounds and neutrals allow chromatic colours to be perceived without mutual interference.
+- **Tonal contrast** — Neutral pairs isolate a light-dark comparison without proving every boundary clear.
+- **Chromatic neutrality** — A local appearance construct: absence of a discernible hue in the stated context, not immunity to induction.
 
 ## Related
-- **Saturation** — Saturation is the dimension that distinguishes chromatic from achromatic; zero saturation = achromatic.
-- **Tonal value** — The only colour dimension present in achromatic colours.
+- **Saturation** — Contrasts chromatic appearance with its neutral limit under a declared definition/model.
+- **Tonal value** — Describes light-dark differences, including those among neutral regions.
 
 ## Contrasts With
-- **Chromatic colour** — Chromatic colours possess hue and saturation in addition to value.
-- **Hue** — Achromatic colours have no hue; hue is definitionally absent.
+- **Chromatic colour** — Local appearance construct with discernible hue, rather than a separate resolved card.
+- **Hue** — A neutral has no perceived hue; a nominal model neutral may appear tinted in context.
 
 # Common Errors
 
@@ -126,16 +130,20 @@ In design and colour science, achromatic colours occupy the central axis of cyli
 # Common Confusions
 
 - **Confusion**: "Grey is just a dark white or a light black."
-  **Clarification**: In one sense true (grey is on the achromatic axis), but perceptually, different greys are genuinely distinct experiences with different expressive qualities. The grey scale is not merely a degraded version of colour but a complete expressive medium in its own right.
+  **Clarification**: A grey can occupy a neutral model axis while differing in perceived lightness, texture and expressive role. The greyscale is a useful expressive medium.
 
 - **Confusion**: "Desaturating a colour makes it achromatic."
-  **Clarification**: Fully desaturated colours (S = 0 or C = 0) are achromatic. Partially desaturated colours retain some chromatic content and are not truly achromatic.
+  **Clarification**: A partial reduction can retain chromatic content. HSL S=0 or OKLCH C=0 defines a neutral coordinate in that model; neither is an observer test.
 
 # Source Reference
 
 Chapter VII: Color, "Art and Visual Perception," pp. 371–374 (sections "From Light to Color," "Shape and Color").
 
 # Verification Notes
+
+Current bounded review separates appearance, model coordinates and rendering operations as explained above. Technical corrections and local relationship/CQ decisions are same-context proposals; original fidelity and actual rendered/observer outcomes remain unassessed. Extraction-confidence metadata is unchanged.
+
+Legacy extraction notes below are preserved as historical assertions from the predecessor card, **not current verification results**. In particular, their equivalence, chronology, physiology and “Verified” claims are not adopted by this review.
 
 - Definition source: Synthesised from the opening sections of Chapter VII. Arnheim does not define "achromatic colour" as a term but clearly treats the dark/light dichotomy as the foundational level of colour organisation.
 - Confidence rationale: Medium — the concept is clearly implied and exemplified; explicit definitional treatment requires synthesis from several passages.

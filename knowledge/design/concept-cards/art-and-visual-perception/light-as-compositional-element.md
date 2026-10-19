@@ -45,11 +45,13 @@ css_implementation:
 
 # Quick Definition
 
-Light as compositional element describes the design principle of using controlled brightness distribution — light and shadow as an orchestrated system — to direct visual attention, establish narrative hierarchy, and create compositional unity independently of the inventory of depicted objects.
+Organised light-dark distribution can direct attention, support narrative hierarchy and unify areas. It is one compositional tool; maximum brightness, a spotlight or low secondary contrast is not automatically correct for an interface.
 
 # Core Definition
 
-Light as compositional element is the principle that the distribution of brightness in a composition functions as an active design agent — not merely revealing existing objects, but directing attention to them, establishing their relative importance, and creating a compositional logic that operates independently of position or size.
+This presents the represented Arnheim account. Exact edition, pages, quotations, named examples, figures, experiments, historical claims and physiological explanations remain unassessed against the unavailable original. Current analytic qualifications do not certify source fidelity.
+
+Light as compositional element describes using brightness distribution to organise a particular composition. It can affect emphasis while objects remain in place, but actual attention also depends on position, size, meaning and other cues.
 
 Arnheim develops this in his analysis of Rembrandt and the tradition of chiaroscuro painting: "In a more didactic sense, illumination tends to guide attention selectively, in accordance with the desired meaning. An object can be singled out without having to be large or colorful or situated in the center. Similarly, secondary features of the scene can be subdued at will. All this without 'surgical interventions,' which would alter the inventory of the scene itself" (Chapter VI, p. 369).
 
@@ -57,38 +59,39 @@ He identifies the compositional principle underlying Titian's "bunch of grapes":
 
 # Prerequisites
 
-- **Tonal value** — The raw material.
-- **Chiaroscuro** — The technique.
-- **Tonal contrast** — The compositional mechanism.
+- **Tonal value** — Supplies light-dark appearance.
+- **Chiaroscuro** — Supplies related pictorial practice.
+- **Tonal contrast** — Supplies relational comparisons and actual pair conditions.
 
 # Key Properties
 
-1. **Attention direction** — Light attracts attention; shadow suppresses it. This operates independently of size, colour, or centrality.
-2. **Hierarchy without surgical intervention** — Lighting can assign primary/secondary status to elements without changing their position, size, or colour.
-3. **Unity through light-mass grouping** — Collecting all lights and darks into unified groups creates compositional cohesion.
-4. **Hierarchy through illumination organisation** — Establishing a clear light-source hierarchy (one dominant source, weaker supporting sources) creates visual order.
-5. **Expressive register** — The distribution of light carries emotional and symbolic meaning; high-key (bright) compositions feel different from low-key (dark) ones.
+1. **Attention** — Contrast and brightness can contribute alongside size, position, meaning and other cues.
+2. **Selective emphasis** — Depicted lighting can change interpretation without moving objects.
+3. **Grouping option** — Titian's represented light-mass grouping is one strategy, not a universal requirement.
+4. **Source organisation** — Several coherent lights can be intentional.
+5. **Expression** — High/low-key arrangements can differ without determining one universal emotion.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Identify the most important elements — assign the highest value contrast (brightest highlights against darkest shadows) to these.
-2. Use lower tonal contrast for supporting elements to subordinate them.
-3. Group light areas and dark areas: avoid scattered value spots. Unified light-masses and shadow-masses create compositional order.
-4. Establish a light-source hierarchy: one motivating source dominates; supporting sources are clearly secondary.
-5. In UI: spotlight effects, differential background contrast, and focused bright areas guide the eye to primary actions.
+1. Identify the task and actual primary/supporting information.
+2. Use light-dark differences where useful; supporting labels and essential text still need applicable contrast.
+3. Try unified light masses or deliberately distributed emphasis according to the content.
+4. Inspect actual surfaces, fonts and states; a modal scrim is separate from semantic/keyboard/focus behavior.
+5. Keep a usable at-rest treatment when a glow or spotlight is unnecessary.
 
 ## To Identify/Recognise:
-1. Where does the eye go first? That is the area of highest tonal contrast or greatest brightness in the dark field.
-2. Is there a coherent light-mass grouping, or scattered, competing bright spots?
-3. Does the brightness organisation correspond to the information hierarchy — are the most important elements the most lit?
+1. Compare intended hierarchy with actual reading order and attention.
+2. Do not infer the first fixation or importance from brightness alone.
+3. Assess whether grouping serves the content, including purposeful multiple focal regions.
 
 # Context & Application
 
-- **Typical contexts**: UI design (spotlight CTAs, dimmed inactive areas), photography direction, editorial layout, advertising, wayfinding signage, presentation design.
-- **Common applications**: Drawing attention to primary CTA with high-brightness contrast; using low-contrast grey for secondary content to subordinate it; background gradients that focus attention on central content; overlay darkening of background to highlight modal dialogs.
+Photography, staging, editorial work and UI can use illumination-like emphasis. Preserve supplied identity and meaningful roles. Secondary content must remain legible; an inactive-control exception does not exempt ordinary labels. CSS spotlight/glow examples are decorative candidates, not a complete dialog or priority mechanism.
 
 # Examples
+
+These are retained reported examples from the existing extraction, not independently verified quotations, figures, experiments or historical conclusions.
 
 **Example 1** (p. 360): Titian's "bunch of grapes" — collecting all lights on one side and all darks on the other, so the composition functions as a single unified light/dark object rather than a collection of individually lit parts.
 
@@ -101,42 +104,46 @@ He identifies the compositional principle underlying Titian's "bunch of grapes":
 # Relationships
 
 ## Builds Upon
-- **Tonal value** — The dimension across which the compositional operation occurs.
-- **Chiaroscuro** — The technical system of light and shadow in which the compositional principle operates.
-- **Tonal contrast** — The perceptual mechanism of contrast is the tool; light-as-compositional-element is the design principle.
+- **Tonal value** — Supplies light-dark appearance.
+- **Chiaroscuro** — Supplies a related pictorial practice, not the only possible lighting approach.
+- **Tonal contrast** — Supplies comparisons and actual pair conditions.
 
 ## Enables
-- **Visual hierarchy through brightness** — Elements acquire primary/secondary status through their position in the illumination scheme.
-- **Compositional unity** — Light-mass grouping creates unity independently of spatial proximity.
+- **Visual hierarchy through brightness** — One emphasis cue; not a resolved hierarchy card or guaranteed ordering.
+- **Compositional unity** — Grouping can connect areas without being independent of all spatial cues.
 
 ## Related
-- **Shadow** — Shadow is the negative-space partner of light in the compositional system.
-- **Luminosity** — The highest level of the brightness hierarchy in the light-as-element system.
+- **Shadow** — Can support subdued or expressive regions.
+- **Luminosity** — A light-emitting appearance, not the highest scalar level of every hierarchy.
 
 ## Contrasts With
-- **Light as form-revealer** — The basic function of light in revealing objects' shape and volume; compositional light goes beyond this to use brightness as an active organisational force.
+- **Light as form-revealer** — Local function construct: revealing shape versus using lighting to organise meaning; both can coexist.
 
 # Common Errors
 
 - **Error**: Using equal brightness contrast for all elements in a composition.
-  **Correction**: Uniform contrast creates no hierarchy; everything competes equally. Vary contrast systematically: highest contrast for primary elements, lowest for background/tertiary elements.
+  **Correction**: If hierarchy is unclear, compare meaning, grouping, size and contrast together. Equal contrast can support a table or repeated controls; do not lower essential text contrast merely to force emphasis.
 
 - **Error**: Scattering bright elements randomly rather than grouping them.
-  **Correction**: Scattered light creates chaotic compositions. Group bright areas and dark areas into unified masses to achieve compositional order (Titian's "bunch of grapes" principle).
+  **Correction**: Check whether distribution supports the task. Titian's "bunch of grapes" is a useful alternative, not a rule against several meaningful focal regions.
 
 # Common Confusions
 
 - **Confusion**: "Light reveals what is there; it doesn't make compositional decisions."
-  **Clarification**: Light as a compositional element is the explicit choice to use the brightness distribution as an active design tool. This is distinct from light as information (revealing forms). Rembrandt makes both the same object; the best UI design does too.
+  **Clarification**: Light as a compositional element is the explicit choice to use the brightness distribution as an active design tool. This is distinct from light as information (revealing forms). The represented Rembrandt discussion combines these uses; an interface can use either where it serves the task.
 
 - **Confusion**: "Any bright element will attract attention."
-  **Clarification**: Brightness attracts attention relative to the surrounding context. A bright element in a bright field does not attract more attention; a bright element in a dark field does. The key is contrast within the specific light-field context.
+  **Clarification**: Brightness attracts attention relative to the surrounding context. A bright element can attract attention against a dark field, but contrast, content and competing cues affect the result. The key is contrast within the specific light-field context.
 
 # Source Reference
 
 Chapter VI: Light, "Art and Visual Perception," pp. 365–370 (sections "Painting without Lighting," "The Symbolism of Light").
 
 # Verification Notes
+
+Current bounded review separates appearance, model coordinates and rendering operations as explained above. Technical corrections and local relationship/CQ decisions are same-context proposals; original fidelity and actual rendered/observer outcomes remain unassessed. Extraction-confidence metadata is unchanged.
+
+Legacy extraction notes below are preserved as historical assertions from the predecessor card, **not current verification results**. In particular, their equivalence, chronology, physiology and “Verified” claims are not adopted by this review.
 
 - Definition source: Synthesised from multiple sections of Chapter VI. Arnheim discusses the compositional use of light most explicitly in the Titian "bunch of grapes" passage and the Rembrandt analysis.
 - Confidence rationale: Medium — the concept is clearly present and central, but Arnheim's treatment is embedded in art history examples rather than stated as an abstract design principle.

@@ -35,30 +35,32 @@ rosetta_stone:
     domain: "mathematics"
     concept: "Antipodal points on a circular space (180° rotation of hue angle)"
     rating: "rigorous"
-    note: "In OKLCH, complementary colours are approximately opposite on the hue circle — adding 180° to the hue angle H gives the complementary; OKLCH's perceptual uniformity makes this more reliable than in HSL."
+    note: "H_opposed=(H+180deg) mod360 is an exact half-turn on the chosen hue coordinate, not a guarantee of perceptual complementarity, neutral mixing, greatest usable contrast or harmony."
   -
     domain: "music"
-    concept: "Tritone (6-semitone interval, maximum tonal distance)"
+    concept: "Six-semitone separation on a chosen twelve-pitch-class cycle (limited analogy)"
     rating: "loose"
-    note: "Both tritone and complementary pair are the 'most distant' pairing in their respective circular systems, but the perceptual mechanisms (harmonic resonance vs. colour opponency) are entirely different."
+    note: "Six steps is maximal shortest-cycle separation on a chosen twelve-pitch-class cycle. The analogy does not provide a shared metric, resonance law or perceptual mechanism."
 css_implementation:
   -
     property: "hue rotation (180° in oklch)"
-    example: "/* Complementary: add 180 to hue angle */ color: oklch(0.6 0.2 calc(270 + 180)); /* = 90 */"
+    example: "/* Chosen coordinate opposition, not a mixing guarantee */ color: oklch(0.6 0.2 calc(270 + 180)); /* = 90 */"
     support: "baseline"
   -
     property: "color-mix()"
-    example: "color-mix(in oklch, red 50%, green 50%); /* additive mix toward grey */"
+    example: "color-mix(in oklch increasing hue, oklch(0.6 0.1 30) 50%, oklch(0.6 0.1 210) 50%); /* h120 retains C0.1; not grey or additive light */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Complementary colours are pairs (or triplets) of hues that, when combined, produce chromatic completeness — mutual neutralisation when mixed, and maximum contrast when juxtaposed — with the fundamental complementary system consisting of the triad red, yellow, and blue.
+Complementarity can mean neutralising mixtures in a specified system or a source-specific compositional opposition. An OKLCH half-turn is an exact coordinate construction, not a guarantee of neutral mixing, greatest usable contrast or harmony.
 
 # Core Definition
 
-Complementary colours are those that complete each other — producing a sensation of wholeness or balance that neither achieves alone. Arnheim identifies two distinct types: generative complementaries (those that produce achromatic grey when mixed, as in additive or subtractive colour mixing) and fundamental complementaries (those that produce perceptual completion in aesthetic experience).
+This presents the represented Arnheim account. Exact edition, pages, quotations, named examples, figures, experiments, historical claims and physiological explanations remain unassessed against the unavailable original. Current analytic qualifications do not certify source fidelity.
+
+In the represented compositional account, complementary colours are described as completing each other, with wholeness or balance interpreted in the actual arrangement. Arnheim identifies two distinct types: generative complementaries (those that produce achromatic grey when mixed, as in additive or subtractive colour mixing) and fundamental complementaries (those that produce perceptual completion in aesthetic experience).
 
 Arnheim's emphasis is on the fundamental complementaries, which derive from the three primary pure hues — red, yellow, and blue — and their binary mixtures (orange, violet, green). The six hues form three complementary pairs: blue↔orange, yellow↔violet, red↔green. The underlying system is a two-level hierarchy: the three primaries and three secondaries, each secondary being the mixture of the two primaries not paired with it.
 
@@ -66,92 +68,97 @@ Arnheim states: "It is merely by sensitive inspection that we notice the effect 
 
 He also observes that complementary pairs can function as peaceful unity (Van Gogh's seasonal pairings) or as violent contrast (Delacroix's red and green for terror), depending on how they are deployed in composition.
 
-Note: Arnheim's fundamental complementary system is perceptual/phenomenological and differs from generative complementaries (which depend on colour mixing mode: additive, subtractive, or physiological). His system predates modern perceptual models.
+Note: Arnheim's fundamental complementary system is perceptual/phenomenological and differs from generative complementaries (which depend on colour mixing mode: additive, subtractive, or physiological). Do not infer a historical chronology or empirical equivalence from the coordinate illustration below.
 
 # Prerequisites
 
-- **Hue** — Complementarity is a relationship between hues.
-- **Saturation** — Maximum complementary contrast occurs at high saturation.
+- **Hue** — Supplies the selected ordering.
+- **Saturation** — Supplies a distinct vividness comparison, not a maximum-contrast law.
 
 # Key Properties
 
-1. **Perceptual completion** — Complementary pairs produce a sense of balance and completeness that individual colours lack.
-2. **Maximum contrast** — When juxtaposed, complementary pairs produce the greatest possible hue contrast.
-3. **Mutual neutralisation when mixed** — Combined in appropriate proportions, complementary hues produce grey or neutral (generative complementarity).
-4. **Three primary complementary pairs** — Red↔Green, Yellow↔Violet, Blue↔Orange form the fundamental system.
-5. **Context-dependent expression** — The same complementary pair can read as harmony (peaceful union of opposites) or as violent clash depending on proportion, saturation, and compositional context.
+1. **Source-specific completion** — Arnheim's represented pairs/triplets are a compositional account.
+2. **Chosen opposition** — H+180° is exact on a declared hue circle, not a general maximum-contrast ranking.
+3. **Generative neutrality** — Neutrality requires the chosen mixing operation, full colour coordinates, proportions and whitepoint.
+4. **Distinct systems** — Arnheim's R/G,Y/V,B/O and RYB triad are not Cleland's Munsell ordering or additive RGB complements.
+5. **Contextual expression** — Arrangement and proportion can support unity or tension without a universal rule.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Identify the hue's position on the colour circle (use its H angle in OKLCH).
-2. The complementary is approximately 180° opposite on the hue circle.
-3. To use for harmonious balance: deploy complementaries in unequal proportions (dominant hue + small accent of complement).
-4. To create maximum contrast/vibration: use complementaries in equal proportions at high saturation.
+1. Name whether the task concerns a source's compositional pair, additive mixture or coordinate opposition.
+2. For an OKLCH opposition candidate use (H+180°) mod360, retaining chosen L/C and checking gamut.
+3. Try proportions for the actual content; unequal areas do not guarantee harmony, equal areas do not guarantee vibration.
+4. For a mixture specify its space and path. At L=.6,C=.1,h30/210, the Cartesian Oklab a/b midpoint is near C=0; the increasing polar OKLCH midpoint h120 retains C=.1.
 
 ## To Identify/Recognise:
-1. A pair is complementary when: placing small amounts of each near the other produces visual "vibration"; mixing them additively yields grey.
-2. After staring at one colour (afterimage), the afterimage is its complementary — the visual system's opponent process reveals the pair.
+1. A wheel diameter identifies coordinate opposition only.
+2. Afterimages depend on adaptation and viewing conditions; they do not independently certify a pigment recipe, CSS mix or readability pair.
 
 # Context & Application
 
-- **Typical contexts**: Palette construction, colour accent selection, split-complementary and triadic schemes, photography (complementary colour grading), film colour palette, brand identity.
-- **Common applications**: High-contrast accent colours (complement of dominant brand colour creates maximum visibility accent); complementary colour grading in photography/video (orange skin tones + teal background is a near-complementary pair); avoiding simultaneous contrast clashes by understanding which pairs are complementary.
+Palette exploration can retain supplied brand values and try an opposed accent. Inspect actual text/background/state pairs, output gamut and non-colour meanings. A red error badge and green success badge are meaningful roles, not automatically a bad palette or a sufficient accessible distinction.
 
 ## Cross-Domain Connections
 
-**Mathematics → RIGOROUS**: In OKLCH, complementary hues are approximately 180° apart on the hue wheel. The perceptual uniformity of OKLCH means that 180° rotations more reliably produce true perceptual complements than in HSL (where the geometry is non-uniform). The relationship is: H_complement ≡ (H + 180°) mod 360°. Note that in the opponent-process model, complementary pairs correspond to the zero-crossing of opponent colour channels — red/green and blue/yellow opponency.
+**Mathematics → RIGOROUS**: H_opposed=(H+180°) mod360 is a half-turn on the chosen angular coordinate. It does not equate OKLCH angles to neural opponent channels, Cleland's hue labels or perceptual neutralisation. Cartesian and polar interpolation can give different mixtures even for the same endpoints.
 
-**Music → LOOSE**: The tritone (augmented fourth, 6 semitones) is the maximum-distance interval in the 12-tone equal temperament system, analogous to the 180° complementary pair in the colour circle. Both create "tension" in their respective systems. However, the analogy breaks down: musical consonance/dissonance results from frequency ratios and acoustic beating; colour complementarity results from opponent neural processes. The comparison is structural (both are maximal-distance pairings in circular systems) but the underlying mechanisms have no common basis.
+**Music → LOOSE**: Six steps is maximal shortest-cycle separation on a chosen twelve-pitch-class cycle. That discrete ordering offers a limited comparison with a hue half-turn; it is not a shared distance metric, resonance law or proof of equal tension.
 
 # Examples
+
+These are retained reported examples from the existing extraction, not independently verified quotations, figures, experiments or historical conclusions.
 
 **Example 1** (pp. 384–385): Arnheim's "three legs of a stool" — the three primaries (R, Y, B) are the only set of complementaries in which all constituents are pure and mutually exclusive. The secondary complementary pairs (blue/orange, yellow/violet, red/green) each consist of one primary and the balanced mixture of the other two.
 
 **Example 2** (p. 386): Van Gogh's seasonal palette — spring (red/green), summer (blue/orange), autumn (yellow/violet), winter (black/white) — using complementary pairs to express distinct seasonal moods through peaceful union of opposites.
 
-**Example 3** (pp. 385–386): Delacroix and Van Gogh using red/green for terror and violent passion ("In his Night Café he tried to express the terrible passion of men by means of red and green"). Maximum contrast at equal proportions/high saturation produces tension rather than harmony.
+**Example 3** (pp. 385–386): Delacroix and Van Gogh using red/green for terror and violent passion ("In his Night Café he tried to express the terrible passion of men by means of red and green"). This is a represented expressive example, not an automatic equal-proportion rule.
 
-**Example 4** (p. 386): Divisionist painting — when complementary pairs are applied in small brushstrokes, the colours mix additively to silvery grey rather than contrasting. Scale determines whether complementary pairs contrast or neutralise.
+**Example 4** (p. 386): Divisionist painting — when complementary pairs are applied in small brushstrokes, the represented account describes a silvery-grey optical mixture. Spatial averaging, emitted-light addition, pigment mixing and CSS interpolation are distinct; scale alone does not prove neutralisation.
 
 # Relationships
 
 ## Builds Upon
-- **Hue** — Complementarity is a structural relationship between hue positions.
+- **Hue** — Supplies the chosen ordering; saturation/chroma supplies conditions for actual colour comparisons.
 
 ## Enables
-- **Colour harmony** — Complementary relationships are the basis of the most widely used harmony schemes.
-- **Simultaneous contrast** — Complementary pairs produce maximum simultaneous contrast.
-- **Colour balance** — Compositional use of complementaries achieves chromatic completeness and stability.
+- **Colour harmony** — Opposed schemes are one option.
+- **Simultaneous contrast** — Opposed regions can be compared in context without a maximum-effect theorem.
+- **Colour balance** — Local compositional-judgment construct; no balance or completeness formula follows.
 
 ## Related
-- **Simultaneous contrast** — Complementaries produce maximum hue contrast; understanding complementaries predicts contrast shifts.
-- **Colour harmony** — Harmonic systems (complementary, split-complementary, triadic) are all built on the complementary relationship.
+- **Simultaneous contrast** — Contextual shifts need actual conditions, not wheel opposition alone.
+- **Colour harmony** — Split/triadic/analogous choices need their own arrangement and purpose.
 
 ## Contrasts With
-- **Analogous colours** — Analogous colours are adjacent on the hue wheel (share common elements); they harmonise by similarity rather than by completion.
+- **Analogous colours** — Local adjacent-hue construction, contrasted with opposition rather than universally ranked below it.
 
 # Common Errors
 
 - **Error**: Using complementary pairs at equal proportions and maximum saturation and expecting harmony.
-  **Correction**: Equal proportions of high-saturation complements produce visual vibration and tension, not harmony. For harmony, use unequal proportions: one dominant, one accent.
+  **Correction**: Proportion, attributes and arrangement affect the result. Try a dominant/accent relationship if useful, but neither equal nor unequal proportions guarantee a judgment.
 
 - **Error**: Assuming any two "opposite-looking" colours are complementary.
-  **Correction**: Complementarity is a specific structural relationship. The three fundamental pairs (R/G, Y/V, B/O) are not simply "opposite" by casual observation — their relationship is defined by the perceptual completion effect and confirmed by afterimage testing.
+  **Correction**: State the system and intended operation. Wheel opposition, afterimage, physical mixture and adequate text contrast are different checks.
 
 # Common Confusions
 
 - **Confusion**: "Complementary colours always harmonise."
-  **Clarification**: Complementary colours produce the potential for harmony (completeness, balance) but can equally produce violent clash. Whether they harmonise depends on proportion, saturation, scale, and compositional arrangement.
+  **Clarification**: A named pair can serve peaceful or forceful expression; actual deployment matters.
 
 - **Confusion**: "The complementary of red is always green."
-  **Clarification**: This holds for the fundamental/painter's system (R, Y, B). In additive light mixing (RGB), the complementary of red is cyan (not green). In OKLCH, the complement is ~180° opposite, which for red approximates blue-green. The "complementary" varies by colour model.
+  **Clarification**: Arnheim's represented painter system pairs red/green; additive RGB red is neutralised by suitable cyan contributions relative to its whitepoint. A declared OKLCH half-turn need not reproduce either physical or historical pair.
 
 # Source Reference
 
 Chapter VII: Color, "Art and Visual Perception," pp. 383–387 (section "The Fundamental Complementaries").
 
 # Verification Notes
+
+Current bounded review separates appearance, model coordinates and rendering operations as explained above. Technical corrections and local relationship/CQ decisions are same-context proposals; original fidelity and actual rendered/observer outcomes remain unassessed. Extraction-confidence metadata is unchanged.
+
+Legacy extraction notes below are preserved as historical assertions from the predecessor card, **not current verification results**. In particular, their equivalence, chronology, physiology and “Verified” claims are not adopted by this review.
 
 - Definition source: Synthesised from the "Fundamental Complementaries" section. Arnheim's definitions and examples are explicit and central.
 - Confidence rationale: High — Arnheim treats complementary colours as a major topic with clear theoretical structure and multiple examples.

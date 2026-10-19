@@ -24,7 +24,7 @@ related:
   - "colour-constancy"
   - "tonal-value"
   - "chiaroscuro"
-  - "illumination"
+  - "illumination-perception"
 contrasts_with: []
 answers_questions:
   - "How does the visual-elements concept of 'value' (light-dark range) connect to colour theory's 'lightness' and to contrast as a design principle?"
@@ -34,61 +34,64 @@ rosetta_stone:
     domain: "mathematics"
     concept: "Normalisation / relative scaling"
     rating: "structural"
-    note: "The visual system effectively normalises perceived brightness against the field average — analogous to z-score normalisation in statistics, where absolute values matter less than relative position."
+    note: "Normalisation is a comparison for relational stability; no scene-average z-score or complete visual-system computation is established."
   -
     domain: "engineering"
     concept: "Auto gain control (AGC) in signal processing"
     rating: "structural"
-    note: "Brightness constancy operates like AGC — the visual system adjusts its sensitivity to the ambient level, preserving relative brightness relationships rather than absolute signal strength."
+    note: "AGC adjusts engineered sensitivity. It offers a limited adaptation comparison, not an implementation or full model of biological constancy."
 css_implementation: []
 ---
 
 # Quick Definition
 
-Brightness constancy is the perceptual tendency to perceive the tonal value of surfaces as stable and consistent despite changes in overall illumination level — the visual system preserves relative brightness relationships rather than registering absolute light intensity.
+Brightness constancy here names the represented tendency for a surface to retain a relatively stable light-dark identity across illumination changes. It is conditional and incomplete, not perfect luminance invariance or reflectance recovery.
 
 # Core Definition
 
-Brightness constancy is the perceptual mechanism by which the human visual system maintains a stable perception of an object's tonal value (lightness) despite significant changes in the absolute quantity of light reaching the eye. A white piece of paper in shadow reflects less light than a black piece of charcoal in direct sunlight — yet the paper still appears white and the charcoal black, because the visual system computes relative position within the total brightness distribution of the scene, not absolute luminance.
+This presents the represented Arnheim account. Exact edition, pages, quotations, named examples, figures, experiments, historical claims and physiological explanations remain unassessed against the unavailable original. Current analytic qualifications do not certify source fidelity.
 
-Arnheim states: "Whether or not a handkerchief looks white is determined not by the absolute amount of light it sends to the eye, but by its place in the scale of brightness values provided by the total setting" (Chapter VI, p. 357). He also notes that constancy is imperfect — we can see that two white envelopes (one lit, one in shadow) look somewhat different even while knowing they are the same white, but the primary percept assigns them both to the "white" category.
+A white sheet in shadow can retain its white identity while sending less light to the eye than a black surface under strong illumination. This separates measured luminance from brightness appearance and from lightness relative to a reference white; the card's historical brightness/value vocabulary does not make those terms numerically interchangeable.
 
-The mechanism responsible is the visual system's ability to detect and discount the overall brightness gradient of a scene (treating it as a constant), and to assess each object's brightness relative to that gradient. This is closely related to the lateral inhibition of the retina and higher-level cortical processing.
+Arnheim states: "Whether or not a handkerchief looks white is determined not by the absolute amount of light it sends to the eye, but by its place in the scale of brightness values provided by the total setting" (Chapter VI, p. 357). His two-envelope example also distinguishes category stability from identical appearance: "white" need not mean that the illuminated and shadowed envelopes look the same.
+
+Scene relations and inferred illumination can contribute to constancy. No scene-average z-score, retinal filter, pupil change or complete neural mechanism is established by these examples. The problem is underdetermined: even the scalar observation I=.2 admits illumination .2 × reflectance 1 or illumination .4 × reflectance .5. Appearance does not uniquely recover either factor.
 
 # Prerequisites
 
-- **Tonal value** — Brightness constancy is a perceptual mechanism operating on the value scale.
+- **Tonal value** — Supplies the light-dark appearance whose relative stability is considered.
 
 # Key Properties
 
-1. **Relative, not absolute** — The visual system registers brightness as position within the scene's value distribution, not as raw luminance.
-2. **Imperfect constancy** — Constancy is approximate; under unusual conditions (e.g., isolated spotlight on a single object with no context), it breaks down and the object appears self-luminous.
-3. **Scene-global computation** — The visual system uses the entire visible field's brightness distribution as a reference; changing any part affects perceived brightness of all parts.
-4. **Gradient discounting** — Smooth, structured brightness gradients (such as those from natural lighting) are perceptually discounted as "illumination," preserving the object's perceived colour.
-5. **Adaptive mechanisms** — Pupil dilation and retinal adaptation further support constancy across very different overall illumination levels.
+1. **Relational** — Appearance can depend on surrounding values as well as stimulus intensity.
+2. **Approximate** — Surface identity and exact shade can differ under changed lighting.
+3. **Context-dependent** — Scene layout and illumination cues matter; changing any pixel need not change every appearance.
+4. **Illumination interpretation** — A gradient may be read as "illumination," or as surface variation; the reading is conditional.
+5. **Distinct from adaptation** — Sensitivity changes can contribute, but constancy is not identical to a single adaptation process.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. To exploit constancy in design: provide a coherent context for every element — each element's perceived value depends on its neighbours.
-2. To test for constancy: compare the same grey in very different contexts (surround it with white vs. black); the apparent brightness shifts significantly even though the value is identical.
+1. Compare an identified surface across lighting conditions while retaining its scene context.
+2. Use equal-grey-on-light/dark-surround demonstrations to examine simultaneous contrast; they do not alone test cross-illuminant constancy.
 
 ## To Identify/Recognise:
-1. Brightness constancy is working when you perceive a white surface as white in shadow and under bright light.
-2. Constancy fails when: (a) an object is isolated from its surround in unusual lighting; (b) illumination is unfamiliar or extreme; (c) the surround provides no brightness reference.
+1. Ask whether a surface retains its light-dark identity despite changed illumination.
+2. Record remaining shade differences and actual viewing conditions; unusual lighting can weaken constancy without guaranteeing glow.
 
 # Context & Application
 
-- **Typical contexts**: Photography, dark mode design, print design across different paper/lighting conditions, accessibility, video/film.
-- **Common applications**: Understanding why a design looks different on screen vs. print (different reference blacks/whites); why dark-mode implementations that simply invert values often fail (they destroy the established constancy relationships); why careful tone management is necessary in print production.
+Photography, print and theme review need actual lighting, medium and foreground/background conditions. For dark mode, inspect the resolved text/background pairs, fonts, sizes, states and semantic roles. A polarity swap is not intrinsically a contrast failure: black/white remains 21:1 in either direction. Other inversions can alter luminance ratios and emphasis; adapt those actual pairs rather than diagnose unreadability from inversion alone.
 
 ## Cross-Domain Connections
 
-**Mathematics → STRUCTURAL**: The visual system effectively performs normalisation relative to the scene average, analogous to z-score computation (value − mean) / standard deviation. Equal physical luminance differences at different mean illumination levels are perceived as equivalent brightness differences — the system is sensitive to contrast ratios, not absolute values.
+**Mathematics → STRUCTURAL**: Normalisation is an analogy for relational stability. No evidence here identifies vision with (value−mean)/standard deviation or guarantees equal perceived differences at different illumination levels.
 
-**Engineering → STRUCTURAL**: Automatic Gain Control (AGC) in audio and radio receivers adjusts sensitivity to compensate for varying input signal strength, preserving relative signal information. Brightness constancy is the visual analogue: the retina adjusts sensitivity (via pupil dilation and photoreceptor adaptation) to maintain usable contrast across a wide range of illumination levels.
+**Engineering → STRUCTURAL**: Automatic gain control changes sensitivity to an input range. This helps compare adaptation with engineered control, but is not an implementation or complete model of biological constancy.
 
 # Examples
+
+These are retained reported examples from the existing extraction, not independently verified quotations, figures, experiments or historical conclusions.
 
 **Example 1** (p. 357): The classic handkerchief example — a white handkerchief at midnight may send less light to the eye than black charcoal in noon sun, but is still perceived as white, because constancy preserves relational value position.
 
@@ -101,26 +104,26 @@ The mechanism responsible is the visual system's ability to detect and discount 
 # Relationships
 
 ## Builds Upon
-- **Tonal value** — Constancy is a mechanism for maintaining stable value perception.
+- **Tonal value** — Supplies the light-dark appearance whose stability is compared.
 
 ## Enables
-- **Chiaroscuro** — Constancy is what allows the viewer to simultaneously see the illumination gradient and the object's constant colour. Without constancy, chiaroscuro would be ambiguous.
-- **Colour constancy** — The same class of mechanism (relational scaling) operates on chromatic as well as achromatic perception.
+- **Chiaroscuro** — Stable surface identity can coexist with depicted shading; it does not remove all ambiguity.
+- **Colour constancy** — A parallel chromatic stability phenomenon, not an established identical mechanism.
 
 ## Related
-- **Colour constancy** — The analogous mechanism for perceived hue stability under changing illumination.
-- **Tonal contrast** — Constancy preserves relative tonal relationships; contrast is what remains stable after constancy normalisation.
+- **Colour constancy** — Shares conditional stability under illumination change.
+- **Tonal contrast** — Contextual value relations can change even when surface identity persists.
 
 ## Contrasts With
-- **Adaptation effects** — Prolonged exposure to a very bright or very dark field shifts the constancy baseline; these are failures or extensions of the constancy mechanism.
+- **Adaptation effects** — Local sensitivity-change construct; adaptation and constancy can interact without being interchangeable or automatic failures.
 
 # Common Errors
 
-- **Error**: Designing for a specific fixed viewing condition assuming the values will appear as specified.
-  **Correction**: Context always modifies perceived value. Designs viewed in different ambient lighting conditions will appear lighter or darker; constancy mechanisms will shift the perceived range.
+- **Error**: Assuming specified values will look identical under every viewing condition.
+  **Correction**: Compare the intended displays, ambient conditions and surfaces; context can affect appearance without an invariant shift formula.
 
 - **Error**: Implementing dark mode by simply inverting all values (e.g., white → black, black → white).
-  **Correction**: Simple inversion destroys the luminance hierarchy. Elements that had visual weight from being dark (text, important elements) may become dematerialised when bright on a dark background, or vice versa. Effective dark mode redesigns the value hierarchy for the new baseline, rather than inverting the existing one.
+  **Correction**: Inversion alone does not diagnose failure. Resolve actual pairs and state roles: opaque black/white stays 21:1, while other pairs can change ratio. Preserve legible secondary text, distinguish focus/selected/error states and inspect actual fonts and surfaces before claiming readability.
 
 # Common Confusions
 
@@ -128,13 +131,17 @@ The mechanism responsible is the visual system's ability to detect and discount 
   **Clarification**: Constancy is approximate and partial. "We can report with assurance that the two envelopes are both white, but we observe that they look different just the same" (Arnheim, p. 359). The primary category assignment is stable; the perceived shade within the category is not.
 
 - **Confusion**: "The visual system is fooled by illusions; constancy is not real."
-  **Clarification**: Constancy is the normal, adaptive operation of the visual system — it is what makes reliable perception possible. Illusions arise at the edges of the mechanism's operation; they reveal the mechanism rather than disproving it.
+  **Clarification**: Conditional stability is useful in perception; a contextual illusion does not show that it is absent. Neither an illusion nor a stability example proves one complete mechanism.
 
 # Source Reference
 
 Chapter VI: Light, "Art and Visual Perception," pp. 356–359 (section "Relative Brightness").
 
 # Verification Notes
+
+Current bounded review separates appearance, model coordinates and rendering operations as explained above. Technical corrections and local relationship/CQ decisions are same-context proposals; original fidelity and actual rendered/observer outcomes remain unassessed. Extraction-confidence metadata is unchanged.
+
+Legacy extraction notes below are preserved as historical assertions from the predecessor card, **not current verification results**. In particular, their equivalence, chronology, physiology and “Verified” claims are not adopted by this review.
 
 - Definition source: Synthesised from the "Relative Brightness" section. Arnheim's relational account is explicit and central. The handkerchief example is nearly a direct paraphrase.
 - Confidence rationale: High — brightness constancy is a central topic in Arnheim's Chapter VI with explicit discussion, specific examples, and clear theoretical framing.
