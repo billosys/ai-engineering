@@ -227,3 +227,86 @@ No original-capture fidelity, full endpoint/corpus/live/global composition,
 browser/font/InDesign/search/AT behavior, hosted rendering, release or publication
 is established. Those checks were unrun here and retain their existing owners.
 Accepted structural/package evidence must not be presented as those outcomes.
+
+## Iteration01 independent acceptance — 2026-10-18
+
+**Current verdict: all four bounded Slice21 criteria accepted. F01 is resolved.**
+This section supersedes the initial candidate's current verdict while preserving
+its finding, failure/retry history and original evidence above. Actual reviewer
+remains `/root/s21_review`, independent of repair implementer `/root/s21_cc`;
+CDC `/root` retains slice closure, retrospective and coordination duties.
+
+Assignment: preserved `cc-prompt-iteration01.md`, issued in planning
+`ad8ebdd7a38beb83bdf245c9c2d71411df2eee0d`. Reviewed actual source
+`bca347f580132b0313a9bbb29d77c980a995b8f9`, parent
+`d19de06d1e79e22dac0b67b5bf2e527c048a1f73`, on
+`codex/project10-arc02-autonomous` in the dedicated source worktree. Reviewed
+actual planning return `64c5cb3c03894c7d98aaba8d7bca56fdcebbe4d0`, parent equal
+to the issuing commit. Both worktrees were clean before this append. No source
+repair or commit was made by the reviewer.
+
+### Repair meaning and current evidence
+
+Read the issued correction, actual source delta and revised card context,
+prepared comparison lines32–38, complete Iteration01 batch addition, current
+report and ledger. The replacement at optical card Example1, line79, now
+explains the leftward `u` movement, rounded `o` versus flat `n` proximity in
+`un`/`no`, and darker `nt`/`it` gaps versus `ti`. It agrees with the source's
+reported comparison and the exact issued paragraph. Butterick attribution and
+the no-independent-rendering limit prevent promotion into a new observed or
+universal result. Adobe's conditional comparison remains intact. F01 passes.
+
+The batch explicitly supersedes its initial incomplete optical teaching
+assessment with five current outcomes. Available prepared-source fidelity and
+useful teaching now pass; technical wording, scope, cross-card consistency and
+unchanged local edge/CQ coverage remain consistent. P10-11 capture fidelity
+and all previously named global/actual-behavior gaps remain unresolved.
+
+Fresh independent direct checks all exited0:
+
+- The source commit changes exactly the one allowed file and one paragraph.
+  Reversing only that paragraph restores every predecessor byte and exact blob
+  `9be7f3a329045a23c6b57c8f2537e6f44f3da498`; current blob is
+  `26d01b1bea0b953bc85aa78e08143eee3b7b0a3d`. Thus metadata, headings,
+  citations, relationships and all other card text are untouched.
+- Complete tracked-path/object comparison:7080 paths preserved,7079 other
+  source objects identical, including Make, checker, package lists and helpers.
+  All233 identities match the accepted index; all233 raw headers and232 other
+  whole cards match `d19de06d`. All161 sources,6 guides and owner/history match.
+  The earlier seven-scalar/baseline preservation result therefore remains valid.
+- LF/EOF and `git diff --check` pass; revised card has0 local Markdown links.
+  Planning return changes exactly batch,report,ledger. Batch/report append
+  rather than erase history; ledger changes Evidence/Notes only, retaining
+  criteria and open/done/done/done statuses. Both commit messages have both
+  coauthor trailers recognized by Git's trailer parser.
+- Existing design ZIP is unchanged at SHA-256
+  `a84faa792bddef0f920d4623b6fca604f81b328513c12b2f0693e4375a83f068`.
+  Fresh inspection compares all8 Markdown members against both `d19de06d` and
+  `bca347f5` committed source;8/8 match.
+
+Native checks were **retained, not rerun**. The exact source/input comparison
+establishes that the unbundled paragraph cannot affect their checked properties;
+all package/checker inputs and criteria are identical and no new finding
+undermines the methods. The initial independent record identifies actor,
+revision, method, results and accessible evidence. The issued iteration
+explicitly permits retention, and no fresh native gate applies to this delta.
+Retain the initial25-skill/package version result,606 warnings/605 locations,
+zero hard failures and8/8 package result, with its default-interpreter failure
+and successful retry still visible. This is not a fresh build or behavior claim.
+
+### Current row walk and handoff
+
+| Criterion | Current independent disposition | Evidence applicability |
+|---|---|---|
+| S21-01 | **Done at available-evidence scope** | F01 repair reproduced against prepared source; unaffected five-dimension results retained after exact delta review. |
+| S21-02 | **Done at bounded local scope** |27 typed/25 body/9 CQ results retained; all relevant representations unchanged and repaired illustration agrees with the same texture/spacing premise. |
+| S21-03 | **Done** | Fresh exact reversal, entire object/input comparison,233 roster/raw headers and retained original-baseline bridge reconcile preservation. |
+| S21-04 | **Done at local integration scope** | Retained independent native evidence plus fresh unchanged-ZIP8/8 inspection; current scopes, trailers and bounded return reproduced. |
+
+All four opening rows are accounted for; no new finding remains in this slice.
+The repair completes its assigned concrete teaching without a new dependency,
+scope change or extra artifact. CDC may close the slice with required
+retrospective/status/bubble-up updates. Original editions/captures remain
+unavailable; this acceptance does not close dependent fidelity, full corpus/
+live/global composition, browser/font/InDesign/search/AT/hosted behavior,
+arc/project acceptance, release or publication gates.

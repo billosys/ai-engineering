@@ -127,3 +127,15 @@ up: CDC retains acceptance, closure and retrospective responsibility. Original
 capture/fidelity, full corpus/live/global composition, actual browser/font/AT/
 InDesign behavior, hosted rendering and release gates remain with their owners.
 No push, merge, publication or successor was performed.
+
+## CDC closure — 2026-10-18
+
+Independent reviewer `/root/s21_review` accepts the corrected sourcebca347f5 /
+CC return64c5cb3c; [verification](cdc-verification.md) holds the actual judgment.
+CDC closes all four Slice21 rows at their bounded scopes. The six cards retain
+source-grounded teaching and the integrated font-feature/spacing method; the
+one paragraph repair restores the reported round/flat gap example. Native and
+8/8 package evidence is retained after protected-input checks. Read the
+[retrospective](cdc-retrospective.md) for execution observations. Source fidelity,
+global/CQ union, actual behavior, hosted rendering and release/Operator gates
+remain outside this acceptance. No merge,push,publication or Arc02 closure.

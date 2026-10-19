@@ -1,13 +1,13 @@
 ---
 slice: slice21-font-features-and-spacing
-status: active
+status: closed
 depends-on: [Slice20 accepted type method, available prepared Butterick pages]
 ---
 
 # Slice21 — Font Features and Spacing
 
-Revision **1.2**, opened2026-10-18. Two contributors, CDC Sofie + separate CC
-via Operator; Expedited Mode. [Project](../../project-plan.md)1.74 and
+Revision **1.3**, opened2026-10-18. Two contributors, CDC Sofie + separate CC
+via Operator; Expedited Mode. [Project](../../project-plan.md)1.75 and
 [Arc02](../arc-plan.md)1.62 govern. [Ledger](ledger.md), [assignment](cc-prompt.md).
 SOURCE/main: `52bfa46332592106f9301226571d6f441df8ce2d`. Planning predecessor:
 `cd32d81b3cec2542a0a7acf10ad76d5129f6fa75`, independently closed Slice20. The adding commit issues this prompt.
@@ -87,9 +87,23 @@ No scope, seven scalar exceptions or criterion change. CDC retrospective is
 required at close. Next-action owner: CC `/root/s21_cc` implements the preserved Iteration01;
 reviewer `/root/s21_review` independently checks the return,then CDC closes.
 
+## Independent closure — 2026-10-18
+
+CDC independently reviewed the returned Example1 repair at SOURCEbca347f5 and
+CC planning64c5cb3c; the separate reviewer `/root/s21_review` records its own
+checks and verdict in [cdc-verification.md](cdc-verification.md). All four
+bounded criteria are done. The one repaired explanation restores round/flat
+teaching while retaining attribution; six-card outcomes and packaged method
+remain accepted. Retained native/package evidence is applicable through exact
+unchanged inputs, with8/8 archive Markdown matches. No main merge or publication.
+[CDC retrospective](cdc-retrospective.md) records execution observations.
+Bubble-up: no new project criteria or source dependency; continue the connected
+punctuation cohort under Arc02, preserving unavailable-input/global/behavior/
+Operator gates and all issued prompts. No arc closure or1.1.0 bump follows.
+
 ## Assignment history
 
-- **Current / Iteration01:** [cc-prompt-iteration01.md](cc-prompt-iteration01.md),
+- **Iteration01 / independently accepted:** [cc-prompt-iteration01.md](cc-prompt-iteration01.md),
   issued2026-10-18 by the adding commit, SOURCEd19de06d. CC `/root/s21_cc`
   restores one concrete source explanation; actual reviewer `/root/s21_review`
   verifies it. No other source/guide/metadata change or new gate is authorized.
@@ -100,6 +114,10 @@ reviewer `/root/s21_review` independently checks the return,then CDC closes.
   close, advance, push or publish.
 
 ## Version History
+
+- 1.3 (2026-10-18): Independently accept the bounded optical-spacing repair,
+  close all four rows and record the Autonomous Mode retrospective; continue
+  ready source/topic work without changing parent gates.
 
 - 1.2 (2026-10-18): Independent review accepts three rows and finds F01's
   missing round/flat explanation. Issue one body-only repair with current
