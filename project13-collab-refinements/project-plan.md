@@ -3,7 +3,7 @@ project: project13-collab-refinements
 status: active-bootstrap
 depends-on: []
 blocks: []
-related: [project10-design-foundations]
+related: [project10-design-foundations, "billosys/ai-engineering#6"]
 ---
 
 # Collaboration Refinements
@@ -131,6 +131,10 @@ skill/package or repository-wide AGENTS change is authorized by this bootstrap.
 
 ## Version History
 
+- 1.8 (2026-10-19): Explicit issue6 implementation authorization, canonical
+  standalone slice and pending external PR review; no old protocol or acceptance
+  changes and no trial execution.
+
 - 1.7 (2026-10-12): T02 independent host closure and final two-run comparison;
   pilot ends, comparative benefit inconclusive, revise-before-testing recommendation.
   Frozen evidence/research criteria retained; no third run/adoption/research acceptance.
@@ -164,3 +168,23 @@ skill/package or repository-wide AGENTS change is authorized by this bootstrap.
 - 1.0 (2026-10-10): Operator-requested placeholder project, frozen Case01 and
   prospective Experiment01; local Project10 trial instructions added. Trial
   execution, measurements and general adoption remain pending.
+
+## Operator-authorized issue6 implementation — 2026-10-19
+
+The Operator separately authorizes implementing Autonomous Mode reliability and
+research-record improvements from billosys/ai-engineering#6, committing/pushing a
+dedicated branch and opening a PR. This new source authorization is bounded to
+[slice01-autonomous-mode-reliability](slice01-autonomous-mode-reliability/slice-plan.md),
+a single coherent guidance/package candidate, independent of the completed earlier
+research pilot. It supersedes the bootstrap's no-source-edit restriction only for
+this assignment; prior research findings, frozen records and five research gates
+remain unchanged and unaccepted. No new prospective trial or general performance
+claim is authorized.
+
+Codex implements on codex/autonomous-mode-reliability from fetched main f2b1137a;
+the Operator and two other GPT instances will independently review through the PR.
+These are future actual reviews, not assumed approvals. Use the default
+two-contributor separation with reviewers supplied by the Operator; no Autonomous
+execution, new subagents or fictional author/reviewer identities. Candidate delivery
+is distinct from integration, published release and accepted research effectiveness.
+

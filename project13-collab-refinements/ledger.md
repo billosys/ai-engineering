@@ -17,3 +17,9 @@ accepted research. Both host trial slices are closed; research gates stay open. 
 Host acceptance is independently recorded in Project10; final research comparison
 is CDC-authored/self-checked and requires separate challenge. All five original
 research criteria/statuses retained open; no framework-wide adoption or third run.
+
+## Additional authorized implementation obligation — October19
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+|---|---|---|---|---|---|---|---|
+|P13-06|Issue6 guidance candidate preserves ledgers/research records, passes real package gates and receives independent PR/Operator review|slice01-autonomous-mode-reliability/ledger.md, actual source/PR and reviewer evidence|serious|Operator implementation request2026-10-19|open|—|Candidate implementation authorized; independent acceptance and any future trial remain pending|

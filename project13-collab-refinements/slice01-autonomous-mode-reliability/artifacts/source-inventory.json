@@ -1,0 +1,152 @@
+{
+  "baseline": "f2b1137a3f3d77b0d34d789c2233b48f4dcb15ff",
+  "branch": "codex/autonomous-mode-reliability",
+  "changed_count": 29,
+  "changed": [
+    {
+      "path": "AGENTS.md",
+      "source_sha256": "3578f62a3ba7f3fdfb249c3ccc62f34c24d817979545723efeda568f4c5d9570",
+      "baseline_blob": "308f1a6c576f4176edb91e35ac100243de1a64c5"
+    },
+    {
+      "path": "README.md",
+      "source_sha256": "e4c19df409c541a0a0114371e88c679be4088eed6c258142867e5d0ea1a0816e",
+      "baseline_blob": "fe84d3cada32b0d09ab79153ffc512148fb11525"
+    },
+    {
+      "path": "docs/collaboration-framework.md",
+      "source_sha256": "8587b1c73d10cee2fc8e5e033ac0a7d5da4ba546ed7d449a78ec632d45f77b9a",
+      "baseline_blob": "9e54543fa712b400bca3fdeef7d52861c13fb98a"
+    },
+    {
+      "path": "knowledge/agent-coordination/SKILL.md",
+      "source_sha256": "00196e9f999340eeb105b2dd7d85efb84c17f1fd4dd9ed7f966ab9d575d90988",
+      "baseline_blob": "d92a124145170d53aa63c5d778d7166afffa0d8d"
+    },
+    {
+      "path": "knowledge/agent-coordination/guides/01-when-to-delegate.md",
+      "source_sha256": "783e58be017491133502440984ad4e4a900e4f60c576e85ccfabd5b520701a43",
+      "baseline_blob": "4c78d6f5f44b9e9b16c77eefab3a2dcf861680cb"
+    },
+    {
+      "path": "knowledge/agent-coordination/guides/02-context-packets.md",
+      "source_sha256": "17517fbbfa762dd898ca21eb07341745b21a44b1f40609f9e9d2d4ee4e9ed2e2",
+      "baseline_blob": "321b60e0935c0c2f6f630428074767ae8ab9810f"
+    },
+    {
+      "path": "knowledge/agent-coordination/guides/03-result-integration.md",
+      "source_sha256": "30f0605bff4e7190a96a77b02ff57835f92153314f7d68224c299c07561d8a2d",
+      "baseline_blob": "5fac4003be7538ff31a96c715ea5599bbe9c436c"
+    },
+    {
+      "path": "knowledge/agent-coordination/guides/04-anti-patterns.md",
+      "source_sha256": "e5c95bc0f1de55fb40880bd094e5b056a3daf4e5c12d0486de14a11965d0c7cd",
+      "baseline_blob": "a75be665a5d277e4689aaed98328df2a3d625d76"
+    },
+    {
+      "path": "knowledge/agent-coordination/version-history.md",
+      "source_sha256": "62f96766ea0b969b46e042fb11db0e7821d286532206556ca33e9674b3728043",
+      "baseline_blob": "de8955a238438c1fc217fa24bb388a362fe18ad7"
+    },
+    {
+      "path": "knowledge/collaboration-framework/SKILL.md",
+      "source_sha256": "c0f79c1b364ce8a4d86d2c41b5e94b8293954703dbc00453283077f9531a2e55",
+      "baseline_blob": "57112070a44013e72aec6569e7bda31f8aa33e8c"
+    },
+    {
+      "path": "knowledge/collaboration-framework/version-history.md",
+      "source_sha256": "4a4b0610e00e80f606e405c448f890caacc9f3ece0c574c0974f0fb01c027487",
+      "baseline_blob": "81ec7775f1c28faa499b2f60c38b3ac8bdbefd3d"
+    },
+    {
+      "path": "knowledge/engineering-methods/SKILL.md",
+      "source_sha256": "000f61b8d08f0d794c8fe395917663e79e0635d5ae757b0eb01361bff6a406f9",
+      "baseline_blob": "a68e6d65a6933163b333d11d291e5e9fca9316d3"
+    },
+    {
+      "path": "knowledge/engineering-methods/guides/01-engineering-methodology.md",
+      "source_sha256": "abc4704112536cbde7ee292d17276c2bbd85cc255a36fbeff4c714991ec4ac51",
+      "baseline_blob": "79451212760f42c8a305afb8fecb983bdd4611e6"
+    },
+    {
+      "path": "knowledge/engineering-methods/templates/cc-implementation-prompt.md",
+      "source_sha256": "1f9e934910e3479339ac029274ed1b53073bc706d6c373500fe364df14ec0eb4",
+      "baseline_blob": "fe6a439df286eef29716ee7c4d8856ca15e08ebf"
+    },
+    {
+      "path": "knowledge/engineering-methods/version-history.md",
+      "source_sha256": "62faed87969f3cb22f3d720ee51bee6791695590aa8a836b34f325fc1c6179c2",
+      "baseline_blob": "ee4c53cbb7abc3526989554bce46e2d4feb73ffe"
+    },
+    {
+      "path": "knowledge/methodology-stewardship/SKILL.md",
+      "source_sha256": "2a99cc33ad004ba79fb18d9893cf378fab8e2c8248813fdfd19a21c04a17a3dc",
+      "baseline_blob": "257bdf871fbbb122effe3b6d193417f3f331a09f"
+    },
+    {
+      "path": "knowledge/methodology-stewardship/guides/01-retrospectives-and-follow-through.md",
+      "source_sha256": "cf14a43827e81487037eddcdbae388955bad66a9cc35d9eac12f8f0eed18f4d8",
+      "baseline_blob": "489bec8eaca0ba55ab6f20ac22ae053e3c19f232"
+    },
+    {
+      "path": "knowledge/methodology-stewardship/version-history.md",
+      "source_sha256": "d00978e83d9032dfe6f3d975ee5ecf888751f66831c277df517373ae436281df",
+      "baseline_blob": "acf1ca61de3bbbbab300bfe16339ddb47d32161c"
+    },
+    {
+      "path": "knowledge/project-management/SKILL.md",
+      "source_sha256": "68f72233dff9ea656fc71c613444a943461a3ec8b38814a2c63353621db1849b",
+      "baseline_blob": "8b0c7bd7d3197698c1941c42ad08440d2c3d5608"
+    },
+    {
+      "path": "knowledge/project-management/guides/02-canonical-planning-worktree.md",
+      "source_sha256": "0cd70095fd99b6b326aaa57530c96b3f739031ec1829c04cf21d93104231d677",
+      "baseline_blob": "7f808aa9d83af5820ce6f6cf58063ab3c2513b23"
+    },
+    {
+      "path": "knowledge/project-management/guides/03-planning-top-down.md",
+      "source_sha256": "bb4b7e6cd747aba03c10db68f69586361e9ad9f86e25538f5c6794e246607715",
+      "baseline_blob": "7d834f0564b47eab427ed59c9938113d9a66340d"
+    },
+    {
+      "path": "knowledge/project-management/guides/README.md",
+      "source_sha256": "bc65dc01b8e1a3d9175b099886af052c54251e1c5f9faa3d8f1635e2ede1b924",
+      "baseline_blob": "83d61fda7ae79f9e3c4da08df5817fca89025445"
+    },
+    {
+      "path": "knowledge/project-management/version-history.md",
+      "source_sha256": "ecce636995649ccbafdd977f1fa0493bb26cb4f6452e317023292c9d36b56e69",
+      "baseline_blob": "9fc74d8ef62d1ecfd89e1249bc7bf6ca25e20f01"
+    },
+    {
+      "path": "knowledge/testing/SKILL.md",
+      "source_sha256": "12e1547ea3c8e59120587ec31a643afc89ae57963e37c8c53a186505d4084c37",
+      "baseline_blob": "4a335dfa3b7f6fca3ffd14e38287b1264379f3e4"
+    },
+    {
+      "path": "knowledge/testing/guides/03-validation-gates.md",
+      "source_sha256": "343815fe3ae5ec5d0ea852ad2e73cea212eb7bffa548f19a53a4e2d37ade0b84",
+      "baseline_blob": "fb075d7e1f677e9a759a56b3820078630f90127b"
+    },
+    {
+      "path": "knowledge/testing/version-history.md",
+      "source_sha256": "05251a96a836d8ba8bb2a3744a2fe1ab11664f6455092083d3bb4e5263bdaaab",
+      "baseline_blob": "472ae6076cc1bd73fb091c8bfca3e54e82e26e06"
+    },
+    {
+      "path": "knowledge/work-verification/SKILL.md",
+      "source_sha256": "ab9ba4fa6e435ba6c8d91b99113e0b79c41f3413aaf555ed9c8ec49948be634e",
+      "baseline_blob": "4c740c0ab19d71a664dde17362d2357ac598a6fd"
+    },
+    {
+      "path": "knowledge/work-verification/guides/01-ledger-discipline.md",
+      "source_sha256": "1c5762685aae90f06ca2795ce8933ea4d60bf1f5a9a31c0d3e58ed2d7f3621e3",
+      "baseline_blob": "1574db8e1a347371eb5dcafb3595e49380cd64d2"
+    },
+    {
+      "path": "knowledge/work-verification/version-history.md",
+      "source_sha256": "7ba55ea2614a0d61e4676e2ec6b78bfaefdecf8caa6820605395ec6ef55a006a",
+      "baseline_blob": "50a309c1cfda4cde268bd23928e455990331d091"
+    }
+  ]
+}

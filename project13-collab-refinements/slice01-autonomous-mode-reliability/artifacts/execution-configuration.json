@@ -1,0 +1,15 @@
+{
+  "actual_role": "implementer; self-checks only",
+  "mode": "standard implementation; Operator supplies future PR reviewers",
+  "session": "01a15463-a123-72a3-8c37-9c015f33b511",
+  "reported_provider": "openai",
+  "latest_reported_context": {
+    "timestamp": "2026-10-19T15:30:20.945Z",
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "high"
+  },
+  "requested_model": "not separately selected for this standard implementation assignment",
+  "model_overrides_or_subagents": "none dispatched",
+  "per_slice_spend_or_token_usage": "unavailable; no attribution baseline captured",
+  "identity_limit": "session-reported model/configuration; no assertion about unreported backend weights"
+}

@@ -1,0 +1,807 @@
+commit 11013b5d595489ee97a18ee75aaeeec312a837e5
+Author:     Duncan McGreggor <oubiwann@gmail.com>
+AuthorDate: Mon Oct 19 10:41:37 2026 -0500
+Commit:     Duncan McGreggor <oubiwann@gmail.com>
+CommitDate: Mon Oct 19 10:41:37 2026 -0500
+
+    Strengthen Autonomous Mode approvals and research records
+    
+    Require explicit Operator model/settings and expenditure choices before
+    Autonomous role work, with bounded staffing and stable workspace ownership.
+    Preserve full ledger discipline and original observation provenance across
+    preflight, contributor handoffs, verification and later reconstruction.
+    
+    Refs #6. Independent PR reviews and a future bounded real trial remain open.
+    
+    Co-authored-by: Codex <noreply@openai.com>
+    Co-authored-by: Billo AI <ai-engineering@billo.systems>
+
+diff --git a/AGENTS.md b/AGENTS.md
+index 308f1a6c..21119927 100644
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -102,8 +102,14 @@ framework documents and a packaging surface for installable assistant skills.
+ 
+ On explicit Operator selection, follow the canonical mode in
+ `knowledge/engineering-methods/guides/01-engineering-methodology.md` and execution
+-rules in `knowledge/project-management/guides/README.md`. CDC may select and
+-revise contributor arrangements within the recorded authorization. Default to
++rules in `knowledge/project-management/guides/README.md`. Before Autonomous role
++work, explicitly obtain the Operator's provider/model/settings choices for each
++planned role and expenditure/concurrency boundaries; inherited defaults are not
++approval. Default to one implementer and one independent reviewer. CDC may revise
++staffing only within recorded authority, with justified extra contexts and explicit
++mutation/index ownership. Include automatic CI effects in external-action authority.
++Preserve complete original research records and ledger traceability under the
++canonical artifact contract. Default to
+ a named arc; whole-project execution needs an explicit override. Use a dedicated
+ non-default source branch, independent review for substantive work and existing
+ gates, preserved prompts/ledgers,
+diff --git a/README.md b/README.md
+index fe84d3ca..fe91d38e 100644
+--- a/README.md
++++ b/README.md
+@@ -63,6 +63,13 @@ For implementation handoffs, engineering-methods provides
+ and a [CC prompt template](./knowledge/engineering-methods/templates/cc-implementation-prompt.md),
+ available standalone and through collaboration-framework.
+ 
++[Autonomous Mode](./knowledge/engineering-methods/guides/01-engineering-methodology.md#autonomous-mode)
++requires explicit Operator selection of role/model/settings and expenditure before
++execution. It defaults to an implementer and independent reviewer, with stable
++workspace ownership, complete ledgers and durable research records. Its
++[execution and record routes](./knowledge/project-management/guides/README.md#autonomous-mode)
++retain existing review, scope and integration gates.
++
+ ## Quick Commands
+ 
+ ```sh
+diff --git a/docs/collaboration-framework.md b/docs/collaboration-framework.md
+index 9e54543f..746a20e4 100644
+--- a/docs/collaboration-framework.md
++++ b/docs/collaboration-framework.md
+@@ -77,7 +77,21 @@ Existing paths remain valid under the
+ 
+ The Operator may authorize CDC to execute an approved arc using Expedited Mode,
+ local commits on a dedicated non-default source branch, and independent review
+-for substantive work and existing gates.
++for substantive work and existing gates. Before execution, CDC must explicitly
++ask the Operator for each planned role's provider/model/settings and expenditure
++and concurrency boundaries. Defaults and inherited settings do not answer this
++mandatory question; unavailable choices or changes outside the approved scope
++hold affected work until resolved. The framework prescribes no model or vendor.
++
++Default to one implementer and one independent reviewer. Extra contexts need a
++named purpose, bounded ownership and exit condition within the approved spend
++scope. Keep a compact preflight backed by complete contracts, give mutable
++worktrees explicit ownership and inspect automatic pipeline effects before pushes
++or PRs. Preserve original observations, model/configuration provenance and full
++ledger traceability under the
++[durable research-record contract](../knowledge/project-management/guides/02-canonical-planning-worktree.md#evidence-batches-and-research-records).
++Evidence batches index records without replacing required ledgers or reviews.
++
+ CDC selects and may revise contributor arrangements as complexity demands:
+ CC implementation with CDC/CRC review, or CDC implementation with independent
+ reviewer subagents. One-Contributor is limited to simple, clearly defined,
+diff --git a/knowledge/agent-coordination/SKILL.md b/knowledge/agent-coordination/SKILL.md
+index d92a1241..b15f0dd5 100644
+--- a/knowledge/agent-coordination/SKILL.md
++++ b/knowledge/agent-coordination/SKILL.md
+@@ -7,7 +7,7 @@ description: |
+   lookup task can be delegated without outsourcing design judgment.
+ license: MIT
+ metadata:
+-  version: "1.3.0"
++  version: "2.0.0"
+   hermes:
+     tags: [ai-engineering, collaboration, subagents, delegation]
+     category: meta-skills
+@@ -34,8 +34,10 @@ delegation. Existing independent-review requirements still apply.
+ In Operator-authorized [Autonomous Mode](../engineering-methods/guides/01-engineering-methodology.md#autonomous-mode),
+ CDC may assign implementation and independent review to contributor subagents,
+ select or change the arrangement, and retain integrated accountability. Load the
+-mode definition and the contributor packet requirements below. This exception
+-does not turn lookup returns into acceptance or waive independent verification.
++mode definition, mandatory Operator role/model/expenditure approval and the
++contributor packet requirements below. Default to one implementer and one
++independent reviewer, justify extra contexts and keep mutation ownership explicit.
++This exception does not turn lookup returns into acceptance or waive independent verification.
+ 
+ Read only the guide needed for the work:
+ 
+diff --git a/knowledge/agent-coordination/guides/01-when-to-delegate.md b/knowledge/agent-coordination/guides/01-when-to-delegate.md
+index 4c78d6f5..3a7c8717 100644
+--- a/knowledge/agent-coordination/guides/01-when-to-delegate.md
++++ b/knowledge/agent-coordination/guides/01-when-to-delegate.md
+@@ -26,7 +26,20 @@ review the integrated candidate after concurrent implementation. A reviewer
+ who repairs work becomes its doer and needs another verifier for the affected
+ evidence. Preserve review findings and iterations rather than replacing an
+ unfavorable reviewer. Operator decisions and tool restrictions remain binding.
+-Outside this exception, use the ordinary policy below.
++Before dispatch, apply the methodology's
++[mandatory Operator model and expenditure selection](../../engineering-methods/guides/01-engineering-methodology.md#mandatory-operator-model-and-expenditure-selection).
++Default to one implementer and one independent reviewer; extra contexts need a
++named purpose, bounded ownership, return contract and exit condition within the
++approved role/model, concurrency and expenditure scope. Defaults/inheritance do
++not replace the Operator's answer. An unavailable choice or out-of-scope change
++holds affected dispatch until resolved.
++
++Give each mutable worktree one mutation owner and name the staging/integration
++owner. Serialize installs, generation, edits and loaders/scanners whose inputs
++can change; separate write paths alone do not make a shared tree stable. Parallel
++mutable work needs isolated worktrees or justified noninterference. On handoff,
++recheck actual revision/dirty inputs and preserve others' changes and outputs
++of unknown ownership. Outside this exception, use the ordinary policy below.
+ 
+ ## Core Policy
+ 
+diff --git a/knowledge/agent-coordination/guides/02-context-packets.md b/knowledge/agent-coordination/guides/02-context-packets.md
+index 321b60e0..e61c3e84 100644
+--- a/knowledge/agent-coordination/guides/02-context-packets.md
++++ b/knowledge/agent-coordination/guides/02-context-packets.md
+@@ -20,7 +20,14 @@ required collaboration-framework, domain skills and local instructions;
+ governing plans, ledger rows and preserved prompt history; relevant design
+ choices and known risks; exact file ownership/exclusions; required validation
+ and evidence-return shape; acceptance boundaries and escalation conditions.
+-Require the receiving context to acknowledge the assignment and inspect source.
++Include the Operator-approved role/model/provider/settings, expenditure and
++concurrency scope, approval reference and any bounded fallback policy. Inherited
++configuration is not approval. Name the worktree's mutation/index owner and
++sequence checks against stable input states. Point to the existing durable
++[evidence home and observation fields](../../project-management/guides/02-canonical-planning-worktree.md#evidence-batches-and-research-records)
++for original commands, results, actual configuration and derived facts.
++Require the receiving context to acknowledge the assignment and inspect source;
++pause affected work if the authorized configuration cannot be honored.
+ 
+ CC assignments use engineering-methods'
+ [prompt-authoring contract](../../engineering-methods/guides/07-implementation-prompt-authoring.md).
+diff --git a/knowledge/agent-coordination/guides/03-result-integration.md b/knowledge/agent-coordination/guides/03-result-integration.md
+index 5fac4003..3f14b1b6 100644
+--- a/knowledge/agent-coordination/guides/03-result-integration.md
++++ b/knowledge/agent-coordination/guides/03-result-integration.md
+@@ -19,6 +19,15 @@ reviewer's reproduced checks may establish verification; do not reduce that
+ review to lookup or promote a summary to reproduced evidence. When CDC
+ implemented or repaired work, acceptance depends on another context's review
+ of that work and affected evidence. Preserve attribution and unresolved findings.
++Link each returned claim to its actual source state and original evidence entry,
++including requested/observed model settings and any authorization deviation.
++Reconcile the full assigned population, errors and coverage limits; a count,
++matching checksum or well-formed summary alone is not acceptance. Preserve
++separate independent observations even when outputs match. Retained evidence
++needs the reviewer's explicit applicability judgment under
++[correction review](../../work-verification/guides/05-independent-verification.md#evidence-during-correction-review).
++Keep a single attributable current status with history and pending owners,
++separating candidate, published, integrated and externally verified states.
+ The remaining sections describe ordinary lookup integration.
+ 
+ ## Parent-Context Responsibility
+diff --git a/knowledge/agent-coordination/guides/04-anti-patterns.md b/knowledge/agent-coordination/guides/04-anti-patterns.md
+index a75be665..dd779970 100644
+--- a/knowledge/agent-coordination/guides/04-anti-patterns.md
++++ b/knowledge/agent-coordination/guides/04-anti-patterns.md
+@@ -16,6 +16,10 @@ permits assigned implementation and independent-review contributors with
+ self-contained packets, authority boundaries and evidence. Applying that mode
+ without authorization, delegating an underspecified task, or accepting summaries
+ on trust remains a failure. Contributor review is not a lookup shortcut.
++Extra contributors without a named need, unapproved model/cost inheritance, and concurrent mutations that invalidate
++loaders are Autonomous execution failures. Use the canonical model/spend gate,
++bounded contributor packets and stable-worktree ownership; preserve failed
++observations and apply independent review to substantive repairs.
+ 
+ ## Thinking Delegation
+ 
+diff --git a/knowledge/agent-coordination/version-history.md b/knowledge/agent-coordination/version-history.md
+index de8955a2..e6a27e15 100644
+--- a/knowledge/agent-coordination/version-history.md
++++ b/knowledge/agent-coordination/version-history.md
+@@ -1,5 +1,9 @@
+ # Agent Coordination Version History
+ 
++## Version 2.0.0 - 2026-10-19
++
++Require Operator-approved role/model/settings and expenditure scope before Autonomous contributor dispatch. Default to one implementer and independent reviewer, justify extra contexts and hold unavailable/unapproved configurations. Make stable worktree mutation/index ownership and attributable durable returns explicit. The dispatch approval gate changes the prior contract; ordinary lookup boundaries and independent repair review remain intact.
++
+ ## Version 1.3.0 - 2026-10-18
+ 
+ Added an explicitly authorized Autonomous Mode exception to lookup-only
+diff --git a/knowledge/collaboration-framework/SKILL.md b/knowledge/collaboration-framework/SKILL.md
+index 57112070..5c859e10 100644
+--- a/knowledge/collaboration-framework/SKILL.md
++++ b/knowledge/collaboration-framework/SKILL.md
+@@ -18,7 +18,7 @@ description: |
+   separately, per-domain.
+ license: MIT
+ metadata:
+-  version: "2.8.0"
++  version: "3.0.0"
+   hermes:
+     tags: [ai-engineering, collaboration, methodology, sdlc, code-audit, test-coverage]
+     category: meta-skills
+@@ -111,6 +111,12 @@ and [execution rules](../project-management/guides/README.md#autonomous-mode)
+ before acting. CDC selects and adapts contributor arrangements, works through
+ the authorized arc by default using Expedited Mode, commits on a dedicated
+ non-default source branch, and obtains independent review for substantive work.
++Before execution, explicitly ask the Operator for each planned role's model,
++provider/settings and expenditure/concurrency boundaries; defaults or inheritance
++cannot satisfy this mandatory gate. Default to one implementer and one independent
++reviewer, justify extra contexts and preserve complete research records as well
++as every ledger obligation. Use a compact preflight backed by the full contract
++and stable worktree ownership; inspect automatic CI effects before triggering them.
+ One-Contributor is a limited option for simple, clearly defined, low-risk,
+ low-effort tasks; it cannot waive existing review gates. Retrospectives remain
+ mandatory in all three contributor methods. Project-wide scope
+diff --git a/knowledge/collaboration-framework/version-history.md b/knowledge/collaboration-framework/version-history.md
+index 81ec7775..56602f24 100644
+--- a/knowledge/collaboration-framework/version-history.md
++++ b/knowledge/collaboration-framework/version-history.md
+@@ -1,5 +1,9 @@
+ # Collaboration Framework Version History
+ 
++## Version 3.0.0 - 2026-10-19
++
++Route the mandatory Operator role/model/settings and expenditure gate before Autonomous execution. Make the two-contributor default, stable preflight, automatic CI effects and complete ledger/research-record preservation visible at the composer. The required pre-dispatch approval is an intentional execution-contract change.
++
+ ## Version 2.8.0 - 2026-10-18
+ 
+ Added Operator-authorized Autonomous Mode routing: arc-default scope, adaptive
+diff --git a/knowledge/engineering-methods/SKILL.md b/knowledge/engineering-methods/SKILL.md
+index a68e6d65..226d7507 100644
+--- a/knowledge/engineering-methods/SKILL.md
++++ b/knowledge/engineering-methods/SKILL.md
+@@ -8,7 +8,7 @@ description: |
+   review finding into a detailed, domain-guided CC implementation prompt.
+ license: MIT
+ metadata:
+-  version: "1.18.0"
++  version: "2.0.0"
+   hermes:
+     tags: [ai-engineering, methodology, sdlc, knowledge-substrate]
+     category: meta-skills
+@@ -30,8 +30,11 @@ scope and evidence honesty; self-checks are not independent acceptance.
+ For Operator-selected [Autonomous Mode](./guides/01-engineering-methodology.md#autonomous-mode),
+ read the canonical authorization and contributor-transition rules before acting.
+ CDC selects and adapts contributor arrangements within the authorized arc by
+-default; whole-project execution requires an explicit override. Independent
+-review, branch isolation, closing retrospectives and ambiguity pauses apply.
++default; whole-project execution requires an explicit override. Before execution,
++explicitly obtain the Operator's role/model/settings and expenditure choices;
++defaults and inheritance do not satisfy this gate. Default to one implementer
++and one independent reviewer, with stable workspace ownership and full durable
++evidence. Independent review, branch isolation, closing retrospectives and ambiguity pauses apply.
+ 
+ For CDC retrospectives at slice, arc and project close in the Three-Contributor
+ Workflow or Autonomous Mode, load [methodology-stewardship](../methodology-stewardship/SKILL.md).
+diff --git a/knowledge/engineering-methods/guides/01-engineering-methodology.md b/knowledge/engineering-methods/guides/01-engineering-methodology.md
+index 79451212..d424342d 100644
+--- a/knowledge/engineering-methods/guides/01-engineering-methodology.md
++++ b/knowledge/engineering-methods/guides/01-engineering-methodology.md
+@@ -350,10 +350,96 @@ canonical separate `planning` branch/worktree for plans and evidence. Check
+ branch and worktree identity again after a handoff or context recovery.
+ Autonomous Mode authorizes local commits within scope; pushing, merging,
+ publishing and other approval-gated actions need their own authorization.
++Inspect automatic pipeline effects before triggering them: an authorized push
++or PR can initiate publication, cloud changes or notifications. Obtain authority
++for those effects or use an authorized nonpublishing route; absence of a manual
++publish/deploy command does not establish absence of external effects.
++
++### Mandatory Operator model and expenditure selection
++
++Before Autonomous role work, explicitly ask the Operator which models to use
++for the planned roles and what expenditure boundaries apply. Mode selection,
++an application's default, a parent model and an inherited setting do not answer
++this question. Use the current context for the necessary preflight and selection
++dialogue; do not dispatch contributors or begin dependent execution while this
++gate is unresolved. It also applies to the limited One-Contributor arrangement.
++
++Ask for the actual roles needed, normally coordination/planning, implementation
++and independent review, with investigation or integration when separately
++assigned. A compact question is:
++
++> Which provider/deployment, model and reasoning/effort settings should each
++> planned role use? What spend limit or approval threshold and concurrency do
++> you authorize, and are any bounded substitutions or escalations allowed?
++
++Proposed defaults can help the Operator decide, but require explicit confirmation.
++The Operator may choose the same model for all roles. Keep this contract
++provider/model-agnostic; name only choices the environment actually supports,
++or disclose that availability has not been established. Record the answer and
++its effective scope in the governing plan, for example:
++
++| Role / actual context when assigned | Provider/deployment, requested model and selectable settings | Operator approval / authorized scope |
++| --- | --- | --- |
++| Each planned role | Explicit choice; distinguish requested from reported identity | Decision reference, limits and any bounded fallback policy |
++
++Record an agreed limit/approval threshold or an explicit choice of no cap, and
++the authorized concurrency. Explain which controls the runtime can enforce;
++do not promise a hard monetary cap without enforcement. Any pricing estimate
++needs a current source and assumptions; distinguish estimates from measured
++usage/charges and mark unavailable data as unknown.
++
++Check that the approved choices can be applied before each affected dispatch.
++If a requested model or cost-relevant control cannot be honored, pause that role
++and ask; do not silently substitute, inherit or downgrade. If the coordinator's
++approved model requires a handoff, arrange it through authorized tools or leave
++execution held. Unreported backend identity remains explicitly unknown; it is
++not evidence that a requested model was applied or a reason to invent an identity.
++
++Carry approval through its recorded scope rather than asking again for an
++unchanged authorized assignment. Changes of provider/model, reasoning effort,
++concurrency or expenditure outside that scope need renewed approval unless a
++precise bounded policy already covers them. CDC's adaptive staffing authority
++does not grant unrestricted spending authority. Preserve approval/configuration
++history and actual observed contributor settings under the
++[research-record contract](../../project-management/guides/02-canonical-planning-worktree.md#evidence-batches-and-research-records).
++
++### Execution preflight and stable inputs
++
++Keep one compact current preflight in the governing plan or assignment, linking
++to complete backing records. Establish before dependent work:
++
++- authorized outcome/endpoint, current prompt, ledger rows, instruction/skill
++  sources and revisions, unresolved decisions and their next-action owners;
++- actual repository/worktree/branch/revision and relevant dirty inputs,
++  protected changes, permitted mutations and separate external-action authority;
++- implementer, independent verifier, approved role/model/settings and expenditure,
++  mutation/index owner, required real gates and durable evidence home;
++- consequential prerequisites: actual runtime/shell/configuration, published
++  dependency/image availability and repository API/lint constraints where used.
++
++A short preflight is an entrypoint into the full contract, not reduced required
++reading. Revalidate changed facts after handoff, rebase or context recovery;
++preserve prior states and name remaining limits. Apply the
++[prompt intake contract](./07-implementation-prompt-authoring.md#required-reading-and-cc-intake).
++
++Give each mutable worktree one mutation owner. Sequence installs, generation,
++edits and loaders/scanners that need stable inputs; disjoint write paths alone
++do not establish compatibility with a recursive loader. Parallel mutable work
++needs separate worktrees or an explicitly justified noninterfering arrangement.
++Record ownership handoffs and input state before checks. Name Make targets
++explicitly, establish output ownership before cleanup and preserve unknown-owner
++outputs. Follow [real substrate validation](../../testing/guides/03-validation-gates.md#execution-substrate-and-observation-populations).
+ 
+ ### Adaptive contributor arrangements
+ 
+ The Operator delegates contributor selection to CDC for the authorized scope.
++Default to one implementer and one independent reviewer for substantive work;
++CDC may coordinate and review another context's implementation. Add a context
++for a named risk, bounded agreed investigation, safely separable workstream or
++separation-of-authorship need, with ownership, return contract and exit condition.
++Available capacity alone is not a staffing rationale. Additional staffing must
++remain within the Operator-approved role/model, concurrency and expenditure
++scope; resolve missing choices before dispatch.
+ CDC chooses according to complexity, risk, coupling and the need for independent
+ attention at project, arc, slice or iteration scale. A dedicated CRC is optional.
+ CDC may revise the arrangement after a slice or review, for another iteration
+@@ -441,6 +527,14 @@ Pause and surface an exhausted budget rather than looping indefinitely.
+ ### Ledgers, closure and discretion to pause
+ 
+ Maintain ledgers, bubble-up findings and source/plan coherence throughout.
++An evidence batch is an observation grouping/index, not a new acceptance scale.
++Preserve every row, original observation, independent reproduction and
++higher-scale composition gate. Use the existing canonical artifact homes and
++[durable record rules](../../project-management/guides/02-canonical-planning-worktree.md#evidence-batches-and-research-records);
++derive mechanical facts and link their witnesses rather than maintain competing
++current accounts. Evidence retention in correction review follows
++[work-verification](../../work-verification/guides/05-independent-verification.md#evidence-during-correction-review),
++with original identities and reviewer applicability judgments preserved.
+ CDC performs the Three-Contributor retrospective duties at every slice, arc
+ and project close regardless of the contributor arrangement selected here.
+ Use the existing `cdc-retrospective.md` placement and analysis contracts;
+diff --git a/knowledge/engineering-methods/templates/cc-implementation-prompt.md b/knowledge/engineering-methods/templates/cc-implementation-prompt.md
+index fe6a439d..a6c014b6 100644
+--- a/knowledge/engineering-methods/templates/cc-implementation-prompt.md
++++ b/knowledge/engineering-methods/templates/cc-implementation-prompt.md
+@@ -17,6 +17,10 @@ Approved outcome, scope/non-goals, plan/design/ledger authority and exact sectio
+ State whether this is implementation, investigation or evidence-only work.
+ Name the user/downstream task, intended before/after result, integration destination
+ and promised delivery state (candidate, integrated/accepted, or released).
++For Autonomous assignments, cite the Operator-approved role/model/provider,
++selectable settings, expenditure/concurrency scope and fallback policy. Missing
++approval blocks dispatch; proposed or inherited defaults are not authorization.
++State external-action authority including automatic effects of pushes/CI.
+ For any investigation, including embedded diagnosis, cite the Operator agreement
+ on usefulness, applicability and budget. Name the decision consumer, agreed
+ question, resource limit and stop/re-entry conditions. If agreement is absent,
+@@ -60,6 +64,17 @@ otherwise proceed without asking for an additional approval. On context recovery
+ revalidate state and reload required contracts no longer reliably available.
+ Receipts are attestation, not proof of comprehension or independent acceptance.
+ 
++Keep the current preflight compact by linking complete records: actual source
++and dirty inputs, protected paths, current prompt/ledger, applicable instruction
++revisions, mutation/index owner, independent verifier, approved model/spend scope for Autonomous work,
++real prerequisites, gates and evidence home. Revalidate changes on recovery.
++Serialize mutations and checks that traverse their inputs; name explicit Make
++targets and actual shells/executable/config paths. Derive test/scan populations
++and distinguish zero selected tests, loading failure or timeout from a pass.
++Use the [durable observation contract](../../project-management/guides/02-canonical-planning-worktree.md#evidence-batches-and-research-records)
++for original commands/results and generated facts. This index does not replace
++the required reading manifest, contract readback or ledger.
++
+ ## Source reconnaissance
+ 
+ | File and symbol at baseline | Observed behavior or reusable facility | Required change and integration consequence |
+diff --git a/knowledge/engineering-methods/version-history.md b/knowledge/engineering-methods/version-history.md
+index ee4c53cb..8252eb21 100644
+--- a/knowledge/engineering-methods/version-history.md
++++ b/knowledge/engineering-methods/version-history.md
+@@ -1,5 +1,9 @@
+ # Engineering Methods Version History
+ 
++## Version 2.0.0 - 2026-10-19
++
++Require an explicit Operator role/provider/model/settings and expenditure/concurrency decision before Autonomous role work, with held unavailable choices and approval-scoped substitutions. Define compact complete-backed preflight, stable worktree ownership, justified extra contexts and automatic pipeline authority. Preserve the limited One-Contributor exception, independent acceptance, ledgers and research records. The mandatory pre-dispatch gate changes the prior execution contract.
++
+ ## Version 1.18.0 - 2026-10-18
+ 
+ Defined Autonomous Mode alongside contributor workflows. Delegated arrangement
+diff --git a/knowledge/methodology-stewardship/SKILL.md b/knowledge/methodology-stewardship/SKILL.md
+index 257bdf87..ed5ac212 100644
+--- a/knowledge/methodology-stewardship/SKILL.md
++++ b/knowledge/methodology-stewardship/SKILL.md
+@@ -9,7 +9,7 @@ description: |
+   Retrospectives do not replace implementation acceptance or controlled trials.
+ license: MIT
+ metadata:
+-  version: "1.1.0"
++  version: "1.2.0"
+   hermes:
+     tags: [methodology, retrospectives, collaboration, process-improvement]
+     category: meta-skills
+diff --git a/knowledge/methodology-stewardship/guides/01-retrospectives-and-follow-through.md b/knowledge/methodology-stewardship/guides/01-retrospectives-and-follow-through.md
+index 489bec8e..9c28b3de 100644
+--- a/knowledge/methodology-stewardship/guides/01-retrospectives-and-follow-through.md
++++ b/knowledge/methodology-stewardship/guides/01-retrospectives-and-follow-through.md
+@@ -128,6 +128,34 @@ review or research actually consumes accepted handoffs before claiming goal
+ displacement. Observe the cost of this retrospective work too. Avoid per-file
+ bureaucracy, arbitrary caps, or cleanup based solely on volume.
+ 
++### Research usefulness and reconstruction
++
++Improvements to execution or evidence handling must preserve full ledger
++coverage, independent verification, original observations and long-term research
++value. Use the canonical
++[record contract](../../project-management/guides/02-canonical-planning-worktree.md#evidence-batches-and-research-records)
++for inputs/instructions, source/environment and model/settings provenance,
++commands/results, failed attempts, decisions and original/superseding references.
++A batch index and concise current view supplement the mandatory per-scale records.
++
++At an agreed evaluation point, ask a fresh reviewer to reconstruct an actual
++failed attempt, its repair, the accepted candidate and decision reasons from the
++retained authorized records, including independent review and remaining gates.
++Record missing inputs, access/redaction limits and unresolved identities. Check
++portability beyond local paths and expiring hosted links; a short trial cannot
++establish multi-year durability. Preserve earlier observations and record
++corrections or migrations with explicit mapping/provenance.
++
++For a bounded Operator-approved trial, predeclare the question, consumer, scope,
++budget, quality invariants and stopping condition. Observe row completeness,
++traceability/reconstruction quality, actual Operator interruptions, coordination
++failures, correction causes and repeated checks. Record available time/usage by
++role and requested/observed model configuration; unavailable is not zero. Separate
++necessary validation, justified new scope and avoidable rework. Fewer corrections,
++files or tokens alone cannot establish success. Changes of staffing/model or task
++scope are confounds unless intentionally studied; follow scientific-methods for
++comparisons and do not start a trial merely because guidance recommends one.
++
+ ## From recommendation to evaluated change
+ 
+ Recommend the smallest change justified by the evidence and name its likely
+diff --git a/knowledge/methodology-stewardship/version-history.md b/knowledge/methodology-stewardship/version-history.md
+index acf1ca61..cf4b67b0 100644
+--- a/knowledge/methodology-stewardship/version-history.md
++++ b/knowledge/methodology-stewardship/version-history.md
+@@ -1,5 +1,9 @@
+ # Methodology Stewardship Version History
+ 
++## Version 1.2.0 - 2026-10-19
++
++Add reconstruction-oriented research-record evaluation and bounded follow-through: original attempts and decisions, model/configuration provenance, portability/access limits and actual operational observations. Preserve full ledger quality and avoid inferring efficiency, multi-year durability or causal model benefits from record size or unrun trials.
++
+ ## Version 1.1.0 - 2026-10-18
+ 
+ Extended mandatory CDC slice, arc and project retrospectives to Autonomous
+diff --git a/knowledge/project-management/SKILL.md b/knowledge/project-management/SKILL.md
+index 8b0c7bd7..24d99b77 100644
+--- a/knowledge/project-management/SKILL.md
++++ b/knowledge/project-management/SKILL.md
+@@ -7,7 +7,7 @@ description: |
+   whether bubble-up findings require a plan update.
+ license: MIT
+ metadata:
+-  version: "2.20.0"
++  version: "3.0.0"
+   hermes:
+     tags: [ai-engineering, project-management, planning, ledger]
+     category: meta-skills
+@@ -46,10 +46,13 @@ before issuing or executing the assignment.
+ For Operator-selected [Autonomous Mode](./guides/README.md#autonomous-mode),
+ load its canonical definition and execution rules before acting. Record the
+ arc-default authorization (or explicit project override), non-default source
+-branch, contributor arrangement and actual independent reviewer where required
++branch, explicitly Operator-approved role/model/settings and expenditure scope,
++contributor arrangement and actual independent reviewer where required
+ (or the self-check convention for an eligible One-Contributor task). CDC may revise
+ staffing and use direct routine handoffs within that authorization; Operator
+-decisions, tool permissions and evidence gates remain binding.
++decisions, tool permissions and evidence gates remain binding. Preserve complete
++original observations and ledger traceability under the
++[research-record contract](./guides/02-canonical-planning-worktree.md#evidence-batches-and-research-records).
+ 
+ For Operator-mediated CRC-to-CDC escalations and CDC-to-CRC instructions, load
+ [design handoff filenames](./guides/02-canonical-planning-worktree.md#design-handoff-filenames-and-preservation)
+diff --git a/knowledge/project-management/guides/02-canonical-planning-worktree.md b/knowledge/project-management/guides/02-canonical-planning-worktree.md
+index 7f808aa9..b42169c6 100644
+--- a/knowledge/project-management/guides/02-canonical-planning-worktree.md
++++ b/knowledge/project-management/guides/02-canonical-planning-worktree.md
+@@ -86,6 +86,70 @@ roadmap, or slice scope; the ledger file carries the grep-verifiable rows that
+ prove the plan. Work verification owns the ledger mechanics at all three
+ scales; this file owns where the rows live.
+ 
++### Evidence batches and research records
++
++Records support independent acceptance now and reconstruction, challenge and
++reanalysis months or years later. Improvements to indexing or execution must
++preserve full ledger discipline and improve research usefulness. File count,
++record length and token reduction alone do not establish improvement.
++
++An evidence batch groups observations; it is not a replacement for project,
++arc or slice units, their ledgers, issued prompts, close reports, verification
++or retrospectives. Keep artifacts in their existing canonical homes or an
++explicitly approved override. A batch spanning slices can index their original
++records without moving them. Use an existing execution log or artifact index
++where adequate; this does not require a separate file per command or a new
++planning tree. Decisions and ledger rows link to exact observations rather
++than transcribe competing versions of mechanical facts.
++
++Preserve each original observation, including failed, blocked, incomplete and
++superseded attempts, with stable references. Where applicable, record:
++
++- claim/ledger row, assignment and prompt version, author/context, role and
++  implementer/verifier relationship;
++- actual source revision and relevant dirty inputs, instruction/skill sources
++  and revisions, loaded text extents and queried populations/exclusions;
++- Operator role/model/provider/settings approval and its scope, requested
++  configuration and reported execution identity, inheritance/overrides and
++  tool/runtime versions; mark unavailable facts and their consequences;
++- exact command, working directory, relevant nonsecret environment/prerequisites,
++  timestamps with timezone, exit status, stdout/stderr and actual selected
++  test/scan population, including loader errors and omitted/unavailable inputs;
++- input/output identities and hashes, derivation commands/query/script versions
++  for counts or projections, and the scope each observation can establish;
++- findings, decisions/rationale, approvals, corrections, re-entry conditions,
++  next-action owners and original/superseding observation references.
++
++Derive hashes, counts and revision identities from actual inputs/execution and
++retain the derivation. Hashes establish identity/integrity, not correctness,
++complete reading or independent verification. Preserve separate independent
++runs and their provenance even when bytes match. Structured projections and
++lossless compression may aid inspection; retain recoverable original records
++and the scripts/queries needed to inspect the relevant population. State when
++coverage is bounded; never describe a projection or sample as full semantic
++inspection. Capture necessary observations, not unrelated data by default.
++
++Keep one identifiable current status/interpretation with dated or revisioned
++history, linked to original records and applicable source. Correct summaries
++openly; do not rewrite an earlier failure into success or relabel an old run as
++fresh. A generated current view supplements the required per-scale records;
++it cannot discharge their rows or become a competing acceptance authority.
++
++Keep required evidence durably accessible under the project's authorization
++before expiring CI artifacts or ephemeral worktrees disappear. References must
++survive changed local paths: retain resolvable repository-relative locations,
++source states, formats and necessary inputs/environment descriptions. Preserve
++historical records and issued prompts; a migration needs an explicit mapping
++and provenance. Respect access restrictions and secrets. Record redactions,
++missing inputs and reconstruction limits rather than claiming complete replay
++where permission or availability prevents it. Research copies need a concrete
++use and provenance; incidental duplication is not a substitute for durable capture.
++
++For retained versus fresh acceptance evidence, use
++[correction review](../../work-verification/guides/05-independent-verification.md#evidence-during-correction-review).
++For reconstruction-oriented evaluation and recommendation follow-through, use
++[methodology stewardship](../../methodology-stewardship/guides/01-retrospectives-and-follow-through.md#evidence-economy-and-goal-alignment).
++
+ ### Naming rules
+ 
+ - **Projects use `projectNN-<slug>`**, matching the arc and slice convention.
+diff --git a/knowledge/project-management/guides/03-planning-top-down.md b/knowledge/project-management/guides/03-planning-top-down.md
+index 7d834f05..cd14730b 100644
+--- a/knowledge/project-management/guides/03-planning-top-down.md
++++ b/knowledge/project-management/guides/03-planning-top-down.md
+@@ -259,9 +259,12 @@ issuing more work.
+ In explicitly authorized [Autonomous Mode](../../engineering-methods/guides/01-engineering-methodology.md#autonomous-mode),
+ CDC may deliver preserved assignments/directives and receive contributor reports
+ directly within the recorded authority instead of requiring Operator relay.
+-The report, acknowledgment and decision records below still apply. Structural
+-or otherwise Operator-gated decisions still require the Operator; direct
+-transport is not approval. Outside that mode, use the ordinary relay below.
++The report, acknowledgment and decision records below still apply. Include the
++approved role/model/settings and expenditure scope in the current assignment;
++resolve missing choices under the mandatory model-selection gate before dispatch.
++Preserve actual configuration/source state and original observations in the
++existing evidence home. Structural or otherwise Operator-gated decisions still
++require the Operator; direct transport is not approval. Outside that mode, use the ordinary relay below.
+ 
+ When CRC encounters work outside its authority, stop the affected advancement
+ and create `crc-escalationNN.md` under the
+diff --git a/knowledge/project-management/guides/README.md b/knowledge/project-management/guides/README.md
+index 83d61fda..3d63f508 100644
+--- a/knowledge/project-management/guides/README.md
++++ b/knowledge/project-management/guides/README.md
+@@ -145,7 +145,16 @@ next-arc advancement beyond the authorization.
+ Before starting, record the scope/endpoint, task source branch, planning worktree,
+ contributor assignments, independent verification convention and existing
+ Operator gates in the governing plan. Implementation must be on a dedicated
+-non-default branch. Preserve scope and role transitions, durable prompts,
++non-default branch. Explicitly ask the Operator for role/model/provider/settings
++and expenditure/concurrency choices before Autonomous role work; record the
++answer under the methodology's
++[mandatory selection gate](../../engineering-methods/guides/01-engineering-methodology.md#mandatory-operator-model-and-expenditure-selection).
++An inherited/default model is not approval. Default to one implementer and one
++independent reviewer; justify extra contexts and respect the approved spend scope.
++Include automatic pipeline effects in external-action authority before triggering
++them. Keep the preflight compact, with complete contracts linked and changed
++source/ownership facts revalidated after handoff or recovery.
++Preserve scope and role transitions, durable prompts,
+ review/repair cycles and iteration limits. Routine contributor handoffs within
+ this authority can go directly between assigned contexts; preserve their
+ records and report decisions to the Operator without requiring human relay.
+@@ -158,8 +167,11 @@ complete CDC retrospectives at every closing scale using the
+ When new evidence makes a plan choice too ambiguous to resolve confidently,
+ pause affected work and surface the decision; record the resolution before
+ resuming dependent work. Report completed scope, validation, review findings,
+-commits and retrospective conclusions. Pending independent or Operator gates
+-remain pending even at the authorization endpoint.
++commits and retrospective conclusions. Use the canonical
++[evidence indexing and research-record contract](./02-canonical-planning-worktree.md#evidence-batches-and-research-records)
++for durable original observations and derived current views; batch indexes do
++not replace any ledger or independent/higher-scale acceptance record. Pending
++independent or Operator gates remain pending even at the authorization endpoint.
+ 
+ ## Split Files
+ 
+diff --git a/knowledge/project-management/version-history.md b/knowledge/project-management/version-history.md
+index 9fc74d8e..6ef94076 100644
+--- a/knowledge/project-management/version-history.md
++++ b/knowledge/project-management/version-history.md
+@@ -1,5 +1,9 @@
+ # Version History
+ 
++## Version 3.0.0 - 2026-10-19
++
++Apply the mandatory Operator model/expenditure gate in Autonomous execution and contributor records. Define durable evidence batches as indexes into existing canonical artifact homes, never replacement acceptance units: preserve original failed/successful and independent observations, derive mechanical facts with provenance, retain requested/observed settings and protect long-term reconstruction. Preserve all issued prompts, per-scale ledgers and historical records. The required selection gate changes the prior execution contract.
++
+ ## Version 2.20.0 - 2026-10-18
+ 
+ Added Autonomous Mode execution and authorization boundaries to Expedited Mode
+diff --git a/knowledge/testing/SKILL.md b/knowledge/testing/SKILL.md
+index 4a335dfa..32c32808 100644
+--- a/knowledge/testing/SKILL.md
++++ b/knowledge/testing/SKILL.md
+@@ -7,7 +7,7 @@ description: |
+   satisfy a metric cosmetically.
+ license: MIT
+ metadata:
+-  version: "1.2.0"
++  version: "1.3.0"
+   hermes:
+     tags: [ai-engineering, testing, coverage, validation]
+     category: meta-skills
+diff --git a/knowledge/testing/guides/03-validation-gates.md b/knowledge/testing/guides/03-validation-gates.md
+index fb075d7e..c02e48a9 100644
+--- a/knowledge/testing/guides/03-validation-gates.md
++++ b/knowledge/testing/guides/03-validation-gates.md
+@@ -48,6 +48,31 @@ work, reassess whether an existing adequate check can replace it within the
+ assignment's authority. Changes to binding methods or acceptance go to their
+ owner; this rule does not authorize skipping gates or weakening evidence.
+ 
++## Execution substrate and observation populations
++
++Establish consequential real prerequisites early: actual runtime/shell/config
++paths, exact dependency/image availability, repository lint/API constraints and
++required services. A dry-run alone cannot prove that an image tag exists or the
++assembled consumer works. Exercise the final caller/consumer boundary when the
++criterion depends on it; use real positive and credible negative inputs through
++the actual tool. Include automatic CI effects in action authorization before
++triggering checks that publish, notify or change external state.
++
++Name native Make targets explicitly, including introspection commands; verify
++path quoting and actual shell semantics. Establish output ownership before a
++build/cleanup. Serialize installs/generation and loaders/scanners that traverse
++their changing inputs. Preserve loading errors and incomplete attempts as such,
++not vulnerability or behavior results.
++
++Derive and record the actual selected-test/scan population, with query/selector,
++source identity, exclusions, errors and exit status. Exit zero with no selected
++tests does not prove a test criterion. Complete inventory claims require complete
++relevant source populations, including hidden tracked files or platform/tag/test
++configurations when applicable. Distinguish actual success, expected rejection,
++unrun/blocked checks, timeout and transient loading failure. A passing rerun alone
++does not establish the cause of an earlier failure. Preserve both observations
++under the [durable evidence contract](../../project-management/guides/02-canonical-planning-worktree.md#evidence-batches-and-research-records).
++
+ ## Minimum Validation Set
+ 
+ Select the applicable checks below; this list is not a requirement to add every
+diff --git a/knowledge/testing/version-history.md b/knowledge/testing/version-history.md
+index 472ae607..8a91da0b 100644
+--- a/knowledge/testing/version-history.md
++++ b/knowledge/testing/version-history.md
+@@ -1,5 +1,9 @@
+ # Testing Version History
+ 
++## Version 1.3.0 - 2026-10-19
++
++Add real execution-substrate and selected-population guidance: actual shells/targets/paths and consumers, stable loader inputs, complete relevant inventories, explicit zero-test/loading/timeout outcomes and automatic CI effects. Preserve original observations and mandatory gates without requiring new validation machinery.
++
+ ## Version 1.2.0 - 2026-09-28
+ 
+ Added proportionate proof selection: use the smallest adequate set of real
+diff --git a/knowledge/work-verification/SKILL.md b/knowledge/work-verification/SKILL.md
+index 4c740c0a..9962b822 100644
+--- a/knowledge/work-verification/SKILL.md
++++ b/knowledge/work-verification/SKILL.md
+@@ -7,7 +7,7 @@ description: |
+   independent reproduced verification.
+ license: MIT
+ metadata:
+-  version: "2.7.0"
++  version: "2.8.0"
+   hermes:
+     tags: [ai-engineering, ledger, verification, evidence]
+     category: meta-skills
+@@ -17,7 +17,10 @@ metadata:
+ 
+ Use this component when the unit of work has a ledger or when evidence strength
+ matters. It owns the closure discipline, row-by-row verification, evidence
+-levels, and proposed-done versus independently verified distinction.
++levels, and proposed-done versus independently verified distinction. Generated
++views and evidence indexes preserve every row and distinct original observation;
++use the [durable record contract](../project-management/guides/02-canonical-planning-worktree.md#evidence-batches-and-research-records)
++without weakening independent or higher-scale acceptance.
+ 
+ One-contributor work can report proportionate self-checks without creating a
+ new independent gate for a non-ledgered task. Existing ledger and review gates
+diff --git a/knowledge/work-verification/guides/01-ledger-discipline.md b/knowledge/work-verification/guides/01-ledger-discipline.md
+index 1574db8e..1c82f009 100644
+--- a/knowledge/work-verification/guides/01-ledger-discipline.md
++++ b/knowledge/work-verification/guides/01-ledger-discipline.md
+@@ -34,6 +34,25 @@ The short version:
+ 6. Have an independent reviewer reproduce the evidence before treating the
+    unit as closed.
+ 
++## Record quality and full row traceability
++
++Compact preflights, generated summaries and evidence batches must preserve every
++row and its meaning, origin, verifier, disposition and evidence strength. They
++cannot replace independent reproduction, closing row walks or higher-scale
++composition. Efficiency and research usefulness must improve within these
++invariants; fewer files, tokens or observations alone is not an improvement.
++
++Use the canonical
++[evidence and research-record contract](../../project-management/guides/02-canonical-planning-worktree.md#evidence-batches-and-research-records)
++for stable witnesses, original failed/successful attempts, independent observation
++identities, configuration provenance and reproducibly derived facts. Link rows
++to those observations without silently changing their source or strength.
++Distinguish declared metadata, actual built/imported packages, installed bytes,
++scanner categories and integrated/external state when those are separate claims.
++Derive the required population from complete relevant inputs; preserve query
++coverage, omissions and errors. If evidence reveals a mistaken criterion or
++scope, obtain the authorized amendment rather than select evidence to fit it.
++
+ ## Scale-Free Spine
+ 
+ The same discipline applies at three scales:
+diff --git a/knowledge/work-verification/version-history.md b/knowledge/work-verification/version-history.md
+index 50a309c1..e110f6fe 100644
+--- a/knowledge/work-verification/version-history.md
++++ b/knowledge/work-verification/version-history.md
+@@ -1,5 +1,9 @@
+ # Work Verification Version History
+ 
++## Version 2.8.0 - 2026-10-19
++
++Strengthen full ledger-row traceability through evidence batches and generated current views. Route durable observation provenance and distinguish declared metadata, actual package/installed states and external outcomes without weakening independent reproduction, correction retention or higher-scale composition.
++
+ ## Version 2.7.0 - 2026-10-18
+ 
+ Specified independent reviewer attribution in Autonomous Mode, including

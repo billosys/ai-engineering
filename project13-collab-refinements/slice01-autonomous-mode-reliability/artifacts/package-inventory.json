@@ -1,0 +1,658 @@
+[
+  {
+    "package": "collaboration-framework",
+    "artifact": "packages/collaboration-framework.zip",
+    "bytes": 259720,
+    "sha256": "374146929a9c15ac1690e2606730df1bf57d3fc1f4aeb56fa075c25ccd14a1fb",
+    "entries": [
+      {
+        "path": "collaboration-framework/knowledge/agent-coordination/version-history.md",
+        "size": 2633,
+        "sha256": "62f96766ea0b969b46e042fb11db0e7821d286532206556ca33e9674b3728043"
+      },
+      {
+        "path": "collaboration-framework/knowledge/agent-coordination/guides/02-context-packets.md",
+        "size": 4804,
+        "sha256": "17517fbbfa762dd898ca21eb07341745b21a44b1f40609f9e9d2d4ee4e9ed2e2"
+      },
+      {
+        "path": "collaboration-framework/knowledge/agent-coordination/guides/03-result-integration.md",
+        "size": 4063,
+        "sha256": "30f0605bff4e7190a96a77b02ff57835f92153314f7d68224c299c07561d8a2d"
+      },
+      {
+        "path": "collaboration-framework/knowledge/agent-coordination/guides/04-anti-patterns.md",
+        "size": 3945,
+        "sha256": "e5c95bc0f1de55fb40880bd094e5b056a3daf4e5c12d0486de14a11965d0c7cd"
+      },
+      {
+        "path": "collaboration-framework/knowledge/agent-coordination/guides/01-when-to-delegate.md",
+        "size": 6422,
+        "sha256": "783e58be017491133502440984ad4e4a900e4f60c576e85ccfabd5b520701a43"
+      },
+      {
+        "path": "collaboration-framework/knowledge/agent-coordination/ENTRYPOINT.md",
+        "size": 3166,
+        "sha256": "00196e9f999340eeb105b2dd7d85efb84c17f1fd4dd9ed7f966ab9d575d90988"
+      },
+      {
+        "path": "collaboration-framework/knowledge/collaboration-framework/guides/03-collaborative-rights.md",
+        "size": 4801,
+        "sha256": "c61c91bd0121fd283d095a0744bfffdd46ccfa9bdbf23eb41944a026a87b9af5"
+      },
+      {
+        "path": "collaboration-framework/knowledge/collaboration-framework/guides/01-posture-and-ethics.md",
+        "size": 29520,
+        "sha256": "a3433385a8b5a8cd5ebf0d138365e76968bb89479421fb2589c7ed0e4e76d6dc"
+      },
+      {
+        "path": "collaboration-framework/knowledge/collaboration-framework/guides/04-component-route-table.md",
+        "size": 9615,
+        "sha256": "d1b9dfa322e6d3b8fd07b2ffdfa7aa359236991cd9145261fa75b3de9502c63d"
+      },
+      {
+        "path": "collaboration-framework/knowledge/collaboration-framework/guides/02-structural-pulls.md",
+        "size": 8766,
+        "sha256": "8f2efb0167d33b6067e810dd8332705336f677ab0d44c57552bcb4b32cb006b8"
+      },
+      {
+        "path": "collaboration-framework/knowledge/methodology-stewardship/version-history.md",
+        "size": 1096,
+        "sha256": "d00978e83d9032dfe6f3d975ee5ecf888751f66831c277df517373ae436281df"
+      },
+      {
+        "path": "collaboration-framework/knowledge/methodology-stewardship/guides/01-retrospectives-and-follow-through.md",
+        "size": 12536,
+        "sha256": "cf14a43827e81487037eddcdbae388955bad66a9cc35d9eac12f8f0eed18f4d8"
+      },
+      {
+        "path": "collaboration-framework/knowledge/methodology-stewardship/ENTRYPOINT.md",
+        "size": 1929,
+        "sha256": "2a99cc33ad004ba79fb18d9893cf378fab8e2c8248813fdfd19a21c04a17a3dc"
+      },
+      {
+        "path": "collaboration-framework/knowledge/project-management/version-history.md",
+        "size": 15984,
+        "sha256": "ecce636995649ccbafdd977f1fa0493bb26cb4f6452e317023292c9d36b56e69"
+      },
+      {
+        "path": "collaboration-framework/knowledge/project-management/guides/06-confirmation-protocol.md",
+        "size": 4802,
+        "sha256": "65d6af84912b8f1adf843be3e13e70cf234adf6c7541df57852ea210698edb15"
+      },
+      {
+        "path": "collaboration-framework/knowledge/project-management/guides/03-planning-top-down.md",
+        "size": 21091,
+        "sha256": "bb4b7e6cd747aba03c10db68f69586361e9ad9f86e25538f5c6794e246607715"
+      },
+      {
+        "path": "collaboration-framework/knowledge/project-management/guides/04-closing-slices.md",
+        "size": 7539,
+        "sha256": "dad4bfb540fb6e98451afdbae9d3e115474e68d89e22761acbf1936a674c2ce7"
+      },
+      {
+        "path": "collaboration-framework/knowledge/project-management/guides/08-maintenance.md",
+        "size": 1706,
+        "sha256": "3ab19001c5ab70a95f5f3f80f53a9f991b59de95b7f01283bc57c8f197ee7879"
+      },
+      {
+        "path": "collaboration-framework/knowledge/project-management/guides/README.md",
+        "size": 15843,
+        "sha256": "bc65dc01b8e1a3d9175b099886af052c54251e1c5f9faa3d8f1635e2ede1b924"
+      },
+      {
+        "path": "collaboration-framework/knowledge/project-management/guides/07-anti-patterns.md",
+        "size": 4721,
+        "sha256": "b82b57ee1518cfa221bec083e3c17c600938aeebefa3f32b97ee638542b90e68"
+      },
+      {
+        "path": "collaboration-framework/knowledge/project-management/guides/01-scales-of-work.md",
+        "size": 7521,
+        "sha256": "82f03a1de23a5237db1b3d5885fc3a987b8d7f2d342aacc969915f107a5b514e"
+      },
+      {
+        "path": "collaboration-framework/knowledge/project-management/guides/05-closing-arcs.md",
+        "size": 8644,
+        "sha256": "9c4968bb43d7a5dd9e5ff739b54729c0dfd10687ab675fdd8b38ed5253c66d5a"
+      },
+      {
+        "path": "collaboration-framework/knowledge/project-management/guides/02-canonical-planning-worktree.md",
+        "size": 24234,
+        "sha256": "0cd70095fd99b6b326aaa57530c96b3f739031ec1829c04cf21d93104231d677"
+      },
+      {
+        "path": "collaboration-framework/knowledge/project-management/examples/01-worked-example-odm.md",
+        "size": 3237,
+        "sha256": "36185b2de29e8038a1f11f8ff9d60c7939667916ca66b22b211a8fd4316c7c07"
+      },
+      {
+        "path": "collaboration-framework/knowledge/project-management/ENTRYPOINT.md",
+        "size": 5048,
+        "sha256": "63ac43554b19cbc5dfc5dd66d10674d5163ba75d0be295d94ee489f33ef300cd"
+      },
+      {
+        "path": "collaboration-framework/knowledge/scientific-methods/version-history.md",
+        "size": 801,
+        "sha256": "6cbb032a2fa11708496e012e3315292eeb8b176658385cb75e22d45a33a59c81"
+      },
+      {
+        "path": "collaboration-framework/knowledge/scientific-methods/guides/05-protocol-and-prompt-design.md",
+        "size": 1473,
+        "sha256": "880a8b788c29890162311c1549b9267e08e4f878cfcecd11bc4ded8b655bff20"
+      },
+      {
+        "path": "collaboration-framework/knowledge/scientific-methods/guides/01-inquiry-framing.md",
+        "size": 1742,
+        "sha256": "4c07b2de6c142c0ec3a24340256e2b569eaca2f17671bf9453a5df9e10808330"
+      },
+      {
+        "path": "collaboration-framework/knowledge/scientific-methods/guides/06-evidence-capture.md",
+        "size": 1423,
+        "sha256": "36501891b415cd84dfe4eeeaab53803ff6611658ccb86a38730553dc69355ee8"
+      },
+      {
+        "path": "collaboration-framework/knowledge/scientific-methods/guides/07-comparison-and-regression-testing.md",
+        "size": 1504,
+        "sha256": "ad6cb10301c53c1d422596d73faa63ca34cce1a29b99abec832a61dc3735697a"
+      },
+      {
+        "path": "collaboration-framework/knowledge/scientific-methods/guides/03-controls-and-confounds.md",
+        "size": 1664,
+        "sha256": "8e8d91dc83d0dcba16a10f300190fb95903b2a2aa5de598deeaad68c76bba77d"
+      },
+      {
+        "path": "collaboration-framework/knowledge/scientific-methods/guides/04-operational-measures.md",
+        "size": 1857,
+        "sha256": "3041773a4d096e758aca2f248eb690cf1f3c91620345ff3fa8a584c71c892b07"
+      },
+      {
+        "path": "collaboration-framework/knowledge/scientific-methods/guides/08-analysis-and-threats-to-validity.md",
+        "size": 1503,
+        "sha256": "72522efe1724d4c2a6b29c015ce66c7b2eb7f2f840b7c4187784aa2cf6ff7d00"
+      },
+      {
+        "path": "collaboration-framework/knowledge/scientific-methods/guides/09-anti-patterns.md",
+        "size": 1561,
+        "sha256": "a329dc17274baa89c6b97fa3336c597fcbf02708bd1e1b7f389afdebaabd3db3"
+      },
+      {
+        "path": "collaboration-framework/knowledge/scientific-methods/guides/02-experiment-design.md",
+        "size": 2060,
+        "sha256": "5ef3e2b8a76b352a42d8fbe8afc4476b8b2fb65038d4f5a62930f2c66789ab53"
+      },
+      {
+        "path": "collaboration-framework/knowledge/scientific-methods/templates/ab-comparison-prompt.md",
+        "size": 1004,
+        "sha256": "da0f8676da14884288a25308a4c34630486a903cb4203a8826b7ed17da9f1569"
+      },
+      {
+        "path": "collaboration-framework/knowledge/scientific-methods/templates/experiment-protocol.md",
+        "size": 752,
+        "sha256": "a78bbd4ed25d6e765c731f233b0978ad08c27bce553559249b6a89d8c2af6f57"
+      },
+      {
+        "path": "collaboration-framework/knowledge/scientific-methods/templates/evaluation-rubric.md",
+        "size": 1056,
+        "sha256": "f53104e60658b7cfe087027b22acffbbb498336d8569343198d1122822632d0e"
+      },
+      {
+        "path": "collaboration-framework/knowledge/scientific-methods/ENTRYPOINT.md",
+        "size": 5673,
+        "sha256": "e89d34c856879f14db1c439cd64d6f8aa027951a3e62de2c63b31187577c418d"
+      },
+      {
+        "path": "collaboration-framework/knowledge/code-auditing/version-history.md",
+        "size": 1633,
+        "sha256": "6c089589187c503b312bf462feab3da97bc0d635d553977e3f904745b89abb36"
+      },
+      {
+        "path": "collaboration-framework/knowledge/code-auditing/guides/02-findings-and-severity.md",
+        "size": 4918,
+        "sha256": "50a5cd931d5b1c823e750ad0b6aef89eebbfe70dab6e8dc96e7f75c95f6bab16"
+      },
+      {
+        "path": "collaboration-framework/knowledge/code-auditing/guides/05-audit-to-hardening-handoff.md",
+        "size": 3097,
+        "sha256": "4080325c0fb3da725f706b43b16a6d7d1bb750ce6edbaf1866accb19da0c3e3f"
+      },
+      {
+        "path": "collaboration-framework/knowledge/code-auditing/guides/03-scale-aware-auditing.md",
+        "size": 4927,
+        "sha256": "f319c7b99e6548abf05405c658f0497cad6ae59ff827a13f8f6a0b2bfacce610"
+      },
+      {
+        "path": "collaboration-framework/knowledge/code-auditing/guides/01-audit-scope-and-map.md",
+        "size": 6647,
+        "sha256": "deb70881c1dfe43e0a7109187b972e189c61c7a4238353c88ba59a6bd2b634fb"
+      },
+      {
+        "path": "collaboration-framework/knowledge/code-auditing/guides/04-modernization-synthesis.md",
+        "size": 3197,
+        "sha256": "f510228466ddbabc3c81fe518f4ac5dddeacbfdbc88e99e1e06102d9d2c0eb11"
+      },
+      {
+        "path": "collaboration-framework/knowledge/code-auditing/ENTRYPOINT.md",
+        "size": 1867,
+        "sha256": "5612a0627c85d79717ef03d9709ed1be1f98d21b394421454c88166020345fdf"
+      },
+      {
+        "path": "collaboration-framework/knowledge/testing/version-history.md",
+        "size": 2283,
+        "sha256": "05251a96a836d8ba8bb2a3744a2fe1ab11664f6455092083d3bb4e5263bdaaab"
+      },
+      {
+        "path": "collaboration-framework/knowledge/testing/guides/03-validation-gates.md",
+        "size": 6191,
+        "sha256": "343815fe3ae5ec5d0ea852ad2e73cea212eb7bffa548f19a53a4e2d37ade0b84"
+      },
+      {
+        "path": "collaboration-framework/knowledge/testing/guides/01-testing-discipline.md",
+        "size": 3430,
+        "sha256": "3c85f887140e2053a1d9f2ed570b48a96be1d7be3ce3a45fc2cd1233d0a34438"
+      },
+      {
+        "path": "collaboration-framework/knowledge/testing/guides/02-coverage-hardening.md",
+        "size": 13769,
+        "sha256": "bb0f978f6ada3a3f6d9ba49e1bcadfd48ebda2e136e7a651ad3c1cde2470c692"
+      },
+      {
+        "path": "collaboration-framework/knowledge/testing/ENTRYPOINT.md",
+        "size": 1376,
+        "sha256": "12e1547ea3c8e59120587ec31a643afc89ae57963e37c8c53a186505d4084c37"
+      },
+      {
+        "path": "collaboration-framework/knowledge/engineering-methods/version-history.md",
+        "size": 20232,
+        "sha256": "62faed87969f3cb22f3d720ee51bee6791695590aa8a836b34f325fc1c6179c2"
+      },
+      {
+        "path": "collaboration-framework/knowledge/engineering-methods/guides/02-knowledge-substrate.md",
+        "size": 5213,
+        "sha256": "2ce15ed2edd57adc24414709609ac1f5c809e9334157ca984e6412813a1d6134"
+      },
+      {
+        "path": "collaboration-framework/knowledge/engineering-methods/guides/04-operational-routing.md",
+        "size": 5993,
+        "sha256": "16edcee14541d16bf532b82b23919b78299b38aa9a18727424bca218ef7676d7"
+      },
+      {
+        "path": "collaboration-framework/knowledge/engineering-methods/guides/07-implementation-prompt-authoring.md",
+        "size": 32925,
+        "sha256": "be771fb4918c87f26e6cf602468a6fef38ece161a1d4b3ae366e61200f403bba"
+      },
+      {
+        "path": "collaboration-framework/knowledge/engineering-methods/guides/01-engineering-methodology.md",
+        "size": 41612,
+        "sha256": "abc4704112536cbde7ee292d17276c2bbd85cc255a36fbeff4c714991ec4ac51"
+      },
+      {
+        "path": "collaboration-framework/knowledge/engineering-methods/guides/05-component-boundary-analysis.md",
+        "size": 5146,
+        "sha256": "f0b16077dda4c93f15040b30bffd20a87ae6a6e02eb8c87f890bc887cdef7d36"
+      },
+      {
+        "path": "collaboration-framework/knowledge/engineering-methods/guides/06-source-package-release-gates.md",
+        "size": 5131,
+        "sha256": "051cb5f534e9efe024708a09ba02a7ccca6fc0427ad0e82d141008ff472484f5"
+      },
+      {
+        "path": "collaboration-framework/knowledge/engineering-methods/guides/03-process-rigour.md",
+        "size": 13723,
+        "sha256": "656982811f538cdfeb6bb9be67b34835d34e159ee96844def56844b39f54fc8e"
+      },
+      {
+        "path": "collaboration-framework/knowledge/engineering-methods/templates/cc-implementation-prompt.md",
+        "size": 12607,
+        "sha256": "1f9e934910e3479339ac029274ed1b53073bc706d6c373500fe364df14ec0eb4"
+      },
+      {
+        "path": "collaboration-framework/knowledge/engineering-methods/ENTRYPOINT.md",
+        "size": 4544,
+        "sha256": "68ea9b009c9f55ba84f11ff8c43e2c255f89d52b8ab98f2fe6a3237c76d87efb"
+      },
+      {
+        "path": "collaboration-framework/knowledge/work-verification/version-history.md",
+        "size": 6773,
+        "sha256": "7ba55ea2614a0d61e4676e2ec6b78bfaefdecf8caa6820605395ec6ef55a006a"
+      },
+      {
+        "path": "collaboration-framework/knowledge/work-verification/guides/05-independent-verification.md",
+        "size": 8560,
+        "sha256": "1a41f607a98f2fcbefba525b868fcfd7194d1c46ad97e7e1cc92cff6568649a3"
+      },
+      {
+        "path": "collaboration-framework/knowledge/work-verification/guides/02-evidence-strength.md",
+        "size": 3670,
+        "sha256": "457725e7a9680f31df8e13fbbaf3f8920d5d982055fcb98d59a4d76f3168b8b7"
+      },
+      {
+        "path": "collaboration-framework/knowledge/work-verification/guides/04-silent-drop-checks.md",
+        "size": 3036,
+        "sha256": "c552ea343badeb5f282aed745d96d55640f60837ad515c69a91e92e70ac4a7ae"
+      },
+      {
+        "path": "collaboration-framework/knowledge/work-verification/guides/03-row-closure.md",
+        "size": 3692,
+        "sha256": "8947d3ab72d59422d0f90f7fb041f7e3131ce85e190c04985937e63ef1737a5b"
+      },
+      {
+        "path": "collaboration-framework/knowledge/work-verification/guides/01-ledger-discipline.md",
+        "size": 6167,
+        "sha256": "1c5762685aae90f06ca2795ce8933ea4d60bf1f5a9a31c0d3e58ed2d7f3621e3"
+      },
+      {
+        "path": "collaboration-framework/knowledge/work-verification/templates/LEDGER-DISCIPLINE.md",
+        "size": 30165,
+        "sha256": "dea0a7271dbc9e138f703ce5bc30bddc74c82775c6cc2dbbe1a0af02ac5e0f17"
+      },
+      {
+        "path": "collaboration-framework/knowledge/work-verification/ENTRYPOINT.md",
+        "size": 2411,
+        "sha256": "ab9ba4fa6e435ba6c8d91b99113e0b79c41f3413aaf555ed9c8ec49948be634e"
+      },
+      {
+        "path": "collaboration-framework/knowledge/contribution-style/version-history.md",
+        "size": 1951,
+        "sha256": "2d4f1fe737a125c9334d5f844d22957060e34e04948f6041180ebf960fb8bbde"
+      },
+      {
+        "path": "collaboration-framework/knowledge/contribution-style/guides/02-upstream-ticket-workflow.md",
+        "size": 5009,
+        "sha256": "c82a1c2a44cfd725bec5e0b3d4519a88a35d15849b1dbb5932d48e98ef63664e"
+      },
+      {
+        "path": "collaboration-framework/knowledge/contribution-style/guides/01-contribution-style.md",
+        "size": 7607,
+        "sha256": "b87536c64f008f54fd91d36f66f0da69daab1c1536403e3ea33b1069b39ad9a8"
+      },
+      {
+        "path": "collaboration-framework/knowledge/contribution-style/templates/CONTRIBUTION-TICKET.md",
+        "size": 10245,
+        "sha256": "45cb7873bcc839ddc2a59d500d63e1a101b3957c5423cffd604db1f53e7f0c17"
+      },
+      {
+        "path": "collaboration-framework/knowledge/contribution-style/ENTRYPOINT.md",
+        "size": 1281,
+        "sha256": "38035fe021805c1c26ef385f244c43f42542d6dfd610ef8e83efd2302f6bac86"
+      },
+      {
+        "path": "collaboration-framework/version-history.md",
+        "size": 19284,
+        "sha256": "4a4b0610e00e80f606e405c448f890caacc9f3ece0c574c0974f0fb01c027487"
+      },
+      {
+        "path": "collaboration-framework/SKILL.md",
+        "size": 42726,
+        "sha256": "147dc6751ace989e492f1e35024f3e02931551c91e350e9c3b796599ecd37ccd"
+      }
+    ]
+  },
+  {
+    "package": "engineering-methods",
+    "artifact": "packages/engineering-methods.zip",
+    "bytes": 59332,
+    "sha256": "717b0f2c67a3474b74c6aefd343568df87c169c8f56e3ea9c6ea09137fc4ddf4",
+    "entries": [
+      {
+        "path": "engineering-methods/version-history.md",
+        "size": 20232,
+        "sha256": "62faed87969f3cb22f3d720ee51bee6791695590aa8a836b34f325fc1c6179c2"
+      },
+      {
+        "path": "engineering-methods/guides/02-knowledge-substrate.md",
+        "size": 5213,
+        "sha256": "2ce15ed2edd57adc24414709609ac1f5c809e9334157ca984e6412813a1d6134"
+      },
+      {
+        "path": "engineering-methods/guides/04-operational-routing.md",
+        "size": 5993,
+        "sha256": "16edcee14541d16bf532b82b23919b78299b38aa9a18727424bca218ef7676d7"
+      },
+      {
+        "path": "engineering-methods/guides/07-implementation-prompt-authoring.md",
+        "size": 32925,
+        "sha256": "be771fb4918c87f26e6cf602468a6fef38ece161a1d4b3ae366e61200f403bba"
+      },
+      {
+        "path": "engineering-methods/guides/01-engineering-methodology.md",
+        "size": 41612,
+        "sha256": "abc4704112536cbde7ee292d17276c2bbd85cc255a36fbeff4c714991ec4ac51"
+      },
+      {
+        "path": "engineering-methods/guides/05-component-boundary-analysis.md",
+        "size": 5146,
+        "sha256": "f0b16077dda4c93f15040b30bffd20a87ae6a6e02eb8c87f890bc887cdef7d36"
+      },
+      {
+        "path": "engineering-methods/guides/06-source-package-release-gates.md",
+        "size": 5131,
+        "sha256": "051cb5f534e9efe024708a09ba02a7ccca6fc0427ad0e82d141008ff472484f5"
+      },
+      {
+        "path": "engineering-methods/guides/03-process-rigour.md",
+        "size": 13723,
+        "sha256": "656982811f538cdfeb6bb9be67b34835d34e159ee96844def56844b39f54fc8e"
+      },
+      {
+        "path": "engineering-methods/SKILL.md",
+        "size": 4539,
+        "sha256": "000f61b8d08f0d794c8fe395917663e79e0635d5ae757b0eb01361bff6a406f9"
+      },
+      {
+        "path": "engineering-methods/templates/cc-implementation-prompt.md",
+        "size": 12607,
+        "sha256": "1f9e934910e3479339ac029274ed1b53073bc706d6c373500fe364df14ec0eb4"
+      }
+    ]
+  },
+  {
+    "package": "project-management",
+    "artifact": "packages/project-management.zip",
+    "bytes": 49440,
+    "sha256": "5a2c4462c40b8303eb770a18cfee0ae4834ee6625c702654618058e0284e6fe7",
+    "entries": [
+      {
+        "path": "project-management/version-history.md",
+        "size": 15984,
+        "sha256": "ecce636995649ccbafdd977f1fa0493bb26cb4f6452e317023292c9d36b56e69"
+      },
+      {
+        "path": "project-management/guides/06-confirmation-protocol.md",
+        "size": 4802,
+        "sha256": "65d6af84912b8f1adf843be3e13e70cf234adf6c7541df57852ea210698edb15"
+      },
+      {
+        "path": "project-management/guides/03-planning-top-down.md",
+        "size": 21091,
+        "sha256": "bb4b7e6cd747aba03c10db68f69586361e9ad9f86e25538f5c6794e246607715"
+      },
+      {
+        "path": "project-management/guides/04-closing-slices.md",
+        "size": 7539,
+        "sha256": "dad4bfb540fb6e98451afdbae9d3e115474e68d89e22761acbf1936a674c2ce7"
+      },
+      {
+        "path": "project-management/guides/08-maintenance.md",
+        "size": 1706,
+        "sha256": "3ab19001c5ab70a95f5f3f80f53a9f991b59de95b7f01283bc57c8f197ee7879"
+      },
+      {
+        "path": "project-management/guides/README.md",
+        "size": 15843,
+        "sha256": "bc65dc01b8e1a3d9175b099886af052c54251e1c5f9faa3d8f1635e2ede1b924"
+      },
+      {
+        "path": "project-management/guides/07-anti-patterns.md",
+        "size": 4721,
+        "sha256": "b82b57ee1518cfa221bec083e3c17c600938aeebefa3f32b97ee638542b90e68"
+      },
+      {
+        "path": "project-management/guides/01-scales-of-work.md",
+        "size": 7521,
+        "sha256": "82f03a1de23a5237db1b3d5885fc3a987b8d7f2d342aacc969915f107a5b514e"
+      },
+      {
+        "path": "project-management/guides/05-closing-arcs.md",
+        "size": 8644,
+        "sha256": "9c4968bb43d7a5dd9e5ff739b54729c0dfd10687ab675fdd8b38ed5253c66d5a"
+      },
+      {
+        "path": "project-management/guides/02-canonical-planning-worktree.md",
+        "size": 24234,
+        "sha256": "0cd70095fd99b6b326aaa57530c96b3f739031ec1829c04cf21d93104231d677"
+      },
+      {
+        "path": "project-management/examples/01-worked-example-odm.md",
+        "size": 3237,
+        "sha256": "36185b2de29e8038a1f11f8ff9d60c7939667916ca66b22b211a8fd4316c7c07"
+      },
+      {
+        "path": "project-management/SKILL.md",
+        "size": 5043,
+        "sha256": "68f72233dff9ea656fc71c613444a943461a3ec8b38814a2c63353621db1849b"
+      }
+    ]
+  },
+  {
+    "package": "agent-coordination",
+    "artifact": "packages/agent-coordination.zip",
+    "bytes": 12529,
+    "sha256": "456e96938bbba9d5655a85fde033eef2c3e2b0445a067e2cdf2648bb9e2288bb",
+    "entries": [
+      {
+        "path": "agent-coordination/version-history.md",
+        "size": 2633,
+        "sha256": "62f96766ea0b969b46e042fb11db0e7821d286532206556ca33e9674b3728043"
+      },
+      {
+        "path": "agent-coordination/guides/02-context-packets.md",
+        "size": 4804,
+        "sha256": "17517fbbfa762dd898ca21eb07341745b21a44b1f40609f9e9d2d4ee4e9ed2e2"
+      },
+      {
+        "path": "agent-coordination/guides/03-result-integration.md",
+        "size": 4063,
+        "sha256": "30f0605bff4e7190a96a77b02ff57835f92153314f7d68224c299c07561d8a2d"
+      },
+      {
+        "path": "agent-coordination/guides/04-anti-patterns.md",
+        "size": 3945,
+        "sha256": "e5c95bc0f1de55fb40880bd094e5b056a3daf4e5c12d0486de14a11965d0c7cd"
+      },
+      {
+        "path": "agent-coordination/guides/01-when-to-delegate.md",
+        "size": 6422,
+        "sha256": "783e58be017491133502440984ad4e4a900e4f60c576e85ccfabd5b520701a43"
+      },
+      {
+        "path": "agent-coordination/SKILL.md",
+        "size": 3166,
+        "sha256": "00196e9f999340eeb105b2dd7d85efb84c17f1fd4dd9ed7f966ab9d575d90988"
+      }
+    ]
+  },
+  {
+    "package": "work-verification",
+    "artifact": "packages/work-verification.zip",
+    "bytes": 27662,
+    "sha256": "a4067a9f1dc7a7d5e03d73c9b4f925c578b3773138aa3725039822768924b34d",
+    "entries": [
+      {
+        "path": "work-verification/version-history.md",
+        "size": 6773,
+        "sha256": "7ba55ea2614a0d61e4676e2ec6b78bfaefdecf8caa6820605395ec6ef55a006a"
+      },
+      {
+        "path": "work-verification/guides/05-independent-verification.md",
+        "size": 8560,
+        "sha256": "1a41f607a98f2fcbefba525b868fcfd7194d1c46ad97e7e1cc92cff6568649a3"
+      },
+      {
+        "path": "work-verification/guides/02-evidence-strength.md",
+        "size": 3670,
+        "sha256": "457725e7a9680f31df8e13fbbaf3f8920d5d982055fcb98d59a4d76f3168b8b7"
+      },
+      {
+        "path": "work-verification/guides/04-silent-drop-checks.md",
+        "size": 3036,
+        "sha256": "c552ea343badeb5f282aed745d96d55640f60837ad515c69a91e92e70ac4a7ae"
+      },
+      {
+        "path": "work-verification/guides/03-row-closure.md",
+        "size": 3692,
+        "sha256": "8947d3ab72d59422d0f90f7fb041f7e3131ce85e190c04985937e63ef1737a5b"
+      },
+      {
+        "path": "work-verification/guides/01-ledger-discipline.md",
+        "size": 6167,
+        "sha256": "1c5762685aae90f06ca2795ce8933ea4d60bf1f5a9a31c0d3e58ed2d7f3621e3"
+      },
+      {
+        "path": "work-verification/SKILL.md",
+        "size": 2411,
+        "sha256": "ab9ba4fa6e435ba6c8d91b99113e0b79c41f3413aaf555ed9c8ec49948be634e"
+      },
+      {
+        "path": "work-verification/templates/LEDGER-DISCIPLINE.md",
+        "size": 30165,
+        "sha256": "dea0a7271dbc9e138f703ce5bc30bddc74c82775c6cc2dbbe1a0af02ac5e0f17"
+      }
+    ]
+  },
+  {
+    "package": "testing",
+    "artifact": "packages/testing.zip",
+    "bytes": 12653,
+    "sha256": "c1e33c3b366f12eef325030b5e5f6632b632faeb2af29086ea4118834c25b1af",
+    "entries": [
+      {
+        "path": "testing/version-history.md",
+        "size": 2283,
+        "sha256": "05251a96a836d8ba8bb2a3744a2fe1ab11664f6455092083d3bb4e5263bdaaab"
+      },
+      {
+        "path": "testing/guides/03-validation-gates.md",
+        "size": 6191,
+        "sha256": "343815fe3ae5ec5d0ea852ad2e73cea212eb7bffa548f19a53a4e2d37ade0b84"
+      },
+      {
+        "path": "testing/guides/01-testing-discipline.md",
+        "size": 3430,
+        "sha256": "3c85f887140e2053a1d9f2ed570b48a96be1d7be3ce3a45fc2cd1233d0a34438"
+      },
+      {
+        "path": "testing/guides/02-coverage-hardening.md",
+        "size": 13769,
+        "sha256": "bb0f978f6ada3a3f6d9ba49e1bcadfd48ebda2e136e7a651ad3c1cde2470c692"
+      },
+      {
+        "path": "testing/SKILL.md",
+        "size": 1376,
+        "sha256": "12e1547ea3c8e59120587ec31a643afc89ae57963e37c8c53a186505d4084c37"
+      }
+    ]
+  },
+  {
+    "package": "methodology-stewardship",
+    "artifact": "packages/methodology-stewardship.zip",
+    "bytes": 7569,
+    "sha256": "a059f96d0f10141621a7eb1ec1e0d32e80b6b5b722b035590d212f086022a9f8",
+    "entries": [
+      {
+        "path": "methodology-stewardship/version-history.md",
+        "size": 1096,
+        "sha256": "d00978e83d9032dfe6f3d975ee5ecf888751f66831c277df517373ae436281df"
+      },
+      {
+        "path": "methodology-stewardship/guides/01-retrospectives-and-follow-through.md",
+        "size": 12536,
+        "sha256": "cf14a43827e81487037eddcdbae388955bad66a9cc35d9eac12f8f0eed18f4d8"
+      },
+      {
+        "path": "methodology-stewardship/SKILL.md",
+        "size": 1929,
+        "sha256": "2a99cc33ad004ba79fb18d9893cf378fab8e2c8248813fdfd19a21c04a17a3dc"
+      }
+    ]
+  }
+]
