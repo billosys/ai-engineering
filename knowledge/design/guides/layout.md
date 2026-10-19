@@ -750,7 +750,7 @@ This stylesheet is an illustration to review with representative content and
 container sizes. Intrinsic wrapping can handle some width changes; evaluate any
 queries against observed behavior. The measure, card width, spacing and type
 values are examples whose suitability depends on the adopting project. The
-composition uses Container, Sidebar, Center and Grid relationships; adapt or
+composition uses this local page wrapper with Sidebar, Center and Grid relationships; adapt or
 replace them when the content calls for it.
 :::
 
