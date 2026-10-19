@@ -175,3 +175,8 @@ do not guarantee outcomes across content, users or browsers.
 
 - Correct thirteen connected balance, tension and tonal cards: distinguish reported perceptual accounts from geometry, force/energy analogies and CSS mechanics; preserve source quotations/examples and unresolved original fidelity.
 - Reconcile the selected local relationship/question memberships and existing mapping/CSS notes without a universal weight, placement, palette or dark-theme prescription.
+
+## Version 1.0.26 - 2026-10-19
+
+- Corrected form, projection, constancy, orientation, size, medium and representation teaching across twenty-one connected cards, preserving reported examples and historical source wording.
+- Scoped developmental and formal analogies, corrected local relationship and question coverage, and retained unresolved original fidelity and actual behavior limits.

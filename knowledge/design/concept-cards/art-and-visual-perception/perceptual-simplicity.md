@@ -24,10 +24,8 @@ related:
   - "structural-skeleton"
   - "form-vs-shape"
   - "canonical-view"
-  - "gestalt-grouping"
-contrasts_with:
-  - "complexity"
-  - "ornamental-elaboration"
+  - "gestalt-theory-in-art"
+contrasts_with: []
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How does cognitive load theory (intrinsic, extraneous, germane) relate to progressive disclosure and visual hierarchy? When is simplification harmful?"
@@ -35,62 +33,70 @@ rosetta_stone:
   -
     domain: "mathematics"
     concept: "Minimum Description Length (MDL) / Kolmogorov complexity"
-    rating: "structural"
-    note: "Perceptual simplicity operates like MDL: the visual system selects the interpretation that requires the least complexity to describe — the shortest 'programme' that generates the perceived form, analogous to Kolmogorov complexity."
+    rating: "loose"
+    note: "MDL minimizes a specified model code plus data-given-model code. Kolmogorov complexity depends on a description language and is not generally computable. Neither establishes a measured brain algorithm or unique visual winner here; the comparison remains loose."
   -
     domain: "engineering"
     concept: "DRY principle / YAGNI"
     rating: "loose"
-    note: "Both DRY and perceptual simplicity favour eliminating redundancy and resolving to the minimal, non-repeated form; the analogy is loose because perceptual simplicity is a descriptive natural principle, not a prescriptive design rule."
+    note: "DRY concerns a single authoritative representation of knowledge, not a ban on repeated UI. YAGNI addresses speculative functionality. Neither is a perceptual law or a requirement for visual minimalism."
 css_implementation: []
 ---
 
 # Quick Definition
 
-Perceptual simplicity is the tendency of the visual system to perceive and organise visual input according to the most regular, symmetrical, and structurally minimal interpretation available — all else being equal, the simplest compatible form is what is seen.
+Perceptual simplicity is the tendency of the visual system to perceive and organise visual input according to the most regular, symmetrical, and structurally minimal interpretation available — a represented Gestalt tendency, not a guarantee of a unique interpretation or aesthetic superiority.
 
 # Core Definition
 
-Arnheim invokes the "principle of simplicity" throughout Chapter III as a fundamental principle of visual perception. When a projection is ambiguous between multiple possible three-dimensional objects, the visual system perceives the interpretation with the simplest, most symmetrical, most regular structure. Conversely, visual forms in art that are simpler tend to be perceived more directly and forcefully.
+This section presents the represented Arnheim account. Its quotations, page references and historical, clinical, cultural or experimental reports have not been checked against the unavailable original. The current analytic qualifications do not certify that fidelity.
+
+Arnheim invokes the "principle of simplicity" throughout Chapter III as a fundamental principle of visual perception. When a projection is ambiguous between multiple possible three-dimensional objects, Arnheim describes a tendency toward simpler, regular structures; context and other cues can sustain different readings. The represented account also associates simpler form with directness; it supplies no universal force or beauty measurement.
 
 Arnheim writes: "The dominant projections are those which produce patterns of the simplest shape." (p. 75) And in the context of perceptual completion: "perception automatically completes the whole body according to the simplest shape compatible with the perceived projection." (p. 79)
 
-This principle is not merely aesthetic preference but a fundamental organising tendency of the nervous system — related to what Gestalt psychology calls the law of Prägnanz (good figure): perception gravitates toward the most regular, symmetrical, unambiguous form achievable.
+This principle is not merely aesthetic preference but a represented organising tendency, not a currently established neural mechanism — related to what Gestalt psychology calls the law of Prägnanz (good figure): perception gravitates toward the most regular, symmetrical, unambiguous form achievable.
 
 # Prerequisites
 
-- None — this is a Layer 0 foundational perceptual principle.
+- None recorded in this extraction; a missing prerequisite is not proof of innateness or independence from experience.
 
 # Key Properties
 
-1. **Perceptual default**: When multiple interpretations are possible, the simplest (most regular, most symmetrical) one wins.
-2. **Completion tendency**: Incomplete shapes are automatically completed into the simplest whole compatible with the visible fragment.
-3. **3D disambiguation**: Ambiguous 2D projections are resolved in favour of the simplest 3D object consistent with the projection.
-4. **Dynamic quality**: Simple shapes are not static — they have their own visual dynamism derived from tension between the simple form and deviations from it.
-5. **Expressive basis**: Because deviations from a simple norm are always perceived against that norm, simplicity establishes the baseline against which visual expression operates.
+1. **Tendency**: Regularity and symmetry can favor a reading without guaranteeing one winner.
+2. **Completion**: Visible fragments can suggest a compatible whole, often with multiple possibilities.
+3. **Depth ambiguity**: A 2D pattern may support flat and volumetric readings.
+4. **Expression**: Both regularity and departure can matter in a particular composition.
+5. **Purpose**: Simplicity does not establish beauty, usability or the adequacy of omitted content.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Identify the simplest structural form that communicates the intended content.
-2. Treat complexity as a deviation from a simple norm — introduce complexity only where it carries meaningful content.
-3. Prefer symmetrical, regular, balanced structures as starting points; then introduce deliberate deviations that carry expressive meaning.
+
+1. Identify what information the purpose requires.
+2. Compare simpler and more complex structures without removing needed distinctions.
+3. Use regular or irregular candidates as the content warrants, then inspect the result.
 
 ## To Identify/Recognise:
-1. When viewing a composition, ask: what is the simplest structural description of this form?
-2. Notice where complexity is introduced and whether it is semantically justified.
-3. When a shape looks ambiguous or unstable, check whether it fails to clearly commit to one simple interpretation.
+
+1. Describe possible structural readings.
+2. Check whether any simplification loses necessary meaning.
+3. Treat ambiguity as a possible deliberate choice rather than automatic error.
 
 # Context & Application
 
 - **Typical contexts**: All visual design disciplines; perceptual psychology; art education.
-- **Common applications**: Icon design (prefer the simplest adequate form for the concept); layout composition (use simple grids as the structural norm before introducing variation); typeface design (letter forms are most legible when their structural skeleton is simple and their departures from it are consistent).
+- **Common applications**: Icon design (prefer the simplest adequate form for the concept); layout composition (use simple grids as the structural norm before introducing variation); typeface design (compare letterforms in the actual face, script, size and reading context; a simple skeleton does not guarantee legibility).
 
 ## Cross-Domain Connections
 
-**Mathematics → STRUCTURAL**: Minimum Description Length (MDL) in information theory formalises the intuition that the "best" model of data is the one requiring the shortest description. Perceptual simplicity is the perceptual analogue: the visual system selects the interpretation requiring the fewest structural degrees of freedom. Both principles favour parsimony over complexity.
+**Mathematics → LOOSE**: MDL balances the code length of a model and the data given that model, under a specified code. Kolmogorov complexity asks for a shortest program in a defined language and is not generally computable. Neither is a measured account of what the brain calculates here.
+
+**Engineering → LOOSE**: DRY concerns authoritative knowledge, not eliminating every repeated interface element; YAGNI concerns speculative functionality. Repeated controls may aid use. These are analogies, not perceptual mechanisms.
 
 # Examples
+
+The following are reported source examples and interpretations, with their original wording and locators retained for inspection. They are not independently checked historical, experimental or universal claims.
 
 **Example 1** (p. 70): A shadow of a tilted cardboard rectangle that, as a flat shape, has simple vertical symmetry (a regular trapezoid) tends to be seen as a flat trapezoid rather than as the projection of a rectangle — because the flat interpretation is simpler than the 3D one.
 
@@ -100,29 +106,31 @@ This principle is not merely aesthetic preference but a fundamental organising t
 
 # Relationships
 
+These are scoped conceptual reading connections. Prerequisites support understanding rather than assert a universal developmental sequence; related links and contrasts specify comparisons, not causal or subtype laws. Unresolved ordinary comparisons below are not invented card identities.
+
 ## Builds Upon
-- *(None required — foundational principle)*
+- No prerequisite is recorded; this is not evidence of an innate mechanism.
 
 ## Enables
-- **Canonical view** — The preferred viewing angle is the one that produces the simplest adequate projection.
-- **Structural skeleton** — The skeleton is the simplest structural description of the form.
-- **Gestalt grouping** — Proximity, similarity, closure, and other gestalt principles are all applications of the broader simplicity principle.
+- **Canonical view** — A simple view can be useful when it preserves discriminating features.
+- **Structural skeleton** — Axes can describe regular organization without uniquely determining identity.
+- **Gestalt grouping** — The actual gestalt-theory-in-art connection supplies the whole/part framework for interpreting grouping; proximity, similarity and closure are not all proved by one simplicity rule.
 
 ## Related
-- **Form vs. shape** — Simplicity applies both to the shapes perceived and to the forms (structural essentials) they instantiate.
-- **Perceptual completion** — The simplest completion of a fragment is the perceptual default.
+- **Form vs. shape** — Regularity can be considered alongside semantic readings of shape.
+- **Perceptual completion** — Completion can favor a simple candidate without forcing it.
 
 ## Contrasts With
-- **Visual complexity** — Complexity in a composition is defined against the baseline of simplicity; it is the deliberate deviation from simple form.
-- **Ornamental elaboration** — Pure ornament applies simple formal principles repeatedly without meaningful deviation; simplicity in Arnheim's sense is a starting point for meaningful expression, not an end in itself.
+- **Visual complexity** — Complexity can be meaningful or accidental; it is not always deliberate deviation.
+- **Ornamental elaboration** — Ornament can serve expressive or informational purposes; simplicity is not a universal standard of value.
 
 # Common Errors
 
 - **Error**: Equating perceptual simplicity with visual dullness or minimal aesthetics.
-  **Correction**: Perceptual simplicity is the structural baseline. Great art achieves simplicity of overall structure while introducing meaningful, expressive deviations — it is complex in content precisely because of its formal simplicity as a framework.
+  **Correction**: Regularity can organize a complex work, but simplicity neither requires a minimalist style nor proves artistic quality. Retain distinctions and expressive features the purpose needs.
 
 - **Error**: Applying simplicity only to "clean" or "minimalist" design styles.
-  **Correction**: All visual styles, including baroque, expressionist, and cubist, rely on a structural skeleton that is relatively simple compared to the surface variety — simplicity is universal, not stylistic.
+  **Correction**: Baroque, expressionist and cubist works can be examined through axes and regularity alongside surface variety. This is a descriptive lens, not a demonstrated universal requirement.
 
 # Common Confusions
 
@@ -134,6 +142,8 @@ This principle is not merely aesthetic preference but a fundamental organising t
 Chapter III: Form, "Art and Visual Perception," pp. 69–80 (Projections and related sections).
 
 # Verification Notes
+
+The bullets below preserve historical extraction assertions, including confidence, cross-reference, OCR and source-reading claims; they are not current verification. Original-dependent fidelity remains unassessed. Current technical corrections and analogies establish neither a neural mechanism nor cultural universality or measured usability.
 
 - Definition source: Synthesised from multiple explicit invocations of "the principle of simplicity" throughout Ch. III, e.g., pp. 70, 75, 79.
 - Confidence rationale: High — the principle is invoked repeatedly and explicitly as a central explanatory principle.

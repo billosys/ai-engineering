@@ -28,16 +28,14 @@ related:
   - "canonical-view"
   - "structural-skeleton"
 contrasts_with:
-  - "full-three-dimensional-space"
-  - "purely-flat-representation"
-answers_questions:
-  - "What are the gestalt principles of perceptual grouping, and how does each one work?"
+  - "flat-pictorial-space"
+answers_questions: []
 rosetta_stone:
   -
     domain: "music"
     concept: "Monophony to polyphony to homophony — development of musical voices"
     rating: "structural"
-    note: "Arnheim explicitly draws this parallel: depth in pictorial representation develops like musical voices — from independent horizontal strips (monophony), through overlapping foreground-middleground-background (counterpoint), to unified depth continuum (homophony)."
+    note: "Arnheim compares separate pictorial layers and integrated depth with musical textures. Monophony, polyphony and homophony organize voices differently; they are neither a universal superior-development ladder nor literal zero/depth coordinates."
 css_implementation:
   -
     property: "perspective"
@@ -51,62 +49,68 @@ css_implementation:
 
 # Quick Definition
 
-Two-dimensional representation of three-dimensional space is always intermediate between zero-percent and one-hundred-percent spatial constancy — every flat picture occupies a "midpoint" between purely flat projection and fully three-dimensional stage, deriving its meaning from the interplay of both readings.
+This card presents Arnheim's schematic interplay of flat picture organization and depicted depth. Its zero-to-one-hundred-percent constancy language is a conceptual framework, not a calibrated measurement or a law that every image must occupy an intermediate value.
 
 # Core Definition
 
-Arnheim identifies a fundamental paradox of pictorial representation of space: "When such a scene is presented as a mechanically correct projection, it leads to awkward distortions in the frontal plane. Conversely, when the scene is translated into its two-dimensional equivalent, it can be read as the projection of a physically absurd scene." (p. 370)
+This section presents the represented Arnheim account. Its quotations, page references and historical, clinical, cultural or experimental reports have not been checked against the unavailable original. The current analytic qualifications do not certify that fidelity.
+
+Arnheim frames a pictorial contrast as follows: "When such a scene is presented as a mechanically correct projection, it leads to awkward distortions in the frontal plane. Conversely, when the scene is translated into its two-dimensional equivalent, it can be read as the projection of a physically absurd scene." (p. 370)
 
 There are two extreme conceptual poles:
 - **Zero percent constancy**: The picture is a total projection squashed in a flat frontal plane.
 - **One hundred percent constancy**: The picture occupies a fully three-dimensional stage.
 
-No real picture occupies either extreme. "Any picture has intermediate spatiality, tending to one or the other extreme in accordance with its style; it derives its meaning precisely from the interplay of both views." (p. 318)
+Within this schematic account, Arnheim denies either extreme: "Any picture has intermediate spatiality, tending to one or the other extreme in accordance with its style; it derives its meaning precisely from the interplay of both views." (p. 318)
 
-The development of pictorial depth parallels musical polyphony:
+The represented historical comparison groups pictorial depth treatments as follows, without establishing a required developmental or quality ranking:
 1. **Separate horizontal strips** (early): Depth indicated by stacking strips vertically on the picture surface — each strip is a spatial layer, but they are independent.
 2. **Overlapping** (intermediate): Three-dimensional stacking of foreground, middleground, background — more interrelated but still compositionally separate.
 3. **Unified depth continuum** (advanced): The whole depth dimension fuses into one indivisible flow from front to back.
 
-The pictorial plane and the depth dimension are always in tension — their interaction creates the expressive meaning of pictorial space.
+Plane and depicted depth can interact expressively. Some tasks benefit from shallow or flat organization without a strong depth reading.
 
 # Prerequisites
 
-- **Picture plane projection** — The flat surface is always operative.
-- **Overlapping as depth cue** — Overlapping introduces the first systematic depth relations.
-- **Shape constancy** — Constancy determines how much depth correction the viewer applies.
+- **Picture plane projection** — Supports discussion of planar mappings, while authored pictures need not use one camera.
+- **Overlapping as depth cue** — Supplies one cue for layered readings; not every depth treatment needs it.
+- **Shape constancy** — Supplies a context-dependent stable-shape reading, not a calibrated amount of depth correction.
 
 # Key Properties
 
-1. **Intermediate spatiality**: Every picture is between flat and fully 3D; no picture is at either extreme.
-2. **Dual reading**: The same composition is simultaneously a flat pattern and a spatial arrangement; both readings are always operative.
-3. **Contrapuntal tension**: The flat and 3D readings partly support and partly oppose each other, creating compositional tension.
-4. **Topographic vs. expressive**: The 3D grouping "always describes more accurately the factual or topographic situation... whereas its expressive or symbolic function may well be weaker than that of the visually more direct projective pattern." (p. 328)
-5. **Style-determined degree**: The ratio of flat to spatial reading is determined by stylistic convention and the specific depth cues employed.
+1. **Schematic spatiality**: The 0–100 poles are a source framework, not measured percentages.
+2. **Possible dual reading**: A flat pattern can also depict depth, with strength depending on content and context.
+3. **Compositional relation**: Flat and depth organizations can reinforce or complicate one another.
+4. **Attributed comparison**: The reported 3D grouping "always describes more accurately the factual or topographic situation... whereas its expressive or symbolic function may well be weaker than that of the visually more direct projective pattern." (p. 328) This is Arnheim's interpretation, not proof that all 3D groupings describe facts better.
+5. **Contextual treatment**: Style, task and available cues inform the reading; no calibrated ratio is given.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Choose the intended ratio of flat-to-spatial reading for the pictorial space.
-2. Use depth cues (overlapping, size gradient, texture gradient, atmospheric perspective, convergence) to push toward the spatial pole.
-3. Use flat, frontal, equidistant arrangements and uniform scale to push toward the flat pole.
-4. Design with awareness that both readings are simultaneously operative; the meaning comes from their interplay, not from one alone.
+
+1. Choose what spatial information the task needs.
+2. Use overlap, size, texture or perspective where they clarify that information.
+3. Use frontal or shallow organization where it fits; a flat treatment can remain usable.
+4. Review planar organization and any depicted depth without assuming both must always be strongly operative.
 
 ## To Identify/Recognise:
-1. Identify the depth cues present in a composition and assess how strongly they push toward the spatial reading.
-2. Identify the flat-plane organisation (alignment, pattern, grid) simultaneously present.
-3. Assess whether the tension between flat and spatial is productive (meaning-generating) or confused (readings contradict without generating meaning).
+
+1. Identify the actual depth cues and their conditions.
+2. Inspect flat-plane alignment and grouping.
+3. Check whether competing readings serve or obscure the task rather than apply a universal depth requirement.
 
 # Context & Application
 
 - **Typical contexts**: All visual design work; UI design (cards, shadows, layers create depth); illustration; photography; data visualisation.
-- **Common applications**: CSS `box-shadow` and `z-index` create intermediate pictorial space in UI; flat design vs. material design represent different positions on the flat-to-spatial continuum; data visualisation must choose whether to use 3D chart representations (more spatial) or flat ones (less spatial).
+- **Common applications**: CSS `box-shadow` and `z-index` create intermediate pictorial space in UI; flat design vs. material design represent different positions on the flat-to-spatial continuum; data visualisation should preserve required quantities and avoid unnecessary depth that obscures their comparison; no 3D choice is required.
 
 ## Cross-Domain Connections
 
-**Music → STRUCTURAL**: Arnheim draws this analogy explicitly. Musical polyphonic development: monophonic melody (one voice, depth = zero) → independent voices (horizontal strips) → contrapuntal voice-leading (overlapping relations) → homophonic texture (unified depth). The picture plane's relationship to depth follows the same stages of increasing integration.
+**Music → STRUCTURAL**: The source compares separate strips, overlapping layers and unified depth with relations among musical voices. Monophony, polyphony and homophony are texture descriptions, not a universal path from inferior to superior music. One voice does not literally have depth=0, and a homophonic texture is not proof of a unique depth continuum.
 
 # Examples
+
+The following are reported source examples and interpretations, with their original wording and locators retained for inspection. They are not independently checked historical, experimental or universal claims.
 
 **Example 1** (p. 312): "Pictorial depth is represented at early stages by separate horizontal strips, one on top of the other. At a later stage, overlapping is employed to obtain a three-dimensional stacking of foreground, middle ground, and background, more or less interrelated. Later still, the whole depth dimension fuses into one indivisible continuum, leading from front to back, from back to front."
 
@@ -116,37 +120,41 @@ The pictorial plane and the depth dimension are always in tension — their inte
 
 # Relationships
 
+These are scoped conceptual reading connections. Prerequisites support understanding rather than assert a universal developmental sequence; related links and contrasts specify comparisons, not causal or subtype laws. Unresolved ordinary comparisons below are not invented card identities.
+
 ## Builds Upon
-- **Picture plane projection** — The flat reading is always the projection reading.
-- **Overlapping as depth cue** — The spatial reading is built through depth cues, especially overlapping.
-- **Shape constancy** — Constancy is the mechanism that enables the spatial reading.
+- **Picture plane projection** — Plane organization can use projection or authored composition.
+- **Overlapping as depth cue** — Occlusion can support layered depth, without being the first necessary cue.
+- **Shape constancy** — Constancy can support an object reading; it does not uniquely determine depth.
 
 ## Enables
-- **Compositional depth design** — Designing the interplay of flat and spatial readings in composition.
+- **Compositional depth design** — The comparison helps choose planar and depth cues for a task.
 
 ## Related
-- **Foreshortening** — One of the depth cues that pushes toward the spatial reading.
-- **Adaptation level** — What degree of pictorial space reads as "realistic" depends on cultural norm level.
+- **Foreshortening** — Contraction is one possible cue among others.
+- **Adaptation level** — Familiarity can influence spatial readings without determining realism.
 
 ## Contrasts With
-- **Full three-dimensional space** — Actual 3D space has no flat-projection reading; pictures always retain both.
-- **Purely flat representation** — Would have no depth cues and no spatial reading; in practice this is never achieved except through deliberate design.
+- **Full three-dimensional space** — Actual 3D space differs from its planar depiction; the ordinary comparison is not a claim that viewing real space lacks projected images.
+- **Purely flat representation** — The actual flat-pictorial-space comparison emphasizes frontal/shallow organization. Its own account allows shallow planes; flat is not synonymous with zero cues or unusability.
 
 # Common Errors
 
 - **Error**: Designing UI with depth cues (shadows, layers, perspective) without considering the flat-plane organisation.
-  **Correction**: Both readings must be considered simultaneously. Depth cues that contradict the flat-plane organisation create visual confusion; depth cues that reinforce it create coherent pictorial space.
+  **Correction**: Compare the actual planar organization and any depth cues. They may reinforce or deliberately challenge each other; inspect whether the intended task remains clear.
 
 # Common Confusions
 
 - **Confusion**: A "flat" design has no depth dimension.
-  **Clarification**: Even "flat design" uses the picture surface as a frontal plane with a spatial reading (overlap, scale, proximity); it merely suppresses one class of depth cues (shadows, perspective). It is closer to the flat pole on the continuum, not at zero.
+  **Clarification**: A "flat design" may retain shallow layering or suppress most depth cues. Proximity is also a planar grouping cue. No calibrated position on the schematic continuum follows, and a useful design need not express strong depth.
 
 # Source Reference
 
 Chapter III: Form, "Art and Visual Perception," pp. 310–332 (Interplay of Plane and Depth section).
 
 # Verification Notes
+
+The bullets below preserve historical extraction assertions, including confidence, cross-reference, OCR and source-reading claims; they are not current verification. Original-dependent fidelity remains unassessed. Current technical corrections and analogies establish neither a neural mechanism nor cultural universality or measured usability.
 
 - Definition source: Synthesised from pp. 310–332; direct quotes from pp. 318, 328.
 - Confidence rationale: High — explicit discussion with the zero/one-hundred percent constancy framework.
