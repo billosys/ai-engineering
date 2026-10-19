@@ -29,23 +29,22 @@ related:
   - "arnheim-expression-theory"
 contrasts_with: []
 answers_questions:
-  - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How do you design the states of an interactive component (default, hover, active, focus, disabled, loading, error)? What visual properties change for each state, and why?"
 rosetta_stone:
   -
     domain: "engineering"
-    concept: "Physics-based animation — spring systems, momentum, collision response"
-    rating: "rigorous"
-    note: "Physics-based animation makes visible motor forces explicit and computationally real: spring tension, mass, damping, and collision all produce the visible motor force patterns that Arnheim identifies as directly perceived. The perceptual quality of physics-based animation (it feels 'real') is explained by Arnheim's account of why causality is perceived rather than inferred."
+    concept: "Physics-based animation parameters and candidate causal cues"
+    rating: "structural"
+    note: "Mass/damping/spring computations determine a simulation trajectory, not an exact perceived force or guaranteed naturalness; actual observer/task response is separate."
   -
     domain: "engineering"
-    concept: "Direct manipulation — drag, pinch, inertial scrolling"
+    concept: "Direct manipulation / implemented input and visible response"
     rating: "structural"
-    note: "Direct manipulation in touch interfaces exploits visible motor forces: the user perceives their input force as directly causing the visual response, creating the sense of tactile causality that Arnheim identifies as a primary perceptual phenomenon."
+    note: "Drag/pinch/scroll can support a perceived connection, but software response, physical force, latency and experienced causation remain distinct and need actual checks."
 css_implementation:
   -
     property: "transition"
-    example: "transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); /* spring-like overshoot */"
+    example: "transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); /* candidate overshoot, not a mass/damping model */"
     support: "baseline"
   -
     property: "animation"
@@ -55,38 +54,40 @@ css_implementation:
 
 # Quick Definition
 
-Visible motor forces are the perceptual experience of dynamic causation in visual events — forces, impacts, pressures, and impulses perceived directly in moving objects' behaviour, not inferred from knowledge of physics.
+Visible motor forces name experienced causation and dynamic character in moving visual events. Arnheim treats these as direct perceptual qualities; perceived causation is distinct from actual physical force and simulation accuracy.
 
 # Core Definition
 
-Visible motor forces is Arnheim's concept for the perceived dynamic qualities of motion: the forces, tensions, impacts, and causal relationships that observers experience directly in the behaviour of moving objects, independently of any reasoning about the physical causes of that motion.
+This presents the represented Arnheim account. Original edition/context, quotation fidelity, page bases, historical reports, experiments and physiology remain unassessed because the required original is unavailable. The current analytic corrections do not certify that fidelity.
+
+This is the represented Arnheim account of perceived impacts, impulses and causal relations. Directness is its theoretical claim, not proof that learning, inference or observer context never contribute.
 
 Arnheim opens the section by distinguishing geometric from dynamic accounts of motion: "Geometrically, locomotion can be defined as a mere change of location, but for the naive observer, just as for the physicist, displacements are dynamic. The behavior of forces is always the more important part of the story. Artistically it is these forces that give an event visual expression and endow it with life."
 
-The key empirical grounding comes from Albert Michotte's experiments on perceived causality. Michotte showed that causality — the sense that one object "launches" or "pushes" another — is directly perceived, not inferred. When a moving square reaches a stationary square and the stationary square begins to move, the first square is seen as having caused the second to move. This perception of causality occurs even in situations where practical knowledge makes it physically absurd (e.g., a wooden ball launching a projected light disk). Arnheim cites Michotte: "Michotte demonstrates that causality is as much an aspect of the percept itself as the shape, color, and movement of the objects."
+The represented Michotte experiments describe a moving square reaching another and the second moving as if launched. The impression can persist despite physically absurd conditions, such as a wooden ball and projected light disk. Arnheim’s reported conclusion is: "Michotte demonstrates that causality is as much an aspect of the percept itself as the shape, color, and movement of the objects." The original experiment’s stimuli, timing and results remain unchecked here; no universal causal gate follows.
 
-The concept also governs the distinction between inorganic and organic motion: self-initiated movement (appearing to originate from within an object) is perceived as organic/living; externally caused displacement is perceived as inorganic/mechanical. This distinction is directly perceived, not intellectually categorised.
+The represented organic/inorganic distinction compares apparent self-initiation with external displacement. These can be expressive interpretations of specific sequences; self-motion is not proof of life and externally caused motion need not look mechanical to every viewer.
 
 # Prerequisites
 
-- **Implied Motion** — Visible motor forces extend implied motion from single-frame perceptual forces to temporal, dynamic sequences of perceived force.
+- **Implied Motion** — Supplies a comparison with static directional qualities; temporal perceived causation is an elaboration, not literal subtyping of a still-image event.
 - **Visual Perception** — The general framework of perceptual qualities as direct and immediate.
 
 # Key Properties
 
-1. Causality is directly perceived, not inferred: when one object appears to cause another to move, this causal perception is an aspect of the percept itself, not a product of reasoning.
-2. Operates under absurd conditions: Michotte's experiments showed causality perceived even when physical knowledge says it is impossible.
-3. Distinguishes organic from inorganic motion: self-initiated movement reads as alive; externally caused displacement reads as mechanical.
-4. Interacts with expressive quality: the forces perceived in a motion (gentle push, violent impact, hesitant probing) determine its expressive character.
-5. Relevant for artistic performance: "what counts for artistic performance is the dynamics conveyed to the audience visually; for dynamics alone is responsible for expression and meaning."
+1. Arnheim presents causal impression as part of the percept; the present review does not establish an exhaustive perceptual mechanism.
+2. The represented absurd-condition examples distinguish experienced cause from knowledge of physical possibility.
+3. Apparent self-initiation and external displacement can contribute to organic/mechanical readings in context.
+4. A gentle/violent/hesitant character is an interpretation, not identical to numeric force magnitude.
+5. The represented performance claim, "what counts for artistic performance is the dynamics conveyed to the audience visually; for dynamics alone is responsible for expression and meaning," is an artistic position, not exclusion of content or other modalities in every task.
 
 # Construction / Recognition
 
 ## To Construct/Create:
 1. To convey causality: ensure the timing and spatial relationship between interacting objects matches the structural pattern of the causal relationship (contact → response, with appropriate delay and response magnitude).
-2. To convey self-initiated (organic) motion: animate objects so movement appears to originate from internal impulse rather than external force — deceleration before direction change, anticipation.
-3. To convey force magnitude: use overshoot, elastic rebound, or inertial decay proportional to the implied force.
-4. For UI: make interaction responses look caused by user input — visual response should feel proportional and directionally appropriate to the gesture.
+2. Compare anticipation and direction changes if proposing self-initiated character; neither guarantees an organic interpretation.
+3. Use overshoot, rebound or decay as candidate cues; simulation mass/damping do not map exactly to perceived force.
+4. For UI, keep input/response behavior identifiable and timely for the task. Active feedback can use direction or displacement, while labels, role/name/state and rest/reduced-motion meaning remain available.
 
 ## To Identify/Recognise:
 1. Ask: does the motion appear to be caused by forces internal or external to the moving object?
@@ -97,35 +98,37 @@ The concept also governs the distinction between inorganic and organic motion: s
 # Context & Application
 
 - **Typical contexts**: Physics-based animation, direct manipulation interfaces, game UI, loading animations, micro-interactions, motion design for feedback states.
-- **Common applications**: Spring animations for bounce/rebound in mobile UI; inertial scrolling (thumb velocity transmits momentum to content); drag-and-drop with resistance; elastic overscroll; button press with physical depression metaphor.
+- **Common applications**: Candidate spring/rebound, inertial scrolling, drag resistance, elastic overscroll and button-depression metaphors relate input to visible behavior. Content receives computed displacement, not literal momentum transmitted by the thumb.
 
 ## Cross-Domain Connections
 
-**Engineering → RIGOROUS**: Physics-based animation directly instantiates visible motor forces computationally: spring constant, mass, damping coefficient, and restitution all map to perceptible force qualities. The reason physics-based animation "feels right" is that it produces the same structural patterns that Arnheim identifies as directly perceived causality. Design systems that parameterise spring animations (e.g., React Spring, Framer Motion) are engineering tools for controlling visible motor forces.
+**Engineering → STRUCTURAL**: A spring simulation computes values from mass, damping and other parameters. Those outputs may suggest a force, but numeric fidelity supplies no one-to-one match to perceived causation or naturalness. A drawn rebound can differ from an accurate physical model and still fit the intended task.
 
-**Engineering → STRUCTURAL**: Direct manipulation (dragging, pinching, inertial scrolling) places visible motor forces at the centre of interaction design. The user perceives their touch or gesture as a physical force transmitted directly to UI elements. The quality of direct manipulation depends on making the visible motor force relationship between input and response perceptually coherent (proportional, directionally consistent, physically plausible).
+**Engineering → STRUCTURAL**: Dragging, pinching and inertial scrolling connect input with visible response. Implemented behavior, response latency and perceived connection need their actual checks; the metaphor does not turn a gesture into a literal force on screen content.
 
 # Examples
 
+These preserve the represented account’s examples and artistic judgments. Their original context and reported results remain unassessed; they are not universal laws or fresh observer measurements.
+
 **Example 1** (p. 395, Visible Motor Forces — Michotte): "Michotte demonstrates that causality is as much an aspect of the percept itself as the shape, color, and movement of the objects. Whether and to what extent causality is seen depends exclusively upon the perceptual conditions. Strong causality results even in situations where practical experience must call it absurd."
 
-**Example 2** (p. 395, Visible Motor Forces — organic/inorganic distinction): Arnheim discusses experiments distinguishing organic from inorganic motion. A bar that moves from one position to another as a rigid translation reads as mechanical; a bar that appears to "step" through a series of positions, as if walking, reads as organic/alive. The distinction depends entirely on the structural pattern of the motion, not on the object's actual properties.
+**Example 2** (p. 395, Visible Motor Forces — organic/inorganic distinction): The represented moving-bar comparison contrasts rigid translation with a bar appearing to "step" as if walking. Mechanical/alive are reported readings of that display, not a biological classification or universal structural guarantee.
 
 **Example 3** (p. 395, Visible Motor Forces — camera motion): Arnheim notes that camera movements fulfil their function "only when they convey expressive impulses and responses rather than merely the mechanical effect of physical action." The camera's motion must be perceived as caused by and expressing the dynamics of the filmed event, not as arbitrary mechanical displacement.
 
 # Relationships
 
 ## Builds Upon
-- **Implied Motion** — Visible motor forces extend the single-frame perceptual force concept to temporal sequences of dynamic causation.
-- **Gestalt Theory** — The direct perception of causality is an extension of gestalt's claim that perceptual organisation (grouping, figure-ground) is immediate rather than inferred.
+- **Implied Motion** — Compares still directional character with temporal causal impression; neither is a literal subtype of the other.
+- **Gestalt Theory** — The represented direct-perception position relates to whole-configuration organization, without proving a particular neural mechanism.
 
 ## Enables
-- **Physics-Based Animation Design** — Understanding visible motor forces is the perceptual basis for physics-based animation design: spring, inertia, mass, and damping all produce visible motor force patterns.
-- **Direct Manipulation Design** — Effective direct manipulation requires that input-response relationships feel causally connected — visible motor forces are the perceptual mechanism.
+- **Physics-Based Animation Design** — Simulations supply trajectories that can be evaluated as candidate visual cues; computational parameters are not perceptual measurements.
+- **Direct Manipulation Design** — A useful input/response connection can support interaction; actual behavior and perceived causation are separate checks.
 
 ## Related
 - **Stroboscopic Motion** — Stroboscopic motion provides the frames; visible motor forces are the perceived dynamics within those frames.
-- **Physiognomic Perception** — Visible motor forces are one domain of physiognomic perception: perceiving force, tension, and causality in visual events directly, without inference.
+- **Physiognomic Perception** — Dynamic character offers a comparison with expressive seeing, not a demonstrated common mechanism.
 
 ## Contrasts With
 - **Mere Locomotion** — Arnheim distinguishes mere displacement (change of position without perceived force) from visible motor forces (motion as experienced by the naive observer, saturated with dynamic quality). "Movement looks dead when it gives the impression of mere displacement."
@@ -136,21 +139,25 @@ The concept also governs the distinction between inorganic and organic motion: s
   **Correction**: Arnheim's framework (and Michotte's evidence) shows that perceptual causality depends on structural pattern, not physical accuracy. Cartoon physics (exaggerated anticipation, overshoot, squash-and-stretch) often produces more compelling visible motor forces than physically accurate but perceptually ambiguous simulations.
 
 - **Error**: Treating animation response latency as a purely technical issue.
-  **Correction**: Latency between input and visual response disrupts the visible motor force relationship — the user no longer perceives their gesture as causing the response. Response within ~100ms preserves causal perception; beyond that, the connection feels broken.
+  **Correction**: Input-to-response delay can affect the interaction, but no universal approximately 100ms preservation/breaking gate is established. Distinguish input processing, frame production and presentation, and inspect the actual task/device/observer conditions.
 
 # Common Confusions
 
 - **Confusion**: Visible motor forces require the objects to actually collide or touch.
-  **Clarification**: Michotte's experiments showed that causality is perceived based on timing and proximity, not actual contact. Objects can appear to exert force at a distance if the timing pattern matches the structural pattern of a causal relationship.
+  **Clarification**: The represented experiments distinguish physical contact from perceived causal relations. Timing, separation and display conditions must be stated; force at a distance is not guaranteed by any one pattern.
 
 - **Confusion**: Visible motor forces are only relevant for realistic/physical animation styles.
-  **Clarification**: Visible motor forces apply to all animation, including abstract, minimal, and UI micro-interactions. A modal dialog that "snaps" into position conveys a force; one that "floats" in conveys a different force. Neither is realistic; both carry visible motor force qualities.
+  **Clarification**: Abstract or minimal animation can invite dynamic readings. A modal that "snaps" or "floats" may suggest different character in context; not every animation establishes a perceived force.
 
 # Source Reference
 
 Chapter VIII: Movement, "Art and Visual Perception," pp. 395–434. See especially the "Visible Motor Forces" section (section heading at line 204 of source file).
 
 # Verification Notes
+
+The reported square that "launches" or "pushes" another concerns experienced cause, not literal contact force. The statement "what counts for artistic performance is the dynamics conveyed to the audience visually; for dynamics alone is responsible for expression and meaning." is an artistic position. A simulation that "feels right" still needs actual task/observer evidence.
+
+- Current review boundary: the legacy extraction notes below are preserved provenance, not this review’s original-source verification. Current technical/interpretive qualifications above and local relationship/CQ checks do not establish historical fidelity or measured observer behavior.
 
 - Definition source: Synthesised from "Visible Motor Forces" section; Michotte's experiments are discussed explicitly; the distinction between dynamic and geometric accounts of motion is stated at the section's opening.
 - Confidence rationale: Medium — the section is clearly identified and the core claims visible; some detail was in OCR-omitted lines.

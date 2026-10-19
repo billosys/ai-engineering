@@ -193,3 +193,11 @@ do not guarantee outcomes across content, users or browsers.
 ## Version 1.0.28
 
 - 2026-10-19: Correct eighteen connected light/colour/context cards; distinguish appearance attributes, model coordinates, constancy and rendering; retain source-specific examples, scoped local relationships and competency-question gaps. Original fidelity and actual behavior gates remain separate.
+
+## Version 1.0.29
+
+2026-10-19. Correct18 connected motion/expression cards with scoped grouping,
+static/temporal motion, physical/interpretive force, gaze, reference geometry and
+expression-theory distinctions. Preserve attributed examples and unavailable-
+original limits; reconcile existing local relationships, question components and
+ordered analogy/CSS metadata without new fields or curriculum.

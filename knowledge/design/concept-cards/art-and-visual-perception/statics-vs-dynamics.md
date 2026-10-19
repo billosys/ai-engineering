@@ -29,82 +29,85 @@ related:
   - "deformation-tension"
   - "dynamic-composition"
 contrasts_with:
-  - "minimalism"
   - "simplicity-as-sole-criterion"
-answers_questions:
-  - "How does cognitive load theory (intrinsic, extraneous, germane) relate to progressive disclosure and visual hierarchy? When is simplification harmful?"
-  - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
+answers_questions: []
 rosetta_stone:
   -
     domain: "music"
-    concept: "Tension-resolution / consonance-dissonance spectrum"
+    concept: "Contextual musical tension and resolution"
     rating: "structural"
-    note: "The statics-dynamics continuum in visual composition directly parallels the consonance-dissonance spectrum in music: both describe a continuum of tension from minimal (pure intervals / orthogonal forms) to maximum (tritone / oblique deformed figures), with the most satisfying art occupying a calibrated position between the extremes rather than at either pole."
+    note: "Musical expectations can motivate a visual-register comparison; no tritone maximum, universal midpoint optimum or ban on expressive stillness follows."
   -
     domain: "physics"
-    concept: "Open vs. closed systems / entropy"
-    rating: "structural"
-    note: "Arnheim explicitly invokes thermodynamics: closed systems tend toward equilibrium (maximum simplicity = minimum tension); open systems resist this by drawing energy from the environment. The static-dynamic contrast in visual composition parallels the closed-open system distinction: static composition tends toward minimal tension (closed system equilibrium); dynamic composition maintains high tension by drawing on structural themes (open system)."
+    concept: "Open/closed-system and entropy imagery"
+    rating: "loose"
+    note: "No thermodynamic boundary, energy or entropy variable for a static page is defined. The represented system imagery is not a model equating equilibrium with absence of local tension."
 css_implementation:
   -
     property: "animation-timing-function"
-    example: "animation-timing-function: ease-in-out; /* both acceleration (tension) and deceleration (resolution) — dynamic */"
+    example: "animation-timing-function: ease-in-out; /* progress mapping, not measured tension */"
     support: "baseline"
   -
-    property: "transition (tension through change)"
-    example: "transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1); /* dynamic timing adds life to state changes */"
+    property: "transition"
+    example: "transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1); /* explicit candidate property, optional motion */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Visual compositions exist on a continuum from purely static (maximum simplicity, minimum tension — Byzantine mosaic frontality) to highly dynamic (maximum tension, complex order — Tiepolo's contorted figures), and the designer's task is to calibrate the appropriate level of tension for the expressive or functional purpose of the work.
+Statics and dynamics name expressive tendencies in Arnheim’s account, from stillness to active directional tension. They are not a calibrated simplicity/entropy scale; calm, complex, balanced and lively are distinct judgments.
 
 # Core Definition
 
-Arnheim introduces the statics-dynamics opposition in Chapter IX as the necessary counterpart to the gestalt principle of simplicity: "the tendency toward simplicity alone cannot do justice to what we see; it leads to one-sided descriptions unless it is counterbalanced by a second, equally influential principle." That second principle is the "anabolic or constructive tendency, the creation of a structural theme" — the introduction of directed tension and dynamism. Arnheim describes the human mind as "an interplay of tension-heightening and tension-reducing strivings." The simplicity principle reduces tension; the structural theme principle heightens it. Every visual composition reflects a ratio of these two: "Depending on the message and style of the work, tension may be low and the order simple, as, for example, in a row of frontal figures in a Byzantine mosaic or the stillness of a Greek profile; or tension may be high and the order complex, as in the jagged profiles of Daumier's burghers or the swinging, contorted, violently foreshortened figures of a Tiepolo." Neither extreme satisfies: pure simplicity is bland; pure tension is chaotic. The task is calibration.
+This presents the represented Arnheim account. Original edition/context, quotation fidelity, page bases, historical reports, experiments and physiology remain unassessed because the required original is unavailable. The current analytic corrections do not certify that fidelity.
+
+The represented account counterbalances simplicity: "the tendency toward simplicity alone cannot do justice to what we see; it leads to one-sided descriptions unless it is counterbalanced by a second, equally influential principle." Arnheim calls the other tendency "anabolic or constructive tendency, the creation of a structural theme" and describes "an interplay of tension-heightening and tension-reducing strivings." He writes: "Depending on the message and style of the work, tension may be low and the order simple, as, for example, in a row of frontal figures in a Byzantine mosaic or the stillness of a Greek profile; or tension may be high and the order complex, as in the jagged profiles of Daumier's burghers or the swinging, contorted, violently foreshortened figures of a Tiepolo." These are theoretical and historical comparisons, not proof that simplicity is bland or complex dynamism chaotic.
 
 # Prerequisites
 
 - **Directed tension** — Dynamics is constituted by directed tension; the foundational concept must be understood.
-- **Visual forces** — Both statics and dynamics are states of the visual force field; forces are in equilibrium (static) or in productive imbalance (dynamic).
+- **Visual forces** — Experienced pulls support expressive comparison without equating statics with zero physical force or dynamics with imbalance.
 - **Gestalt theory in art** — The simplicity principle (Prägnanz) is the gestalt contribution; the anabolic tendency is Arnheim's complementary addition.
 
 # Key Properties
 
-1. All visual experience involves an interplay of two opposing tendencies: tension-reduction (toward simplicity, rest) and tension-heightening (toward structural complexity, dynamism).
-2. A purely static composition achieves maximum simplicity but lacks expressive content — "so bland a diet does not satisfy."
-3. A purely dynamic composition lacks the stable ordering that makes tension intelligible — "chaos" results.
-4. The appropriate ratio of statics to dynamics depends on the purpose and expressive register of the work.
-5. "One could try to assign every particular style of art its place on a scale leading from a minimum to a maximum of visual tension."
-6. Static compositions achieve their expressive effect through the absence of tension — the stillness itself carries meaning (serenity, timelessness, authority).
-7. Dynamic compositions achieve their effect through calibrated tension — energy, movement, life, struggle.
+1. Arnheim’s proposed opposing tendencies supply a vocabulary, not an exhaustive law of visual experience.
+2. The quoted "so bland a diet does not satisfy" is his criticism, not a universal judgment of minimalist work.
+3. High expressive activity need not be chaotic; low activity can be intentional and meaningful.
+4. Choose a register with the actual content, purpose and identity.
+5. His proposal, "One could try to assign every particular style of art its place on a scale leading from a minimum to a maximum of visual tension," supplies no measured scale here.
+6. Expressive stillness can carry meaning without requiring absence of all local tension.
+7. Expressive liveliness, perceptual balance, a force resultant and thermodynamic entropy are different concepts.
 
 # Construction / Recognition
 
 ## To Identify/Recognise:
-1. A static composition: elements are orthogonally oriented, proportions close to simple ratios, minimal deformation, symmetric or nearly symmetric, low contrast, even weight distribution.
-2. A dynamic composition: oblique orientations, deformed proportions, asymmetric weight distribution, high contrast, directed tensions that do not fully cancel.
-3. Position on the statics-dynamics continuum can be assessed by asking: "How much tension remains unresolved after accounting for all balancing elements?"
+
+1. Describe actual orientation, proportions, contrast and grouping before assigning a contextual register.
+2. Compare apparently settled and active relations; symmetry or obliqueness alone does not determine them.
+3. Distinguish local tension from a resultant: two opposing 10 and −10 physical forces sum to 0 while their magnitudes remain nonzero and internal stress can persist in a connected body. This is a physical discriminator, not a visual-force measurement.
 
 ## To Construct/Create:
-1. Identify the expressive register of the design: does it need to convey authority (→ more static), energy (→ more dynamic), calm (→ more static), urgency (→ more dynamic)?
-2. Select structural means accordingly: orthogonal vs. oblique, canonical vs. deformed proportions, symmetric vs. asymmetric distribution.
-3. Ensure that whatever level of tension is chosen, it is internally consistent — all elements contribute to the same tension level, not randomly mixed.
+
+1. Name the intended expression alongside task and content; calm or accurate can be appropriate.
+2. Compare candidate aligned/oblique, familiar/departing or symmetric/asymmetric relations.
+3. Evaluate coherence and useful counterpoint rather than requiring all parts to share one tension level.
 
 # Context & Application
 
 - **Typical contexts**: Style calibration across all visual design domains — UI, editorial, branding, motion, illustration, architecture.
-- **Common applications**: A legal services landing page requires a more static, authoritative visual register. A gaming app requires a more dynamic one. A news dashboard should maintain moderate dynamics (urgency, activity) without chaos. Error states should increase dynamics (tension = urgency) relative to normal states. Empty states should decrease dynamics (calm, inviting) relative to loaded states. The designer who understands the statics-dynamics continuum can control visual register deliberately rather than accidentally.
-- **Historical/stylistic notes**: Arnheim describes minimalism ("minimal art") as a historically necessary therapeutic response to a period of excessive complexity — but notes it "proved that once it has fulfilled its therapeutic function, so bland a diet does not satisfy." Pure statics is expressive of pathological states or forced simplification; the healthy visual register combines both tendencies in calibrated proportion.
+- **Common applications**: Legal, gaming and news interfaces can choose calm or active expression according to actual content and identity. Error/empty/loaded states need clear meaning and usable behavior, not mandatory tense/calm treatments. An animation is an optional enhancement, not evidence of a healthy expressive register.
+- **Historical/stylistic notes**: The represented "minimal art" criticism describes a "therapeutic" response and says it "proved that once it has fulfilled its therapeutic function, so bland a diet does not satisfy." Retain that attributed judgment without diagnosing minimalism, viewers or restrained design as pathological.
 
 ## Cross-Domain Connections
 
-**Music → STRUCTURAL**: The statics-dynamics continuum in visual composition precisely parallels the consonance-dissonance spectrum in music. A fully consonant composition (all pure intervals, tonic resolution) is analogous to a fully static visual composition (all orthogonal, all simple ratios). A highly dissonant composition is analogous to a maximally dynamic one. The most expressive art in both domains occupies a calculated position between the poles — never purely consonant nor purely dissonant, never purely static nor purely dynamic.
+**Music → STRUCTURAL**: Tension/resolution and consonance/dissonance can provide a contextual comparison of expectations. No universal tritone maximum, pure-interval minimum or requirement that satisfying art occupy the middle follows.
 
-**Physics → STRUCTURAL**: Arnheim's explicit thermodynamic framing: closed systems tend toward equilibrium (minimum tension); open systems maintain high-tension states by drawing energy from the environment. Static visual compositions are perceptually "closed systems" — they have run to equilibrium. Dynamic compositions are "open systems" — they sustain tension by continuous input of structural energy (the structural theme).
+**Physics → LOOSE**: The represented open/closed-system imagery is an analogy. A static page has no defined thermodynamic system boundary, energy flow or entropy variable here. Physical equilibrium, stored/internal forces and expressive activity cannot be equated.
 
 # Examples
+
+These preserve the represented account’s examples and artistic judgments. Their original context and reported results remain unassessed; they are not universal laws or fresh observer measurements.
 
 **Example 1** (p. 416): "If simplicity were the one overriding goal of art, evenly stained canvases or perfect cubes would be the most desirable art objects... they also served to prove that once it has fulfilled its therapeutic function, so bland a diet does not satisfy."
 
@@ -115,7 +118,7 @@ Arnheim introduces the statics-dynamics opposition in Chapter IX as the necessar
 # Relationships
 
 ## Builds Upon
-- **Directed tension** — The dynamic pole is defined by the presence of directed tensions; the static pole by their absence.
+- **Directed tension** — Supplies directional-strain vocabulary; expressive stillness does not imply absence of every local pull.
 - **Gestalt theory in art** — The simplicity principle (Prägnanz) drives toward the static pole; Arnheim's anabolic tendency drives toward the dynamic pole.
 
 ## Enables
@@ -123,31 +126,35 @@ Arnheim introduces the statics-dynamics opposition in Chapter IX as the necessar
 - **Style calibration** — Deliberately positioning a design work on the statics-dynamics continuum for expressive and functional purposes.
 
 ## Related
-- **Visual balance** — Balance is not the same as statics; a dynamic composition must be balanced, but its tensions do not cancel to zero — they compensate within a high-tension equilibrium.
-- **Oblique orientation** — The primary formal tool for moving toward the dynamic pole.
-- **Deformation tension** — The general mechanism: deviation from norm always adds dynamics.
+- **Visual balance** — Compensation can coexist with liveliness; there is no measured perceptual sum establishing zero or nonzero residual tension.
+- **Oblique orientation** — A contextual means of comparing active directional character, not the universal primary tool.
+- **Deformation tension** — A recognized-norm comparison can contribute, without a universal departure-to-dynamics law.
 
 ## Contrasts With
-- **Minimalism (as absolute criterion)** — The view that simplicity is always the goal; Arnheim argues this is a necessary corrective but not a universal principle. Simplicity without tension is inertia.
+- **Simplicity as sole criterion** — A local proposition that simplicity alone should determine the goal. This is the scoped contrast; minimalist work itself need not lack expression.
 
 # Common Errors
 
 - **Error**: Equating "clean design" with purely static design.
-  **Correction**: Effective "clean" design (e.g., Apple's design language) maintains calibrated tension through proportion, spacing, and hierarchy — it is not at the pure-static pole. What appears clean is the absence of accidental tension, not of all tension.
+  **Correction**: A "clean" or restrained design, including Apple’s design language, can have several expressive readings. Inspect the actual work; no forced hidden-tension explanation is needed.
 
 - **Error**: Adding dynamism by increasing visual complexity (more elements, more colours, more variation).
-  **Correction**: Arnheim's point is that dynamics arises from directed tension in form, not from complexity per se. A single oblique line is more dynamic than a complex orthogonal pattern. True dynamism is about the character of the tensions, not their quantity.
+  **Correction**: Arnheim emphasizes directed relationships rather than element count. A single oblique and a complex orthogonal pattern need contextual comparison; neither is universally more dynamic.
 
 # Common Confusions
 
 - **Confusion**: Dynamic compositions are "exciting" and static compositions are "boring."
-  **Clarification**: Static compositions can be profoundly expressive — serene, timeless, authoritative, monumental. Piero della Francesca's Christ is given maximum statics precisely to convey transcendence over temporal movement. "Boring" results from unintentional statics, not from the choice of the static register itself.
+  **Clarification**: Static compositions can be expressive. The Piero Christ interpretation conveys transcendence through stillness; "Boring" is a contextual judgment, not a necessary result of unintentional statics.
 
 # Source Reference
 
 Chapter IX: Dynamics, "Art and Visual Perception," pp. 416-418. See especially the sections "Simplicity Is Not Enough" and "Dynamics and Its Traditional Interpretations."
 
 # Verification Notes
+
+The criticism "so bland a diet does not satisfy." and the label "chaos" are represented judgments. The proposal "One could try to assign every particular style of art its place on a scale leading from a minimum to a maximum of visual tension." supplies no scale. Asking "How much tension remains unresolved after accounting for all balancing elements?" cannot substitute for defining quantities; "closed systems" and "open systems" remain loose imagery here.
+
+- Current review boundary: the legacy extraction notes below are preserved provenance, not this review’s original-source verification. Current technical/interpretive qualifications above and local relationship/CQ checks do not establish historical fidelity or measured observer behavior.
 
 - Definition source: Synthesised from the opening sections of Chapter IX, pp. 416-418. Direct quotes from p. 416 (minimal art) and p. 417 (Byzantine mosaic / Tiepolo contrast). The "anabolic tendency" is Arnheim's own theoretical term, introduced here.
 - Confidence rationale: Medium — the concept is clearly present but stated discursively rather than as a named concept. The card synthesises Arnheim's argument into a usable design principle; this involves editorial interpretation.

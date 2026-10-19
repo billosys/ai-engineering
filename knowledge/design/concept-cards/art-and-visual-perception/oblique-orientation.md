@@ -31,81 +31,85 @@ contrasts_with:
   - "vertical-horizontal-orientation"
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-  - "How does cognitive load theory (intrinsic, extraneous, germane) relate to progressive disclosure and visual hierarchy? When is simplification harmful?"
 rosetta_stone:
   -
     domain: "mathematics"
-    concept: "Deviation from orthogonal basis / non-zero off-diagonal components"
+    concept: "Vector components relative to an orthogonal reference basis"
     rating: "structural"
-    note: "Oblique orientation is the deviation from the vertical-horizontal coordinate basis — exactly as a non-orthogonal vector has non-zero components in both axes of the reference frame, creating tension between the vector's actual direction and the canonical axes. The structural parallel captures why oblique elements feel like 'straining' away from an orthogonal rest state."
+    note: "An oblique vector can have two components while the basis remains orthogonal; a rotated orthonormal basis stays orthogonal. Geometry alone establishes no visual tension or force."
   -
     domain: "music"
-    concept: "Dissonance / interval tension (tritone, major 7th)"
+    concept: "Dissonance / departure from contextual musical expectations"
     rating: "structural"
-    note: "Musical dissonance (an interval that strains toward resolution) is structurally parallel to visual obliqueness (a shape that strains toward vertical or horizontal rest) — both are states of heightened tension defined by their distance from a stable reference state (consonance / orthogonality)."
+    note: "A tritone or major seventh can be compared with an orientation departure in a specified context, without a proportional tension metric or universal resolution need."
 css_implementation:
   -
     property: "transform: rotate()"
-    example: "transform: rotate(-3deg); /* subtle oblique tension for dynamic emphasis */"
+    example: "transform: rotate(-3deg); /* candidate tilt relative to a stated frame */"
     support: "baseline"
   -
     property: "transform: skewX() / skewY()"
-    example: "transform: skewX(5deg); /* oblique shear creates directional tension */"
+    example: "transform: skewX(5deg); /* geometric shear; no universal tension guarantee */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Oblique orientation — any line, shape, or composition element tilted away from the vertical or horizontal — is the most basic and effective means of creating directed tension in visual design, because obliqueness is spontaneously perceived as straining toward or away from the stable vertical-horizontal framework.
+Oblique orientation is orientation away from a named reference axis. Arnheim treats it as one way to suggest directed tension; the effect depends on the form, its symmetries, frame and context.
 
 # Core Definition
 
-Arnheim devotes a full section of Chapter IX to oblique orientation: "Oblique orientation is probably the most elementary and effective means of obtaining directed tension. Obliqueness is perceived spontaneously as a dynamic straining toward or away from the basic spatial framework of the vertical and horizontal." The vertical and horizontal axes define the perceptual framework of rest — the structural skeleton's primary axes. Any departure from these is experienced as tension: "With the mastery of oblique orientation the child as well as the primitive artist acquires the main device for distinguishing action from rest." Rodin is quoted: "in order to indicate movement in his busts, he often gave them 'a certain slant, a certain obliquity, a certain expressive direction.'" Van Doesburg's revolt against Mondrian's strict orthogonality demonstrates that obliqueness was explicitly understood by modernist artists as the carrier of dynamic tension, in contrast to the static stability of vertical-horizontal composition.
+This presents the represented Arnheim account. Original edition/context, quotation fidelity, page bases, historical reports, experiments and physiology remain unassessed because the required original is unavailable. The current analytic corrections do not certify that fidelity.
+
+The represented account states: "Oblique orientation is probably the most elementary and effective means of obtaining directed tension. Obliqueness is perceived spontaneously as a dynamic straining toward or away from the basic spatial framework of the vertical and horizontal." This is Arnheim’s interpretation, not a universal angle law or neural result. His claim, "With the mastery of oblique orientation the child as well as the primitive artist acquires the main device for distinguishing action from rest," is an attributed historical/developmental position. Rodin’s "a certain slant, a certain obliquity, a certain expressive direction" and Van Doesburg’s challenge to Mondrian illustrate artistic uses rather than universal prescriptions.
 
 # Prerequisites
 
-- **Directed tension** — Oblique orientation is the primary means of producing directed tension; the superordinate concept must be understood first.
-- **Visual forces** — Obliqueness creates forces (tensions straining toward orthogonality) that are field processes in the nervous system.
+- **Directed tension** — Supports understanding directional strain; obliqueness elaborates one reference-based comparison, not a universal primary cause or literal subtype.
+- **Visual forces** — Supplies experienced-pull vocabulary; the accepted endpoint does not establish field processes in the nervous system.
 
 # Key Properties
 
-1. Any orientation departing from the vertical or horizontal creates directed tension.
-2. The tension is experienced as "straining toward or away from the basic spatial framework" — the orthogonal axes define the rest state.
-3. Obliqueness is spontaneously and universally perceived as dynamic — it does not require learned associations.
-4. The stronger the departure from vertical/horizontal, the greater the tension (up to the maximum at 45 degrees, where the diagonal is equally distant from both axes).
-5. A symmetrical pair of diagonals (like an X) creates more tension than a vertical-horizontal pair but less than a single asymmetric oblique.
-6. The most dynamic position is an asymmetrical, unbalanced oblique — neither comfortably diagonal nor comfortably upright.
-7. Objects in "normal" upright positions create less tension than the same objects shown obliquely.
+1. Name the reference: page axes, an object’s usual orientation or another stated frame.
+2. A line is unchanged by 180° and a square by 90° rotations; symmetry affects what counts as a departure.
+3. Spontaneous dynamic readings are represented theoretical claims, not proof of universal or unlearned response.
+4. At45° a line is equally distant from horizontal and vertical; that geometric fact establishes no maximum experienced tension.
+5. A symmetric diagonal pair and an asymmetric windmill configuration differ as whole patterns; angle alone cannot rank them.
+6. An oblique may seem strained, settled or merely rotated in context.
+7. A familiar upright reference can matter without being a universally preferred state.
 
 # Construction / Recognition
 
 ## To Identify/Recognise:
-1. Any element tilted away from horizontal or vertical is using oblique orientation to create tension.
-2. A static composition can be made dynamic by rotating elements, lines, or the overall compositional axis toward the oblique.
+1. Identify a departure from named axes, accounting for the object’s symmetry; a tilt alone does not establish experienced tension.
+2. Compare an oblique alternative with the intended still/active register; rotation is one candidate, not a guaranteed result.
 3. The tension from obliqueness can be read in the "straining" quality — the sense that the element wants to return to vertical/horizontal or tip further away.
 
 ## To Construct/Create:
-1. Introduce a subtle tilt (3-7 degrees) to create dynamic life without visual instability.
-2. Use asymmetric obliques (tilted off both horizontal and the 45-degree diagonal) for maximum tension.
-3. Use oblique compositional axes (overall composition flowing diagonally) to create strong directional movement through a design.
-4. Balance oblique elements with stable orthogonal ones to prevent the composition from becoming chaotic.
-5. Use the knowledge of normal position: an element seen in an unexpected oblique position creates extra tension because it is read against the memory of its upright norm.
+
+1. Compare a candidate tilt with the actual content, usual orientation and supplied identity; there is no universal 3–7° recipe.
+2. If using asymmetry, describe how the whole differs from a symmetric diagonal arrangement rather than assuming maximum tension.
+3. Consider diagonal axes when useful for the intended composition, without claiming enforced gaze.
+4. Compare oblique and aligned parts for coherence or deliberate contrast.
+5. Preserve legibility and recognizable meaning, including at rest; a tilted notification is not automatically urgent.
 
 # Context & Application
 
 - **Typical contexts**: Motion design, editorial illustration, poster composition, dynamic UI states (error states, loading indicators, notifications), presentation design.
-- **Common applications**: A notification icon with a slight diagonal tilt has more visual urgency than an upright one — the obliqueness creates a subliminal sense of action. Data visualisation trend lines that are steeply oblique convey more dramatic change than shallow ones. In motion design, objects that move diagonally feel faster and more dynamic than objects moving along horizontal or vertical axes.
+- **Common applications**: A notification tilt can be proposed as contextual emphasis. It is not a universal urgency signal. Chart slope depends on units and aspect ratio, not just the data’s amount of change. Equal straight-line distances in equal times have equal average speed horizontally or diagonally; direction alone supplies no speed law.
 - **Historical/stylistic notes**: Arnheim describes the baroque period as maximising oblique orientation: "oblique views become more and more dominant. At first only single figures and objects are shown in diagonal position. 'Finally, the axis of the entire picture, architectonic space and group composition, is directed obliquely toward the observer.'" Van Doesburg's rejection of Mondrian's strict orthogonality in favour of diagonal compositions is a modernist re-enactment of this dynamic turn.
 
 ## Cross-Domain Connections
 
-**Mathematics → STRUCTURAL**: Oblique orientation is a deviation from the orthogonal basis vectors (horizontal and vertical). In linear algebra, any vector that is not aligned with the basis axes has non-zero components in both dimensions — it "points simultaneously in two directions" and creates an ambiguity of resolution. Visual obliqueness creates an analogous structural tension: the oblique element points neither orthogonally nor purely diagonally, existing in a state of unresolved dual pull toward two stable reference orientations.
+**Mathematics → STRUCTURAL**: A vector oblique to fixed x/y axes can have two nonzero components while the basis remains orthogonal. Rotating an orthonormal basis preserves orthogonality; a unit vector’s norm stays1 at every angle. These describe reference/departure geometry, not unresolved physical force or measured visual tension.
 
-**Music → STRUCTURAL**: Musical dissonance (an unstable interval like the tritone or major seventh) creates tension that seeks resolution to a consonant interval, just as an oblique orientation creates tension that seeks resolution to the orthogonal framework. The structural parallel is precise: in both cases, deviation from a stable reference state generates directed tension whose magnitude is proportional to the degree of deviation.
+**Music → STRUCTURAL**: A dissonant interval such as a tritone or major seventh can be heard against expectations in a specified style. This compares reference and departure, not a proportional angle/interval/tension metric or obligatory resolution.
 
 # Examples
 
-**Example 1** (p. 424): Van Doesburg's windmill demonstration: windmill arms in vertical-horizontal position "stand still"; a symmetrical diagonal pair shows "a little more dynamics"; an asymmetrical, unbalanced position shows the strongest tension — direct scaling of obliqueness to directed tension.
+These preserve the represented account’s examples and artistic judgments. Their original context and reported results remain unassessed; they are not universal laws or fresh observer measurements.
+
+**Example 1** (p. 424): The represented Van Doesburg windmill example compares arms that "stand still," a diagonal pair with "a little more dynamics," and an asymmetric arrangement judged more tense. The pattern/symmetry changes as well as angle; this does not establish monotone angle scaling or a45° maximum.
 
 **Example 2** (p. 424): Rodin: "in order to indicate movement in his busts, he often gave them 'a certain slant, a certain obliquity, a certain expressive direction, which would emphasize the meaning of the physiognomy.'"
 
@@ -116,39 +120,43 @@ Arnheim devotes a full section of Chapter IX to oblique orientation: "Oblique or
 # Relationships
 
 ## Builds Upon
-- **Directed tension** — Obliqueness is the primary producer of directed tension; it is the most elementary form of the broader concept.
-- **Visual forces** — The forces generated by oblique orientation are field processes in the visual system.
+- **Directed tension** — Obliqueness elaborates one directional comparison, not every source of tension.
+- **Visual forces** — Connects experienced direction with a qualified model; no physiological field is established.
 
 ## Enables
-- **Dynamic composition** — Compositions built on oblique axes achieve visual movement and energy.
-- **Statics vs. dynamics** — The contrast between orthogonal (static, stable) and oblique (dynamic, tense) is the fundamental axis of the statics-dynamics distinction.
+- **Dynamic composition** — Oblique axes can contribute, without guaranteeing energy or coherence.
+- **Statics vs. dynamics** — Orthogonal/oblique comparisons illustrate one register contrast, not its single fundamental cause.
 - **Deformation tension** — Obliqueness is one form of deformation from a norm; deformation tension generalises beyond orientation to proportion and shape.
 
 ## Related
-- **Visual balance** — Oblique elements must be balanced against orthogonal ones or other obliques; balance remains the frame for all tension.
-- **Directed tension** — Oblique orientation is the primary source; they are nearly synonymous at this level of specificity.
+- **Visual balance** — Compensation and directional character can coexist; every tilt need not be balanced by an orthogonal.
+- **Directed tension** — A selected means of directional comparison, not a synonym for the broader account.
 
 ## Contrasts With
-- **Vertical-horizontal orientation** — The rest state; elements in orthogonal alignment have minimal directed tension and maximum stability.
+- **Vertical-horizontal orientation** — A local alignment condition relative to named axes, not universal minimum tension or the whole vertical-horizontal-framework card.
 
 # Common Errors
 
 - **Error**: Adding diagonal elements without controlling their directional coherence.
-  **Correction**: Each diagonal element has a direction of tension; these must cohere with the overall compositional direction. Diagonals pointing in random directions create visual chaos rather than dynamic energy.
+  **Correction**: Examine the intended relation among directions. Contraries can obstruct it or provide useful counterpoint; random-looking directions do not by themselves prove chaos.
 
 - **Error**: Relying on subject matter (showing a person running) rather than formal obliqueness to create visual dynamism.
-  **Correction**: A snapshot of a runner can look frozen if the formal properties of the image are entirely orthogonal. As Arnheim demonstrates, the dynamics comes from the visual properties of the form, not from knowledge of the subject.
+  **Correction**: The represented account emphasizes form; a runner snapshot can also communicate through posture, recognition and context. Neither subject knowledge nor obliqueness is sufficient alone.
 
 # Common Confusions
 
 - **Confusion**: 45-degree diagonals are the most dynamic orientation.
-  **Clarification**: Arnheim suggests that asymmetric, unbalanced obliques create the most tension, not the precise diagonal. A 45-degree diagonal is equidistant from both orthogonal axes and achieves a kind of secondary equilibrium (it is, after all, a symmetrical diagonal). The most tense positions are those that are "between" — neither clearly upright nor clearly diagonal.
+  **Clarification**: The represented asymmetric-windmill judgment cannot be reduced to distance from an axis.45° is geometrically equidistant from two named axes; no quantitative maximum or secondary-equilibrium law is supplied.
 
 # Source Reference
 
 Chapter IX: Dynamics, "Art and Visual Perception," pp. 424-425. See the section "The Dynamics of Obliqueness."
 
 # Verification Notes
+
+The represented developmental claim is "With the mastery of oblique orientation the child as well as the primitive artist acquires the main device for distinguishing action from rest." Rodin is reported as saying "in order to indicate movement in his busts, he often gave them 'a certain slant, a certain obliquity, a certain expressive direction.'" These are source positions. The account’s "straining toward or away from the basic spatial framework" and "normal" position need a named reference. A vector that "points simultaneously in two directions" has components, not two physical impulses. The windmill judgments "stand still" and "a little more dynamics" compare whole configurations; an angle "between" axes is no universal optimum.
+
+- Current review boundary: the legacy extraction notes below are preserved provenance, not this review’s original-source verification. Current technical/interpretive qualifications above and local relationship/CQ checks do not establish historical fidelity or measured observer behavior.
 
 - Definition source: Direct quotes from p. 424 ("Oblique orientation is probably the most elementary and effective means...") and the Van Doesburg windmill demonstration. Synthesised from the "Dynamics of Obliqueness" section.
 - Confidence rationale: High — Arnheim provides an explicit statement, a physical demonstration (windmill), experimental grounding (through connection to earlier tension experiments), and art-historical evidence.
