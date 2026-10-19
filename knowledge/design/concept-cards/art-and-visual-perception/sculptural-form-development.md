@@ -27,31 +27,32 @@ related:
   - "perceptual-simplicity"
   - "canonical-view"
 contrasts_with:
-  - "two-dimensional-representation"
-answers_questions:
-  - "What are the gestalt principles of perceptual grouping, and how does each one work?"
+  - "two-dimensional-representation-of-three-dimensional-space"
+answers_questions: []
 rosetta_stone:
   -
     domain: "engineering"
     concept: "3D modelling — from box modelling to subdivision surfaces"
     rating: "structural"
-    note: "The sequence from stick/slab/cube to continuous round volume in sculpture parallels 3D modelling workflows: box modelling starts with primitive volumes (cube), subdivides and rounds to achieve organic forms — the same progression from rectangular to round described by Arnheim."
+    note: "Primitive-volume and subdivision workflows can be compared with Arnheim's historical construction account. Box modelling, additive assemblies and deliberate low-poly surfaces are valid choices; no software workflow proves a necessary cognitive, cultural or skill sequence."
 css_implementation:
   -
     property: "border-radius"
-    example: "border-radius: 50%;"
+    example: "width: 4rem; height: 4rem; border-radius: 50%; /* A rounded 2D box, not a sphere. */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Sculptural form development follows the same law of differentiation as 2D representation — progressing from undifferentiated spherical masses through stick-like one-dimensional elements, flat two-dimensional slabs, cubic three-dimensional blocks, to the continuous roundness of fully integrated three-dimensional volumes.
+Arnheim describes sculptural differentiation through ball, stick, slab, cubic and integrated-round constructions. These are attributed historical categories and analogies, not a mandatory learning sequence or a way to diagnose ability from seams and facets.
 
 # Core Definition
 
+This section presents the represented Arnheim account. Its quotations, page references and historical, clinical, cultural or experimental reports have not been checked against the unavailable original. The current analytic qualifications do not certify that fidelity.
+
 Arnheim extends the law of differentiation from drawing to sculpture, arguing that three-dimensionality does not automatically confer mastery of 3D form — the sculptor must still develop the visual conception of space progressively.
 
-The developmental stages in sculpture:
+The represented account organizes these historical examples into stages:
 1. **Undifferentiated sphere/ball**: The "primordial ball" — represents any compact object. (Possibly Paleolithic Venus figures.)
 2. **Sticks (one-dimensional)**: Elements defined primarily by direction and length, not volume — terra-cotta figures from Cyprus, Mycenae, Geometric period bronzes.
 3. **Two-dimensional spatial patterns**: Right-angular combinations of sticks; then oblique; then three-dimensional patterns.
@@ -59,42 +60,46 @@ The developmental stages in sculpture:
 5. **Cubic forms (three-dimensional)**: Four main views at right angles — front, two sides, back. Each face is a self-contained composition. Characteristic of archaic Greek and Egyptian sculpture.
 6. **Continuous round**: Volume as a unified whole — no seams between views. Achieved in Renaissance and later sculpture (Michelangelo, Bernini).
 
-A critical challenge at the cubic stage: the sculptor who completes one face and turns the figure discovers that "the horizon of his previous view is no longer valid as a boundary... he will find himself with unexpected breaks and ridges and with incomplete planes that shoot into outer space." True 3D mastery requires thinking of the total volume as a continuous whole — not as four faces assembled.
+A critical challenge at the cubic stage: the sculptor who completes one face and turns the figure discovers that "the horizon of his previous view is no longer valid as a boundary... he will find himself with unexpected breaks and ridges and with incomplete planes that shoot into outer space." For an intended continuous volume, inspecting transitions among views can reveal unwanted breaks. Deliberately assembled, faceted or low-poly forms can also be complete and successful.
 
 # Prerequisites
 
-- **Law of differentiation** — Sculptural development follows the same law as 2D development.
-- **Vertical-horizontal framework** — The framework applies to 3D space (three orthogonal axes) just as to 2D.
+- **Law of differentiation** — Supplies the historical model being extended to sculpture.
+- **Vertical-horizontal framework** — Provides reference axes for spatial construction; three orthogonal axes still describe three spatial dimensions.
 
 # Key Properties
 
-1. **3D does not mean 3D mastery**: Working in clay or stone provides three physical dimensions; it does not automatically confer three-dimensional visual conception.
-2. **Same law, different medium**: The law of differentiation applies in 3D with the additional complexity of the third spatial dimension.
-3. **Object vs. spatial dimensions**: A wire ring is one-dimensional as an object (stick) but two-dimensional as a spatial pattern.
-4. **Cubic stage**: Four independent views at right angles, each self-contained — not yet continuous 3D thinking.
-5. **Round stage**: The continuous surface that wraps around the volume — the highest expression of 3D differentiation.
+1. **Medium and conception**: Having 3D material does not ensure a particular intended form is achieved.
+2. **Historical sequence**: The represented progression is an interpretation, not a universal law.
+3. **Dimensions**: An ideal wire centerline is one-dimensional even in a 2D plane or 3D space; a finite material wire or slab has thickness and occupies 3D space.
+4. **Cubic category**: The account discusses independent principal views, without making facets evidence of deficient thought.
+5. **Integrated surface**: Continuous roundness is one artistic goal rather than the highest universal quality.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. In 3D work (physical or digital): be aware of whether you are thinking in "views" (cubic stage) or in "continuous volume" (round stage).
-2. When modelling a complex 3D form, check whether the transitions between "faces" are smooth continuations or visible seams/ridges (the latter indicates still operating at the cubic stage).
-3. The correct approach for fully three-dimensional forms: always model/conceive the surface as a continuous whole, not as a set of independent views.
+
+1. Choose whether the intended object is smooth, faceted, assembled or combines treatments.
+2. Inspect transitions from relevant views for the actual requirements.
+3. Use additive parts, box modelling, subdivision or other construction as appropriate; continuity is not mandatory.
 
 ## To Identify/Recognise:
-1. In any 3D representation (sculpture, 3D model, CSS 3D transforms), look for seam lines between views — these reveal cubic-stage thinking.
-2. In UI design: does the element have a front face only, or does it convey a continuous three-dimensional presence?
+
+1. Describe seams and facets as geometry, not a diagnosis of cognitive stage.
+2. Distinguish a volume from a transformed flat face and from a 2D rounded CSS box.
 
 # Context & Application
 
 - **Typical contexts**: Sculpture; 3D digital modelling; product design; physical UI components; CSS 3D effects.
-- **Common applications**: The same developmental sequence applies when a designer or developer first encounters 3D modelling software; CSS 3D transforms (rotateY, rotateX) reveal whether the designer has a continuous 3D mental model of the element.
+- **Common applications**: A modelling workflow may use primitive volumes and smoothing, or retain additive and low-poly structure. CSS rotateX/rotateY transform faces; they neither automatically construct a closed volume nor reveal a designer's cognitive stage. `border-radius` rounds a 2D box outline, not a 3D sphere.
 
 ## Cross-Domain Connections
 
-**Engineering → STRUCTURAL**: Box modelling in 3D software begins with a cube (cubic stage), then uses subdivision and smoothing to achieve organic roundness. The software workflow literally enacts the developmental sequence Arnheim describes: rectangular → subdivided → rounded.
+**Engineering → STRUCTURAL**: Box modelling followed by subdivision is one construction workflow; additive assemblies, faceted and low-poly models are also valid. Its similarity to the historical sequence is descriptive, not proof of a mandatory developmental ladder. CSS `border-radius: 50%` uses width and height to round a 2D box; a circle requires suitable equal used dimensions and does not become a sphere.
 
 # Examples
+
+The following are reported source examples and interpretations, with their original wording and locators retained for inspection. They are not independently checked historical, experimental or universal claims.
 
 **Example 1** (p. 417): Stick figures in Mycenaean and Geometric period bronzes — "The bodies of men and animals — legs, arms, snouts, tails, and horns — are made of stick-like units of roughly identical diameter."
 
@@ -104,24 +109,26 @@ A critical challenge at the cubic stage: the sculptor who completes one face and
 
 # Relationships
 
+These are scoped conceptual reading connections. Prerequisites support understanding rather than assert a universal developmental sequence; related links and contrasts specify comparisons, not causal or subtype laws. Unresolved ordinary comparisons below are not invented card identities.
+
 ## Builds Upon
-- **Law of differentiation** — The same developmental law operates in 3D.
-- **Vertical-horizontal framework** — Three orthogonal axes structure 3D space as two orthogonal axes structure 2D.
+- **Law of differentiation** — Differentiation supplies the historical construction account, not a necessary learning order.
+- **Vertical-horizontal framework** — Three orthogonal axes organize a 3D coordinate frame.
 
 ## Enables
-- **Full three-dimensional visual conception** — Mastery of all six spatial dimensions (three object dimensions × two spatial patterns) enables continuous volumetric thinking.
+- **Full three-dimensional visual conception** — Continuous volumetric conception concerns three spatial dimensions; multiplying object categories by pattern categories does not create six spatial dimensions.
 
 ## Related
-- **Canonical view** — The cubic stage chooses canonical views for each face; the round stage transcends single-view selection.
-- **Structural skeleton** — The skeleton in 3D includes all three dimensions of the form.
+- **Canonical view** — Principal views can be useful in both faceted and continuous construction.
+- **Structural skeleton** — A 3D skeleton can describe axes and relations in three dimensions.
 
 ## Contrasts With
-- **Two-dimensional representation** — Sculpture is not the same challenge as 2D representation, but it requires analogous developmental steps.
+- **Two-dimensional representation** — The actual two-dimensional-representation-of-three-dimensional-space comparison concerns depicting depth on a surface versus constructing in actual space; no shared developmental sequence is proved.
 
 # Common Errors
 
 - **Error**: Assuming that working in 3D media automatically produces three-dimensional visual thinking.
-  **Correction**: The sculptor (or 3D modeller) must develop the three-dimensional visual concept progressively — the medium provides the physical possibility but not the cognitive framework.
+  **Correction**: Inspect whether the actual construction communicates the intended shape. Material possibility alone does not establish the result, but neither does it prescribe a single progression.
 
 # Common Confusions
 
@@ -133,6 +140,8 @@ A critical challenge at the cubic stage: the sculptor who completes one face and
 Chapter IV: Growth, "Art and Visual Perception," pp. 401–489 (Birth of Form in Sculpture section and Sticks and Slabs, Cube and Round subsections).
 
 # Verification Notes
+
+The bullets below preserve historical extraction assertions, including confidence, cross-reference, OCR and source-reading claims; they are not current verification. Original-dependent fidelity remains unassessed. Current technical corrections and analogies establish neither a neural mechanism nor cultural universality or measured usability.
 
 - Definition source: Synthesised from pp. 401–489; key quote from p. 483.
 - Confidence rationale: Medium — the developmental stages are described clearly but the exact stage-by-stage sequence is reconstructed from scattered examples.

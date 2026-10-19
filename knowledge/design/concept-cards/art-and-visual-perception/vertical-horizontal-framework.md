@@ -27,21 +27,19 @@ related:
   - "perceptual-simplicity"
 contrasts_with:
   - "oblique-orientation"
-  - "undifferentiated-spatial-direction"
 answers_questions:
-  - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
 rosetta_stone:
   -
     domain: "mathematics"
     concept: "Cartesian coordinate system / basis vectors"
-    rating: "rigorous"
-    note: "The vertical-horizontal framework is the perceptual equivalent of the standard Cartesian basis: the two orthogonal reference directions (vertical, horizontal) that define all spatial relations in the visual field, just as x and y define all positions in 2D space."
+    rating: "structural"
+    note: "Chosen orthogonal axes can be represented by a Cartesian basis, but coordinates also require origin, units and orientation. The perceptual frame is not identical to a mathematical coordinate system and need not define every spatial relation."
   -
     domain: "engineering"
     concept: "Grid systems / CSS grid layout"
-    rating: "rigorous"
-    note: "The vertical-horizontal framework is literally implemented as the grid in layout systems: CSS Grid and Flexbox are built on orthogonal axes (block/inline, main/cross), encoding the perceptual primacy of vertical and horizontal directions in structural layout."
+    rating: "structural"
+    note: "Grid uses writing-mode-relative block/inline axes; Flexbox main/cross axes also depend on flex-direction. Their orthogonal layout machinery does not encode or prove neural primacy, semantic hierarchy or perceived stability."
 css_implementation:
   -
     property: "display: grid"
@@ -55,42 +53,46 @@ css_implementation:
 
 # Quick Definition
 
-The vertical-horizontal framework is the fundamental spatial reference system — the two orthogonal directions grounded by gravity — that underlies all visual organisation, from which all other directional relations are understood as deviations.
+The vertical-horizontal framework is a reference for orientation in Arnheim's account. Its axes can be image-based, environmental or related to body/gravity cues; these may conflict. It is not a requirement that all content be orthogonal or that every reference be drawn.
 
 # Core Definition
 
+This section presents the represented Arnheim account. Its quotations, page references and historical, clinical, cultural or experimental reports have not been checked against the unavailable original. The current analytic qualifications do not certify that fidelity.
+
 Arnheim identifies the vertical-horizontal framework as the first and most fundamental spatial differentiation in visual development and composition. The right angle between vertical and horizontal is "the simplest because it creates a symmetrical pattern, and it is the basis for the framework of vertical and horizontal, on which rests our entire conception of space." (p. 204)
 
-The primacy of these two directions is not merely cultural convention — it is grounded in:
+The represented explanation invokes the following bodily and experimental accounts. These reports remain unassessed here and do not establish a universal neural or cultural law:
 1. **Gravitational pull**: The direction of gravity defines the vertical; the horizontal is perpendicular to it. The felt experience of gravity is the foundation of the visual distinction between up/down.
-2. **Neural specialisation**: In the visual cortex of cats (and likely humans), distinct cell populations respond specifically to vertical and horizontal stimuli, with more cells dedicated to these cardinal directions than to oblique ones — suggesting evolutionary entrenchment.
-3. **Attneave's experiment**: When four lights arranged in a square have the diagonal pair flashing together, observers always perceive the motion as horizontal or vertical, never diagonal — cardinal directions dominate even in motion perception.
+2. **Neural specialisation**: In the visual cortex of cats (and likely humans), distinct cell populations respond specifically to vertical and horizontal stimuli, with a reported cardinal-direction preference. The extrapolation to humans and evolutionary interpretation are not established by this review.
+3. **Attneave's experiment**: When four lights arranged in a square have the diagonal pair flashing together, the represented result favors horizontal or vertical apparent motion under the reported setup; it does not establish what all observers see in every motion display.
 
 In composition: "The vertical-horizontal framework remains inherent in visual composition, just as the measured beat does in music. Even when no one shape embodies either direction explicitly, all the shapes that are present in a picture are perceived as deviations from them." (p. 224)
 
 # Prerequisites
 
-- **Law of differentiation** — The vertical-horizontal framework is the first spatial differentiation.
+- **Law of differentiation** — Supplies the historical model in which Arnheim places cardinal-direction distinctions, not a required curriculum.
 
 # Key Properties
 
-1. **Gravitationally grounded**: The vertical is defined by gravitational pull; this is not purely visual but involves kinesthetic and vestibular sensation.
-2. **Neurally privileged**: More cortical cells process cardinal directions than oblique ones.
-3. **Compositional baseline**: All shapes in a composition are perceived relative to vertical and horizontal, even when no explicit vertical or horizontal element is present.
-4. **Stability vs. dynamism**: Vertical and horizontal shapes appear stable; deviations (oblique shapes) appear dynamic precisely because of this reference framework.
-5. **Sequential development**: The right-angular framework is the first spatial structure mastered; obliqueness is understood only after the framework is established.
+1. **Reference selection**: Gravitational, visual and body cues can supply or compete as axes.
+2. **Reported physiology**: The cat-cortex account and human extrapolation remain unassessed.
+3. **Implicit baseline**: A page edge or environment can supply a reference without a drawn grid.
+4. **Contextual expression**: Aligned and oblique forms can each be calm or dynamic in the whole composition.
+5. **Historical development**: The reported right-angle/diamond tests do not establish a universal learning order.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Establish the vertical-horizontal framework explicitly in a composition (grid, alignment, major axis orientation) before introducing deviations.
-2. Use vertical and horizontal as the stable "tonic" of the composition; oblique elements as dynamic "dissonance" against it.
-3. Align the primary visual elements to the framework; let secondary elements deviate for expressive effect.
+
+1. Identify the relevant axes and task; an explicit grid is optional.
+2. Use aligned and oblique treatments as content and expression require.
+3. Assign priority with actual roles and cues, rather than require primary content orthogonal and secondary content oblique.
 
 ## To Identify/Recognise:
-1. In any visual composition, look for the dominant vertical and horizontal alignments — these define the framework.
-2. Notice oblique elements and assess whether they read as intentional deviations (dynamic, expressive) or as accidental misalignment (uncomfortable, unresolved).
-3. In early or undeveloped work, check whether the vertical-horizontal framework has been established before oblique elements are introduced.
+
+1. Identify local and environmental alignments.
+2. Check the purpose and usability of any diagonal elements.
+3. Do not infer undeveloped ability from a composition's axes or lack of a visible grid.
 
 # Context & Application
 
@@ -99,54 +101,60 @@ In composition: "The vertical-horizontal framework remains inherent in visual co
 
 ## Cross-Domain Connections
 
-**Mathematics → RIGOROUS**: The standard Cartesian coordinate system (x horizontal, y vertical, anchored at an origin) is the mathematical formalisation of exactly the framework Arnheim describes. All positions and directions in 2D space are defined relative to these two orthogonal reference axes. The perceptual framework and the mathematical framework are structurally identical.
+**Mathematics → STRUCTURAL**: A chosen orthogonal reference can be described with Cartesian basis vectors. A coordinate system additionally needs an origin, units and orientation; it is not a measured perceptual mechanism or proof that every composition uses those axes.
 
-**Engineering → RIGOROUS**: CSS Grid and Flexbox layout systems implement the vertical-horizontal framework as their foundational structure. The block axis (vertical) and inline axis (horizontal) of CSS correspond exactly to the two cardinal directions. Grid-based design systems (Bootstrap, Tailwind) encode perceptual precedent in software.
+**Engineering → STRUCTURAL**: CSS Grid block/inline axes follow writing mode. In Flexbox, row follows inline and column follows block; reverse directions also matter. In horizontal-tb, block is vertical and inline horizontal; in vertical-rl, block runs right-to-left and inline is vertical. Layout rules do not prove neural primacy or semantic priority.
 
 # Examples
 
-**Example 1** (p. 204): The right angle as the first spatial relation mastered in child drawing: "the first relation between directions to be acquired is the simplest one, that of the right angle." Children at 5 can copy a square; at 7, a diamond — because the diamond requires mastering oblique deviation from the framework.
+The following are reported source examples and interpretations, with their original wording and locators retained for inspection. They are not independently checked historical, experimental or universal claims.
+
+**Example 1** (p. 204): The right angle as the first spatial relation mastered in child drawing: "the first relation between directions to be acquired is the simplest one, that of the right angle." The reported ages 5 for a square and 7 for a diamond belong to the represented test account, not universal thresholds or a current causal result.
 
 **Example 2** (p. 224): "Piet Mondrian in his late paintings reduced his conception of the world to the dynamic relation between the vertical as the dimension of aspiration and the horizontal as the stable base" — the pure expression of the framework as content.
 
-**Example 3** (p. 210): Attneave's experiment: four lights in a square arrangement, with the diagonal pair flashing alternately — observers see horizontal or vertical apparent motion, never diagonal. The perceptual preference for cardinal directions operates even at the level of motion perception.
+**Example 3** (p. 210): Attneave's experiment: four lights in a square arrangement, with the diagonal pair flashing alternately — the represented observers report horizontal or vertical apparent motion in that setup. Conditions and generality remain unassessed.
 
 # Relationships
 
+These are scoped conceptual reading connections. Prerequisites support understanding rather than assert a universal developmental sequence; related links and contrasts specify comparisons, not causal or subtype laws. Unresolved ordinary comparisons below are not invented card identities.
+
 ## Builds Upon
-- **Law of differentiation** — The vertical-horizontal framework is the first spatial differentiation, coming before obliqueness.
+- **Law of differentiation** — The differentiation account locates the reference historically, not as a universal sequence.
 
 ## Enables
-- **Obliqueness as visual dynamism** — Oblique forms are meaningful as deviations only because the framework provides the reference.
-- **Visual hierarchy** — Vertical (importance axis) and horizontal (reading axis) structure visual hierarchy.
-- **Grid systems** — The layout grid is a formalisation of the framework.
+- **Obliqueness as visual dynamism** — Oblique orientation is defined relative to an explicit or implicit frame.
+- **Visual hierarchy** — Alignment and placement can contribute to priority or reading order; vertical does not inherently mean importance, nor horizontal a universal reading axis.
+- **Grid systems** — Grids supply explicit layout references without proving perceptual primacy.
 
 ## Related
-- **Structural skeleton** — The skeleton of most shapes is anchored to vertical and horizontal axes.
-- **Spatial orientation of form** — Orientation is defined relative to the vertical-horizontal framework.
+- **Structural skeleton** — Shape axes may align with or depart from the frame; a circle has no unique dominant axis.
+- **Spatial orientation of form** — Image, environmental and body references help interpret orientation.
 
 ## Contrasts With
-- **Oblique orientation** — Dynamism, instability, or movement derive from deviation from the framework.
-- **Undifferentiated spatial direction** — The earliest stage before the framework is established; all directions treated equally.
+- **Oblique orientation** — The actual oblique-orientation comparison concerns departures from chosen axes; neighboring unrepaired force and angle claims are not adopted.
+- **Undifferentiated spatial direction** — Undifferentiated directions are an ordinary comparison in the historical account, not a diagnosis of a user or artist.
 
 # Common Errors
 
 - **Error**: Treating the vertical-horizontal framework as a cultural convention that can be freely abandoned.
-  **Correction**: The framework is grounded in gravity, neural organisation, and developmental precedence. Abandoning it entirely in a composition removes the reference system that makes all other spatial relations legible.
+  **Correction**: Identify the actual visual, environmental and body references. The reported neural/developmental accounts do not require every composition to draw or prioritize a cardinal framework.
 
 - **Error**: Aligning everything to 45° to create "dynamism."
-  **Correction**: True visual dynamism requires a vertical-horizontal baseline against which the oblique deviation registers. A composition entirely at 45° has replaced one static framework with another; it is not more dynamic, just differently oriented.
+  **Correction**: A 45° composition can relate to a page edge or environment, or establish local axes. Its expressive effect depends on the forms and context, not a universal rule that rotated frameworks are static.
 
 # Common Confusions
 
 - **Confusion**: Vertical = important/dominant, horizontal = passive/secondary.
-  **Clarification**: Both directions are equally fundamental; their *expressive* characters differ (vertical: aspiration, gravity; horizontal: rest, base), but neither dominates structurally.
+  **Clarification**: The represented expressive comparison associates vertical with aspiration/gravity and horizontal with rest/base. These are contextual interpretations, not universal meanings or inherent priority.
 
 # Source Reference
 
 Chapter IV: Growth, "Art and Visual Perception," pp. 204–228 (straight lines and obliqueness sections).
 
 # Verification Notes
+
+The bullets below preserve historical extraction assertions, including confidence, cross-reference, OCR and source-reading claims; they are not current verification. Original-dependent fidelity remains unassessed. Current technical corrections and analogies establish neither a neural mechanism nor cultural universality or measured usability.
 
 - Definition source: Synthesised from pp. 204–228; direct quotes from pp. 204, 224.
 - Confidence rationale: High — explicit, extended discussion with neural evidence and developmental argument.

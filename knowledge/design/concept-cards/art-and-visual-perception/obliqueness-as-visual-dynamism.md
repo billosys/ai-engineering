@@ -24,19 +24,15 @@ extends: []
 related:
   - "spatial-orientation-of-form"
   - "structural-skeleton"
-  - "design-principles"
-contrasts_with:
-  - "static-form"
-  - "undifferentiated-direction"
-answers_questions:
-  - "What are the gestalt principles of perceptual grouping, and how does each one work?"
-  - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
+  - "visual-rhythm"
+contrasts_with: []
+answers_questions: []
 rosetta_stone:
   -
     domain: "music"
     concept: "Tension-resolution (dissonance and resolution)"
     rating: "structural"
-    note: "Oblique directions in composition create visual tension (deviation from the stable vertical-horizontal tonic) in the same way a dissonant interval in music creates harmonic tension — the tension resolves when oblique movement returns to or resolves against the stable framework."
+    note: "A chosen tonal reference and a chosen visual axis can each support departure/return descriptions. Musical dissonance, stylistic resolution and visual obliqueness have different conditions; no force, urgency or angle-response law transfers between them."
 css_implementation:
   -
     property: "transform"
@@ -50,90 +46,98 @@ css_implementation:
 
 # Quick Definition
 
-Obliqueness is the visual property of diagonal orientation — deviation from the vertical-horizontal framework — that introduces visual dynamism, directionality, and the sense of movement or instability into composition precisely because it is perceived as a deviation from the stable baseline.
+Obliqueness is orientation away from a specified vertical-horizontal reference. Arnheim interprets such deviation as potentially dynamic; the expressive reading depends on the form, frame and context, not a calibrated angle-to-force law.
 
 # Core Definition
 
-Arnheim describes obliqueness as a stage of visual development that must follow the mastery of the vertical-horizontal framework: "The deliberate use of obliqueness must be carefully distinguished from the random distribution of spatial directions in the earliest work. We are now concerned with a controlled enrichment of the vertical-horizontal framework." (p. 228)
+This section presents the represented Arnheim account. Its quotations, page references and historical, clinical, cultural or experimental reports have not been checked against the unavailable original. The current analytic qualifications do not certify that fidelity.
 
-Obliqueness is always perceived as *deviation* — it derives its meaning from the vertical-horizontal framework against which it is measured. "Obliqueness is always perceived as a deviation, hence its strongly dynamic character. It introduces into the visual medium the vital difference between static and dynamic shapes, still undifferentiated in the earlier phase." (p. 228)
+Arnheim describes obliqueness within his historical account of visual development: "The deliberate use of obliqueness must be carefully distinguished from the random distribution of spatial directions in the earliest work. We are now concerned with a controlled enrichment of the vertical-horizontal framework." (p. 228)
+
+In this account, obliqueness is read as *deviation* from a reference, which can be implicit, environmental or image-based. "Obliqueness is always perceived as a deviation, hence its strongly dynamic character. It introduces into the visual medium the vital difference between static and dynamic shapes, still undifferentiated in the earlier phase." (p. 228)
 
 Key principles:
-- **The framework must be established first**: Obliqueness only becomes meaningful and controllable once the vertical-horizontal framework is securely established as the reference.
-- **Dynamism through deviation**: An oblique line or shape carries a vector force — it implies movement or instability in the direction of the deviation.
-- **Context of motion**: "Motion is of such vital importance to the child that he derives great pleasure from making things visibly move in his pictures" — obliqueness is the primary visual device for representing motion and life in static media.
-- **Double reading**: In perspective representation, oblique lines serve double duty — they represent both directional deviation (dynamism) and depth recession (foreshortening).
+- **Specify a reference**: A direction is oblique relative to chosen axes; they need not be explicitly drawn or newly learned.
+- **Dynamism through deviation**: An oblique line may suggest direction or instability; the "force" description is expressive, not a physical vector measurement.
+- **Context of motion**: "Motion is of such vital importance to the child that he derives great pleasure from making things visibly move in his pictures" — a reported developmental interpretation, not proof that obliqueness is necessary or primary for every static depiction of motion.
+- **Double reading**: In some perspective depictions an oblique line can suggest depth recession as well as direction. A diagonal in the image plane need not indicate depth.
 
 # Prerequisites
 
-- **Vertical-horizontal framework** — Obliqueness is defined as deviation from this framework; it is meaningless without the reference.
-- **Law of differentiation** — Obliqueness is a later, more complex differentiation from the simpler right-angle framework.
+- **Vertical-horizontal framework** — Supplies the reference for discussing diagonal deviation; the frame may be implicit.
+- **Law of differentiation** — Supplies the historical context, not a mandatory developmental dependency.
 
 # Key Properties
 
-1. **Deviation-dependent meaning**: Oblique forms mean "dynamic" only against the vertical-horizontal reference; without the reference, all directions would be equally neutral.
-2. **Vector quality**: Oblique shapes imply a directional force or tendency; they lean toward or away from an implied stable axis.
-3. **Animate suggestion**: Obliqueness suggests motion, growth, instability, or life in ways that horizontal and vertical do not.
-4. **Graduated complexity**: Oblique angles range from slight deviations (gentle dynamism) to extreme ones (violent dynamism or instability).
-5. **Bidirectional**: An oblique shape that leans left has different dynamics from one that leans right — the direction of the deviation carries meaning.
+1. **Frame-relative**: Name the image, environmental or local axes.
+2. **Expressive direction**: A tilt can suggest a tendency without a physical force.
+3. **Contextual motion reading**: Obliqueness can suggest movement; upright and horizontal forms can also do so.
+4. **No monotonic angle law**: Increasing the angle approaches another axis; greater deviation does not necessarily mean greater intensity.
+5. **Directional differences**: Left/right tilts may read differently with content and culture, without a universal meaning.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Establish the vertical-horizontal framework before introducing oblique elements.
-2. Use oblique directions to express motion, growth, tension, or dynamism.
-3. Control the degree of obliqueness to modulate intensity of visual tension.
-4. Balance oblique elements against vertical-horizontal anchors to create resolved tension rather than visual chaos.
-5. Use opposite obliques to create counter-tension or visual balance (two forces cancelling each other).
+
+1. Identify the reference frame, including implicit surroundings.
+2. Compare diagonal and aligned candidates for the actual content.
+3. Assess any expressive reading in context rather than compute intensity from angle.
+4. Use anchors or competing directions where they serve the composition.
+5. Opposite obliques can balance a pattern without numerically cancelling perceptual forces.
 
 ## To Identify/Recognise:
-1. Find the dominant vertical-horizontal reference in a composition.
-2. Identify oblique elements and measure their deviation from the reference.
-3. Assess whether the obliqueness is intentional (controlled deviation creating meaning) or accidental (misalignment creating visual discomfort).
-4. Notice where obliqueness creates movement vectors and whether those vectors are resolved or left open.
+
+1. Identify the reference against which a direction is diagonal.
+2. Describe its actual angle and neighboring forms.
+3. Check task, alignment and intended expression without inferring intent from tilt alone.
+4. Inspect the resulting pattern rather than claim calibrated movement vectors.
 
 # Context & Application
 
 - **Typical contexts**: Graphic design (diagonal compositions); typography (italic type); illustration (dynamic figure drawing); photography (Dutch tilt); web design (angled dividers, diagonal layouts).
-- **Common applications**: Italic type is the typographic embodiment of controlled obliqueness — the upright roman is the stable baseline, italic is its dynamic variant. Diagonal dividers in web layouts activate visual energy. An angled photograph implies action or urgency.
+- **Common applications**: Italic designs may change letter construction as well as slant; a synthetic oblique is different. Diagonal dividers or angled photographs can suggest energy, but urgency and successful communication require context.
 
 ## Cross-Domain Connections
 
-**Music → STRUCTURAL**: In tonal music, dissonant intervals create harmonic tension that seeks resolution. Oblique directions in composition work the same way: they create visual tension (departure from stable orthogonal reference) that seeks resolution (return to vertical/horizontal or counter-balanced by opposing obliques). Unresolved obliqueness = unresolved dissonance = visual unease.
+**Music → STRUCTURAL**: Departure from a chosen visual reference can be compared with departure and return in a specified tonal passage. Dissonance and resolution depend on musical context; neither unresolved obliqueness nor a musical interval universally causes unease.
 
 # Examples
+
+The following are reported source examples and interpretations, with their original wording and locators retained for inspection. They are not independently checked historical, experimental or universal claims.
 
 **Example 1** (p. 228): "Obliqueness is always perceived as a deviation, hence its strongly dynamic character. It introduces into the visual medium the vital difference between static and dynamic shapes."
 
 **Example 2** (pp. 238-239): Comparing two drawings by the same child at one-year intervals: the later tree with consistent oblique angles "looks more like a tree, and the constant application of oblique angles conveys the impression of a live, growing thing."
 
-**Example 3** (p. 228): A square tilted 45° to become a diamond "acquires a name of its own... a pointed, more dynamic, less stably rooted thing" (discussed in Ch. III) — the oblique orientation transforms stability into dynamism.
+**Example 3** (p. 228): A square tilted 45° to become a diamond "acquires a name of its own... a pointed, more dynamic, less stably rooted thing" (discussed in Ch. III) — Arnheim's reported contextual reading. The intrinsic square geometry remains square; a 90° rotation maps its occupied geometry onto itself.
 
 # Relationships
 
+These are scoped conceptual reading connections. Prerequisites support understanding rather than assert a universal developmental sequence; related links and contrasts specify comparisons, not causal or subtype laws. Unresolved ordinary comparisons below are not invented card identities.
+
 ## Builds Upon
-- **Vertical-horizontal framework** — Obliqueness has no meaning without the stable framework it deviates from.
-- **Law of differentiation** — Oblique directions are a later differentiation from the right-angle framework.
+- **Vertical-horizontal framework** — A specified reference makes the oblique comparison intelligible; an explicit grid is unnecessary.
+- **Law of differentiation** — The historical account locates obliqueness among differentiated directional choices.
 
 ## Enables
-- **Visual representation of motion** — In static media, obliqueness is the primary means of implying movement.
-- **Visual tension in composition** — Oblique elements create the tension that more complex compositional strategies then resolve or intensify.
+- **Visual representation of motion** — Obliqueness is one option for suggesting motion, not a universal primary means.
+- **Visual tension in composition** — Diagonal elements can contribute to expressive tension, with no measured force implied.
 
 ## Related
-- **Spatial orientation of form** — Oblique orientation is one specific case of spatial orientation that produces a new structural skeleton.
-- **Design principles (rhythm)** — Alternating oblique and orthogonal elements creates visual rhythm.
+- **Spatial orientation of form** — Orientation changes can shift a contextual reading without changing intrinsic shape.
+- **Design principles (rhythm)** — The actual visual-rhythm comparison is alternating diagonal and aligned elements as a recurring pattern, not a gaze-path or tempo law.
 
 ## Contrasts With
-- **Static form** — Vertical and horizontal elements feel stable and at rest; oblique elements feel dynamic and in motion.
-- **Random direction** — Early undifferentiated work uses random directions before the right-angle framework is mastered; this is not the same as controlled obliqueness.
+- **Static form** — A conceptual static/dynamic comparison depends on the whole composition.
+- **Random direction** — Controlled and accidental directional patterns can differ; neither establishes a universal developmental sequence.
 
 # Common Errors
 
 - **Error**: Using oblique elements before establishing a clear vertical-horizontal framework.
-  **Correction**: Obliqueness only creates meaningful dynamism against a stable reference. Without the framework, oblique elements read as disorder, not dynamism.
+  **Correction**: Identify the relevant frame; it may be implicit in the page, environment or body. Not drawing an axis does not make a diagonal disordered.
 
 - **Error**: Assuming all oblique angles are equivalent.
-  **Correction**: The direction and degree of obliqueness both carry meaning — a slight rightward lean differs expressively from a steep leftward lean.
+  **Correction**: Direction and angle can affect a reading in context; compare a slight rightward lean and a steep leftward lean without assuming fixed meanings or a monotonic tension scale.
 
 # Common Confusions
 
@@ -145,6 +149,8 @@ Key principles:
 Chapter IV: Growth, "Art and Visual Perception," pp. 226–245 (Obliqueness section).
 
 # Verification Notes
+
+The bullets below preserve historical extraction assertions, including confidence, cross-reference, OCR and source-reading claims; they are not current verification. Original-dependent fidelity remains unassessed. Current technical corrections and analogies establish neither a neural mechanism nor cultural universality or measured usability.
 
 - Definition source: Direct quotes from pp. 228; synthesised from surrounding discussion.
 - Confidence rationale: High — Arnheim states the principles explicitly and illustrates with developmental examples.

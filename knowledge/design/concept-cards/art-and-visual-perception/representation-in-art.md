@@ -25,11 +25,8 @@ related:
   - "canonical-view"
   - "picture-plane-projection"
   - "medium-specificity-of-form"
-contrasts_with:
-  - "illusionistic-replication"
-  - "mechanical-projection"
+contrasts_with: []
 answers_questions:
-  - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
 rosetta_stone: []
 css_implementation: []
@@ -37,13 +34,15 @@ css_implementation: []
 
 # Quick Definition
 
-Representation in art is not the mechanical replication of an object's optical projection but the invention of a visual equivalent — rendered in the properties of a particular medium — of what is observed in the object's structural essentials.
+Arnheim interprets representation as finding a visual equivalent in a medium for selected essentials of a subject. This is one useful lens; optical likeness, exact appearance or a supplied identity may also be required by the task.
 
 # Core Definition
 
+This section presents the represented Arnheim account. Its quotations, page references and historical, clinical, cultural or experimental reports have not been checked against the unavailable original. The current analytic qualifications do not certify that fidelity.
+
 Arnheim's central thesis about representation: "image-making, artistic or otherwise, does not simply derive from the optical projection of the object represented, but is an equivalent, rendered with the properties of a particular medium, of what is observed in the object." (p. 68)
 
-Representation is a translation, not a copy. It involves finding, in a given medium, the structural equivalent of the visual concept of the object. The visual concept is itself not bound to any single viewpoint or projection — it is a comprehensive, all-around mental construct built from many observations. Any representation must select from and translate this concept into the constraints of the medium.
+In this account representation is a translation; copying and optical recording can also serve representational purposes. It involves finding, in a given medium, the structural equivalent of the visual concept of the object. The visual concept is itself not bound to any single viewpoint or projection — it is a comprehensive, all-around mental construct built from many observations. A representation selects what to show under its purpose and medium; the all-around mental construct is the represented theory, not a formal or measured universal mechanism.
 
 Arnheim distinguishes this from the "illusionistic doctrine" — the naive-realist view (attributed to both popular perception and some historical theory) that a picture aims at a deceitful illusion and any deviation from mechanical correctness is a failure or distortion.
 
@@ -53,23 +52,25 @@ Arnheim distinguishes this from the "illusionistic doctrine" — the naive-reali
 
 # Key Properties
 
-1. **Translation, not copying**: Every representation introduces changes dictated by the medium (a line drawing reduces an object to its contour, which doesn't exist in nature as a line).
-2. **Structural equivalence**: What must be preserved is the structural skeleton of the visual concept — dominant axes, symmetry, characteristic proportions — not optical accuracy.
-3. **Medium-dependence**: The correct representational form for a given subject differs by medium (pencil outline vs. brush patch vs. clay volume vs. dance movement).
-4. **Style-relativity of lifelikeness**: Whether a representation "looks real" is judged not against physical reality but against the prevailing norm level of pictorial representation in the observer's cultural context (Helson's adaptation level).
+1. **Selected rendering**: A line drawing can emphasize a contour while photography records other properties.
+2. **Task-relevant preservation**: Axes, proportions and optical accuracy can each matter.
+3. **Medium affordances**: Pencil, brush, clay and dance offer possibilities, not one prescribed form.
+4. **Familiarity and evidence**: Style familiarity can influence lifelikeness; physical accuracy, recognition and task performance remain distinct checks.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Form a visual concept of the subject (comprehensive, not bound to one viewpoint).
-2. Identify the structural essentials that must be communicated.
-3. Find, within the medium's constraints, the pattern that best serves as a structural equivalent of those essentials.
-4. Do not simply copy optical projection — invent the medium-appropriate form.
+
+1. Identify the subject, audience and required information.
+2. Choose structural, optical and identity properties that must be retained.
+3. Select a medium and treatment that can communicate them.
+4. Compare invention, adaptation and faithful copying against the actual purpose.
 
 ## To Identify/Recognise:
-1. Ask: does this image communicate the structural essentials of its subject?
-2. Evaluate against the style's norm level, not against photographic accuracy.
-3. Distinguish between artistic/representational representation (seeks structural equivalence) and mechanical reproduction (seeks optical accuracy).
+
+1. Ask what the image must communicate.
+2. Check structural relations and any required exact appearance with the intended audience.
+3. Compare photographs, diagrams and other renderings by their task rather than divide all into successful art and mechanical reproduction.
 
 # Context & Application
 
@@ -78,29 +79,33 @@ Arnheim distinguishes this from the "illusionistic doctrine" — the naive-reali
 
 # Examples
 
+The following are reported source examples and interpretations, with their original wording and locators retained for inspection. They are not independently checked historical, experimental or universal claims.
+
 **Example 1** (p. 68): Dürer's rabbit is not identical to any rabbit anyone has ever seen, yet it fully represents "rabbit." It is a translation into the medium of pen-and-ink of the structural essentials of the visual concept of a rabbit.
 
-**Example 2** (p. 76 / Egyptian method): The Egyptians chose for each part of the body the aspect that most characteristically displayed its structural skeleton — front view of the eye in a profile face. This is not distortion or incompetence; it is the selection of the structurally optimal aspect for each part.
+**Example 2** (p. 76 / Egyptian method): The Egyptians chose for each part of the body the aspect that most characteristically displayed its structural skeleton — front view of the eye in a profile face. This is not distortion or incompetence; Arnheim interprets it as selecting informative aspects; this does not establish one optimal aspect for every task.
 
-**Example 3** (p. 77): Central perspective "makes things look right by doing them wrong" — it distorts objective shape (a square table becomes a trapezoidal projection) but produces a convincing representation because the constancy mechanism corrects the projection in perception. The "Egyptian method" makes things "be what they suggest," directly rendering structure as structure.
+**Example 3** (p. 77): Central perspective "makes things look right by doing them wrong" — it distorts objective shape (a square table becomes a trapezoidal projection) but produces a convincing representation in the represented constancy account, without guaranteeing that a viewer recovers exact geometry. The "Egyptian method" makes things "be what they suggest," directly rendering structure as structure.
 
 # Relationships
 
+These are scoped conceptual reading connections. Prerequisites support understanding rather than assert a universal developmental sequence; related links and contrasts specify comparisons, not causal or subtype laws. Unresolved ordinary comparisons below are not invented card identities.
+
 ## Builds Upon
-- **Form vs. shape** — Representation is the act of creating form for content in a medium.
-- **Structural skeleton** — Good representation preserves the structural skeleton of the visual concept.
+- **Form vs. shape** — The semantic form/shape distinction helps frame what is communicated.
+- **Structural skeleton** — Axes and characteristic relations can be relevant without exhausting success criteria.
 
 ## Enables
-- **Canonical view** — Knowing which aspect best represents an object's structure requires understanding representational goals.
-- **Medium specificity of form** — Different media require different representational translations.
+- **Canonical view** — Goals determine which aspect to show.
+- **Medium specificity of form** — Affordances can motivate changes of form, while appropriate reuse remains possible.
 
 ## Related
-- **Foreshortening** — A specific challenge in 2D representation of 3D volumes.
-- **Overlapping** — A representational device for indicating depth and spatial relations.
+- **Foreshortening** — Depth rotation is one representational challenge.
+- **Overlapping** — Occlusion can cue layers without a physical 3D source.
 
 ## Contrasts With
-- **Illusionistic replication** — The doctrine that art aims at deceitful illusion and mechanical projection is the gold standard.
-- **Mechanical projection** — The camera records optical projections; representation selects and translates structural essentials.
+- **Illusionistic replication** — The illusionistic doctrine is a reported exclusive standard, not a reason to reject optical accuracy when needed.
+- **Mechanical projection** — A camera view also selects framing and conditions; optical recording and structural explanation can coexist.
 
 # Common Errors
 
@@ -120,6 +125,8 @@ Arnheim distinguishes this from the "illusionistic doctrine" — the naive-reali
 Chapter III: Form, "Art and Visual Perception," pp. 65–107 (entire chapter).
 
 # Verification Notes
+
+The bullets below preserve historical extraction assertions, including confidence, cross-reference, OCR and source-reading claims; they are not current verification. Original-dependent fidelity remains unassessed. Current technical corrections and analogies establish neither a neural mechanism nor cultural universality or measured usability.
 
 - Definition source: Direct quotation from p. 68; synthesised from discussion throughout Ch. III.
 - Confidence rationale: High — this is the central thesis of the chapter, stated explicitly and argued at length.

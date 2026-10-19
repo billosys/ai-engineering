@@ -24,10 +24,8 @@ extends: []
 related:
   - "foreshortening"
   - "canonical-view"
-  - "design-principles"
-contrasts_with:
-  - "side-by-side-arrangement"
-  - "depth-stratification"
+  - "perceptual-grouping-similarity"
+contrasts_with: []
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How does the relationship between inter-group and intra-group spacing communicate which elements belong together (gestalt proximity)?"
@@ -35,13 +33,13 @@ rosetta_stone:
   -
     domain: "engineering"
     concept: "CSS z-index / stacking contexts"
-    rating: "rigorous"
-    note: "CSS z-index implements overlapping depth order exactly: higher z-index elements appear in front of lower ones, creating the same dominator-subservient hierarchy Arnheim describes in pictorial overlapping."
+    rating: "structural"
+    note: "CSS stacking contexts order atomic paint groups. A descendant with a large z-index cannot escape its ancestor's context to outrank another context. Paint order may contribute to occlusion but is not semantic priority or a calibrated perceived distance."
   -
     domain: "music"
     concept: "Harmonic counterpoint (two voices sharing a compositional space)"
     rating: "structural"
-    note: "Arnheim draws the music analogy directly: 'in music the effect of harmony or disharmony is similarly more compelling when several tones are combined in one chord rather than played in succession' — overlapping intensifies formal relations the way chords intensify harmonic relations."
+    note: "The quoted chord comparison is attributed to Arnheim. Simultaneous and successive presentation organize relations differently, without a universal law that chords or overlapping visuals are more intense."
 css_implementation:
   -
     property: "z-index"
@@ -55,63 +53,68 @@ css_implementation:
 
 # Quick Definition
 
-Overlapping (superposition) is the perceptual condition in which one visual form partly conceals another, establishing that the concealing form is nearer and creating a dominance-subservience hierarchy while simultaneously intensifying the formal relationship between the overlapping elements.
+Occluding overlap occurs when one form hides part of another and can cue foreground/background order. Authored overlap need not originate in a physical 3D scene, and depth order does not by itself determine semantic importance.
 
 # Core Definition
 
-Arnheim analyses overlapping as a perceptual and compositional device with two conditions for it to function correctly:
+This section presents the represented Arnheim account. Its quotations, page references and historical, clinical, cultural or experimental reports have not been checked against the unavailable original. The current analytic qualifications do not certify that fidelity.
+
+Arnheim analyses overlapping as a perceptual and compositional device using the following reported conditions for the opaque occlusion reading:
 
 "A requirement for the adequate perception of overlap — or superposition — is that the units which, because of projection, touch each other in the same plane must be seen as: (a) separate from each other and (b) belonging to different planes." (p. 238)
 
 Two additional principles govern when overlapping is perceived:
-1. **Incompleteness cue**: The rear element must look *incomplete* — its outline truncated or hidden — for the observer to perceive that the front element is in front of it. If both elements look complete, they are seen as side-by-side, not overlapping.
+1. **Incompleteness cue**: The rear element must look *incomplete* — its outline truncated or hidden — for the observer to perceive that the front element is in front of it. If both look complete, an occlusion interpretation may be weaker or ambiguous; transparent overlap can preserve both outlines.
 2. **Simplicity principle applies**: When two overlapping units together form a particularly simple overall shape, they may be seen as one object rather than two.
 
 Overlapping serves multiple functions in composition:
-- **Depth indication**: The dominating unit is in front; the subservient unit is behind.
+- **Depth indication**: In the opaque reading, the concealing unit is in front; this need not signal priority.
 - **Formal intensification**: "Overlapping intensifies the formal relation by concentrating it within a more tightly integrated pattern. The connection is not only closer but also more dynamic."
 - **Hierarchical establishment**: "Overlapping establishes a hierarchy by creating a distinction between dominating and subservient units."
 - **Spatial symmetry**: Overlapping can show spatial arrangements (groups of three symmetrical to a figure in the scene) that would be impossible to show clearly in a flat arrangement.
 
 # Prerequisites
 
-- **Picture plane projection** — Overlapping is a consequence of projecting 3D scenes onto 2D surfaces.
-- **Structural skeleton** — The incomplete rear element must still suggest the correct completion (its structural skeleton) for the overlap to be understood correctly.
+- **Picture plane projection** — Supplies a context for discussing depth on a plane; authored overlap need not depict a physical 3D scene.
+- **Structural skeleton** — Axes and contours can help an observer infer a partly hidden form, without uniquely determining it.
 
 # Key Properties
 
-1. **Incompleteness signal**: The overlapped (rear) unit must be visibly truncated/incomplete for overlap to register.
-2. **One-sided dominance**: The front element is unimpaired; the rear element bears the costs of being hidden.
-3. **Hierarchy**: Every overlap creates a foreground/background distinction — a scale of importance.
-4. **Intensity function**: Overlapping makes formal relationships (parallel directions, contrasting shapes) more vivid than side-by-side placement.
-5. **Completion constraint**: The hidden portion must suggest the correct structural completion; wrong completion produces visual misreading.
+1. **Occlusion cue**: A truncated contour can support a rear-object interpretation.
+2. **Asymmetry**: In opaque overlap one form can hide another; transparent treatments differ.
+3. **Depth versus priority**: Foreground/background order is distinct from importance.
+4. **Compositional relation**: Overlap can change the relation of forms without always intensifying it.
+5. **Completion**: Hidden portions may admit more than one interpretation.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. To show A in front of B: make B visibly incomplete (truncated by A's boundary).
-2. Ensure B's truncated portion suggests the correct structural completion (the observer should be able to infer what B's hidden portion looks like).
-3. Avoid having A and B together form a too-simple combined shape (this will collapse them into one object).
-4. Use overlapping to intensify formal relationships (parallels, contrasts) between elements.
+
+1. If opaque occlusion is intended, use a contour interruption that suggests which form is in front.
+2. Check whether hidden portions remain understandable enough for the task; several completions may be possible.
+3. Inspect whether a combined outline reads as one form or several; either can be intended.
+4. Compare overlap with separation, transparency or blending for the actual content.
 
 ## To Identify/Recognise:
 1. Find elements that touch or intersect — check whether one appears incomplete.
 2. If the rear element appears incomplete and the front element unimpaired: overlapping is functioning.
-3. If both elements appear complete: they are likely read as side-by-side (same plane) despite touching.
-4. Z-index in CSS creates exactly this structure; the stacking context hierarchy is the technical equivalent.
+3. If both outlines remain complete, compare side-by-side and transparent-overlap readings in context.
+4. CSS paint order can create occlusion. Nested stacking contexts are atomic groups; local z-index values are not global depth values.
 
 # Context & Application
 
 - **Typical contexts**: All 2D composition; CSS layering (z-index, position); card UI patterns; photo collages; data visualisation (overlapping bars or lines).
-- **Common applications**: Modal dialogs over backgrounds (z-index establishes the hierarchy); overlapping card components; data charts where series overlap; drop shadows creating the perception of layering without actual occlusion.
+- **Common applications**: Modal dialogs over backgrounds (scoped paint order contributes to layering; semantic priority and widget behavior need their own design); overlapping card components; data charts where series overlap; drop shadows creating the perception of layering without actual occlusion.
 
 ## Cross-Domain Connections
 
-**Engineering → RIGOROUS**: CSS z-index is the direct technical implementation of overlapping depth order. Stacking contexts in CSS define which elements can be "in front of" which, and the rendering order follows the same visual logic Arnheim describes: higher z-index = dominating (in front); lower = subservient (behind).
+**Engineering → STRUCTURAL**: A stacking context is an atomic paint group within its parent. A child with z-index:999 remains below a sibling context at z-index:2 if its own context is below that sibling. Paint order can yield occlusion but supplies neither a semantic importance scale nor perceived distance.
 
-**Music → STRUCTURAL**: Arnheim draws this analogy directly: overlapping in visual composition is to side-by-side arrangement as chord to arpeggio — the simultaneous presence intensifies the relationship. A design element that overlaps another has a more intimate formal relationship with it than one placed beside it.
+**Music → STRUCTURAL**: Arnheim compares simultaneous overlap with simultaneous tones in a chord, versus successive tones. This is an attributed compositional analogy, not a universal chord-intensity or visual-intimacy law.
 
 # Examples
+
+The following are reported source examples and interpretations, with their original wording and locators retained for inspection. They are not independently checked historical, experimental or universal claims.
 
 **Example 1** (pp. 238–240): Arnheim's Picasso figures (Fig. 92): in version (a), the breast renders the arm clearly incomplete — overlap is perceived. In version (b), both elements are complete — they read as ambiguously side-by-side.
 
@@ -121,38 +124,42 @@ Overlapping serves multiple functions in composition:
 
 # Relationships
 
+These are scoped conceptual reading connections. Prerequisites support understanding rather than assert a universal developmental sequence; related links and contrasts specify comparisons, not causal or subtype laws. Unresolved ordinary comparisons below are not invented card identities.
+
 ## Builds Upon
-- **Picture plane projection** — Overlapping is a consequence of 3D projection onto 2D.
+- **Picture plane projection** — Projection is one context for planar depth cues; occlusion needs separate visibility conditions.
 
 ## Enables
-- **Depth in pictorial composition** — Overlapping is one of the primary pictorial depth cues.
-- **Visual hierarchy in layout** — Layer/z-index hierarchy in interfaces is overlapping applied to UI composition.
+- **Depth in pictorial composition** — It is a useful pictorial depth cue without being necessary in every image.
+- **Visual hierarchy in layout** — Layering can serve UI hierarchy when purpose supports it; paint order alone does not define priority.
 
 ## Related
-- **Foreshortening** — Both deal with projective effects when 3D is represented in 2D; often co-occur.
-- **Gestalt proximity** — Elements that overlap are in the most intense spatial relationship; this grouping effect is stronger than mere proximity.
+- **Foreshortening** — Contraction and occlusion can co-occur while remaining separate cues.
+- **Gestalt proximity** — The actual perceptual-grouping-similarity premise treats proximity as a location-based grouping cue. Compare spacing and overlap with shape, similarity and context; overlap does not always outweigh proximity.
 
 ## Contrasts With
-- **Side-by-side arrangement** — Spatially adjacent but in the same plane; less intense formal relation, no depth hierarchy.
+- **Side-by-side arrangement** — Side-by-side forms can retain strong relations through alignment, spacing or similarity; the comparison is not a universal intensity ranking.
 
 # Common Errors
 
 - **Error**: Making overlapping elements both complete (e.g., a semi-transparent front element that doesn't occlude the rear element's outline).
-  **Correction**: For overlap to register perceptually, the rear element must be visibly incomplete/truncated. Transparent overlaps are blend modes, not overlapping in Arnheim's sense.
+  **Correction**: For the opaque-occlusion reading discussed here, truncation is useful. Transparent overlap is legitimate: alpha compositing combines partially transparent surfaces, while blend modes specify color combination and can also apply to opaque painted content. They are distinct operations.
 
 - **Error**: Assuming z-index order equals importance in UI design.
-  **Correction**: Z-index establishes depth order, not importance per se. The dominating element (front) may be a modal dialog (temporarily important) or a persistent header (structurally important); the meaning depends on context.
+  **Correction**: Z-index participates in scoped paint order, not importance or measured distance. The dominating element (front) may be a modal dialog (temporarily important) or a persistent header (structurally important); the meaning depends on context.
 
 # Common Confusions
 
 - **Confusion**: Overlapping and transparency are the same thing.
-  **Clarification**: Transparency (mixing colours at overlap) is a different effect from occlusion (one element hiding another). In Arnheim's analysis, overlapping requires visible incompleteness/truncation; transparency produces blending without clear dominance.
+  **Clarification**: Alpha transparency permits underlying color to contribute to a composite; occlusion hides an underlying region, and blend modes specify a separate color-combination operation. The reported analysis emphasizes truncation for opaque occlusion. Alpha transparency and blend modes are separate operations; a transparent overlapping design can still communicate layers.
 
 # Source Reference
 
 Chapter III: Form, "Art and Visual Perception," pp. 226–306 (Overlapping section and What Good Does Overlapping Do?).
 
 # Verification Notes
+
+The bullets below preserve historical extraction assertions, including confidence, cross-reference, OCR and source-reading claims; they are not current verification. Original-dependent fidelity remains unassessed. Current technical corrections and analogies establish neither a neural mechanism nor cultural universality or measured usability.
 
 - Definition source: Direct quote from p. 238; synthesised from pp. 226–306.
 - Confidence rationale: High — extended discussion with explicit principles and numerous examples.

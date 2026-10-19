@@ -16,8 +16,6 @@ extraction_confidence: "high"
 aliases:
   - "projective-image"
   - "2D-projection-of-3D"
-  - "retinal-projection"
-  - "orthogonal-projection"
 prerequisites:
   - "representation-in-art"
 extends: []
@@ -26,17 +24,14 @@ related:
   - "shape-constancy"
   - "foreshortening"
   - "structural-skeleton"
-contrasts_with:
-  - "all-around-visual-concept"
-  - "three-dimensional-form"
-answers_questions:
-  - "What are the gestalt principles of perceptual grouping, and how does each one work?"
+contrasts_with: []
+answers_questions: []
 rosetta_stone:
   -
     domain: "mathematics"
     concept: "Linear projection / projection operators in linear algebra"
-    rating: "rigorous"
-    note: "The picture plane projection is literally a linear projection operator: it maps 3D coordinates to 2D by dropping (or compressing) depth information, and different projection matrices (orthogonal, perspective) correspond to Arnheim's different representational methods."
+    rating: "structural"
+    note: "Orthographic P(x,y,z)=(x,y) is linear. Cartesian perspective P=(x/z,y/z), z>0, is nonlinear: P(2v)=P(v), not 2P(v). A homogeneous matrix followed by division does not make the final Cartesian map linear. Egyptian composites need not implement one camera; visibility is a separate condition."
 css_implementation:
   -
     property: "perspective"
@@ -50,16 +45,18 @@ css_implementation:
 
 # Quick Definition
 
-Picture plane projection is the reduction of a three-dimensional object to a two-dimensional surface image — a process that always involves selecting one aspect of the object, introducing boundaries where none exist in the object, and concealing all surfaces not visible from the chosen viewpoint.
+Picture plane projection maps spatial geometry to a plane under specified projection conditions. Choosing aspects, depicting contours and deciding which surfaces are visible are related but distinct operations; authored composites need not use one camera.
 
 # Core Definition
 
-Any image on a flat surface is a projection: light travels from the object to the eye (or camera) in straight lines, and only those surfaces whose line-of-sight to the eye is unobstructed appear in the image. The projection depends critically on the angle of observation.
+This section presents the represented Arnheim account. Its quotations, page references and historical, clinical, cultural or experimental reports have not been checked against the unavailable original. The current analytic qualifications do not certify that fidelity.
+
+For a geometric image, specify the mapping from object coordinates to the image plane. Opaque rendering then needs a visibility rule to hide blocked surfaces; wireframes and transparent renderings can show more. Retinal optics, camera projection and authored pictorial representation are distinct levels. Not every flat image is one geometric projection.
 
 Arnheim analyses several types of projection:
-- **Orthogonal projection**: The object plane is perpendicular to the line of sight. The projection most faithfully represents the shape of one face.
-- **Central (perspective) projection**: Simulates the geometry of a single eye at a fixed point; produces foreshortening and convergence of parallels.
-- **The "Egyptian method"**: Selects for each part of the object the aspect that most clearly shows its structural skeleton, combining multiple viewpoints.
+- **Orthogonal projection**: Rays are parallel and normal to the image plane. An object face may be tilted, so it can still be foreshortened; a front-facing plane preserves its shape under this mapping.
+- **Central (perspective) projection**: Uses rays through a finite center; depth-dependent division can produce scale changes and vanishing points. Not every family of parallels converges to a finite vanishing point.
+- **The "Egyptian method"**: Selects for each part of the object the aspect that most clearly shows its structural skeleton, combining multiple viewpoints as an authored convention rather than one camera projection.
 
 The fundamental problem: "Strictly speaking, the visual concept of anything that has volume can be represented only in a three-dimensional medium... If we wish to make pictures on a plane surface, all we can hope to do is to produce a translation — that is, to present some structural essentials of the visual concept by two-dimensional means." (p. 75)
 
@@ -69,24 +66,26 @@ The fundamental problem: "Strictly speaking, the visual concept of anything that
 
 # Key Properties
 
-1. **Aspect selection is unavoidable**: Every 2D image can show only one view of a 3D object at a time.
-2. **Contour creation**: The projection introduces contour lines where the 3D object has continuous surface curvature.
-3. **Hidden surfaces**: All parts of the object whose line-of-sight is blocked by the object itself are absent from the projection.
-4. **Constancy correction**: The visual system applies shape and size constancy to partially undo the distortions of projection, reading a trapezoid as a foreshortened square.
-5. **Style-relative legitimacy**: No projection method is the single "correct" one — each is a translation with its own virtues and limitations.
+1. **Aspect selection**: A single-view projection selects one aspect; composites and multiview diagrams can show several.
+2. **Silhouette**: A projected surface can produce an apparent contour where no material edge exists.
+3. **Visibility is separate**: Opaque occlusion, transparency and wireframe conventions decide what is shown beyond the coordinate map.
+4. **Perceptual reading**: Shape constancy can support an object reading without exactly inverting a projection.
+5. **Task suitability**: Orthographic, perspective and composite treatments support different tasks; no one method is universally correct.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Choose a viewpoint (observation station point).
-2. Project straight lines from the viewpoint through each visible point on the object to the picture plane.
-3. The intersection points on the picture plane form the projected image.
-4. For orthogonal projection, the viewpoint is at infinity in the direction perpendicular to the picture plane.
+
+1. Choose image plane, object geometry and a projection model.
+2. For central perspective use rays through a finite center; for orthographic projection use parallel rays normal to the plane.
+3. Map geometry to the plane, then specify opaque visibility, wireframe or transparency.
+4. Choose one view or an authored multiview convention according to the task.
 
 ## To Identify/Recognise:
-1. A flat image is always a projection — ask: from what viewpoint? using what projection method?
-2. Identify which surfaces of the object are hidden and which are visible.
-3. Notice where the projection has introduced contour boundaries (edges) where the 3D object has no actual edge.
+
+1. Ask whether the image uses a single geometric projection or an authored composite.
+2. Distinguish mapping from which surfaces the visibility convention retains.
+3. Separate apparent contours from material edges.
 
 # Context & Application
 
@@ -95,33 +94,37 @@ The fundamental problem: "Strictly speaking, the visual concept of anything that
 
 ## Cross-Domain Connections
 
-**Mathematics → RIGOROUS**: A projection in the linear algebra sense is exactly what is happening: a linear map from ℝ³ → ℝ² that collapses depth information. Central perspective is a projective (non-linear) transformation; orthogonal projection is a linear one. CSS `perspective` and `transform: rotateY()` implement these mappings in the browser.
+**Mathematics → STRUCTURAL**: Orthographic P(x,y,z)=(x,y) is a linear map ℝ³→ℝ². Perspective P(x,y,z)=(x/z,y/z), z>0, is nonlinear: for v=(2,4,2), P(v)=(1,2)=P(2v), whereas 2P(v)=(2,4). A matrix in homogeneous coordinates followed by division does not make the final Cartesian map linear. The formal mapping is specified here; it does not encompass every pictorial method. CSS parent `perspective` supplies perspective to transformed children; a self `perspective()` function is a different declaration arrangement.
 
 # Examples
 
-**Example 1** (p. 70, Fig. 80): A cardboard rectangle cast in shadow by a candle yields innumerable projections. The orthogonal one (rectangle perpendicular to light) looks most like the object. Others look like tilted shapes in 3D space or — in one case — like a flat trapezoid with a compelling independent symmetry that resists 3D interpretation.
+The following are reported source examples and interpretations, with their original wording and locators retained for inspection. They are not independently checked historical, experimental or universal claims.
+
+**Example 1** (p. 70, Fig. 80): A cardboard rectangle cast in shadow by a candle yields innumerable projections. The front-facing aspect (rectangle perpendicular to light) is reported as looking most like the object. A finite candle emits diverging rays, so this shadow setup alone is not an orthographic ray construction. Others look like tilted shapes in 3D space or — in one case — like a flat trapezoid with a compelling independent symmetry that resists 3D interpretation.
 
 **Example 2** (p. 73, Fig. 81): A cube viewed at different angles: from straight-on, one face (a square) dominates; at other angles, multiple faces are visible with foreshortening.
 
-**Example 3** (p. 73): The "hidden surface problem" in computer graphics — determining which surfaces of a solid are visible from a given viewpoint — exactly captures the projection problem Arnheim describes.
+**Example 3** (p. 73): The "hidden surface problem" in computer graphics — determining which surfaces of a solid are visible from a given viewpoint — is a separate visibility task associated with opaque rendering, not the coordinate projection map alone.
 
 # Relationships
 
+These are scoped conceptual reading connections. Prerequisites support understanding rather than assert a universal developmental sequence; related links and contrasts specify comparisons, not causal or subtype laws. Unresolved ordinary comparisons below are not invented card identities.
+
 ## Builds Upon
-- **Representation in art** — Projection is one technique of representation; it is not the only valid one.
+- **Representation in art** — Projection is a technique used within representation; it is not the only valid pictorial convention.
 
 ## Enables
-- **Canonical view** — The question of which projection best represents a given object.
-- **Foreshortening** — The specific distortion introduced when the line of sight is not perpendicular to the object surface.
-- **Shape constancy** — The perceptual mechanism that partially corrects for projection distortions.
+- **Canonical view** — Aspect selection asks what the task needs visible.
+- **Foreshortening** — A tilted face can contract under orthographic as well as perspective projection.
+- **Shape constancy** — Projection supplies changing images in relation to which constancy is discussed, rather than a prerequisite brain mechanism.
 
 ## Related
-- **Structural skeleton** — The skeleton may be revealed more clearly in some projections than others.
-- **Overlapping** — An inevitable consequence of projection: nearer objects block farther ones.
+- **Structural skeleton** — Some aspects reveal characteristic axes better for a given task.
+- **Overlapping** — Opaque visibility can cause occlusion; the mapping alone does not require it.
 
 ## Contrasts With
-- **All-around visual concept** — The mental 3D concept is not bound to any projection; projection always reduces and selects from it.
-- **Egyptian method** — Deliberately combines aspects from multiple projection angles rather than committing to one.
+- **All-around visual concept** — An all-around visual concept is an ordinary conceptual comparison with a selected view, not a resolved card identity.
+- **Egyptian method** — The Egyptian method can combine aspects instead of selecting one camera.
 
 # Common Errors
 
@@ -141,6 +144,8 @@ The fundamental problem: "Strictly speaking, the visual concept of anything that
 Chapter III: Form, "Art and Visual Perception," pp. 70–80 (Projections section).
 
 # Verification Notes
+
+The bullets below preserve historical extraction assertions, including confidence, cross-reference, OCR and source-reading claims; they are not current verification. Original-dependent fidelity remains unassessed. Current technical corrections and analogies establish neither a neural mechanism nor cultural universality or measured usability.
 
 - Definition source: Synthesised from pp. 70–80; key quote from p. 75.
 - Confidence rationale: High — the mechanics of projection are described in detail with numerous examples and figures.

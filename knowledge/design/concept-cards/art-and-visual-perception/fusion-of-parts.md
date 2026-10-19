@@ -25,78 +25,81 @@ related:
   - "obliqueness-as-visual-dynamism"
   - "structural-skeleton"
   - "perceptual-simplicity"
-contrasts_with:
-  - "additive-combination-of-parts"
-  - "analytic-construction"
-answers_questions:
-  - "What are the gestalt principles of perceptual grouping, and how does each one work?"
+contrasts_with: []
+answers_questions: []
 rosetta_stone:
   -
     domain: "mathematics"
     concept: "Integral calculus — continuous function vs. piecewise approximation"
-    rating: "structural"
-    note: "The fusion of parts moves from discrete, piecewise-assembled forms (sum of separate simple shapes) to continuous, integrated wholes — analogous to moving from a Riemann sum approximation to the smooth integral it converges toward."
+    rating: "loose"
+    note: "A Riemann sum approximates an integral value under integrability and partition conditions; it does not generically turn discrete pieces into a smooth function. Interpolation is a different construction. Only the broad discrete/continuous comparison remains loose."
   -
     domain: "engineering"
     concept: "Composition over inheritance / component composition"
     rating: "structural"
-    note: "Early additive construction in visual art (assemble from separate simple units) parallels building systems from independent components; fusion (integrated complex contour) parallels the higher-level composition that makes parts work together as a unified system."
+    note: "Component composition can provide coherent behavior behind an interface while retaining independent parts. A continuous visual contour and a software interface are a structural comparison, not a shared developmental ladder or a reason to reject additive construction."
 css_implementation: []
 ---
 
 # Quick Definition
 
-Fusion of parts is the developmental transition from building complex visual forms by assembling distinct, self-contained simple units to drawing or conceiving the complex form as a continuous, undivided whole with a differentiated, integrated contour.
+Fusion of parts is Arnheim's reported developmental transition from building complex visual forms by assembling distinct, self-contained simple units to drawing or conceiving the complex form as a continuous, undivided whole with a differentiated, integrated contour.
 
 # Core Definition
+
+This section presents the represented Arnheim account. Its quotations, page references and historical, clinical, cultural or experimental reports have not been checked against the unavailable original. The current analytic qualifications do not certify that fidelity.
 
 Arnheim describes a key stage in the development of visual representation: the move from analytic construction (separate simple units combined by simple directional relations) to fusion (continuous compound forms). He writes:
 
 "In time, however, the child begins to fuse several units by a common, more differentiated contour. Both the eye and the hand contribute to this development. The eye familiarizes itself with the complex form that results from the combination of elements until it is able to conceive of the compound whole as a unit. When this is achieved, the eye safely guides the continuously moving pencil around the uninterrupted outline of an entire human figure, including arms and legs." (p. 263)
 
-The earlier additive method has its own virtues: clarity, control, simplicity at each moment. But fusion enables a richer rendering of movement, bending, continuity, and organic complexity that the additive method cannot achieve.
+The earlier additive method has its own virtues: clarity, control, simplicity at each moment. A continuous contour can help render bending and gesture, while assembled elements can also communicate movement and complex form, as the fish counterexample cautions.
 
-The parallel in thinking: primitive conception treats attributes (soul, passion, disease) as separate entities added to or subtracted from an unchangeable body. More differentiated reasoning describes them as *fused with* or produced by the internal functioning of the body or mind — not added on, but integral.
+The represented historical parallel contrasts what Arnheim calls primitive conception — treating soul, passion and disease as separate additions — with accounts of internal functioning. This period cultural and clinical vocabulary is attributed, not a present diagnostic or cultural hierarchy.
 
 Arnheim also notes the dialectical rhythm: global → subdivision → fusion at higher level → subdivision again → fusion at still higher level.
 
 # Prerequisites
 
-- **Law of differentiation** — Fusion is a later-stage development; the additive construction stage must precede it.
-- **Vertical-horizontal framework** — The framework provides the spatial order within which fused forms are organised.
+- **Law of differentiation** — Describes the historical model in which Arnheim locates fusion; it does not prescribe a mandatory learning sequence.
+- **Vertical-horizontal framework** — Supplies a spatial reference for discussing the relations of parts.
 
 # Key Properties
 
-1. **From part-assembly to whole**: Earlier method: combine separate, geometrically simple units. Later method: conceive the whole as one continuous entity.
-2. **Continuous contour**: Fusion produces uninterrupted outline paths rather than sequences of connected segments.
-3. **Motor-cognitive parallel**: The hand learns to guide the pencil continuously; the eye learns to hold the complex whole as a unit.
-4. **Simplicity trade-off**: Fusion produces more organically complex forms but may sacrifice the perfect geometric clarity of the assembled parts.
-5. **Dialectical cycle**: Fusion at one level enables further subdivision and re-fusion at a higher level of complexity.
+1. **Construction choices**: Separate units and integrated contours are alternative ways of organizing a form.
+2. **Continuous contour**: Fusion describes conceiving and tracing a compound outline as a whole.
+3. **Reported eye/hand account**: The quoted motor-cognitive explanation is historical and unassessed.
+4. **Trade-off**: A continuous outline can gain flow while losing clarity; the assembled fish remains a counterexample to automatic improvement.
+5. **Reported cycle**: Arnheim describes subdivision and fusion at successive scales, without proving a universal developmental law.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Begin with separate simple units (the additive stage) to establish the basic structure.
-2. As facility with the compound form grows, practice drawing (or designing) the whole as a single continuous decision — one path, one curve, one integrated motion.
-3. Design for fusion in complex systems: create unified components that encapsulate their internal complexity rather than exposing all their parts as separately managed units.
+
+1. Use simple units when they help establish the intended structure.
+2. Compare an integrated contour when gesture or continuity matters.
+3. Choose component boundaries for coherent behavior and maintainability; visible seams or separate units can be appropriate.
 
 ## To Identify/Recognise:
-1. In visual work: is this form constructed from assembled parts with visible joints? Or does it flow as a continuous whole with no internal seams?
-2. In design systems: are components internally fused (complex components with simple external interfaces) or assembled from many micro-level units exposed to the user?
-3. Assess whether the fusion is controlled (the compound form is coherent and clear) or whether it has outrun the visual conception (the contour is continuous but confused).
+
+1. Describe whether a form is assembled, continuous or combines both.
+2. Inspect the actual component behavior rather than infer quality from hidden internals.
+3. Compare clarity of the parts and whole; continuous but confused contours are possible.
 
 # Context & Application
 
 - **Typical contexts**: Figure drawing; handwriting/calligraphy; icon design; typeface design; component-based design systems.
-- **Common applications**: Typeface letterforms that require continuous visual flow rather than assembly from strokes; icon design where organic, continuous outline is preferable to assembled geometric primitives; design component libraries where complex components should fuse into cohesive units rather than exposing all constituent pieces.
+- **Common applications**: Typeface letterforms that require continuous visual flow rather than assembly from strokes; icon design where organic, continuous outline is preferable to assembled geometric primitives; design component libraries where a coherent interface may help while explicit constituent parts remain appropriate.
 
 ## Cross-Domain Connections
 
-**Mathematics → STRUCTURAL**: Moving from piecewise-linear approximation (sum of segments) to a smooth function (integral) captures the same structural transition. The smooth function captures more information (curvature, continuity) but requires a higher-level conception to specify.
+**Mathematics → LOOSE**: A Riemann sum approximates an integral value, subject to integrability and partition conditions. It does not produce a smooth function merely by fusing pieces; interpolation is different. Discrete versus continuous construction is only a comparison.
 
-**Engineering → STRUCTURAL**: In software design, a well-composed component exposes a simple interface while fusing internal complexity — analogous to a fused visual form that presents a clear whole while managing complex internal structure. Premature decomposition into micro-components (the additive stage equivalent) can expose internal seams that a higher-level fusion would hide.
+**Engineering → STRUCTURAL**: A component can expose a coherent interface while retaining separate internal units. This can resemble an integrated visual whole, but neither abstraction nor invisible seams proves that the composition is better.
 
 # Examples
+
+The following are reported source examples and interpretations, with their original wording and locators retained for inspection. They are not independently checked historical, experimental or universal claims.
 
 **Example 1** (p. 263–264): "Masters of the 'linear style,' such as Picasso or Matisse, move with unswerving precision along a contour that captures all the subtleties of muscle and bone" — the highest expression of fusion, where a single continuous line holds an entire complex figure.
 
@@ -106,27 +109,29 @@ Arnheim also notes the dialectical rhythm: global → subdivision → fusion at 
 
 # Relationships
 
+These are scoped conceptual reading connections. Prerequisites support understanding rather than assert a universal developmental sequence; related links and contrasts specify comparisons, not causal or subtype laws. Unresolved ordinary comparisons below are not invented card identities.
+
 ## Builds Upon
-- **Law of differentiation** — Fusion is a stage of differentiation: the compound form is differentiated as a *whole*, not as a collection of parts.
+- **Law of differentiation** — Differentiation supplies the historical context for integration at another level.
 
 ## Enables
-- **Foreshortening** — Fusion is a prerequisite for representing bent and foreshortened forms; the additive method cannot capture the continuity required.
-- **Organic representation of motion** — Fusion enables the kind of continuous gesture that communicates motion and life.
+- **Foreshortening** — Continuous contours can support bent forms, but additive construction can depict them too.
+- **Organic representation of motion** — Gesture can use integrated or assembled elements; fusion is one method.
 
 ## Related
-- **Obliqueness as visual dynamism** — Fused forms often integrate oblique directions that the additive method could not smoothly achieve.
-- **Perceptual simplicity** — Fusion creates a single complex unit that reads more simply than an assembly of its components.
+- **Obliqueness as visual dynamism** — A continuous contour can integrate changing directions without measuring dynamism.
+- **Perceptual simplicity** — An integrated whole can read coherently, while the assembled fish shows that fusion need not improve organization.
 
 ## Contrasts With
-- **Additive combination of parts** — The earlier developmental stage: building forms from separate, self-contained simple units.
+- **Additive combination of parts** — The additive method remains a valid construction choice, not an inferior required stage.
 
 # Common Errors
 
 - **Error**: Assuming that fused (continuous) forms are always better than assembled forms.
-  **Correction**: Arnheim explicitly notes that the assembled fish, "although relatively less interesting and sprightly, is the more successfully organized." Each method has its appropriate stage and purpose.
+  **Correction**: Arnheim explicitly notes that the assembled fish, "although relatively less interesting and sprightly, is the more successfully organized." Each method can suit a purpose; this does not establish a universal stage sequence.
 
 - **Error**: Attempting fusion before the additive stage is mastered.
-  **Correction**: Fusion that outstrips the visual conception produces continuous but confused contours. The additive stage must be worked through first.
+  **Correction**: A continuous contour can lose organization. Practice with parts may help, but the historical account does not require every learner to follow one sequence.
 
 # Common Confusions
 
@@ -138,6 +143,8 @@ Arnheim also notes the dialectical rhythm: global → subdivision → fusion at 
 Chapter IV: Growth, "Art and Visual Perception," pp. 255–284 (The Fusion of Parts section).
 
 # Verification Notes
+
+The bullets below preserve historical extraction assertions, including confidence, cross-reference, OCR and source-reading claims; they are not current verification. Original-dependent fidelity remains unassessed. Current technical corrections and analogies establish neither a neural mechanism nor cultural universality or measured usability.
 
 - Definition source: Direct quote from p. 263; synthesised from surrounding discussion.
 - Confidence rationale: High — explicit, detailed discussion with developmental examples and multiple illustrations.
