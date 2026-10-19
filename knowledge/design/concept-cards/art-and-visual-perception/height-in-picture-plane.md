@@ -27,71 +27,71 @@ related:
   - "texture-gradient"
   - "linear-perspective"
 contrasts_with: []
-answers_questions:
-  - "What are the gestalt principles of perceptual grouping, and how does each one work?"
-  - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
+answers_questions: []
 rosetta_stone:
   -
     domain: "engineering"
     concept: "Coordinate systems: screen y-axis vs. world y-axis"
     rating: "structural"
-    note: "In screen coordinates, y increases downward; in world space (and in the height-in-plane depth cue), objects higher in the visual field are perceived as farther away — a convention that maps to CSS top/bottom values differently for ground-plane vs. sky-plane contexts."
+    note: "With screen y increasing downward, lower means larger y. Horizon/ground-plane assumptions can support distance inference; page position alone does not set hierarchy."
 css_implementation:
   -
     property: "margin-top / top"
-    example: "/* Higher vertical position in a landscape layout implies greater spatial depth */"
+    example: "top: 20px; /* positioned geometry only; screen-down y increases downward */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Height in the picture plane is a depth cue in which objects positioned higher in the visual field (closer to the horizon) appear farther away than objects positioned lower in the field. It reflects the geometry of ground-plane viewing.
+Under a level ground-plane view, contacts of equally elevated objects below the horizon approach the horizon as distance increases. This conditional image-position cue does not rank ordinary page content.
 
 # Core Definition
 
-Arnheim discusses height gradient as one of the early depth cues used by children and artists. "This device [size gradient], together with a height gradient that correlates depth with vertical distance from the base line of the picture, goes a long way toward satisfying spatial needs" (p. 564).
+This presents the represented Arnheim account alongside current analytic qualifications. Original edition, pages, quotations, figures, experiments, physiology and historical claims remain unassessed; the technical constructions below do not certify source fidelity.
 
-The height-in-plane cue reflects the geometry of viewing a ground plane: when standing on a horizontal surface, objects at the same physical height appear progressively higher in the visual field as they recede in depth, converging toward the horizon. Objects at the base of the picture are typically perceived as closest; objects near the horizon line are furthest.
+Arnheim discusses a height gradient alongside size in children’s baseline conventions and Seurat. The geometric reading requires camera/eye height and comparable scene elevations; arbitrary objects at different physical heights cannot be ordered from image y alone. For points above eye level, increasing distance approaches the horizon from above. That is a conditional geometric reversal, not a rule for every cloud or elevated structure.
 
-The inverse applies above the horizon: for objects above the eye level (aerial objects, clouds, elevated structures), greater height in the picture plane may signal proximity, not distance. The cue is most reliable for objects resting on a ground plane below the horizon.
+Retained wording from the represented account (original fidelity unassessed):
 
-This cue is particularly effective in combination with size gradient: smaller objects positioned higher in the field produce a very strong spatial recession signal.
+"This device [size gradient], together with a height gradient that correlates depth with vertical distance from the base line of the picture, goes a long way toward satisfying spatial needs"
 
 # Prerequisites
 
-- **Pictorial Space** — Height in picture plane is one of the positional depth cues that constructs pictorial space.
+- **Pictorial Space** — Pictorial spatial readings supply the vocabulary for this particular cue or convention.
 
 # Key Properties
 
-1. Applies primarily to ground-plane objects: higher position = greater distance from viewer.
-2. Convention reverses above the horizon: overhead objects may appear closer when higher in the frame.
-3. Most effective when combined with size gradient — smaller + higher = definitively more distant.
-4. Derived from the geometry of ground-plane perspective: objects at the same physical height converge toward the horizon as they recede.
-5. Cultural and learned component: used universally in art from children's drawings to Seurat.
-6. The "base line" convention in children's drawings is a direct expression of this cue.
+1. Name the horizon, camera orientation and compared scene heights.
+2. Below the horizon, comparable ground contacts can rise toward it with distance.
+3. Above it, comparable elevated points can move downward toward the horizon.
+4. In a screen-down coordinate convention, lower on screen means increasing y.
+5. Information priority and reading order are separate from ground-plane inference.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Place closer elements lower in the composition; place farther elements higher.
-2. Combine with size gradient: elements that are both smaller and higher in the frame read as maximally distant.
-3. Establish a clear horizon line (implicit or explicit) to anchor the height gradient.
+
+1. Establish the intended ground plane and horizon.
+2. Position comparable contacts under the selected projection.
+3. Combine with size or overlap if useful rather than treating them as obligatory.
 
 ## To Identify/Recognise:
-1. Find repeated similar elements distributed at different heights in the composition.
-2. Are the higher elements also smaller? (Size + height = strong depth signal)
-3. Is there a horizon line toward which elements converge as they move higher?
+
+1. Find the horizon and identify comparable object contacts.
+2. Check the scene-height assumptions.
+3. Distinguish projected position from page hierarchy.
 
 # Context & Application
 
-- **Typical contexts**: Landscape illustration, maps (bird's-eye views), children's drawings, compositional layout.
-- **Common applications**: In information design, placing less important content higher in the visual hierarchy can push it spatially into the background. In UI layouts with perspective-like affordances (e.g., 3D maps, spatial UIs), height in the plane follows this perceptual convention. In flat 2D layouts, the vertical position of elements carries implied depth hierarchy.
+Landscapes, bird’s-eye illustrations, Seurat’s figures and spatial maps provide examples. Flat UI layouts can place important information high or low according to task and reading conventions. A top heading is not thereby a distant object; this card does not answer the full hierarchy question.
 
 ## Cross-Domain Connections
 
-**Engineering → STRUCTURAL**: Screen coordinate systems have y-axis pointing downward, which means lower on screen = lower y value = "closer" in the height-in-plane depth convention. This aligns with the perceptual cue: lower elements feel more immediate and grounded; higher elements feel more distant or overhead.
+**Engineering → STRUCTURAL**: With screen y increasing downward, lower means larger y. For a level pinhole camera at height h>0 above a ground plane, a ground point can have y_screen=y_horizon+fh/Z for Z>0; increasing Z approaches the horizon from below. This model does not apply to arbitrary page boxes or prescribe CSS top/bottom values.
 
 # Examples
+
+Source-specific examples and quotations below are retained as reports with their original wording and locators. They are not independently checked historical, experimental or universal claims. Applied examples are qualified design proposals.
 
 **Example 1** (p. 564): "A height gradient that correlates depth with vertical distance from the base line of the picture, goes a long way toward satisfying spatial needs." — Arnheim
 
@@ -101,38 +101,46 @@ This cue is particularly effective in combination with size gradient: smaller ob
 
 # Relationships
 
+These are scoped reading connections. Builds Upon supports understanding; Enables names a possible downstream use; Related is an association; Contrasts With names a comparison. They do not establish universal causes, subtypes or verified historical sequences. Ordinary downstream uses are not invented card identities.
+
 ## Builds Upon
-- **Pictorial Space** — Height-in-plane is one of the positional cues that constructs spatial depth.
+
+- **Pictorial Space** — Image-position changes can contribute depth under ground/horizon assumptions.
 
 ## Enables
-- **Combined Depth Cue System** — Combines with size gradient and overlap to create multi-cue depth representations.
+
+- **Combined Depth Cue System** — Height can combine with size or overlap without being obligatory.
 
 ## Related
-- **Size Gradient** — The most naturally paired depth cue: smaller and higher = more distant.
-- **Linear Perspective** — Central perspective geometrically produces the height-in-plane gradient as a consequence: objects on the ground plane converge toward the horizon as they recede.
-- **Atmospheric Perspective** — Often co-occurs: distant elements (higher in plane) are also hazier.
+
+- **Size Gradient** — Comparable objects may approach the horizon while shrinking; arbitrary object heights defeat the simple inference.
+- **Linear Perspective** — A level central projection explains the ground-contact formula under stated heights.
+- **Atmospheric Perspective** — Haze can co-occur in landscapes without determining the position inference.
 
 ## Contrasts With
-- Nothing — height in plane reinforces rather than contrasts with other depth cues.
+
+- No named contrast — No named typed contrast is recorded; height can still conflict with other scene cues.
 
 # Common Errors
 
-- **Error**: Applying the height-in-plane convention universally regardless of context.
-  **Correction**: The cue applies to ground-plane objects. Objects in the sky or above the horizon may follow the reverse convention (higher = nearer). Context determines direction.
+- **Error**: Using vertical page position to infer importance or physical distance universally.
+  **Correction**: Check whether a ground-plane scene is actually depicted.
 
-- **Error**: Using height position alone as a depth cue without accompanying size variation.
-  **Correction**: Height-in-plane is strongest in combination with size gradient. Height alone is a weaker cue and can be ambiguous.
+- **Error**: Demanding size variation whenever height is used.
+  **Correction**: Additional cues can help, but adequacy depends on the content and task.
 
 # Common Confusions
 
-- **Confusion**: Higher on the page = more important in design hierarchy.
-  **Clarification**: While cultural reading conventions (top-to-bottom) give top elements primacy in information hierarchy, the spatial depth cue operates in the opposite direction — higher = farther away. These two conventions (reading hierarchy vs. spatial depth) can conflict in compositions.
+- **Confusion**: Higher on a page must mean either more important or farther away.
+  **Clarification**: Information hierarchy and a conditional scene-projection cue have different premises.
 
 # Source Reference
 
 Chapter V: Space, "Art and Visual Perception," pp. 562–566 (Gradients Create Depth section).
 
 # Verification Notes
+
+The bullets below are preserved historical extraction assertions, not current verification. Frozen confidence, cross-reference, source-reading and OCR claims do not settle original-dependent fidelity. Current same-context review supports only the explicitly scoped technical constructions, contextual teaching and local comparisons; it establishes no browser, observer, comfort or physiological result.
 
 - Definition source: Synthesised from discussion in Chapter V (Space), pp. 562–566
 - Confidence rationale: Medium — Arnheim mentions height gradient as one component of the spatial system; no extended dedicated discussion

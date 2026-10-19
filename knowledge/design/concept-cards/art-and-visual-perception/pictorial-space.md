@@ -29,115 +29,131 @@ related:
 contrasts_with:
   - "flat-pictorial-space"
 answers_questions:
-  - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
 rosetta_stone:
   -
     domain: "engineering"
     concept: "z-index / z-axis layering"
-    rating: "rigorous"
-    note: "CSS z-index directly implements the same pictorial-depth concept — assigning integer depth values to layered elements on a 2D surface."
+    rating: "structural"
+    note: "z-index orders paint locally; translateZ changes transformed geometry. Neither is a calibrated perceived distance or semantic importance."
 css_implementation:
   -
     property: "z-index"
-    example: "z-index: 10;"
+    example: "position: relative; z-index: 10; /* local ordering */"
     support: "baseline"
   -
     property: "transform: translateZ()"
-    example: "transform: translateZ(20px);"
+    example: "transform: translateZ(20px); /* geometry depends on transform/perspective arrangement */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Pictorial space is the perceptual experience of depth and three-dimensionality that arises from a two-dimensional surface. There is no truly flat picture: even the simplest mark on a surface is perceived as lying in front of a ground.
+Pictorial space is the perceived spatial organization or depth associated with a picture surface. Arnheim’s claim that even a mark cannot be seen as strictly flat is an attributed account, not a universal perceptual result established here.
 
 # Core Definition
 
-Arnheim establishes that "there is no such thing as a strictly flat, two-dimensional image." Any mark, line, or shape on a surface is seen as either in front of or embedded within a background plane. Pictorial space is therefore an unavoidable perceptual consequence of representation: the viewer's visual system spontaneously constructs spatial relationships among elements, assigning them to different depth levels based on perceptual cues (overlap, size, gradient, brightness, etc.).
+This presents the represented Arnheim account alongside current analytic qualifications. Original edition, pages, quotations, figures, experiments, physiology and historical claims remain unassessed; the technical constructions below do not certify source fidelity.
 
-The nature and degree of pictorial space varies enormously: from shallow figure-ground separation (two frontal planes) to deep converging perspective vistas. Arnheim describes this range as a "continuous relief" in which "areas at different distances border upon one another" (p. 182).
+Arnheim describes a range from shallow figure-ground planes to deep converging vistas, and a continuous relief in which differently read distances meet. This vocabulary helps describe spatial interpretations. A designer can author cues but cannot guarantee every observer’s depth, salience or meaning. Flat, parallel and central-perspective treatments are available conventions; they can coexist or be nested when the task supports them.
+
+Retained wording from the represented account (original fidelity unassessed):
+
+"there is no such thing as a strictly flat, two-dimensional image."
+
+"areas at different distances border upon one another"
 
 # Prerequisites
 
-- **Figure-Ground** — The most elementary form of pictorial space; understanding that any surface creates at least a two-plane depth relationship is foundational.
+- **Figure-Ground** — Contour ownership and region separation supply the comparison used here.
 
 # Key Properties
 
-1. Pictorial space is perceptually unavoidable — no 2D surface produces a truly flat reading.
-2. It ranges from shallow (two frontal planes) to deep (full convergent perspective).
-3. It is constructed by the visual system using depth cues, not simply "read" from the image.
-4. Its depth and character can be controlled by the designer/artist through choice of spatial cues.
-5. It can be described as a "depth relief" — an analogy to sculptural relief that captures the gradations of distance within a picture.
+1. Pictorial depth is a reading, distinct from physical support and rendering coordinates.
+2. Selected planes or continuous relief can describe different aspects.
+3. Overlap, scale, haze and convergence can contribute without guaranteeing depth.
+4. No shadow or transform is required for every UI element.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Apply at least one depth cue (overlap, size difference, gradient, atmospheric perspective) to create the perception of distinct depth levels.
-2. Decide the spatial mode: flat (frontal planes only), isometric (oblique parallels), or convergent (perspective).
-3. Control depth "steepness" through gradient intensity — shallow gradients produce shallow space; steep gradients produce dramatic depth.
+
+1. Choose whether shallow, deep or deliberately ambiguous space helps the content.
+2. Select the cues appropriate to that intent.
+3. Keep flat readings available where depth would distract or distort.
 
 ## To Identify/Recognise:
-1. Ask: are elements perceived as being at different distances from the viewer?
-2. Identify which depth cues are active (overlap? size? haze? convergence?).
-3. Describe the depth relief: how many planes, how steep the transition, how deep the vista.
+
+1. Ask whether elements appear at different distances.
+2. Identify visible overlap, scale, texture, haze and convergence evidence.
+3. Describe the observed relief without deriving distances from CSS integers.
+4. In an audit, inspect unintended cues and compare them with the task.
 
 # Context & Application
 
-- **Typical contexts**: Any visual design surface — screens, posters, illustrations, UI layouts, photographs.
-- **Common applications**: Layering UI elements (cards above backgrounds), creating visual hierarchy through depth, using blur/shadow to imply elevation, designing spatial flow in composition.
+Screens, posters, illustrations and photographs can use pictorial space. This card contributes a local cue inventory to an interface audit; it does not supply its whole order, all accessibility checks or a depth guarantee. A shadowed card may suggest separation without needing stronger shadows for more important information.
 
 ## Cross-Domain Connections
 
-**Engineering → RIGOROUS**: CSS z-index and transform translateZ() directly implement the concept of pictorial depth ordering. Every UI with layered elements (modals, tooltips, dropdowns, floating buttons) uses pictorial-space logic to signal which elements are "in front."
+**Engineering → STRUCTURAL**: z-index gives scoped paint ordering; translateZ changes transformed geometry under a defined transform/perspective arrangement. Neither directly measures perceived distance or importance. Parent perspective affects its 3D-transformed children; merely assigning translateZ or a high integer does not create a complete widget.
 
 # Examples
+
+Source-specific examples and quotations below are retained as reports with their original wording and locators. They are not independently checked historical, experimental or universal claims. Applied examples are qualified design proposals.
 
 **Example 1** (p. 141): "A single line drawn on a piece of paper cannot be seen simply as itself... there also seems to be no way of seeing the line strictly in a flat plane. Instead, it is seen as lying in front of (or within) an uninterrupted ground." — Arnheim
 
 **Example 2** (p. 182): "Pictorial space, therefore, is best described as a continuous relief in which areas at different distances border upon one another." — Arnheim
 
-**Example 3** (UI): A web page card floats above its background via a box-shadow — a depth cue exploiting pictorial space conventions to establish hierarchy.
+**Example 3** (UI): A card shadow may suggest separation from its background. The desired hierarchy still depends on the content and task, and can be communicated with a flat treatment.
 
 # Relationships
 
+These are scoped reading connections. Builds Upon supports understanding; Enables names a possible downstream use; Related is an association; Contrasts With names a comparison. They do not establish universal causes, subtypes or verified historical sequences. Ordinary downstream uses are not invented card identities.
+
 ## Builds Upon
-- **Figure-Ground** — The simplest case of pictorial space: one surface in front of another.
+
+- **Figure-Ground** — Figure-ground supplies one elementary spatial reading.
 
 ## Enables
-- **Overlap Depth Cue** — One of the primary tools for constructing pictorial space.
-- **Size Gradient** — The systematic size reduction that conveys recession into depth.
-- **Linear Perspective** — The geometric codification of pictorial space.
-- **Atmospheric Perspective** — Haze/softness as a cue for spatial depth.
-- **Depth Levels** — The extension of figure-ground to multiple overlapping planes.
+
+- **Overlap Depth Cue** — Contour interruption can support an occlusion reading.
+- **Size Gradient** — Comparable projected sizes can support recession.
+- **Linear Perspective** — Central projection is a defined geometric construction, not every form of pictorial space.
+- **Atmospheric Perspective** — Atmospheric changes can suggest distance under scene assumptions.
+- **Depth Levels** — Selected planes or continuous relief describe spatial organization.
 
 ## Related
-- **Depth Cues (all)** — The mechanisms by which pictorial space is created.
+
+- **Depth Cues (all)** — The enumerated cue family supplies comparison mechanisms without a universal common cause.
 
 ## Contrasts With
-- **Flat Pictorial Space** — Compositions that deliberately suppress depth cues and affirm the 2D surface (e.g., Mondrian, certain Matisse paintings, most icons).
+
+- **Flat Pictorial Space** — Mondrian, certain Matisse paintings and icons illustrate reduced depth emphasis; they need not prove complete absence of depth.
 
 # Common Errors
 
-- **Error**: Treating a flat 2D surface as spatially neutral.
-  **Correction**: Every element placement implies a spatial relationship; unintentional depth cues (drop shadows, size differences, overlaps) will generate unintended spatial readings.
+- **Error**: Ignoring an unintended shadow, overlap or scale cue.
+  **Correction**: Inspect the actual reading and revise it when it interferes with the task.
 
-- **Error**: Using z-index without understanding the perceptual depth hierarchy it implies.
-  **Correction**: z-index should match the perceptual depth hierarchy intended — elements that should feel "closer" to the user should have stronger depth cues (shadow, scale, contrast) in addition to higher z-index.
+- **Error**: Raising z-index to increase semantic importance.
+  **Correction**: Choose hierarchy from the content; use paint ordering for actual visibility requirements.
 
 # Common Confusions
 
-- **Confusion**: Pictorial space requires perspective drawing.
-  **Clarification**: Pictorial space arises from any depth cue — even a simple overlap of two shapes creates a two-plane depth relation without any perspective.
+- **Confusion**: Pictorial space requires perspective.
+  **Clarification**: A shallow overlap can support spatial order without convergence.
 
-- **Confusion**: A "flat design" UI has no pictorial space.
-  **Clarification**: Even flat design has pictorial space; it simply suppresses many depth cues. Overlap, size differences, and colour still create implicit depth layers.
+- **Confusion**: Every flat UI must have the same depth reading.
+  **Clarification**: Flat style may retain shallow cues; Arnheim’s stronger no-flat-image statement stays attributed.
 
 # Source Reference
 
 Chapter V: Space, "Art and Visual Perception," pp. 141–145 (opening section on the nature of spatial representation).
 
 # Verification Notes
+
+The bullets below are preserved historical extraction assertions, not current verification. Frozen confidence, cross-reference, source-reading and OCR claims do not settle original-dependent fidelity. Current same-context review supports only the explicitly scoped technical constructions, contextual teaching and local comparisons; it establishes no browser, observer, comfort or physiological result.
 
 - Definition source: Synthesised from discussion in Chapter V (Space), pp. 141–145, 182
 - Confidence rationale: Arnheim's core thesis — no truly flat image exists — is stated explicitly and repeatedly

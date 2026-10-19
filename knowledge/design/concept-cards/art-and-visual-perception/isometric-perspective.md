@@ -29,87 +29,80 @@ related:
 contrasts_with:
   - "linear-perspective"
   - "flat-pictorial-space"
-answers_questions:
-  - "What are the gestalt principles of perceptual grouping, and how does each one work?"
-  - "A responsive design uses 6 breakpoints with completely different layouts at each. The CSS is 4,000 lines and breaks constantly between breakpoints. What's the systematic alternative?"
+answers_questions: []
 rosetta_stone:
   -
     domain: "mathematics"
     concept: "Affine transformations — parallel lines map to parallel lines"
     rating: "rigorous"
-    note: "Isometric perspective is geometrically an affine projection: parallel lines remain parallel (unlike perspective which is a projective transformation). The mathematical preservation of parallelism is the key distinguishing property."
+    note: "Rigorous for a stated affine parallel projection: noncollapsed parallel direction families remain parallel. General 3D-to-2D projection is noninvertible and does not preserve all true lengths."
   -
     domain: "engineering"
     concept: "CSS isometric transforms — fixed rotation angles for 3D appearance"
-    rating: "rigorous"
-    note: "Isometric UI design uses fixed rotation (typically 30° or 26.565°) and a 2:1 width:height ratio to create the parallel-projection depth effect without convergence — directly implementing Arnheim's isometric system."
+    rating: "structural"
+    note: "Rz45 then Rx60 without perspective gives projected axis lengths .790569,.790569,.866025 and a 2:1 xy diamond. Rx54.7356103 gives equal .816497 foreshortening; a single face is not a solid."
 css_implementation:
   -
     property: "transform"
-    example: "transform: rotateX(60deg) rotateZ(-45deg) scale(1.2); /* isometric approximation */"
+    example: "transform: rotateX(60deg) rotateZ(-45deg) scale(1.2); /* no perspective: illustrative 2:1 dimetric face, not exact isometry or a solid */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Isometric perspective is a spatial representation system in which depth is conveyed through obliqueness (parallel lines recede at a fixed angle) while all parallel lines remain parallel — there is no vanishing point and no size diminishment with distance.
+Arnheim’s represented isometric perspective uses a broad parallel/oblique spatial convention. Strict engineering isometric projection is the narrower orthographic case with equal foreshortening of three orthogonal axes; parallelism alone is insufficient.
 
 # Core Definition
 
-Arnheim identifies isometric perspective as one of the great systems for unifying three-dimensional pictorial space: "Isometric perspective accommodates the entire matter of the picture in systems of parallel lines, which enter at one side, run diagonally through the picture, and leave it again on the other side" (p. 592).
+This presents the represented Arnheim account alongside current analytic qualifications. Original edition, pages, quotations, figures, experiments, physiology and historical claims remain unassessed; the technical constructions below do not certify source fidelity.
 
-The fundamental mechanism: obliqueness is the most elementary form of deformation. A parallelogram is perceived as a rectangle receding in depth because the rectangle is simpler. In isometric perspective, this deformation (oblique parallelograms) signals depth without any of the projective deformations of central perspective (size diminishment, convergence).
+Arnheim’s account emphasizes parallel diagonals, constant represented scale and panoramic space, including Japanese hand scrolls. The stored aliases oblique projection, parallel projection, axonometric perspective and his divergent variant name that broader context; they are not exact synonyms for engineering isometry. A fixed orthographic viewing direction is defined geometrically even though no finite station point controls central convergence. Constant scale with depth does not preserve all true lengths. A front face left frontal is an oblique/cabinet-type construction, not a requirement of exact isometry. Historical universality and priority claims remain attributed, unassessed reports.
 
-Arnheim describes the distinctive character of isometric space: "There is something curiously paradoxical about the world presented in isometric perspective, which moves away into depth because of its obliqueness but at the same time remains at an unchanging distance because size stays constant throughout" (p. 594). The world is simultaneously receding and stable — always at the same distance from the viewer.
+Retained wording from the represented account (original fidelity unassessed):
 
-Key properties Arnheim identifies:
-- Everything is seen from the same side (consistent viewpoint)
-- The world has no center and no prescribed viewpoint
-- Particularly suited to continuous, panoramic presentations (e.g., Japanese hand scrolls)
-- Discovered independently worldwide at early levels of visual conception (unlike central perspective)
-- Universally preferred by architects and engineers because it preserves true dimensions
+"Isometric perspective accommodates the entire matter of the picture in systems of parallel lines, which enter at one side, run diagonally through the picture, and leave it again on the other side"
+
+"There is something curiously paradoxical about the world presented in isometric perspective, which moves away into depth because of its obliqueness but at the same time remains at an unchanging distance because size stays constant throughout"
 
 # Prerequisites
 
-- **Pictorial Space** — Isometric perspective is one system for creating pictorial depth.
-- **Deformation Depth Cue** — Obliqueness, the basis of isometric perspective, is the simplest form of spatial deformation.
+- **Pictorial Space** — Pictorial spatial readings supply the vocabulary for this particular cue or convention.
+- **Deformation Depth Cue** — Transformed outlines can suggest a spatial reference form without uniquely recovering it.
 
 # Key Properties
 
-1. Parallel lines remain parallel — no vanishing point, no convergence.
-2. Objects do not diminish in size with distance — all parallel dimensions are true-scale.
-3. Depth is signalled exclusively through obliqueness (deformation from horizontal-vertical framework).
-4. The viewing angle is typically fixed and consistent across the whole image.
-5. No prescribed station point — the viewer has no assigned position; they observe the world obliquely.
-6. The world implied is a segment of a continuous, endless panorama.
-7. Mathematically: an affine projection preserving parallelism (vs. perspective's projective transformation).
-8. Cross-culturally universal: appears independently in children's drawings, Japanese art, Chinese landscape, Egyptian art, engineering drawing.
+1. Parallel projection retains parallelism of noncollapsed direction families.
+2. A direction along the viewing rays can collapse to a point.
+3. Orthographic 3D→2D projection is noninvertible and foreshortens tilted lengths.
+4. Exact isometry has equal projected axis lengths, not undistorted frontal faces.
+5. Constant depth scale differs from equal physical length in every direction.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Choose the oblique angles (typically 30° or 45° from horizontal for the receding edges).
-2. Draw all parallel edges as parallel (no convergence to a vanishing point).
-3. Maintain consistent scale throughout (no size reduction with depth).
-4. Front face remains frontal/undistorted; top and side faces are oblique parallelograms.
+
+1. Choose broad oblique/parallel illustration or exact engineering isometry explicitly.
+2. For exact orthographic isometry, use a viewing direction with equal magnitudes along the three axes.
+3. Use parallel receding directions and defined foreshortening, rather than a front-face rule.
+4. A CSS transformed face illustrates geometry; construct additional faces if a solid is needed.
 
 ## To Identify/Recognise:
-1. Find parallel receding edges — do they remain parallel throughout the image?
-2. Do objects diminish in size with distance? (Yes = convergent perspective; No = isometric)
-3. Is there a consistent oblique viewing angle throughout the composition?
+
+1. Check noncollapsed direction families for parallelism.
+2. Check all three projected unit-axis lengths before calling the construction exact isometry.
+3. Distinguish a 2:1 game diamond from the exact equal-axis model.
 
 # Context & Application
 
-- **Typical contexts**: Engineering/technical drawing, architectural illustration, game isometric views (classic strategy games), icon systems, product renders, infographic maps.
-- **Common applications**: Isometric icon sets maintain consistent apparent size regardless of "distance" — an advantage for systematic icon libraries. Isometric game views (SimCity, Monument Valley) create convincing 3D space without the distortions of full 3D perspective. Technical drawings preserve true dimensions for manufacturing.
+Technical drawing, icon sets, games, diagrams and navigation maps can use parallel projection. Measured dimensions need stated axes/scale; they cannot be read as arbitrary true lengths from the picture. Monument Valley’s apparent connections are a game example, not a global solid guaranteed by parallelism. Navigation can use isometric or central views according to task.
 
 ## Cross-Domain Connections
 
-**Mathematics → RIGOROUS**: Isometric perspective is an affine projection — the mathematical category of transformations that preserve parallelism and ratios along lines. Contrast with perspective (projective transformation) which only preserves incidence and cross-ratio. The choice between isometric and perspective corresponds exactly to the mathematical choice between affine and projective geometry.
-
-**Engineering → RIGOROUS**: CSS isometric design uses precise rotation matrices to achieve the parallel-projection effect. The standard isometric projection uses rotateX(60deg) rotateZ(-45deg), producing the characteristic 2:1 width-to-height diamond ratio. This is a direct implementation of the affine projection.
+**Mathematics → RIGOROUS**, for the stated parallel projection: a linear map ℝ³→ℝ² preserves affine combinations, and maps a noncollapsed parallel family to parallel lines; it is not a bijection of 3D space or necessarily an invertible planar affine map. **Engineering → STRUCTURAL**: Apply Rz(45°) first, then Rx(60°), with no perspective, and discard view z. Unit-axis lengths are approximately .790569,.790569,.866025; the transformed xy square has width/height 2. Exact equal-axis foreshortening uses Rx(54.7356103°) after Rz(45°), giving all .816497 and a √3 diamond. Sign reversal reflects the diamond without altering these lengths. Neither single face constructs a 3D solid.
 
 # Examples
+
+Source-specific examples and quotations below are retained as reports with their original wording and locators. They are not independently checked historical, experimental or universal claims. Applied examples are qualified design proposals.
 
 **Example 1** (p. 592): "Isometric perspective accommodates the entire matter of the picture in systems of parallel lines, which enter at one side, run diagonally through the picture, and leave it again on the other side." — Arnheim
 
@@ -119,47 +112,55 @@ Key properties Arnheim identifies:
 
 **Example 4** (p. 422): "Pictorial form derives instead from the conditions of the two-dimensional medium. The rule that controls the rendering of depth in the plane prescribes that no aspect of visual structure will be deformed unless space perception requires it—regardless of what a mechanically correct projection would call for." — Arnheim, explaining why isometric is "natural"
 
-**Example 5** (game design): Monument Valley (Ustwo) uses isometric perspective to create paradoxical spatial architectures. The absence of a fixed vanishing point allows the designers to construct spatially impossible structures (Penrose stairs) that remain coherent within the isometric system.
+**Example 5** (game design): Monument Valley uses parallel-view conventions and apparent connections as puzzle devices. Local visual plausibility need not construct a globally realizable solid.
 
 # Relationships
 
+These are scoped reading connections. Builds Upon supports understanding; Enables names a possible downstream use; Related is an association; Contrasts With names a comparison. They do not establish universal causes, subtypes or verified historical sequences. Ordinary downstream uses are not invented card identities.
+
 ## Builds Upon
-- **Deformation Depth Cue** — Obliqueness is the deformation mechanism that creates depth in isometric perspective.
-- **Pictorial Space** — Isometric perspective is one system for creating pictorial depth.
+
+- **Deformation Depth Cue** — Oblique forms can suggest spatial tilt under the represented account.
+- **Pictorial Space** — Parallel projection is one spatial representation convention.
 
 ## Enables
-- **Continuous Panoramic Space** — Isometric perspective is particularly suited to panoramic, edge-to-edge spatial representations with no fixed viewpoint.
-- **Technical Drawing** — Preserves true dimensions for engineering and architectural purposes.
+
+- **Continuous Panoramic Space** — A panoramic reading is one expressive use, not absence of a geometric view direction.
+- **Technical Drawing** — Measurements require stated axes and foreshortening; true lengths are not preserved in all directions.
 
 ## Related
-- **Flat Pictorial Space** — The limit of isometric perspective approached at zero obliqueness.
-- **Linear Perspective** — The convergent alternative: produces stronger depth illusion but distorts dimensions and prescribes a fixed viewpoint.
+
+- **Flat Pictorial Space** — Frontal and oblique treatments can be compared without a unique limiting developmental path.
+- **Linear Perspective** — Central projection uses a finite centre and depth-dependent scale; no universal depth-strength ranking follows.
 
 ## Contrasts With
-- **Linear Perspective** — Linear perspective converges parallels; isometric maintains them. Linear perspective has a fixed viewpoint; isometric has none. Linear perspective diminishes size with distance; isometric maintains constant size. Linear perspective was discovered once (Renaissance Italy); isometric is universal.
-- **Flat Pictorial Space** — Isometric adds depth through obliqueness; flat space suppresses all depth.
+
+- **Linear Perspective** — Noncollapsed parallels remain parallel in the parallel model; central projection has direction-family vanishing behavior. Historical universality is unassessed.
+- **Flat Pictorial Space** — Flat treatments reduce depth emphasis while parallel oblique forms may add it; styles can mix.
 
 # Common Errors
 
-- **Error**: Using isometric perspective for elements that need to relate to each other in a consistent 3D space from a specific viewpoint.
-  **Correction**: Isometric has no fixed viewpoint and everything is viewed from the same angle. When user perspective matters (navigation, wayfinding), central perspective or a defined camera position is more appropriate.
+- **Error**: Calling every parallel projection exact isometry or an undistorted true-length drawing.
+  **Correction**: Check the axis construction and foreshortening.
 
-- **Error**: Mixing isometric and perspective elements in the same composition.
-  **Correction**: Mixing isometric (parallel) and convergent (perspective) elements creates spatial dissonance — the spatial system contradicts itself. This is a deliberate surrealist device (de Chirico); avoid unintentionally.
+- **Error**: Prohibiting isometric navigation or mixed conventions.
+  **Correction**: Select the view and stylization for the task; inspect actual wayfinding and intended connections.
 
 # Common Confusions
 
-- **Confusion**: Isometric perspective = 3D perspective.
-  **Clarification**: Isometric is fundamentally different from central/convergent perspective. It is a parallel projection, not a perspective projection. The depth effect is weaker but the dimensional accuracy is greater.
+- **Confusion**: 2:1 isometric game art is exact engineering isometry.
+  **Clarification**: It is commonly a dimetric diamond.
 
-- **Confusion**: Isometric appears only in technical drawing and games.
-  **Clarification**: Isometric perspective is the universal, cross-cultural default for spatial representation before central perspective is introduced. It appears in Japanese screen paintings, Chinese landscape scrolls, medieval European manuscripts, Egyptian art, and children's drawings worldwide.
+- **Confusion**: Parallel projection has no geometric view direction.
+  **Clarification**: It has parallel viewing rays; it lacks a finite central-projection station point. The panoramic symbolism remains a separate account.
 
 # Source Reference
 
 Chapter V: Space, "Art and Visual Perception," pp. 400–472, 590–596 (Boxes in Three Dimensions section; Toward a Convergence of Space section).
 
 # Verification Notes
+
+The bullets below are preserved historical extraction assertions, not current verification. Frozen confidence, cross-reference, source-reading and OCR claims do not settle original-dependent fidelity. Current same-context review supports only the explicitly scoped technical constructions, contextual teaching and local comparisons; it establishes no browser, observer, comfort or physiological result.
 
 - Definition source: Synthesised from Arnheim's discussion, pp. 400–472 and 590–596; key quotes cited
 - Confidence rationale: High — Arnheim gives isometric perspective extended treatment with precise characterisation

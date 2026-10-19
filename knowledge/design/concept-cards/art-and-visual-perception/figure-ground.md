@@ -27,89 +27,79 @@ related:
 contrasts_with:
   - "depth-levels"
 answers_questions:
-  - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
 rosetta_stone:
   -
     domain: "engineering"
     concept: "z-index layering (foreground vs background elements)"
-    rating: "rigorous"
-    note: "The figure-ground distinction is the simplest case of z-index logic: foreground elements have higher z-index than background elements."
+    rating: "structural"
+    note: "Scoped paint order can support occlusion but does not assign perceptual figure-ground ownership."
   -
     domain: "mathematics"
     concept: "Set partitioning (complementary sets)"
     rating: "structural"
-    note: "Figure and ground are complementary: every region of the visual field belongs to one or the other, making them a partition of the image plane."
+    note: "Given domain Ω and a boundary convention, a selected mask F and Ω\\F partition the domain. This mathematical choice does not determine perceptual ownership or every region’s role."
 css_implementation:
   -
     property: "z-index"
-    example: "z-index: 1; /* figure */ z-index: 0; /* ground */"
+    example: "position: relative; z-index: 1; /* scoped paint order; inspect geometry */"
     support: "baseline"
   -
     property: "background-color"
-    example: "background-color: var(--surface-ground);"
+    example: "background-color: var(--surface-ground); /* supply project value and actual foreground pair */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Figure-ground is the perceptual organisation of the visual field into a bounded, object-like shape (figure) that stands in front of an unbounded, continuous background (ground). It is the most elementary form of spatial depth in pictures.
+Figure-ground describes a perceptual distinction between a bounded, object-like region and a surround experienced as continuing behind it. It is an elementary spatial organization in Arnheim’s account, rather than a binary label imposed on every pixel.
 
 # Core Definition
 
-Arnheim, following Edgar Rubin, defines figure-ground as a two-plane spatial organisation where one surface is enclosed and perceived as an object (figure), while the other is unbounded and experienced as a continuous backdrop (ground). The figure appears denser, more object-like, and lies in front of the ground. The contour that separates them belongs perceptually to the figure, not the ground.
+This presents the represented Arnheim account alongside current analytic qualifications. Original edition, pages, quotations, figures, experiments, physiology and historical claims remain unassessed; the technical constructions below do not certify source fidelity.
 
-Key factors that determine which region becomes figure (Rubin's rules, as cited by Arnheim):
-1. **Enclosure**: the surrounded area tends to be figure.
-2. **Size**: the smaller area tends to be figure.
-3. **Symmetry**: the more symmetrical region tends to be figure.
-4. **Convexity**: convex regions tend to be figure; concave regions tend to be ground.
-5. **Brightness**: brighter regions tend toward figure; saturated red advances more than blue.
-6. **Orientation**: regions whose axes align with vertical/horizontal framework of the visual field tend to become figure.
-7. **Motion**: a moving element against a stationary ground strongly acquires figure character.
-
-The relationship is dynamic, not static: figure has active, advancing character; ground is passive, recessive, and "continues beneath" the figure.
+Arnheim follows Rubin in describing enclosure, relative size, symmetry, convexity, brightness, orientation and motion as factors that can favor figure character. These are reported contextual tendencies: brighter, redder, smaller or convex regions do not universally win. The goblet/faces reversal and Douris’s interlocking red and black shapes illustrate competing or active region readings. A CSS background can itself become a perceptual figure. A local ground can continue behind a bounded figure without requiring that the physical image domain be infinite.
 
 # Prerequisites
 
-None — figure-ground is perceptually primitive; it requires no learned concepts.
+No internal prerequisite is recorded in this extraction. This is a pedagogical entry point, not evidence of innateness or absence of learned contributions.
 
 # Key Properties
 
-1. Contour ownership: the shared boundary belongs to the figure, leaving the ground without a boundary of its own.
-2. Figure appears denser, more solid, more object-like than ground.
-3. Ground is perceived as continuous, passing behind the figure uninterrupted.
-4. The relationship is often ambiguous (reversible figure-ground patterns).
-5. Figure-ground is the minimum case of pictorial space — the simplest possible depth relationship.
-6. Negative space (ground regions) must be actively managed in composition; they have perceptual weight and shape.
+1. Contour ownership is a perceptual asymmetry.
+2. Ground can be experienced as continuing behind figure.
+3. A composition can admit reversals, several levels or unresolved local regions.
+4. No recorded prerequisite is evidence of no learning.
+5. A mathematical partition can describe an assigned mask but does not decide perception.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Create an enclosed bounded region against an unbounded surround — this is the minimal figure-ground.
-2. Reinforce figure quality: make the figure smaller, more symmetrical, more convex, brighter, or more saturated than its ground.
-3. Manage negative spaces actively — they have their own shape and will be perceived.
-4. Avoid ambiguous figure-ground when clarity is needed; exploit it deliberately when ambiguity is desired.
+
+1. Identify the region that needs to be distinguishable for the task.
+2. Use enclosure, spacing, contrast or shape when they help that distinction.
+3. Preserve intentional reversals when appropriate.
+4. Check text, boundaries and interactions separately from region assignment.
 
 ## To Identify/Recognise:
-1. Which region is enclosed/bounded? That is the figure candidate.
-2. Which region continues beneath? That is the ground.
-3. Is the boundary ambiguous — can either region claim it? If so, figure-ground rivalry exists.
-4. Check: does the "figure" have greater density, more solidity, more convexity?
+
+1. Locate candidate bounded regions and surrounds.
+2. Ask whether the same contour admits another ownership reading.
+3. In an audit, inspect foreground/background separation at actual component states.
+4. Distinguish a visible hierarchy cue from a complete hierarchy or accessibility result.
 
 # Context & Application
 
-- **Typical contexts**: All visual design. Every element on a screen, page, or canvas is figure against some ground.
-- **Common applications**: UI element visibility (button vs. background), text legibility (type as figure against page ground), icon design (positive shape vs. negative space), logo design (exploiting ambiguous figure-ground for double-readings), layout (ensuring content elements have sufficient figure quality against background).
+Cards, text, icons and modal surfaces can use figure-ground organization. A darkened scrim can support a dialog reading, but a dialog also needs semantics, keyboard/focus behavior and content. The card contributes local separation and salience to hierarchy/audit questions, not a full ordered audit or every grouping principle.
 
 ## Cross-Domain Connections
 
-**Engineering → RIGOROUS**: z-index implements figure-ground — elements with higher z-index claim the "figure" position visually. Background colours define the ground; foreground UI components define the figure.
-
-**Mathematics → STRUCTURAL**: Figure and ground partition the image plane into complementary sets. The boundary (contour) is the interface between them, and its "ownership" is a perceptual asymmetry, not a geometric one.
+**Engineering → STRUCTURAL**: z-index participates in scoped paint order and can support visible occlusion; it does not assign perceptual figure. **Mathematics → STRUCTURAL**: Given an image domain Ω, a chosen mask F and a stated convention assigning boundary points, F and Ω\F partition that domain. This chosen binary model does not prove every image has one such perceptual partition or determine ownership.
 
 # Examples
+
+Source-specific examples and quotations below are retained as reports with their original wording and locators. They are not independently checked historical, experimental or universal claims. Applied examples are qualified design proposals.
 
 **Example 1** (p. 107): "The surrounded surface tends to be seen as figure, the surrounding, unbounded one as ground." — Arnheim paraphrasing Rubin.
 
@@ -117,47 +107,55 @@ None — figure-ground is perceptually primitive; it requires no learned concept
 
 **Example 3** (p. 180): Douris's Greek cup — the carefully shaped negative black spaces between the figures are strong enough in figure quality to create a continuous interlocking surface of red and black.
 
-**Example 4** (UI): A modal overlay exploits figure-ground: the darkened scrim is ground, the modal card is figure. The scrim's continuous expanse and lower brightness reinforce its ground status.
+**Example 4** (UI): A modal overlay can use a darkened scrim to support a ground reading around a bounded dialog. The actual pair, boundary and reading need inspection; semantics and interaction remain separate.
 
 # Relationships
 
+These are scoped reading connections. Builds Upon supports understanding; Enables names a possible downstream use; Related is an association; Contrasts With names a comparison. They do not establish universal causes, subtypes or verified historical sequences. Ordinary downstream uses are not invented card identities.
+
 ## Builds Upon
-- Nothing — this is a foundational perceptual primitive.
+
+- Nothing recorded — No internal prerequisite is recorded; this is not a no-learning claim.
 
 ## Enables
-- **Depth Levels** — Extending figure-ground to multiple overlapping planes.
-- **Overlap Depth Cue** — Depends on figure-ground: the occluded element is forced behind.
-- **Negative Space** — The ground in a composition is what designers call negative space.
-- **Pictorial Space** — Figure-ground is the simplest possible pictorial space.
+
+- **Depth Levels** — Depth levels elaborate a selected figure-ground description.
+- **Overlap Depth Cue** — Contour ownership can support front/behind occlusion when geometry permits.
+- **Negative Space** — A chosen surrounding region can function as negative space and can also acquire figure quality.
+- **Pictorial Space** — A two-plane reading is one elementary pictorial organization.
 
 ## Related
-- **Contour Rivalry** — What happens when two adjacent regions equally claim a shared boundary.
-- **Pictorial Space** — Figure-ground is the two-plane special case of pictorial space.
+
+- **Contour Rivalry** — Rivalry describes competing ownership of a shared visible boundary.
+- **Pictorial Space** — Pictorial space includes shallow figure-ground and other spatial organizations.
 
 ## Contrasts With
-- **Depth Levels** — Figure-ground requires one unbounded region; depth levels extend the concept to multiple bounded planes, none needing to be endless.
+
+- **Depth Levels** — The local two-region account is compared with multiple planes; it is not a binary partition theorem for every picture.
 
 # Common Errors
 
-- **Error**: Treating background (ground) elements as perceptually neutral or irrelevant.
-  **Correction**: Ground regions have shape, perceptual weight, and can acquire figure quality. Negative spaces in a layout actively affect the reading of the composition.
+- **Error**: Treating a background as irrelevant.
+  **Correction**: Inspect its shape and relation to the figure.
 
-- **Error**: Relying on colour alone to distinguish figure from ground.
-  **Correction**: Colour is only one of many figure-ground cues. Enclosed shape, size, symmetry, and convexity are equally or more powerful.
+- **Error**: Using colour alone to convey meaning.
+  **Correction**: Check actual pairs and provide the labels or other signals needed for the task; no ranking of figure factors replaces that review.
 
 # Common Confusions
 
-- **Confusion**: Figure = foreground element; ground = background layer.
-  **Clarification**: While roughly true, the distinction is perceptual, not just about layering. A large, bright, convex background shape can become figure; a small, dim, irregular foreground shape can recede to ground.
+- **Confusion**: A foreground CSS element must be figure.
+  **Clarification**: Paint order and perceived ownership differ.
 
-- **Confusion**: Figure-ground is fixed by the image.
-  **Clarification**: Figure-ground is often ambiguous and can flip. Artists exploit this intentionally; designers usually must prevent unintended reversals.
+- **Confusion**: Figure-ground is always fixed.
+  **Clarification**: Reversible readings can be intended or unintended; inspect them in context.
 
 # Source Reference
 
 Chapter V: Space, "Art and Visual Perception," pp. 101–115 (Figure and Ground section, with depth levels discussion extending to p. 120).
 
 # Verification Notes
+
+The bullets below are preserved historical extraction assertions, not current verification. Frozen confidence, cross-reference, source-reading and OCR claims do not settle original-dependent fidelity. Current same-context review supports only the explicitly scoped technical constructions, contextual teaching and local comparisons; it establishes no browser, observer, comfort or physiological result.
 
 - Definition source: Synthesised from discussion in Chapter V (Space), pp. 101–115; direct references to Rubin's rules are cited explicitly by Arnheim
 - Confidence rationale: Figure-ground is one of the most extensively discussed concepts in the chapter; Arnheim's account of Rubin's factors is precise

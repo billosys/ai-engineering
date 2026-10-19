@@ -25,93 +25,92 @@ extends:
   - "figure-ground"
 related:
   - "overlap-depth-cue"
-  - "transparency-perceptual"
+  - "perceptual-transparency"
   - "negative-space"
 contrasts_with:
   - "figure-ground"
 answers_questions:
-  - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-  - "A dark-mode implementation simply inverts all colours. Text on some backgrounds becomes unreadable. What went wrong?"
   - "Given a data-rich card (title, status badge, three metrics, timestamp, action button), how do you assign visual hierarchy: what gets the most weight, what gets de-emphasized, and why?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
 rosetta_stone:
   -
     domain: "engineering"
     concept: "CSS stacking context / z-index layers"
-    rating: "rigorous"
-    note: "CSS stacking contexts directly implement depth levels: each z-index value corresponds to a discrete depth plane, and elements at the same z-index share a depth level."
+    rating: "structural"
+    note: "Stack levels order eligible paint within comparable contexts; they are not perceived planes or distances."
   -
     domain: "engineering"
     concept: "Layered architecture in UI (DOM tree, stacking contexts, compositing layers)"
-    rating: "rigorous"
-    note: "The browser rendering pipeline's compositing layers are a direct implementation of depth levels — each composited layer corresponds to one depth plane in the pictorial stack."
+    rating: "structural"
+    note: "DOM structure, stacking contexts and compositor layers are distinct; none maps one-to-one to perceived depth."
 css_implementation:
   -
     property: "z-index"
-    example: "z-index: 0; /* ground */ z-index: 1; /* content */ z-index: 100; /* overlay */"
+    example: "position: relative; z-index: 1; /* local stack level, not a perceived distance */"
     support: "baseline"
   -
     property: "isolation: isolate"
-    example: "isolation: isolate; /* creates new stacking context = new depth level */"
+    example: "isolation: isolate; /* atomic stacking context, not a new perceived plane */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Depth levels are the discrete planes at different distances from the viewer that together constitute the spatial organisation of a picture. They extend the figure-ground concept from two planes to multiple overlapping layers, each with its own depth position.
+Depth levels describe perceived foreground/background planes or regions at differing distances in a picture. They generalize a two-plane figure-ground description without equating perceived distance with CSS stack levels.
 
 # Core Definition
 
-Arnheim extends figure-ground to the broader concept of depth levels: "It seems more adequate to speak of patterns distributed over a number of depth levels, the basic figure-ground pattern being a special case, namely an organization of only two levels" (p. 158).
+This presents the represented Arnheim account alongside current analytic qualifications. Original edition, pages, quotations, figures, experiments, physiology and historical claims remain unassessed; the technical constructions below do not certify source fidelity.
 
-Key structural principle: the visual system prefers the minimum number of depth levels needed to accommodate the pattern. This is the "principle of economy": "there is a tendency to simplification by economy, which means that the number of depth levels in a given pattern is as small as conditions permit" (p. 160). A circle on a square is perceived as a perforated square (two levels) rather than a disk on top of a square (three levels), because two levels is simpler.
+Arnheim describes patterns distributed across depth levels and a tendency toward economy: use as few levels as the pattern permits in his analysis. The disk/square and Arp examples concern possible readings, not an algorithm that assigns every image a unique count. A depth relief may be shallow, stepped or continuous. An element can serve as figure against one region and ground for another. In UI work, perceived layering, semantic hierarchy, DOM structure, stacking contexts and compositor layers require separate descriptions.
 
-Pictorial space can therefore be described as a "depth relief" — an ordered arrangement of planes at different distances. The relief can be:
-- Shallow or deep
-- Working with few distance values or many
-- Using steep intervals (foreground-background jump) or gradual chromatic scales of fine steps
+Retained wording from the represented account (original fidelity unassessed):
 
-This spatial structure is the fundamental unit of compositional depth analysis.
+"It seems more adequate to speak of patterns distributed over a number of depth levels, the basic figure-ground pattern being a special case, namely an organization of only two levels"
+
+"there is a tendency to simplification by economy, which means that the number of depth levels in a given pattern is as small as conditions permit"
 
 # Prerequisites
 
-- **Figure-Ground** — Depth levels extend figure-ground to the multi-plane case.
-- **Overlap Depth Cue** — The primary mechanism by which depth levels are established between adjacent planes.
-- **Pictorial Space** — Depth levels are the structural description of pictorial space.
+- **Figure-Ground** — Contour ownership and region separation supply the comparison used here.
+- **Overlap Depth Cue** — Contour interruption and hidden continuation help compare opaque and layered readings.
+- **Pictorial Space** — Pictorial spatial readings supply the vocabulary for this particular cue or convention.
 
 # Key Properties
 
-1. Minimum levels principle: the visual system prefers the fewest depth levels that resolve visual tensions adequately.
-2. Any element can simultaneously be figure to the plane behind it and ground for elements in front of it.
-3. The depth relief of a picture can be characterised by: number of levels, steepness of transitions, range (shallow vs. deep), and symmetry (frontal vs. receding).
-4. Pictorial space is best described as a "continuous relief" — depth levels shade into one another rather than being absolutely discrete.
-5. The number and arrangement of depth levels is a primary tool for compositional expression and hierarchy.
+1. Perceived levels need not be discrete numerical distances.
+2. A continuous relief and a count of selected planes are different descriptions.
+3. Local paint order can contribute to occlusion without defining perceptual depth.
+4. The number of useful UI layers depends on content and interaction; no 3–5 rule follows.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Identify the minimum number of planes needed to resolve all visual tensions (overlapping shapes, figure-ground ambiguities).
-2. Assign each element to a depth level, with foreground elements assigned lower levels (nearer) and background elements higher levels (farther).
-3. Control depth level transitions: steep transitions (large depth jumps) create dramatic spatial contrast; gradual transitions create spatial flow.
-4. Avoid unnecessary depth levels — each additional level increases spatial complexity.
+
+1. Identify the intended foreground/background relations.
+2. Compare overlaps, transparency and shallow or continuous treatments.
+3. Choose any numbering convention explicitly; larger z-index is frontward only within the relevant paint-order comparison.
+4. Retain established project tokens when useful; avoid inventing unused levels.
 
 ## To Identify/Recognise:
-1. List all elements and ask: which are in front of which?
-2. Group elements at the same perceived depth into shared levels.
-3. Count levels: how many distinct depth planes are there?
-4. Assess transitions: are level changes abrupt (overlap) or gradual (atmospheric gradient)?
+
+1. List which painted surfaces hide which others.
+2. Describe which appear to occupy the same or different planes.
+3. Inspect changes of perceived depth separately from stacking-context boundaries.
+4. For an audit, compare intended relationships, content visibility and actual overlay states.
 
 # Context & Application
 
-- **Typical contexts**: UI layout hierarchy, illustration composition, photography, web page spatial structure, data visualisation layering.
-- **Common applications**: In UI design, depth levels correspond to z-index stacking: background (level 0), content (level 1), navigation (level 2), overlays/modals (level 3+). Each level should have consistent visual treatment (contrast, shadow, blur) to maintain spatial legibility. In data visualisation, primary data is foreground (level 0), secondary data is mid-level (level 1), grid/background is rear (level 2).
+UI overlays and data visualisations can use layering to express relationships. For a card with title, status, three metrics, time and action, the task determines emphasis: an urgent status or critical metric may lead, the title identifies the subject, time establishes freshness, and the action needs an understandable role. This card contributes plane/grouping analysis, not a full assignment of typographic weights or an entire ordered interface audit.
 
 ## Cross-Domain Connections
 
-**Engineering → RIGOROUS**: CSS z-index stacking contexts implement depth levels directly. Each integer z-index value defines a depth plane. The browser's compositing engine renders these planes in depth order. `isolation: isolate` creates a new stacking context (a new depth level sub-system) — exactly matching Arnheim's observation that depth levels can be nested and locally self-contained.
+**Engineering → STRUCTURAL**: A stacking context is an atomic paint group in its parent. A child at z-index:999 inside a context below a sibling context at 2 cannot escape that parent order. Integers are not physical distances or semantic priorities. isolation:isolate creates a context; compositor-layer allocation is a separate implementation decision. See [CSS 2.2 stacking](https://www.w3.org/TR/CSS22/visuren.html#layers).
 
 # Examples
+
+Source-specific examples and quotations below are retained as reports with their original wording and locators. They are not independently checked historical, experimental or universal claims. Applied examples are qualified design proposals.
 
 **Example 1** (p. 158): "It seems more adequate to speak of patterns distributed over a number of depth levels, the basic figure-ground pattern being a special case, namely an organization of only two levels." — Arnheim
 
@@ -121,47 +120,49 @@ This spatial structure is the fundamental unit of compositional depth analysis.
 
 **Example 4** (p. 182): "Pictorial space, therefore, is best described as a continuous relief in which areas at different distances border upon one another." — Arnheim
 
-**Example 5** (UI): A web page typically has: background/wallpaper (level -1), page body (0), sticky header (1), dropdown menu (2), modal scrim (99), modal dialog (100), tooltip (200). This z-index scale is a direct specification of depth levels.
+**Example 5** (UI): A project may order wallpaper (-1), body (0), header (1), dropdown (2), scrim (99), dialog (100) and tooltip (200) within suitable contexts. These illustrative values are local paint conventions, not measured planes or guaranteed priority.
 
 # Relationships
 
+These are scoped reading connections. Builds Upon supports understanding; Enables names a possible downstream use; Related is an association; Contrasts With names a comparison. They do not establish universal causes, subtypes or verified historical sequences. Ordinary downstream uses are not invented card identities.
+
 ## Builds Upon
-- **Figure-Ground** — Depth levels are the generalisation of figure-ground to N planes.
-- **Overlap Depth Cue** — Overlap is the primary mechanism creating boundaries between depth levels.
-- **Pictorial Space** — Depth levels are the structural vocabulary for describing pictorial space.
+
+- **Figure-Ground** — The two-plane figure-ground account is conceptually elaborated to multiple planes.
+- **Overlap Depth Cue** — Occlusion can support order between selected regions.
+- **Pictorial Space** — Depth relief is a vocabulary for describing a pictorial reading.
 
 ## Enables
-- **Visual Hierarchy** — Depth levels create hierarchy: foreground elements are more salient than background elements.
-- **Spatial Organisation** — The arrangement of depth levels is the fundamental structure of compositional depth.
+
+- **Visual Hierarchy** — Layering can contribute salience without setting information priority.
+- **Spatial Organisation** — Plane relations are one description of spatial organization.
 
 ## Related
-- **Perceptual Transparency** — A case where two depth levels share the same spatial location and both remain visible.
-- **Negative Space** — The spaces between depth level elements; the "ground" in each layer pair.
+
+- **Perceptual Transparency** — An underlying region can remain visible through an interpreted front layer.
+- **Negative Space** — Intervening shapes can contribute grouping without being a calibrated inter-plane distance.
 
 ## Contrasts With
-- **Figure-Ground** — Figure-ground is the two-level special case; depth levels is the general N-level concept. In figure-ground, one plane must be unbounded; in depth levels, all planes can be bounded and shaped.
+
+- **Figure-Ground** — Compare a selected two-plane account with a multilevel or continuous description; no infinite physical ground is required.
 
 # Common Errors
 
-- **Error**: Assigning arbitrary z-index values without a coherent depth level system.
-  **Correction**: Define a small number of named depth levels (base, content, floating, overlay, critical) with specific z-index ranges. This prevents the common "z-index war" where developers increment z-index arbitrarily, producing an incoherent depth structure.
-
-- **Error**: Using too many depth levels, creating unnecessary spatial complexity.
-  **Correction**: Arnheim's economy principle applies: use the minimum number of depth levels that resolves the visual tensions. Typically 3–5 levels suffice for most UI compositions.
+- **Error**: Treating each z-index integer or compositor layer as a perceived plane.
+  **Correction**: Inspect comparable contexts and actual painted overlap. Use project-specific ordering only where it serves real overlays; neither a token hierarchy nor a fixed number of planes is required.
 
 # Common Confusions
 
-- **Confusion**: Depth levels = z-index integer values.
-  **Clarification**: Depth levels are perceptual concepts — groupings of elements perceived at the same spatial distance. Z-index integer values implement depth levels but are not identical to them. Multiple elements can share a depth level with very different z-index values if they are in different stacking contexts.
-
-- **Confusion**: More depth levels = more spatial richness.
-  **Clarification**: Excessive depth levels increase complexity and cognitive load. The economy principle suggests spatial clarity comes from using the minimum viable number of depth levels.
+- **Confusion**: More levels necessarily create richer space.
+  **Clarification**: Added planes can help a task or obscure relationships. Arnheim’s economy account is a contextual guide, not a measured UI complexity law.
 
 # Source Reference
 
 Chapter V: Space, "Art and Visual Perception," pp. 154–198 (Depth Levels section and Application to Painting).
 
 # Verification Notes
+
+The bullets below are preserved historical extraction assertions, not current verification. Frozen confidence, cross-reference, source-reading and OCR claims do not settle original-dependent fidelity. Current same-context review supports only the explicitly scoped technical constructions, contextual teaching and local comparisons; it establishes no browser, observer, comfort or physiological result.
 
 - Definition source: Synthesised from discussion in Chapter V (Space), pp. 154–198; key quote cited directly
 - Confidence rationale: High — Arnheim devotes an extended section to depth levels and gives precise examples

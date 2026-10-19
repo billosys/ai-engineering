@@ -28,7 +28,6 @@ related:
 contrasts_with:
   - "linear-perspective"
 answers_questions:
-  - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How does the visual-elements concept of 'value' (light-dark range) connect to colour theory's 'lightness' and to contrast as a design principle?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
 rosetta_stone:
@@ -36,128 +35,142 @@ rosetta_stone:
     domain: "music"
     concept: "Dynamics: pp (pianissimo) to ff (fortissimo)"
     rating: "structural"
-    note: "Atmospheric perspective follows the same logic as musical dynamics: elements close-up are sharp, high-contrast, and 'loud'; distant elements are soft, low-contrast, and 'quiet'."
+    note: "Loud/quiet is a chosen compositional comparison, not a universal map from dynamics to distance or importance."
   -
     domain: "mathematics"
     concept: "Exponential decay of contrast with distance"
     rating: "structural"
-    note: "Atmospheric softening follows an approximate exponential decay — contrast and saturation reduce with increasing layers of air between viewer and object."
+    note: "Exponential contrast decay applies to a specified homogeneous medium/path model with constant attenuation; it is not a law for every colour, blur or painted gradient."
 css_implementation:
   -
     property: "filter: blur()"
-    example: "filter: blur(2px); /* implies spatial recession */"
+    example: "filter: blur(2px); /* Gaussian smoothing, not distance measurement */"
     support: "baseline"
   -
     property: "opacity"
-    example: "opacity: 0.6; /* lower opacity suggests greater distance */"
+    example: "opacity: .6; /* actual backdrop determines resulting colour/contrast */"
     support: "baseline"
   -
     property: "color"
-    example: "color: hsl(220 10% 70%); /* desaturated, lightened — atmospheric recession */"
+    example: "color: hsl(220 10% 70%); /* illustrative colour; resolve actual pair */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Atmospheric (aerial) perspective is a depth cue in which distant objects appear hazier, less saturated, lower in contrast, and often shifted toward blue, due to the increasing layer of atmosphere between the viewer and distant objects.
+Atmospheric perspective describes distance-related changes in scene appearance through a medium, often reduced contrast and altered colour. Painted haze and photographic defocus can suggest recession but differ from atmospheric scattering.
 
 # Core Definition
 
-Arnheim describes atmospheric perspective as operating through gradients of brightness, saturation, sharpness, and texture. "Aerial perspective relies on gradients of brightness, saturation, sharpness, texture, and to some extent of hue" (p. 584). In nature, the effect is caused by the increasing column of air through which distant objects are viewed.
+This presents the represented Arnheim account alongside current analytic qualifications. Original edition, pages, quotations, figures, experiments, physiology and historical claims remain unassessed; the technical constructions below do not certify source fidelity.
 
-Crucially, Arnheim argues that atmospheric perspective works as a depth cue not merely because we associate haze with distance from experience, but because the perceptual gradients themselves create depth. "Those vistas in nature are so deep because of the perceptual gradients they produce" (p. 584). The gradient mechanism — the systematic increase in softness, reduction in contrast, and desaturation — is what carries the spatial signal, independent of prior knowledge about atmosphere.
+Arnheim describes gradients of brightness, saturation, sharpness, texture and hue. His claim that these operate independently of learned atmospheric knowledge remains a reported theoretical position. Photography can blur regions in front of or behind the focus plane; blur alone does not give a unique distance direction. Aerial colour depends on illumination and medium, so blue-grey is not obligatory. The represented portrait and landscape examples motivate comparison rather than a universal cue law.
 
-Arnheim also notes that blur/sharpness gradients work as depth cues in photography even without any naturalistic atmospheric effect: "Photographers know that the focus scale from blur to sharp image shapes the volume of an object convincingly even though the zoom lenses of our eyes have prepared us for no such experience" (p. 584). This confirms that the mechanism is the gradient, not the association.
+Retained wording from the represented account (original fidelity unassessed):
+
+"Aerial perspective relies on gradients of brightness, saturation, sharpness, texture, and to some extent of hue"
+
+"Those vistas in nature are so deep because of the perceptual gradients they produce"
+
+"Photographers know that the focus scale from blur to sharp image shapes the volume of an object convincingly even though the zoom lenses of our eyes have prepared us for no such experience"
 
 # Prerequisites
 
-- **Pictorial Space** — Atmospheric perspective is one of the mechanisms that constructs pictorial depth.
-- **Depth Gradient Principle** — Atmospheric perspective is a specific application of the general gradient-creates-depth rule.
+- **Pictorial Space** — Pictorial spatial readings supply the vocabulary for this particular cue or convention.
+- **Depth Gradient Principle** — Systematic image-quality changes supply a comparison framework, not a law that every cue is a gradient.
 
 # Key Properties
 
-1. Operates through multiple simultaneous gradients: brightness (value), saturation (colour intensity), sharpness (focus), and textural density.
-2. Usually includes a hue shift toward blue-grey for very distant objects (sky scattering effect).
-3. Works as a perceptual gradient cue, not merely as a learned association — the gradient mechanism is primary.
-4. Focus/blur gradient alone (depth of field in photography) is sufficient to create depth even without colour or haze.
-5. Combines naturally with size gradient and height gradient for maximum depth effect in landscapes.
+1. A medium can attenuate direct contrast and add scattered light.
+2. A simple homogeneous model can use C(Z)=C0 exp(−βZ), with β≥0 constant and specified path length Z.
+3. This model does not determine every scene’s hue, saturation or sharpness.
+4. Defocus depends on focus geometry, not just distance from the observer.
+5. Opacity composites against an actual backdrop; it need not lighten or desaturate.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Reduce contrast progressively for more distant elements (lower brightness difference between light and dark areas).
-2. Desaturate colours for distant elements — push toward neutral grey or blue-grey.
-3. Apply a blur or softening to distant elements (texture becomes finer, edges become less sharp).
-4. Optionally shift distant hues toward cool blue-grey.
-5. Ensure all these gradients increase monotonically with distance — irregular gradients weaken the effect.
+
+1. If recession helps the picture, vary contrast or colour under a stated intended scene.
+2. Keep essential text and data readable.
+3. Distinguish painted haze, composited opacity and optical defocus.
+4. Use or omit blur according to task and fallback needs.
 
 ## To Identify/Recognise:
-1. Find elements that appear hazier, softer, less saturated, or lower in contrast.
-2. Do these qualities increase with apparent distance?
-3. Is there a focus/blur gradient (foreground sharp, background soft)?
-4. Is there a hue shift toward blue-grey at distance?
+
+1. Identify actual contrast/colour/sharpness changes.
+2. Ask whether the scene suggests medium attenuation or focus effects.
+3. Check foreground and background blur possibilities.
+4. For an audit, resolve the affected text/boundary pairs rather than inferring accessibility from softness.
 
 # Context & Application
 
-- **Typical contexts**: Landscape illustration, photography, cinematic composition, UI depth effects, game environment design, data visualisation (secondary layers receding).
-- **Common applications**: In UI design, applying a slight blur and reduced contrast to a background behind a modal implies spatial depth. In data visualisation, less important/secondary data series can be desaturated and reduced in contrast to push them spatially behind the primary series. Card elevation shadows + slight colour shift suggest atmospheric depth in material design.
+Landscapes, photography, illustration and layered interfaces provide comparisons. Value describes light/dark organization, colour-space lightness is a model coordinate, and contrast is a relation between actual regions; none is interchangeable with CSS opacity or a WCAG ratio. That is a partial answer to the value/lightness/contrast question. An audit can inspect a receding layer’s readability, but this card supplies no complete ordered interface audit.
 
 ## Cross-Domain Connections
 
-**Music → STRUCTURAL**: Musical dynamics map to atmospheric depth — foreground elements are "loud" (high contrast, sharp, saturated); background elements are "quiet" (low contrast, soft, desaturated). A composer brings important themes forward through dynamic weight; a designer brings primary content forward through contrast and saturation.
-
-**Mathematics → STRUCTURAL**: The reduction of contrast with atmospheric depth approximates exponential decay — similar to signal attenuation through a medium. Each additional "layer" of space reduces contrast multiplicatively, not additively.
+**Music → STRUCTURAL**: Loud/quiet offers a chosen foreground/background analogy; musical dynamics do not measure distance or importance universally. **Mathematics → STRUCTURAL**: Exponential attenuation is exact only within its stated medium/path model, not a law for every painted gradient, shadow or saturation change. A UI box-shadow is a lighting-style cue, not attenuation through extra air.
 
 # Examples
+
+Source-specific examples and quotations below are retained as reports with their original wording and locators. They are not independently checked historical, experimental or universal claims. Applied examples are qualified design proposals.
 
 **Example 1** (p. 584): "Aerial perspective relies on gradients of brightness, saturation, sharpness, texture, and to some extent of hue." — Arnheim
 
 **Example 2** (p. 584): "Photographers know that the focus scale from blur to sharp image shapes the volume of an object convincingly even though the zoom lenses of our eyes have prepared us for no such experience." — Arnheim
 
-**Example 3** (photography): Portrait photography uses shallow depth of field to blur the background, pushing it spatially behind the in-focus subject — pure atmospheric-perspective-style depth cueing without any actual atmospheric content.
+**Example 3** (photography): A portrait with shallow depth of field can blur both foreground and background regions outside focus. This is defocus, distinct from atmospheric scattering, and blur alone does not order every region by distance.
 
-**Example 4** (UI): Material Design elevation system uses shadow strength as a proxy for depth; lighter shadows imply closer elements (less air between viewer and surface), stronger diffuse shadows imply greater elevation.
+**Example 4** (UI): UI elevation shadows are painted lighting-style cues. Stronger or softer shadows do not measure air attenuation or guarantee relative perceived distance.
 
 # Relationships
 
+These are scoped reading connections. Builds Upon supports understanding; Enables names a possible downstream use; Related is an association; Contrasts With names a comparison. They do not establish universal causes, subtypes or verified historical sequences. Ordinary downstream uses are not invented card identities.
+
 ## Builds Upon
-- **Depth Gradient Principle** — Atmospheric perspective is the application of the gradient principle to brightness, saturation, and sharpness.
-- **Pictorial Space** — Atmospheric perspective is one of the mechanisms that creates pictorial depth.
+
+- **Depth Gradient Principle** — Contrast/colour variation can be compared with other spatial gradients.
+- **Pictorial Space** — Atmospheric effects can contribute a pictorial distance reading.
 
 ## Enables
-- **Colour in Spatial Depth** — Atmospheric perspective is the main mechanism by which colour signals spatial recession.
-- **Focus as Depth Cue** — The blur/sharpness version of atmospheric perspective.
+
+- **Colour in Spatial Depth** — Colour/contrast can suggest recession but also encode other meanings.
+- **Focus as Depth Cue** — Defocus can supply a different cue; it is not atmospheric scattering and can occur in front or behind focus.
 
 ## Related
-- **Size Gradient** — Most naturally combined with atmospheric perspective; the two gradients typically co-occur in landscape compositions.
-- **Texture Gradient** — The fineness of texture at distance is closely related to the sharpness reduction in atmospheric perspective.
-- **Height in Picture Plane** — A positional depth cue that co-occurs with atmospheric perspective in landscape compositions.
+
+- **Size Gradient** — Scale and atmosphere can co-occur without guaranteed reinforcement.
+- **Texture Gradient** — Texture density and sharpness can change independently.
+- **Height in Picture Plane** — A landscape can combine medium effects with conditional height/horizon cues.
 
 ## Contrasts With
-- **Linear Perspective** — Works through geometric convergence, not tonal/colour degradation; they are independent depth cues.
-- **Overlap** — Works through contour interruption; atmospheric perspective works through value/saturation/sharpness gradients.
+
+- **Linear Perspective** — Geometric convergence and medium/colour changes are distinct, potentially dependent observations.
+- **Overlap** — Contour interruption differs from haze; neither is universally stronger.
 
 # Common Errors
 
-- **Error**: Applying blur universally rather than as a gradient.
-  **Correction**: Atmospheric perspective requires a gradient of blur increasing with depth. Uniform blur does not create depth; it creates a flat, unclear image.
+- **Error**: Calling any background blur atmospheric scattering.
+  **Correction**: Name the operation and scene assumptions. Uniform blur can coexist with other depth cues; it does not prove flatness.
 
-- **Error**: Confusing atmospheric perspective with learned knowledge about fog.
-  **Correction**: Arnheim's point is that the perceptual gradients work directly, regardless of knowledge about atmospheric physics. The gradient cue is primary.
+- **Error**: Using reduced contrast for essential content without checking it.
+  **Correction**: Resolve actual pairs and states, preserving a readable fallback.
 
 # Common Confusions
 
-- **Confusion**: Atmospheric perspective requires actual atmosphere or landscape context.
-  **Clarification**: The depth-creating mechanism is the gradient of contrast/saturation/sharpness — applicable in any visual context, including abstract UI design. A blurred, desaturated background panel reads as spatially behind a sharp, saturated foreground element.
+- **Confusion**: Blur always means farther away.
+  **Clarification**: Defocus can occur on both sides of focus.
 
-- **Confusion**: Only blue-grey shift signals distance; any warm colour can be in the foreground.
-  **Clarification**: The hue shift to blue-grey is one component, but contrast reduction and saturation decrease are primary. A warm-toned element in the background can still read as recessive if it is desaturated and low-contrast.
+- **Confusion**: Opacity means lighter, desaturated recession.
+  **Clarification**: The result depends on foreground, backdrop and compositing; opacity alone specifies none of those perceptual outcomes.
 
 # Source Reference
 
 Chapter V: Space, "Art and Visual Perception," pp. 582–586 (Gradients Create Depth section, aerial perspective subsection).
 
 # Verification Notes
+
+The bullets below are preserved historical extraction assertions, not current verification. Frozen confidence, cross-reference, source-reading and OCR claims do not settle original-dependent fidelity. Current same-context review supports only the explicitly scoped technical constructions, contextual teaching and local comparisons; it establishes no browser, observer, comfort or physiological result.
 
 - Definition source: Synthesised from discussion in Chapter V (Space), pp. 582–586
 - Confidence rationale: Medium — Arnheim discusses aerial perspective as part of the gradient discussion rather than giving it a dedicated section; key passages cited
