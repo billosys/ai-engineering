@@ -142,3 +142,13 @@ do not guarantee outcomes across content, users or browsers.
 - Added an editorial-structure method to the packaged type guide and corrected
   five existing CSS metadata scalars. Prepared-source comparison and local
   semantics do not establish original-capture fidelity or browser/AT behavior.
+
+## Version 1.0.21 - 2026-10-18
+
+- Corrected the connected Cleland/Munsell family’s colour-model, indexing,
+  value, balance and harmony extrapolations while retaining useful reported
+  examples and explicitly unavailable historical-source fidelity.
+- Reconciled 34 existing analogy/CSS metadata scalars and qualified design
+  philosophy, research, psychophysical, token and CSS claims in both long guides.
+  Conditional proofs and current definitions do not establish historical,
+  browser, assistive-technology or full-corpus acceptance.

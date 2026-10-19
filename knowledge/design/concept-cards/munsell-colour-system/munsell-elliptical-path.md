@@ -33,67 +33,66 @@ answers_questions:
 rosetta_stone:
   -
     domain: "mathematics"
-    concept: "Elliptical constraint / convex safe region"
-    rating: "structural"
-    note: "The elliptical path defines a convex region in the chroma plane within which any colour selection is safe. This is structurally analogous to a feasible region in optimisation — a convex constraint boundary inside which all solutions satisfy the harmony condition."
+    concept: "Elliptical path / proposed constraint"
+    rating: "loose"
+    note: "A reported elliptical colour-selection suggestion can be loosely compared with restricting a design search. No defined harmony inequalities establish a convex safe region, and neither a boundary line nor its interior guarantees harmony, gamut, contrast or legibility."
 css_implementation: []
 ---
 
 # Quick Definition
 
-The Munsell elliptical path is a safe-selection zone for multi-colour palettes: an ellipse traced between two complementary hues through the low-chroma region near the neutral axis, within which any colour choice will harmonise.
+The elliptical path is a reported historical suggestion for selecting intermediate colours between opposed hues, reducing chroma near neutral. It is a proposed constraint, not a demonstrated safe-selection region.
 
 # Core Definition
 
-Cleland describes the problem: when using several colours including a complementary pair, "in the choice of other Hues between these we shall be in danger of discord as we leave their immediate proximity and arrive at points half-way between them, where we find neither the balance of proximity nor of contrast" (p. 17).
+The earlier extraction attributes the following wording to Cleland; the book and prepared text are unavailable, so quotations, locators, context and historical attribution remain unverified.
 
-The solution: "We may avoid this danger in the selection of our colors between these opposites by choosing steps of Chroma for them which shall be nearer to the neutral pole and approach to within, let us say, three steps of it. The line thus traced between our opposite Hues will form an ellipse and colors taken anywhere on this line will safely accord" (p. 17).
+Retained reported wording: "in the choice of other Hues between these we shall be in danger of discord as we leave their immediate proximity and arrive at points half-way between them, where we find neither the balance of proximity nor of contrast" "We may avoid this danger in the selection of our colors between these opposites by choosing steps of Chroma for them which shall be nearer to the neutral pole and approach to within, let us say, three steps of it. The line thus traced between our opposite Hues will form an ellipse and colors taken anywhere on this line will safely accord" "The elliptical path inside of which any color choice is safe, is the result of Mr. F. G. Cooper's research study of the Munsell Color System" "the elliptical path is shown tilted to different levels of Value"
 
-Cleland credits the concept: "The elliptical path inside of which any color choice is safe, is the result of Mr. F. G. Cooper's research study of the Munsell Color System" (footnote, p. 17).
-
-He also notes that variations include tilting the ellipse: "the elliptical path is shown tilted to different levels of Value" (p. 17).
+The reported suggestion lowers intermediate chroma near neutral between opposed hues; “three steps” is approximate advice. The exact diagram and Cooper research remain unavailable. A line claim does not establish its interior, and no harmony inequalities prove convex safety.
 
 # Prerequisites
 
-- **Complementary Colours** — The ellipse connects two opposite hues as its endpoints.
-- **Chroma** — The ellipse constrains chroma for intermediate hues (approaching neutral).
-- **Neutral Axis** — The ellipse passes near the neutral axis at its narrowest point.
-- **Munsell Colour Solid** — The ellipse is a path through the three-dimensional colour solid.
+- **Complementary Colours** — Supplies the relevant H/V/C or diagram vocabulary for this card; this is an understanding route, not a claim of physical or historical derivation.
+- **Chroma** — Supplies the relevant H/V/C or diagram vocabulary for this card; this is an understanding route, not a claim of physical or historical derivation.
+- **Neutral Axis** — Supplies the relevant H/V/C or diagram vocabulary for this card; this is an understanding route, not a claim of physical or historical derivation.
+- **Munsell Colour Solid** — Supplies the relevant H/V/C or diagram vocabulary for this card; this is an understanding route, not a claim of physical or historical derivation.
 
 # Key Properties
 
-1. **Connects complements**: The long axis of the ellipse joins two opposite hues at their full chroma.
-2. **Low chroma at midpoint**: Hues halfway between the complements are constrained to low chroma (≤ ~3 steps from neutral).
-3. **Safe interior**: Any colour within the ellipse will harmonise with the complement pair.
-4. **Avoids the "danger zone"**: Hues midway between complements at high chroma lack both proximity harmony and contrast harmony.
-5. **Tiltable**: The ellipse can be tilted to different value levels for further variation.
-6. **Attributed to F. G. Cooper**: Not Munsell's own contribution, but developed within his system.
+1. The recorded description connects opposed hue endpoints and lower-chroma intermediate choices.
+2. “Within, let us say, three steps” is an attributed approximate example, not a necessary threshold.
+3. A claimed safe boundary does not prove a safe interior.
+4. No defined harmony inequalities establish a convex feasible region or guarantee gamut, contrast or legibility.
+5. Tilted value variants are reported examples, not automatically realizable palettes.
+6. Cooper's attribution and the missing diagram/research remain unassessed.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Establish two complementary hues as the poles of the ellipse (e.g., Blue and Yellow-Red).
-2. At these poles, allow full chroma.
-3. For hues between the poles, restrict chroma progressively — approach within ~3 steps of neutral at the midpoint.
-4. The resulting envelope is an ellipse in the hue-chroma plane.
-5. Optionally tilt the ellipse across value levels.
-6. Select intermediate colours from anywhere within the ellipse.
+
+1. Treat the reported opposed-hue/low-chroma path as an optional historical sketch.
+2. State the chosen model and any geometric equation instead of inferring one from the word ellipse.
+3. Choose actual candidates under the brief and supplied brand context, then check destination gamut, roles and rendered pairs/states.
+4. Do not label the line or its interior safe, or impose the reported three-step suggestion as a universal rule.
 
 ## To Identify/Recognise:
-1. A multi-colour palette built around a complementary pair.
-2. Intermediate hues are low in chroma (muted, approaching gray).
-3. The two anchor hues are more vivid; transitional hues are progressively more subdued.
+
+1. Look for an explicitly identified historical path or proposed constraint.
+2. Separate its boundary from any claim about its interior.
+3. A muted midpoint is a candidate choice, not sufficient evidence of harmony or accessibility.
 
 # Context & Application
 
-- **Typical contexts**: Multi-colour palettes for complex layouts, editorial colour schemes, data visualisation with many categories, interior design colour planning.
-- **Common applications**: Selecting safe additional colours for a palette already anchored by a complementary pair; avoiding colour discord in complex multi-hue designs; creating palettes that are varied yet cohesive.
+For CQ23 this supplies one optional historical idea for candidate exploration. Full CSS palette work still begins with supplied values/roles, named model and gamut, then actual pair/state checks. The absent diagram and original study prevent a precise historical reconstruction or validated ellipse recipe.
 
 ## Cross-Domain Connections
 
-**Mathematics → Structural**: The elliptical path defines a feasible region in the hue-chroma plane, analogous to a convex constraint in mathematical optimisation. All points inside the ellipse satisfy the harmony condition, just as all points inside a feasible region satisfy the constraint inequalities. The complementary endpoints are the extreme points of the region.
+**Mathematics → Loose**: Restricting a design search resembles using constraints. Without defined inequalities or a harmony criterion, convexity and feasible-region safety are unsupported. Even an ordinary geometric ellipse does not turn its interior into a safe colour set.
 
 # Examples
+
+Recorded extraction examples below retain their reported locators; they were not checked against the missing book. Any balance or harmony result is historical advice or conditional arithmetic, not an independently observed mixing or aesthetic result.
 
 **Example 1** (p. 17): "We may avoid this danger... by choosing steps of Chroma for them which shall be nearer to the neutral pole and approach to within, let us say, three steps of it."
 
@@ -104,30 +103,33 @@ He also notes that variations include tilting the ellipse: "the elliptical path 
 # Relationships
 
 ## Builds Upon
-- **Colour Balance** — The ellipse is a practical extension of balance principles to multi-colour selection.
-- **Complementary Colours** — The ellipse endpoints are a complementary pair.
+
+- **Colour Balance** — The reported suggestion follows the historical balance discussion; it is not derived from a validated safety criterion.
+- **Complementary Colours** — The opposed diagram positions supply endpoints; their mixture and gamut need separate evidence.
 
 ## Enables
-- **Colour Harmony as Order** — The elliptical path is itself an orderly path through colour space.
+
+- **Colour Harmony as Order** — The ellipse is an illustrative ordered path in the historical thesis, not proof of pleasure.
 
 ## Related
-- **Complementary Harmony** — The ellipse anchors on a complementary pair and extends it.
+
+- **Complementary Harmony** — Both methods use opposed hue anchors; neither validates all choices on or inside an ellipse.
 
 ## Contrasts With
-No direct contrast within this source.
+
+No additional card-local bullet is recorded here. This is navigation scope, not a verified absence or a historical-source completeness result.
 
 # Common Errors
 
-- **Error**: Using high-chroma intermediate hues between complements, expecting them to harmonise.
-  **Correction**: Hues midway between complements lack both proximity and contrast harmony. Reduce their chroma toward neutral to bring them inside the elliptical safe zone.
+- **Error**: Declaring intermediate high chroma inherently discordant or lowering it to a guaranteed safe value.
+  **Correction**: Treat reduction as a proposed choice and evaluate the actual context and pairs.
 
 # Common Confusions
 
-- **Confusion**: The elliptical path means only the boundary line is safe.
-  **Clarification**: Cleland says "colors taken anywhere on this line will safely accord" — and by extension, colours inside the ellipse (lower chroma) are also safe. The ellipse defines the outer boundary of the safe region.
-
-- **Confusion**: The elliptical path is Munsell's invention.
-  **Clarification**: Cleland attributes it to F. G. Cooper's research study of the Munsell system.
+- **Confusion**: A reported safe line proves its whole interior safe.
+  **Clarification**: That inference is invalid without a supported criterion and proof; neither line nor interior is validated here.
+- **Confusion**: The Cooper attribution or geometry is verified.
+  **Clarification**: Both are retained extraction reports pending the missing original, diagram and research identification.
 
 # Source Reference
 
@@ -135,8 +137,7 @@ Chapter 9: Color Combinations, p. 17.
 
 # Verification Notes
 
-- Definition source: Direct quotes from p. 17, including Cooper attribution footnote.
-- Confidence rationale: Medium — the concept is clearly described, but the "three steps" threshold is approximate ("let us say"), and the referenced diagram is not available in the text conversion.
-- Uncertainties: The exact shape of the ellipse and the "three steps" rule are approximate. Cooper's original research is not cited in detail.
-- Cross-reference status: All referenced slugs correspond to planned cards.
-- Rosetta Stone check: Mathematics (convex feasible region) rated STRUCTURAL.
+- This revision reviewed the complete available card body and local relationships/CQ components; it did not inspect the missing original book, prepared Cleland text or diagrams. All historical quotations, dates, page claims, named attributions and source-specific efficacy claims remain unassessed for fidelity.
+- Extraction-confidence metadata is preserved from the predecessor. Earlier “exact quote,” “verified planned cards” and “0010 checked” notes described historical extraction/navigation observations, not current independent semantic proof.
+- Current technical qualifications use the [RIT renotation overview](https://www.rit.edu/science/munsell-color-science-lab-educational-resources#munsell-renotation-data), [CIE appearance terminology](https://cie.co.at/eilvterm/17-22-067) and [CSS Color4](https://www.w3.org/TR/2026/CRD-css-color-4-20261009/), with elementary conditional algebra where stated. These do not establish historical-source fidelity, exact perceptual equality, physical neutralisation or aesthetic guarantees.
+- CSS metadata/body examples are model-specific illustrations, not Munsell conversions, checked contrast pairs or mandatory project palettes. No browser, assistive-technology, disc/material experiment or hosted rendering result was produced.

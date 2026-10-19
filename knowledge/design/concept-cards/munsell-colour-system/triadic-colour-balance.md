@@ -33,61 +33,69 @@ answers_questions:
 rosetta_stone:
   -
     domain: "mathematics"
-    concept: "Partition of a vector into components"
-    rating: "structural"
-    note: "Splitting a complement into two component hues is structurally analogous to decomposing a vector into orthogonal components. The component areas must sum to the original area-weight to maintain balance, just as vector components must sum to the original vector."
+    concept: "Historical complement-splitting heuristic"
+    rating: "loose"
+    note: "The recorded complement-splitting example suggests a loose allocation analogy. Hue names are not orthogonal vectors, and adding scalar areas or C*V weights does not establish physical colour mixing or neutral cancellation; a specific mixture model would be needed."
 css_implementation: []
 ---
 
 # Quick Definition
 
-Triadic colour balance extends the two-colour complementary balance to three colours by splitting one complement into its two constituent hues, dividing its area-weight between them proportionally.
+This recorded three-colour heuristic splits one member of a complementary pair into two named hues and shares its area allocation. The arithmetic can be inspected; hue-name splitting does not establish physical mixing or neutral cancellation.
 
 # Core Definition
 
-Cleland demonstrates the extension from two-colour to three-colour balance: "The principle governing the Balance of opposite colors will also apply to combinations of three colors. Let us assume that Blue is required as one of the colors in a three-color combination. We find that its opposite Hue is Yellow-Red, and as this is merely an admixture of Yellow and Red, it follows logically that the use of these two Hues, with due regard to proportion of areas or strength of Chroma, will yield a perfect color Balance" (p. 15).
+The earlier extraction attributes the following wording to Cleland; the book and prepared text are unavailable, so quotations, locators, context and historical attribution remain unverified.
 
-The method: "we may proceed exactly as in the case of a two-color combination of Blue and Yellow-Red; but in this case we would divide the amount or strength of a correct Yellow-Red between our Yellow and our Red" (p. 16).
+Retained reported wording: "The principle governing the Balance of opposite colors will also apply to combinations of three colors. Let us assume that Blue is required as one of the colors in a three-color combination. We find that its opposite Hue is Yellow-Red, and as this is merely an admixture of Yellow and Red, it follows logically that the use of these two Hues, with due regard to proportion of areas or strength of Chroma, will yield a perfect color Balance" "we may proceed exactly as in the case of a two-color combination of Blue and Yellow-Red; but in this case we would divide the amount or strength of a correct Yellow-Red between our Yellow and our Red"
+
+The reported method shares a complement’s scalar area allocation between two named hues. Its 42:10:10 arithmetic can be retained conditionally. Hue-name decomposition is not an orthogonal vector decomposition or a specified physical mixture, and no universal cancellation follows.
+
+Further recorded extraction wording (unverified attribution/context; these are not adopted universal claims):
+
+- "the same rule would apply to three or any other number of colors" (p. 14)
 
 # Prerequisites
 
-- **Complementary Colours** — Understanding which hues are opposite provides the starting point.
-- **Colour Balance** — The area-proportioning principle extends directly.
-- **Munsell Balance Formula** — The calculation of visual weight (C × V) is used to determine area splits.
+- **Complementary Colours** — Supplies the relevant H/V/C or diagram vocabulary for this card; this is an understanding route, not a claim of physical or historical derivation.
+- **Colour Balance** — Supplies the stipulated positive-input historical model for the conditional arithmetic; it does not establish a mixing or harmony law.
+- **Munsell Balance Formula** — Supplies the stipulated positive-input historical model for the conditional arithmetic; it does not establish a mixing or harmony law.
 
 # Key Properties
 
-1. **Complement splitting**: The complement is decomposed into its two adjacent constituent hues.
-2. **Area division**: The complement's area allocation is divided between the two replacement hues.
-3. **Same balance principle**: The total visual weight on each side of the neutral axis remains equal.
-4. **Richer palette**: Three hues provide more variety than two while maintaining balance.
-5. **Extends to more colours**: Cleland notes "the same rule would apply to three or any other number of colors" (p. 14).
+1. This is the reported complement-splitting method, not necessarily an equilateral 120° triad.
+2. Dividing an allocated scalar area preserves its sum, not a colour mixture vector.
+3. Hue names such as Yellow-Red are not orthogonal vector components or pigment recipes.
+4. The recorded 42:10:10 example is conditional bookkeeping; it is not a general multi-colour balance law.
+5. No particular third hue, hue count or area split guarantees harmony, contrast or accessible category distinction.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Select a primary hue (e.g., Blue 4/5).
-2. Find its complement (Yellow-Red).
-3. Calculate the two-colour balance: Blue weight = 4 × 5 = 20; YR 6/7 weight = 6 × 7 = 42.
-4. Determine areas inversely: 42 parts Blue, 20 parts Yellow-Red.
-5. Split the complement's area equally between its constituent hues: 10 parts Yellow 6/7 + 10 parts Red 6/7.
-6. Final proportions: 42 parts Blue 4/5 : 10 parts Yellow 6/7 : 10 parts Red 6/7.
+
+1. Adopt the historical positive-C, positive-V two-colour approximation for an explicit exercise only.
+2. Blue 4/5 has product 20; Yellow-Red 6/7 has product 42, giving areas 42:20.
+3. Share the 20 allocated parts as 10 Yellow 6/7 and 10 Red 6/7 to reproduce the recorded 42:10:10 arithmetic.
+4. 42×20=840 and 10×42+10×42=840. This scalar equality does not prove that the substituted colours mix like Yellow-Red or neutralise Blue.
+5. For actual palettes return to roles, gamut and pair/state checks; no generic three-colour prescription follows.
 
 ## To Identify/Recognise:
-1. Three hues where two are adjacent and one is roughly opposite to their midpoint.
-2. The single hue occupies a larger area; the two adjacent hues share a smaller combined area.
-3. The composition feels balanced despite using three distinct hues.
+
+1. Distinguish a split-complement example from equally spaced hue-angle selection.
+2. Check the area allocation and model assumptions separately from mixture or aesthetic claims.
+3. Do not diagnose a multi-hue dashboard solely by the number of hues.
 
 # Context & Application
 
-- **Typical contexts**: Brand palettes with primary + two accents, editorial design, packaging with multiple colour elements, data visualisation with three categories.
-- **Common applications**: Extending a two-colour scheme to three colours without losing balance; creating richer palettes for complex layouts; proportioning dashboard colour elements.
+For CQ30 the example can explain conditional area accounting, not identify an automatic dashboard error or fix. Assess meaning/role coherence, hierarchy, pair/state contrast and redundant signals; many hues can be justified by the task.
 
 ## Cross-Domain Connections
 
-**Mathematics → Structural**: Splitting a complement into component hues parallels vector decomposition. The complement Yellow-Red is decomposed into Yellow and Red components, each carrying a portion of the original vector's magnitude (area-weight). Balance is maintained because the sum of components equals the original, just as in vector addition.
+**Mathematics → Loose allocation analogy**: Splitting 20 into 10+10 preserves a scalar total. It is not orthogonal vector decomposition and provides no specified physical mixture coordinates. The reported example remains historical, not experimental verification.
 
 # Examples
+
+Recorded extraction examples below retain their reported locators; they were not checked against the missing book. Any balance or harmony result is historical advice or conditional arithmetic, not an independently observed mixing or aesthetic result.
 
 **Example 1** (pp. 15-16): Blue 4/5 with Yellow 6/7 and Red 6/7:
 - Blue weight: 4 × 5 = 20 → 42 parts area.
@@ -97,31 +105,34 @@ The method: "we may proceed exactly as in the case of a two-color combination of
 # Relationships
 
 ## Builds Upon
-- **Colour Balance** — The same inverse proportionality principle.
-- **Complementary Harmony** — Triadic balance starts from a complementary pair.
-- **Munsell Balance Formula** — Provides the calculation method.
+
+- **Colour Balance** — The recorded split shares an area allocation, with no general multi-colour balance proof.
+- **Complementary Harmony** — The method starts with a reported opposed pair, then substitutes named hues conditionally.
+- **Munsell Balance Formula** — The formula supplies the initial positive-input scalar products; hue-name splitting is an additional unverified model step.
 
 ## Enables
-- **Colour Harmony as Order** — Triadic balance is an orderly multi-colour path through colour space.
+
+- **Colour Harmony as Order** — The example can be described as an organized selection, not a demonstrated harmony theorem.
 
 ## Related
-- **Munsell Colour Solid** — Multi-colour combinations trace paths through the solid.
+
+- **Munsell Colour Solid** — The diagram locates hues/values/chromas; scalar area sums are not physical mixture vectors.
 
 ## Contrasts With
-No direct contrast within this source.
+
+No additional card-local bullet is recorded here. This is navigation scope, not a verified absence or a historical-source completeness result.
 
 # Common Errors
 
-- **Error**: Splitting the complement but giving each replacement hue the full complement area, effectively doubling the warm side.
-  **Correction**: The two replacement hues share the complement's area allocation — divide, don't duplicate.
-
-- **Error**: Choosing arbitrary third colours rather than splitting the complement systematically.
-  **Correction**: The third colour should be derived from the complement to maintain the balance relationship.
+- **Error**: Giving each replacement the whole 20-part allocation when reproducing the recorded exercise.
+  **Correction**: Sharing it as 10+10 preserves the stipulated total; doubling it changes that arithmetic.
+- **Error**: Requiring every third colour to derive from a complement.
+  **Correction**: This is one named historical method. Other candidates can be appropriate; check the actual task.
 
 # Common Confusions
 
-- **Confusion**: Triadic balance requires exactly equilateral spacing on the hue circle (120° apart).
-  **Clarification**: Cleland's triadic method splits a complement into its adjacent constituents, which may not be equilateral. The balance comes from the proportioning, not the geometric spacing.
+- **Confusion**: Every triad has to use 120° spacing or the example proves neutral mixing.
+  **Clarification**: This method uses a reported split complement. Neither the name nor equal scalar weights proves physical cancellation or harmony.
 
 # Source Reference
 
@@ -129,8 +140,7 @@ Chapter 9: Color Combinations, pp. 15-16.
 
 # Verification Notes
 
-- Definition source: Direct quotes from pp. 15-16, with a detailed worked example.
-- Confidence rationale: High — explicitly demonstrated with Blue + Yellow + Red example.
-- Uncertainties: Cleland only works one example; generalization to non-adjacent splits is implied but not demonstrated.
-- Cross-reference status: All referenced slugs correspond to planned cards.
-- Rosetta Stone check: Mathematics (vector decomposition) rated STRUCTURAL.
+- This revision reviewed the complete available card body and local relationships/CQ components; it did not inspect the missing original book, prepared Cleland text or diagrams. All historical quotations, dates, page claims, named attributions and source-specific efficacy claims remain unassessed for fidelity.
+- Extraction-confidence metadata is preserved from the predecessor. Earlier “exact quote,” “verified planned cards” and “0010 checked” notes described historical extraction/navigation observations, not current independent semantic proof.
+- Current technical qualifications use the [RIT renotation overview](https://www.rit.edu/science/munsell-color-science-lab-educational-resources#munsell-renotation-data), [CIE appearance terminology](https://cie.co.at/eilvterm/17-22-067) and [CSS Color4](https://www.w3.org/TR/2026/CRD-css-color-4-20261009/), with elementary conditional algebra where stated. These do not establish historical-source fidelity, exact perceptual equality, physical neutralisation or aesthetic guarantees.
+- CSS metadata/body examples are model-specific illustrations, not Munsell conversions, checked contrast pairs or mandatory project palettes. No browser, assistive-technology, disc/material experiment or hosted rendering result was produced.

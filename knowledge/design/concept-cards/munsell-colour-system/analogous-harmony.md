@@ -39,48 +39,52 @@ css_implementation:
 
 # Quick Definition
 
-Analogous harmony uses neighbouring hues on the colour circle — colours that are adjacent rather than opposite — producing harmony through proximity rather than contrast.
+This named colour-selection strategy uses neighbouring hue positions. “Harmony” names a historical design preference, not an assured result of the selection rule.
 
 # Core Definition
 
-Cleland describes analogous combinations as using "neighboring Hues, that is of any Hue with the Hue which immediately precedes or follows it on the scale — Green with Green-Yellow, Red with Yellow-Red, Yellow with Yellow-Red, etc." (p. 15).
+The earlier extraction attributes the following wording to Cleland; the book and prepared text are unavailable, so quotations, locators, context and historical attribution remain unverified.
 
-The key distinction from complementary harmony: "In all of these cases the harmony depends upon proximity rather than contrast, as in the case of opposites" (p. 15).
+Retained reported wording: "neighboring Hues, that is of any Hue with the Hue which immediately precedes or follows it on the scale — Green with Green-Yellow, Red with Yellow-Red, Yellow with Yellow-Red, etc." "In all of these cases the harmony depends upon proximity rather than contrast, as in the case of opposites" "These may in turn be varied by taking them at different steps of Value and different strengths of Chroma" "In the same way, Hues may be combined with neighboring intermediate Hues"
 
-He notes two extensions: "These may in turn be varied by taking them at different steps of Value and different strengths of Chroma" and "In the same way, Hues may be combined with neighboring intermediate Hues" (p. 15).
+Neighbouring hues define the reported method. No universal family-count or arc-width threshold is established. Hue proximity does not guarantee harmony, and value/chroma/gamut and actual pair/state use remain separate.
 
 # Prerequisites
 
-- **Hue** — Understanding hue identity and position on the circle.
-- **Munsell Hue Circle** — Adjacency is defined by position on the circle.
+- **Hue** — Supplies the relevant H/V/C or diagram vocabulary for this card; this is an understanding route, not a claim of physical or historical derivation.
+- **Munsell Hue Circle** — Supplies the relevant H/V/C or diagram vocabulary for this card; this is an understanding route, not a claim of physical or historical derivation.
 
 # Key Properties
 
-1. **Proximity-based**: Harmony comes from closeness on the hue circle, not opposition.
-2. **Adjacent hues**: Typically spanning 1-3 steps on the 10-hue circle (e.g., R, YR, Y).
-3. **Value/chroma variation**: Can be enriched by varying value and chroma within the adjacent hue range.
-4. **Extends to intermediate hues**: Not limited to principal hues — any adjacent positions work.
-5. **Contrast with complementary**: "proximity rather than contrast" (p. 15).
+1. The defining selection is neighbouring hue positions; identify the diagram/model in use.
+2. Value/chroma variation can create candidates, within the available gamut and reference conditions.
+3. Recorded claims of sure or infallible harmony are attributed advice, not established guarantees.
+4. No necessary hue-count, three-step threshold or universal area recipe follows.
+5. Actual coherence, hierarchy, legibility and accessibility depend on the roles, content, viewing conditions and complete rendered pairs.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Select a primary hue (e.g., Blue, 5B).
-2. Include one or both immediately neighbouring hues (e.g., Blue-Green 5BG, Purple-Blue 5PB).
-3. Vary value and chroma within each hue for additional richness.
-4. Optionally extend to 2 neighbours on each side for a wider analogous range.
+
+1. Start with the brief, supplied brand colour/tokens and actual interface roles; preserve their semantics.
+2. Explore neighbouring hue positions in the named model. The recorded Munsell examples are not CSS conversions.
+3. For CSS, choose explicit OKLCH candidate values; any fixed hue or ±angle choice is optional, not a mandatory palette.
+4. Check destination gamut and rendering, then actual foreground/background pairs and relevant states; adjust for the task.
+5. If demonstrating the historical area equation, state its positive-domain approximation separately. It supplies no general neutral-background or harmony rule.
 
 ## To Identify/Recognise:
-1. All hues in the composition occupy a contiguous arc of the hue circle.
-2. The arc spans no more than about 3-5 hue families.
-3. The effect feels cohesive and unified, with subtle hue variation.
+
+1. Identify the selection relation (neighbouring hue positions) rather than judging by a vague impression of harmony.
+2. Distinguish family proximity from exact coordinate identity; decide which the exercise requires.
+3. Check the resulting candidates in their actual task instead of inferring quality from their scheme name.
 
 # Context & Application
 
-- **Typical contexts**: Nature-inspired palettes, gradient backgrounds, editorial design, brand palette extensions.
-- **Common applications**: Creating warm or cool palettes (selecting from the warm or cool arc of the circle); enriching a monochromatic scheme with subtle hue variation; designing harmonious multi-colour layouts.
+For CQ23, begin with the supplied brand value and task, map needed roles, propose optional candidates in an explicit CSS model, inspect gamut/rendering, and check complete pairs and states. No Munsell hue-only conversion or automatic accessible palette is supplied. Scheme names can organize exploration; they do not determine a universal hue/family count.
 
 # Examples
+
+Recorded extraction examples below retain their reported locators; they were not checked against the missing book. Any balance or harmony result is historical advice or conditional arithmetic, not an independently observed mixing or aesthetic result.
 
 **Example 1** (p. 15): "Neighboring Hues — Green with Green-Yellow, Red with Yellow-Red, Yellow with Yellow-Red."
 
@@ -89,27 +93,35 @@ He notes two extensions: "These may in turn be varied by taking them at differen
 # Relationships
 
 ## Builds Upon
-- **Hue** — Analogous harmony varies the hue dimension within a narrow range.
-- **Munsell Hue Circle** — Adjacency is defined on this circle.
+
+- **Hue** — The method selects neighbouring hue positions, not a required number of colours.
+- **Munsell Hue Circle** — The named circle supplies the adjacency relation, not a universal appearance threshold.
 
 ## Enables
-- **Colour Harmony as Order** — Analogous harmony exemplifies orderly paths (short arcs) through colour space.
+
+- **Colour Harmony as Order** — A short arc can illustrate a selection rule; the path alone proves no harmony.
 
 ## Related
-- **Monochromatic Harmony** — Monochromatic is the limit case of analogous (zero hue variation).
+
+- **Monochromatic Harmony** — One-hue selection is a narrower constraint; adjacency remains a separate strategy.
 
 ## Contrasts With
-- **Complementary Harmony** — Complementary uses maximum hue contrast; analogous uses minimal hue contrast.
+
+- **Complementary Harmony** — Neighbouring versus opposed hue selections is the contrast, not minimum/maximum perceptual contrast.
 
 # Common Errors
 
-- **Error**: Spanning too many hue families (e.g., from R through G) and calling it "analogous."
-  **Correction**: Analogous harmony works with neighbouring hues — typically 2-3 adjacent families. Wider spans need balance adjustments.
+- **Error**: Treating the named method as a guarantee or a mandatory palette recipe.
+  **Correction**: Use it as a candidate strategy, retaining the brief, supplied values, gamut and actual pair/state checks.
+- **Error**: Treating the balance model as a requirement for every scheme.
+  **Correction**: If adopted for an exercise, require positive C,V and distinguish its conditional arithmetic from aesthetic judgment.
 
 # Common Confusions
 
-- **Confusion**: Analogous colours are always harmonious regardless of value and chroma choices.
-  **Clarification**: Hue proximity provides inherent harmony, but extreme value or chroma contrasts within an analogous scheme can still feel discordant. Cleland recommends varying value and chroma in orderly steps.
+- **Confusion**: “Neighbouring” imposes exactly 2–3 families or a safe arc width.
+  **Clarification**: The recorded account says immediately preceding/following hues, without establishing a universal numerical threshold.
+- **Confusion**: Hue proximity guarantees harmony.
+  **Clarification**: It is the reported strategy, not a perceptual law. Value/chroma choices, gamut, role distinctions and pair/state checks remain necessary.
 
 # Source Reference
 
@@ -117,8 +129,7 @@ Chapter 9: Color Combinations, p. 15.
 
 # Verification Notes
 
-- Definition source: Direct quotes from p. 15.
-- Confidence rationale: High — explicitly described with examples.
-- Uncertainties: The specific number of hue families that constitute "analogous" is not quantified in the source — Cleland says "immediately precedes or follows."
-- Cross-reference status: All referenced slugs correspond to planned cards.
-- Rosetta Stone check: No formal mapping assigned for analogous harmony specifically.
+- This revision reviewed the complete available card body and local relationships/CQ components; it did not inspect the missing original book, prepared Cleland text or diagrams. All historical quotations, dates, page claims, named attributions and source-specific efficacy claims remain unassessed for fidelity.
+- Extraction-confidence metadata is preserved from the predecessor. Earlier “exact quote,” “verified planned cards” and “0010 checked” notes described historical extraction/navigation observations, not current independent semantic proof.
+- Current technical qualifications use the [RIT renotation overview](https://www.rit.edu/science/munsell-color-science-lab-educational-resources#munsell-renotation-data), [CIE appearance terminology](https://cie.co.at/eilvterm/17-22-067) and [CSS Color4](https://www.w3.org/TR/2026/CRD-css-color-4-20261009/), with elementary conditional algebra where stated. These do not establish historical-source fidelity, exact perceptual equality, physical neutralisation or aesthetic guarantees.
+- CSS metadata/body examples are model-specific illustrations, not Munsell conversions, checked contrast pairs or mandatory project palettes. No browser, assistive-technology, disc/material experiment or hosted rendering result was produced.
