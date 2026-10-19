@@ -73,7 +73,15 @@ An HTML data table can have a `caption`, header cells (`th`) and appropriate `sc
 
 # Examples
 
-**Example 1** (tables): Butterick compares Athos/Porthos/Aramis against Priors?, Alibi? and Confession?: their Yes/No values are respectively Yes/No/Yes, No/Yes/Yes and No/No/No. The “Cluttered” and “Clean” versions repeat that data to illustrate his selective-border advice. The prepared Markdown does not preserve a reliable visual difference; the labels are his judgments, not measured readability here.
+**Example 1** (tables): Butterick compares the following question rows across the three people. The “Cluttered” and “Clean” versions repeat this data to illustrate his selective-border advice:
+
+| Question | Athos | Porthos | Aramis |
+|---|---|---|---|
+| Priors? | Yes | No | Yes |
+| Alibi? | No | Yes | Yes |
+| Confession? | No | No | No |
+
+The prepared Markdown does not preserve a reliable visual difference; the labels are his judgments, not measured readability here.
 
 **Example 2** (tables): His Athos/Porthos/Aramis phone/cell/fax example repeats the same numbers in “Dense” and “Not” tables to argue for more internal space. The source suggests 0.03″ and gradual 0.01″ adjustments. This record reports the example without claiming current defaults or a rendered improvement. Its contact data are:
 
