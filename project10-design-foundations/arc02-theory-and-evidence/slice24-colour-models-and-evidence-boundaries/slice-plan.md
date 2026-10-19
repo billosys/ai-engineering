@@ -6,7 +6,7 @@ depends-on: [accepted colour math, current technical primary evidence; book fide
 
 # Slice24 — Colour Models and Evidence Boundaries
 
-Revision **1.1**, opened 2026-10-18; Project 1.75/current Arc02 Autonomous Mode.
+Revision **1.2**, opened 2026-10-18; Project 1.75/current Arc02 Autonomous Mode.
 CDC `/root`; implementing CC `/root/s24_cc`; separate independent review in
 `cdc-verification.md`. SOURCE `/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/design-arc02-autonomous` branch
 `codex/project10-arc02-autonomous`, pin `da9cb76c0fdfb3a6e66b20ed0670d485d6e1b079`; planning predecessor `d80e27710ec87b43aa0afafdbd0857369ce51373`.
@@ -58,7 +58,14 @@ retrospective follow. No main merge, push, publication, Arc04 or final 1.1.0 bum
 
 ## Assignment history
 
-- Current: [Iteration01](cc-prompt-iteration01.md), a one-clause CDC authoring
+- Current: [Iteration02](cc-prompt-iteration02.md), source e95d5867/CC return
+  c5e03c2b. Independent reviewer `/root/s24_review` accepts S24-02/03/04 at that
+  exact bounded state; S24-01 remains open for the manifesto Weber epigraph.
+  One literal guide replacement and affected fresh package proof only. CDC
+  coordinates review/closure; all source/original/higher gates remain.
+
+
+- Previous: [Iteration01](cc-prompt-iteration01.md), a one-clause CDC authoring
   correction discovered during CC intake: canonical extends A→B elaborates B,
   inverse B→A is extended by. Initial source pin/scope/criteria/checks remain;
   body/guide implementation continues under the original assignment.
@@ -68,6 +75,10 @@ retrospective follow. No main merge, push, publication, Arc04 or final 1.1.0 bum
   within the recorded remaining-Arc02 authorization. CDC owns acceptance.
 
 ## Version History
+
+- 1.2 (2026-10-18): Apply independent three-done/one-open review and issue the
+  one-guide Weber correction. Record late intake deviation truthfully; no scope
+  change or historical receipt repair,all input/higher gates retained.
 
 - 1.1 (2026-10-18): Correct CDC's issued extends-direction error before candidate
   review; preserve initial prompt and all scope,criteria,source/input gates.
