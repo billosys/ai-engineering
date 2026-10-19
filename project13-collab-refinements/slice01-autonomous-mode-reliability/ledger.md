@@ -23,3 +23,9 @@ closing report. Mandatory expenditure approval, broad research-capture fields an
 a required future evaluation are superseded for this source assignment. This does
 not amend Project13's five original research gates or weaken any ledger/review gate.
 All rows remain open pending independent review of the corrected candidate.
+
+## Iteration02 version-only return
+
+Current source 7991dd91b465dacf59ce85e08d01bc14031d042c, framework3.0.1; see closing-report.md's Iteration02 return
+and existing execution/native logs for S07/S09. Other substantive contracts and
+open statuses unchanged; no inherited reviewer verdict is relabeled as a new run.

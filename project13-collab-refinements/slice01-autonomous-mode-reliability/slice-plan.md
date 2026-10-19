@@ -1,7 +1,7 @@
 ---
 status: active
 created: 2026-10-19
-version: 1.1
+version: 1.2
 related: ["billosys/ai-engineering#6"]
 ---
 # Autonomous Mode reliability and research records
@@ -90,3 +90,15 @@ Operator-supplied independent reviewers. See the current handoff at the top of
 closing-report.md; the initial report/prompt and all earlier evidence remain.
 Current PR CI passed at63a80f1d; the actual check link is in artifacts/execution.md.
 Independent reviews and Operator acceptance remain pending.
+
+## Iteration02 — current assignment, 2026-10-19
+
+cc-prompt-iteration02.md records the Operator's requested rebase and composer3.0.1.
+Remote main remainsf2b1137a/framework2.8.0; rebase is a no-op, and that mismatch was
+reported to the Operator before proceeding with the explicit version request.
+Prior prompts/returns remain preserved. This changes only the composer's current
+metadata/history. Review gates remain pending; no merge or other source change.
+
+Iteration02 returned at7991dd91b465dacf59ce85e08d01bc14031d042c; source/version native gates pass and PR7 is updated.
+Independent review/Operator acceptance remain pending; mismatch with the reported
+main version is disclosed in the source history, execution record and PR description.

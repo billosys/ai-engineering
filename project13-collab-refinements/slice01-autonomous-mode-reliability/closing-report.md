@@ -1,3 +1,6 @@
+Current candidate: Iteration02 at7991dd91; see the Iteration02 return below.
+Earlier handoff entries are retained as history, not competing current verdicts.
+
 # Current handoff — Iteration01, 2026-10-19
 
 Current assignment: cc-prompt-iteration01.md, returned for independent PR review.
@@ -101,3 +104,17 @@ research acceptance. The earlier Project13 pilot and its five open research gate
 remain unchanged; no new arc/trial is silently opened. Next owners are the
 Operator-supplied reviewers and Operator, then the implementing context for any
 explicit review corrections under preserved numbered assignments.
+
+## Iteration02 — current version-only return, 2026-10-19
+
+This is the current handoff, superseding the candidate pointers above while
+preserving their historical observations. cc-prompt-iteration02.md implemented at
+7991dd91b465dacf59ce85e08d01bc14031d042c, pushed to PR7; framework metadata/history3.0.1. Fresh remote main remains
+f2b1137a/framework2.8.0, rebase was a no-op and the mismatch was reported.
+
+S07: native check-skills/check-package-paths0,25 skills/25 packages,0 version errors,
+0 hard path failures,620 warnings/3 exceptions; actual built version inspected.
+S09: source commit/push complete; PR description aligned with requested version.
+S01–S06/S08 have no substantive source changes in this iteration. S10 stays open:
+Sofie's review at63a80f1d addresses the two prior scope concerns; other independent
+reviews/Operator acceptance remain pending. No merge or release is claimed.
