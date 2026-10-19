@@ -1,0 +1,10 @@
+# Slice28 ledger
+
+Four open bounded criteria; CC updates Evidence/Notes only. Independent CDC acceptance required.
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+|---|---|---|---|---|---|---|---|
+| S28-01 | All13whole cards receive honest five-dimensional outcomes and coherent supported mechanics/context corrections retaining concrete source teaching | Read complete before/after; padding,torque,spring,geometry/compositing/contrast witnesses and historical/current distinction | correctness-grade | A02-03/04/05; DES-002/005/009/015/016 | open | — | All13original fidelity outcomes input-blocked; current calculation does not validate neural/historical/perceptual universals. |
+| S28-02 | Every local typed/body relation and actual question contribution is reconciled with preserved prior/current identity and honest gaps |95prior/80current typed,97prior body/current lineage,29prior/23currentCQjoins and nine/five exacttexts; selected23existinglist changes and actual endpoint meanings/directions | correctness-grade | A02-06; full-corpus fifth dimension | open | — | Six retired question joins retain their full global requirements; conceptual comparisons survive typed retirement. |
+| S28-03 | Exact source/metadata/version/package preservation integrates |233identities/220wholeothercards/161sources/6guides,15sourcepaths,allowedexistingvalues/rawothers,13refs/headings/quotes/examples,owner/history,sequentialnative/fresh8payloads | correctness-grade | A02-08; P10-10/12; Arc06 preservation | open | — | No invented metadata or source rewrite; native structural evidence is not semantic/behavior acceptance. |
+| S28-04 | Compact truthful handoff accounts for every row,revision,check,limit and actual downstream applicability | One supporting batch,source/Pscopes/trailers,actual fresh/retained evidence/failures,retained operativeinputs and named remaining owners | serious | Arc02 composition/handoff | open | — | CC proposal is not independent acceptance; all input/parent/Operator/release gates remain. |
