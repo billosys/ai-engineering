@@ -6,11 +6,11 @@ depends-on: [accepted supported card/live corrections; selected browser availabl
 
 # Slice25 — Live Methods and Retained Behavior
 
-Revision **1.0**, 2026-10-18; Project1.75/current Arc02 Autonomous Mode. CDC
+Revision **1.1**, 2026-10-18; Project1.75/current Arc02 Autonomous Mode. CDC
 Sofie `/root`; implementing CC `/root/s25_cc`; independent CDC review and actual
 browser execution in `cdc-verification.md`. Source `/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/design-arc02-autonomous` branch
 `codex/project10-arc02-autonomous`, exact `154a5b766286966b8d6a649db2b45726dc497175`. Planning predecessor `04a96cec9056cb993ae7bd995191e9df61575203`;
-adding commit issues [prompt](cc-prompt.md). Four [criteria](ledger.md), all open.
+adding commit issues [prompt](cc-prompt.md). Four [criteria](ledger.md); S25-04 done only at initial candidate, three open.
 
 ## Useful delivery
 
@@ -55,10 +55,18 @@ proof is part of this slice before closure, not a fictional CC attestation.
 
 ## Assignment history
 
-- Initial active: `cc-prompt.md`, exact source pin above. Direct routine
+- Initial returned for independent review: `cc-prompt.md`, exact source pin above. Direct routine
   CC/CDC handoff under recorded Arc02 authorization; CDC owns acceptance/close.
 
+- Current active: [Iteration01](cc-prompt-iteration01.md), 2026-10-18, after
+  SOURCE39cf4193/CCce195fff. Repair actual narrow combined-case table overflow
+  and unsupported Container role; align local decoration heading. Initial
+  evidence/protocol retained; root executes final browser/identity proof.
+
 ## Version History
+
+- 1.1 (2026-10-18): Issue one bounded correction pass after actual independent
+  browser/source review; retain all original proof and higher gates.
 
 - 1.0 (2026-10-18): Open existing live-use/browser/identity obligations after
   supported colour corrections; preserve full-corpus/input/composition gates.
