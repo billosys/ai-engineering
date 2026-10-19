@@ -1,0 +1,10 @@
+# Slice25 ledger
+
+Four open bounded delivery/proof criteria. CC updates Evidence/Notes only; independent CDC execution/acceptance remains.
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+|---|---|---|---|---|---|---|---|
+| S25-01 | Whole live methods are technically bounded, practical and consistent with accepted source corrections | Read four complete final guides/SKILL; primary definitions and repeated-claim joins; preserve correct arithmetic,identity and craft | correctness-grade | A02-03/05; DES-002/005/006/009/011/012/013 | open | — | Originals/global/composition/release gates remain separate; no fullconformance or browser/AT claim beyond actual observations. |
+| S25-02 | Retained layout/type/colour/interaction specimens have actual named-browser observations with explicit limits | Independent actual viewport/enlargement/spacing/keyboard/focus/order/pairs/motion/font-failure and available-axis checks; unavailable cases named; no inferred conformance | correctness-grade | A02-10; P10-04 | open | — | Originals/global/composition/release gates remain separate; no fullconformance or browser/AT claim beyond actual observations. |
+| S25-03 | Three actual fresh-context identity specimens preserve supplied choices without inherited project defaults | Pinned eight-file payload,prospective protocol,complete actual task responses and independent qualitative review; no brown blacklist or rename-only identity leak | correctness-grade | A02-09; P10-02 | open | — | Originals/global/composition/release gates remain separate; no fullconformance or browser/AT claim beyond actual observations. |
+| S25-04 | Protected corpus and accepted guidance survive; owning version and package integrate with scoped handoff | 233 whole cards,161sources,other two guides,whole version/history,exact6sourcepathmax; sequential native gates,fresh8of8payloads,links/scope/trailers | correctness-grade | A02-08; P10-10/12 | open | — | Originals/global/composition/release gates remain separate; no fullconformance or browser/AT claim beyond actual observations. |
