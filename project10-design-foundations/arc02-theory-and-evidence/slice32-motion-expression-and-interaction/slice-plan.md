@@ -1,12 +1,12 @@
 ---
 slice: slice32-motion-expression-and-interaction
-status: active
+status: closed
 depends-on: [Slice31 independently accepted; available motion/expression evidence]
 ---
 
 # Slice32 — Motion, Expression and Interaction
 
-Revision **1.0**,2026-10-19. Project1.75/Arc1.84. Operator-authorized Arc02 Autonomous
+Revision **1.1**,2026-10-19. Project1.75/Arc1.84. Operator-authorized Arc02 Autonomous
 Mode. CDC/author Sofie `/root`;CC `/root/s32_cc`;named separate independent reader.
 SOURCE `02963d92675de1abba76727f7237fb10200d9a76`;PLANNING predecessor `5c75f8bec685d83275212a2fc30be9afaeb14230`. Adding commit issues
 [cc-prompt.md](cc-prompt.md);earlier temporary assembly was not issue.
@@ -32,10 +32,17 @@ S25 retained behavior needs actual operative-input equality and all actual limit
 
 ## Assignment history
 
-- Initial/current [cc-prompt.md](cc-prompt.md),actual pins above;routine AM handoff
+- Initial/accepted [cc-prompt.md](cc-prompt.md),actual pins above;routine AM handoff
   after actual S31 close. Root owns design,verdict,retrospective and advance.
+
+## Closure
+
+All four bounded criteria accepted; [verdict](cdc-verification.md) and
+[retrospective](cdc-retrospective.md). Original and higher gates remain open.
 
 ## Version History
 
 - 1.0 (2026-10-19): Open connected18-card motion/expression/interaction corrections
   after S31 acceptance;preserve higher gates and unavailable-original limits.
+
+- 1.1 (2026-10-19): Independently close supported18-card motion/expression/interaction correction and local semantics; retain higher gates.

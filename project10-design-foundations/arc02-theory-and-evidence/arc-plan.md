@@ -8,7 +8,7 @@ depends-on: [arc01-portable-contract Operator-accepted composition]
 
 ## Capability and authority
 
-Plan revision **1.84**, updated2026-10-19 under the Operator-approved
+Plan revision **1.85**, updated2026-10-19 under the Operator-approved
 [bounded reassessment](../project-plan.md#bounded-reassessment--operator-approval-2026-10-16).
 Deliver corrected portable design content, complete233-card/eight-live-file
 review/reconciliation, and usable accessibility/typesetting with actual behavior
@@ -73,16 +73,16 @@ remain in the previous plan revision and the unchanged child/history records.
 | [Slice29 — form/projection/representation](slice29-form-projection-and-representation/slice-plan.md) | Closed: [independent acceptance](slice29-form-projection-and-representation/cdc-verification.md) at SOURCEc42f5bd5/CCe9bdde99;21supported corrected cards/local semantics,owning1.0.26; original fidelity unresolved. |
 | [Slice30 — space/depth/projection](slice30-space-depth-and-projection/slice-plan.md) | Closed: [independent acceptance](slice30-space-depth-and-projection/cdc-verification.md) at SOURCE38123c19/CC93b904dc;25supported corrected cards/local semantics,owning1.0.27; original fidelity unresolved. |
 | [Slice31 — light/colour/context](slice31-light-colour-and-context/slice-plan.md) | Closed: [independent acceptance](slice31-light-colour-and-context/cdc-verification.md) at SOURCE02963d92/CCf2e708ec;18supported corrected cards/local semantics,owning1.0.28; original fidelity unresolved. |
-| [Slice32 — motion/expression/interaction](slice32-motion-expression-and-interaction/slice-plan.md) | Active:18connected cards,SOURCE02963d92,CC `/root/s32_cc`,independent CDC. |
+| [Slice32 — motion/expression/interaction](slice32-motion-expression-and-interaction/slice-plan.md) | Closed: [independent acceptance](slice32-motion-expression-and-interaction/cdc-verification.md) at SOURCE88a96f72/CCebf4ee03;18supported corrected cards/local semantics,owning1.0.29; original fidelity unresolved. |
 | Remaining source/topic cohorts | Read complete connected cards plus affected guide passages; fix supported defects, check actual local edges/CQ components and preserve revision lineage together. Depends only on the evidence each result uses. |
 | Live methods and usage checks | Complete eight-live-file review, required identity specimens, accessibility/typesetting procedures and actual retained-behavior checks together where relevant. Use accepted local decisions; full-corpus closure is not a prerequisite for unrelated task delivery. |
 | Input completion | Use existing P10-11 actions once selected originals/captures are available. Separately authorized preparation may be evidence-only when it is the real blocker; preserve dependent gates. |
 | Final Arc02 composition | Reconcile complete result union, remaining conflicts/findings and task evidence; deliver final1.1.0 bump/checks and usable Arc04 handoff. Requires the full ledger and independent/Operator composition gate. |
 
-Rows after Slice32 are delivery choices,not issued assignments or a fixed slice
-count. Slice32 reconciles18connected motion/expression/interaction cards. Remaining
-coverage/composition choices follow actual predecessor close;no future open set
-or Arc04 tree is issued by this opening.
+Rows after Slice32 are delivery choices,not issued assignments or a fixed count.
+All planned local card cohorts are boundedly closed;next reconcile the actual
+complete233/eight-live/global result union and remaining inputs/behavior gates.
+No future open set,Arc04 or final1.1.0 is issued by this close.
 
 Review → decide → edit → check → independent review is one batch. Fix supported
 in-scope issues before return; preserve useful teaching. Complete impacted local
@@ -143,10 +143,10 @@ Source branch `codex/project10-arc02-autonomous` in
 separate. Direct routine handoffs and CDC retrospectives now apply; all original
 criteria and Operator/input/composition gates survive. Stop at this arc's endpoint;
 no automatic Arc04 work, merge, push or publication.
-Expedited Mode. Slices01–31 are closed at their recorded bounded scopes.
-Active [Slice32](slice32-motion-expression-and-interaction/slice-plan.md) corrects18connected motion/expression/
-interaction cards atSOURCE02963d92,with exact selected metadata and actual
-local semantic decisions. All unavailable-original/global/parent gates remain.
+Expedited Mode. Slices01–32 closed at their recorded bounded scopes. Slice32
+corrects18motion/expression/interaction cards at88a96f72/CCebf4ee03,owning1.0.29.
+All planned local cohorts are now available for actual233/eight-live/global
+composition; unavailable original and formal/Operator gates remain unchanged.
 Final8payload/behavior applicability and local-font/native/AT limits remain
 explicit for later composition. All ten arc/thirteen project criterion states,
 missing-original/full233global and formal composition/Operator/release gates
@@ -501,3 +501,5 @@ inputs now that the sequencing hold is lifted.
 - 1.83 (2026-10-19): Independently close supported18-card light/colour/context correction and local semantics; all higher gates retained.
 
 - 1.84 (2026-10-19): Open connected18-card motion/expression/interaction correction after actual S31 acceptance;retain higher gates.
+
+- 1.85 (2026-10-19): Independently close supported18-card motion/expression/interaction correction; complete planned local-cohort coverage awaits actual global composition and all higher gates.
