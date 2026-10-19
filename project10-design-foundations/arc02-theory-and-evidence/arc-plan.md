@@ -8,7 +8,7 @@ depends-on: [arc01-portable-contract Operator-accepted composition]
 
 ## Capability and authority
 
-Plan revision **1.61**, updated2026-10-18 under the Operator-approved
+Plan revision **1.62**, updated2026-10-18 under the Operator-approved
 [bounded reassessment](../project-plan.md#bounded-reassessment--operator-approval-2026-10-16).
 Deliver corrected portable design content, complete233-card/eight-live-file
 review/reconciliation, and usable accessibility/typesetting with actual behavior
@@ -125,7 +125,16 @@ string-equality or endpoint-resolution checks.
 
 ## Workflow and current assignment
 
-Two contributors; CDC Sofie plans/reviews separate CC via Operator relay.
+Operator-selected Autonomous Mode for remaining Arc02, under the
+[project authorization](../project-plan.md#autonomous-mode--operator-authorization-2026-10-18).
+CDC Sofie `/root` coordinates; CC subagents implement; CDC or a named separate
+context independently reviews using attributed `cdc-verification.md`. Initial
+Slice21 verifier `/root/s21_review` owns its judgment. No permanent CRC.
+Source branch `codex/project10-arc02-autonomous` in
+`.worktrees/design-arc02-autonomous` starts at currentd19de06d; planning remains
+separate. Direct routine handoffs and CDC retrospectives now apply; all original
+criteria and Operator/input/composition gates survive. Stop at this arc's endpoint;
+no automatic Arc04 work, merge, push or publication.
 Expedited Mode. Slices01–20 are closed at their recorded bounded scopes.
 Most recent child: [Slice20](slice20-font-choice-and-hierarchy/slice-plan.md),
 accepted at SOURCE52bfa463/CC planningc800b94b by its
@@ -141,11 +150,16 @@ Future handoffs need the actual source, exact scope, complete bounded reads,
 preservation and adequate checks, without copied parent chronology. Routine
 corrections stay local; update this plan for child/sequence/dependency/arc changes,
 checking bubble-up at every close. Project decisions stay in the project plan.
-No new trial, retrospective system, CRC role or self-acceptance. Independent arc
+The Operator now authorizes this execution trial and the framework retrospectives;
+no new research system, permanent CRC or self-acceptance. Independent arc
 composition and Operator gates remain; useful Arc04 preparation can use accepted
 inputs now that the sequencing hold is lifted.
 
 ## Version History
+
+- 1.62 (2026-10-18): Apply explicit remaining-Arc02 Autonomous Mode authority,
+  dedicated source worktree/branch and attributed independent contributor
+  review, beginning with returned Slice21. Preserve all gates and scope.
 
 - 1.61 (2026-10-18): After independently closed Slice20, open Slice21 for the
   six connected feature/spacing/figure cards and packaged method. Keep source

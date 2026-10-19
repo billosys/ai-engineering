@@ -6,9 +6,9 @@ depends-on: [Slice20 accepted type method, available prepared Butterick pages]
 
 # Slice21 — Font Features and Spacing
 
-Revision **1.0**, opened2026-10-18. Two contributors, CDC Sofie + separate CC
-via Operator; Expedited Mode. [Project](../../project-plan.md)1.73 and
-[Arc02](../arc-plan.md)1.61 govern. [Ledger](ledger.md), [assignment](cc-prompt.md).
+Revision **1.1**, opened2026-10-18. Two contributors, CDC Sofie + separate CC
+via Operator; Expedited Mode. [Project](../../project-plan.md)1.74 and
+[Arc02](../arc-plan.md)1.62 govern. [Ledger](ledger.md), [assignment](cc-prompt.md).
 SOURCE/main: `52bfa46332592106f9301226571d6f441df8ce2d`. Planning predecessor:
 `cd32d81b3cec2542a0a7acf10ad76d5129f6fa75`, independently closed Slice20. The adding commit issues this prompt.
 
@@ -74,6 +74,17 @@ legal history or original-source acquisition is needed for the bounded delivery.
 implementation and correction headroom. CC must revalidate and complete intake
 before editing; record genuine conflicts rather than invent a successful result.
 
+## Autonomous transition — 2026-10-18
+
+Initial CC return: sourcedba03b61/planning8f326bcb; four proposals remain open.
+The project/arc authorization now permits direct contributor review. Current
+source branch/worktree and rewritten design-byte bridge are recorded there;
+issued prompt and original pins remain preserved. Independent review context
+`/root/s21_review` uses [review assignment](cdc-review-prompt.md), with actual
+attribution in `cdc-verification.md`; CDC coordinates any repairs and closure.
+No scope, seven scalar exceptions or criterion change. CDC retrospective is
+required at close. Next-action owner: assigned reviewer, then CDC.
+
 ## Assignment history
 
 - **Initial / active:** `cc-prompt.md`, issued2026-10-18 by the adding commit,
@@ -82,6 +93,10 @@ before editing; record genuine conflicts rather than invent a successful result.
   close, advance, push or publish.
 
 ## Version History
+
+- 1.1 (2026-10-18): Record Operator-selected Autonomous Mode transition after
+  CC return, current design applicability and named independent review context;
+  preserve issued implementation contract, all four open rows and their gates.
 
 - 1.0 (2026-10-18): Open a connected six-card feature/spacing correction and
   packaged method after Slice20 closure, under the existing Arc02 roadmap.

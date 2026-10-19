@@ -14,9 +14,10 @@ Deliver a corrected, portable `visual-design-system` skill and usable installed
 package, preserving relationships, content-led composition, intrinsic layout
 and expressive craft. Project10 repairs the existing tool; Project11 owns the
 broader design-practice expansion. Planning belongs on `planning`; implementation
-and packages belong on `main`. [Project ledger](ledger.md) is the acceptance contract.
+and packages normally belong on `main`; the authorized Autonomous Mode
+scope below uses its dedicated source branch. [Project ledger](ledger.md) is the acceptance contract.
 
-Plan revision **1.73**, updated2026-10-16 after the Operator-approved bounded
+Plan revision **1.74**, updated2026-10-18 after the Operator-approved bounded
 reassessment under collaboration-framework2.7.2. This refines the2026-10-12
 execution amendment; deliverables and all thirteen criteria/states are unchanged.
 Use the shared Project09 [audit](../project09-design-audit/artifacts/audit-results-design.md)
@@ -212,10 +213,49 @@ exact-revision GitHub evidence; local YAML/GFM checks cannot substitute.
 Project13's two-run pilot completed atdc7b0732 with inconclusive comparative
 benefit. Retain records; no third run or general method adoption is authorized.
 
+## Autonomous Mode — Operator authorization, 2026-10-18
+
+The Operator explicitly selects collaboration-framework2.8.0 Autonomous Mode
+for the **remainder of Arc02 only**, including Slice21 review, subsequent slices,
+repairs, independent review, local commits and closing retrospectives. Endpoint:
+accepted Arc02 closure or a surfaced unresolved Operator/input gate. Do not start
+Arc04/Project11, merge, push or publish under this authorization. The existing
+1.1.0 milestone, all criteria and original/fidelity/behavior/composition/Operator
+gates are unchanged. Previously missing originals remain missing until inspected;
+this is not an acquisition authorization or a waiver of P10-11.
+
+CDC Sofie (`/root`) owns integration and scope. Use the Two-Contributor arrangement:
+subagent CC implements substantive assignments; CDC independently reviews CC work.
+CDC may also assign a named separate reviewer context, who owns its actual verdict;
+no permanent CRC is selected. Initial review context `/root/s21_review` reviews the
+external CC's Slice21 candidate. Use `cdc-verification.md` with actual reviewer
+attribution. If CDC repairs source, a separate reviewer must verify that repair.
+Routine handoffs may go directly through contributor tools; preserve durable
+prompts, findings and iteration counts. CDC records compact slice/arc retrospectives.
+
+SOURCE: `.worktrees/design-arc02-autonomous`, branch
+`codex/project10-arc02-autonomous`, created from current main
+`d19de06d1e79e22dac0b67b5bf2e527c048a1f73`. PLANNING remains `.worktrees/planning`
+on `planning`. Main and unrelated `knowledge/lfe/` remain untouched. Current design
+bytes equal the reported Slice21 `dba03b61`; the current rewritten parent64e23846
+also equals issued52bfa463 within `knowledge/design`. Preserve reported hashes as
+historical identities, record current applicability, and use new exact branch pins
+for future work. Initial worktree creation hit Git metadata sandbox restrictions;
+the identical approved retry succeeded. There is no source mutation in the switch.
+
+Slice21 currently has four open CC proposals, no accepted criteria/findings.
+Existing accepted Slice01–20 evidence retains its checked revisions. The active
+prompt is preserved; a review assignment supplements it, not rewrites it.
+Observe handoff friction, rework and actual delivered results in existing records
+for the requested later assessment. No controlled effectiveness claim, extra
+research program or framework change is implied by this execution trial.
+
 ## Workflow and acceptance
 
-Two contributors: CDC Sofie plans/reviews separate CC through Operator relay;
-no CRC. Expedited Mode remains enabled. Preserve issued prompts and existing
+Outside the explicitly bounded Autonomous Mode section above, two contributors:
+CDC Sofie plans/reviews separate CC through Operator relay; no CRC. Expedited
+Mode remains enabled. Within Arc02, the recorded direct contributor handoffs and
+mandatory retrospectives supersede the former relay-only convention. Preserve issued prompts and existing
 acceptance scopes; use `cdc-verification.md` for independent slice review.
 Reviewer-authored source repairs need another verifier. New work needs a complete
 open set/readiness check before execution; numbered iterations preserve handoffs.
@@ -241,6 +281,11 @@ child, finding or parent criterion and changes no release gate. The Operator
 subsequently resumed execution; the reassessed working method now governs new work.
 
 ## Version History
+
+- 1.74 (2026-10-18): Record explicit Operator authorization of Autonomous Mode
+  for remaining Arc02, dedicated source branch, actual contributor/review
+  attribution, direct handoffs and retrospectives. Preserve all scope/gates;
+  no authority for another arc, source acquisition, merge or publication.
 
 - 1.73 (2026-10-16): Operator resumes execution after the reassessment and lifts
   the new-assignment hold. Apply the compact delivery/evidence rules to new work;
