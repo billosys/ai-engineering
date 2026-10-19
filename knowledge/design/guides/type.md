@@ -178,6 +178,30 @@ document data; two stored spaces do not guarantee a visibly doubled gap. See
 Check generated quotes, apostrophes, dash spacing and preserved/collapsed spaces
 in the target output with the actual font and content. Record untested behavior.
 
+## Compose editorial structures
+
+Choose the semantic content structure first: a section quoted from another
+source, a data table with row/column relationships, or ordinary page content.
+For example, compare each person's answers to the same questions with a semantic
+HTML table and meaningful headers; arrange an article beside its navigation with
+appropriate content markup and CSS Grid/Flexbox. Visual tracks do not supply
+missing table semantics. See the [HTML table definition](https://html.spec.whatwg.org/multipage/tables.html#the-table-element).
+
+Choose candidate measures, margins, column widths/gaps and alignment references
+for the medium, content and available area. A conceptual grid need not use CSS
+Grid; neither a column count nor an inch/rem value establishes quality. For data
+tables, check caption, headers/associations, cell padding and essential boundaries
+before reducing borders. For quotations, preserve exact content/context and place
+attribution outside the quoted section; inherited size/leading and smaller indents
+may suit tight measures. Use a decorative CSS rule without false thematic-break
+semantics; check essential marks against their actual adjacent colours.
+
+Then inspect actual reading order and column transitions, enlarged text, narrow
+widths and fallback output. Keep meaningful source order when visually placing
+items; [CSS Grid reordering](https://www.w3.org/TR/css-grid-2/#order-accessibility)
+cannot replace it. Record untested browser/assistive-technology behavior and
+remaining output checks rather than infer them from markup or geometry.
+
 ## Vary by context and review
 
 Different content, roles, scripts, devices or user preferences may justify

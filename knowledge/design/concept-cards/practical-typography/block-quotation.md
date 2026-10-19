@@ -33,72 +33,76 @@ rosetta_stone: []
 css_implementation:
   -
     property: "margin, font-size, line-height"
-    example: "blockquote { margin: 1em 2em; font-size: 0.95em; line-height: 1.3; }"
+    example: "blockquote { margin-block: 1em; margin-inline: 2em; font-size: inherit; line-height: inherit; } /* illustrative; reduce indents when space is tight */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Block quotations are formatted by reducing point size and line spacing slightly, indenting 0.5-1 inch on the left (and optionally the right), and omitting quotation marks — but overuse is self-defeating because readers skip long quoted blocks.
+A block quotation presents quoted material separately from surrounding prose. Its visual distinction should preserve readability and quotation accuracy; it is not defined by smaller type or a fixed indent.
 
 # Core Definition
 
-Butterick's formatting recipe: "Reduce the point size and line spacing slightly. Indent the text block between half an inch and a full inch on the left side, and optionally the same on the right. Or on the web, about 2-5 ems."
+Butterick suggests slightly reducing point size and leading, with a left indent of 0.5–1 inch in print or about 2–5 ems on the web, optionally on both sides. He also says to avoid making the line too short and recognizes that accuracy may demand extensive quotation. These are contextual formatting suggestions, not universal requirements.
 
-But he warns against overuse: "Block quotations sometimes become, like all caps, a form of self-defeating typography." The writer signals "this source is really important" but the reader receives "here's something long and dull... I can't be bothered to summarize it!" The reader's next thought: "Great — I can skip this."
+His writer/reader contrast warns that a large extract intended to signal importance may instead look like unintegrated material. It is his editorial argument, not evidence that readers always skip blocks or that a summary preserves the original evidence. Introduce the quotation, preserve its meaning and context, and retain its full extent when the task requires exact wording.
+
+In [HTML](https://html.spec.whatwg.org/multipage/grouping-content.html#the-blockquote-element), `blockquote` identifies a section quoted from another source. It is not a generic indentation tool. Put attribution outside the quoted content; a surrounding `figure` with a `figcaption` is one option. A `cite` URL attribute may identify the source but does not provide a visible attribution by itself.
 
 # Prerequisites
 
-- **Body Text** — Block quotations modify body text formatting.
-- **Point Size** — Reduced slightly for the quotation.
-- **Line Spacing** — Reduced slightly for the quotation.
+- **Body Text** — Surrounding prose supplies the comparison for a separately presented extract.
+- **Point Size** — Compare actual appearance before choosing a difference; inherited size may be appropriate.
+- **Line Spacing** — Check leading with the actual quote, font and measure; reduction is optional.
 
 # Key Properties
 
-1. **Reduce size and spacing**: Slightly smaller point size and line spacing.
-2. **Indent 0.5-1 inch**: Left side (optionally right); 2-5 ems on web.
-3. **No quotation marks**: The indentation makes them redundant.
-4. **Self-defeating if overused**: Long block quotes cause readers to skip.
-5. **Edit and integrate**: Better to summarize and integrate than to dump long quotes.
+1. **Separate presentation**: Distinguish the quoted section without changing what is quoted.
+2. **Contextual indents**: Butterick's print/web ranges are candidates; reduce them where available width is tight.
+3. **Punctuation**: House style may omit the block's outer quotation delimiters. Preserve quotation punctuation that belongs within the original material.
+4. **Editorial integration**: Explain relevance and preserve accuracy; length alone establishes neither care nor laziness.
+5. **Readable hierarchy**: Size, spacing and position can distinguish roles. Smaller text is not mandatory.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Reduce point size slightly from body text.
-2. Reduce line spacing proportionally.
-3. Indent left side 0.5-1 inch (or 2-5em on web).
-4. Optionally indent right side equally.
-5. Remove quotation marks.
-6. Keep block quotes as short as possible.
+1. Identify the exact quoted passage, source, language and necessary context.
+2. Use semantic quotation markup on the web; keep added attribution outside `blockquote`.
+3. Try inherited font size and leading, then adjust only if the actual passage benefits.
+4. Choose indents and surrounding gaps together with the resulting line length.
+5. Apply the house style's outer-delimiter convention without stripping internal punctuation or silently abridging evidence.
+6. Review enlarged text, fallback fonts, narrow measures and the relationship to surrounding prose.
 
 ## To Identify/Recognise:
-1. Indented text block with smaller type.
-2. Overuse: long quoted passages that readers skip.
+1. A separately presented quotation may use indentation, spacing or other visual distinctions.
+2. Indentation alone does not make content a quotation; inspect its meaning and markup.
 
 # Examples
 
-**Example 1** (block-quotations): The self-defeating signal: writer thinks "This source is really important!" but reader thinks "Great — I can skip this."
+**Example 1** (block-quotations): Butterick contrasts the writer's intended importance signal with a reader's imagined decision to skip. This reported illustration motivates explaining a quotation's relevance; it does not measure reader behavior. His same page allows long exact quotation when accuracy requires it.
+
+For grouping, keep paragraphs inside one extract visibly associated and leave a distinguishable gap between that extract and surrounding authorial prose. As a design inference, a smaller gap within the extract than between extract and authorial prose can cue one group inside a larger sequence. Compare those intra/inter-group gaps alongside indentation and attribution placement; an indent number alone does not establish proximity or comprehension.
 
 # Relationships
 
 ## Builds Upon
-- **Body Text** — Modifies body text formatting.
-- **Point Size** — Uses reduced point size.
-- **Line Spacing** — Uses reduced line spacing.
+- **Body Text** — The surrounding prose supplies the visual context for the extract.
+- **Point Size** — Size is one comparison variable, with no mandatory reduction.
+- **Line Spacing** — Leading affects the quoted passage's readable texture; it need not be reduced.
 
 ## Related
-- **First-Line Indent** — Block quote indentation is a related spacing concept.
-- **Line Length** — Indentation reduces effective line length.
+- **First-Line Indent** — Both use horizontal spacing, but a paragraph-start marker differs from offsetting an entire quotation.
+- **Line Length** — Side indents reduce available measure; review actual lines rather than assuming an indent is suitable.
 
 # Common Errors
 
-- **Error**: Using long block quotations as a substitute for summarizing.
-  **Correction**: "If you want readers to pay attention to quoted material, edit it carefully and integrate it into the text."
+- **Error**: Using an unexplained extract or replacing necessary exact evidence with an inaccurate summary.
+  **Correction**: Explain relevance, quote accurately and edit only with faithful, indicated omissions or additions. Long quotation can be necessary.
 
 # Common Confusions
 
-- **Confusion**: Longer block quotations show more thorough research.
-  **Clarification**: Long block quotes signal laziness to readers, not thoroughness. Readers skip them.
+- **Confusion**: Every indented passage is a block quotation, and smaller type is its defining feature.
+  **Clarification**: Quotation is a content role; styling is contextual. Preserve readable size/leading and meaningful punctuation.
 
 # Source Reference
 
@@ -106,9 +110,8 @@ But he warns against overuse: "Block quotations sometimes become, like all caps,
 
 # Verification Notes
 
-- Definition source: Direct quotes from block-quotations.md.
-- Confidence rationale: High — clear formatting recipe and usage warning.
-- Uncertainties: None.
-- Cross-reference status: All referenced slugs correspond to planned cards.
-- Rosetta Stone check: Checked against 0010 tables. No direct mappings found.
-- OCR issues: None — HTML conversion.
+- Available-source comparison: complete prepared block-quotations.md, including accuracy exception and writer/reader illustration; exact original capture/lineage remains unavailable under P10-11.
+- Current technical support: HTML quotation/attribution definition above; illustrative CSS inherits size/leading and requires contextual review.
+- Local outcome: prerequisite premises and two related distinctions checked against endpoint sections; CQ1 supplies role distinction, CQ13 supplies explicit intra/inter-group reasoning. Neither is global or empirical acceptance.
+- Historical metadata: extraction confidence and source/relationship/CQ fields remain prior extraction records, not refreshed verification results. Earlier no-uncertainty/OCR and Rosetta observations do not establish original fidelity or current semantic verification.
+- Unrun: actual rendering, enlargement, assistive technology, hosted output and full-corpus reconciliation.

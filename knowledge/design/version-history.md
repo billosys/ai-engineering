@@ -134,3 +134,11 @@ do not guarantee outcomes across content, users or browsers.
 - Added a punctuation and meaningful-text method to the packaged type guide;
   distinguished semantic quotation/generated marks from stored punctuation and
   whitespace rendering from document data. No browser/AT behavior was tested.
+
+## Version 1.0.20 - 2026-10-18
+
+- Corrected seven editorial-layout cards, preserving contextual source examples
+  while separating print preferences, semantic content and CSS layout mechanisms.
+- Added an editorial-structure method to the packaged type guide and corrected
+  five existing CSS metadata scalars. Prepared-source comparison and local
+  semantics do not establish original-capture fidelity or browser/AT behavior.
