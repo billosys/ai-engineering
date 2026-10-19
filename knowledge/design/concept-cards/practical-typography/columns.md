@@ -31,80 +31,82 @@ rosetta_stone: []
 css_implementation:
   -
     property: "columns"
-    example: "article { columns: 2; column-gap: 2em; }"
+    example: "article { columns: 18rem; column-gap: 2em; } /* candidate width; check actual flow and reading order */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Columns are an easy way to achieve shorter, more legible line lengths without large page margins — two or three columns work on a standard page (four is too many), but columns are less useful on the web where pages have no fixed bottom edge.
+Columns divide a flow into narrower measures. Their number, width, gaps and reading path depend on the content and medium; they can support print or web composition without a universal column-count or fixed-height rule.
 
 # Core Definition
 
-Butterick endorses columns pragmatically: "Columns are an easy way to get a shorter and more legible line length without using large page margins." The constraint is simple: "On a standard 8.5″ × 11″ page, two or three columns are fine. Four is too many."
+Butterick recommends two or three columns on a standard 8.5″ × 11″ page and considers four too many in that setting. Preserve this as his print preference: four columns are not inherently invalid, and no count alone proves legibility.
 
-For professional results, align baselines across columns: "columns look neatest when the rows of text are aligned vertically between columns (i.e., as if they were sitting on the same baseline)." This requires ensuring that space between paragraphs is a whole multiple of the line spacing — "set space between paragraphs to zero, or set it to be the same as the line spacing."
+For coordinated baselines he suggests paragraph gaps of zero or whole multiples of line spacing. This can support a baseline rhythm when line boxes, starting positions and layout are compatible; the arithmetic alone cannot guarantee alignment across different fonts, headings or fragmented content.
 
-On the web: "columns need to fit inside a fixed vertical space. But by its nature, a web page has an indefinite bottom edge." CSS columns work only for small amounts of text or link lists that fit on a single screen.
+Butterick favors web columns for short text or link lists fitting one screen, arguing from the web page's indefinite bottom edge. A practical concern to assess is the travel down a long column before returning to the next. This is a usability concern and contextual preference, not a CSS requirement for finite fixed height. [CSS Multi-column Layout Level 1](https://www.w3.org/TR/css-multicol-1/#columns) lets width and count respond to available inline size. A requested width is flexible; used count and width, and the actual count after fragmentation, can differ from specified values.
 
 # Prerequisites
 
-- **Line Length** — Columns exist to achieve better line length.
-- **Line Spacing** — Baseline alignment across columns requires careful line spacing coordination.
+- **Line Length** — Column width is one way to control measure; assess actual text.
+- **Line Spacing** — Leading and line boxes matter when considering baseline coordination.
 
 # Key Properties
 
-1. **Shortens line length**: Primary benefit — avoids overly wide text blocks.
-2. **2-3 columns max**: On a standard page; four is too many.
-3. **Baseline alignment**: Rows should align across columns for a neat appearance.
-4. **Paragraph spacing constraint**: Must be zero or a whole multiple of line spacing to maintain baseline alignment.
-5. **Print, not web**: CSS columns exist but are impractical for long content due to indefinite page height.
+1. **Measure**: Columns can shorten lines without enlarging the page's outer margins.
+2. **Contextual count**: Butterick's two/three-column example is not a universal maximum.
+3. **Optional baseline rhythm**: Compatible starts, line boxes and spacing matter in addition to paragraph-gap multiples.
+4. **Adaptive geometry**: CSS width/count and gaps negotiate the available inline size.
+5. **Reading path**: Prose ordinarily flows down a column before continuing to the next; inspect vertical travel, enlargement and navigation in the actual output.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Choose 2 or 3 columns for a standard page.
-2. Note the line spacing value.
-3. Set paragraph spacing to zero or a whole multiple of line spacing.
-4. Verify baseline alignment visually across columns.
-5. On web, use only for short content that fits one screen.
+1. Identify the content's reading sequence and available print or screen area.
+2. Choose candidate width/count and gap; review actual measure rather than forcing a count.
+3. If baseline alignment serves the task, coordinate line boxes, starts and paragraph spacing, then inspect the result.
+4. Allow web column count to adapt; fixed block height is not a prerequisite.
+5. Check enlarged text, fallback, column transitions and whether returning to the next column creates excessive travel.
 
 ## To Identify/Recognise:
-1. Well-set columns: baselines align across columns; comfortable line length.
-2. Poorly-set columns: rows drift out of alignment between columns due to non-multiple paragraph spacing.
+1. A multi-column text flow continues through successive columns rather than treating each as an independent item.
+2. Apparent baseline drift calls for inspecting the line boxes and starts as well as paragraph gaps.
 
 # Context & Application
 
-- **Typical contexts**: Long print documents, newsletters, reports.
-- **Common applications**: Reducing line length on wide pages; newspaper-style layouts.
-- **Historical note**: Multi-column layout is a newspaper convention adapted to word processors and desktop publishing.
+- **Typical contexts**: Print reports/newsletters, web text flows or link lists when their reading path suits the task.
+- **Common applications**: Narrowing measures and coordinating repeated alignment tracks.
+- **Historical note**: Butterick invokes newspaper baselines as an example; this does not establish the history of every column convention.
 
 # Examples
 
-**Example 1** (columns): Two or three columns on an 8.5″ × 11″ page produce comfortable line lengths without large margins.
+**Example 1** (columns): Butterick's US-letter example prefers two or three columns over four. Font, content, gaps and margins still determine the resulting measure and appearance.
 
-**Example 2** (columns): Baseline alignment requires paragraph spacing to be zero or equal to line spacing — the two most common options.
+**Example 2** (columns): His zero-gap or one-line-gap paragraph options can preserve a baseline rhythm with compatible line boxes and starts. They do not alone prove alignment.
+
+Analytic CSS illustration: assume horizontal text, a 16px root and element font, `columns: 18rem`, `column-gap: 2em`, auto count and a container content width with no further constraints or explicit column breaks. A 16rem container gives one 16rem used column; a 40rem container gives two 19rem used columns. The requested 18rem is not a fixed used width. This is specification arithmetic, not a browser witness, conformance result or fixed-height requirement.
 
 # Relationships
 
 ## Builds Upon
-- **Line Length** — Columns are a mechanism for achieving optimal line length.
-- **Line Spacing** — Baseline alignment requires line spacing awareness.
+- **Line Length** — Understanding measure helps choose a candidate column width; no optimal measure is guaranteed.
+- **Line Spacing** — Understanding leading helps evaluate baseline coordination.
 
 ## Related
-- **Page Margins** — An alternative way to shorten line length (wider margins vs. more columns).
-- **Paragraph Spacing** — Must coordinate with line spacing for baseline alignment in columns.
-- **Typographic Grids** — Columns are a basic grid structure.
+- **Page Margins** — Outer margins and interior columns both affect the space available for text measures.
+- **Paragraph Spacing** — Gaps participate in baseline rhythm with compatible line boxes and starts; multiples alone are insufficient.
+- **Typographic Grids** — Repeated column tracks can supply alignment references within a conceptual grid; not every grid is a multicol flow.
 
 # Common Errors
 
-- **Error**: Using four or more columns on a standard page.
-  **Correction**: "Four is too many." Stick to two or three on 8.5″ × 11″.
+- **Error**: Treating a two/three-column preference or paragraph-gap multiple as an invariant of good layout.
+  **Correction**: Check content, measure, line boxes and reading path; retain justified counts and optical exceptions.
 
 # Common Confusions
 
-- **Confusion**: CSS columns work well for long-form web content.
-  **Clarification**: "Columns need to fit inside a fixed vertical space. But by its nature, a web page has an indefinite bottom edge." Use only for short content that fits on one screen.
+- **Confusion**: CSS columns require a finite fixed height and only work for one screen of content.
+  **Clarification**: CSS supports adaptive columns without that prerequisite. Long flows still need an actual assessment of column transitions and excessive vertical travel.
 
 # Source Reference
 
@@ -112,9 +114,8 @@ On the web: "columns need to fit inside a fixed vertical space. But by its natur
 
 # Verification Notes
 
-- Definition source: Direct quotes from columns.md.
-- Confidence rationale: High — clear guidance on column count and baseline alignment.
-- Uncertainties: None.
-- Cross-reference status: All referenced slugs correspond to existing cards.
-- Rosetta Stone check: Checked against 0010 tables. No direct mappings found.
-- OCR issues: None — HTML conversion.
+- Available-source comparison: whole prepared columns.md; count/baseline examples and short-web-flow preference retained with attribution. Original capture/fidelity remains P10-11-blocked.
+- Current support: CSS multicol width/count and used-size algorithm; the two examples are analytic under explicit assumptions, not rendered observations.
+- Local outcome: two prerequisite and three related premises checked; CQ7 receives the column-track component of a grid definition/problem explanation, not complete global acceptance.
+- Historical metadata, extraction confidence and earlier conversion/Rosetta observations are retained records, not current verification evidence. No uncertainty-free original comparison is available.
+- Unrun: browser flow/enlargement, AT, hosted output and full-corpus reconciliation.

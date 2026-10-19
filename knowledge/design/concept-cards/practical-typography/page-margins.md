@@ -37,68 +37,72 @@ css_implementation:
 
 # Quick Definition
 
-Page margins set the boundaries of the text block and are the primary mechanism for controlling line length — one inch is almost never enough for proportional fonts, and white space is a feature, not a flaw.
+Page margins bound the available text area and interact with measure, type and medium. Butterick's wider US-letter print margins are contextual recommendations; there is no inch-based default for all print or web text.
 
 # Core Definition
 
-Butterick states: "Page margins set the default territory your text occupies on the page. Because they determine the maximum width of the text block, page margins have the greatest effect on line length."
+For a single text block on a page of fixed width, increasing left/right margins reduces its available width. On 8.5″ × 11″ US-letter paper, one-inch side margins leave 6.5 inches; two-inch side margins leave 4.5 inches. These dimensions do not establish actual character counts or legibility.
 
-The one-inch default is inadequate: "Most word processors default to page margins of one inch... for proportional fonts, they're too small." At 12pt, "left and right page margins of 1.5-2.0 inches will usually give you a comfortable line length."
+Butterick criticizes the one-inch word-processor default for proportional type on US-letter paper and suggests 1.5–2.0-inch sides at 12pt. He explicitly says not to treat that range as absolute: judge line length with the actual font and passage. This is print advice, not a web default or a universal rejection of one-inch margins.
 
-On "fear of white space": "A lot of mediocre typography results from a perceived need to fill space... Work outward from the text, not inward from the page edges."
+His web advice also centers on measure. A containing block, `max-width`, padding and margins can constrain running text as available width changes. The existing `65ch` CSS example is a candidate: `ch` uses the zero glyph advance with specification fallbacks, not an exact character count. Text, shaping, spaces and fallback affect actual line composition.
+
+A gutter is additional inner-edge space for binding; it changes sides in a mirrored duplex layout. Margins need not be symmetric. Butterick suggests trying a bottom margin about 0.25 inch larger for apparent vertical centering, or at least a 1-inch left/right difference for obvious asymmetry. Both are optical suggestions in print, not mandatory offsets.
 
 # Prerequisites
 
-- **Line Length** — Margins exist to produce correct line length.
+- **Line Length** — Understanding measure helps assess margins; width alone is not a complete readability test.
 
 # Key Properties
 
-1. **Primary line-length control**: Greatest effect on text block width.
-2. **One inch is not enough**: Default margins produce overly long lines.
-3. **1.5-2.0 inches at 12pt**: Typical range for print.
-4. **Focus on line length**: "Don't take that range as an absolute — focus on getting the number of characters per line into the right range."
-5. **Don't fear white space**: "The pleasure of reading an effectively designed document will soon outweigh the unfamiliarity of extra white space."
-6. **Margins can differ**: Top, bottom, left, right can all be different sizes. Asymmetric layouts are fine with at least 1 inch difference.
-7. **Web too**: "Web pages need big margins too" — screen edges are not text boundaries.
+1. **Available measure**: Outer margins constrain a single text block; columns and other containers can constrain it further.
+2. **Print context**: Butterick's 1.5–2.0 inches assumes his 12pt US-letter example, not every page or font.
+3. **Actual lines**: His 45–90-character rule of thumb is contextual; inspect the actual passage rather than infer character count from `ch` or inches.
+4. **White space**: Space can serve framing, hierarchy and navigation without proving a particular reader response.
+5. **Gutter**: Binding space serves a production need and may alternate inner sides.
+6. **Asymmetry**: Unequal margins are possible; his 1-inch and 0.25-inch adjustments are optional print candidates.
+7. **Web adaptation**: Fit the container and reading context; neither fixed-inch margins nor viewport-scaled type is required.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Start from the line-length target (45-90 characters).
-2. In print at 12pt: try 1.5-2.0 inch left/right margins.
-3. On the web: use max-width on text containers, not just viewport edges.
-4. For vertical centering: make bottom margin ~0.25 inches larger than top.
+1. Identify the page/container, medium, binding and content roles.
+2. Choose candidate measure, font, size and leading together; test actual lines.
+3. For Butterick's 12pt US-letter scenario, compare his suggested margins with the task's constraints.
+4. On the web, constrain the text container while preserving usable width under enlargement and reflow.
+5. Adjust asymmetry or vertical position only where the actual composition benefits.
 
 ## To Identify/Recognise:
-1. Lines over 90 characters: margins are too narrow.
-2. Document feels cramped: increase margins.
-3. Document feels wasteful: the text is actually more readable.
+1. Wide or cramped lines call for inspecting font, size, containers and margins together.
+2. Extra white space is neither proof of waste nor proof of better reading; inspect the task and output.
 
 # Examples
 
-**Example 1** (page-margins): The document exercise — Document A (1" margins, 12pt, double-spaced) vs. Document B (2" margins, 11pt, 15pt line spacing). B looks more professional AND contains equal or more words per page.
+**Example 1** (page-margins): Butterick's US-letter exercise uses the same text of at least 1000 words in two word-processor documents. A has 1″ margins on every side, Times New Roman 12pt, Word “Double” leading (reported as 28pt; otherwise use exactly 28pt), a 0.5″ first-line indent and no paragraph gaps. B has 2″ margins on every side, Times New Roman 11pt, exactly 15pt leading, the same 0.5″ indent and no paragraph gaps. He asks the reader to print, compare book-like appearance and comfort, and use word count to compare words per page; he guesses the reader answers B to all three. This record did not render/print the documents or measure their counts. Size, leading and available area all change, so the example does not isolate a margin effect.
 
-**Example 2** (page-margins): "Do any magazines run text in a single block on the page with one-inch margins? No — never." Professional publishing always addresses line length.
+**Example 2** (page-margins): Butterick invokes magazines using columns and books using smaller sheets to argue against treating US-letter dimensions as a typographic ideal. His “never” rhetoric and account of 1921/1980 US-government paper standards are attributed source statements, not independently verified history or a claim that no book uses letter dimensions.
+
+His optional ratio example uses 2.23″ margins on US-letter: the text block is 4.04″ × 6.54″, a height/width ratio of about 1.619. That arithmetic is close to the golden ratio; it establishes neither visual quality nor a required layout.
 
 # Relationships
 
 ## Builds Upon
-- **Line Length** — Margins are the primary tool for setting line length.
+- **Line Length** — Measure supplies a reason to choose margins; they are one control among font, size, columns and container constraints.
 
 ## Related
-- **Body Text** — Margins frame the body text block.
-- **Typographic Grids** — Margins define the grid's outer boundaries.
-- **Responsive Typography** — Web margins must adapt to viewport width.
+- **Body Text** — Margins frame prose when the page contains running text; they need not determine every content role.
+- **Typographic Grids** — Margins can supply outer alignment references for a conceptual grid; not every grid is bounded by page margins.
+- **Responsive Typography** — Container and margin choices may adapt with available width and content; font size need not track the viewport.
 
 # Common Errors
 
-- **Error**: Using one-inch margins as the default for all documents.
-  **Correction**: "One inch is not enough" for proportional fonts. Increase to 1.5-2.0 inches (at 12pt) or whatever achieves 45-90 characters per line.
+- **Error**: Applying a one-inch default or a 1.5–2.0-inch correction to all media.
+  **Correction**: Retain the source's print assumptions, then assess actual measure and constraints. Web text can use bounded containers and contextual insets.
 
 # Common Confusions
 
-- **Confusion**: Larger margins waste space and reduce content per page.
-  **Clarification**: Butterick demonstrates that smaller text + larger margins often yields equal or more words per page while looking more professional and being more comfortable to read.
+- **Confusion**: Wider margins alone guarantee either fewer words per page or more comfortable reading.
+  **Clarification**: Word count also depends on font, leading, page area and content. Butterick's A/B exercise changes several variables and reports an expected judgment; it is not a measured result here.
 
 # Source Reference
 
@@ -106,9 +110,8 @@ On "fear of white space": "A lot of mediocre typography results from a perceived
 
 # Verification Notes
 
-- Definition source: Direct quotes from page-margins.md.
-- Confidence rationale: High — explicit ranges with demonstration exercise.
-- Uncertainties: None.
-- Cross-reference status: All referenced slugs correspond to planned cards.
-- Rosetta Stone check: Checked against 0010 tables. No direct mappings found.
-- OCR issues: None — HTML conversion.
+- Available-source comparison: whole prepared page-margins.md; print/web distinction, gutter, both source examples, optical offsets and ratio illustration retained with scope. Original capture/lineage remains P10-11-blocked.
+- Correctness: 6.5″/4.5″ measures and 4.04″ × 6.54″ ratio are arithmetic only; no word counts, comfort, paper history or rendered results were verified.
+- Local outcome: one prerequisite and three related premises checked. CQ 1 receives framing/role-spacing and CQ 7 outer grid-reference components; neither accepts their global unions.
+- Historical confidence/metadata and conversion/Rosetta observations are not refreshed semantic or original-fidelity results.
+- Unrun: actual print/browser/enlargement/AT, hosted output and full-corpus reconciliation.
