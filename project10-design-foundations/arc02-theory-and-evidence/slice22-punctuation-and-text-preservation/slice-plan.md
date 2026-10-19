@@ -1,12 +1,12 @@
 ---
 slice: slice22-punctuation-and-text-preservation
-status: active
+status: closed
 depends-on: [Slice21 accepted type method, prepared Butterick punctuation pages]
 ---
 
 # Slice22 — Punctuation and Text Preservation
 
-Revision **1.0**, opened2026-10-18. Project1.75 / Arc02 Autonomous Mode;
+Revision **1.1**, opened2026-10-18. Project1.75 / Arc02 Autonomous Mode;
 CDC Sofie `/root`, implementing CC `/root/s22_cc`, CDC independent review in
 `cdc-verification.md`. Source worktree `.worktrees/design-arc02-autonomous`, branch
 `codex/project10-arc02-autonomous`, pin `bca347f580132b0313a9bbb29d77c980a995b8f9`.
@@ -51,12 +51,24 @@ Recipe fixes exact consequential choices while retaining source examples and
 actual limitations. About996 source/card lines plus bounded shared material leave
 implementation and iteration headroom. No preparatory phase is needed.
 
+## Independent closure — 2026-10-18
+
+All four bounded criteria independently accepted at SOURCE46c95067/CC return
+f4a6a62f in [CDC verification](cdc-verification.md). Four supported punctuation
+cards and packaged text-preservation method delivered,owning1.0.19. Native/fresh
+8/8 package checks independently reproduced. No new dependency or parent gate
+change; continue ready editorial-layout work. [Retrospective](cdc-retrospective.md)
+records first-pass execution observations; source fidelity and higher gates remain.
+
 ## Assignment history
 
-- Initial active: `cc-prompt.md`, source pin above, via direct `/root/s22_cc`
+- Initial / independently accepted: `cc-prompt.md`, source pin above, via direct `/root/s22_cc`
   assignment under recorded Autonomous Mode. CDC owns next independent review.
 
 ## Version History
+
+- 1.1 (2026-10-18): Independently accept and close all four criteria; preserve
+  actual source/semantic/package evidence and proceed with ready typography work.
 
 - 1.0 (2026-10-18): Open connected prose-punctuation/text-preservation correction
   after independent Slice21 closure; keep technical fixes and local semantics together.

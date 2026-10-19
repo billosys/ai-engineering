@@ -74,3 +74,13 @@ additive guide section and owning metadata/history delivered;all18 typed edges,
 and three planning paths only. Existing criteria/statuses,prompts,source corpus,
 protected content and higher-scale gates remain preserved. No in-scope omission
 or unauthorized expansion is proposed as accepted.
+
+## CDC closure — 2026-10-18
+
+CDC `/root` independently accepts all four bounded rows at source46c95067/CC
+planningf4a6a62f; see [verification](cdc-verification.md) and
+[retrospective](cdc-retrospective.md). Slice22 is closed. Fresh independently
+rebuilt8/8 payload matches the same source; package/native checks pass with
+recorded warnings. Original fidelity,global/actual-behavior/hosted/release and
+Operator gates remain separate. Next ready work is connected editorial layout;
+no arc closure,main merge,push,publication or final1.1.0 bump is authorized here.
