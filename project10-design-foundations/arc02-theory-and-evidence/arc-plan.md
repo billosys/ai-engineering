@@ -8,7 +8,7 @@ depends-on: [arc01-portable-contract Operator-accepted composition]
 
 ## Capability and authority
 
-Plan revision **1.63**, updated2026-10-18 under the Operator-approved
+Plan revision **1.64**, updated2026-10-18 under the Operator-approved
 [bounded reassessment](../project-plan.md#bounded-reassessment--operator-approval-2026-10-16).
 Deliver corrected portable design content, complete233-card/eight-live-file
 review/reconciliation, and usable accessibility/typesetting with actual behavior
@@ -63,14 +63,15 @@ remain in the previous plan revision and the unchanged child/history records.
 | [Slice19 — paragraph composition](slice19-paragraph-composition/slice-plan.md) | Closed: [independent acceptance](slice19-paragraph-composition/cdc-verification.md#iteration02-independent-acceptance-and-slice19-closure--2026-10-17) at SOURCE3c31bc11/CC planningb4eaa32c; eleven connected cards, local semantic reconciliation and packaged paragraph method; owning1.0.16. |
 | [Slice20 — font choice/hierarchy](slice20-font-choice-and-hierarchy/slice-plan.md) | Closed: [independent acceptance](slice20-font-choice-and-hierarchy/cdc-verification.md#iteration01-independent-acceptance-and-slice20-closure--2026-10-18) at SOURCE52bfa463/CC planningc800b94b; nine cards, supported examples/local semantics and packaged type method; owning1.0.17. |
 | [Slice21 — font features/spacing](slice21-font-features-and-spacing/slice-plan.md) | Closed: [independent acceptance](slice21-font-features-and-spacing/cdc-verification.md) at SOURCEbca347f5/CC planning64c5cb3c; six connected feature/spacing cards, local semantics and packaged method; owning1.0.18. |
+| [Slice22 — punctuation/text preservation](slice22-punctuation-and-text-preservation/slice-plan.md) | Active: four connected punctuation/source-style cards, literal text exceptions and packaged type method; CC `/root/s22_cc`, CDC review. |
 | Remaining source/topic cohorts | Read complete connected cards plus affected guide passages; fix supported defects, check actual local edges/CQ components and preserve revision lineage together. Depends only on the evidence each result uses. |
 | Live methods and usage checks | Complete eight-live-file review, required identity specimens, accessibility/typesetting procedures and actual retained-behavior checks together where relevant. Use accepted local decisions; full-corpus closure is not a prerequisite for unrelated task delivery. |
 | Input completion | Use existing P10-11 actions once selected originals/captures are available. Separately authorized preparation may be evidence-only when it is the real blocker; preserve dependent gates. |
 | Final Arc02 composition | Reconcile complete result union, remaining conflicts/findings and task evidence; deliver final1.1.0 bump/checks and usable Arc04 handoff. Requires the full ledger and independent/Operator composition gate. |
 
-Rows after Slice21 are delivery choices, not issued assignments or a fixed slice
-count. The Operator has lifted the hold; Slice21 is the current connected
-font-feature/spacing batch. Prefer
+Rows after Slice22 are delivery choices, not issued assignments or a fixed slice
+count. The Operator has lifted the hold; Slice22 is the current connected
+punctuation/text-preservation batch. Prefer
 several related cards/guide contexts when coherent; split for actual input/context
 or implementation risk, not one field/card/dimension by default. The47 provisional
 groups,161 headings and460 keyword candidates are navigation, not mandatory slices
@@ -137,9 +138,11 @@ criteria and Operator/input/composition gates survive. Stop at this arc's endpoi
 no automatic Arc04 work, merge, push or publication.
 Expedited Mode. Slices01–21 are closed at their recorded bounded scopes.
 Most recent accepted child: [Slice21](slice21-font-features-and-spacing/slice-plan.md),
-sourcebca347f5/CC return64c5cb3c, independently checked by `/root/s21_review`.
-Next action: CDC opens the ready connected punctuation/text-preservation cohort
-with its actual source pin and bounded assignment; direct CC handoff applies.
+with independently reviewed optical-spacing repair and retained gates.
+Active: [Slice22](slice22-punctuation-and-text-preservation/slice-plan.md),
+four connected punctuation cards and the packaged text-preservation method.
+Its open set owns exact source pin, seven source paths and two existing metadata
+scalar corrections. CDC `/root` independently reviews CC `/root/s22_cc`.
 All ten arc/thirteen project criterion states and higher gates remain unchanged.
 The Operator's2026-10-16 reassessment hold remains lifted.
 Future handoffs need the actual source, exact scope, complete bounded reads,
@@ -152,6 +155,10 @@ composition and Operator gates remain; useful Arc04 preparation can use accepted
 inputs now that the sequencing hold is lifted.
 
 ## Version History
+
+- 1.64 (2026-10-18): Open Slice22 after independent Slice21 closure for four
+  punctuation cards and text-preserving packaged method,via direct CC assignment
+  in Autonomous Mode. Preserve parent criteria,source fidelity and release gates.
 
 - 1.63 (2026-10-18): Independently close Slice21 after restoring the concrete
   optical-spacing explanation; record the first Autonomous Mode retrospective

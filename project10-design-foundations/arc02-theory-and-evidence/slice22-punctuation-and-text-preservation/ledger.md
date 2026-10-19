@@ -1,0 +1,10 @@
+# Slice22 ledger
+
+Four open criteria. CC updates Evidence/Notes only; CDC independently accepts.
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+|---|---|---|---|---|---|---|---|
+| S22-01 | Four punctuation cards preserve useful examples and have complete five-dimension available-evidence review | Read every final section against complete prepared pages and named primary definitions; check source exceptions and repeated claims | correctness-grade | P10-03/06/09 | open | — | Fidelity/global/actual behavior/hosted/release gates remain separate. |
+| S22-02 | Local relationships, CQ answer components and the packaged punctuation method agree | Review18 typed header occurrences separately from18 body statements;5 CQ memberships/two questions and six endpoint premises; inspect guide integration | correctness-grade | A02-04/05/06 | open | — | Fidelity/global/actual behavior/hosted/release gates remain separate. |
+| S22-03 | All233 identities and protected representations survive outside the four-body/two-scalar/additive-guide correction | Exact roster/raw+typed metadata exceptions,four citations/headings,229 whole cards,161 source files and protected paths | correctness-grade | Arc06; P10-10/12 | open | — | Fidelity/global/actual behavior/hosted/release gates remain separate. |
+| S22-04 | Owning1.0.19 integrates in a fresh package with required checks and bounded return | Sequential Make gates,fresh design build,8/8 committed Markdown comparison,whole version/history contract,exact source/planning scope/trailers | correctness-grade | A02-08; repository gates | open | — | Fidelity/global/actual behavior/hosted/release gates remain separate. |
