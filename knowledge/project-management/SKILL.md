@@ -7,7 +7,7 @@ description: |
   whether bubble-up findings require a plan update.
 license: MIT
 metadata:
-  version: "2.20.0"
+  version: "3.0.0"
   hermes:
     tags: [ai-engineering, project-management, planning, ledger]
     category: meta-skills
@@ -46,10 +46,13 @@ before issuing or executing the assignment.
 For Operator-selected [Autonomous Mode](./guides/README.md#autonomous-mode),
 load its canonical definition and execution rules before acting. Record the
 arc-default authorization (or explicit project override), non-default source
-branch, contributor arrangement and actual independent reviewer where required
+branch, explicitly Operator-approved role/model/settings and expenditure scope,
+contributor arrangement and actual independent reviewer where required
 (or the self-check convention for an eligible One-Contributor task). CDC may revise
 staffing and use direct routine handoffs within that authorization; Operator
-decisions, tool permissions and evidence gates remain binding.
+decisions, tool permissions and evidence gates remain binding. Preserve complete
+original observations and ledger traceability under the
+[research-record contract](./guides/02-canonical-planning-worktree.md#evidence-batches-and-research-records).
 
 For Operator-mediated CRC-to-CDC escalations and CDC-to-CRC instructions, load
 [design handoff filenames](./guides/02-canonical-planning-worktree.md#design-handoff-filenames-and-preservation)

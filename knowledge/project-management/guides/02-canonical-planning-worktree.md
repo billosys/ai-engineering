@@ -86,6 +86,70 @@ roadmap, or slice scope; the ledger file carries the grep-verifiable rows that
 prove the plan. Work verification owns the ledger mechanics at all three
 scales; this file owns where the rows live.
 
+### Evidence batches and research records
+
+Records support independent acceptance now and reconstruction, challenge and
+reanalysis months or years later. Improvements to indexing or execution must
+preserve full ledger discipline and improve research usefulness. File count,
+record length and token reduction alone do not establish improvement.
+
+An evidence batch groups observations; it is not a replacement for project,
+arc or slice units, their ledgers, issued prompts, close reports, verification
+or retrospectives. Keep artifacts in their existing canonical homes or an
+explicitly approved override. A batch spanning slices can index their original
+records without moving them. Use an existing execution log or artifact index
+where adequate; this does not require a separate file per command or a new
+planning tree. Decisions and ledger rows link to exact observations rather
+than transcribe competing versions of mechanical facts.
+
+Preserve each original observation, including failed, blocked, incomplete and
+superseded attempts, with stable references. Where applicable, record:
+
+- claim/ledger row, assignment and prompt version, author/context, role and
+  implementer/verifier relationship;
+- actual source revision and relevant dirty inputs, instruction/skill sources
+  and revisions, loaded text extents and queried populations/exclusions;
+- Operator role/model/provider/settings approval and its scope, requested
+  configuration and reported execution identity, inheritance/overrides and
+  tool/runtime versions; mark unavailable facts and their consequences;
+- exact command, working directory, relevant nonsecret environment/prerequisites,
+  timestamps with timezone, exit status, stdout/stderr and actual selected
+  test/scan population, including loader errors and omitted/unavailable inputs;
+- input/output identities and hashes, derivation commands/query/script versions
+  for counts or projections, and the scope each observation can establish;
+- findings, decisions/rationale, approvals, corrections, re-entry conditions,
+  next-action owners and original/superseding observation references.
+
+Derive hashes, counts and revision identities from actual inputs/execution and
+retain the derivation. Hashes establish identity/integrity, not correctness,
+complete reading or independent verification. Preserve separate independent
+runs and their provenance even when bytes match. Structured projections and
+lossless compression may aid inspection; retain recoverable original records
+and the scripts/queries needed to inspect the relevant population. State when
+coverage is bounded; never describe a projection or sample as full semantic
+inspection. Capture necessary observations, not unrelated data by default.
+
+Keep one identifiable current status/interpretation with dated or revisioned
+history, linked to original records and applicable source. Correct summaries
+openly; do not rewrite an earlier failure into success or relabel an old run as
+fresh. A generated current view supplements the required per-scale records;
+it cannot discharge their rows or become a competing acceptance authority.
+
+Keep required evidence durably accessible under the project's authorization
+before expiring CI artifacts or ephemeral worktrees disappear. References must
+survive changed local paths: retain resolvable repository-relative locations,
+source states, formats and necessary inputs/environment descriptions. Preserve
+historical records and issued prompts; a migration needs an explicit mapping
+and provenance. Respect access restrictions and secrets. Record redactions,
+missing inputs and reconstruction limits rather than claiming complete replay
+where permission or availability prevents it. Research copies need a concrete
+use and provenance; incidental duplication is not a substitute for durable capture.
+
+For retained versus fresh acceptance evidence, use
+[correction review](../../work-verification/guides/05-independent-verification.md#evidence-during-correction-review).
+For reconstruction-oriented evaluation and recommendation follow-through, use
+[methodology stewardship](../../methodology-stewardship/guides/01-retrospectives-and-follow-through.md#evidence-economy-and-goal-alignment).
+
 ### Naming rules
 
 - **Projects use `projectNN-<slug>`**, matching the arc and slice convention.

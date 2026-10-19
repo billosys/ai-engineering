@@ -9,7 +9,7 @@ description: |
   Retrospectives do not replace implementation acceptance or controlled trials.
 license: MIT
 metadata:
-  version: "1.1.0"
+  version: "1.2.0"
   hermes:
     tags: [methodology, retrospectives, collaboration, process-improvement]
     category: meta-skills

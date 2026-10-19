@@ -1,5 +1,9 @@
 # Work Verification Version History
 
+## Version 2.8.0 - 2026-10-19
+
+Strengthen full ledger-row traceability through evidence batches and generated current views. Route durable observation provenance and distinguish declared metadata, actual package/installed states and external outcomes without weakening independent reproduction, correction retention or higher-scale composition.
+
 ## Version 2.7.0 - 2026-10-18
 
 Specified independent reviewer attribution in Autonomous Mode, including

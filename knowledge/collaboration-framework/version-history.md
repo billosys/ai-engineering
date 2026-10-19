@@ -1,5 +1,9 @@
 # Collaboration Framework Version History
 
+## Version 3.0.0 - 2026-10-19
+
+Route the mandatory Operator role/model/settings and expenditure gate before Autonomous execution. Make the two-contributor default, stable preflight, automatic CI effects and complete ledger/research-record preservation visible at the composer. The required pre-dispatch approval is an intentional execution-contract change.
+
 ## Version 2.8.0 - 2026-10-18
 
 Added Operator-authorized Autonomous Mode routing: arc-default scope, adaptive

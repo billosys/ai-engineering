@@ -63,6 +63,13 @@ For implementation handoffs, engineering-methods provides
 and a [CC prompt template](./knowledge/engineering-methods/templates/cc-implementation-prompt.md),
 available standalone and through collaboration-framework.
 
+[Autonomous Mode](./knowledge/engineering-methods/guides/01-engineering-methodology.md#autonomous-mode)
+requires explicit Operator selection of role/model/settings and expenditure before
+execution. It defaults to an implementer and independent reviewer, with stable
+workspace ownership, complete ledgers and durable research records. Its
+[execution and record routes](./knowledge/project-management/guides/README.md#autonomous-mode)
+retain existing review, scope and integration gates.
+
 ## Quick Commands
 
 ```sh

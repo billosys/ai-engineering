@@ -1,5 +1,9 @@
 # Agent Coordination Version History
 
+## Version 2.0.0 - 2026-10-19
+
+Require Operator-approved role/model/settings and expenditure scope before Autonomous contributor dispatch. Default to one implementer and independent reviewer, justify extra contexts and hold unavailable/unapproved configurations. Make stable worktree mutation/index ownership and attributable durable returns explicit. The dispatch approval gate changes the prior contract; ordinary lookup boundaries and independent repair review remain intact.
+
 ## Version 1.3.0 - 2026-10-18
 
 Added an explicitly authorized Autonomous Mode exception to lookup-only

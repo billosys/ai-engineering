@@ -259,9 +259,12 @@ issuing more work.
 In explicitly authorized [Autonomous Mode](../../engineering-methods/guides/01-engineering-methodology.md#autonomous-mode),
 CDC may deliver preserved assignments/directives and receive contributor reports
 directly within the recorded authority instead of requiring Operator relay.
-The report, acknowledgment and decision records below still apply. Structural
-or otherwise Operator-gated decisions still require the Operator; direct
-transport is not approval. Outside that mode, use the ordinary relay below.
+The report, acknowledgment and decision records below still apply. Include the
+approved role/model/settings and expenditure scope in the current assignment;
+resolve missing choices under the mandatory model-selection gate before dispatch.
+Preserve actual configuration/source state and original observations in the
+existing evidence home. Structural or otherwise Operator-gated decisions still
+require the Operator; direct transport is not approval. Outside that mode, use the ordinary relay below.
 
 When CRC encounters work outside its authority, stop the affected advancement
 and create `crc-escalationNN.md` under the

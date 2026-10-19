@@ -34,6 +34,25 @@ The short version:
 6. Have an independent reviewer reproduce the evidence before treating the
    unit as closed.
 
+## Record quality and full row traceability
+
+Compact preflights, generated summaries and evidence batches must preserve every
+row and its meaning, origin, verifier, disposition and evidence strength. They
+cannot replace independent reproduction, closing row walks or higher-scale
+composition. Efficiency and research usefulness must improve within these
+invariants; fewer files, tokens or observations alone is not an improvement.
+
+Use the canonical
+[evidence and research-record contract](../../project-management/guides/02-canonical-planning-worktree.md#evidence-batches-and-research-records)
+for stable witnesses, original failed/successful attempts, independent observation
+identities, configuration provenance and reproducibly derived facts. Link rows
+to those observations without silently changing their source or strength.
+Distinguish declared metadata, actual built/imported packages, installed bytes,
+scanner categories and integrated/external state when those are separate claims.
+Derive the required population from complete relevant inputs; preserve query
+coverage, omissions and errors. If evidence reveals a mistaken criterion or
+scope, obtain the authorized amendment rather than select evidence to fit it.
+
 ## Scale-Free Spine
 
 The same discipline applies at three scales:

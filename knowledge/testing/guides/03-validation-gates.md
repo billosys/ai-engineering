@@ -48,6 +48,31 @@ work, reassess whether an existing adequate check can replace it within the
 assignment's authority. Changes to binding methods or acceptance go to their
 owner; this rule does not authorize skipping gates or weakening evidence.
 
+## Execution substrate and observation populations
+
+Establish consequential real prerequisites early: actual runtime/shell/config
+paths, exact dependency/image availability, repository lint/API constraints and
+required services. A dry-run alone cannot prove that an image tag exists or the
+assembled consumer works. Exercise the final caller/consumer boundary when the
+criterion depends on it; use real positive and credible negative inputs through
+the actual tool. Include automatic CI effects in action authorization before
+triggering checks that publish, notify or change external state.
+
+Name native Make targets explicitly, including introspection commands; verify
+path quoting and actual shell semantics. Establish output ownership before a
+build/cleanup. Serialize installs/generation and loaders/scanners that traverse
+their changing inputs. Preserve loading errors and incomplete attempts as such,
+not vulnerability or behavior results.
+
+Derive and record the actual selected-test/scan population, with query/selector,
+source identity, exclusions, errors and exit status. Exit zero with no selected
+tests does not prove a test criterion. Complete inventory claims require complete
+relevant source populations, including hidden tracked files or platform/tag/test
+configurations when applicable. Distinguish actual success, expected rejection,
+unrun/blocked checks, timeout and transient loading failure. A passing rerun alone
+does not establish the cause of an earlier failure. Preserve both observations
+under the [durable evidence contract](../../project-management/guides/02-canonical-planning-worktree.md#evidence-batches-and-research-records).
+
 ## Minimum Validation Set
 
 Select the applicable checks below; this list is not a requirement to add every

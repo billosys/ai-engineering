@@ -19,6 +19,15 @@ reviewer's reproduced checks may establish verification; do not reduce that
 review to lookup or promote a summary to reproduced evidence. When CDC
 implemented or repaired work, acceptance depends on another context's review
 of that work and affected evidence. Preserve attribution and unresolved findings.
+Link each returned claim to its actual source state and original evidence entry,
+including requested/observed model settings and any authorization deviation.
+Reconcile the full assigned population, errors and coverage limits; a count,
+matching checksum or well-formed summary alone is not acceptance. Preserve
+separate independent observations even when outputs match. Retained evidence
+needs the reviewer's explicit applicability judgment under
+[correction review](../../work-verification/guides/05-independent-verification.md#evidence-during-correction-review).
+Keep a single attributable current status with history and pending owners,
+separating candidate, published, integrated and externally verified states.
 The remaining sections describe ordinary lookup integration.
 
 ## Parent-Context Responsibility

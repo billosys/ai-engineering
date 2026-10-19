@@ -26,7 +26,20 @@ review the integrated candidate after concurrent implementation. A reviewer
 who repairs work becomes its doer and needs another verifier for the affected
 evidence. Preserve review findings and iterations rather than replacing an
 unfavorable reviewer. Operator decisions and tool restrictions remain binding.
-Outside this exception, use the ordinary policy below.
+Before dispatch, apply the methodology's
+[mandatory Operator model and expenditure selection](../../engineering-methods/guides/01-engineering-methodology.md#mandatory-operator-model-and-expenditure-selection).
+Default to one implementer and one independent reviewer; extra contexts need a
+named purpose, bounded ownership, return contract and exit condition within the
+approved role/model, concurrency and expenditure scope. Defaults/inheritance do
+not replace the Operator's answer. An unavailable choice or out-of-scope change
+holds affected dispatch until resolved.
+
+Give each mutable worktree one mutation owner and name the staging/integration
+owner. Serialize installs, generation, edits and loaders/scanners whose inputs
+can change; separate write paths alone do not make a shared tree stable. Parallel
+mutable work needs isolated worktrees or justified noninterference. On handoff,
+recheck actual revision/dirty inputs and preserve others' changes and outputs
+of unknown ownership. Outside this exception, use the ordinary policy below.
 
 ## Core Policy
 
