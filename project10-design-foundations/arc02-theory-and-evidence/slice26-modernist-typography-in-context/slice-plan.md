@@ -1,17 +1,17 @@
 ---
 slice: slice26-modernist-typography-in-context
-status: active
+status: closed
 depends-on: [accepted live methods; available Tschichold card evidence]
 ---
 
 # Slice26 — Modernist Typography in Context
 
-Revision **1.0**,2026-10-19. Project1.75/current Arc02 Autonomous Mode;
+Revision **1.1**,2026-10-19. Project1.75/current Arc02 Autonomous Mode;
 CDC Sofie `/root`, implementing CC `/root/s26_cc`, independent CDC review in
 `cdc-verification.md`. SOURCE `.worktrees/design-arc02-autonomous`, branch
 `codex/project10-arc02-autonomous`, exact `494a4b95f8a7a424deedb062f0a2870ca9ce0794`. PLANNING predecessor
 `5e022a2e13d3d2ce5de89e924b84564404fcdd47`; adding commit issues [cc-prompt.md](cc-prompt.md).
-Four [criteria](ledger.md), all open; no source/fidelity acceptance at opening.
+Four [criteria](ledger.md), independently done at source523ab425 / CC04469147; original fidelity and all parent gates remain open. Initial opening accepted no source/fidelity result.
 
 ## Useful delivery and bounded context
 
@@ -57,7 +57,16 @@ claim or full233/global/original/Operator/release acceptance.
 - Current initial assignment: [cc-prompt.md](cc-prompt.md),2026-10-19,
   exact source/predecessor above; direct routine CC/CDC handoff under Arc02 AM.
 
+## Closure
+
+[Independent verification](cdc-verification.md) accepts all4bounded criteria.
+Named reviewer `/root/s26_review` supplies its actual final semantic verdict;
+CDC `/root` independently integrates source/package/evidence and accepts.
+[Retrospective](cdc-retrospective.md) completes the Autonomous Mode close duty.
+
 ## Version History
 
 - 1.0 (2026-10-19): Open one connected historical-typography correction batch
   after actual live-method closure; retain all source/global/higher gates.
+
+- 1.1 (2026-10-19): Independently close supported19-card correction/local semantics at523ab425/04469147; preserve all missing-original and higher gates.

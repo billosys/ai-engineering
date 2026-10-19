@@ -105,3 +105,12 @@ Operator/CDC retain P10-11 original/edition/capture re-entry for all19fidelity g
 all233/global/arccomposition/final1.1.0/Operator/release gates remain binding.
 No successor, new arc, merge/rebase/main mutation, push, publication, installation,
 source acquisition or release bump is claimed or authorized by this return.
+
+## CDC closure — 2026-10-19
+
+[Independent acceptance](cdc-verification.md) closes S26-01–04 at source523ab425 /
+CC planning04469147. Source corrections and local available-evidence semantics
+are accepted, including the two draft-record corrections; original fidelity for
+all19, global/full233, behavior limits and all higher gates remain open.
+[CDC retrospective](cdc-retrospective.md) records observations and follow-through.
+One supporting artifact remains the batch; no new supporting output at closure.
