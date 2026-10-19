@@ -1,12 +1,12 @@
 ---
 slice: slice29-form-projection-and-representation
-status: active
+status: closed
 depends-on: [Slice28 independent bounded acceptance; available Arnheim evidence]
 ---
 
 # Slice29 — Form, Projection and Representation
 
-Revision **1.0**,2026-10-19. Project1.75 / Arc1.78. Operator-authorized remaining
+Revision **1.1**,2026-10-19. Project1.75 / Arc1.78. Operator-authorized remaining
 Arc02 Autonomous Mode, Two-Contributor: CDC Sofie `/root`, CC `/root/s29_cc`,
 independent CDC or named separate reader. SOURCE `ed825a63a573b7da50874e3a632764e8d570ab8e` on
 codex/project10-arc02-autonomous in .worktrees/design-arc02-autonomous; PLANNING
@@ -35,10 +35,17 @@ No main,merge,push,publication,newarc/futuretree or final1.1.0 bump.
 
 ## Assignment history
 
-- Initial/current [cc-prompt.md](cc-prompt.md),2026-10-19; source/P predecessors
+- Initial/accepted [cc-prompt.md](cc-prompt.md),2026-10-19; source/P predecessors
   above; routine direct AM handoff after actual Slice28 closure.
+
+## Closure
+
+All four bounded criteria accepted at c42f5bd5/e9bdde99; [verdict](cdc-verification.md)
+and [retrospective](cdc-retrospective.md). All originals/higher gates remain open.
 
 ## Version History
 
 - 1.0 (2026-10-19): Open coherent21-card form/projection/representation correction
   and local semantics, retaining all originals and higher gates.
+
+- 1.1 (2026-10-19): Independently close supported21-card correction/local semantics; originals and all higher gates retained.
