@@ -187,4 +187,3 @@ These are future actual reviews, not assumed approvals. Use the default
 two-contributor separation with reviewers supplied by the Operator; no Autonomous
 execution, new subagents or fictional author/reviewer identities. Candidate delivery
 is distinct from integration, published release and accepted research effectiveness.
-

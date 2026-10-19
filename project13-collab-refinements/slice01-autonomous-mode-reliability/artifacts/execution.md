@@ -66,3 +66,11 @@ Native commit11013b5d595489ee97a18ee75aaeeec312a837e5 contains exactly29 reviewe
 source/doc paths with required trailers. Normal push succeeded; PR7 against main
 is OPEN at that exact head. Initial actual CI is queued. No main merge, release,
 installed catalog mutation or independent acceptance is inferred.
+
+Planning commit6240a5a retains exact git-show patch output and the captured issue
+scope. The all-file planning whitespace check reported expected context-space
+lines in that raw patch and a trailing blank in the issue capture, plus an authored
+plan EOF blank. The commit command continued after the check; that was a command
+sequencing mistake, not a passing all-file check. Raw evidence remains unchanged;
+the authored plan EOF was corrected. Source diff-check was independently0 before
+source commit and is distinct from whitespace inside archived observation data.
