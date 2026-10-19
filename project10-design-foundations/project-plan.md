@@ -17,7 +17,7 @@ broader design-practice expansion. Planning belongs on `planning`; implementatio
 and packages normally belong on `main`; the authorized Autonomous Mode
 scope below uses its dedicated source branch. [Project ledger](ledger.md) is the acceptance contract.
 
-Plan revision **1.74**, updated2026-10-18 after the Operator-approved bounded
+Plan revision **1.75**, updated2026-10-18 after the Operator-approved bounded
 reassessment under collaboration-framework2.7.2. This refines the2026-10-12
 execution amendment; deliverables and all thirteen criteria/states are unchanged.
 Use the shared Project09 [audit](../project09-design-audit/artifacts/audit-results-design.md)
@@ -223,6 +223,10 @@ Arc04/Project11, merge, push or publish under this authorization. The existing
 1.1.0 milestone, all criteria and original/fidelity/behavior/composition/Operator
 gates are unchanged. Previously missing originals remain missing until inspected;
 this is not an acquisition authorization or a waiver of P10-11.
+The Operator subsequently confirms the exact editions/captures remain unavailable
+and directs continuation of supported work. Retain dependent fidelity/complete-
+corpus/arc-closing and final1.1.0 gates; report the supported delivery and exact
+remaining blockers rather than manufacture a completed arc.
 
 CDC Sofie (`/root`) owns integration and scope. Use the Two-Contributor arrangement:
 subagent CC implements substantive assignments; CDC independently reviews CC work.
@@ -281,6 +285,10 @@ child, finding or parent criterion and changes no release gate. The Operator
 subsequently resumed execution; the reassessed working method now governs new work.
 
 ## Version History
+
+- 1.75 (2026-10-18): Operator confirms exact originals/captures still unavailable
+  and directs continued supported Autonomous Mode work. Retain fidelity/full
+  composition/1.1.0 closing gates; no acquisition or waiver is inferred.
 
 - 1.74 (2026-10-18): Record explicit Operator authorization of Autonomous Mode
   for remaining Arc02, dedicated source branch, actual contributor/review

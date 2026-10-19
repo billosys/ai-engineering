@@ -6,7 +6,7 @@ depends-on: [Slice20 accepted type method, available prepared Butterick pages]
 
 # Slice21 — Font Features and Spacing
 
-Revision **1.1**, opened2026-10-18. Two contributors, CDC Sofie + separate CC
+Revision **1.2**, opened2026-10-18. Two contributors, CDC Sofie + separate CC
 via Operator; Expedited Mode. [Project](../../project-plan.md)1.74 and
 [Arc02](../arc-plan.md)1.62 govern. [Ledger](ledger.md), [assignment](cc-prompt.md).
 SOURCE/main: `52bfa46332592106f9301226571d6f441df8ce2d`. Planning predecessor:
@@ -76,23 +76,34 @@ before editing; record genuine conflicts rather than invent a successful result.
 
 ## Autonomous transition — 2026-10-18
 
-Initial CC return: sourcedba03b61/planning8f326bcb; four proposals remain open.
+Initial CC return: sourcedba03b61/planning8f326bcb. Independent review at
+currentd19de06d accepts S21-02/03/04; S21-01 remains open for F01.
 The project/arc authorization now permits direct contributor review. Current
 source branch/worktree and rewritten design-byte bridge are recorded there;
 issued prompt and original pins remain preserved. Independent review context
 `/root/s21_review` uses [review assignment](cdc-review-prompt.md), with actual
 attribution in `cdc-verification.md`; CDC coordinates any repairs and closure.
 No scope, seven scalar exceptions or criterion change. CDC retrospective is
-required at close. Next-action owner: assigned reviewer, then CDC.
+required at close. Next-action owner: CC `/root/s21_cc` implements the preserved Iteration01;
+reviewer `/root/s21_review` independently checks the return,then CDC closes.
 
 ## Assignment history
 
-- **Initial / active:** `cc-prompt.md`, issued2026-10-18 by the adding commit,
+- **Current / Iteration01:** [cc-prompt-iteration01.md](cc-prompt-iteration01.md),
+  issued2026-10-18 by the adding commit, SOURCEd19de06d. CC `/root/s21_cc`
+  restores one concrete source explanation; actual reviewer `/root/s21_review`
+  verifies it. No other source/guide/metadata change or new gate is authorized.
+
+- **Initial / returned,partially accepted:** `cc-prompt.md`, issued2026-10-18 by the adding commit,
   planning predecessorcd32d81b3cec2542a0a7acf10ad76d5129f6fa75 / SOURCE52bfa463. Source implementation and
   compact evidence return; CC may propose results but not independently accept,
   close, advance, push or publish.
 
 ## Version History
+
+- 1.2 (2026-10-18): Independent review accepts three rows and finds F01's
+  missing round/flat explanation. Issue one body-only repair with current
+  native/package evidence retained after input checks; no parent scope change.
 
 - 1.1 (2026-10-18): Record Operator-selected Autonomous Mode transition after
   CC return, current design applicability and named independent review context;
