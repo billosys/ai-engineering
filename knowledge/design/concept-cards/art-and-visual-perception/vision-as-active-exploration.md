@@ -24,8 +24,7 @@ related:
   - "perceptual-concept"
   - "visual-shape"
   - "praegnanz"
-contrasts_with:
-  - "passive-registration"
+contrasts_with: []
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How does cognitive load theory (intrinsic, extraneous, germane) relate to progressive disclosure and visual hierarchy? When is simplification harmful?"
@@ -34,12 +33,12 @@ rosetta_stone:
     domain: "engineering"
     concept: "Query-driven data access vs. passive data push"
     rating: "loose"
-    note: "Active vision (the eye reaches out to grasp selected features) is loosely analogous to query-driven data access: the system actively selects what it needs from the environment rather than passively registering everything indiscriminately."
+    note: "Query-driven access provides a loose comparison for selective attention: both select information for a purpose. Visual perception is not a database query, and the metaphor does not specify its physiology."
   -
     domain: "art"
     concept: "Gestural drawing / direct perception"
     rating: "structural"
-    note: "The 'active grasp' quality of vision — tracing, touching, scanning — corresponds to the kinesthetic understanding sought in gesture drawing: the artist re-enacts the visual reaching-out by physically tracing the forms of objects."
+    note: "Tracing a pose in gesture drawing can support active examination of form. This matches the experiential act of exploration, not a neural identity or universal order of drawing."
 css_implementation: []
 ---
 
@@ -49,11 +48,13 @@ Vision as active exploration is Arnheim's foundational claim that perception is 
 
 # Core Definition
 
-Arnheim argues against the assumption that vision works by passively imprinting the world on the retina: "the world of images does not simply imprint itself upon a faithfully sensitive organ. Rather, in looking at an object, we reach out for it. With an invisible finger we move through the space around us, go out to the distant places where things are found, touch them, catch them, scan their surfaces, trace their borders, explore their texture. Perceiving shapes is an eminently active occupation" (Chapter II, p. 16). This active character explains why "seeing means grasping some outstanding features of objects" (p. 26) rather than recording everything impartially. Vision selects; it is not a camera. "Recent psychological thinking, then, encourages us to call vision a creative activity of the human mind. Perceiving accomplishes at the sensory level what in the realm of reasoning is known as understanding... Eyesight is insight" (p. 29). The implications are profound: what we see is not determined by what is there but by what our perceptual apparatus reaches for and grasps — the salient, structurally clear, and perceptually organised.
+This section presents the represented Arnheim account. Its quotations, page references and historical or experimental reports have not been checked against the unavailable original; current analytic qualifications below do not certify that fidelity.
+
+Arnheim argues against the assumption that vision works by passively imprinting the world on the retina: "the world of images does not simply imprint itself upon a faithfully sensitive organ. Rather, in looking at an object, we reach out for it. With an invisible finger we move through the space around us, go out to the distant places where things are found, touch them, catch them, scan their surfaces, trace their borders, explore their texture. Perceiving shapes is an eminently active occupation" (Chapter II, p. 16). This active character explains why "seeing means grasping some outstanding features of objects" (p. 26) rather than recording everything impartially. Vision selects; it is not a camera. "Recent psychological thinking, then, encourages us to call vision a creative activity of the human mind. Perceiving accomplishes at the sensory level what in the realm of reasoning is known as understanding... Eyesight is insight" (p. 29). The implications are profound: appearance is not determined by stimulus geometry alone: attention, task and prior experience can influence what is selected. The reaching-out language is a metaphor, not an optical or neural mechanism.
 
 # Prerequisites
 
-This is a foundational concept with no prerequisites within this source.
+No internal prerequisite is recorded in this extraction; this is not evidence that no other concept could aid understanding.
 
 # Key Properties
 
@@ -67,8 +68,8 @@ This is a foundational concept with no prerequisites within this source.
 
 ## To Construct/Create:
 1. Recognise that viewers actively select what to attend to; design for the structural features that will be grasped first.
-2. Make primary structural features (dominant axes, salient shapes, key contrasts) unmissable — the active eye will find them.
-3. Design with the understanding that detail not supported by clear structural features will be invisible to most viewers — the eye does not record everything.
+2. Make primary relationships legible in the intended task, and check what viewers actually find; salience does not make a feature unmissable.
+3. Important detail may be missed even when present. Preserve semantic access, labels and deliberate searching rather than assuming all secondary detail is invisible.
 
 ## To Identify/Recognise:
 1. Which features of this composition will be "grasped" in the first active scan? (Those with clear structural skeleton, high contrast, simple shape)
@@ -78,7 +79,7 @@ This is a foundational concept with no prerequisites within this source.
 # Context & Application
 
 - **Typical contexts**: UI design, wayfinding, advertising, visual communication, illustration.
-- **Common applications**: UI designers who understand vision as active exploration design for immediate grasping of the primary hierarchy (what will the eye reach for first?) and then structure secondary content for active searching. The F-pattern and Z-pattern reading studies are empirical observations of which regions the active eye reaches for first on typical page layouts.
+- **Common applications**: UI designers who understand vision as active exploration design for immediate grasping of the primary hierarchy (what will the eye reach for first?) and then structure secondary content for active searching. F- and Z-pattern labels are not verified study evidence in this card and do not predict a universal scan path. Content, task, script and layout need contextual assessment; no new eye-tracking study is claimed.
 
 ## Cross-Domain Connections
 
@@ -90,14 +91,16 @@ This is a foundational concept with no prerequisites within this source.
 
 **Example 2** (p. 26): "Seeing means grasping some outstanding features of objects — the blueness of the sky, the curve of the swan's neck, the rectangularity of the book, the sheen of a piece of metal, the straightness of the cigarette."
 
-**Example 3** (p. 26): "A few simple lines and dots are readily accepted as 'a face,' not only by civilized Westerners... but also by babies, savages, and animals." — The active visual system reaches for the facial pattern, finding it in a minimal stimulus.
+**Example 3** (p. 26): "A few simple lines and dots are readily accepted as 'a face,' not only by civilized Westerners... but also by babies, savages, and animals." — historical quoted wording, including its demeaning cultural classification, is retained as reported language, not adopted here. The example does not establish universal recognition or a pre-cultural mechanism.
 
 **Example 4** (p. 16): Plato's description of vision as fire flowing out of the eyes — "primitive optics has had its day, but the experience from which it sprang remains alive" — acknowledging that the phenomenology of active, outgoing vision preceded modern optics.
 
 # Relationships
 
+The following are scoped conceptual reading connections. In the represented account, simplicity, axes and grouping explain one another; these links do not establish causal neural mechanisms. Unnamed downstream uses and ordinary comparisons are not automatically resolved card identities.
+
 ## Builds Upon
-- (None — foundational concept)
+- (No internal prerequisite recorded in this extraction; this is not proof of absence.)
 
 ## Enables
 - **Perceptual Concept** — Active exploration operates through perceptual concepts: the eye reaches for categories (triangularity, roundness) not for individual measurements.
@@ -113,21 +116,23 @@ This is a foundational concept with no prerequisites within this source.
 # Common Errors
 
 - **Error**: Designing with the assumption that viewers will see everything on the screen.
-  **Correction**: Active vision selects. Viewers will grasp prominent structural features and miss detail that is not organised around them. Design for grasping, not for impartial inspection.
+  **Correction**: Active vision selects. Prominent features can guide attention, but their discovery depends on task and viewer. Keep important information findable and meaning available beyond an initial visual scan.
 
 - **Error**: Using eye-tracking data as a complete map of what viewers perceive.
-  **Correction**: Eye-tracking shows where the active eye reaches; it does not show what is perceived in peripheral vision or what structural framework is grasped holistically before detailed fixation begins.
+  **Correction**: Eye-tracking records gaze under a particular method; gaze is not a complete record of perception, comprehension or peripheral attention. It cannot by itself establish a whole-first perceptual sequence.
 
 # Common Confusions
 
 - **Confusion**: Active vision means viewers consciously choose what to look at.
-  **Clarification**: Active vision is not conscious deliberation. The visual system automatically reaches for structurally salient features without conscious intent. It is active in the sense that it selects and organises, not passive in the sense that it records everything — but this selection operates below the threshold of awareness.
+  **Clarification**: Selection and organisation can include both deliberate looking and processes outside awareness. Arnheim's active metaphor does not by itself specify their neural basis or exclude conscious goals.
 
 # Source Reference
 
 Chapter II: Shape, "Art and Visual Perception," pp. 14–29. Sections: "Vision as Active Exploration," "Grasping the Essentials," "Perceptual Concepts."
 
 # Verification Notes
+
+The bullets below preserve historical extraction assertions, including their confidence, cross-reference, OCR and source-reading claims; they are not current verification. The represented original edition/page basis is unavailable, so fidelity of all quotations, locators, figures, experiments and historical claims remains unassessed. Current technical corrections and scoped analogies do not establish a neural mechanism, cultural universality or measured usability.
 
 - Definition source: Direct quotes from pp. 16, 26, 29; concept named explicitly in section heading.
 - Confidence rationale: High — Arnheim names this concept, argues for it explicitly, and builds the entire chapter's theoretical framework on it.

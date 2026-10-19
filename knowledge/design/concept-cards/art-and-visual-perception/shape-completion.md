@@ -36,30 +36,32 @@ rosetta_stone:
     domain: "mathematics"
     concept: "Completion in metric spaces / Cauchy sequence completion"
     rating: "loose"
-    note: "Mathematical completion fills in missing elements to make an incomplete structure whole; perceptual completion analogously 'fills in' missing shape segments to produce a complete, stable whole — the analogy is loose because mathematical completion is exact, perceptual completion is probabilistic."
+    note: "Metric completion adjoins limits for Cauchy sequences in a specified metric construction. Perceptual completion supplies a possible continuation from partial cues; it need not be unique, exact, or the reconstruction of the original object."
   -
     domain: "engineering"
     concept: "Error correction / forward error correction (FEC)"
     rating: "structural"
-    note: "The perceptual system reconstructs complete shapes from partial input just as forward error correction reconstructs the original signal from a corrupted or incomplete transmission — both use redundancy and structural expectations to fill gaps."
+    note: "FEC can recover data using a specified code and redundancy within channel and recovery assumptions. Partial visual cues likewise constrain possibilities, but sight supplies no error-correcting code or guarantee of exact reconstruction."
 css_implementation:
   -
-    property: "clip-path with overflow: visible (implying continuation outside bounds)"
-    example: "clip-path: inset(0); overflow: visible; /* element continues visually beyond visible area, implying completion */"
+    property: "clip-path crops painted shape; overflow cannot undo the clip"
+    example: ".circle { width: 6rem; height: 6rem; border-radius: 50%; clip-path: inset(0 35% 0 0); } /* Complete circle geometry remains; right-hand paint is hidden. No essential meaning may rely on inferred continuation. */"
     support: "partial"
   -
-    property: "border-radius on partially visible elements"
-    example: "/* A circle partially behind a container edge is perceived as continuing as a circle */ .circle { border-radius: 50%; }"
+    property: "Equal dimensions with border-radius for a circle"
+    example: ".circle { width: 6rem; height: 6rem; border-radius: 50%; } /* Author size; equal dimensions make a circle. A crop may suggest continuation, not guarantee it. */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Shape completion is the perceptual tendency to experience partial or fragmented shapes as complete wholes, driven by the brain's field processes seeking the simplest available closed structure.
+Shape completion is the tendency to experience a partial or occluded shape as continuing into a fuller form. Visible cues and context constrain the reading; neither a unique hidden geometry nor reliable recovery of essential meaning is guaranteed.
 
 # Core Definition
 
-Arnheim provides direct neurological evidence for shape completion: patients with hemianopia (brain damage causing blindness in half the visual field) who are shown half a circle "report seeing a complete circle. On being shown a smaller portion of the circle he will report seeing 'a kind of bow,' and the same is true for half an ellipse. The patient is not merely guessing by inference from past experience, but actually sees either the complete or the incomplete figure" (Chapter II, p. 51). Even afterimages of completed figures are perceived as complete. Arnheim's explanation: "when enough of the projected figure is received by the visual cortex, the electrochemical process caused by the projection can complete itself in the brain and thereupon produces the percept of a complete whole in consciousness" (p. 51). The degree of completion depends on simplicity: simple shapes (circles, squares) complete more readily than complex irregular ones. "An extensive injury... may black out either the right or left half of the visual field completely... if the patient is made to fixate the center of a circle for one tenth of a second... he reports seeing a complete circle" (p. 51).
+This section presents the represented Arnheim account. Its quotations, page references and historical or experimental reports have not been checked against the unavailable original; current analytic qualifications below do not certify that fidelity.
+
+Arnheim reports clinical observations of shape completion: patients with hemianopia (brain damage causing blindness in half the visual field) who are shown half a circle "report seeing a complete circle. On being shown a smaller portion of the circle he will report seeing 'a kind of bow,' and the same is true for half an ellipse. The patient is not merely guessing by inference from past experience, but actually sees either the complete or the incomplete figure" (Chapter II, p. 51). Even afterimages of completed figures are perceived as complete. His proposed neural-field explanation, not established by this current review, is: "when enough of the projected figure is received by the visual cortex, the electrochemical process caused by the projection can complete itself in the brain and thereupon produces the percept of a complete whole in consciousness" (p. 51). Arnheim relates completion to simplicity; the represented cases do not establish a universal ordering of all regular and irregular forms. "An extensive injury... may black out either the right or left half of the visual field completely... if the patient is made to fixate the center of a circle for one tenth of a second... he reports seeing a complete circle" (p. 51).
 
 # Prerequisites
 
@@ -68,56 +70,58 @@ Arnheim provides direct neurological evidence for shape completion: patients wit
 
 # Key Properties
 
-1. **Simplicity-dependent** — Simple shapes (circles, ellipses, squares) complete readily; complex or irregular shapes do not. "The patient is also unlikely to see the well-known number 4 in Figure 24 spontaneously" (in a complex camouflage context).
-2. **Threshold effect** — Below a critical proportion of the shape visible, completion fails and partial form is seen instead (arc, bow, etc.) — not a gradual fade but a perceptual threshold.
-3. **Neurologically grounded** — Completion is not intellectual inference from experience but an electrochemical field process in the visual cortex.
-4. **Amodal** — The completed portion of the shape is perceived even though it does not stimulate any retinal receptors (amodal completion).
+1. **Shape-dependent** — Simple regular cues may support completion, while irregularity and competing context can weaken it. The quoted case below does not establish a universal boundary: "The patient is also unlikely to see the well-known number 4 in Figure 24 spontaneously" (in a complex camouflage context).
+2. **Visible extent** — The reported circle/bow contrast suggests a changed reading, but supplies no universal proportion or sharp threshold for all shapes and observers.
+3. **Reported mechanism** — Arnheim proposes electrochemical cortical completion. The represented reports do not independently prove that mechanism or exclude inference and prior experience.
+4. **Completion distinctions** — An occluded object may be experienced as continuing without its hidden surface being visibly painted. Distinguish that amodal continuation from visible contour closure and the reported clinical/afterimage phenomena.
 5. **Context-dependent** — The same partial shape may complete in one context and fail to complete in another if the context introduces conflicting structural forces.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Show enough of the shape that the structural skeleton is legible (typically more than half for complex shapes, less for simple ones).
+1. Retain distinctive cues to the intended form; there is no general more-than-half/less-than-half visibility rule.
 2. Ensure the visible portion has consistent curvature/direction that implies a simple completion.
 3. Use a clean context (ground without competing shapes) so the completion is not disrupted by conflicting edges.
-4. Trust the viewer to complete simple geometric shapes when partially revealed — this is reliable.
+4. Make essential meaning available without inferred continuation. A clipped form may suggest more content, but provide explicit usable navigation or labels where required.
 
 ## To Identify/Recognise:
-1. Does the partial shape have a clear, simple structural skeleton? If yes, completion will occur.
+1. Compare whether the visible cues suggest the intended fuller shape in the actual context; a legible skeleton alone is not sufficient proof.
 2. Is the visible arc/portion consistent with a single simple closed form? (Circle, ellipse, rectangle, regular curve)
 3. Is there competing visual context that would disrupt the completion?
 
 # Context & Application
 
 - **Typical contexts**: Partially-revealed interface elements, off-screen content indicators, logo design with negative space, responsive design where elements are partially clipped, image carousels where adjacent cards are partially visible.
-- **Common applications**: A carousel component that partially reveals the edge of the next card relies on shape completion — the viewer perceives the full card as continuing beyond the visible area. A circle-shaped avatar clipped at the bottom of a screen is perceived as a circle, not a semicircle. Designers can exploit shape completion to imply off-screen content without showing it.
+- **Common applications**: A carousel edge can suggest another card, and a clipped circular avatar can suggest continuation. The viewer may instead see a partial form; neither hidden content nor full-circle recognition is guaranteed. A crop can suggest off-screen continuation, with explicit navigation and essential meaning available independently. In the header example a 6rem by 6rem box with 50% radii defines complete circle geometry, while inset(0 35% 0 0) hides part of its paint. overflow: visible cannot cancel that clip; the remaining paint is not itself a complete visible circle.
 
 ## Cross-Domain Connections
 
-**Engineering → STRUCTURAL**: Forward error correction (FEC) in data transmission reconstructs a complete message from a partial, corrupted, or noisy input using structural redundancy and prediction. Shape completion does the same: the visual system uses the visible portion's structural properties to reconstruct the complete form, treating the missing portion as "noise" or "occlusion."
+**Engineering → STRUCTURAL**: FEC recovers data using a specified code and redundancy under channel and recovery assumptions. Partial visual cues constrain possible continuations, but are not a code or guarantee of the original hidden form. The shared structure is reasoning with incomplete input, not exact reconstruction by sight.
 
 # Examples
 
-**Example 1** (p. 51): Hemianopia patients shown half a circle "report seeing a complete circle" — neurological evidence that completion is a cortical field process, not intellectual inference.
+**Example 1** (p. 51): Hemianopia patients shown half a circle "report seeing a complete circle" — a reported clinical observation, not an independently verified demonstration of a particular cortical mechanism.
 
-**Example 2** (p. 51): When shown a "smaller portion of the circle he will report seeing 'a kind of bow'" — demonstrating the threshold: below sufficient visible extent, completion fails and partial form is seen.
+**Example 2** (p. 51): When shown a "smaller portion of the circle he will report seeing 'a kind of bow'" — a reported change of experience; it does not specify a universal geometric threshold.
 
-**Example 3** (p. 51): "Even the afterimages of completed figures are perceived as complete" — the completion persists in the afterimage, confirming it is a cortical (not retinal) process.
+**Example 3** (p. 51): "Even the afterimages of completed figures are perceived as complete" — a reported afterimage observation, insufficient here to confirm cortical rather than retinal causation.
 
 **Example 4** (p. 48–50): Distorting goggles (Ivo Kohler's experiments): the visual system gradually re-establishes stable simplicity even with prismatically distorted input — related tendency of the whole to maintain itself.
 
 # Relationships
 
+The following are scoped conceptual reading connections. In the represented account, simplicity, axes and grouping explain one another; these links do not establish causal neural mechanisms. Unnamed downstream uses and ordinary comparisons are not automatically resolved card identities.
+
 ## Builds Upon
 - **Praegnanz** — Completion is Praegnanz driving partial shapes toward their simplest complete form.
-- **Visual Shape** — The shape that gets completed must have a legible structural skeleton.
+- **Visual Shape** — Understanding visible form helps describe a proposed completion, without a necessary-and-sufficient skeleton test.
 
 ## Enables
-- (No direct downstream concepts within Chapter II — this is a mid-level principle)
+- (No named direct downstream relation recorded within Chapter II; this does not exclude generative use in cropped compositions.)
 
 ## Related
 - **Structural Skeleton** — Completion operates by extending the structural skeleton of the visible portion; a clear skeleton facilitates completion.
-- **Visual Simplicity** — Simpler shapes complete more readily and more reliably.
+- **Visual Simplicity** — Regular visible cues may support completion in this account; a universal reliability ordering is not established.
 - **Visual Subdivision** — Completion works against subdivision: where subdivision tries to separate a field into distinct units, completion tries to unify partial shapes into wholes.
 
 ## Contrasts With
@@ -126,10 +130,10 @@ Arnheim provides direct neurological evidence for shape completion: patients wit
 # Common Errors
 
 - **Error**: Assuming viewers will complete any partial shape.
-  **Correction**: Completion is reliable only for simple shapes with clear structural skeletons. Complex or irregular partial shapes do not complete — they are seen as partial or fragmentary.
+  **Correction**: Simple regular cues may help, but completion is not guaranteed for simple forms or excluded for complex ones. Compare the actual crop and context and preserve essential meaning independently.
 
 - **Error**: Relying on completion to save poorly designed partial reveals.
-  **Correction**: Completion requires the visible portion to contain a legible skeleton. A poorly cropped logo or icon (where the crop cuts through structurally important features) will not complete — it will look broken.
+  **Correction**: Distinctive contour and axis cues can aid completion, without a necessary-and-sufficient skeleton test. A crop through discriminating features can make a logo or icon ambiguous; inspect what remains rather than assuming one inevitable reading.
 
 # Common Confusions
 
@@ -137,13 +141,15 @@ Arnheim provides direct neurological evidence for shape completion: patients wit
   **Clarification**: Closure (closing open outlines into bounded regions) is related but distinct. Shape completion in Arnheim's sense specifically concerns the perceptual filling-in of physically absent shape portions — amodal completion. Closure concerns the tendency to perceive open outlines as closed. Both are driven by Praegnanz.
 
 - **Confusion**: Completion is an intellectual inference from past experience.
-  **Clarification**: Arnheim explicitly distinguishes completion from inference: the hemianopia patient "is not merely guessing by inference from past experience, but actually sees" the complete figure. Completion is a cortical field process, not a cognitive deduction.
+  **Clarification**: Arnheim explicitly distinguishes completion from inference: the hemianopia patient "is not merely guessing by inference from past experience, but actually sees" the complete figure. This preserves Arnheim's distinction between seeing and guessing; it does not independently establish a cortical field mechanism or rule out learned expectations.
 
 # Source Reference
 
 Chapter II: Shape, "Art and Visual Perception," pp. 50–52. Section: "A Whole Maintains Itself."
 
 # Verification Notes
+
+The bullets below preserve historical extraction assertions, including their confidence, cross-reference, OCR and source-reading claims; they are not current verification. The represented original edition/page basis is unavailable, so fidelity of all quotations, locators, figures, experiments and historical claims remains unassessed. Current technical corrections and scoped analogies do not establish a neural mechanism, cultural universality or measured usability.
 
 - Definition source: Direct quotes from pp. 51–52; neurological evidence from hemianopia studies cited explicitly by Arnheim.
 - Confidence rationale: High — Arnheim provides experimental evidence and explicit mechanistic explanation for shape completion.
