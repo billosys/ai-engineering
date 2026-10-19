@@ -455,3 +455,405 @@ No new supporting artifact: exactly the same batch and fixture. Planning changes
 are confined to these two, an appended current closing-report section and ledger
 Evidence/Notes only. All earlier attempts/protocol text remain intact. No closure,
 successor, new source input, release, push, merge or native preference mutation.
+
+
+## CDC actual execution and qualitative review — 2026-10-19
+
+CDC Sofie `/root`, independent of implementing `/root/s25_cc`. Final SOURCE
+`494a4b95f8a7a424deedb062f0a2870ca9ce0794`, CC planning `da690a27adf1c7b4afbf3279141697cfd0821551`; current fixture
+`ef0ab2de4ffe224896dbc561e5ea99137ab5ab2ae2deadb7e22af1339b7682f1`.
+The initial candidate, prospective criteria, CC attestations and failures above
+remain historical. This section records actual independent outcomes, not CC
+self-acceptance. All three subject dispatches occurred after the final eight-file
+payload was pinned; those bytes match the current hash table above and archive.
+
+### Initial failed candidate and recovered browser instrumentation
+
+Initial source39cf4193 record (CDC actual observations):
+
+Actual IAB2/backgroundtab1/loopback127.0.0.1:58512/artifacts only. Authored viewport/root/spacing states, no native settings changes. Initial serverbind denied by sandbox, identical loopback-only escalation approved and succeeded. GET fixture200, missing-proof-font.woff2 404, incidental favicon.ico404. No engineversion available through readonly navigator; don't guess it.
+
+Twelve cells (actual computed/root/reading font,fluidfont,document.scrollWidth):
+320normal16/16/16/320;320enlarge32/32/32/320;320spacing16/16/16/320;320both32/32/32/336FAIL.
+800normal16/16/17/800;800enlarge32/32/32.3333/800;800spacing16/16/17/800;800both32/32/32.3333/800.
+1280normal16/16/18/1280;1280enlarge32/32/33.3333/1280;1280spacing16/16/18/1280;1280both32/32/33.3333/1280.
+Bookwrapperwidths320/800/1200 at corresponding3viewports inallfourstates; nooverflow inbook/retainedsidebar/grid/related. Main's unexpected16pxoverflowat320both is uncontained simpletable: left32,right336.078125,width304.078125, inside256pxcontent. Excluding knownwide/sizing/font/Reelcontains, fullDOMbounds query isolatedthat table/caption/thead/tbody/cells. Initial narrower query of p/headings/links alone missed culprit; document.scrollWidth still detectedfailure, expandedwholeDOMqueryfoundactualelement. No masking/hiding.
+Spacingoff line21.6px@font16 or43.2@32, p+p gap12/24. Spacingon line24/48, letter1.92/3.84, word2.56/5.12, p+p gap32/64. Actualfontdoubling rootrelativebody16→32. Separatefluidroundedcomputedvalues don'tdouble exceptclamped320: exactFractionpredictions16→32,16.999992→32.33332,17.9999904→33.3333184; ratios2,1.9019608950404212,1.8518520098766276. Fontserializationrounds17/18 etc; don'tclaimexactpixelmeasurementhigherprecision.
+Sizingobserved borderwidths244,200,300 at320normal, fixedcontained; widetableoverflowcontained. Reel320normal wraps/client286scroll286;800normalclient766scroll1448. ArrowRight at800normal actualscrollLeft0→25 withfocused#reel,3pxsolidblackoutline andcorrectlabel. Return onnative summary open=true; Space open=false.18 actualTabfocussteps afterfirstheaderanchor: Retainedprimitives→Readingandinteraction→Colourpairs→Fontfailureandaxes→enlarge→spacing→motion→bookdescription→SmallPlaces→Journey→Window→Description→sizingregion→widetableregion→Reelregion→Firstreading→Secondreading→Thirdreading. All18actualactiveelements hadsolid3pxblackoutline. NoATannouncementinference.
+Actualcolourcomputeddefault800normal:ordinary/linkblack ontransparent ancestors resolvedhtmlwhite;buttonwhiteonblack;placeholder#666opacity1onwhiteactiveinput;known#777whitefont16;alpha rgba000.5onwhite/no filter/normalblend/opacity1;disabledtrue#777whiteexceptioncontext. Click action produced:hovertrue/:focustrue whiteon#222,solid3pxblackoutlineoffset4. Independentdecodecalculation21,15.909984431773273,5.741836481454148,4.478089453577214; alphaencoded.5underdeclaredflatSDRsRGB assumption3.976653024912438, notsampledpixelcolorproof. Alphaalsofails4.5normal16context. Inactiveexceptionisnotplaceholderexemption.
+Actualfontsurface:document.fonts.statusloaded,check('16px ProofMissing')false inclrepresentativestring,checkProofLocalfalse,checksans-seriftrue. FontFaceSetiterationunsupported(readonlysurfaceTypeError), navigatorundefined(initialqueryTypeError); recoveredusingcheckandDOMstylequeries. Nofakefullloadstatusenumeration. Axiswdth75/125requests computedsettingsdiffer butboth380.3125px at1280enlarged+spaced,localfaceunready; noaxisusewitness. Missingfonts404actual, Latin/Arabictextpresent, readablefallbackneedsvisualfinalcapture; noactualglyphfamily/name/completescriptsupportclaimed.
+Motionactual800normal:CSS.supportsanimationtimelineviewtrue,currentmatchMediareducerfalse(readonlyobservation, no settingchange);beforepreviewanimationdrift,transformmatrixx2.93502,cliptransition.25s;aftercheckpreviewtrueanimationnone,transformnone,transition0s,essentiallabelvisibilityvisible/textunchanged. AuthoredpreviewnotOSReducedMotionmode; featureunsupported/nativeReduceenabled/forcedcolours/AT/nativezoom remainunrun.
+
+
+### Final twelve-cell browser result
+
+After loading the repaired fixture, repeated all twelve combinations. Native
+controls and viewport override were actually operated through CUA, with fresh
+state observations and read-only DOM/computed-style/bounds queries. `root/font`
+are px; scroll is document scrollWidth, not a hidden-overflow CSS assertion.
+
+|Viewport/state|Root/font|Fluid computed px|Document scroll/client|Simple-table width px|Outcome|
+|---|---|---|---|---|---|
+|320 normal|16/16|16|320/320|288|bounded pass|
+|320 enlargement|32/32|32|320/320|256|bounded pass|
+|320 spacing|16/16|16|320/320|288|bounded pass|
+|320 both|32/32|32|320/320|256|repaired; prior336 failure retained|
+|800 normal|16/16|17|800/800|768|bounded pass|
+|800 enlargement|32/32|32.3333|800/800|736|bounded pass|
+|800 spacing|16/16|17|800/800|768|bounded pass|
+|800 both|32/32|32.3333|800/800|736|bounded pass|
+|1280 normal|16/16|18|1280/1280|1248|bounded pass|
+|1280 enlargement|32/32|33.3333|1280/1280|1216|bounded pass|
+|1280 spacing|16/16|18|1280/1280|1248|bounded pass|
+|1280 both|32/32|33.3333|1280/1280|1216|bounded pass|
+
+Book wrapper widths320/800/1200 in their corresponding viewports, all four
+states. Retained Stack/Sidebar/Grid, book/related composition and paragraph
+specimens remained available without unexpected page-wide overflow. Final
+320both simple table runsleft32→right288 within256px; caption/header/cell
+wrapping is visibly retained. No clipping/global overflow hiding or change to
+retained layout algorithms. Explicit wide-table/sizing/nowrap diagnostics remain
+contained. This is evidence for these specimens/conditions only.
+
+Actual reading fonts16→32; spacing-off line21.6/43.2 and successive-paragraph
+margin12/24px; spacing-on line24/48, letter1.92/3.84,word2.56/5.12,
+paragraph gap32/64. Root-relative reading doubles; fluid diagnostic does not
+necessarily double. Independent exact-Fraction predictions produce16→32,
+16.999992→32.33332,17.9999904→33.3333184; browser serialization rounds the
+latter values. Do not interpret rounded computed strings as higher-precision
+pixel sampling or user-zoom suitability.
+
+Final named behavior observations:
+
+- At800normal, final Reel ArrowRight movedscrollLeft0→21 with focus on its
+  labelled region (the earlier0→25 is a separate actual transient scroll sample,
+  not a deterministic step-size requirement). Return opened native details;
+  Space closed it. Initial18actual Tab steps/solid3pxblack outlines are retained
+  after checking unchanged focusable markup/order and focus CSS; final keyboard
+  probes independently reached the Reel, disclosure and decorative link.
+- Final clip-link focus hadsolid3pxoutline and exposed label. After moving focus
+  and pointer to the motion checkbox, actual linkhover=false/focus=false,
+  clipcircle38%, labelvisibilityvisible. Touch/no-hover mode was not emulated.
+  Source order, main/nav/section labels and both captions plus actual th
+  row/column scopes were inspected; this is not AT-announcement proof.
+- Final fixed-control widths244/200/300px agree with scoped content-box,
+  border-box and normal-block-auto predictions. Native settings were untouched.
+- Actual baseline state pairs: black/white21, white/#222hover15.9099844318,
+  placeholder#666/white5.7418364815; intentional#777/white4.4780894536 fails
+  normal-text4.5. Alpha black.5/white resolves under declared flat-sRGB
+  assumptions to3.9766530249, also below4.5 at baseline. This is independently
+  calculated from observed styles/backdrops, not sampled HDR/pixel proof.
+  Disabled context is separate; the active placeholder is not exempt. Actual
+  action focus/hover and outline observed initially; unchanged pair/focus rules
+  retained and final actual foreground/backdrop/placeholder/alpha/disabled state
+  queried. No whole-fixture conformance: intentional failing controls remain.
+- Final font check: ProofMissing=false, ProofLocal=false, sans-serif=true;
+  actual missing-font request404 after reload. Latin accents/punctuation/numerals
+  and Arabic lang/rtl strings rendered visibly alongside a generic-fallback
+  comparison. Exact per-glyph font identity/complete script coverage not shown.
+  Local wdth75/125 requested different settings but both153.03125px at800normal;
+  local face unready, so available-axis behavior is **unavailable/not demonstrated**,
+  not a pass from computed requests. Read-only OS fvar metadata remains distinct.
+- Final authored motion preview yieldedanimationnone/transition0s andvisible
+  label. Observed currentnativeReduce=false,forcedColours=false,hoverNone=false;
+  those read-only observations are not enabled-mode tests. The native-reduce
+  enabled, forced-colours, unsupported-feature, touch/no-hover, nativezoom,
+  screen-reader/AT and additional-browser cases remain unrun.
+- Tool screenshots were visually inspected for320normal book, repaired320both
+  table,800normal font/fallback and1280normal book. No exported durable pixel
+  archive is claimed; the available capture surface returned images in-session.
+  Retained HTML, exact revision and numeric/qualitative records are durable.
+  Viewport override was reset, temporary tab closed and loopback server stopped.
+
+### Actual fresh-context identity subjects
+
+One actual response per predeclared task; no reruns. Dispatched with
+`fork_turns=none`, inherited model/settings, no overrides; only the final eight
+payload files supplied as domain inputs. All three attest complete8file reads
+and matching manifest hashes. Root independently pinned those bytes and read
+the complete responses/cited operative headings. Shared standing instructions,
+memory summary, model priors and evaluator knowledge remain possible influences;
+no memory-file consultation or earlier-response input was reported. Do not
+claim context isolation from common instructions/training or a causal skill effect.
+
+Actual execution notes (contributor read receipts, not independent inference):
+
+- `/root/identity_a`: eight full extents168/162/306/624/842/556/226/93;
+  long guides in contiguous101–182line chunks. Extra installed framework2.8.0
+  SKILL567lines; an initially truncated guidance output recovered through
+  1–200/201–400/401–567. No planning/history/other domain/web/product work.
+- `/root/identity_b`: eight full extents as above; design1–160/161–306,
+  foundations1–160/161–320/321–480/481–624,layout1–170/171–340/341–510/
+  511–680/681–842,monoculture1–150/151–300/301–450/451–556,type1–120/
+  121–226. Extra framework1–190/191–380/381–567; no truncation reported.
+  No planning/history/other domain/web/product work.
+- `/root/identity_c`: eight full extents as above, bounded reads and recovered
+  truncation. Extra framework567lines with middle250–390recovered. No planning,
+  repository history,other domain/web/font inspection or rendering.
+
+The complete proposal files are reproduced verbatim below, including temporary
+citation destinations, to preserve the actual outputs. Those temporary paths
+identify the input copies, not durable installed routes; current source/hash
+and operative-heading mapping above remain the re-entry basis.
+
+### Actual response A — `/root/identity_a`
+
+SHA256 `af748cbbd96f6068b7b94d521858b141c55b4873e13287421ecb547519e621b5`.
+
+~~~~markdown
+Build a quiet editorial reading page: a left-aligned title, a continuous prose column, clearly labelled section links, and related reading after the essay. Give it character through typography and spacing.
+
+The supplied facts are a long essay, title, author, publication date, section links and related reading, with most readers on phones or laptops. No identity, fonts or tokens are supplied. The following values are reversible proposals, assuming primarily English, Latin-script prose; other scripts need their own samples and font checks.
+
+Use a white page, charcoal text and restrained blue underlined links. Try Georgia for the essay and title, with a system sans-serif for metadata and navigation. These are candidate choices for this journal, not defaults prescribed by the guides. Begin with body text at `1.125rem`, unitless leading of `1.65`, and a maximum measure of `62ch`; inspect actual lines because `ch` measures the zero glyph’s advance rather than counting characters. Keep the title at `2.35rem`, allow natural wrapping, and group author and date closely underneath. These choices apply the type guide’s [“Assign roles and hierarchy” and “Compose readable paragraphs”](/private/tmp/p10-s25-identity-final/guides/type.md), and the design guide’s [“Use Proximity to Support Meaning”](/private/tmp/p10-s25-identity-final/guides/design.md).
+
+Use one reading column on both phones and laptops, centred within generous laptop margins. Put a plainly labelled “On this page” list after the metadata; its ordinary anchor links should match the essay’s section headings. Put “Related reading” after the conclusion as a short vertical list, with each item’s title, author and one sentence explaining its connection. Space this group farther from the essay than its entries are from each other. The continuous column serves sustained reading; the beginning and ending groups support scanning. This follows layout’s [“Start with Constraints” and “Let Dimensions Flow From Content”](/private/tmp/p10-s25-identity-final/guides/layout.md), and the context-led judgment in [“The Deeper Point”](/private/tmp/p10-s25-identity-final/guides/breaking-the-layout-monoculture.md).
+
+Use a visible “Skip to essay” link before navigation, `main.reading` containing the article and related-reading section, one article `h1`, author text and a machine-readable `time`, a labelled `nav.contents`, and `.essay` containing section `h2` elements with stable IDs. Give related reading its own labelled section and list. Preserve that source order. A decorative border can mark the ending without adding a thematic-break element unless the content actually calls for one.
+
+Here is a CSS starting point; every value is proposed for this page:
+
+```css
+:root {
+  --paper: #fff;
+  --ink: #252525;
+  --quiet: #595959;
+  --link: #26466d;
+  --visited: #624374;
+}
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); background: var(--paper); }
+.reading {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.125rem;
+  line-height: 1.65;
+  max-inline-size: 62ch;
+  margin-inline: auto;
+  padding: 2rem 1rem 4rem;
+  overflow-wrap: anywhere;
+}
+.reading h1 { font-size: 2.35rem; line-height: 1.15; margin: 0 0 .6em; }
+.meta, .contents, .related {
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.meta { color: var(--quiet); margin-block: 0 2rem; }
+a { color: var(--link); text-underline-offset: .18em; }
+a:visited { color: var(--visited); }
+a:hover, a:active { text-decoration-thickness: .15em; }
+a:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+.contents { margin-block-end: 2.5rem; }
+.contents a { display: block; min-block-size: 2.75rem; padding-block: .55rem; }
+.essay p { margin-block: 0; }
+.essay p + p { margin-block-start: 1em; }
+.essay h2 { font-size: 1.5rem; line-height: 1.3; margin-block: 2em .65em; }
+.essay [id] { scroll-margin-block-start: 1rem; }
+.related { margin-block-start: 3rem; padding-block-start: 1.5rem;
+  border-block-start: 1px solid var(--quiet); }
+.related li + li { margin-block-start: 1rem; }
+```
+
+Before calling the page finished, I would:
+
+- Render the actual essay at 320, 375, 768, 1280 and 1440 CSS pixels; inspect long titles, names, headings, quotations and URLs. Require readable reflow, accessible links, and no clipped prose or page-wide horizontal scrolling. Adjust the measure, size and spacing together from those observations.
+- Inspect the actual fonts used for regular, italic and bold passages, punctuation and diacritics on target browsers. Remove Georgia from the test stack to inspect fallback. With no downloadable fonts in this proposal, a network font-failure test is not applicable; any later font assets would require licensing, loading and failure checks. Follow type’s [“Check candidates and fallbacks”](/private/tmp/p10-s25-identity-final/guides/type.md).
+- Test native browser zoom, 200% text enlargement, larger default fonts and narrow reflow separately and together. Apply text-spacing overrides: line height `1.5`, paragraph spacing `2em`, letter spacing `.12em` and word spacing `.16em`. Require no lost text, overlap or unusable links.
+- Record computed foreground and resolved background pairs for prose, metadata, links in normal/visited/hover/active/focus states, and focus indicators. Check normal text against at least 4.5:1 and essential non-text indicators against the applicable 3:1 requirement; inspect forced-colour mode. Follow colour’s [“Review themes and state pairs”](/private/tmp/p10-s25-identity-final/guides/colour.md). The proposed hex values are not a completed rendered contrast assessment.
+- Use keyboard, touch and a screen reader to check the skip link, labelled navigation, heading outline, section destinations, focus visibility and meaningful related-reading links. Ask a reader to find a section and return to the essay; observe whether the labels and placement work.
+
+No page has been built or rendered, and none of these browser, font, contrast, accessibility or reader checks has been run. This is an implementable direction and starting stylesheet, not a finished-page or conformance claim.
+~~~~
+
+### Actual response B — `/root/identity_b`
+
+SHA256 `a2a90b267ad817c2e329bc65149239da418779fff317ab224a1c47aa7257fcdf`.
+
+~~~~markdown
+Keep the client’s white surface, near-black text, blue links, and `system-ui`. I propose a reading column with a quieter, top-aligned related-reading list alongside it when space allows. On narrower containers, the list follows the article. A rule and the visible heading “Related reading” distinguish that region; article and related titles remain fully visible.
+
+The supplied facts are the three token names/values, the typeface, and the long-title/keyboard requirements. The layout, dimensions, and spacing below are reversible proposals; the existing page, content, languages, and supported browsers were not supplied.
+
+Use a wrapper with class `article-layout`, containing the `<article>` first and `<nav class="related-reading" aria-labelledby="related-title">` second. Give the article its semantic heading hierarchy, put prose in `.article-body`, and use `<h2 id="related-title">Related reading</h2>` plus a `<ul>` of ordinary descriptive links in the navigation. Keep that source order at every width. This follows [Type — “Compose editorial structures”](/private/tmp/p10-s25-identity-final/guides/type.md#compose-editorial-structures) and [Layout — “Compose Reusable Relationships”](/private/tmp/p10-s25-identity-final/guides/layout.md#compose-reusable-relationships).
+
+```css
+/* Retain these existing definitions and names. */
+:root {
+  --client-surface: #ffffff;
+  --client-ink: #111111;
+  --client-action: #005fcc;
+}
+
+.article-layout,
+.article-layout * { box-sizing: border-box; }
+
+.article-layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2rem;
+  max-inline-size: 76rem;
+  margin-inline: auto;
+  padding: 2rem 1rem;
+  background: var(--client-surface);
+  color: var(--client-ink);
+  font-family: system-ui;
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.article-layout > article {
+  flex: 3 1 38rem;
+  min-inline-size: 0;
+}
+.article-layout h1 {
+  margin: 0 0 1rem;
+  max-inline-size: 24ch;
+  font-size: 2.25rem;
+  line-height: 1.15;
+}
+.article-body { max-inline-size: 65ch; }
+.article-body p { margin: 0 0 1em; }
+.article-body :is(h2, h3) { margin-block: 1.75em .5em; }
+.article-body img { max-inline-size: 100%; block-size: auto; }
+
+.article-layout > .related-reading {
+  flex: 1 1 16rem;
+  min-inline-size: 0;
+  border-block-start: 1px solid var(--client-ink);
+  padding-block-start: 1rem;
+}
+.related-reading h2 { margin: 0 0 .75rem; font-size: 1.25rem; }
+.related-reading ul { margin: 0; padding-inline-start: 1.25em; }
+.related-reading li + li { margin-block-start: .75rem; }
+.related-reading a { display: block; padding-block: .35rem; }
+
+.article-layout a:any-link {
+  color: var(--client-action);
+  text-decoration: underline;
+  text-underline-offset: .15em;
+}
+.article-layout a:hover { text-decoration-thickness: .15em; }
+.article-layout a:focus-visible {
+  outline: 3px solid var(--client-action);
+  outline-offset: 3px;
+}
+```
+
+The `38rem` and `16rem` flex bases propose where the two regions wrap; tune them against real titles. `65ch` is a candidate prose measure, not a guaranteed character count. Content determines height; avoid line clamps, fixed title heights, visual reordering, and positive `tabindex`. These choices apply [Layout — “Let Dimensions Flow From Content”](/private/tmp/p10-s25-identity-final/guides/layout.md#let-dimensions-flow-from-content), [Type — “Compose readable paragraphs”](/private/tmp/p10-s25-identity-final/guides/type.md#compose-readable-paragraphs), and [Design — “Use Proximity to Support Meaning”](/private/tmp/p10-s25-identity-final/guides/design.md#use-proximity-to-support-meaning).
+
+Follow up on the implemented page with these concrete checks:
+
+- Render actual short and longest titles, a 200-character title, an unbroken URL, and 0/1/8 related links at 320, 768, and 1280 CSS pixels and immediately around the observed wrap point. Require complete titles, clear grouping, accessible links, and no page-wide horizontal scrolling from this component.
+- Tab and Shift+Tab through every article and related link; activate with Enter. Require meaningful source order, exactly one stop per link, visible unclipped focus, and no overlap or focus hidden by existing sticky elements. Check the heading outline and named navigation with the client’s supported screen reader/browser combination.
+- Test actual browser zoom to 200%, text enlargement to 200% where available, and 400% zoom from a 1280-pixel viewport. Also test narrow width combined with text enlargement and spacing overrides: line height `1.5`, paragraph spacing `2em`, letter spacing `.12em`, word spacing `.16em`. Require no clipped text, overlap, lost controls, or inaccessible reading content; record browser and method separately.
+- Inspect the actual system fonts used on supported platforms, including punctuation, diacritics, and any supported non-Latin scripts. Check forced colours with keyboard focus, and confirm the reading order with CSS disabled.
+- Record resolved foreground/background colours for normal, visited, hover, active, and focus states, including the focus outline’s adjacent surface. Follow [Colour — “Review themes and state pairs”](/private/tmp/p10-s25-identity-final/guides/colour.md#review-themes-and-state-pairs); inspect inherited styles and overlays before accepting the pairs.
+
+Completed here: opaque sRGB calculations give `#111111` on `#ffffff` **18.88306096:1** and `#005fcc` on `#ffffff` **5.98493461:1**. Both exceed the supplied guide’s 4.5:1 normal-text threshold. These numerical checks do not establish rendered focus behavior or page accessibility. All rendering, keyboard, zoom, native-preference, and assistive-technology checks above remain unrun.
+~~~~
+
+### Actual response C — `/root/identity_c`
+
+SHA256 `a1f4f102123d032111b9ae9a72b61f14c3f05075f75ac149dd5f70e7f5d45373`.
+
+~~~~markdown
+Build the page as a quiet editorial essay: the supplied paper colour across the reading surface, ink-brown text, a prominent Fraunces title, and action-brown underlined links. The brown identity and Fraunces heading choice are supplied facts; the composition, body fallback and dimensions below are proposals.
+
+Use a short article header containing the title, a one-paragraph introduction and ordinary-size author/date metadata, followed by one continuous reading column. Give section headings more space above than below to connect them to their paragraphs. Keep the title aligned with the prose and let its wrapping create the main visual expression. This applies **Design as Engineering — “Use Proximity to Support Meaning”** and **Layout — “Let Dimensions Flow From Content”**. A candidate `66ch` measure needs inspection with real text; it does not promise 66 characters per line.
+
+Place the styles on a `.client-reading` wrapper containing `<article class="reading-sheet">`. Set the actual content language, use a single article `h1` and structurally appropriate subsequent heading levels, and retain meaningful source order. This follows **Type — “Assign roles and hierarchy”** and **“Compose editorial structures”**. Assume horizontal prose for this starting point; scripts, languages and target browsers remain unspecified.
+
+```css
+.client-reading {
+  --client-paper: #f8f3e9;
+  --client-ink: #382217;
+  --client-action: #885b3f;
+  background: var(--client-paper);
+  color: var(--client-ink);
+  padding: 2rem 1rem 4rem;
+  font-family: Georgia, serif;
+  font-size: 1.125rem;
+  line-height: 1.65;
+}
+
+.client-reading .reading-sheet {
+  max-inline-size: 66ch;
+  margin-inline: auto;
+  overflow-wrap: anywhere;
+}
+
+.client-reading h1,
+.client-reading h2 {
+  /* Reserved family alias; no font asset has been supplied or loaded. */
+  font-family: "Client Fraunces", Georgia, serif;
+  font-weight: 400;
+  line-height: 1.18;
+}
+
+.client-reading h1 { font-size: 2.5rem; margin-block: 0 0.75em; }
+.client-reading h2 { font-size: 1.625rem; margin-block: 2em 0.6em; }
+.client-reading p { margin-block: 0 1em; }
+.client-reading header { margin-block-end: 2rem; }
+
+.client-reading a,
+.client-reading a:visited {
+  color: var(--client-action);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+.client-reading a:hover,
+.client-reading a:active {
+  color: var(--client-ink);
+  text-decoration-thickness: 0.14em;
+}
+.client-reading a:focus-visible {
+  outline: 2px solid var(--client-ink);
+  outline-offset: 3px;
+}
+```
+
+These are candidate sizes and spacing, not a prescribed scale. Georgia/serif is a proposed body stack and a temporary heading fallback; its appearance and availability vary with the environment. When the licensed asset arrives, define `@font-face` under the reserved `Client Fraunces` alias using the real file, format and supported descriptors. Check the requested normal weight rather than assuming the supplied file contains it. Inspect the file before selecting any optical-size or other axis settings. The CSS does not demonstrate Fraunces rendering. This applies **Type — “Check candidates and fallbacks”** and **“Use only available axes”**.
+
+I calculated the two opaque sRGB pairs using **Colour — “Choose candidate values”**: ink on paper is approximately **13.47:1**, and action on paper **5.25:1**. Both exceed the guide’s 4.5:1 normal-text minimum for those specified pairs. Default/visited links retain an underline; hover/active links change underline thickness as well as colour. The focus outline uses ink against the proposed paper surface. These calculations establish neither the resolved host styles nor whole-page accessibility.
+
+When the font and target environment are available, validate the following:
+
+- Inspect the font license for the intended embedding, glyph/script coverage, actual faces, weights and any axis tags/ranges. Render real titles, passages, punctuation, numerals and diacritics; verify the face actually used. Deliberately block the font request and inspect fallback wrapping and layout movement.
+- Review the candidate type size, measure and leading together, including long titles, links and real sections at narrow and wide widths. Check native zoom and 200% text enlargement, text-spacing overrides, and narrow-width combinations; essential content and controls must remain accessible without clipping.
+- Exercise keyboard navigation and focus visibility; inspect source/reading order and headings with the target accessibility tools. Record the actual browser, operating system and assistive technology tested.
+- Follow **Colour — “Review themes and state pairs”**: record resolved foreground/background pairs and applicable contrast results for normal, visited, hover, active and focused links, including the outline against its adjacent surface. Inspect forced-colours and any required theme/preferences in the actual target, and record unavailable cases.
+
+Only source reading, manifest hash checks and the two colour calculations were run. No page was rendered, no font was inspected, and no browser, loading-failure, preference or assistive-technology result is claimed.
+~~~~
+
+### CDC qualitative judgment under the prospective criteria
+
+Root evaluated the actual complete proposals, not a token/colour blacklist.
+
+|Criterion|A|B|C|Concrete basis|
+|---|---|---|---|---|
+|1 supplied names/values/typeface|not supplied; contextual proposals|pass|pass|B retains all3 exact client token values/names and system-ui. C retains all3 exact brown values/names and Fraunces intent; reserved “Client Fraunces” is a proposed asset-registration alias, not a replacement face or renamed token.|
+|2 no inherited identity in generic task|pass|not primary stimulus|not primary stimulus|A labels white/charcoal/blue,Georgia and system-sans as reversible journal-specific candidates with Latin-script assumption; no inherited C&B palette/face.|
+|3 supplied brown/Fraunces accepted truthfully|not applicable|not applicable|pass|C accepts supplied brown and selected face, explicitly says no asset loaded; Georgia is a proposed temporary fallback, actual face/license/ranges/load/failure checks pending.|
+|4 actionable composition and checks|bounded pass|bounded pass|bounded pass|A continuous essay/contents/related list; B wrapping article-plus-related; C supplied editorial identity/title/prose. All provide actual CSS/content/semantic decisions plus relevant reflow/font/keyboard/pair-state checks. All static proposals; no animation introduced requiring a claimed motion result.|
+|5 operative citations and calibrated outcomes|pass|pass|pass|Cited headings exist and support contextual methods. A all rendered checks unrun; B/C calculate only specified opaque pairs, expressly leave rendering/AT/native checks unrun.|
+
+Root independently reproduced B ratios18.8830609646 and5.9849346123, C ratios
+13.4731495335 and5.2525199637; their printed precision is supported. This is
+arithmetic, not a rendered-page result. A's candidate hex values are not a
+completed contrast assessment. No supplied identity was rejected/forced into
+three-tier naming; no sample invents a loaded Fraunces face, token harmonics,
+beauty/accessibility proof or a completed rendered task.
+
+Calibration witness: a universal inherited brown/Fraunces theme merely renamed
+would fail criterion2; accepting the same choices when expressly supplied in C
+is correct. This is root's declared judgment contrast, not a fourth model run
+or independent efficacy control. Three successful proposals do not establish
+performance for other tasks, human designers, isolated installs or all model
+contexts; no baseline/randomization/replication/causal AutonomousMode benefit.
+
+All four bounded Slice25 criteria are independently accepted at the final source
+and return above. Full233card/global composition, original fidelity, final native/
+AT/hosted/applicability and Operator/release gates remain outside this acceptance.

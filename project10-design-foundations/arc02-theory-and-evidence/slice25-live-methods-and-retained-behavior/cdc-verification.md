@@ -74,3 +74,47 @@ white/#222 and solid3px black outline4pxoffset. Full final observations pending.
 
 No source edits by CDC, no self-acceptance, closure, successor, push/merge or
 release claim. Missing originals/full233global union and higher gates survive.
+
+
+## Iteration01 independent acceptance — 2026-10-19 (current verdict)
+
+CDC Sofie `/root` independently reviewed SOURCE `494a4b95f8a7a424deedb062f0a2870ca9ce0794` and CC return
+`da690a27adf1c7b4afbf3279141697cfd0821551`. Read both exact corrected source passages/diffs, final fixture and
+all appended batch/return sections. Both guide files recover exactly to39cf4193
+under inverse prescribed edits; all7078other tracked objects unchanged. Earlier
+whole-source/card/source-original preservation review therefore remains
+applicable. Fresh native logs inspected; independently compared all8archive
+Markdown payloads against committed source, ZIP1e7f1fd5cc50d746e20fbd02ec2eb2a21d857676893d1b0032e40d42fa499ad9.
+Verified source2path/P4path scopes, parents/trailers and current fixture hash.
+
+F01/F03 are corrected without changing the13names, local algorithms or history.
+F02 is fixed in actual browser execution: repeated12cells now have document
+scrollWidth equal viewport, including320both320/320 (prior336 retained). Simple
+semantic table wraps within256px. Actual keyboard/disclosure/focus, pairs,
+missing-font fallback, motion preview and available/unavailable font-axis results
+are in the [independent execution record](artifacts/batch-record.md#cdc-actual-execution-and-qualitative-review--2026-10-19).
+Three actual fresh-context proposals at the exact final eight-file payload
+meet the predeclared bounded criteria; complete raw responses and root's
+qualitative review retained there. No keyword-only identity verdict.
+
+|Row|Current independent verdict|
+|---|---|
+|S25-01|Done: whole live-method review plus precise F01/F03 repair, applicable accepted theory/guide results.|
+|S25-02|Done at named environment/12authored conditions with actual observations and explicit unavailable/unrun cases; no globalconformance/axis-success inference.|
+|S25-03|Done for actual3proposals, final payload, preserved protocol/rawoutputs and independent judgment; limitedn3, no causal/generalized-usability claim.|
+|S25-04|Done at current494a4b95/da690a27: protected objects, owning1.0.22/history, native/fresh8package, scopes and truthful handoff.|
+
+All4bounded rows accepted; Slice25 closes. The tested fixture intentionally
+contains normal-text contrast failures. Local ProofLocal unavailable, no loaded
+axis witness; nativezoom/enabledOSReduceMotion/forcedcolours/AT/additionaltargets
+remain unrun. All missing-original/full233/global and parent/Operator/final1.1.0
+release gates remain open. No source modification by CDC, merge/push/publication,
+new arc or self-acceptance. The closing retrospective records author/checker
+limitations and lessons without claiming AutonomousMode efficacy.
+
+Closing local-link/LF check initially referenced an unavailable older temporary
+helper. Recreated the same focused local query under a current temporary path;
+its actual result is recorded with the closing checks, not hidden as a success.
+
+Recovered check passed: seven closing files,73local links,26fragments,LF/EOF;
+Git whitespace check passed. No source/package inputs changed in this close.

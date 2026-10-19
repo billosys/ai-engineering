@@ -1,16 +1,16 @@
 ---
 slice: slice25-live-methods-and-retained-behavior
-status: active
+status: closed
 depends-on: [accepted supported card/live corrections; selected browser available]
 ---
 
 # Slice25 — Live Methods and Retained Behavior
 
-Revision **1.1**, 2026-10-18; Project1.75/current Arc02 Autonomous Mode. CDC
+Revision **1.2**, 2026-10-19; Project1.75/current Arc02 Autonomous Mode. CDC
 Sofie `/root`; implementing CC `/root/s25_cc`; independent CDC review and actual
 browser execution in `cdc-verification.md`. Source `/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/design-arc02-autonomous` branch
 `codex/project10-arc02-autonomous`, exact `154a5b766286966b8d6a649db2b45726dc497175`. Planning predecessor `04a96cec9056cb993ae7bd995191e9df61575203`;
-adding commit issues [prompt](cc-prompt.md). Four [criteria](ledger.md); S25-04 done only at initial candidate, three open.
+adding commit issues [prompt](cc-prompt.md). Four [criteria](ledger.md), independently done at494a4b95/da690a27.
 
 ## Useful delivery
 
@@ -58,12 +58,23 @@ proof is part of this slice before closure, not a fictional CC attestation.
 - Initial returned for independent review: `cc-prompt.md`, exact source pin above. Direct routine
   CC/CDC handoff under recorded Arc02 authorization; CDC owns acceptance/close.
 
-- Current active: [Iteration01](cc-prompt-iteration01.md), 2026-10-18, after
+- Accepted current assignment: [Iteration01](cc-prompt-iteration01.md), 2026-10-18, after
   SOURCE39cf4193/CCce195fff. Repair actual narrow combined-case table overflow
   and unsupported Container role; align local decoration heading. Initial
-  evidence/protocol retained; root executes final browser/identity proof.
+  evidence/protocol retained; root's final browser/identity proof is accepted below.
+
+## Closure
+
+Independent CDC accepts all4bounded criteria at SOURCE494a4b95/CCda690a27;
+actual12browser cells,3fresh-context proposals and preserved failures/limits
+are in [current review](cdc-verification.md#iteration01-independent-acceptance--2026-10-19-current-verdict).
+[Retrospective](cdc-retrospective.md) records the observed process and follow-through.
+Parent/fidelity/full233/global/Operator/release gates unchanged. No next arc.
 
 ## Version History
+
+- 1.2 (2026-10-19): Close after actual final-browser/identity/source/package review;
+  preserve failed initial case, all prior evidence and higher gates.
 
 - 1.1 (2026-10-18): Issue one bounded correction pass after actual independent
   browser/source review; retain all original proof and higher gates.

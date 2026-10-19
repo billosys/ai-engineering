@@ -138,3 +138,23 @@ initial packet/protocol/failure history and ledger statuses/criteria. No new
 dependency or structural arc change. CDC owns actual browser/identity execution,
 review/acceptance and further handoff; source-fidelity/global/Operator/release
 gates remain unchanged. No closure, successor, publication, merge or push.
+
+
+## CDC close — 2026-10-19 (current disposition)
+
+The [independent acceptance](cdc-verification.md#iteration01-independent-acceptance--2026-10-19-current-verdict)
+closes all4Slice25rows at SOURCE `494a4b95f8a7a424deedb062f0a2870ca9ce0794` / CC planning `da690a27adf1c7b4afbf3279141697cfd0821551`.
+Delivered: four corrected live guides/operative routing, runnable worked example,
+actual12-case browser observations with a corrected narrow-table failure, three
+actual identity proposals with complete rawoutputs/independent judgment, and
+current preservation/version/native/fresh8of8package evidence. Owning1.0.22.
+
+Actual local face unavailable, no loaded-axis proof; native/enabled preference,
+AT, isolated-package/fullconformance/hosted and additional-target checks remain
+unrun. Full233card/global union, exact originals/captures/fidelity, formal parent/
+Operator composition, final1.1.0 and release gates remain. Slice25's bounded
+completion does not close the arc. [Retrospective](cdc-retrospective.md) records
+observed successes/errors; no controlled AutonomousMode improvement claim.
+Next CDC action: continue supported remaining book-card corrections; no repeated
+readiness-only assignment or new arc. Source main remains outside this branch;
+no merge,push/publication or invented source input.
