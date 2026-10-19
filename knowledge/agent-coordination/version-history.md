@@ -1,5 +1,12 @@
 # Agent Coordination Version History
 
+## Version 1.3.0 - 2026-10-18
+
+Added an explicitly authorized Autonomous Mode exception to lookup-only
+delegation, with contributor context packets, implementation/review ownership,
+source-grounded integration and independent acceptance. Preserved ordinary
+delegation defaults.
+
 ## Version 1.2.0 - 2026-09-17
 
 Routed contributor terminology and workflow selection to the methodology.

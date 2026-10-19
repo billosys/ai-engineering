@@ -1,5 +1,11 @@
 # Version History
 
+## Version 2.20.0 - 2026-10-18
+
+Added Autonomous Mode execution and authorization boundaries to Expedited Mode
+operations; preserved durable handoffs, reviewer attribution, scale-specific
+gates and mandatory CDC retrospectives across contributor arrangements.
+
 ## Version 2.19.1 - 2026-10-12
 
 Refined new-project decomposition around usable increments, scoped prerequisite

@@ -73,6 +73,20 @@ operational/composition evidence from independent design/composition review.
 Existing paths remain valid under the
 [compatibility rule](../knowledge/project-management/guides/02-canonical-planning-worktree.md#verification-filename-compatibility).
 
+## Autonomous Mode
+
+The Operator may authorize CDC to execute an approved arc using Expedited Mode,
+local commits on a dedicated non-default source branch, and independent review.
+CDC selects and may revise contributor arrangements as complexity demands:
+CC implementation with CDC/CRC review, or CDC implementation with independent
+reviewer subagents. Ledgers, bubble-up, review/repair cycles and CDC
+retrospectives at every closing scale remain required. Project-wide execution
+is an explicit override; unresolved plan ambiguity can trigger a pause and
+Operator discussion. Scope and acceptance gates remain binding.
+
+Read the [canonical definition](../knowledge/engineering-methods/guides/01-engineering-methodology.md#autonomous-mode)
+and [execution rules](../knowledge/project-management/guides/README.md#autonomous-mode).
+
 ## Main Framework Surfaces
 
 | Surface | Source path | Role |

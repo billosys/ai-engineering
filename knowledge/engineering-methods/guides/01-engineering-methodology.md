@@ -48,13 +48,14 @@ preparation, difficult investigations, and substantial replanning with the
 Operator. In the default Two-Contributor Workflow, CDC also owns subsequent
 slice preparation, implementation review, QA, and acceptance coordination.
 
-In the Three-Contributor Workflow, CDC also owns methodology stewardship:
+In the Three-Contributor Workflow and Autonomous Mode, CDC also owns methodology stewardship:
 observe collaboration difficulties and successes, and perform a retrospective
 at each slice, arc and project close using
 [methodology-stewardship](../../methodology-stewardship/guides/01-retrospectives-and-follow-through.md).
 
-**CRC: Coordinating Review Contributor.** An optional role enabled only by
-the Operator's explicit selection of the Three-Contributor Workflow. CRC
+**CRC: Coordinating Review Contributor.** An optional role enabled by
+the Operator's explicit selection of the Three-Contributor Workflow, or by
+CDC within Operator-authorized Autonomous Mode. CRC
 advances the approved plan: subsequent slice preparation, iteration prompts,
 independent implementation review, evidence reproduction, ledger maintenance,
 routine slice acceptance, and escalation. CRC is not a second design authority.
@@ -322,13 +323,119 @@ Do not create `cdc-verification.md` or `crc-verification.md` pretending the
 implementer performed an independent pass; record actual reviewer identity and
 evidence when independent review occurs.
 
+## Autonomous Mode
+
+Autonomous Mode is an explicitly Operator-authorized execution mode for an
+approved plan. The primary assistant acts as CDC, owns the integrated result,
+and works through complete arcs using Expedited Mode. It is compatible with
+Two-Contributor and Three-Contributor arrangements; it is not permission for
+one context to implement and independently accept its own work.
+
+### Authorization and boundaries
+
+The default authorization covers one named arc, including its slices,
+iterations, independent reviews, remediation, commits, closure and CDC
+retrospective. Record the authorized scope in the canonical plan before work
+begins. The Operator may explicitly authorize several arcs or an entire
+project after planning/brainstorming; record that override and its endpoint.
+Do not infer project-wide authority from an approved roadmap or automatically
+start an unauthorized next arc. Project execution authorization does not waive
+the explicit Operator project-acceptance gate.
+
+Before implementation, use a dedicated non-default source branch and verify
+the checked-out branch. Do not implement on `main`, `master`, or the repository's
+other default branch. Reuse a suitable task branch or create one; retain the
+canonical separate `planning` branch/worktree for plans and evidence. Check
+branch and worktree identity again after a handoff or context recovery.
+Autonomous Mode authorizes local commits within scope; pushing, merging,
+publishing and other approval-gated actions need their own authorization.
+
+### Adaptive contributor arrangements
+
+The Operator delegates contributor selection to CDC for the authorized scope.
+CDC chooses according to complexity, risk, coupling and the need for independent
+attention at project, arc, slice or iteration scale. A dedicated CRC is optional.
+CDC may revise the arrangement after a slice or review, for another iteration
+of that slice or for subsequent work. This is an explicit exception to the
+normal Operator-only workflow-transition rule; it does not permit changes to
+scope, architecture, acceptance criteria or evidence requirements.
+
+Use either of these patterns, adding CRC when useful:
+
+- Assign implementation to a CC subagent, then have CDC or an independent CRC
+  inspect the actual diff and reproduce the required evidence.
+- Have CDC implement, then assign independent review to a separate, fully
+  briefed reviewer context. That reviewer owns its verification judgment;
+  CDC records coordination and follow-through without claiming self-acceptance.
+
+Name the actual implementer and independent verifier, their authority and the
+verification filename convention in the plan. Reviewer subagents need not be
+permanent CRCs. Use the existing workflow-specific records, identifying the
+actual author/context and evidence; never sign a review as though CDC performed
+an independent pass over CDC's own implementation. Apply the same separation
+to integration repairs and arc/project composition gates.
+
+Routine contributor handoffs inside the authorization may use direct subagent
+tools rather than human relay, with preserved prompts, reports and directives.
+This changes transport, not decision authority: Operator-reserved decisions
+still require the Operator, and tool-level messaging permissions still apply.
+
+At each arrangement change, preserve the effective assignment and source state,
+accepted and pending evidence, open findings and owners, outstanding approvals,
+current prompt and next-action owner. Record the reason and receiving context's
+acknowledgment. Do not reset iteration budgets, discard findings or retroactively
+upgrade evidence. If independent review cannot be staffed, leave acceptance
+pending and pause the affected gate.
+
+### Assignment, review and refinement
+
+Contributor subagents must load collaboration-framework, applicable domain
+skills and local instructions. Give them self-contained assignments with the
+approved plans and ledger rows, exact source baseline, relevant design history,
+implementation guidance or review focus, checks and test oracles, explicit file
+ownership, authority boundaries and an evidence-return contract. Follow
+[implementation prompt authoring](./07-implementation-prompt-authoring.md) for
+CC work and [agent coordination](../../agent-coordination/guides/01-when-to-delegate.md)
+for contributor packets and integration. Preserve issued prompts and numbered
+follow-ups; a tool message alone does not replace a required durable assignment.
+
+Inspect returns against source and evidence. Reconcile each finding explicitly;
+repair confirmed defects and obtain another independent review of substantive
+fixes and affected evidence. Repeat until the acceptance standard is met, using
+the existing correction-review rules for retained evidence. Disagreement needs
+source-grounded resolution, not a vote or automatic acceptance of the parent.
+Existing iteration limits apply; changing reviewers does not restart them.
+Pause and surface an exhausted budget rather than looping indefinitely.
+
+### Ledgers, closure and discretion to pause
+
+Maintain ledgers, bubble-up findings and source/plan coherence throughout.
+CDC performs the Three-Contributor retrospective duties at every slice, arc
+and project close regardless of the contributor arrangement selected here.
+Use the existing `cdc-retrospective.md` placement and analysis contracts;
+retrospectives remain separate from independent acceptance. At the end of the
+authorized scope, reconcile child records and report delivered capability,
+validation, commits, unresolved work and retrospective conclusions.
+
+CDC may carry out ordinary engineering choices within the approved contract.
+When implementation reveals new information that makes a plan decision too
+ambiguous to resolve confidently, CDC is empowered to pause the affected work
+and discuss it with the Operator. Certainty that a blocker exists is not
+required. Surface the evidence, affected plan/ledger rows, options and tradeoffs,
+a recommendation where possible, and the decision needed. Material scope or
+architecture changes and existing Operator gates still require the Operator's
+decision. Record the resolution and amend the plan before dependent work
+resumes; useful independent work may continue within the authorized scope.
+Autonomy is permission to exercise judgment, including choosing to pause.
+
 ## Workflow Selection and Transitions
 
 Absent explicit Operator selection, use the **Two-Contributor Workflow**.
 The Operator may explicitly select the One-Contributor Workflow for work done
 with a single assistant; natural-language requests such as "just you and me,
 no other models" are sufficient. Selecting the Three-Contributor Workflow
-likewise requires explicit Operator choice.
+likewise requires explicit Operator choice, except where the Operator has
+authorized CDC selection through [Autonomous Mode](#autonomous-mode).
 Do not infer the Three-Contributor Workflow from available models, an extra
 conversation, delegation tools, project size, or examples in these guides.
 
@@ -341,10 +448,11 @@ explicit and linked from the project plan; do not silently propagate it elsewher
 At a workflow change, record the effective assignment/source state, accepted and
 pending evidence, open findings with owners, outstanding approvals, current
 prompt, and next-action owner. The receiving contributor acknowledges the
-handoff before acting. Any switch requires an Operator decision; an
-unavailable CRC does not silently transfer acceptance authority to CC or CDC.
-Pause affected gates until the Operator assigns a replacement or changes the
-workflow. Existing acceptance remains scoped to the state actually verified.
+handoff before acting. Outside Autonomous Mode, any switch requires an
+Operator decision; an unavailable CRC does not silently transfer acceptance
+authority to CC or CDC. Pause affected gates until the Operator assigns a
+replacement or changes the workflow, or CDC records an authorized Autonomous
+Mode reassignment with independent verification preserved. Existing acceptance remains scoped to the state actually verified.
 
 Switching to one contributor does not waive an existing independent-review
 requirement. Disposition it explicitly with the Operator and governing rules;

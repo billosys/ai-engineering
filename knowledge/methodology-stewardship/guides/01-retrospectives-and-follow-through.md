@@ -7,12 +7,19 @@ learn next. Start from the promised capability and delivered result, then
 examine the work that produced them. A completed evidence packet can be a
 legitimate intermediate outcome; it is not necessarily the final product.
 
-In the Three-Contributor Workflow, CDC performs this analysis at every slice,
+In the Three-Contributor Workflow and Autonomous Mode, CDC performs this analysis at every slice,
 arc and project close. CRC supplies the operational record through the existing
 Operator relay and retains routine implementation review and slice acceptance.
 CDC's role includes examining its own plans, examples and decisions. A separate
 context provides useful distance, but a contributor's analysis of its own
 method is not independent evidence that the method is effective.
+
+In Autonomous Mode, the retrospective duty survives every contributor
+reassignment. CDC gathers contributor/reviewer evidence directly under the
+recorded authorization, examines its own implementation or coordination choices,
+and completes the record at each closing scale. Independent code review is
+still required; a retrospective cannot supply it. Apply the same evidence and
+follow-through standards whether CRC is assigned or not.
 
 Project-management owns record placement and closing mechanics; engineering-
 methods owns contributor authority. This guide owns retrospective analysis.

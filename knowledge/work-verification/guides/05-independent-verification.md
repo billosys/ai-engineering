@@ -29,6 +29,20 @@ Record its results as doer-attested and keep independent acceptance pending
 until a fresh review context or the Operator verifies them. Model choice alone
 does not establish independence; the verifier must inspect the actual work.
 
+## Autonomous Mode reviewer attribution
+
+Under explicitly authorized
+[Autonomous Mode](../../engineering-methods/guides/01-engineering-methodology.md#autonomous-mode),
+CDC may assign an independent reviewer subagent or a CRC and revise contributor
+arrangements within scope. Record the actual implementer/verifier contexts and
+artifact convention before review. If CDC implements, a separate reviewer owns
+the verification verdict; CDC cannot sign independent acceptance for that work.
+Use the selected workflow's records with explicit actual-author attribution,
+including a reviewer-authored `cdc-verification.md` when the two-contributor
+arrangement has an implementing CDC. Preserve three-contributor dual records
+when that arrangement is selected. This applies to repairs and composition
+reviews at every scale. Project Operator acceptance remains separately explicit.
+
 ## Assigned Reviewer Slice Verification
 
 CDC in the default workflow, or CRC when explicitly enabled, should:

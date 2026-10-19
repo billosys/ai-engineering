@@ -28,6 +28,7 @@ framework documents and a packaging surface for installable assistant skills.
   CRC and CDC records under the per-scale record contract.
 - Default to the Two-Contributor Workflow (CDC + CC). Enable the
   Three-Contributor Workflow (CDC + CRC + CC) only on explicit Operator request,
+  or CDC selection within explicitly Operator-authorized Autonomous Mode,
   recorded with scope, role assignments, and authority in the canonical plan.
   Follow `knowledge/engineering-methods/guides/01-engineering-methodology.md`.
   CRC escalates structural changes via `crc-escalationNN.md`; CDC returns
@@ -96,6 +97,20 @@ framework documents and a packaging surface for installable assistant skills.
   Design, Biome, or Deno lint. Preserve source material under
   `knowledge/<domain>/sources/` as provenance; write derived guidance in the
   domain `SKILL.md` and `guides/` unless a local plan says otherwise.
+
+## Autonomous Mode
+
+On explicit Operator selection, follow the canonical mode in
+`knowledge/engineering-methods/guides/01-engineering-methodology.md` and execution
+rules in `knowledge/project-management/guides/README.md`. CDC may select and
+revise contributor arrangements within the recorded authorization. Default to
+a named arc; whole-project execution needs an explicit override. Use a dedicated
+non-default source branch, independent review, preserved prompts/ledgers,
+bubble-up and CDC slice/arc/project retrospectives. Routine authorized handoffs
+need not use human relay; tool permissions and Operator decision gates remain
+binding. Pause and surface plan choices when new evidence leaves too much
+ambiguity to resolve confidently. Local commits are authorized; other external
+actions require their own authorization.
 
 ## Skill version and history contract (repository maintenance only)
 
@@ -187,8 +202,9 @@ existing nonconforming files are evidence, not exceptions to this contract.
 
 - **Repo home:** `billosys` org, public, default branch `main`.
 - **Branching:** direct-to-main is normal for this repo unless the operator
-  asks for a branch, PR, or separate worktree. Keep planning work on the
-  `planning` worktree and implementation/release changes on `main`.
+  asks for a branch, PR, or separate worktree, or selects Autonomous Mode.
+  Autonomous Mode requires a dedicated non-default source branch. Keep planning
+  work on the `planning` worktree.
 - **Compatibility instructions:** keep `CLAUDE.md` as a symlink to `AGENTS.md`
   for tools that still look for the older filename. Edit `AGENTS.md`, not the
   symlink target via a separate copy.

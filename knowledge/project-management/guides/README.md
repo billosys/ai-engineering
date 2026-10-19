@@ -32,7 +32,8 @@ convention. Existing `cdc-verification.md` records and project conventions
 remain valid; follow the [verification filename compatibility rule](./02-canonical-planning-worktree.md#verification-filename-compatibility).
 
 Default to the **Two-Contributor Workflow** (CDC + CC). Only explicit Operator
-selection enables the **Three-Contributor Workflow** (CDC + CRC + CC).
+selection enables the **Three-Contributor Workflow** (CDC + CRC + CC), except
+for CDC selections within explicitly authorized Autonomous Mode.
 Read the methodology's [workflow sections](../../engineering-methods/guides/01-engineering-methodology.md#two-contributor-workflow)
 before assigning roles or changing workflows. In these guides, the **assigned
 reviewer** is CDC in the default workflow or CRC in the explicitly enabled
@@ -52,7 +53,7 @@ At slice level, use `cdc-verification.md` for two contributors and
 both CRC and CDC records with different evidentiary responsibilities; read
 [verification records by workflow and scale](./02-canonical-planning-worktree.md#verification-records-by-workflow-and-scale).
 
-Three-contributor closing activities also include CDC
+Three-contributor and Autonomous Mode closing activities also include CDC
 [retrospectives at every scale](./02-canonical-planning-worktree.md#retrospective-records-in-the-three-contributor-workflow).
 Load [methodology-stewardship](../../methodology-stewardship/guides/01-retrospectives-and-follow-through.md)
 for analysis; a retrospective does not replace the verification records.
@@ -125,6 +126,35 @@ change in scope, no timeline interpretation, and no override of explicit
 operator approval gates recorded in a plan or prompt.
 
 Guardrail phrases for source and package validation: no shortcuts; no skipped validation; no weaker evidence or review; no inferred source scope and no reduction or other change in scope; no timeline interpretation; operator approval gates are not overridden.
+
+## Autonomous Mode
+
+When the Operator selects Autonomous Mode, first read its
+[canonical definition](../../engineering-methods/guides/01-engineering-methodology.md#autonomous-mode).
+It includes Expedited Mode and authorizes CDC to select and revise contributor
+arrangements within the recorded scope. The default endpoint is the named arc;
+an explicit override may authorize several arcs or a whole approved project.
+At that endpoint, report back instead of following Expedited Mode's normal
+next-arc advancement beyond the authorization.
+
+Before starting, record the scope/endpoint, task source branch, planning worktree,
+contributor assignments, independent verification convention and existing
+Operator gates in the governing plan. Implementation must be on a dedicated
+non-default branch. Preserve scope and role transitions, durable prompts,
+review/repair cycles and iteration limits. Routine contributor handoffs within
+this authority can go directly between assigned contexts; preserve their
+records and report decisions to the Operator without requiring human relay.
+Explicit external-messaging permissions and tool restrictions still apply.
+Decisions reserved to the Operator still go to the Operator.
+
+Close and bubble up each slice, verify composition at arc/project scale, and
+complete CDC retrospectives at every closing scale using the
+[record contract](./02-canonical-planning-worktree.md#retrospective-records-in-the-three-contributor-workflow).
+When new evidence makes a plan choice too ambiguous to resolve confidently,
+pause affected work and surface the decision; record the resolution before
+resuming dependent work. Report completed scope, validation, review findings,
+commits and retrospective conclusions. Pending independent or Operator gates
+remain pending even at the authorization endpoint.
 
 ## Split Files
 

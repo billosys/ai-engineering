@@ -3,12 +3,13 @@ name: methodology-stewardship
 description: |
   Observe collaboration difficulties, write slice/arc/project retrospectives,
   and turn recurring evidence into scoped methodology recommendations. Use for
-  CDC closing retrospectives in the Three-Contributor Workflow, process
+  CDC closing retrospectives in the Three-Contributor Workflow or Autonomous
+  Mode, process
   anti-pattern analysis, and follow-up on whether an adopted change helped.
   Retrospectives do not replace implementation acceptance or controlled trials.
 license: MIT
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
   hermes:
     tags: [methodology, retrospectives, collaboration, process-improvement]
     category: meta-skills
@@ -25,7 +26,7 @@ when observing execution, closing a slice/arc/project, synthesizing repeated
 patterns, or checking an earlier recommendation's outcome. It covers evidence,
 record shape, scale-specific questions, symptoms and recommendation handling.
 
-In the Three-Contributor Workflow, CDC owns a `cdc-retrospective.md` in each
+In the Three-Contributor Workflow and Autonomous Mode, CDC owns a `cdc-retrospective.md` in each
 closing slice, arc and project root. Follow project-management's closing and
 handoff contract; this is a learning record, not another acceptance verdict.
 The skill can support an explicitly requested retrospective in other workflows
