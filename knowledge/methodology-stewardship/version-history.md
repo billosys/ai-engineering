@@ -2,7 +2,9 @@
 
 ## Version 1.2.0 - 2026-10-19
 
-Add reconstruction-oriented research-record evaluation and bounded follow-through: original attempts and decisions, model/configuration provenance, portability/access limits and actual operational observations. Preserve full ledger quality and avoid inferring efficiency, multi-year durability or causal model benefits from record size or unrun trials.
+Apply existing evidence-economy guidance to execution improvements: retain useful records and full ledger quality without routine exports, archival or reconstruction work. Separate research/evaluation requires its own agreed scope; existing recommendation follow-through remains intact.
+
+Operator review correction (2026-10-19, issue6/PR7): the initial candidate overextended the research caveat and expense concern. Mandatory budget/threshold/no-cap questions and a research-preservation programme are superseded. Retain accumulated records, honor volunteered limits, and require no budget response or routine new supporting artifacts. This narrows the unreleased candidate; earlier proposals remain in Git and planning history.
 
 ## Version 1.1.0 - 2026-10-18
 

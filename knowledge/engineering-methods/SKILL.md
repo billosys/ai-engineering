@@ -31,10 +31,12 @@ For Operator-selected [Autonomous Mode](./guides/01-engineering-methodology.md#a
 read the canonical authorization and contributor-transition rules before acting.
 CDC selects and adapts contributor arrangements within the authorized arc by
 default; whole-project execution requires an explicit override. Before execution,
-explicitly obtain the Operator's role/model/settings and expenditure choices;
+explicitly obtain the Operator's role/model/relevant-settings choices;
 defaults and inheritance do not satisfy this gate. Default to one implementer
-and one independent reviewer, with stable workspace ownership and full durable
-evidence. Independent review, branch isolation, closing retrospectives and ambiguity pauses apply.
+and one independent reviewer, with stable workspace ownership and retained useful
+records. Supporting files require a concrete unmet need; no budget response is
+required. Independent review, branch isolation, closing retrospectives and
+ambiguity pauses apply.
 
 For CDC retrospectives at slice, arc and project close in the Three-Contributor
 Workflow or Autonomous Mode, load [methodology-stewardship](../methodology-stewardship/SKILL.md).

@@ -355,53 +355,49 @@ or PR can initiate publication, cloud changes or notifications. Obtain authority
 for those effects or use an authorized nonpublishing route; absence of a manual
 publish/deploy command does not establish absence of external effects.
 
-### Mandatory Operator model and expenditure selection
+### Mandatory Operator model selection
 
-Before Autonomous role work, explicitly ask the Operator which models to use
-for the planned roles and what expenditure boundaries apply. Mode selection,
-an application's default, a parent model and an inherited setting do not answer
-this question. Use the current context for the necessary preflight and selection
-dialogue; do not dispatch contributors or begin dependent execution while this
-gate is unresolved. It also applies to the limited One-Contributor arrangement.
+Before Autonomous role work, explicitly ask the Operator which models and relevant
+selectable settings to use for the planned roles. Mode selection, an application's
+default, a parent model and inherited settings do not answer this question. Use the
+current context for necessary preflight and selection dialogue; hold contributor
+dispatch and dependent execution until resolved. This also applies to the limited
+One-Contributor arrangement.
 
 Ask for the actual roles needed, normally coordination/planning, implementation
-and independent review, with investigation or integration when separately
-assigned. A compact question is:
+and independent review, with investigation or integration when separately assigned:
 
-> Which provider/deployment, model and reasoning/effort settings should each
-> planned role use? What spend limit or approval threshold and concurrency do
-> you authorize, and are any bounded substitutions or escalations allowed?
+> Which provider/deployment, model and relevant selectable settings (such as
+> reasoning effort) should each planned role use? Are any bounded substitutions
+> already authorized?
 
-Proposed defaults can help the Operator decide, but require explicit confirmation.
-The Operator may choose the same model for all roles. Keep this contract
-provider/model-agnostic; name only choices the environment actually supports,
-or disclose that availability has not been established. Record the answer and
-its effective scope in the governing plan, for example:
+Proposed defaults require explicit confirmation. The Operator may choose the same
+model for all roles. Keep this contract provider/model-agnostic; name supported
+choices or disclose that availability has not been established. Record the answer
+and effective scope in the existing governing plan or assignment, for example:
 
-| Role / actual context when assigned | Provider/deployment, requested model and selectable settings | Operator approval / authorized scope |
+| Role / actual context when assigned | Provider/deployment, model and relevant selectable settings | Operator approval / authorized scope |
 | --- | --- | --- |
-| Each planned role | Explicit choice; distinguish requested from reported identity | Decision reference, limits and any bounded fallback policy |
+| Each planned role | Explicit choice; distinguish requested from reported identity | Decision reference, scope and any bounded fallback policy |
 
-Record an agreed limit/approval threshold or an explicit choice of no cap, and
-the authorized concurrency. Explain which controls the runtime can enforce;
-do not promise a hard monetary cap without enforcement. Any pricing estimate
-needs a current source and assumptions; distinguish estimates from measured
-usage/charges and mark unavailable data as unknown.
+Model selection gives the Operator control over expenditure without a separate
+budget questionnaire. Do not require spending limits, approval thresholds, a
+“no cap” answer or pricing work. Honor limits the Operator voluntarily supplies;
+an omitted budget must not block execution. Existing iteration limits and
+separately agreed investigation limits remain binding.
 
-Check that the approved choices can be applied before each affected dispatch.
-If a requested model or cost-relevant control cannot be honored, pause that role
-and ask; do not silently substitute, inherit or downgrade. If the coordinator's
-approved model requires a handoff, arrange it through authorized tools or leave
-execution held. Unreported backend identity remains explicitly unknown; it is
-not evidence that a requested model was applied or a reason to invent an identity.
+Check that approved choices can be applied before affected dispatch. If a selected
+model or relevant setting is unavailable, resolve that role's assignment with the
+Operator; do not silently substitute, inherit or downgrade. If the coordinator's
+choice requires a handoff, use authorized tools or hold dependent execution.
+Unreported backend identity remains unknown; do not invent confirmation.
 
-Carry approval through its recorded scope rather than asking again for an
-unchanged authorized assignment. Changes of provider/model, reasoning effort,
-concurrency or expenditure outside that scope need renewed approval unless a
-precise bounded policy already covers them. CDC's adaptive staffing authority
-does not grant unrestricted spending authority. Preserve approval/configuration
-history and actual observed contributor settings under the
-[research-record contract](../../project-management/guides/02-canonical-planning-worktree.md#evidence-batches-and-research-records).
+Carry approval through its recorded scope without asking again for unchanged
+assignments. Changes of provider/model or relevant selectable settings outside
+that scope require renewed approval unless a bounded policy already covers them.
+Keep the choice, approval and any deviations in existing governing records; no
+separate configuration export or model record is required. Apply the
+[existing-record and supporting-artifact rules](../../project-management/guides/02-canonical-planning-worktree.md#existing-records-and-supporting-evidence).
 
 ### Execution preflight and stable inputs
 
@@ -412,8 +408,8 @@ to complete backing records. Establish before dependent work:
   sources and revisions, unresolved decisions and their next-action owners;
 - actual repository/worktree/branch/revision and relevant dirty inputs,
   protected changes, permitted mutations and separate external-action authority;
-- implementer, independent verifier, approved role/model/settings and expenditure,
-  mutation/index owner, required real gates and durable evidence home;
+- implementer, independent verifier, approved role/model/relevant settings,
+  mutation/index owner, required real gates and existing evidence locations;
 - consequential prerequisites: actual runtime/shell/configuration, published
   dependency/image availability and repository API/lint constraints where used.
 
@@ -438,8 +434,8 @@ CDC may coordinate and review another context's implementation. Add a context
 for a named risk, bounded agreed investigation, safely separable workstream or
 separation-of-authorship need, with ownership, return contract and exit condition.
 Available capacity alone is not a staffing rationale. Additional staffing must
-remain within the Operator-approved role/model, concurrency and expenditure
-scope; resolve missing choices before dispatch.
+remain within the Operator-approved role/model/settings and assignment scope;
+resolve missing choices before dispatch and honor any volunteered limits.
 CDC chooses according to complexity, risk, coupling and the need for independent
 attention at project, arc, slice or iteration scale. A dedicated CRC is optional.
 CDC may revise the arrangement after a slice or review, for another iteration
@@ -527,10 +523,9 @@ Pause and surface an exhausted budget rather than looping indefinitely.
 ### Ledgers, closure and discretion to pause
 
 Maintain ledgers, bubble-up findings and source/plan coherence throughout.
-An evidence batch is an observation grouping/index, not a new acceptance scale.
-Preserve every row, original observation, independent reproduction and
-higher-scale composition gate. Use the existing canonical artifact homes and
-[durable record rules](../../project-management/guides/02-canonical-planning-worktree.md#evidence-batches-and-research-records);
+Preserve every row, useful existing record, distinct observation, independent
+reproduction and higher-scale composition gate. Use existing canonical records and
+[supporting-artifact rules](../../project-management/guides/02-canonical-planning-worktree.md#existing-records-and-supporting-evidence);
 derive mechanical facts and link their witnesses rather than maintain competing
 current accounts. Evidence retention in correction review follows
 [work-verification](../../work-verification/guides/05-independent-verification.md#evidence-during-correction-review),

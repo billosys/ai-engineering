@@ -2,7 +2,9 @@
 
 ## Version 2.0.0 - 2026-10-19
 
-Require an explicit Operator role/provider/model/settings and expenditure/concurrency decision before Autonomous role work, with held unavailable choices and approval-scoped substitutions. Define compact complete-backed preflight, stable worktree ownership, justified extra contexts and automatic pipeline authority. Preserve the limited One-Contributor exception, independent acceptance, ledgers and research records. The mandatory pre-dispatch gate changes the prior execution contract.
+Require explicit Operator role/provider/model/relevant-settings selection before Autonomous role work, with held unavailable choices and approval-scoped substitutions. Define compact complete-backed preflight, stable ownership, justified extra contexts and automatic pipeline authority. Preserve independent acceptance, ledgers and existing records.
+
+Operator review correction (2026-10-19, issue6/PR7): the initial candidate overextended the research caveat and expense concern. Mandatory budget/threshold/no-cap questions and a research-preservation programme are superseded. Retain accumulated records, honor volunteered limits, and require no budget response or routine new supporting artifacts. This narrows the unreleased candidate; earlier proposals remain in Git and planning history.
 
 ## Version 1.18.0 - 2026-10-18
 

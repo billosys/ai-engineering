@@ -36,16 +36,16 @@ The short version:
 
 ## Record quality and full row traceability
 
-Compact preflights, generated summaries and evidence batches must preserve every
-row and its meaning, origin, verifier, disposition and evidence strength. They
+Compact preflights and summaries must preserve every row and its meaning, origin,
+verifier, disposition and evidence strength. They
 cannot replace independent reproduction, closing row walks or higher-scale
-composition. Efficiency and research usefulness must improve within these
-invariants; fewer files, tokens or observations alone is not an improvement.
+composition. Retain useful existing records within these invariants; fewer files,
+tokens or observations alone is not an improvement.
 
 Use the canonical
-[evidence and research-record contract](../../project-management/guides/02-canonical-planning-worktree.md#evidence-batches-and-research-records)
-for stable witnesses, original failed/successful attempts, independent observation
-identities, configuration provenance and reproducibly derived facts. Link rows
+[existing-record and supporting-artifact rules](../../project-management/guides/02-canonical-planning-worktree.md#existing-records-and-supporting-evidence)
+for existing evidence references and distinct failed/successful and independent
+observations. No blanket capture checklist or new index is required. Link rows
 to those observations without silently changing their source or strength.
 Distinguish declared metadata, actual built/imported packages, installed bytes,
 scanner categories and integrated/external state when those are separate claims.

@@ -145,12 +145,12 @@ next-arc advancement beyond the authorization.
 Before starting, record the scope/endpoint, task source branch, planning worktree,
 contributor assignments, independent verification convention and existing
 Operator gates in the governing plan. Implementation must be on a dedicated
-non-default branch. Explicitly ask the Operator for role/model/provider/settings
-and expenditure/concurrency choices before Autonomous role work; record the
-answer under the methodology's
-[mandatory selection gate](../../engineering-methods/guides/01-engineering-methodology.md#mandatory-operator-model-and-expenditure-selection).
+non-default branch. Explicitly ask the Operator for role/model/provider/relevant
+settings before Autonomous role work; record the answer under the methodology's
+[mandatory selection gate](../../engineering-methods/guides/01-engineering-methodology.md#mandatory-operator-model-selection).
 An inherited/default model is not approval. Default to one implementer and one
-independent reviewer; justify extra contexts and respect the approved spend scope.
+independent reviewer; justify extra contexts and honor volunteered limits without
+requiring a budget response.
 Include automatic pipeline effects in external-action authority before triggering
 them. Keep the preflight compact, with complete contracts linked and changed
 source/ownership facts revalidated after handoff or recovery.
@@ -168,10 +168,11 @@ When new evidence makes a plan choice too ambiguous to resolve confidently,
 pause affected work and surface the decision; record the resolution before
 resuming dependent work. Report completed scope, validation, review findings,
 commits and retrospective conclusions. Use the canonical
-[evidence indexing and research-record contract](./02-canonical-planning-worktree.md#evidence-batches-and-research-records)
-for durable original observations and derived current views; batch indexes do
-not replace any ledger or independent/higher-scale acceptance record. Pending
-independent or Operator gates remain pending even at the authorization endpoint.
+[existing-record and supporting-artifact rules](./02-canonical-planning-worktree.md#existing-records-and-supporting-evidence)
+to retain useful records and distinct observations. Supporting files remain optional
+and need-driven; summaries cannot replace ledger or independent/higher-scale
+acceptance. Pending independent or Operator gates remain pending even at the
+authorization endpoint.
 
 ## Split Files
 

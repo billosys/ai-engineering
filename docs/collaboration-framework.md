@@ -78,19 +78,21 @@ Existing paths remain valid under the
 The Operator may authorize CDC to execute an approved arc using Expedited Mode,
 local commits on a dedicated non-default source branch, and independent review
 for substantive work and existing gates. Before execution, CDC must explicitly
-ask the Operator for each planned role's provider/model/settings and expenditure
-and concurrency boundaries. Defaults and inherited settings do not answer this
+ask the Operator for each planned role's provider/model/relevant settings.
+Defaults and inherited settings do not answer this
 mandatory question; unavailable choices or changes outside the approved scope
 hold affected work until resolved. The framework prescribes no model or vendor.
 
 Default to one implementer and one independent reviewer. Extra contexts need a
-named purpose, bounded ownership and exit condition within the approved spend
-scope. Keep a compact preflight backed by complete contracts, give mutable
+named purpose, bounded ownership and exit condition within the approved assignment.
+Keep a compact preflight backed by complete contracts, give mutable
 worktrees explicit ownership and inspect automatic pipeline effects before pushes
-or PRs. Preserve original observations, model/configuration provenance and full
-ledger traceability under the
-[durable research-record contract](../knowledge/project-management/guides/02-canonical-planning-worktree.md#evidence-batches-and-research-records).
-Evidence batches index records without replacing required ledgers or reviews.
+or PRs. Retain useful existing records, distinct observations and full ledger
+traceability under the
+[existing-record and supporting-artifact rules](../knowledge/project-management/guides/02-canonical-planning-worktree.md#existing-records-and-supporting-evidence).
+Use existing records and links first; supporting files need a concrete unmet need.
+No archival/reconstruction programme or budget response is required. Honor any
+limits the Operator supplies.
 
 CDC selects and may revise contributor arrangements as complexity demands:
 CC implementation with CDC/CRC review, or CDC implementation with independent

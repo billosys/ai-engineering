@@ -17,9 +17,9 @@ metadata:
 
 Use this component when the unit of work has a ledger or when evidence strength
 matters. It owns the closure discipline, row-by-row verification, evidence
-levels, and proposed-done versus independently verified distinction. Generated
-views and evidence indexes preserve every row and distinct original observation;
-use the [durable record contract](../project-management/guides/02-canonical-planning-worktree.md#evidence-batches-and-research-records)
+levels, and proposed-done versus independently verified distinction. Retain useful
+records, every row and distinct original observations; use the
+[existing-record and supporting-artifact rules](../project-management/guides/02-canonical-planning-worktree.md#existing-records-and-supporting-evidence)
 without weakening independent or higher-scale acceptance.
 
 One-contributor work can report proportionate self-checks without creating a

@@ -2,7 +2,9 @@
 
 ## Version 2.0.0 - 2026-10-19
 
-Require Operator-approved role/model/settings and expenditure scope before Autonomous contributor dispatch. Default to one implementer and independent reviewer, justify extra contexts and hold unavailable/unapproved configurations. Make stable worktree mutation/index ownership and attributable durable returns explicit. The dispatch approval gate changes the prior contract; ordinary lookup boundaries and independent repair review remain intact.
+Require Operator-approved role/model/relevant settings before Autonomous dispatch, with scoped approval and substitution handling. Default to one implementer and independent reviewer, justify extra contexts, and make stable worktree ownership and attributable returns explicit. Ordinary lookup boundaries and independent repair review remain intact.
+
+Operator review correction (2026-10-19, issue6/PR7): the initial candidate overextended the research caveat and expense concern. Mandatory budget/threshold/no-cap questions and a research-preservation programme are superseded. Retain accumulated records, honor volunteered limits, and require no budget response or routine new supporting artifacts. This narrows the unreleased candidate; earlier proposals remain in Git and planning history.
 
 ## Version 1.3.0 - 2026-10-18
 

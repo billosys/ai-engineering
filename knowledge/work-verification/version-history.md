@@ -2,7 +2,9 @@
 
 ## Version 2.8.0 - 2026-10-19
 
-Strengthen full ledger-row traceability through evidence batches and generated current views. Route durable observation provenance and distinguish declared metadata, actual package/installed states and external outcomes without weakening independent reproduction, correction retention or higher-scale composition.
+Strengthen full ledger-row traceability without replacing independent reproduction, correction retention or higher-scale composition. Distinguish declared metadata, built/imported packages, installed bytes and external outcomes. Link to existing evidence; no blanket capture checklist or new index is required.
+
+Operator review correction (2026-10-19, issue6/PR7): the initial candidate overextended the research caveat and expense concern. Mandatory budget/threshold/no-cap questions and a research-preservation programme are superseded. Retain accumulated records, honor volunteered limits, and require no budget response or routine new supporting artifacts. This narrows the unreleased candidate; earlier proposals remain in Git and planning history.
 
 ## Version 2.7.0 - 2026-10-18
 

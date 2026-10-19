@@ -71,7 +71,7 @@ relevant source populations, including hidden tracked files or platform/tag/test
 configurations when applicable. Distinguish actual success, expected rejection,
 unrun/blocked checks, timeout and transient loading failure. A passing rerun alone
 does not establish the cause of an earlier failure. Preserve both observations
-under the [durable evidence contract](../../project-management/guides/02-canonical-planning-worktree.md#evidence-batches-and-research-records).
+in existing records under the [supporting-artifact rule](../../project-management/guides/02-canonical-planning-worktree.md#existing-records-and-supporting-evidence).
 
 ## Minimum Validation Set
 

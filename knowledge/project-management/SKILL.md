@@ -46,13 +46,13 @@ before issuing or executing the assignment.
 For Operator-selected [Autonomous Mode](./guides/README.md#autonomous-mode),
 load its canonical definition and execution rules before acting. Record the
 arc-default authorization (or explicit project override), non-default source
-branch, explicitly Operator-approved role/model/settings and expenditure scope,
+branch, explicitly Operator-approved role/model/relevant settings and scope,
 contributor arrangement and actual independent reviewer where required
 (or the self-check convention for an eligible One-Contributor task). CDC may revise
 staffing and use direct routine handoffs within that authorization; Operator
-decisions, tool permissions and evidence gates remain binding. Preserve complete
-original observations and ledger traceability under the
-[research-record contract](./guides/02-canonical-planning-worktree.md#evidence-batches-and-research-records).
+decisions, tool permissions and evidence gates remain binding. Retain useful
+existing records and ledger traceability under the
+[existing-record and supporting-artifact rules](./guides/02-canonical-planning-worktree.md#existing-records-and-supporting-evidence).
 
 For Operator-mediated CRC-to-CDC escalations and CDC-to-CRC instructions, load
 [design handoff filenames](./guides/02-canonical-planning-worktree.md#design-handoff-filenames-and-preservation)

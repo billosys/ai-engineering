@@ -20,12 +20,13 @@ required collaboration-framework, domain skills and local instructions;
 governing plans, ledger rows and preserved prompt history; relevant design
 choices and known risks; exact file ownership/exclusions; required validation
 and evidence-return shape; acceptance boundaries and escalation conditions.
-Include the Operator-approved role/model/provider/settings, expenditure and
-concurrency scope, approval reference and any bounded fallback policy. Inherited
+Include the Operator-approved role/model/provider/relevant settings, assignment
+scope, approval reference and any bounded fallback policy. Inherited
 configuration is not approval. Name the worktree's mutation/index owner and
-sequence checks against stable input states. Point to the existing durable
-[evidence home and observation fields](../../project-management/guides/02-canonical-planning-worktree.md#evidence-batches-and-research-records)
-for original commands, results, actual configuration and derived facts.
+sequence checks against stable input states. Use existing records and the
+[supporting-artifact rule](../../project-management/guides/02-canonical-planning-worktree.md#existing-records-and-supporting-evidence)
+for evidence references; no separate configuration export or batch index is required.
+Honor volunteered limits; an omitted budget does not hold dispatch.
 Require the receiving context to acknowledge the assignment and inspect source;
 pause affected work if the authorized configuration cannot be honored.
 

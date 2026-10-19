@@ -18,8 +18,9 @@ State whether this is implementation, investigation or evidence-only work.
 Name the user/downstream task, intended before/after result, integration destination
 and promised delivery state (candidate, integrated/accepted, or released).
 For Autonomous assignments, cite the Operator-approved role/model/provider,
-selectable settings, expenditure/concurrency scope and fallback policy. Missing
-approval blocks dispatch; proposed or inherited defaults are not authorization.
+relevant selectable settings, approval scope and any bounded fallback policy. Missing
+model approval blocks dispatch; proposed or inherited defaults are not authorization.
+Honor volunteered limits; no budget response is required.
 State external-action authority including automatic effects of pushes/CI.
 For any investigation, including embedded diagnosis, cite the Operator agreement
 on usefulness, applicability and budget. Name the decision consumer, agreed
@@ -66,13 +67,15 @@ Receipts are attestation, not proof of comprehension or independent acceptance.
 
 Keep the current preflight compact by linking complete records: actual source
 and dirty inputs, protected paths, current prompt/ledger, applicable instruction
-revisions, mutation/index owner, independent verifier, approved model/spend scope for Autonomous work,
-real prerequisites, gates and evidence home. Revalidate changes on recovery.
+revisions, mutation/index owner, independent verifier and approved role/model/settings
+scope for Autonomous work, real prerequisites, gates and existing evidence locations.
+Revalidate changes on recovery.
 Serialize mutations and checks that traverse their inputs; name explicit Make
 targets and actual shells/executable/config paths. Derive test/scan populations
 and distinguish zero selected tests, loading failure or timeout from a pass.
-Use the [durable observation contract](../../project-management/guides/02-canonical-planning-worktree.md#evidence-batches-and-research-records)
-for original commands/results and generated facts. This index does not replace
+Use the [existing-record and supporting-artifact rules](../../project-management/guides/02-canonical-planning-worktree.md#existing-records-and-supporting-evidence)
+for original commands/results and generated facts. Use existing records first; new
+supporting files need a concrete unmet need. A compact preflight does not replace
 the required reading manifest, contract readback or ledger.
 
 ## Source reconnaissance

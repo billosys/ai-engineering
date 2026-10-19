@@ -2,7 +2,9 @@
 
 ## Version 1.3.0 - 2026-10-19
 
-Add real execution-substrate and selected-population guidance: actual shells/targets/paths and consumers, stable loader inputs, complete relevant inventories, explicit zero-test/loading/timeout outcomes and automatic CI effects. Preserve original observations and mandatory gates without requiring new validation machinery.
+Add real execution-substrate and selected-population guidance: actual shells/targets/paths and consumers, stable inputs, explicit zero-test/loading/timeout outcomes and automatic CI effects. Retain distinct observations using existing records and need-driven supporting files, without new validation machinery.
+
+Operator review correction (2026-10-19, issue6/PR7): the initial candidate overextended the research caveat and expense concern. Mandatory budget/threshold/no-cap questions and a research-preservation programme are superseded. Retain accumulated records, honor volunteered limits, and require no budget response or routine new supporting artifacts. This narrows the unreleased candidate; earlier proposals remain in Git and planning history.
 
 ## Version 1.2.0 - 2026-09-28
 
