@@ -1,12 +1,12 @@
 ---
 slice: slice30-space-depth-and-projection
-status: active
+status: closed
 depends-on: [Slice29 independently accepted supported corrections; available space/depth evidence]
 ---
 
 # Slice30 — Space, Depth and Projection
 
-Revision **1.0**,2026-10-19. Project1.75 / Arc1.80. Operator-authorized Arc02
+Revision **1.1**,2026-10-19. Project1.75 / Arc1.80. Operator-authorized Arc02
 Autonomous Mode; CDC Sofie `/root`, CC `/root/s30_cc`, independent CDC or named
 separate reader. SOURCE `c42f5bd58214d4267671a8a9012bbe9a9aca6eaf` on dedicated codex/project10-arc02-autonomous;
 PLANNING predecessor `b181b1a40ea5e0b3b428f18337660346374531f1`. Adding commit issues [cc-prompt.md](cc-prompt.md).
@@ -37,10 +37,17 @@ full233/global/composition/Operator/release gates retain their owners.
 
 ## Assignment history
 
-- Initial/current [cc-prompt.md](cc-prompt.md), source/P pins above, after actual
+- Initial/accepted [cc-prompt.md](cc-prompt.md), source/P pins above, after actual
   Slice29 closure; routine direct AM handoff.
+
+## Closure
+
+All four bounded criteria accepted; [verdict](cdc-verification.md) and
+[retrospective](cdc-retrospective.md). Original and higher gates remain open.
 
 ## Version History
 
 - 1.0 (2026-10-19): Open coherent25-card spatial organization/depth/projection
   correction and local semantic reconciliation, preserving all higher gates.
+
+- 1.1 (2026-10-19): Independently close supported25-card spatial/depth/projection correction and local semantics; retain all higher gates.
