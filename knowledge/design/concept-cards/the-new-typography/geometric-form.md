@@ -25,22 +25,23 @@ related:
   - "ornament-rejection"
   - "sans-serif-advocacy"
 contrasts_with: []
-answers_questions:
-  - "CQ 3: How do basic shapes (circle, square, triangle) function in visual design, and how does each shape connote different qualities (stability, motion, tension)?"
+answers_questions: []
 rosetta_stone:
   -
     domain: "engineering"
     concept: "precision engineering"
     rating: "structural"
-    note: "Tschichold's geometric form derives directly from engineering: 'The engineer shapes our age. Distinguishing marks of his work: economy, precision, use of pure constructional forms that correspond to the functions of the object.' The parallel is structural — both fields derive form from function through geometric precision."
+    note: "The card records Tschichold's engineering analogy: 'The engineer shapes our age. Distinguishing marks of his work: economy, precision, use of pure constructional forms that correspond to the functions of the object.' This is a historical/editorial structural comparison; it does not prove that either domain derives every form from function or that geometric purity determines good design."
 css_implementation: []
 ---
 
 # Quick Definition
 
-Modern design derives its forms from geometry and engineering rather than from historical ornament or artistic self-expression — "pure exact form" that emerges naturally from functional requirements, standardised production, and "an all-out search for clarity and truth, for purity of appearance," leading to "a geometric construction of form."
+Tschichold’s modernist programme advocates geometry and an engineering analogy rather than historical ornament or individual artistic expression — "pure exact form" that emerges naturally from functional requirements, standardised production, and "an all-out search for clarity and truth, for purity of appearance," leading to "a geometric construction of form."
 
 # Core Definition
+
+This section preserves the card’s recorded account of Tschichold’s historical programme; quotations, attributions and page claims have not been checked against the unavailable represented edition. Its polemics are not universal contemporary rules.
 
 Tschichold grounds geometric form in the modern worldview: "Modern engineering and standardized machine manufacture have of necessity led to the use of precise geometric forms. The final and purest shape of a product is always built up from geometric forms."
 
@@ -56,36 +57,40 @@ But he warns sharply against formalistic misuse: "The 'elementary ornaments'... 
 
 # Key Properties
 
-1. **Derived from function**: "Their perfection of appearance is due to the precise and economic expression of their function" — form follows function through geometric means.
+The historical preferences below describe the programme; current use depends on content, audience, language/script, output, constraints and supplied identity.
+
+1. **Historical functional ideal**: "Their perfection of appearance is due to the precise and economic expression of their function" — the programme’s claim, not proof that function uniquely determines geometry or that pure geometry produces good design.
 2. **Primary shapes**: The "primary shapes which identify the aspect of our time" emerge from engineering and standardised production.
-3. **Order against chaos**: Geometric form satisfies "our inborn striving for order."
+3. **Attributed psychological rhetoric**: Geometric form is said to satisfy "our inborn striving for order." No universal psychological result is established here.
 4. **Not decorative**: Geometric shapes used as ornament contradict the principle — "If a circular or other such 'secondary' form is used, it must have a function."
 5. **Impersonal**: "The creator disappears completely behind his work" — geometric form transcends individual expression.
-6. **Typographic expression**: Sans-serif is the typographic manifestation of geometric form — "clarity and concentration on essentials."
+6. **Programme’s type preference**: Sans-serif is associated with "clarity and concentration on essentials." Geometric construction, serif status and readable type are independent considerations.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Derive form from function and material constraints, not from decorative precedent.
-2. Use geometric shapes (circles, squares, rules) only when they serve a purpose (emphasis, pointer, structural element).
+1. If using this approach, identify the communication task, supplied identity and material constraints before choosing geometric forms.
+2. Compare circles, squares and rules for grouping, emphasis or direction; cultural and affective purposes can also justify a shape.
 3. Prefer precision and economy — eliminate everything that does not serve the composition.
-4. Test: is every geometric element functional, or merely decorative?
+4. Inspect actual hierarchy and output; neither geometric purity nor omission alone demonstrates success.
 
 ## To Identify/Recognise:
-1. Genuine geometric form: shapes that serve compositional function (structure, emphasis, direction).
-2. Geometric ornament: circles, triangles, and rules used decoratively — "truly childish, pseudo-constructive shapes."
+1. In the programme’s terms, geometry serves structure, emphasis or direction; this is a compositional approach rather than a test of all modern design.
+2. The polemic calls decorative geometry "truly childish, pseudo-constructive shapes." Preserve that criticism as historical rhetoric, not a ranking of people or cultures.
 
 # Context & Application
 
 - **Typical contexts**: Typography, layout design, industrial design, architecture.
 - **Common applications**: Grid systems, modular design, geometric logos, systematic component libraries, CSS shapes and borders.
-- **Historical note**: Tschichold's argument draws on the Bauhaus (Gropius), De Stijl (Mondrian, Van Doesburg), and Russian Constructivism (Lissitzky, Rodchenko). The geometric form principle influenced the International Typographic Style, Dieter Rams's industrial design, and contemporary design systems thinking.
+- **Historical note (reported, unverified here)**: Tschichold's argument draws on the Bauhaus (Gropius), De Stijl (Mondrian, Van Doesburg), and Russian Constructivism (Lissitzky, Rodchenko). The geometric form principle influenced the International Typographic Style, Dieter Rams's industrial design, and contemporary design systems thinking.
 
 ## Cross-Domain Connections
 
-**Engineering → STRUCTURAL**: Tschichold explicitly derives geometric form from engineering: "The engineer shapes our age. Distinguishing marks of his work: economy, precision, use of pure constructional forms that correspond to the functions of the object." The parallel is structural — both fields derive form from function through geometric precision, but the application domain (visual communication vs. physical construction) differs.
+**Engineering → STRUCTURAL**: Tschichold explicitly derives geometric form from engineering: "The engineer shapes our age. Distinguishing marks of his work: economy, precision, use of pure constructional forms that correspond to the functions of the object." This is a recorded historical/editorial structural comparison about economy, precision and purpose; it does not establish that every form in either domain follows from function, or that geometry guarantees quality.
 
 # Examples
+
+These are retained reported examples and quoted wording, not newly verified figure, authorship, priority or page evidence.
 
 **Example 1** (Ch. 6, p. 11): The engineer's objects — "Car Aeroplane Telephone Wireless Factory Neon-advertising New York! These objects, designed without reference to the aesthetics of the past, have been created by a new kind of man: the engineer!"
 
@@ -97,9 +102,9 @@ But he warns sharply against formalistic misuse: "The 'elementary ornaments'... 
 - **The New Typography** — Geometric form is the movement's visual language.
 
 ## Related
-- **Functional Typography** — Geometric form follows from functional design: form is derived from purpose.
-- **Ornament Rejection** — Geometric purity is the positive expression of what ornament rejection removes.
-- **Sans-Serif Advocacy** — Sans-serif is the typographic realisation of geometric form.
+- **Functional Typography** — The programme connects geometric economy to purpose; the functional card explains why content can inform form without uniquely determining it.
+- **Ornament Rejection** — The programme links economical geometry to its ornament critique; geometry can itself decorate, and contemporary ornament may have legitimate purposes.
+- **Sans-Serif Advocacy** — The programme associates sans-serif with geometric economy; not every sans-serif is geometric and serif type is not excluded from contemporary function.
 
 # Common Errors
 
@@ -109,13 +114,17 @@ But he warns sharply against formalistic misuse: "The 'elementary ornaments'... 
 # Common Confusions
 
 - **Confusion**: The New Typography is defined by its use of geometric shapes.
-  **Clarification**: "It is not enough to dispense with ornament in order to create a meaningful form" — geometric form must be functional, not a new formalism. "Typography is not painting!"
+  **Clarification**: "It is not enough to dispense with ornament in order to create a meaningful form" — the programme objects to a new formalism. "Typography is not painting!" Preserve that polemic while assessing actual contemporary purposes, including cultural expression.
 
 # Source Reference
 
 "The New World-View" (pp. 11-14) and "The Principles of the New Typography" (pp. 64-84).
 
 # Verification Notes
+
+Current scoped review: contemporary correctness/scope, local consistency and the exact relationship/CQ occurrences are assessed in Slice26’s batch record. The unavailable edition, translation and page basis leave source fidelity, quotations, figures and historical dates/priority unassessed/input-blocked. No new original read, empirical readability result, browser/AT check or full-standard inspection is claimed.
+
+The following notes are preserved historical extraction assertions, including their old confidence, OCR and uncertainty wording. They are not newly verified results:
 
 - Definition source: Synthesised from Ch. 6 (philosophical argument) and Ch. 12 (typographic application and warnings against misuse). Direct quotes from both.
 - Confidence rationale: Medium — the concept is dispersed across two chapters rather than receiving a dedicated section. The synthesis required significant reconstruction.

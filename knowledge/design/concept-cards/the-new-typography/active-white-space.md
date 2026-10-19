@@ -36,9 +36,11 @@ css_implementation:
 
 # Quick Definition
 
-In the New Typography, white (unprinted) space is not a passive background but an active compositional element equal in importance to black type — "the New Typography considers the blank white spaces on the paper as formal elements just as much as the areas of black type."
+In the New Typography, unoccupied compositional space is treated as an active element alongside type — "the New Typography considers the blank white spaces on the paper as formal elements just as much as the areas of black type."
 
 # Core Definition
+
+This section preserves the card’s recorded account of Tschichold’s historical programme; quotations, attributions and page claims have not been checked against the unavailable represented edition. Its polemics are not universal contemporary rules.
 
 Tschichold identifies active white space as a fundamental innovation: "In asymmetric typography, the paper background contributes to a greater or lesser degree to the effect of the whole... The New Typography uses the effectiveness of the former 'background' quite deliberately, and considers the blank white spaces on the paper as formal elements just as much as the areas of black type."
 
@@ -52,32 +54,36 @@ This is a foundational concept with no prerequisites within this source.
 
 # Key Properties
 
+The historical preferences below describe the programme; current use depends on content, audience, language/script, output, constraints and supplied identity.
+
 1. **White is active, not passive**: Unprinted space is a formal element equal to type.
-2. **White is stronger**: "White is always stronger than grey or black."
-3. **New medium**: Active white space enriched typography with a new means of expression.
+2. **Recorded salience claim**: "White is always stronger than grey or black." This is the programme’s polemic, not an intrinsic white > grey > black order; salience depends on area, neighbours, contrast and task.
+3. **Reported innovation claim**: The programme presents active space as a new medium; this does not establish that centered or earlier compositions lacked active space.
 4. **Contrast intensifier**: "Strong contrasts between white and black, in the form of type or rules, emphasize the white areas and greatly assist the total effect."
-5. **Reduced margins**: Active use of white within the composition often leads to narrower outer margins than in traditional typography.
+5. **Margins in context**: Open interior areas and dense type can be balanced with outer margins; active space does not require narrow margins.
 6. **Content primacy**: "It is equally wrong to suppose that areas of white are ever more important than the words of the text."
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Treat the entire page as a composition of black (type) and white (space) elements.
-2. Use generous white space deliberately to create emphasis and rhythm.
+1. Treat the page as occupied and unoccupied compositional areas; “white space” need not be literally white.
+2. Compare dense type and open spacing deliberately to support grouping, emphasis and rhythm; choose amounts for the content and available area.
 3. Do not fill all available space with text or decoration.
 4. Use the contrast between dense type areas and open white areas to guide the eye.
 
 ## To Identify/Recognise:
 1. Active white space: deliberate, compositionally significant areas of unprinted space that contribute to the design's effect.
-2. Passive white space: leftover margins and gutters that are merely "empty."
+2. Unexamined leftover space may fail to help the composition, but margins and gutters can actively support grouping and reading in centered or asymmetric designs.
 
 # Context & Application
 
 - **Typical contexts**: Page layout, poster design, web design, UI design.
 - **Common applications**: Hero sections with generous whitespace, card layouts with breathing room, intentional "less is more" composition.
-- **Historical note**: The concept of active negative space became central to Swiss/International Style design (1950s-60s) and remains fundamental in modern digital design.
+- **Historical note (reported, unverified here)**: The concept of active negative space became central to Swiss/International Style design (1950s-60s) and remains fundamental in modern digital design.
 
 # Examples
+
+These are retained reported examples and quoted wording, not newly verified figure, authorship, priority or page evidence.
 
 **Example 1** (p. 74): "The powerful effect in many examples of the New Typography depends directly on the use of large areas of white."
 
@@ -86,14 +92,14 @@ This is a foundational concept with no prerequisites within this source.
 # Relationships
 
 ## Related
-- **Asymmetric Typography** — Asymmetric layout inherently activates white space; centred layout treats it as passive.
-- **Typographic Contrast** — Black-white contrast is the most fundamental contrast pair.
+- **Asymmetric Typography** — Both asymmetric and centered layouts can use open areas actively; the asymmetric card explains spatial organization rather than guaranteeing active space.
+- **Typographic Contrast** — Dense/open and printed/unprinted areas offer a contrast pair in the recorded programme; actual salience depends on the whole composition.
 - **Functional Typography** — White space serves the communicative function by creating emphasis and breathing room.
 
 # Common Errors
 
 - **Error**: Deciding the white space area beforehand and compressing text into it.
-  **Correction**: "A common misunderstanding... can be seen when the area of white has been decided beforehand and the text compressed into it." White space must emerge from the composition, not dictate it.
+  **Correction**: "A common misunderstanding... can be seen when the area of white has been decided beforehand and the text compressed into it." Use this as a warning against compressing essential content into a predetermined gap, not a ban on choosing useful spacing constraints.
 
 # Common Confusions
 
@@ -105,6 +111,10 @@ This is a foundational concept with no prerequisites within this source.
 "The Principles of the New Typography" (pp. 74-76).
 
 # Verification Notes
+
+Current scoped review: contemporary correctness/scope, local consistency and the exact relationship/CQ occurrences are assessed in Slice26’s batch record. The unavailable edition, translation and page basis leave source fidelity, quotations, figures and historical dates/priority unassessed/input-blocked. No new original read, empirical readability result, browser/AT check or full-standard inspection is claimed.
+
+The following notes are preserved historical extraction assertions, including their old confidence, OCR and uncertainty wording. They are not newly verified results:
 
 - Definition source: Direct quotes from pp. 74-76 of Ch. 12.
 - Confidence rationale: High — explicit, extended discussion with clear before/after comparisons.

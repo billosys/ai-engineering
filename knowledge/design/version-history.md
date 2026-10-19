@@ -160,3 +160,8 @@ do not guarantee outcomes across content, users or browsers.
 - Made the worked book CSS runnable and added concrete type/fallback/axis and
   rendered colour state-pair methods. Authored diagnostics and numeric proofs
   remain distinct from observed browser, native preference and AT behavior.
+
+## Version 1.0.23 - 2026-10-19
+
+- Reconcile the nineteen connected New Typography cards as historical teaching with contextual contemporary application. Correct ideal/nominal paper geometry, alignment/composition, case display, reading-order, colour, photography, ornament and symbol claims; preserve recorded quotations and examples with explicit unavailable-original limits.
+- Correct nine existing metadata scalars and retire six unsupported CQ memberships through five existing lists; keep the unmet question requirements in slice evidence for global reconciliation. No operative guide or entrypoint prose changes.
