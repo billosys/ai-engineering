@@ -1,12 +1,12 @@
 ---
 slice: slice33-supported-global-composition
-status: active
+status: closed
 depends-on: [Slice32 independently accepted; complete local cohort results]
 ---
 
 # Slice33 — Supported Global Composition
 
-Revision **1.2**, 2026-10-19. Project1.75/Arc1.86.
+Revision **1.3**, 2026-10-19. Project1.75/Arc1.86.
 CDC/substantive author Sofie `/root`; CC assigned by root;
 named separate final substantive reviewer. Remaining-Arc02 Autonomous Mode.
 SOURCE `88a96f72020a732f83a0ca25190de170c0761b4d`; PLANNING predecessor `4f1873cb16678729adc0c0730055001bdade552e`.
@@ -24,6 +24,14 @@ All D1 original fidelity remains blocked. No formal Arc02/P10/Operator
 close,final1.1.0,merge/push/publication or automatic Arc04/Project11.
 Any material source repair needs a separately preserved bounded iteration.
 
+## Current disposition
+
+Closed at the bounded supported scope after CC return83685907, corrected
+SOURCEe56d82ba and separate-context substantive review. All four slice criteria
+are done; original fidelity and formal parent/Operator gates remain open.
+See [independent acceptance](cdc-verification.md) and [retrospective](cdc-retrospective.md).
+No next slice or arc is issued. Initial pins below remain issuing history.
+
 ## Assignment history
 
 - Initial [cc-prompt.md](cc-prompt.md), actual pins above, issued
@@ -36,7 +44,7 @@ Any material source repair needs a separately preserved bounded iteration.
   Initial no-SOURCE scope is superseded only by these three explicit paths;
   all four criteria, remaining work, independent/input/Operator gates survive.
 
-- Current [Iteration02](cc-prompt-iteration02.md), SOURCE fixed at e56d82ba:
+- Final implementation [Iteration02](cc-prompt-iteration02.md), SOURCE fixed at e56d82ba:
   complete inherited DES-009 dense-interface breakpoint proof in the same HTML;
   no new SOURCE/build/artifact tree. Initial one-font-only browser scope is
   superseded only by this bounded actual case; all four criteria and higher
@@ -50,3 +58,5 @@ Any material source repair needs a separately preserved bounded iteration.
 - 1.1 (2026-10-19): Issue the actual global-walk local-wrapper attribution repair; preserve original composition scope and higher gates.
 
 - 1.2 (2026-10-19): Complete the actual DES-009 proof gap found in final composition using one bounded existing-fixture case; no source or scope waiver.
+
+- 1.3 (2026-10-19): Independently accept supported composition and actual bounded cases; close all four child rows, retain missing-input/formal parent gates and stop without a new assignment.

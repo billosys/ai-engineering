@@ -17,9 +17,10 @@ broader design-practice expansion. Planning belongs on `planning`; implementatio
 and packages normally belong on `main`; the authorized Autonomous Mode
 scope below uses its dedicated source branch. [Project ledger](ledger.md) is the acceptance contract.
 
-Plan revision **1.75**, updated2026-10-18 after the Operator-approved bounded
+Plan revision **1.76**, updated2026-10-19 after the Operator-approved bounded
 reassessment under collaboration-framework2.7.2. This refines the2026-10-12
-execution amendment; deliverables and all thirteen criteria/states are unchanged.
+execution amendment; all thirteen criterion texts/deliverables remain unchanged.
+Current status changes are justified by the [Arc02 endpoint judgment](arc02-theory-and-evidence/cdc-verification.md).
 Use the shared Project09 [audit](../project09-design-audit/artifacts/audit-results-design.md)
 and [synthesis](../project09-design-audit/artifacts/audit-modernization-synthesis.md).
 
@@ -111,7 +112,7 @@ IDs express ownership, not a requirement for numerical execution order.
 | Arc | Delivery | Dependency / current state |
 |---|---|---|
 | [Arc01 — portable contract](arc01-portable-contract/arc-plan.md) | Accepted authority, baseline and explicit source-readiness carryover | Closed; Operator composition acceptance38b66d0d |
-| [Arc02 — review and fix](arc02-theory-and-evidence/arc-plan.md) | Complete card/live review, supported corrections, identity preservation and actual accessibility/typesetting checks | Active; each result depends on its actual inputs; see the arc for the current slice |
+| [Arc02 — review and fix](arc02-theory-and-evidence/arc-plan.md) | Complete card/live review, supported corrections, identity preservation and actual accessibility/typesetting checks | Active at supported-delivery endpoint; all33 bounded children closed, formal original/complete5D/Operator gates open |
 | [Arc06 — metadata and rendering](arc06-card-metadata-and-rendering/arc-plan.md) | Existing-field normalization and hosted rendering evidence | Closed at source589d7c21/planning1fffb9dc; later edits retain final applicability checks |
 | Arc04 — package and release readiness (`arc04-guides-and-package`) | Useful isolated-package routes/examples and final composition/release readiness | Detail when executable; early work uses accepted inputs, final acceptance requires Arc02/06 and Project09 acceptance |
 
@@ -247,7 +248,8 @@ historical identities, record current applicability, and use new exact branch pi
 for future work. Initial worktree creation hit Git metadata sandbox restrictions;
 the identical approved retry succeeded. There is no source mutation in the switch.
 
-Slice21 currently has four open CC proposals, no accepted criteria/findings.
+Historical intake snapshot at mode selection: Slice21 then had four open CC
+proposals, no accepted criteria/findings.
 Existing accepted Slice01–20 evidence retains its checked revisions. The active
 prompt is preserved; a review assignment supplements it, not rewrites it.
 Observe handoff friction, rework and actual delivered results in existing records
@@ -277,12 +279,22 @@ limitations handoff to Project11. Publication is separate Operator authorization
 
 ## Current status
 
-Arc01/Arc06 are accepted and closed. P10-01/P10-12 are done; P10-02–11/P10-13
-remain open. Existing-field alignment is accepted, not full-schema conformance.
-Arc02 owns its child status and resumed execution; follow its [current assignment](arc02-theory-and-evidence/arc-plan.md#workflow-and-current-assignment).
-Arc04 remains a roadmap entry. This reassessment accepts no source, CC return,
-child, finding or parent criterion and changes no release gate. The Operator
-subsequently resumed execution; the reassessed working method now governs new work.
+Arc01/Arc06 remain accepted and closed. Arc02's supported correction/composition
+work is delivered at dedicated-branch SOURCEe56d82ba/design1.0.30, all33 bounded
+slices closed. Its formal status remains active with A02-02/04/08 open; all D1,
+complete-five-dimension and independent/Operator composition gates survive.
+P10-01/02/03/04/10/12 are done at their exact predicates; P10-05/06/07/08/09/11/13
+remain open. See the [current independent judgment](arc02-theory-and-evidence/cdc-verification.md),
+[supported handoff](arc02-theory-and-evidence/closing-report.md) and [AM retrospective](arc02-theory-and-evidence/cdc-retrospective.md).
+
+Original editions/captures/conversion records remain unavailable by Operator
+confirmation; use the existing eight actions when actual inputs arrive. Full
+anatomy/CLT/state/audit and named domain/empirical components remain explicit
+Arc02/CDC/Operator decisions, not automatically commissioned curriculum or silent
+Project11 transfers. Arc04 remains unissued and retains final isolated-package,
+routes/task/hosted/composition/release work. Project09 input acceptance, final1.1.0
+and Project11 handoff still need their actual gates. No main integration, push,
+publication or successor is authorized by completing the supported AM endpoint.
 
 ## Version History
 
@@ -604,3 +616,5 @@ subsequently resumed execution; the reassessed working method now governs new wo
 - 1.0 (2026-10-08): Established Project10 for the 1.5 foundation repair;
   linked the Project09 audit, mapped all findings, and recorded provisional
   arcs, explicit scope decisions, verification and Project11 handoff requirements.
+
+- 1.76 (2026-10-19): Record independently accepted Arc02 supported endpoint and actual predicate-level bubble-up; six project criteria done/seven open, formal input/full-corpus/package/hosted/Operator/release gates retained; no successor.

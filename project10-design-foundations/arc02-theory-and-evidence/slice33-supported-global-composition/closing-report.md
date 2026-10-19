@@ -1,6 +1,6 @@
-# Slice33 closing report — CC proposed return
+# Slice33 closing report — independently accepted bounded delivery
 
-2026-10-19. CC `/root/s33_cc`; CDC `/root` and the named separate reviewer retain acceptance authority. All four slice rows remain open. This report is a proposed supported handoff, not slice, Arc02, Project10, original-fidelity or release acceptance.
+2026-10-19. Current CDC disposition: all four bounded slice criteria are done after separate substantive review of CC return83685907 at SOURCEe56d82ba. [Canonical independent acceptance](cdc-verification.md) and [retrospective](cdc-retrospective.md) close Slice33. Formal Arc02/Project10, original-fidelity and release acceptance remain open. The CC proposals and pending-state language below are preserved as the return at83685907, superseded only by this current verdict.
 
 ## Assignment and delivered correction
 
@@ -44,3 +44,16 @@ Actual failed/recovered queries, truncated/read-recovered intake, late general-J
 |S33-04|Scoped source repair and four-path supported evidence handoff proposed.|All criteria/statuses remain frozen/open; CDC/separate review owns acceptance.|
 
 Eight Arc01 source-input actions remain unmet: exact represented book editions/page bases/context/figures, immutable Butterick/article versions and conversion/media lineage, applicable secondary support and their dependent claims. The Operator reconfirmed those inputs unavailable. A02-02/P10-11, complete-D1/five-dimensional A02-04, formal composition/Operator A02-08, full-corpus/release/final1.1.0 and other unchanged parent gates are not closed here. Arc04 owns final isolated package/routes/tasks/hosted and release applicability; Project11 expansion is separate. No main edit, push, merge, publication, new arc or Operator gate decision occurred.
+
+## CDC independent acceptance and supported endpoint — 2026-10-19
+
+CDC Sofie accepts S33-01–04 after the named independent judgment and root's
+actual checks, at the complete pins above. The unchanged criteria are satisfied
+at their stated bounded scope; complete D1 or all-CQ mastery is not invented.
+No material unresolved source defect in this packet requires another iteration.
+The source branch remains at1.0.30; final1.1.0 is withheld at formal gates.
+
+The [arc supported-delivery endpoint](../closing-report.md) records all33 child
+outcomes, seven done/three open arc criteria, current project bubble-up and exact
+input/conceptual/downstream/Operator re-entry. All33 bounded slices are closed;
+Arc02 itself remains active and blocked for formal closure. No successor opens.
