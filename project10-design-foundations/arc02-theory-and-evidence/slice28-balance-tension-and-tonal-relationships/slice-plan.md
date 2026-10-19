@@ -6,7 +6,7 @@ depends-on: [Slice27 supported independent acceptance; available connected Arnhe
 
 # Slice28 — Balance, Tension and Tonal Relationships
 
-Revision **1.0**,2026-10-19. Project1.75 / Arc1.76, Operator-authorized remaining
+Revision **1.1**,2026-10-19. Project1.75 / Arc1.76, Operator-authorized remaining
 Arc02 Autonomous Mode. CDC Sofie `/root`; CC `/root/s28_cc`; independent CDC or
 named separate context in `cdc-verification.md`. SOURCE dedicated branch
 `codex/project10-arc02-autonomous` at `3c29ae6949a21c0de2a3a89de41db8fd3e1e046b`, worktree
@@ -49,10 +49,12 @@ release gates retain their owners.
 
 ## Assignment history
 
-- Initial/current [cc-prompt.md](cc-prompt.md),2026-10-19; exact SOURCE/P predecessor
-  above; direct routine handoff under recorded AM. No earlier Slice28 assignment.
+- Initial [cc-prompt.md](cc-prompt.md),issued15af4e1f,returned1c3be08c/1aaacafd; S28-03 accepted, F01 remains.
+- Current [cc-prompt-iteration01.md](cc-prompt-iteration01.md), one paragraph consistency correction; initial contract preserved.
 
 ## Version History
 
 - 1.0 (2026-10-19): Open supported13-card balance/tension/tonal correction and
   local semantics after Slice27 close6f4a96c2, preserving all higher gates.
+
+- 1.1 (2026-10-19): Accept preservation/package criterion and issue one material terminology correction; all higher gates retained.
