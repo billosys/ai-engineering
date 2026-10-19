@@ -373,3 +373,129 @@ These checks establish the bounded source/package state only. They do not
 establish original-capture fidelity, endpoint acceptance, browser or font
 behavior, accessibility, hosted rendering, corpus closure, release or
 publication.
+
+## Iteration01 F01 repair — intake before source edit, 2026-10-18
+
+CC context `/root/s21_cc` acknowledges `cc-prompt-iteration01.md`, issued at
+planning `ad8ebdd7a38beb83bdf245c9c2d71411df2eee0d`. SOURCE is the clean dedicated
+`codex/project10-arc02-autonomous` checkout at
+`d19de06d1e79e22dac0b67b5bf2e527c048a1f73`; PLANNING is clean at the issuing
+commit. The preserved initial report/recipe and accepted independent results
+remain historical evidence; this pass changes no acceptance contract.
+
+Text intake delivered before the dependent source edit:
+
+- Current SOURCE `AGENTS.md`1–238; repository collaboration-framework
+  `SKILL.md`1–567 (bounded1–210,211–400,401–567 with the elided330–365 recovered);
+  PM `SKILL.md`1–85 then wayfinder1–219, all complete. The installed composer
+  was also read, but differs in relative package routes; repository text governs.
+- PLANNING Project10 active body1–286, then Arc02 active body1–157; complete
+  Slice21 plan1–113, ledger1–10, Iteration01 prompt1–70, independent review1–229
+  and pre-existing closing report1–88. Initial prompt authority/scope/gates1–63
+  and155–end plus recipe6 (102–109) were loaded; an elided initial scope read
+  was recovered in a separate1–63 read. Batch optical five-dimension row and
+  validation/limits263–375 were delivered completely.
+- Complete current optical card1–113 and complete prepared metrics-vs-optical
+  source1–112, including the three illustration descriptions32–38.
+- Design `SKILL.md` brief/context/routes/principles24–82; Concept Cards guide05
+  “Keep Rich Prose Attached To Its Warrant”130–158; work-verification guide05
+  “Evidence During Correction Review”80–106; engineering-methods guide07 CC
+  intake297–398; PM iteration naming277–end and handoff202–256. Also loaded
+  methodology role/shared/two-contributor26–153 and Autonomous326–461, full
+  ledger-discipline guide and row-closure guide. Truncated tool output was
+  recovered in bounded reads; no prior context's reading is claimed here.
+
+Required-data query coverage, distinct from semantic reading: Python pathlib/
+subprocess queries read the full accepted index at planning9cc20338 and all
+current tracked design objects, then compared the sorted entire roster. Result:
+233 index rows/233 unique current card paths;233 raw headers;402 tracked design
+objects, including161 source files and6 guides;7080 tracked repository paths.
+Baseline tracked status is clean. A temporary `/private/tmp/s21-iteration01-state.json`
+records the exact pre-edit roster/raw headers/design digests for the post-edit
+whole-population checks; it is not a maintained checker or durable artifact.
+No sampling or new whole-card semantic acceptance is inferred from these queries.
+
+Contract readback: initial recipe6 and reviewer F01 require the missing
+round/flat comparison itself, not just pair names. Prepared source32–38 supplies
+the direction (`u` left), shape (`o` round versus `n` flat) and gap/darkness
+contrast (`nt`/`it` versus `ti`). Restore only Example1 with the issued paragraph;
+keep it Butterick's description of the illustration, preserving Adobe's
+conditional comparison and the no-independent-rendering qualification. Direct
+paragraph reversal must recover the exact pinned blob, proving every other card
+byte unchanged. Compare all233 headers,232 other complete cards,161 sources,
+all6 guides,owner/history and all other tracked inputs. The card is unbundled:
+unchanged package/checker inputs permit retention of the independently rerun
+d19de06d evidence; no fresh native/browser/font/AT/hosted/fidelity result is
+claimed. Four row states stay open/done/done/done. CC supplies attestation only;
+`/root/s21_review` independently verifies and CDC controls acceptance/closure.
+
+## Iteration01 repair results
+
+Source commit `bca347f580132b0313a9bbb29d77c980a995b8f9`, parent
+`d19de06d1e79e22dac0b67b5bf2e527c048a1f73`, changes only
+`knowledge/design/concept-cards/practical-typography/optical-vs-metric-spacing.md`
+Example1. The paragraph now retains the leftward `u` shift, metrics-balanced
+`un`/`no` gaps versus optical round `o`/flat `n` proximity, and darker `nt`/`it`
+versus `ti`. A post-edit full-card read against complete prepared source32–38
+confirms the direction, shape and gap explanation and its illustration
+attribution. Adobe's conditional contexts and every other card byte survive.
+
+This supersedes the initial optical-card available-source/teaching assessment
+above for the current revision: the first return retained pair names but
+omitted the round/flat explanation, as independent F01 correctly found.
+
+| Optical card dimension | Current CC-attested result |
+|---|---|
+| Available-source fidelity/teaching | The three concrete illustration explanations are now retained against prepared source32–38. P10-11 original-capture/conversion fidelity remains blocked. |
+| Technical correctness | The change reports Butterick's illustrated spacing/darkness contrasts; it adds no independent measurement or algorithm claim. Existing qualified metrics/optical and CSS/opsz distinctions remain byte-identical. |
+| Scope | Explicit illustration attribution and no-independent-rendering limit remain; no universal optical result is asserted. |
+| Internal/cross-card consistency | The concrete example now explains the comparison named in Core Definition/Key Properties; every other card/guide and Adobe qualification is unchanged. |
+| Local edges/CQs | Complete Relationships and all raw metadata are unchanged. The restored example supports the same bounded spacing/texture premise; no anatomy answer or broader hierarchy coverage is invented. Retain the independent27/25/9 local result with its existing CQ gaps. |
+
+Fresh direct checks (Python pathlib/subprocess/hashlib/zipfile plus Git, all
+exit0):
+
+- Replace only the revised Example1 paragraph with its pinned predecessor:
+  exact original bytes and Git blob `9be7f3a329045a23c6b57c8f2537e6f44f3da498`
+  recovered. Revised blob is `26d01b1bea0b953bc85aa78e08143eee3b7b0a3d`.
+  This also proves frozen heading/citation/metadata/relationship sections.
+- Entire current233-card roster equals the accepted233 index paths; all233
+  raw headers and232 other complete cards equal the pre-editd19de06d objects.
+  All161 sources (including conversion report),6 guides,owner/history and401
+  other tracked design objects equal their pre-edit bytes.
+- `git diff --name-only d19de06d` returns exactly the one allowed card; the
+  complete7080 tracked-path set is unchanged and7079 other tracked source
+  paths, including Make/package/checker inputs, have no delta. No maintained
+  checker or extra negative suite was added.
+- LF/terminal newline pass; revised card has0 local Markdown links.
+  `git diff --check` passes. Planning return scope, Evidence/Notes-only ledger
+  mutation and local links/fragments are checked before its separate commit.
+- Read the existing generated design ZIP without rebuilding: all8 Markdown
+  members equal both current andd19de06d committed inputs. Existing ZIP SHA256
+  remains `a84faa792bddef0f920d4623b6fca604f81b328513c12b2f0693e4375a83f068`.
+
+Retained independent evidence: `../cdc-verification.md`, “Preservation, scope
+and package reproduction,” actual reviewer `/root/s21_review`,2026-10-18 at
+d19de06d. The paragraph is outside the8-member package; all package/checker
+inputs and the acceptance criteria are identical. No finding undermines those
+methods, and this issued correction requires retention rather than a fresh
+build. Retain its successful native/version/package gates,25 source/package
+versions/0 errors and8/8 package comparison, including the default-interpreter
+PyYAML failure/retry and606 warnings/605 locations. These are retained results,
+not fresh execution. Owning1.0.18/history remain unchanged.
+
+Commit recovery: the first source commit message separated the two coauthors
+with a blank paragraph, so Git parsed only the last as a trailer. Its message-
+only correction first hit `index.lock: Operation not permitted`; the identical
+escalated amendment succeeded. Final commit above has both trailers recognized
+by Git. No source content changed during that recovery.
+The planning commit's first attempt also hit the metadata sandbox
+(`index.lock`); this denied attempt supplies no commit evidence.
+
+Four dispositions remain S21-01 open/proposed repair, S21-02 done/retained local
+review, S21-03 done/retained plus fresh preservation, S21-04 done/retained native
+and package evidence. Independent reviewer acceptance of this revision is
+pending. No original-capture/full-corpus/global/behavior/hosted/release outcome,
+new native run, push, merge, publication, closure or successor is claimed.
+The sole durable supporting artifact remains this batch record. The bounded
+repair changes no arc dependency, scope, criterion or higher gate.

@@ -86,3 +86,44 @@ and all three authorized planning outputs are accounted for; no criteria,
 statuses, plans, prompts, CDC records, registries, other guides or source
 collections changed. The documented CQ gaps and validation warnings are
 disclosed rather than silently dropped. No successor is opened by this return.
+
+## Iteration01 return — 2026-10-18
+
+Current assignment is preserved `cc-prompt-iteration01.md`, issued by planning
+`ad8ebdd7a38beb83bdf245c9c2d71411df2eee0d`. This section supersedes the initial
+report's current-state claims, while preserving that report as history.
+Independent initial review accepted S21-02/03/04; S21-01 remains open pending
+independent verification of this CC-attested F01 repair.
+
+Source `bca347f580132b0313a9bbb29d77c980a995b8f9`, parent
+`d19de06d1e79e22dac0b67b5bf2e527c048a1f73`, is on the dedicated
+`codex/project10-arc02-autonomous` branch. Its sole path is
+`knowledge/design/concept-cards/practical-typography/optical-vs-metric-spacing.md`;
+only Example1 changed. It restores the attributed leftward/round-flat/darker-gap
+explanation requested by F01. Both required coauthor trailers parse correctly.
+Planning parent is `ad8ebdd7a38beb83bdf245c9c2d71411df2eee0d`; the return commit
+is pending until this report is committed and contains only the existing
+`artifacts/batch-record.md`, this report and ledger Evidence/Notes cells.
+The direct contributor handoff carries its exact final hash; no receipt-only
+follow-up commit is needed.
+
+| Row | Current disposition / evidence |
+|---|---|
+| S21-01 | Remains open. F01 repair proposed complete against prepared source32–38; current full card reviewed. Independent acceptance pending. |
+| S21-02 | Remains done at initial bounded scope. Unchanged relationships/CQs/guide preserve the independent local review and disclosed gaps; restored illustration supports the same spacing/texture premise. |
+| S21-03 | Remains done. Fresh exact reversal/233 roster and raw-header/232 other-card/161 source/6 guide/other-input checks pass. |
+| S21-04 | Remains done at local integration scope. Unbundled paragraph and unchanged package/checker inputs preserve the independent d19de06d native/package evidence; existing8/8 members still equal committed bytes. No new build. |
+
+Detailed intake, current optical five-dimension assessment, checks, exact blob
+identities, retained-evidence rationale and commit recovery are in the sole
+supporting [batch record](artifacts/batch-record.md#iteration01-repair-results).
+`git diff --check`, LF/EOF, exact allowed paths and local-link checks pass.
+The unchanged ZIP retains the independent hash `a84faa792bddef0f920d4623b6fca604f81b328513c12b2f0693e4375a83f068`.
+
+Scope-as-delivered equals this iteration's one source path/three planning
+outputs. Main, issued prompts, reviewer record, criteria/statuses and all other
+source/planning paths are untouched. No new dependency or plan change bubbles
+up: CDC retains acceptance, closure and retrospective responsibility. Original
+capture/fidelity, full corpus/live/global composition, actual browser/font/AT/
+InDesign behavior, hosted rendering and release gates remain with their owners.
+No push, merge, publication or successor was performed.
