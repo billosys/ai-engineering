@@ -148,7 +148,7 @@ The following are reported examples from the existing extraction. Exact quotatio
   **Clarification**: High tonal contrast requires a significant difference in value, not necessarily the extremes. A grey pair needs actual values and the applicable criterion; black on very dark grey may have insufficient ratio. Colour names alone prove no result.
 
 - **Confusion**: "Colour contrast is the same as tonal contrast."
-  **Clarification**: These are distinct. Colour contrast involves hue and saturation differences; tonal contrast is the value (light-dark) component only. A design can have strong colour contrast and very low tonal contrast simultaneously.
+  **Clarification**: Chromatic contrast concerns differences in attributes such as hue and chroma; tonal contrast concerns light-dark differences. They can vary independently in a selected comparison. “Colour contrast” is also used more broadly: the linked accessibility card evaluates rendered foreground/background pairs using WCAG relative luminance. Hue or chroma difference alone does not prove an applicable contrast pass.
 
 # Source Reference
 
