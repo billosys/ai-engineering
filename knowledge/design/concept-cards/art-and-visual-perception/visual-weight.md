@@ -27,8 +27,7 @@ related:
   - "weight-of-colour"
   - "visual-balance"
   - "structural-skeleton-of-composition"
-contrasts_with:
-  - "physical-weight"
+contrasts_with: []
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "Given a data-rich card (title, status badge, three metrics, timestamp, action button), how do you assign visual hierarchy: what gets the most weight, what gets de-emphasized, and why?"
@@ -37,125 +36,131 @@ rosetta_stone:
   -
     domain: "mathematics"
     concept: "Torque / moment of force (lever principle)"
-    rating: "rigorous"
-    note: "Arnheim explicitly applies the lever principle to visual composition: weight increases with distance from the compositional centre, exactly as torque increases with lever arm length — a rigorous quantitative mapping."
+    rating: "structural"
+    note: "Physical torque is r cross F, magnitude rF sin(theta); visual counterbalancing has no established proportionality to arbitrary pixel distance."
   -
     domain: "music"
     concept: "Dynamics (pp to ff) / emphasis scale"
     rating: "structural"
-    note: "Musical dynamics (pianissimo to fortissimo) is structurally parallel to visual weight as an emphasis scale — both describe the degree of perceptual force or prominence assigned to an element."
+    note: "Musical dynamics and visual emphasis can be compared within context; loudness, importance and compositional influence have no common calibrated scale."
 css_implementation:
   -
     property: "font-weight"
-    example: "font-weight: 700; /* heavy visual weight for headings */"
+    example: "font-weight: 700; /* requested face weight; requires font support */"
     support: "baseline"
   -
     property: "opacity"
-    example: "opacity: 0.5; /* reduces perceptual weight of secondary elements */"
+    example: "opacity: 0.5; /* composites element and descendants; resolve backdrop and text pairs */"
     support: "baseline"
   -
     property: "font-size"
-    example: "font-size: 2rem; /* larger = heavier */"
+    example: "font-size: 2rem; /* candidate size; inspect actual font, content and hierarchy */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Visual weight is the perceptual force that an element exerts within a composition — determined not by physical mass but by size, colour, location, shape, isolation, depth, and intrinsic interest — that must be counterbalanced to achieve compositional equilibrium.
+Visual weight describes an element’s relative compositional influence, considering size, colour, location, shape, isolation, depicted depth and interest. It is not physical mass or a calibrated sum of independent contributions.
 
 # Core Definition
 
-Arnheim introduces visual weight in the section "Weight" of Chapter I: "In the world of our bodies we call weight the strength of the gravitational force pulling objects downward. A similar downward pull can be observed in pictorial and sculptural objects, but visual weight exerts itself in other directions as well." Visual weight is influenced by multiple factors, none of which corresponds directly to physical mass: **location** (strong structural positions can support more weight; elements off-centre exert less), **size** (larger objects are generally heavier), **colour** (red is heavier than blue; bright colours heavier than dark), **shape** (regular geometrical shapes are heavier; compactness increases weight), **depth** (greater spatial depth increases weight), **isolation** (an isolated element is heavier than one surrounded by others), and **intrinsic interest** (subject matter complexity or emotional significance adds weight). The lever principle applies: "the weight of an element increases in relation to its distance from the center."
+This is the represented Arnheim account. Its quotations, page/figure references and historical, experimental or neural claims have not been checked against the unavailable original. The analytic qualifications below do not certify source fidelity.
+
+Arnheim introduces visual weight in the section "Weight" of Chapter I: "In the world of our bodies we call weight the strength of the gravitational force pulling objects downward. A similar downward pull can be observed in pictorial and sculptural objects, but visual weight exerts itself in other directions as well." Arnheim discusses location, size, colour, shape, depicted depth, isolation and intrinsic interest as contextual weight factors. The capacity to "carry" weight at a structural position, prominence and counterbalancing influence are different judgments. He states: "the weight of an element increases in relation to its distance from the center." This is a qualitative lever comparison, not a pixel-distance law. The Chapter I brighter-is-heavier account differs from the darker-is-heavier synthesis in the Chapter VII colour-weight card; neither is adopted as a universal ranking. No neural or perceptual measurement is made here.
 
 # Prerequisites
 
-- **Visual balance** — Visual weight is the variable that balance distributes and equalises; balance is the superordinate concept.
-- **Gestalt theory in art** — Weight is a perceptual, not physical, property; understanding it requires the gestalt framework of active perceptual forces.
+- **Visual balance** — Provides the compositional question of compensation; it is a conceptual reading aid rather than a numerical dependency.
+- **Gestalt theory in art** — Explains why an element’s context matters to its appearance.
 
 # Key Properties
 
-1. **Location**: A "strong" position (on the structural skeleton — centre, axis, corner) supports more weight than an off-centre position.
-2. **Size**: Larger objects carry more weight, other factors equal.
-3. **Colour**: Red is heavier than blue; bright colours are heavier than dark. A black area must be larger than a white area to achieve equal weight (due to irradiation).
-4. **Depth**: Greater spatial depth increases weight — a distant figure in a painting can carry considerable weight relative to larger foreground figures.
-5. **Isolation**: An isolated element (sun in an empty sky) is heavier than a similar element surrounded by others.
-6. **Shape**: Regular geometrical forms and compact shapes are heavier than irregular or dispersed ones.
-7. **Intrinsic interest**: Areas holding the observer's attention (subject matter significance, formal complexity) carry more weight regardless of size.
-8. **Lever principle**: Weight increases with distance from the compositional centre; a small element far from centre can balance a larger one near it.
+1. **Location**: Arnheim distinguishes positions that can support weight from off-centre counterbalancing influence; these are not the same variable.
+2. **Size**: Larger objects can be more prominent, with context and interest considered.
+3. **Colour**: Chapter I reports brighter colours as heavier and a larger black area counterbalancing white; this is not a universal brightness or hue law.
+4. **Depth**: A distant depicted figure can have considerable interest without appearing physically larger.
+5. **Isolation**: The sun in an empty sky illustrates a possible prominence effect, not a universal additive isolation factor.
+6. **Shape**: Regularity and compactness are reported compositional considerations.
+7. **Intrinsic interest**: Meaning, complexity and viewer attention can matter independently of physical size.
+8. **Lever comparison**: Small peripheral elements may counterbalance larger central ones; no proportional force or distance scale is supplied.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Identify the dominant element — usually the largest, most saturated, most isolated, or most visually complex.
-2. Check its position: elements at the centre of structural axes naturally "carry" more weight than the same element displaced.
-3. Counterbalance heavy elements with lighter ones, adjusting size, colour, position, or depth.
-4. Apply the lever principle: a small, bright element far from centre can balance a large, dark element near it.
+1. Establish which content needs emphasis for the task.
+2. Compare size, colour pairs, location, shape, grouping and interest in the actual composition.
+3. Try changes in one property while retaining the surrounding context; do not calculate an uncalibrated total mass.
+4. Check reading, interaction and accessibility when reducing emphasis.
 
 ## To Identify/Recognise:
-1. An element that draws the eye disproportionately is exerting heavy visual weight.
-2. Elements that "disappear" into the composition despite their physical size have low visual weight (e.g., due to low contrast, dark colour in a dark field, surrounded by similar elements).
-3. Mismatched weight and hierarchy: a secondary element that outweighs the primary element reveals a weight miscalculation.
+1. Describe an element that draws disproportionate attention, distinguishing conspicuity from importance.
+2. A large dark element in a dark field may seem to "disappear"; that is a local contrast observation.
+3. Compare emphasis with intended roles: a notification can deserve priority during a fault, while routine comparison can emphasise metrics.
 
 # Context & Application
 
-- **Typical contexts**: All visual design — layout, typography, UI, illustration, photography, web design. Visual weight is the primary currency of compositional balance and hierarchy.
-- **Common applications**: In UI design, a large primary action button carries heavy weight through size and colour. De-emphasised secondary actions must be lighter in colour, smaller in size, and/or positioned at the periphery. In typography, bold weight, larger size, and high contrast increase a text element's visual weight and thus its hierarchy position.
-- **Historical/stylistic notes**: Arnheim notes that knowledge does not override visual weight — a cotton bundle cannot be made to look lighter than a lead lump of equal apparent size simply by knowing that cotton is physically light. "Technical information or misinformation has little influence on visual evaluation."
+- **Typical contexts**: Layout, typography, illustration and interface hierarchy.
+- **Common applications**: A primary action may use size, weight or contrast for emphasis. Secondary actions need not be peripheral or low-contrast. Requested font weight requires a supporting face; `2rem` alone proves no prominence outcome. A many-hued dashboard may correctly use teal, red, green, blue, yellow and purple for distinct semantics: review roles, competition, grouping, non-colour labels and actual pairs before changing supplied identity.
+- **Historical/stylistic notes**: Arnheim uses the cotton bundle and lead lump comparison to argue that knowing physical mass does not simply determine apparent weight: "Technical information or misinformation has little influence on visual evaluation." This reported account does not exclude all contextual knowledge effects.
 
 ## Cross-Domain Connections
 
-**Mathematics → RIGOROUS**: Arnheim explicitly invokes the lever principle (torque = force × distance) for visual composition. A small element placed far from the composition's centre carries proportionally more weight, exactly as a small force at the end of a long lever arm can balance a large force near the fulcrum. This is a direct, quantitatively motivated mapping.
+**Mathematics → STRUCTURAL**: Physical torque is **r × F**, with magnitude **rF sin(θ)**, or force times perpendicular lever distance. Visual counterbalancing is a qualitative comparison; arbitrary pixel distance is not that lever arm and no perceptual torque law is measured.
 
-**Music → STRUCTURAL**: The scale of musical dynamics (pp to ff) is structurally parallel to visual weight as an emphasis scale — both describe a continuum of perceptual force or prominence. In both domains, the most prominent element establishes the hierarchy, and subordinate elements must be calibrated accordingly.
+**Music → STRUCTURAL**: Dynamics from pp to ff offers an emphasis comparison. Loudness, prominence, musical role and visual importance have different contexts and scales.
 
 # Examples
 
-**Example 1** (p. 19): "A black area must be larger than a white one to counterbalance it; this is due in part to irradiation, which makes a bright surface look relatively larger." This demonstrates colour as a determinant of weight independent of size.
+The following are reported examples from the existing extraction. Exact quotations, locators, experimental results and historical interpretation remain unassessed against the original; qualifying an example does not verify it.
 
-**Example 2** (p. 19): "The very tininess of an object may exert a fascination that compensates the slight weight it would otherwise have." Intrinsic interest (here: rarity/unusualness of the tiny) overrides the weight from size.
+**Example 1** (p. 19): "A black area must be larger than a white one to counterbalance it; this is due in part to irradiation, which makes a bright surface look relatively larger." This is the reported colour/area account, not proof of independent weight contributions.
 
-**Example 3** (p. 19-20): Van Gogh's bedroom painting: "The patch of a bright red bedcover...creates a strong off-center weight." Colour (red) and location (off-centre) multiply to produce strong weight from a moderate-sized element.
+**Example 2** (p. 19): "The very tininess of an object may exert a fascination that compensates the slight weight it would otherwise have." Arnheim interprets the tiny object’s fascination as compensation; no quantitative override law is established.
 
-**Example 4** (p. 20): Manet's *Déjeuner*: a small distant girl carries "considerable weight in relation to the group of three large figures in the foreground" — demonstrating that spatial depth adds weight.
+**Example 3** (p. 19-20): Van Gogh's bedroom painting: "The patch of a bright red bedcover...creates a strong off-center weight." This is the reported compositional interpretation; no multiplicative hue-location formula is established.
+
+**Example 4** (p. 20): Manet's *Déjeuner*: a small distant girl carries "considerable weight in relation to the group of three large figures in the foreground" — a reported comparison of compositional interest, not a claim of larger apparent physical size.
 
 # Relationships
 
 ## Builds Upon
-- **Visual balance** — Weight is the variable whose distribution determines whether a composition is balanced.
+- **Visual balance** — Weight supplies the vocabulary of influence used in a compensation judgment.
 
 ## Enables
-- **Weight by location** — A specialised analysis of how position within the structural skeleton affects weight.
-- **Tonal weight** — The specific contribution of lightness/darkness to visual weight.
-- **Weight of colour** — The specific contribution of hue and saturation to visual weight.
-- **Visual hierarchy** — Deliberate calibration of weight differences establishes hierarchy; the heaviest element commands primary attention.
+- **Weight by location** — Elaborates position and counterbalancing as distinct from physical torque.
+- **Tonal weight** — Elaborates contextual light-dark influence.
+- **Weight of colour** — Elaborates colour attributes without an independent additive hue scale.
+- **Visual hierarchy** — Weight is one descriptive tool for task-led emphasis, not a guaranteed first-attention law; no resolved hierarchy endpoint is asserted.
 
 ## Related
-- **Structural skeleton of composition** — The skeleton defines the strong and weak positions that condition how much weight a given location can support.
+- **Structural skeleton of composition** — Axes supply one reference for discussing placement, without prescribing stable positions.
 
 ## Contrasts With
-- **Physical weight** — Physical mass and visual weight differ systematically: colour, location, subject matter, and depth create visual weight without physical correlates.
+- **Physical weight** — A conceptual comparison with no resolved local endpoint; depicted interest and colour are distinct from physical mass.
 
 # Common Errors
 
-- **Error**: Assigning visual weight by size alone.
-  **Correction**: Colour, location, isolation, and intrinsic interest can make a small element visually heavier than a large one. Always consider the full set of weight-determining factors.
+- **Error**: Assigning weight by size alone.
+  **Correction**: Compare the actual colour, position, isolation, content and task; a small meaningful item can command attention.
 
-- **Error**: Assuming knowledge of a subject's physical weight affects its visual weight.
-  **Correction**: Arnheim is explicit that intellectual knowledge does not override perceptual weight. A cotton bundle does not look lighter than lead of equal apparent size just because the viewer knows cotton is light.
+- **Error**: Treating the cotton/lead comparison as a universal independence from knowledge.
+  **Correction**: Preserve it as Arnheim’s example; its exact wording and experiment basis remain unassessed.
 
 # Common Confusions
 
-- **Confusion**: "Visual weight" is a metaphor without precise meaning.
-  **Clarification**: Arnheim treats visual weight as a measurable perceptual force. It can be empirically studied (Ethel Puffer's research on compositional weight is cited), and its determinants are systematically enumerable.
+- **Confusion**: "Visual weight" is either physical mass or an empty metaphor.
+  **Clarification**: It is compositional vocabulary that can guide comparisons. Ethel Puffer’s cited research remains a reported, unverified basis here, not a calibrated measure.
 
 - **Confusion**: Bright = heavy, dark = light (or the reverse).
-  **Clarification**: Both are partially true in different senses. Bright colours are generally heavier than dark ones of equal size. But a black area must be *larger* than a white one to counterbalance it because irradiation makes bright surfaces look larger — so equal apparent weight may require unequal area.
+  **Clarification**: The Chapter I and Chapter VII accounts differ in context and synthesis. Physical area, apparent area and compositional weight are distinct; equal apparent area does not establish a reversal law.
 
 # Source Reference
 
 Chapter I: Balance, "Art and Visual Perception," pp. 18-21. See the section "Weight" and the subsection on specific weight factors (location, size, colour, depth, isolation, shape, intrinsic interest).
 
 # Verification Notes
+
+The bullets below are frozen historical extraction notes, including their confidence and mapping labels; they are not current verification or independent acceptance. Current supported corrections distinguish analytic geometry/CSS from contextual perceptual reports; original-dependent fidelity remains unassessed.
 
 - Definition source: Synthesised from the "Weight" section of Chapter I, pp. 18-21. Key determinants enumerated from Arnheim's explicit list.
 - Confidence rationale: High — Arnheim provides a systematic enumeration of weight-determining factors with named sources (Puffer, specific paintings). The account is detailed and verifiable.

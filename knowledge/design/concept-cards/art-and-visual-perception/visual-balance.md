@@ -23,12 +23,10 @@ prerequisites:
   - "gestalt-theory-in-art"
 extends: []
 related:
-  - "symmetry"
-  - "asymmetry"
+  - "symmetry-and-asymmetry"
   - "structural-skeleton-of-composition"
   - "visual-forces"
-contrasts_with:
-  - "visual-imbalance"
+contrasts_with: []
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "Given a data-rich card (title, status badge, three metrics, timestamp, action button), how do you assign visual hierarchy: what gets the most weight, what gets de-emphasized, and why?"
@@ -36,71 +34,75 @@ rosetta_stone:
   -
     domain: "mathematics"
     concept: "Mechanical equilibrium / force balance"
-    rating: "rigorous"
-    note: "Visual balance is explicitly modelled on physical balance: a composition has a centre of gravity, and elements are distributed so that perceptual forces compensate one another — the mapping is rigorous in that Arnheim uses the physical definition of equilibrium (forces compensate one another) directly."
+    rating: "structural"
+    note: "Mechanical equilibrium is a structural comparison; no measured perceptual force sum or unique centre of mass is supplied."
   -
     domain: "music"
     concept: "Tonal resolution / harmonic closure"
     rating: "structural"
-    note: "Musical tension-resolution (dominant to tonic) is structurally parallel to visual imbalance resolving to balance — both describe a system seeking the lowest available tension state."
+    note: "Dominant-to-tonic resolution offers a comparison in tonal idioms, without a shared energy metric or a law for all music."
 css_implementation:
   -
     property: "justify-content / align-items (flexbox)"
-    example: "display: flex; justify-content: center; align-items: center;"
+    example: "display: flex; justify-content: center; align-items: center; /* box alignment only; inspect content */"
     support: "baseline"
   -
-    property: "CSS Grid symmetric placement"
-    example: "grid-template-columns: 1fr 1fr; /* symmetric two-column balance */"
+    property: "CSS Grid track placement"
+    example: "display: grid; grid-template-columns: 1fr 1fr; /* equal tracks do not mirror contents */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Visual balance is the state of a composition in which all perceptual forces — weight, direction, location — mutually compensate one another, so that no element appears to call for change and the whole achieves a sense of necessity and completeness.
+Visual balance is an experienced compositional relation in which influences appear to counterbalance. Arnheim compares it with physical equilibrium; it is distinct from geometric symmetry and from a measured zero sum of physical forces.
 
 # Core Definition
 
-Arnheim defines visual balance explicitly by analogy with physical equilibrium: "Like a physical body, every finite visual pattern has a fulcrum or center of gravity." Balance is "the state of distribution in which all action has come to a standstill." In a balanced composition, "all such factors as shape, direction, and location are mutually determined in such a way that no change seems possible, and the whole assumes the character of 'necessity' in all its parts." An unbalanced composition, by contrast, "looks accidental, transitory, and therefore invalid." Visual balance is not merely geometric symmetry — it is a perceptual state achieved when the totality of visual forces in a composition reaches equilibrium. Arnheim notes that unlike physical balance, visual balance is also influenced by colour, shape, depth, and subject matter — factors that have no direct physical-weight equivalent.
+This is the represented Arnheim account. Its quotations, page/figure references and historical, experimental or neural claims have not been checked against the unavailable original. The analytic qualifications below do not certify source fidelity.
+
+Arnheim defines visual balance explicitly by analogy with physical equilibrium: "Like a physical body, every finite visual pattern has a fulcrum or center of gravity." Balance is "the state of distribution in which all action has come to a standstill." In a balanced composition, "all such factors as shape, direction, and location are mutually determined in such a way that no change seems possible, and the whole assumes the character of 'necessity' in all its parts." An unbalanced composition, by contrast, "looks accidental, transitory, and therefore invalid." These are Arnheim’s judgments within his balance account, not requirements that every completed design be restful or valid only at equilibrium. Visual balance is distinct from geometric symmetry; no calibrated sum of perceptual forces is supplied. Arnheim notes that unlike physical balance, visual balance is also influenced by colour, shape, depth, and subject matter — factors that have no direct physical-weight equivalent.
 
 # Prerequisites
 
-- **Visual weight** — Balance is the equilibrium of visual weights; one must understand what determines weight before understanding how weights are balanced.
-- **Gestalt theory in art** — Balance is a gestalt field phenomenon; the forces that balance are perceptual forces distributed across the visual field.
+- **Visual weight** — Provides the vocabulary of compositional influence used in balance analysis.
+- **Gestalt theory in art** — Supplies part/whole context; its neural-field interpretation is not a verified premise here.
 
 # Key Properties
 
-1. Balance is the state in which visual forces compensate one another — no element shows a tendency to change position, shape, or direction.
-2. A balanced composition has the character of "necessity": every element is where it must be.
-3. An unbalanced composition looks "accidental, transitory" — it implies a process that has been "accidentally frozen somewhere along the way."
-4. Balance does not require symmetry; it can be achieved by counterbalancing different quantities of weight, direction, location, depth, and colour.
-5. Visual balance differs from physical balance: a photograph of a balanced dancer may look unbalanced; a model may be unable to hold a pose that looks balanced in a drawing.
+1. Compensation is a qualitative compositional judgment here, not a physical vector-sum result.
+2. Arnheim calls a balanced whole necessary; other expressive goals can include transience or tension.
+3. His descriptions are contextual criticism: "accidental, transitory" and "accidentally frozen somewhere along the way."
+4. Asymmetric arrangements may appear balanced; geometry alone does not establish perceived compensation.
+5. A photograph of a balanced dancer can look unbalanced, and a drawn balanced pose may be physically unholdable: depiction and support mechanics differ.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Identify the centre of gravity of the composition (can be found by trial and error — move a frame around until the frame balances the pattern).
-2. Distribute visual weights (size, colour, location, depth, shape) so that forces from all directions compensate one another.
-3. Check that no element appears to want to move to a different position.
-4. Ensure the dominant weight axis (top-bottom, left-right) is appropriately counterbalanced.
+1. Identify the task, content and desired expressive effect before selecting balance as a goal.
+2. Compare actual elements, including size, colour, location, depicted depth and subject matter.
+3. Try moving the frame or selected elements to compare alternatives; this does not measure a physical centre of mass.
+4. Keep reading order, focus and interaction usable when adjusting composition.
 
 ## To Identify/Recognise:
-1. A balanced composition: the whole feels complete, necessary, finished — no element seems to call for rearrangement.
-2. An unbalanced composition: elements appear to pull in uncompensated directions; the composition seems frozen mid-process; the eye cannot settle.
-3. Ambiguous balance: the eye shifts between incompatible interpretations (e.g., two disks where shape symmetry conflicts with locational asymmetry).
+1. Describe what feels resolved or calls for rearrangement, for the stated viewer and context.
+2. Distinguish intended disequilibrium from a task-obscuring competition of elements.
+3. Two disks may invite competing shape and location readings; a local report is not a universal observer result.
 
 # Context & Application
 
-- **Typical contexts**: Painting and graphic composition; layout design; typographic arrangements; UI screen layout; information hierarchy.
-- **Common applications**: In UI design, a header with a heavy logo on the left may be balanced by navigation items on the right. In card layout, a large image top may be balanced by a block of text and a CTA below. Balance is a prerequisite for the composition to feel finished and intentional.
-- **Historical/stylistic notes**: Arnheim notes that balance need not mean stasis — "in a later chapter, on Dynamics, I shall have occasion to spell out the active counterprinciple." Balance is the frame within which dynamic tension operates. The goal is not inert symmetry but a stable configuration that holds active forces in productive tension.
+- **Typical contexts**: Painting, graphic composition, typography and interface hierarchy.
+- **Common applications**: A logo and navigation, or a card image and its text/action, can be compared as compositional influences. Balance is not a prerequisite for every interface to feel intentional. For a data-rich card, routine comparison may emphasise metrics, while an urgent fault may prioritise status and action. Title and timestamp need their task-dependent roles; there is no fixed ranking.
+- **Historical/stylistic notes**: Arnheim writes "in a later chapter, on Dynamics, I shall have occasion to spell out the active counterprinciple." This retains a productive comparison between balance and expressive tension.
 
 ## Cross-Domain Connections
 
-**Mathematics → RIGOROUS**: Arnheim explicitly maps visual balance onto the physical concept of equilibrium — a system in which the vector sum of forces equals zero. The centre of gravity of a visual pattern can be found empirically (by moving a frame until it balances), and the "lever principle" applies to visual composition: weight increases with distance from the centre. This is a rigorous mapping, not merely a metaphor.
+**Mathematics → STRUCTURAL**: The "lever principle" comparison with mechanical equilibrium requires defined forces and appropriate force/torque conditions. Moving a frame is a design comparison, not proof of a perceptual vector sum or a unique centre of gravity.
 
-**Music → STRUCTURAL**: Harmonic resolution (dominant chord resolving to tonic) parallels visual balance as both describe the system reaching its lowest available tension state. The mapping is structural — the logical form is the same (tension seeking resolution) — but the mechanisms differ.
+**Music → STRUCTURAL**: Dominant-to-tonic resolution supplies a comparison in tonal idioms. It does not establish a common energy metric, a universal tension minimum or a rule for all music.
 
 # Examples
+
+The following are reported examples from the existing extraction. Exact quotations, locators, experimental results and historical interpretation remain unassessed against the original; qualifying an example does not verify it.
 
 **Example 1** (p. 17): The St. Michael painting where a small nude outweighs four big devils. The painter compensated the imbalance with a dark patch on the angel's robe, creating visual attraction where no physical weight exists — demonstrating that visual balance is achieved through perceptual, not physical, forces.
 
@@ -111,20 +113,20 @@ Arnheim defines visual balance explicitly by analogy with physical equilibrium: 
 # Relationships
 
 ## Builds Upon
-- **Visual weight** — Balance is the equilibrium of weights; knowing what determines weight is prerequisite.
-- **Gestalt theory in art** — Perceptual forces are gestalt field phenomena; balance is their equilibrium state.
+- **Visual weight** — Compositional influence supplies a vocabulary for compensation.
+- **Gestalt theory in art** — The arrangement of the whole matters to the appearance of its parts.
 
 ## Enables
-- **Symmetry and asymmetry** — These are specific patterns for achieving visual balance; balance is the broader concept.
-- **Weight by location** — Location is one of the key variables in achieving balance.
-- **Visual hierarchy in composition** — A balanced composition with a clear hierarchic gradient (strong centre, subordinate periphery) is the most common design solution.
+- **Symmetry and asymmetry** — Geometric reflection and asymmetric compensation are distinct ways to organise a composition.
+- **Weight by location** — Position can affect a compositional reading without a proportional lever law.
+- **Visual hierarchy in composition** — Task-led emphasis can use balance, but neither a dominant centre nor a subordinate periphery is required. This is a conceptual use, not a resolved hierarchy card identity.
 
 ## Related
-- **Structural skeleton of composition** — The hidden axes and centre points that define where balance is easiest to achieve.
-- **Directed tension** — Tension and balance are complementary principles; balance is achieved by tensions that compensate one another.
+- **Structural skeleton of composition** — Axes offer a reference for comparing positions, not guaranteed stable anchors.
+- **Directed tension** — Tension can coexist with balance or express disequilibrium.
 
 ## Contrasts With
-- **Visual imbalance** — An unbalanced composition that communicates transience, accident, or incompleteness — valid as an expressive choice only when it is clearly intentional.
+- **Visual imbalance** — A conceptual comparison with no resolved local endpoint; transience or incompleteness can be expressive choices, not automatically invalid outcomes.
 
 # Common Errors
 
@@ -132,18 +134,20 @@ Arnheim defines visual balance explicitly by analogy with physical equilibrium: 
   **Correction**: Balance can be achieved asymmetrically — a small bright object can counterbalance a large dark one; a figure at centre can be balanced by smaller elements at the periphery.
 
 - **Error**: Treating balance as a static goal that eliminates dynamism.
-  **Correction**: Arnheim is explicit: "disequilibrium can be expressed only by equilibrium." A dynamic composition must itself be balanced — the tensions it contains must be held in a stable configuration, even if that configuration is not symmetrical.
+  **Correction**: Arnheim is explicit: "disequilibrium can be expressed only by equilibrium." That is the source’s compositional proposal; it does not impose equilibrium on every expressive work or interface.
 
 # Common Confusions
 
 - **Confusion**: Visual balance is purely physical — measured by equal areas or equal pixel weights.
-  **Clarification**: Visual balance is perceptual. Colour, shape, location, depth, subject matter, and intrinsic interest all contribute to visual weight in ways that cannot be reduced to physical measurement.
+  **Clarification**: Visual balance is perceptual. Colour, shape, location, depicted depth and subject matter are compositional considerations; no calibrated reduction to mass or universal weighting is established here.
 
 # Source Reference
 
 Chapter I: Balance, "Art and Visual Perception," pp. 11-30. See especially the sections "Psychological and Physical Balance" (pp. 15-17) and "Why Balance?" (pp. 17-18).
 
 # Verification Notes
+
+The bullets below are frozen historical extraction notes, including their confidence and mapping labels; they are not current verification or independent acceptance. Current supported corrections distinguish analytic geometry/CSS from contextual perceptual reports; original-dependent fidelity remains unassessed.
 
 - Definition source: Direct quote from p. 17 ("In a balanced composition all such factors..."). Synthesised from discussion in Chapter I, pp. 11-18.
 - Confidence rationale: High — Arnheim provides an explicit definition and extended discussion with multiple examples and experimental evidence.

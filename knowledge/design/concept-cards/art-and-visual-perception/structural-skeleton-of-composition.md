@@ -27,132 +27,136 @@ related:
   - "visual-weight"
   - "weight-by-location"
   - "directed-tension"
-contrasts_with:
-  - "physically-visible-elements"
+contrasts_with: []
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-  - "How does the relationship between inter-group and intra-group spacing communicate which elements belong together (gestalt proximity)?"
 rosetta_stone:
   -
     domain: "mathematics"
     concept: "Coordinate system / reference frame"
     rating: "structural"
-    note: "The structural skeleton functions as a perceptual coordinate system — it defines the reference frame within which the position and tension of every element is measured, just as a mathematical coordinate system defines where points are located relative to axes and origin."
+    note: "A reference frame provides relational positions; no calibrated perceptual field or universal stable anchors follow."
   -
     domain: "music"
     concept: "Musical scale / tonal key"
     rating: "structural"
-    note: "Arnheim explicitly compares the structural skeleton to a musical scale: 'a skeleton that helps determine the role of each pictorial element within the balance system of the whole; it serves as a frame of reference, just as a musical scale defines the pitch value of each tone in a composition.'"
+    note: "Arnheim’s musical-scale comparison concerns a frame of reference within a composition, without a shared energy or weight metric."
   -
     domain: "engineering"
     concept: "Grid system / layout grid"
-    rating: "rigorous"
-    note: "The invisible structural skeleton in visual composition is the perceptual equivalent of the designer's layout grid — both are invisible organisational frameworks that determine where elements can be placed for stability and order."
+    rating: "structural"
+    note: "An authored layout grid defines track geometry; it is distinct from the proposed perceived skeleton and guarantees no stability of arbitrary contents."
 css_implementation:
   -
     property: "CSS Grid"
-    example: "display: grid; grid-template-columns: repeat(12, 1fr); /* establishes a visible structural skeleton */"
+    example: "display: grid; grid-template-columns: repeat(12, 1fr); /* authored tracks; not a guaranteed perceptual skeleton */"
     support: "baseline"
   -
     property: "CSS custom properties for layout anchors"
-    example: "--center-x: 50%; --axis-h: 50%; /* explicit structural skeleton tokens */"
+    example: "--center-x: 50%; --axis-h: 50%; /* stored values have no layout effect until consumed */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-The structural skeleton is the invisible framework of axes, centre points, and force lines that every bounded visual field contains, which determines where elements feel stable, restless, or in tension within the composition.
+The structural skeleton is Arnheim’s proposed perceived framework of centre, axes, diagonals and boundaries. It is a compositional reference, distinct from a designer’s authored grid and from a measured physical force field.
 
 # Core Definition
 
-Arnheim introduces the structural skeleton through the experiment of placing a disk at various positions within a white square. At most positions the disk feels pulled in one direction or another; only at specific points — the centre, the intersections of diagonals and axes — does it feel at rest. "The pattern sketched in Figure 3 will be referred to as the structural skeleton of the square." This skeleton consists of the central point (the primary locus of attraction), the horizontal and vertical axes passing through the centre, the two diagonals, and the boundaries themselves. The skeleton is invisible — "as invisible as the North Pole or the Equator" — yet it is "a part of the perceived pattern, an invisible focus of power." Every visual format (square, rectangle, circle, screen) generates its own structural skeleton. The disk in Figure 1 "reveals that a visual pattern consists of more than the shapes recorded by the retina." The skeleton is "induced" by the configuration of the boundaries, just as one electric current can be induced by another. Every element placed within the field is simultaneously affected by all skeleton forces; its position on or off the skeleton axes determines how much stability or tension it exhibits.
+This is the represented Arnheim account. Its quotations, page/figure references and historical, experimental or neural claims have not been checked against the unavailable original. The analytic qualifications below do not certify source fidelity.
+
+Arnheim introduces the structural skeleton through the experiment of placing a disk at various positions within a white square. He reports differing directional impressions. In a square the central axes and both diagonals share one intersection, the centre; they do not create several additional intersection points. "The pattern sketched in Figure 3 will be referred to as the structural skeleton of the square." This skeleton consists of the central point (the primary locus of attraction), the horizontal and vertical axes passing through the centre, the two diagonals, and the boundaries themselves. The skeleton is invisible — "as invisible as the North Pole or the Equator" — yet it is "a part of the perceived pattern, an invisible focus of power." He proposes corresponding structures for other formats; this review does not establish stable anchors for every screen or irregular shape. The disk in Figure 1 "reveals that a visual pattern consists of more than the shapes recorded by the retina." The term "induced" belongs to the reported account. Electrical induction is a comparison, not demonstrated perceptual physics; position alone does not establish stability or tension for arbitrary content.
 
 # Prerequisites
 
-- **Gestalt theory in art** — The structural skeleton is a gestalt-field phenomenon: an induced structure arising from the configuration of the whole, not from any physically marked feature.
-- **Visual forces** — The skeleton is a map of the force field; its lines are ridges and axes of perceptual attraction and repulsion.
+- **Gestalt theory in art** — Part/whole organisation supports the idea of an unmarked reference structure.
+- **Visual forces** — Supplies the source’s vocabulary of experienced pulls; no calibrated neural field is assumed.
 
 # Key Properties
 
-1. The structural skeleton is invisible but perceptually real — it is induced by the boundaries of the format, not marked physically.
-2. Every format generates its own skeleton: squares, rectangles, circles, and irregular shapes each have different skeleton configurations.
-3. The centre is the primary locus of attraction and stability; diagonal and axial intersections are secondary stable positions.
-4. Elements placed on skeleton features (centre, axes, diagonals, boundaries) achieve greater stability; elements off the skeleton feel pulled or restless.
-5. The skeleton is a continuous force field: "no point in the figure is free from this influence."
-6. The structural skeleton serves as a compositional frame of reference — like a musical scale, it gives each element its functional "pitch" or position-value within the whole.
-7. "Dead center" is not dead: a point at the centre is alive with balanced tension from all directions simultaneously.
+1. The proposed skeleton is perceived rather than a drawn guide.
+2. Different format structures require their own inspection; no exhaustive universal map is supplied.
+3. The square’s centre, axes and diagonals can be compared geometrically; their common intersection is one point.
+4. Being on an axis does not guarantee stability for the actual placed content.
+5. Reported source language reads: "no point in the figure is free from this influence." It is not a measured field result.
+6. The musical-scale comparison concerns a frame of reference, not a shared physical metric.
+7. "Dead center" describes reported opposing pulls, not a requirement for every primary element.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Before placing any elements, identify the format's structural skeleton: locate the centre point, the horizontal and vertical central axes, and the two diagonals.
-2. Use these as guides for placing the most important elements — the primary focus naturally gravitates to the centre or to major skeleton intersections.
-3. Place secondary elements at moderate distances from the skeleton to create controlled tension without instability.
-4. Avoid positions of ambiguous tension (equidistant between two skeleton features) unless ambiguity is the desired effect.
+1. Identify the actual frame and content before choosing alignment references.
+2. For a square, compare its centre, central axes, diagonals and boundary midpoints.
+3. Place content for the task and compare the resulting hierarchy; primary information need not occupy a geometric anchor.
+4. Use off-axis placement or ambiguity where it serves the expressive intent.
 
 ## To Identify/Recognise:
-1. An element that looks "settled" is likely sitting on a skeleton feature (centre, axis, diagonal).
-2. An element that looks restless, pulled, or temporary is sitting off the skeleton.
-3. A composition in which nothing feels stable has no elements anchored to skeleton features.
+1. Describe what feels "settled" or restless in this configuration.
+2. Distinguish authored alignment from a proposed perceived skeleton.
+3. A lack of central anchors does not itself diagnose instability.
 
 # Context & Application
 
-- **Typical contexts**: All visual composition — painting, layout design, UI design, poster design, web page structure. The structural skeleton is the invisible grid underlying any rectangular format.
-- **Common applications**: In web layout, the structural skeleton of a browser viewport includes the vertical centre line, the top third (primary attention zone), and the horizontal fold. Elements placed at these locations feel stable and intended; elements displaced from them feel incidental or transitional.
-- **Historical/stylistic notes**: Arnheim uses the skeleton concept to explain why certain compositions feel "right" even when they are not symmetrical, and why even a single element in an otherwise empty field creates a specific perceptual effect based on its relation to the skeleton.
+- **Typical contexts**: Painting, posters, page composition and interface layout.
+- **Common applications**: Compare placed content with a frame’s axes; do not invent a browser fold or top-third universal attention zone. A viewport and a scrolling document differ. CSS Grid defines tracks; custom properties merely store values until consumed. Neither creates a guaranteed perceived skeleton.
+- **Historical/stylistic notes**: Arnheim uses the skeleton to explain compositions that feel "right" and the roving disk’s relation to its frame. These are represented interpretations, not currently validated observer outcomes.
 
 ## Cross-Domain Connections
 
-**Mathematics → STRUCTURAL**: The structural skeleton functions as a perceptual coordinate system — a reference frame within which every element's position is defined relationally. Just as a mathematical coordinate system makes positions meaningful by establishing axes and an origin, the compositional skeleton makes locations meaningful by establishing attraction/repulsion axes and a centre of gravity.
+**Mathematics → STRUCTURAL**: A coordinate frame supplies positions relative to an origin and axes; this comparison does not define perceptual forces.
 
-**Music → STRUCTURAL**: Arnheim himself draws this parallel explicitly: the skeleton "serves as a frame of reference, just as a musical scale defines the pitch value of each tone in a composition." The tonal key of a musical passage gives each note its functional value (tonic, dominant, leading-tone); the structural skeleton gives each location its functional weight-value (stable, tense, neutral).
+**Music → STRUCTURAL**: The skeleton "serves as a frame of reference, just as a musical scale defines the pitch value of each tone in a composition." Tonal function provides a scoped comparison rather than a common energy measure.
 
-**Engineering → RIGOROUS**: The structural skeleton is the perceptual analogue of the layout grid — the invisible organisational system that determines stable positions for elements. A 12-column grid makes certain column positions "strong" (multiples of the column unit, grid intersections) just as the skeleton makes axial positions strong. Both are invisible but controlling.
+**Engineering → STRUCTURAL**: A 12-column layout grid is authored track geometry. A column position called "strong" and a perceived frame structure need not coincide; placement on either supplies no guaranteed stability.
 
 # Examples
 
+The following are reported examples from the existing extraction. Exact quotations, locators, experimental results and historical interpretation remain unassessed against the original; qualifying an example does not verify it.
+
 **Example 1** (p. 12): "A visual figure such as the square in Figure i is empty and not empty at the same time. Its center is part of a complex hidden structure, which we can explore by means of the disk, much as we can use iron filings to explore the lines of force in a magnetic field."
 
-**Example 2** (p. 12-13): The Goude-Hjortzberg experiment at Stockholm University: when subjects were asked about the disk's directional tendency at various positions, their responses "cluster along the principal axes of our structural skeleton" — empirical confirmation of the skeleton's perceptual reality.
+**Example 2** (p. 12-13): The Goude-Hjortzberg experiment at Stockholm University: when subjects were asked about the disk's directional tendency at various positions, their responses "cluster along the principal axes of our structural skeleton" — a reported experiment, unassessed against original methods and results here.
 
 **Example 3** (p. 14): "The roving disk...reveals that a visual pattern consists of more than the shapes recorded by the retina...In perceptual experience, this stimulus pattern creates a structural skeleton...it serves as a frame of reference, just as a musical scale defines the pitch value of each tone in a composition."
 
 # Relationships
 
 ## Builds Upon
-- **Gestalt theory in art** — The skeleton is a gestalt-induced structure; it arises from the whole field's configuration.
-- **Visual forces** — The skeleton maps the distribution of perceptual forces; it is intelligible only in force-field terms.
+- **Gestalt theory in art** — The account relates an unmarked structure to the whole configuration.
+- **Visual forces** — Provides the vocabulary used to interpret directional impressions.
 
 ## Enables
-- **Visual balance** — The skeleton defines where balance is naturally achieved; balanced compositions use skeleton positions strategically.
-- **Weight by location** — Location-based weight is explained by proximity to skeleton features: strong positions support more weight.
-- **Directed tension** — Elements off the skeleton experience directed tension (pull toward skeleton features); the skeleton is the reference point for all tension.
+- **Visual balance** — Axes offer references for comparisons, not guaranteed equilibrium locations.
+- **Weight by location** — Position can be discussed relative to the proposed structure; support and counterbalancing differ.
+- **Directed tension** — Departure from a reference can be one interpreted source of tension, not the only one.
 
 ## Related
-- **Visual balance** — Balance is achieved when forces distributed across the skeleton field compensate one another.
-- **Visual weight** — Weight is partly determined by how close an element is to skeleton features.
+- **Visual balance** — Connects framing and compensation judgments.
+- **Visual weight** — Connects placement with contextual influence, without a fixed distance law.
 
 ## Contrasts With
-- **Physically visible elements** — The skeleton is real and causally effective but physically invisible; it exists in perception, not on the canvas.
+- **Physically visible elements** — A conceptual comparison without a resolved local endpoint: an unmarked perceived reference differs from pigment or an authored guide; causal neural efficacy is not established.
 
 # Common Errors
 
-- **Error**: Ignoring the structural skeleton and placing elements based on aesthetic intuition alone.
-  **Correction**: The structural skeleton is always present and always operative. Intuitive placement is often implicitly responsive to it — making it explicit allows deliberate control.
+- **Error**: Treating the skeleton as an always-operative measured field.
+  **Correction**: Use the source account to compare actual content while preserving its evidential limits.
 
 - **Error**: Treating the centre as the only "safe" position.
-  **Correction**: Any skeleton feature (axial intersections, diagonals, boundary midpoints) provides stability. Compositions that place everything at dead centre are boring; varied but skeleton-anchored placement creates dynamic stability.
+  **Correction**: Axes and boundary points offer other references; none guarantees a successful composition. Off-axis placement can be appropriate.
 
 # Common Confusions
 
 - **Confusion**: The structural skeleton is the same as a visible grid or guide.
-  **Clarification**: The skeleton is perceptually induced by the format boundaries — it exists whether or not a grid is drawn, and it is not identical to any particular grid system. A 12-column grid is a tool for working with one possible manifestation of the skeleton, not the skeleton itself.
+  **Clarification**: The source proposes a perceived structure; an authored 12-column grid is a separate layout tool. No equivalence or guaranteed perceptual manifestation follows from track counts.
 
 # Source Reference
 
 Chapter I: Balance, "Art and Visual Perception," pp. 11-15. See especially the section "The Hidden Structure of a Square" and the experiment with the roving disk.
 
 # Verification Notes
+
+The bullets below are frozen historical extraction notes, including their confidence and mapping labels; they are not current verification or independent acceptance. Current supported corrections distinguish analytic geometry/CSS from contextual perceptual reports; original-dependent fidelity remains unassessed.
 
 - Definition source: Direct quote from p. 13 ("The pattern sketched in Figure 3 will be referred to as the structural skeleton of the square") and p. 14 (musical scale analogy). Synthesised from discussion in the opening section of Chapter I.
 - Confidence rationale: High — Arnheim provides an explicit name, definition, empirical demonstration (Goude-Hjortzberg experiment), and multiple characterisations of this concept.

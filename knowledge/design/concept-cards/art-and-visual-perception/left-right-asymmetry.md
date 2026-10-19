@@ -26,9 +26,8 @@ extends:
 related:
   - "visual-balance"
   - "top-bottom-asymmetry"
-  - "directional-vector-left-right"
 contrasts_with:
-  - "bilateral-symmetry"
+  - "symmetry-and-asymmetry"
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "Given a data-rich card (title, status badge, three metrics, timestamp, action button), how do you assign visual hierarchy: what gets the most weight, what gets de-emphasized, and why?"
@@ -37,25 +36,27 @@ rosetta_stone:
     domain: "music"
     concept: "Pickup / anacrusis / directional vector in melody"
     rating: "loose"
-    note: "The left-to-right directional vector in visual compositions (movement feels easier going left-to-right, harder going right-to-left) is loosely analogous to the directional momentum in a melody — notes moving in the established direction of a scale feel easier; notes that push against the tonal gravity feel more effortful. Both are directional biases in a field, but the mechanisms differ."
+    note: "Anacrusis and melodic expectation offer a contextual direction comparison. Neither visual reading direction nor a melodic scale establishes a universal ease law or automatic RTL reversal."
 css_implementation:
   -
     property: "direction / writing-mode"
-    example: "direction: ltr; /* left-to-right reading direction — establishes the lateral bias */"
+    example: "direction: ltr; /* inline direction only; not neural bias or automatic RTL reversal */"
     support: "baseline"
   -
-    property: "margin-left / padding-left (compensating for left-zone dominance)"
-    example: "margin-inline-start: 1.5rem; /* logical property respects writing direction */"
+    property: "margin-inline-start"
+    example: "margin-inline-start: 1.5rem; /* example logical spacing; inspect content and order */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-The visual field in left-to-right reading cultures has a directional vector from left to right, making right-side objects appear heavier and movement toward the right feel easier than movement toward the left — effects that must be accounted for in compositional balance and narrative flow.
+Left-right asymmetry describes Arnheim’s reported differences in compositional weight, identification and movement direction. These contextual comparisons do not establish a universal neural bias, a fixed left anchor or automatic reversal for right-to-left scripts.
 
 # Core Definition
 
-Arnheim analyses left-right asymmetry in the "Right and Left" section: "Visually, lateral asymmetry manifests itself in an uneven distribution of weight and in a dynamic vector leading from the left to the right of the visual field." He reports Wölfflin's observation that "pictures change appearance and lose meaning when turned into their mirror images" because they are "read" from left to right. Objects on the right side of a composition carry more visual weight: "Any pictorial object looks heavier at the right side of the picture." When Sixtus in Raphael's Madonna is mirror-flipped to the right side, "he becomes so heavy that the whole composition seems to topple." Gaffron's research adds the complementary observation: the viewer "identifies" with the left side of a composition, finding the left more central and important, while the right side is more conspicuous and heavier. Movement toward the right "is perceived as being easier, requiring less effort"; movement toward the left "seems to be overcoming more resistance."
+This is the represented Arnheim account. Its quotations, page/figure references and historical, experimental or neural claims have not been checked against the unavailable original. The analytic qualifications below do not certify source fidelity.
+
+Arnheim analyses left-right asymmetry in the "Right and Left" section: "Visually, lateral asymmetry manifests itself in an uneven distribution of weight and in a dynamic vector leading from the left to the right of the visual field." He reports Wölfflin's observation that "pictures change appearance and lose meaning when turned into their mirror images" because they are "read" from left to right. In the represented account, objects on the right side carry more visual weight: "Any pictorial object looks heavier at the right side of the picture." When Sixtus in Raphael's Madonna is mirror-flipped to the right side, "he becomes so heavy that the whole composition seems to topple." Arnheim’s report of Gaffron’s research adds the complementary observation: the viewer "identifies" with the left side of a composition, finding the left more central and important, while the right side is more conspicuous and heavier. Movement toward the right "is perceived as being easier, requiring less effort"; movement toward the left "seems to be overcoming more resistance."
 
 # Prerequisites
 
@@ -64,38 +65,40 @@ Arnheim analyses left-right asymmetry in the "Right and Left" section: "Visually
 
 # Key Properties
 
-1. Objects on the right side of a composition appear heavier than identical objects on the left.
-2. There is a directional vector from left to right — movement in this direction feels easier; movement against it feels effortful.
-3. Observers identify with the left side of a composition — the left is "more central, more important, more emphasized."
-4. The right side is "more conspicuous" — objects there draw attention first when scanning from a non-left starting point.
-5. The "lever effect" contributes: if the observer's attention centre is at the left, objects on the right have a longer lever arm and thus carry more compositional weight.
-6. When comparing equal objects in left and right positions, the one on the right appears larger.
-7. Movement toward the right reads as "going with the current"; movement toward the left reads as "overcoming resistance" and thus appears slower or more effortful.
+1. The source reports greater right-side weight; this is not adopted as a universal effect.
+2. Reported left-to-right ease concerns depicted movement, not an automatic navigation rule.
+3. Left-side identification is described as "more central, more important, more emphasized." It differs from conspicuity.
+4. The right side is called "more conspicuous"; no invariant first-attention order follows.
+5. The reported "lever effect" around a left-biased attention centre supplies a qualitative comparison, not measured torque.
+6. The reported apparent-size comparison differs from physical size and compositional importance.
+7. "going with the current" and "overcoming resistance" are source-related movement descriptions, not immutable meanings of screen directions.
 
 # Construction / Recognition
 
 ## To Identify/Recognise:
-1. A composition that looks right-heavy despite equal element placement is exhibiting lateral asymmetry.
-2. Mirror a composition and compare: if it loses balance or changes meaning, lateral asymmetry is significant.
-3. A figure or object moving rightward reads as active and advancing; leftward movement reads as effortful, resistant, or retreating.
+1. Describe whether this actual composition appears laterally weighted, and whose judgment is involved.
+2. Compare a mirrored image where meaningful, distinguishing geometry from contextual interpretation.
+3. Treat the rider’s direction as a reported example, not a universal progress/retreat rule.
 
 ## To Construct/Create:
-1. Place the most important element slightly left of centre to exploit the identification/importance effect of the left zone.
-2. Counterbalance heavy right-side elements with more important (identified-with) left-side elements, even if the left elements are lighter by other measures.
-3. Use rightward visual movement (diagonal vectors from lower-left to upper-right, figures facing right) to create the sense of progress or ease.
-4. Use leftward movement deliberately to suggest effort, resistance, or drama.
+1. Preserve meaningful script, content, source and navigation order.
+2. Choose placement from the task rather than an immutable left identification anchor.
+3. Use directional cues consistently with the actual writing system and interaction.
+4. Check relevant use contexts before proposing mirroring; do not reverse every element automatically.
 
 # Context & Application
 
-- **Typical contexts**: Reading-direction-dependent layouts, illustrations, stage design, film composition, poster design, UI navigation patterns (primary actions often at right to feel like "advancing").
-- **Common applications**: In film editing, a chase scene feels faster when the pursued runs rightward; a return journey often cuts to leftward movement. In UI, navigation arrows pointing right ("next", "continue", "submit") feel like forward progress. Placing a logo at top-left exploits the left-zone identification effect — the most "central" and important anchor of the composition. Right-side notification badges and CTAs gain visual weight from their position.
-- **Historical/stylistic notes**: Arnheim acknowledges the cultural contingency: left-right bias is associated with left-to-right reading cultures and possibly with hemispheric dominance (left cerebral cortex dominance for language). Gaffron's research on Rembrandt's etchings suggests the artist understood this asymmetry. In right-to-left reading cultures (Arabic, Hebrew), the lateral vector presumably reverses.
+- **Typical contexts**: Illustration, stage/film composition, reading direction and navigation.
+- **Common applications**: A chase scene, return journey, next arrow, logo or badge can carry directional meaning. Labels such as "continue" and "submit" or movement described as "advancing" need their actual interaction context. That meaning depends on the content and conventions; a top-left logo or right-side CTA is not required by perceptual physics. For a data-rich card, title, status, metrics, timestamp and action receive task-dependent emphasis; fault handling may prioritise state/action while comparison prioritises metrics.
+- **Historical/stylistic notes**: Wölfflin, Gaffron, Dean and van der Meer are represented sources for the reported comparisons. Hemispheric explanations and RTL reversal remain hypotheses, not currently verified universal laws. Rembrandt’s etchings are a reported historical comparison.
 
 ## Cross-Domain Connections
 
-**Music → LOOSE**: The directional vector in visual compositions (easier left-to-right, effortful right-to-left) loosely parallels directional momentum in melody — moving in the established scale direction feels natural, moving against it feels tense. Both are directional biases in a structured field, but the mechanisms and domains are too different for a rigorous or structural mapping.
+**Music → LOOSE**: Anacrusis and melodic momentum offer a comparison of expectation and direction in particular idioms. Neither a scale’s direction nor a visual lateral vector establishes a universal ease law or a shared mechanism.
 
 # Examples
+
+The following are reported examples from the existing extraction. Exact quotations, locators, experimental results and historical interpretation remain unassessed against the original; qualifying an example does not verify it.
 
 **Example 1** (p. 25): "Any pictorial object looks heavier at the right side of the picture. For example, when the figure of Sixtus in Raphael's Sistine Madonna is moved to the right by inverting the painting, he becomes so heavy that the whole composition seems to topple."
 
@@ -108,38 +111,40 @@ Arnheim analyses left-right asymmetry in the "Right and Left" section: "Visually
 # Relationships
 
 ## Builds Upon
-- **Visual weight** — Left-right asymmetry is a location-based modulator.
-- **Weight by location** — Lateral position is a specific location-based weight factor.
+- **Visual weight** — Supplies influence as distinct from physical mass.
+- **Weight by location** — Lateral comparison elaborates position and its contextual reading.
 
 ## Enables
-- **Directional flow in composition** — Exploiting the left-right vector to create narrative flow (left-to-right = progression, right-to-left = resistance or return).
-- **Visual hierarchy by lateral position** — Using the left identification effect to place the most important element in the left zone.
+- **Directional flow in composition** — A possible narrative use, not a fixed left-to-right progression law; no resolved local endpoint.
+- **Visual hierarchy by lateral position** — Position can support task-led emphasis; no universal left priority or resolved hierarchy endpoint.
 
 ## Related
-- **Top-bottom asymmetry** — The analogous vertical asymmetry; both together make visual space fully anisotropic.
-- **Visual balance** — The lateral vector creates a systematic imbalance that balanced compositions must compensate.
+- **Top-bottom asymmetry** — A comparison of contextual spatial accounts, not proof of complete anisotropy.
+- **Visual balance** — Lateral context can inform compensation without mandatory correction.
 
 ## Contrasts With
-- **Bilateral symmetry** — Perfect bilateral symmetry neutralises the lateral vector but may feel static and lifeless.
+- **Bilateral symmetry** — The actual symmetry-and-asymmetry card defines reflection of specified features. Geometric invariance does not guarantee neutralised perceptual bias or a static/lifeless result.
 
 # Common Errors
 
-- **Error**: Designing compositions as if left and right positions are equivalent.
-  **Correction**: Right-side elements are systematically heavier; compositions that distribute elements symmetrically by measurement may look right-heavy by perception.
+- **Error**: Assuming measured symmetry guarantees a particular perceived weight.
+  **Correction**: Distinguish reflection geometry from the contextual lateral account; compare the actual composition.
 
-- **Error**: Ignoring reading direction when adapting designs to right-to-left locales.
-  **Correction**: The lateral vector follows reading direction; mirroring a design for an RTL culture is not merely a translation — it may require rebalancing the entire composition, as the weight and identification asymmetries reverse.
+- **Error**: Automatically mirroring an entire design for RTL.
+  **Correction**: Preserve meaningful script, source/content order and navigation semantics. Review relevant directional assets and actual use; neural and weight effects do not automatically reverse.
 
 # Common Confusions
 
 - **Confusion**: Left-zone "importance" and right-zone "weight" are the same effect.
-  **Clarification**: They are complementary but distinct. The left is important because observers identify with it (subjective centre, the place from which they experience the scene). The right is heavy because objects there have greater lever distance from the left-biased attention centre. Both affect compositional balance, but through different mechanisms.
+  **Clarification**: The represented account distinguishes identification/importance, conspicuity, apparent size, movement and counterbalancing around an attention centre. It does not establish these as universal mechanisms or equate them with physical lever distances.
 
 # Source Reference
 
 Chapter I: Balance, "Art and Visual Perception," pp. 25-28. See the section "Right and Left."
 
 # Verification Notes
+
+The bullets below are frozen historical extraction notes, including their confidence and mapping labels; they are not current verification or independent acceptance. Current supported corrections distinguish analytic geometry/CSS from contextual perceptual reports; original-dependent fidelity remains unassessed.
 
 - Definition source: Synthesised from pp. 25-28 ("Right and Left" section). Direct quotes from pp. 25-26. Wölfflin, Gaffron, Dean, and van der Meer are cited by Arnheim.
 - Confidence rationale: High — Arnheim provides multiple types of evidence (experimental, art-historical, stage design) and discusses multiple dimensions of the asymmetry (weight, identification, movement direction).
