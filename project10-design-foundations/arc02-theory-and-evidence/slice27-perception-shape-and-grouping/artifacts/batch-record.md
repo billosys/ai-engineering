@@ -576,3 +576,89 @@ Recovered failures: initial combined intake output truncation was recovered befo
 - `knowledge/design/version-history.md`
 
 All four proposed dispositions are attested done at bounded scope; CDC must independently reproduce/inspect. Original/fidelity re-entry remains Operator-selected editions/captures under P10-11 with CDC-scoped preparation. Global233/eight-live/edge/CQ union, parent10/13 criteria, behavior/composition/Operator/final1.1.0/release gates retain their existing owners. This child does not commission acquisition, new empirical research, new cards or a new arc. Planning outputs are this single supporting batch, closing report and Evidence/Notes only in the existing ledger. Exact planning hash is returned after committing rather than written into its own commit.
+
+## Iteration01 — current F01 repair, 2026-10-19
+
+Current preserved assignment [cc-prompt-iteration01.md](../cc-prompt-iteration01.md),
+issued P5901bf80934655a64a52424f82f480ad98f84e31. Initial source1dba8bac and
+P395081e0 evidence above are historical and retained, subject to the independently
+recorded F01 in [initial review](../cdc-verification.md). CDC accepted S27-03;
+S27-01/02/04 remain open for the independent review of this repair. The initial
+broad coherence/Q1-completion proposal did not pass independent review unchanged.
+
+CC refreshed Project1–287/Arc1–164/current slice plan1.1/ledger/review and exact
+I01 before edits. Combined parent/review read truncated; the project tail and
+complete review were recovered before dependent edits. AGENTS/framework/methods/
+domain guide inputs were checked unchanged from the already-read initial inputs.
+CC read the whole159-line current card, affected per-card outcome, W35/W42–45,
+all seven shape-completion body occurrences, both question contributions, Q1
+answer/boundary and full closing report. The pre-edit readback identified exactly
+one source paragraph and three existing planning outputs, no version bump,
+retained gates after input bridge, and CDC-owned independent acceptance.
+
+SOURCE1dba8bacd7b2df45dbbecebd39e5e5bc6b8c73f8 → `3c29ae6949a21c0de2a3a89de41db8fd3e1e046b` changes only
+`knowledge/design/concept-cards/art-and-visual-perception/shape-completion.md`.
+The exact one-paragraph replacement is:
+
+Prior:
+
+> **Clarification**: Closure (closing open outlines into bounded regions) is related but distinct. Shape completion in Arnheim's sense specifically concerns the perceptual filling-in of physically absent shape portions — amodal completion. Closure concerns the tendency to perceive open outlines as closed. Both are driven by Praegnanz.
+
+Current:
+
+> **Clarification**: Closure concerns perceiving an open outline as bounding a region. Amodal completion concerns experiencing an occluded object as continuing behind an occluder without its hidden surface being visibly painted. This card also reports clinical and afterimage cases; those reports are related context, not all classified here as amodal completion. Within the represented account, simplicity helps interpret partial forms. With the original unavailable, this review does not establish one phenomenon or mechanism for all these cases.
+
+The repaired whole card was read again from metadata through Verification Notes.
+Quick Definition supplies the broad conditional tendency; Core/Examples preserve
+reported clinical and afterimage observations; Key Properties distinguishes
+unpainted occluded continuation from visible contour closure; Common Confusions
+now states the same distinction without classifying all reports as one phenomenon
+or mechanism. The original remains unavailable; this is not a finding about what
+the unread original really classified or proved.
+
+Affected five-dimensional outcome: D1 remains unassessed for shape-completion and
+all17 members. D2/D3 repair the blanket amodal classification and shared-drive
+claim; D4 now reconciles KeyProperties and CommonConfusions. D5/Q1 distinguishes
+an open outline read as bounding a region from an occluded object's continuation
+behind an occluder without painting its hidden surface; clinical/afterimage reports
+remain related reported context. W35 simplicity-as-account, W42 axis/contour cues,
+W43 visible cues, W44 conditional regularity and W45 unity/separation remain
+bounded interpretive premises and do not identify all cases with one mechanism.
+The exact typed memberships/body bullets/CQ texts above are unchanged and their
+semantic assessment is retained with this explicit classification qualification.
+Q4 cue-loss contribution and CLT/disclosure gap remain unchanged.
+
+Fresh checks: exact replacement occurs once; replacing the new paragraph with
+the old reproduces the entire committed predecessor card byte-for-byte. The
+source diff has exactly one path/one removed+one added line. All other source
+bytes, complete header, references, quoted words, examples, headings,16 other
+cards, owner/history,161 sources,6 guides and Makefile are unchanged. The whole
+repaired card was read, including the affected Quick/Core/Properties/Confusions/
+relationships and report limits; this is current same-context semantic review.
+Whitespace and LF/EOF passed. No new fields, skill bump or quotation change.
+
+Retained checks: initial arithmetic/graph93→82/body120/CQ39/seven texts and
+native25skills/25packages/0version errors plus25ZIPs/402Markdown/0hard failures/
+606warnings retain their original actor/revision attribution; they were not
+rerun. All8 package inputs and Makefile are unchanged. A fresh equality check
+compared each existing ZIP Markdown member with current source and committed
+inputs:8/8 pass; ZIP SHA256 remains
+`f93370eca21a03539c29ee6abf4ef596c494a05018eaf4b87ec7d364d920386b`.
+S27-03's independent preservation result remains applicable under this bridge.
+No Make rebuild, browser, AT, hosted, perception or original-fidelity result is
+newly claimed.
+
+Additional primary-definition support is explicitly root-reported: a bounded
+search of Tse1999, [Complete mergeability and amodal completion](https://pubmed.ncbi.nlm.nih.gov/10504880/),
+DOI10.1016/S0001-6918(99)00027-X, returned an abstract description of fragments as
+visible portions of one occluded object continuing behind an occluder. Root's
+PubMed direct open supplied only a footer; ScienceDirect direct open returned403.
+Neither root nor CC claims a full-abstract/full-paper read from those failed
+opens; this adds no empirical study or original Arnheim verification.
+
+I01 returns S27-01/02/04 proposed done, attested; S27-03 retained independently
+done. Ledger statuses are preserved. Exact planning outputs remain this batch,
+closing report and Evidence/Notes only in ledger; source1/P3 separate local
+commits carry both required trailers. Planning hash is supplied after commit.
+No new parent decision, gate waiver, next slice/arc, source acquisition,
+publication or self-acceptance.

@@ -1,3 +1,61 @@
+# Slice27 CC closing report — current Iteration01 proposal
+
+Current assignment [cc-prompt-iteration01.md](cc-prompt-iteration01.md), issued
+P5901bf80; F01 correction follows the preserved initial review and return below.
+SOURCE `1dba8bacd7b2df45dbbecebd39e5e5bc6b8c73f8` →
+`3c29ae6949a21c0de2a3a89de41db8fd3e1e046b`. Implementer `/root/s27_cc`; independent acceptance and actual
+slice closure remain CDC-owned. Source is the authorized dedicated branch.
+
+Exactly one specified clarification paragraph now distinguishes open-outline
+closure, unpainted continuation behind an occluder, and reported clinical/
+afterimage cases. It no longer classifies all represented reports as amodal
+or asserts one shared mechanism. All other source bytes and skill version are
+fixed. The complete repaired card and affected batch/Q1/relationship premises
+were read; unavailable-original fidelity remains unassessed for all17.
+
+## Iteration01 current row walk
+
+| Row | Current disposition | Evidence / limit |
+|---|---|---|
+| S27-01 | proposed done, attested | F01 scope/correctness/confusion repaired; full current card read and original-dependent classification remains unassessed. |
+| S27-02 | proposed done, attested | Q1 closure/amodal/report distinction and W35/W42–45 assessed against repaired card; memberships,82typed/120body/39joins/seven texts unchanged. No global-completeness claim. |
+| S27-03 | retained independently done | Fresh exact one-paragraph reversibility, all-other-source-byte scope and8 unchanged package inputs/Makefile/ZIP equality establish applicability of CDC's original bounded preservation acceptance. |
+| S27-04 | proposed done, attested | Current I01 assignment, failure/correction history, exact source1/P3 scopes, fresh-versus-retained checks and remaining gates explicit. CDC review pending. |
+
+## Iteration01 checks and handoff
+
+Fresh exact-replacement/reversal checks reproduce the entire predecessor card;
+metadata, Source Reference, quotes/examples/headings and every other source byte
+are fixed. Current source diff: one path/one removed+one added line. Current card
+read covers Quick/Core/KeyProperties/Confusions, Q1/relations and historical
+report limits. Whitespace/LF/EOF pass. All8 existing ZIP Markdown members equal
+current source/committed inputs; Makefile and package inputs unchanged; ZIP
+SHA256 remains `f93370eca21a03539c29ee6abf4ef596c494a05018eaf4b87ec7d364d920386b`.
+
+Initial Make results below are retained at their actual original execution;
+no redundant build or mathematical/graph rerun, browser/AT/hosted/perception or
+fidelity claim is introduced. Original limits,606 warnings and prior recovered
+failures remain visible. [Batch I01](artifacts/batch-record.md#iteration01--current-f01-repair-2026-10-19)
+records current outcomes and intake, including root's bounded primary-search
+support and direct-fetch limitations.
+
+Commit the explicit single source path separately from the exact three planning
+outputs: this report, `artifacts/batch-record.md`, `ledger.md` Evidence/Notes only.
+Both required trailers apply. Planning hash is returned after commit without
+an extra self-hash receipt commit. Preserve S27-03 done and other three open
+statuses pending CDC. No source bump, original acquisition or new artifact.
+
+Bubble-up: this completes the assigned bounded classification repair without
+a new plan decision. Full233/global/fidelity/behavior/Operator/composition/
+final1.1.0/release gates retain their owners and unresolved inputs. The one
+supporting batch remains the artifact inventory. No self-acceptance or successor.
+
+---
+
+The following initial report is preserved verbatim as historical CC attestation.
+Its four-open-status and broad coherence proposal describe the initial return,
+which required F01 repair; the current row walk above governs this CC handoff.
+
 # Slice27 CC closing report — initial assignment, proposed done
 
 Implementer `/root/s27_cc` returns the preserved [initial assignment](cc-prompt.md)
