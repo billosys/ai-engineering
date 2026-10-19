@@ -530,13 +530,14 @@ The **Cover** centres one child vertically within a minimum-height
 container (hero sections, full-viewport panels). The **Grid** creates
 repeating equal-width columns using `auto-fit` and `minmax()`, requiring
 no column count declaration --- the number of columns is derived from
-the minimum item width and the available space. The **Frame** locks
-media to an aspect ratio. The **Reel** creates horizontal overflow
+the minimum item width and the available space. The **Frame** constrains
+media to a chosen aspect ratio. The **Reel** creates horizontal overflow
 scrolling (for example image strips); it is not a complete carousel with
 controls or announcements. The **Imposter** positions an element outside
 normal flow; it does not supply dialog/tooltip roles, names, focus or Escape behavior. The **Icon** sizes an
-inline SVG relative to its adjacent text. The **Container** provides the
-outermost width constraint for page content.
+inline SVG relative to its adjacent text. The **Container** is also listed in Every Layout's vocabulary; its paid
+definition is a reading pointer here, not a verified width-wrapper recipe. The
+worked `.page` wrapper below is this guide's own width-constraint illustration.
 
 Together, these thirteen primitives offer reusable ways to describe spatial
 relationships. They can help compose cards, headers, navigation, forms and
