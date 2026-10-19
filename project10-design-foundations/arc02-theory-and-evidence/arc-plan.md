@@ -8,7 +8,7 @@ depends-on: [arc01-portable-contract Operator-accepted composition]
 
 ## Capability and authority
 
-Plan revision **1.73**, updated2026-10-19 under the Operator-approved
+Plan revision **1.74**, updated2026-10-19 under the Operator-approved
 [bounded reassessment](../project-plan.md#bounded-reassessment--operator-approval-2026-10-16).
 Deliver corrected portable design content, complete233-card/eight-live-file
 review/reconciliation, and usable accessibility/typesetting with actual behavior
@@ -68,13 +68,14 @@ remain in the previous plan revision and the unchanged child/history records.
 | [Slice24 — colour models/evidence boundaries](slice24-colour-models-and-evidence-boundaries/slice-plan.md) | Closed: [independent acceptance](slice24-colour-models-and-evidence-boundaries/cdc-verification.md#iteration02-independent-review--current-verdict-2026-10-18) at SOURCE154a5b76/CC72f2c482; supported19-card/two-guide corrections,owning1.0.21; original fidelity unresolved. |
 | [Slice25 — live methods/retained behavior](slice25-live-methods-and-retained-behavior/slice-plan.md) | Closed: [independent acceptance](slice25-live-methods-and-retained-behavior/cdc-verification.md) at SOURCE494a4b95/CCda690a27; actual12browser cells/3identity proposals,owning1.0.22; native/axis/fidelity/full-corpus limits retained. |
 | [Slice26 — modernist typography in context](slice26-modernist-typography-in-context/slice-plan.md) | Closed: [independent acceptance](slice26-modernist-typography-in-context/cdc-verification.md) at SOURCE523ab425/CC04469147;19contextual historical cards,local semantics/exact14metadata repairs,owning1.0.23; original fidelity unresolved. |
+| [Slice27 — perception/shape/grouping](slice27-perception-shape-and-grouping/slice-plan.md) | Active:17connected Arnheim cards; supported math/CSS/analogy/context corrections and exact local graph/CQ reconciliation; source523ab425,CC `/root/s27_cc`,independent CDC. |
 | Remaining source/topic cohorts | Read complete connected cards plus affected guide passages; fix supported defects, check actual local edges/CQ components and preserve revision lineage together. Depends only on the evidence each result uses. |
 | Live methods and usage checks | Complete eight-live-file review, required identity specimens, accessibility/typesetting procedures and actual retained-behavior checks together where relevant. Use accepted local decisions; full-corpus closure is not a prerequisite for unrelated task delivery. |
 | Input completion | Use existing P10-11 actions once selected originals/captures are available. Separately authorized preparation may be evidence-only when it is the real blocker; preserve dependent gates. |
 | Final Arc02 composition | Reconcile complete result union, remaining conflicts/findings and task evidence; deliver final1.1.0 bump/checks and usable Arc04 handoff. Requires the full ledger and independent/Operator composition gate. |
 
-Rows after Slice26 are delivery choices, not issued assignments or a fixed slice
-count. Slice26 is closed; choose the next supported connected Arnheim correction
+Rows after Slice27 are delivery choices, not issued assignments or a fixed slice
+count. Slice27 is the current connected Arnheim perception/shape/grouping correction
 cohort from complete available evidence. Prefer
 several related cards/guide contexts when coherent; split for actual input/context
 or implementation risk, not one field/card/dimension by default. The47 provisional
@@ -143,8 +144,8 @@ no automatic Arc04 work, merge, push or publication.
 Expedited Mode. Slices01–26 are closed at recorded bounded scopes.
 Slice26 delivered contextual19-card Tschichold teaching, exact14metadata repairs
 and72typed/71body/CQlineage reconciliation at523ab425/04469147. All19fidelity
-results remain input-blocked. Next choose the supported Arnheim perception/shape/
-grouping cohort; no new slice is issued by this close itself. Continue review,
+results remain input-blocked. Active [Slice27](slice27-perception-shape-and-grouping/slice-plan.md) now addresses
+17connected perception/shape/grouping cards at523ab425. Continue review,
 supported fixes and local semantics together rather than another readiness phase.
 Final8payload/behavior applicability and local-font/native/AT limits remain
 explicit for later composition. All ten arc/thirteen project criterion states,
@@ -478,3 +479,5 @@ inputs now that the sequencing hold is lifted.
   obligations. Issued bounded source-independent fluid-scale evidence Slice01.
 
 - 1.73 (2026-10-19): Slice26 independently closes19-card contextual historical teaching/local semantics at523ab425/04469147; continue supported Arnheim work, with all parent/input/release gates unchanged.
+
+- 1.74 (2026-10-19): Open Slice27 connected17-card perception/shape/grouping corrections after Slice26 close075923bf; explicit existingmetadata/identifier repairs, same-batch semantics, all input/parent/release gates unchanged.

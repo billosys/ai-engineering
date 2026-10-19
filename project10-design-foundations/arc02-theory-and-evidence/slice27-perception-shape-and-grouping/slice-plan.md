@@ -1,0 +1,57 @@
+---
+slice: slice27-perception-shape-and-grouping
+status: active
+depends-on: [accepted live methods; available Arnheim card evidence]
+---
+
+# Slice27 — Perception, Shape and Grouping
+
+Revision **1.0**,2026-10-19. Project1.75 / Arc02 Autonomous Mode; CDC Sofie
+`/root`, implementing CC `/root/s27_cc`, independent review in `cdc-verification.md`.
+SOURCE `.worktrees/design-arc02-autonomous`, branch `codex/project10-arc02-autonomous`,
+exact `523ab4250793eb5d46ea433acd685829b83dcffd`. PLANNING predecessor `075923bf1520c17ca5788ccd8739f0d579dc86db`; adding commit issues
+[cc-prompt.md](cc-prompt.md). All four [criteria](ledger.md) start open.
+
+## Useful delivery and author readiness
+
+Correct the connected17-card Arnheim perception/shape/grouping family, retaining
+concrete teaching while fixing elementary math/CSS, false exact analogies,
+universal aesthetic/causal claims and local graph/question inconsistencies.
+Root read every line of all17baseline cards (2532lines/183599bytes), complete
+independent preparation, relevant external endpoint premises and current methods;
+all17inputs remain byte-equal at523ab425. Root resolved construction, metadata,
+identifier and question choices in the prompt rather than issuing an audit-only
+phase or delegating consequential design choices. Focused primary continuity,
+MDL/SRP/BEM/CSS definitions and analytic counterexamples inform current technical
+repairs, not fidelity to the unavailable represented Arnheim edition/page basis.
+
+Scope: all17bodies plus only specified existing metadata values; owning SKILL
+version1.0.23→1.0.24 and whole-history-preserving append. All216other whole cards,
+161source files,6guides and other source objects fixed. Preserve existing heading
+structure, literal SourceReference bodies and reported quoted wording/named
+examples. No absent fields, schema migration, new cards, empirical study or source
+acquisition. Exactly one supporting batch artifact plus closing/ledger CC outputs.
+
+93predecessor typed occurrences become82after two explicit alias resolutions and
+11unresolvable typed-comparison retirements; the underlying conceptual comparisons
+remain useful body teaching with complete lineage. Review all120predecessor body
+bullets (111named/9absence observations) separately, mapping actual current changes.
+All39question memberships/seven exact texts remain, with actual answer components
+and gaps. All17original-fidelity outcomes stay unassessed/input-blocked.
+
+One connected batch combines review/fix/local semantic reconciliation with
+adequate context headroom. No per-line five-row quota, maintained new validator,
+future slice tree or corpus-copy artifact. Sequential required native gates and
+fresh8committed payloads apply. Retain Slice25 behavior/identity only after its
+unchanged6guides/operative-SKILL bridge; no new browser/AT/hosted claim. Parents,
+full233/global/source/finality/Operator/release gates remain unchanged.
+
+## Assignment history
+
+- Initial/current [cc-prompt.md](cc-prompt.md),2026-10-19, exact source/P predecessor
+  above; direct routine contributor handoff under recorded Arc02 AM.
+
+## Version History
+
+- 1.0 (2026-10-19): Open a connected17-card supported correction batch after
+  Slice26 independent close; preserve historical teaching and all higher gates.
