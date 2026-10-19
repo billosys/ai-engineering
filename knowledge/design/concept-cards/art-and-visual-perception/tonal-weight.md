@@ -25,9 +25,8 @@ extends:
 related:
   - "weight-of-colour"
   - "visual-balance"
-  - "contrast"
+  - "tonal-contrast"
 contrasts_with:
-  - "weight-by-size"
   - "weight-by-location"
 answers_questions:
   - "How does the visual-elements concept of 'value' (light-dark range) connect to colour theory's 'lightness' and to contrast as a design principle?"
@@ -37,29 +36,31 @@ rosetta_stone:
     domain: "mathematics"
     concept: "Irradiation / blooming (optical spreading of light)"
     rating: "structural"
-    note: "Irradiation — the optical phenomenon where bright surfaces appear larger than dark surfaces of equal physical size — directly explains why a white area must be larger than a black area to achieve equal visual weight; this is a physically grounded structural mapping."
+    note: "Arnheim’s irradiation account links apparent extent and counterbalancing; the quotation requires black larger than white. No radius fraction, equal-apparent-area reversal or universal mechanism is established."
 css_implementation:
   -
     property: "opacity"
-    example: "opacity: 0.4; /* reduces both lightness and visual weight of secondary elements */"
+    example: "opacity: 0.4; /* composites element and descendants with backdrop; no fixed lightness direction */"
     support: "baseline"
   -
-    property: "color (text) / background-color"
-    example: "color: #111; background: #fff; /* high-contrast dark text: heavy tonal weight */"
+    property: "color / background-color"
+    example: "color: #111; background-color: #fff; /* explicit pair; ratio and emphasis are different judgments */"
     support: "baseline"
   -
-    property: "mix-blend-mode / filter: brightness()"
-    example: "filter: brightness(0.6); /* darkens element, increasing contrast weight against light background */"
+    property: "filter: brightness()"
+    example: "filter: brightness(0.6); /* changes rendered channels; resolve final text/background pair */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Tonal weight is the component of visual weight contributed by an element's lightness or darkness: bright colours and high-contrast elements carry more visual weight than dim or low-contrast ones, and a black area must be larger than a white area to achieve equal perceptual weight due to irradiation.
+Tonal weight describes the contextual contribution of light-dark appearance to compositional influence. Chapter I reports brighter colours as heavier and a larger black area counterbalancing white; this is distinct from a universal tone-to-weight law.
 
 # Core Definition
 
-Arnheim identifies tonal value (lightness/darkness) as a distinct determinant of visual weight within his general discussion of weight factors: "As to *color*, red is heavier than blue, and bright colors are heavier than dark ones." The specific tonal relationship is clarified by the irradiation effect: "A black area must be larger than a white one to counterbalance it; this is due in part to irradiation, which makes a bright surface look relatively larger." Irradiation is the optical phenomenon by which bright areas appear to spread into adjacent dark areas, making bright elements look physically larger than they are — and therefore tonally heavier per unit of actual size. This means the relationship between lightness and weight is not simple: bright elements are heavier *per unit of perceived size*, but because they appear larger, a white area needs more physical extent to generate the same counterbalancing force as a black area.
+This is the represented Arnheim account. Its quotations, page/figure references and historical, experimental or neural claims have not been checked against the unavailable original. The analytic qualifications below do not certify source fidelity.
+
+This card synthesises a tonal-value contribution from Arnheim’s broader discussion of weight factors: "As to *color*, red is heavier than blue, and bright colors are heavier than dark ones." The specific tonal relationship is clarified by the irradiation effect: "A black area must be larger than a white one to counterbalance it; this is due in part to irradiation, which makes a bright surface look relatively larger." The quoted relationship says **black must be larger**, not white. Arnheim’s irradiation explanation is a reported account of apparent spreading, not a verified mechanism for every surround or viewing condition. Physical area, apparent area and compositional weight must remain distinct; no reversal at equal apparent area is established. The Chapter VII colour-weight synthesis instead calls darker colours heavier. These represented accounts remain contextual rather than being combined into one universal rule.
 
 # Prerequisites
 
@@ -67,76 +68,81 @@ Arnheim identifies tonal value (lightness/darkness) as a distinct determinant of
 
 # Key Properties
 
-1. Bright colours are heavier than dark ones of equal apparent size.
-2. High-contrast elements (foreground strongly differentiated from background) carry more weight than low-contrast elements.
-3. **Irradiation**: bright surfaces appear larger than dark surfaces of equal physical size — a white area looks bigger than an equal-sized black area.
-4. To achieve equal visual weight, a black area must be physically larger than a white area (irradiation compensates for the apparent size difference).
-5. Tonal weight is separate from hue-based weight: both operate simultaneously and must be considered together.
+1. The brighter-is-heavier claim belongs to the represented Chapter I account.
+2. Contrast with the surrounding field can matter to prominence; tone alone is not a calibrated weight.
+3. **Irradiation**: The source reports bright surfaces appearing larger; no one-third-radius optics is established here.
+4. The retained quotation requires the black area to be physically larger in its reported counterbalancing example.
+5. Tone, hue, chroma, size and context interact; separate descriptions do not establish independent additive contributions.
+6. Under a declared flat encoded-sRGB compositing model, black at opacity 0.4 over white gives grey 0.6, while white at 0.4 over black gives 0.4. Opacity composites the element and descendants and does not always darken them; neither direction proves salience.
 
 # Construction / Recognition
 
 ## To Identify/Recognise:
-1. An element that appears heavier than its size warrants is likely high-contrast or bright against its background.
-2. A dark element on a dark background has low visual weight despite its tonal value; the key factor is contrast with the immediate surround, not absolute lightness.
-3. When comparing black and white elements, the white tends to look larger — this apparent size difference must be corrected if equal physical size is desired.
+1. Compare an element with its actual surround, physical area and apparent extent.
+2. Distinguish a dark-on-dark visibility problem from an intrinsic rule about dark weight.
+3. Record the viewing conditions before proposing an optical adjustment.
 
 ## To Construct/Create:
-1. Use high contrast (light on dark or dark on light) to increase an element's visual weight for hierarchical emphasis.
-2. Use low contrast (element close in lightness to its background) to reduce weight for de-emphasis.
-3. When balancing dark against light areas, make the dark area larger to compensate for irradiation.
-4. In typography, bold weight increases both mass (more ink) and contrast (sharper edges against the page) — both factors increase tonal weight.
+1. Choose emphasis from the task and inspect complete rendered pairs.
+2. De-emphasise supporting content only while preserving applicable contrast and legibility.
+3. Treat the black/white counterbalance as a reported comparison, not a required size recipe.
+4. Use an available font weight where appropriate; thicker strokes do not automatically change the foreground/background ratio.
 
 # Context & Application
 
-- **Typical contexts**: Tonal hierarchy in typography and layout; contrast design for accessibility and emphasis; designing with dark and light zones in UI.
-- **Common applications**: A black heading on white paper carries substantial tonal weight. A light grey label on white background has minimal tonal weight — appropriate for de-emphasis. A white call-to-action button on a dark blue card is tonally prominent (high contrast) despite being smaller than the card. In data visualisation, a dark data point on a light background carries more weight than a grey data point — both communicate hierarchy.
-- **Historical/stylistic notes**: Arnheim's mention is part of a larger discussion of value-contrast in painting. The irradiation effect was a practical concern for painters: a white highlight must be physically smaller than the dark area it sits in if the two are to appear equal in visual mass.
+- **Typical contexts**: Typographic hierarchy, contrast review and light/dark zones in composition.
+- **Common applications**: A black heading on white, a grey label, a white CTA on dark blue, and dark versus grey data points illustrate candidate differences to inspect. A pale label is not automatically suitable supporting text. Preserve supplied roles and check actual states, fonts and pairs.
+- **Historical/stylistic notes**: The irradiation account belongs to Arnheim’s weight discussion; neither the source quote nor this correction establishes a universal optical compensation rule.
 
 ## Cross-Domain Connections
 
-**Mathematics → STRUCTURAL**: Irradiation is a quantifiable optical phenomenon: bright surfaces appear to extend approximately 1/3 of their radius into adjacent dark areas (the value varies by contrast ratio and viewing conditions). This grounding in measurable optical physics makes the tonal weight concept more rigorous than pure intuition, though the precise quantitative mapping to visual weight is not established by Arnheim.
+**Mathematics → STRUCTURAL**: Apparent extent and compositional influence are distinct comparisons. No fixed fraction of a radius or quantitative mapping to visual weight is supported. CIE lightness is brightness relative to a similarly illuminated white; WCAG relative luminance, Munsell value and Oklab L are different quantities.
 
 # Examples
 
-**Example 1** (p. 19): "bright colors are heavier than dark ones. The patch of a bright red bedcover in Van Gogh's painting of his bedroom creates a strong off-center weight." Note: this combines hue weight (red) and tonal brightness; both amplify the weight of the bedcover.
+The following are reported examples from the existing extraction. Exact quotations, locators, experimental results and historical interpretation remain unassessed against the original; qualifying an example does not verify it.
 
-**Example 2** (p. 19): "A black area must be larger than a white one to counterbalance it; this is due in part to irradiation, which makes a bright surface look relatively larger." Direct statement of the irradiation-based compensation rule.
+**Example 1** (p. 19): "bright colors are heavier than dark ones. The patch of a bright red bedcover in Van Gogh's painting of his bedroom creates a strong off-center weight." The bedcover is a reported example combining colour and placement; no independent additive or multiplicative factors are measured.
+
+**Example 2** (p. 19): "A black area must be larger than a white one to counterbalance it; this is due in part to irradiation, which makes a bright surface look relatively larger." Reported counterbalancing account, with black larger; it does not prescribe every rendering.
 
 # Relationships
 
 ## Builds Upon
-- **Visual weight** — Tonal weight is a specific factor within the general concept of visual weight.
+- **Visual weight** — Tonal weight elaborates contextual light-dark influence.
 
 ## Enables
-- **Visual balance** — Knowing that bright areas are heavier enables precise calibration of balanced compositions using tonal contrasts.
-- **Contrast as design principle** — Tonal weight connects to contrast: elements that contrast strongly with their background have more weight than those that blend.
+- **Visual balance** — Tonal differences can inform a comparison, without precise mass calibration.
+- **Contrast as design principle** — The actual tonal-contrast card distinguishes appearance from rendered-pair ratio.
 
 ## Related
-- **Weight of colour** — Hue contributes to weight independently of tonal value; both operate simultaneously.
-- **Visual balance** — Tonal weight is one of several variables that must be balanced in a composition.
+- **Weight of colour** — Hue, chroma and tone are distinct descriptions that interact in the composition.
+- **Visual balance** — Tone is one consideration in judging compensation.
 
 ## Contrasts With
-- **Weight by size** — Size and tone are independent weight determinants; a small bright element can outweigh a large dim one.
-- **Weight by location** — Location-based weight and tonal weight are independent; a tonally heavy element in a weak position may still create compositional imbalance.
+- **Weight by size** — Conceptual comparison without a resolved endpoint: physical extent and light-dark appearance need separate description.
+- **Weight by location** — A scoped comparison of tone and placement, without asserting independent contributions.
 
 # Common Errors
 
-- **Error**: Assuming dark = heavy, light = light (simple luminance mapping).
-  **Correction**: Bright elements are tonally heavier per unit of apparent size, but apparent size is itself inflated by irradiation. The relationship is more complex: in equal physical areas, white outweighs black, but in equal apparent areas, the relationship reverses. Most design decisions require considering both the physical and apparent size effects together.
+- **Error**: Reversing the black/white counterbalancing quotation or asserting an equal-apparent-area reversal.
+  **Correction**: The quoted account requires black larger than white. No universal reversal is established; physical area, apparent extent and weight differ.
 
-- **Error**: Relying only on font-weight (bold/regular) as the primary contrast tool.
-  **Correction**: Tonal contrast between element and background is equally important. A bold label in light grey on white has lower tonal weight than a regular-weight label in near-black on white.
+- **Error**: Relying only on bold/regular as the contrast tool.
+  **Correction**: Inspect the actual rendered pair as well as font, size and stroke structure. A bold pale label can fail contrast even when it looks emphatic.
 
 # Common Confusions
 
-- **Confusion**: "Tonal weight" and "value" (in colour theory) are the same concept.
-  **Clarification**: They are closely related but not identical. Munsell "value" (lightness on a 0-10 scale) describes the absolute perceptual lightness of a colour. Tonal weight in Arnheim's sense is the contribution of that lightness to the element's compositional force — which also depends on the element's context (background lightness, size, irradiation effects). Value is the measurement; tonal weight is the compositional consequence.
+- **Confusion**: Tonal weight, Munsell value, Oklab L and WCAG relative luminance are interchangeable.
+  **Clarification**: Value describes light-dark appearance within a system; CIE lightness is relative to a similarly illuminated white. Oklab L is a model coordinate, while WCAG relative luminance is computed from linearised sRGB. None is physical mass or context-free absolute appearance, and none alone establishes compositional weight.
 
 # Source Reference
 
 Chapter I: Balance, "Art and Visual Perception," pp. 18-19. The "Weight" section discusses tonal factors within the broader enumeration of weight determinants.
 
 # Verification Notes
+
+The bullets below are frozen historical extraction notes, including their confidence and mapping labels; they are not current verification or independent acceptance. Current supported corrections distinguish analytic geometry/CSS from contextual perceptual reports; original-dependent fidelity remains unassessed.
 
 - Definition source: Direct quotes from p. 19 ("bright colors are heavier than dark ones"; "A black area must be larger than a white one"). Arnheim does not provide a separate named section for tonal weight — it is synthesised from within the "Weight" discussion.
 - Confidence rationale: Medium — the specific statements about brightness and irradiation are clear and direct, but Arnheim does not elaborate extensively. The card synthesises his brief mentions into a more complete account.

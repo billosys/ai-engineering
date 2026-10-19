@@ -27,120 +27,125 @@ related:
   - "top-bottom-asymmetry"
   - "left-right-asymmetry"
 contrasts_with:
-  - "weight-by-size"
-  - "weight-by-colour"
+  - "weight-of-colour"
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "Given a data-rich card (title, status badge, three metrics, timestamp, action button), how do you assign visual hierarchy: what gets the most weight, what gets de-emphasized, and why?"
-  - "A card layout uses 16px padding inside cards, 16px between cards, and 16px between card title and body text. Everything feels 'flat.' What principle was violated, and what's the fix?"
 rosetta_stone:
   -
     domain: "mathematics"
     concept: "Moment of force / torque (lever arm)"
-    rating: "rigorous"
-    note: "Arnheim explicitly applies the lever principle: visual weight increases with distance from the compositional centre — exactly the definition of torque (force × distance). An element far from centre exerts greater compositional moment than one near it, regardless of size."
+    rating: "structural"
+    note: "Physical torque requires force direction and perpendicular lever distance; support, attention and visual counterbalancing are different judgments, without a measured pixel-distance law."
 css_implementation:
   -
-    property: "position / margin"
-    example: "position: absolute; top: 0; left: 50%; /* centred position — structurally strong, carries less compensating weight than off-centre */"
+    property: "position / transform"
+    example: "position: absolute; width: 100px; margin: 0; left: 50%; transform: translateX(-50%); /* centre box in a declared containing block */"
     support: "baseline"
   -
-    property: "z-index / elevation"
-    example: "z-index: 10; box-shadow: 0 8px 32px rgba(0,0,0,0.2); /* visual depth adds locational weight */"
+    property: "z-index / box-shadow"
+    example: "z-index: 10; box-shadow: 0 8px 32px rgba(0,0,0,0.2); /* scoped paint order and shadow; no guaranteed depth or priority */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-An element's visual weight is significantly determined by its location within the composition: positions on structural skeleton features (centre, axes, diagonals) confer stability but less counter-balancing leverage, while off-centre positions exert increasing weight proportional to their distance from the centre (the lever principle).
+Weight by location describes how placement can affect compositional influence. Support or stability at a structural position, prominence or interest, and counterbalancing leverage are distinct; none is established here as proportional to pixel distance.
 
 # Core Definition
 
-Arnheim identifies location as one of the primary determinants of visual weight: "Weight is influenced by *location*. A 'strong' position on the structural framework (Figure 3) can support more weight than one lying off-center or away from the central vertical or horizontal." This creates a compositional rule that mirrors the physics of the lever: "According to the lever principle, which can be applied to visual composition, the weight of an element increases in relation to its distance from the center." A small element placed far from the compositional centre can therefore counterbalance a larger element placed near it. This is why "a pictorial object in the center can be counterbalanced by smaller ones placed off-center. The central group in paintings is often quite heavy, with weights petering out toward the borders, and yet the whole picture looks balanced."
+This is the represented Arnheim account. Its quotations, page/figure references and historical, experimental or neural claims have not been checked against the unavailable original. The analytic qualifications below do not certify source fidelity.
 
-Location also creates specific asymmetries: objects weigh more in the upper part of the visual field than in the lower (anisotropy of visual space), and objects on the right side of the composition weigh more than equivalent objects on the left.
+Arnheim identifies location as one of the primary determinants of visual weight: "Weight is influenced by *location*. A 'strong' position on the structural framework (Figure 3) can support more weight than one lying off-center or away from the central vertical or horizontal." Arnheim proposes a qualitative comparison with the lever: "According to the lever principle, which can be applied to visual composition, the weight of an element increases in relation to its distance from the center." A small peripheral element may counterbalance a larger central one in a particular composition, without an exact force-distance equation. This is why "a pictorial object in the center can be counterbalanced by smaller ones placed off-center. The central group in paintings is often quite heavy, with weights petering out toward the borders, and yet the whole picture looks balanced."
+
+The source also reports vertical and lateral asymmetries. Those contextual accounts do not prove all upper or right positions heavier, or automatic reversal with reading direction.
 
 # Prerequisites
 
-- **Visual weight** — Weight by location is a specific modulator of visual weight; the general concept must be understood first.
-- **Structural skeleton of composition** — The skeleton defines the strong and weak locations; location-based weight is relative to the skeleton.
+- **Visual weight** — Supplies the general vocabulary of relative influence.
+- **Structural skeleton of composition** — Supplies a proposed positional reference, distinct from authored Grid tracks.
 
 # Key Properties
 
-1. **Lever principle**: Weight increases with distance from the compositional centre — a small element far from centre can balance a large one near it.
-2. **Strong positions** (on skeleton features — centre, axes, diagonals) support more weight; they provide stability to heavier elements.
-3. **Off-centre positions** confer leverage: the further from centre, the greater the counterbalancing power.
-4. **Upper locations** carry more weight than lower ones in the same format (anisotropy of visual space).
-5. **Right-side locations** carry more weight than equivalent left-side positions (lateral asymmetry).
-6. **Spatial depth** increases weight: a more distant element appears larger and carries more compositional weight than a similar element in the foreground.
+1. **Lever comparison**: Small peripheral elements may counterbalance larger central ones; proportionality to distance is not established.
+2. **Support**: A structural position is described by Arnheim as supporting weight; support is distinct from apparent weight.
+3. **Leverage**: Counterbalancing depends on the chosen reference and whole configuration, not the document origin.
+4. **Upper locations**: The represented vertical account is contextual, not a universal compensation requirement.
+5. **Right-side locations**: The represented lateral account distinguishes weight, importance, identification and conspicuity.
+6. **Depicted depth**: Manet’s distant girl has reported compositional importance, not necessarily increased apparent physical size.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Place the heaviest element near the compositional centre, or offset it slightly and compensate with smaller elements at greater distances.
-2. Apply the lever principle explicitly: if the main subject is off-centre, estimate how much counterbalancing weight is needed at the corresponding distance on the other side.
-3. Be aware that elements in the upper portion of the composition need to be lighter than equivalent elements in the lower portion to achieve vertical balance.
-4. Account for lateral bias: elements on the right side appear heavier — compensate by making left-side equivalents larger or more saturated.
+1. Select placement from content, task and intended expressive effect.
+2. Compare alternative locations with the actual frame and other elements.
+3. Treat vertical and lateral examples as hypotheses for this composition; do not mandate lighter upper/peripheral elements.
+4. Preserve meaningful source, script and navigation order when changing spatial placement.
+5. With zero margins, a 100px positioned box in a 400px containing block at left:50% has left edge 200px and centre 250px. Translating it by −50% of its own 100px width centres it at 200px in this declared setup; the containing block and other insets still matter.
 
 ## To Identify/Recognise:
-1. A composition that looks bottom-heavy may have too much visual weight concentrated below centre.
-2. A composition that looks right-heavy may need more weight introduced on the left.
-3. A small element that "punches above its weight" in a composition is probably at a large distance from the compositional centre or in a high structural position (upper, right, or on a skeleton feature).
+1. Describe the actual area that feels dominant, rather than infer its weight from coordinates.
+2. Compare support/stability, attention and counterbalancing separately.
+3. Inspect actual size, colours, content and frame before attributing a tiny accent that "punches above its weight" to distance.
 
 # Context & Application
 
-- **Typical contexts**: UI layout (header weight, sidebar balance, CTA placement), page layout design, poster composition, dashboard information hierarchy.
-- **Common applications**: In card design, placing a large image at top creates upper-zone weight that must be balanced by text and CTA weight below. A primary CTA placed at bottom-right acquires additional weight from its distance from the top-left origin and from being on the right — this can compensate for its smaller size relative to the image. In typography, a headline at the top of a page carries more weight than the same headline in the middle — positioning amplifies weight.
-- **Historical/stylistic notes**: Arnheim observes that in realistic landscapes of the 17th-18th centuries, "the bottom part tends to be clearly heavier. The center of gravity is placed below the geometrical center." This grounds compositions firmly in gravitational space. Modern design and abstract art often deliberately resist this convention by distributing weight evenly across the format.
+- **Typical contexts**: Header/sidebar composition, card content, posters and dashboard hierarchy.
+- **Common applications**: An image, title, status, metrics, time and action can receive different emphasis for different tasks. An urgent fault may prioritise status/action; routine comparison may prioritise metrics. Bottom-right CTA placement is not mandatory and the CSS top-left origin is not a compositional fulcrum. An absent artifact prevents a particular hierarchy result, not teaching this comparison method.
+- **Historical/stylistic notes**: Arnheim reports that in realistic landscapes of the 17th–18th centuries "the bottom part tends to be clearly heavier. The center of gravity is placed below the geometrical center." This is contextual composition history, not a rule for modern interfaces.
 
 ## Cross-Domain Connections
 
-**Mathematics → RIGOROUS**: The lever principle (torque = force × distance from fulcrum) is Arnheim's own explicit framework. Visual weight at a distance d from the compositional centre exerts a "visual torque" of weight × d, which must be balanced by equal torque on the opposite side. This is not an analogy — Arnheim directly applies the lever principle.
+**Mathematics → STRUCTURAL**: Physical torque is r × F with magnitude rF sin(θ). At fixed r and F, a parallel force gives zero torque while a perpendicular force gives rF. Arbitrary radial distance and visual interest do not provide a calibrated "visual torque" calculation.
 
 # Examples
 
+The following are reported examples from the existing extraction. Exact quotations, locators, experimental results and historical interpretation remain unassessed against the original; qualifying an example does not verify it.
+
 **Example 1** (p. 19): "According to the lever principle, which can be applied to visual composition, the weight of an element increases in relation to its distance from the center. In any particular example, of course, all the factors determining weight must be considered together."
 
-**Example 2** (p. 22): The bisection experiment: observers asked to bisect a vertical line without measuring consistently place the mark too high — the upper half appears shorter. "If one wants the two halves to look alike, one must make the upper half shorter" — demonstrating that the upper visual field carries more weight per unit of size.
+**Example 2** (p. 22): The bisection experiment: Arnheim reports observers placing a bisection mark too high. This adjustment must be distinguished from which half of an already bisected line appears longer. "If one wants the two halves to look alike, one must make the upper half shorter" — reported wording, not a calibrated weight-per-size result.
 
-**Example 3** (p. 25-26): Wölfflin's observation that Raphael's Sistine Madonna changes character when inverted: "when the figure of Sixtus...is moved to the right by inverting the painting, he becomes so heavy that the whole composition seems to topple" — demonstrating right-side weight amplification.
+**Example 3** (p. 25-26): Wölfflin's observation that Raphael's Sistine Madonna changes character when inverted: "when the figure of Sixtus...is moved to the right by inverting the painting, he becomes so heavy that the whole composition seems to topple" — a reported Raphael/Wölfflin comparison, not a universal lateral law.
 
 # Relationships
 
 ## Builds Upon
-- **Visual weight** — Location modulates weight; the base concept of weight is prerequisite.
-- **Structural skeleton** — The skeleton defines which locations are strong and which generate leverage.
+- **Visual weight** — Position elaborates the broader concept of influence.
+- **Structural skeleton** — Provides a frame for comparing locations, not a physical fulcrum.
 
 ## Enables
-- **Visual balance** — Applying the lever principle is one of the primary techniques for achieving balance with asymmetric arrangements.
-- **Top-bottom asymmetry** — A detailed analysis of how weight differs between upper and lower zones of a composition.
-- **Left-right asymmetry** — A detailed analysis of how weight differs between left and right zones.
+- **Visual balance** — Location is one way to explore asymmetric compensation.
+- **Top-bottom asymmetry** — Elaborates the represented vertical-placement account.
+- **Left-right asymmetry** — Elaborates the represented lateral-placement account.
 
 ## Related
-- **Visual balance** — Location-based weight is one of the variables that balance must equalise.
+- **Visual balance** — The actual configuration connects location and a compensation judgment.
 
 ## Contrasts With
-- **Weight by size** — Size is a different determinant of weight; location-based weight can override size-based weight (a tiny element far from centre can outweigh a large element near it).
-- **Weight by colour** — Colour is another independent determinant; all factors must be considered together.
+- **Weight by size** — Conceptual comparison without a resolved endpoint: size and location may affect emphasis differently, without an additive law.
+- **Weight by colour** — The actual weight-of-colour card discusses colour attributes; these interact with placement rather than form an independent mass term.
 
 # Common Errors
 
-- **Error**: Treating the compositional centre as the only strong position.
-  **Correction**: Elements on any skeleton feature (horizontal axis, vertical axis, diagonals) occupy strong positions. The centre is the strongest but not the only one.
+- **Error**: Treating the compositional centre as the only useful position.
+  **Correction**: The source discusses axes and diagonals too; none guarantees stability for arbitrary content.
 
-- **Error**: Ignoring the leverage effect — placing counterbalancing elements too close to the dominant element.
-  **Correction**: The smaller the counterbalancing element, the further from centre it must be placed to achieve equivalent torque. A tiny accent that is too close to the heavy primary element provides insufficient balance.
+- **Error**: Calculating required compensation from pixel distance alone.
+  **Correction**: Physical torque needs force direction and perpendicular distance; visual counterbalancing needs the actual composition and a stated judgment.
 
 # Common Confusions
 
-- **Confusion**: Elements at the top are "more important" because they are seen first.
-  **Clarification**: Reading order and visual weight are related but distinct. Elements at the top carry more weight (requiring lighter elements or greater compensation below), but "first seen" is a temporal reading-order effect, not identical to compositional weight. A small element at the top can be overwhelmed by a large, saturated one below.
+- **Confusion**: First seen, important, apparently large and visually heavy mean the same thing.
+  **Clarification**: "first seen" concerns temporal reading order; "more important" concerns the task; apparent size and compositional influence are different judgments. Right/upper placement does not guarantee any of them.
 
 # Source Reference
 
 Chapter I: Balance, "Art and Visual Perception," pp. 18-26. See especially the "Weight" section on location (p. 18-19), "Top and Bottom" (pp. 22-25), and "Right and Left" (pp. 25-27).
 
 # Verification Notes
+
+The bullets below are frozen historical extraction notes, including their confidence and mapping labels; they are not current verification or independent acceptance. Current supported corrections distinguish analytic geometry/CSS from contextual perceptual reports; original-dependent fidelity remains unassessed.
 
 - Definition source: Direct quote from p. 18 ("Weight is influenced by *location*...") and p. 19 (lever principle). Synthesised from the "Weight" and "Top and Bottom" sections.
 - Confidence rationale: High — Arnheim explicitly names location as a determinant, applies the lever principle directly, and provides experimental evidence (bisection experiment) and art-historical examples.

@@ -170,3 +170,8 @@ do not guarantee outcomes across content, users or browsers.
 
 - Correct the connected perception, shape and grouping cards: parametric versus geometric continuity, topology and perceptual axes, similarity counterexamples, bounded complexity analogies, CSS clipping/easing and BEM examples.
 - Retain constructive historical teaching while separating represented source reports from current analytic support; original Arnheim fidelity remains unassessed. Reconcile two existing aliases and retire eleven unresolved typed contrast joins while preserving conceptual body comparisons; qualify existing Rosetta mappings and question contributions.
+
+## Version 1.0.25
+
+- Correct thirteen connected balance, tension and tonal cards: distinguish reported perceptual accounts from geometry, force/energy analogies and CSS mechanics; preserve source quotations/examples and unresolved original fidelity.
+- Reconcile the selected local relationship/question memberships and existing mapping/CSS notes without a universal weight, placement, palette or dark-theme prescription.
