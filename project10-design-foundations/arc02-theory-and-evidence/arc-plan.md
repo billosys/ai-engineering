@@ -8,7 +8,7 @@ depends-on: [arc01-portable-contract Operator-accepted composition]
 
 ## Capability and authority
 
-Plan revision **1.71**, updated2026-10-19 under the Operator-approved
+Plan revision **1.72**, updated2026-10-19 under the Operator-approved
 [bounded reassessment](../project-plan.md#bounded-reassessment--operator-approval-2026-10-16).
 Deliver corrected portable design content, complete233-card/eight-live-file
 review/reconciliation, and usable accessibility/typesetting with actual behavior
@@ -67,14 +67,15 @@ remain in the previous plan revision and the unchanged child/history records.
 | [Slice23 — editorial layout/structure](slice23-editorial-layout-and-structure/slice-plan.md) | Closed: [independent acceptance](slice23-editorial-layout-and-structure/cdc-verification.md) at SOURCEda9cb76c/CCc62b896a; seven editorial cards and packaged method; owning1.0.20. |
 | [Slice24 — colour models/evidence boundaries](slice24-colour-models-and-evidence-boundaries/slice-plan.md) | Closed: [independent acceptance](slice24-colour-models-and-evidence-boundaries/cdc-verification.md#iteration02-independent-review--current-verdict-2026-10-18) at SOURCE154a5b76/CC72f2c482; supported19-card/two-guide corrections,owning1.0.21; original fidelity unresolved. |
 | [Slice25 — live methods/retained behavior](slice25-live-methods-and-retained-behavior/slice-plan.md) | Closed: [independent acceptance](slice25-live-methods-and-retained-behavior/cdc-verification.md) at SOURCE494a4b95/CCda690a27; actual12browser cells/3identity proposals,owning1.0.22; native/axis/fidelity/full-corpus limits retained. |
+| [Slice26 — modernist typography in context](slice26-modernist-typography-in-context/slice-plan.md) | Active:19Tschichold cards,exact existing-field corrections and honest local semantics; source494a4b95,CC `/root/s26_cc`,independent CDC. |
 | Remaining source/topic cohorts | Read complete connected cards plus affected guide passages; fix supported defects, check actual local edges/CQ components and preserve revision lineage together. Depends only on the evidence each result uses. |
 | Live methods and usage checks | Complete eight-live-file review, required identity specimens, accessibility/typesetting procedures and actual retained-behavior checks together where relevant. Use accepted local decisions; full-corpus closure is not a prerequisite for unrelated task delivery. |
 | Input completion | Use existing P10-11 actions once selected originals/captures are available. Separately authorized preparation may be evidence-only when it is the real blocker; preserve dependent gates. |
 | Final Arc02 composition | Reconcile complete result union, remaining conflicts/findings and task evidence; deliver final1.1.0 bump/checks and usable Arc04 handoff. Requires the full ledger and independent/Operator composition gate. |
 
-Rows after Slice25 are delivery choices, not issued assignments or a fixed slice
-count. Slice25 is independently closed; continue the next supported book-card
-correction cohort. Prefer
+Rows after Slice26 are delivery choices, not issued assignments or a fixed slice
+count. Slice26 is the current connected modernist-typography correction
+cohort. Prefer
 several related cards/guide contexts when coherent; split for actual input/context
 or implementation risk, not one field/card/dimension by default. The47 provisional
 groups,161 headings and460 keyword candidates are navigation, not mandatory slices
@@ -141,8 +142,10 @@ criteria and Operator/input/composition gates survive. Stop at this arc's endpoi
 no automatic Arc04 work, merge, push or publication.
 Expedited Mode. Slices01–25 are closed at recorded bounded scopes.
 Slice25 delivered current live methods, actual12retained-browser conditions and
-3fresh-context proposals at494a4b95/da690a27. Continue supported remaining book
-cohorts; missing originals do not silently excuse other available review/fixes.
+3fresh-context proposals at494a4b95/da690a27. Active [Slice26](slice26-modernist-typography-in-context/slice-plan.md): the
+connected19Tschichold cards with exact metadata/semantic repairs. Continue other
+supported remaining book cohorts; missing originals do not silently excuse
+other available review/fixes.
 Final8payload/behavior applicability and local-font/native/AT limits remain
 explicit for later composition. All ten arc/thirteen project criterion states,
 missing-original/full233global and formal composition/Operator/release gates
@@ -158,6 +161,10 @@ composition and Operator gates remain; useful Arc04 preparation can use accepted
 inputs now that the sequencing hold is lifted.
 
 ## Version History
+
+- 1.72 (2026-10-19): Open connected19-card historical-typography correction
+  after Slice25; preserve originals/global obligations and exactly retire
+  unsupported tag memberships without dropping their question requirements.
 
 - 1.71 (2026-10-19): Close Slice25 after actual source/browser/identity/package
   review; retain failed case, local font/native limits and retrospective.
