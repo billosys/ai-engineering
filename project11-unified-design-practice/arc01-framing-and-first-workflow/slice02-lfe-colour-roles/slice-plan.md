@@ -6,7 +6,7 @@ depends-on: [accepted Slice01; LFE036e231]
 
 # Slice02 — Live LFE light/dark colour roles
 
-Revision1.0,2026-10-19; Project1.3/Arc1.1. Initial cc-prompt.md is current.
+Revision1.1,2026-10-19; Project1.3/Arc1.1. Initial cc-prompt.md is current.
 AM roles unchanged: CC OpenAI6LunaHigh sole LFE source/index/build writer;
 CDC/root independently inspects code and browser; P stays separate. Local commits
 only. No AI source/package change in this site implementation slice; S03 reconciles
@@ -35,3 +35,13 @@ CC reports source/build checks, never invents browser results.
 ## Version History
 
 - 1.0 (2026-10-19): Open real consumed colour-role delivery after S01 acceptance; preserve site identity/content/tooling and next-slice reading/interaction ownership.
+
+## Current assignment
+
+Was: initial cc-prompt.md atf232e713. Returned sourcea6c19f4d/P30bf31d8,
+independently reviewed in cdc-verification.md. Now: cc-prompt-iteration01.md repairs
+the actual hover consumer and calibrates the nominal brand pairing statement.
+Rows03/04 accepted at the initial scope;01/02 remain open. All other S02 work
+retained; no site composition or next-slice assignment yet.
+
+- 1.1 (2026-10-19): Record CDC's rendered hover-role finding and bounded I01; preserve all initial scope and evidence.
