@@ -6,7 +6,7 @@ depends-on: [accepted Slice01; accepted Slice02]
 
 # Slice03 — LFE editorial journey and actual revision
 
-Revision1.0,2026-10-19; Project1.3/Arc1.2. Current assignment cc-prompt.md.
+Revision1.1,2026-10-19; Project1.3/Arc1.2. Initial assignment cc-prompt.md; current ownership amendment cc-prompt-iteration01.md.
 Final Arc01 slice: deliver actual homepage orientation, quiet long-form reading,
 keyboard/wayfinding controls and a packaged worked-case revision at real pins.
 Tasks are inferred from supplied content, not participant evidence. Preserve
@@ -31,3 +31,21 @@ Final project/expert/fidelity/AT/release and main-integration gates survive.
 ## Version History
 
 - 1.0 (2026-10-19): Open final actual editorial/controls delivery and optional case reconciliation after accepted live roles.
+
+## Tool availability and phased handoff
+
+Was: CC would own browser2/tab2 for firsthand checks. Actual CC CUA surface does
+not expose that browser (only unrelated Chrome1); CDC's existing IAB2 remains
+available. No unrelated tab was touched. Now: CC first implements/checks/commits
+W, pauses W/index/build and hands its immutable revision to CDC. CDC then owns
+the existing preview, executes actual checks and writes the two authorized JPGs.
+CC may read D meanwhile but waits for real observations before reconciling the
+case. After CDC hands recorded observations back, CC finishes D/package/P return,
+attributing browser measurements to CDC, never to its own blocked invocation.
+CDC independently reviews final CC-authored source/case and own photographs are
+observational evidence, not an independent artistic/expert verdict. No additional
+reviewer role, scope expansion, gate weakening or public action. Initial prompt
+preserved; I01 is this environment/ownership continuation, not a failed source
+correction. Four criteria remain unchanged/open.
+
+- 1.1 (2026-10-19): Actual agent browser surfaces differ; sequence immutable W handback, CDC browser checks/images, then CC case/package completion.
