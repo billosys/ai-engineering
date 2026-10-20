@@ -332,6 +332,7 @@ erlang:
 cobalt:
 	$(call pack_skill,cobalt,SKILL.md)
 
+# The design bundle recursively includes guides/examples/lfe-workflow.md.
 design:
 	$(call pack_skill,design,SKILL.md)
 

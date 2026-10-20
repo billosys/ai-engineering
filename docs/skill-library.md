@@ -35,7 +35,7 @@ Every package listed below is produced by `make all`, included in
 |---|---|---|
 | `javascript-deno-guidelines.zip` | [`knowledge/js/SKILL.md`](../knowledge/js/SKILL.md) | Writing JavaScript with Deno-first conventions. |
 | `cobalt-guidelines.zip` | [`knowledge/cobalt/SKILL.md`](../knowledge/cobalt/SKILL.md) | Building or extending Cobalt static sites. |
-| `visual-design-system.zip` | [`knowledge/design/SKILL.md`](../knowledge/design/SKILL.md) | Designing UI, layout, typography, and color systems. |
+| `visual-design-system.zip` | [`knowledge/design/SKILL.md`](../knowledge/design/SKILL.md) | Framing a design task, comparing and revising directions, and choosing UI, layout, typography and colour approaches; includes an optional LFE homepage case. |
 | `tailwindcss.zip` | [`knowledge/tailwindcss/SKILL.md`](../knowledge/tailwindcss/SKILL.md) | Styling with Tailwind CSS v4. |
 | `deno-js-linter.zip` | [`knowledge/deno/SKILL-js-linter.md`](../knowledge/deno/SKILL-js-linter.md) | Applying Deno lint rules to JavaScript. |
 | `biome-js-linter.zip` | [`knowledge/biome/SKILL-js-linter.md`](../knowledge/biome/SKILL-js-linter.md) | Applying Biome JavaScript lint rules. |

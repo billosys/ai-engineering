@@ -8,7 +8,7 @@ description: |
   wayfinding, theming, or answering a visual design question.
 license: MIT
 metadata:
-  version: "1.1.0"
+  version: "1.2.0"
   hermes:
     tags: [design, css, color, typography, layout, oklch, cube-css, utopia]
     category: web-frontend
@@ -43,6 +43,7 @@ entrypoint.
 
 | Guide | Method | Load it when |
 |---|---|---|
+| [From a Brief to a Revised Design](guides/design-workflow.md) | A compact route from supplied task and evidence to distinct concepts, a provisional decision, critique and revision. | Framing a design task, comparing directions or turning an inspection into a concrete revision. |
 | [Design as Engineering](guides/design.md) | Principles, relationships, constraints and trade-offs, with room for contextual exceptions. | Reviewing or explaining a design decision. |
 | [Foundations of Design](guides/foundations-of-design.md) | Research context, source analysis, technical concepts and cross-domain discussion. | Looking for evidence or conceptual background; check each claim's scope. |
 | [Colour](guides/colour.md) | Start from supplied identity and colour roles, then choose and check actual pairs. | Selecting colours, mapping existing tokens or reviewing states and themes. |
@@ -54,6 +55,7 @@ entrypoint.
 
 | Task | Guides |
 |---|---|
+| Start or frame a design task | [From a Brief to a Revised Design](guides/design-workflow.md); optionally see its [LFE homepage case](guides/examples/lfe-workflow.md) for one project-specific application. |
 | Design a page | [Layout](guides/layout.md), [Colour](guides/colour.md), [Type](guides/type.md) |
 | Design a homepage or portal | [Breaking the Layout Monoculture](guides/breaking-the-layout-monoculture.md), [Layout](guides/layout.md), then relevant colour and type guidance |
 | Choose colours | [Colour](guides/colour.md), then the perception discussion in [Design as Engineering](guides/design.md) |

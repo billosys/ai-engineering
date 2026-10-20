@@ -216,3 +216,11 @@ correction milestone: portable identity, scoped colour/type/layout guidance,
 Preserve all prior correction history. Original-source fidelity, named conceptual
 and empirical gaps, isolated-package/final hosted checks, and formal project
 and release-readiness gates remain open; this milestone does not certify them.
+
+## Version 1.2.0 - 2026-10-19
+
+Add an actionable brief-to-design workflow with evidence and assumption
+distinctions, meaningful alternatives, provisional choice, critique and
+revision. Add an explicitly optional LFE homepage case grounded in its pinned
+source and route the workflow through the entrypoint. No LFE site changes,
+build, browser checks or user research were performed.
