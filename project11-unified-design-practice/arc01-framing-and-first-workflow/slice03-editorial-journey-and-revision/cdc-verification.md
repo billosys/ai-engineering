@@ -122,3 +122,47 @@ A minimal example is wrap-able header with a text flex basis and clamped local
 padding; exact implementation remains CC's. Recheck actual words/reading, not
 scrollWidth alone. This is completion of F06's usable adaptation, not new scope.
 I04 only3paths; root still withholds case results until actual readability passes.
+
+
+## I04 — actual site result accepted, final case/package return pending
+
+Current W1a64666cd7273ee97380bff163ed7642d13356df. Root read exact3path delta:
+scoped padding outside layers reaches actual utility consumers, wrapping header
+text basis, all data/icon/copy preserved; source clean, trailers correct.
+Actual390px/root32px feature headings now230.8125px (was88), Technology fits
+as a whole word below icon; quotation p302px (was198),12px inline padding;
+actual CUA scroll screenshots show readable multiword quotation lines. All9
+separate home/About/technical copies rerun at final source: scrollWidth390 and
+actual intended text/spacing/fallback values. Font200% is root32px/prose36px/61.2;
+spacing only body descendants1.5/.12em/.16em and p2em; fallback actual Georgia
+prose/system/mono declarations. These are authored adaptations, not native zoom
+or failed network requests. Visible enlarged reading—not width alone—passes.
+Native CUA scroll worked; an earlier body press locator deadline was recovered
+with actual scroll/focusable main. Optional FontFaceSet iteration wasn't supported
+by the read-only bridge; no font-download/single-face or failure-network claim.
+
+At final site, Learning More /learn redirects to/learn/, header/learn/ matches;
+Use also resolves and neither gets the About-only prose wrapper. Native mobile
+Download Tab/Enter/Escape, nested Escape and tab End→right wrap retested; 320px
+home has no overflow. The complete8tab/normal theme/skip/resize/storage findings
+above remain applicable: current JS equals accepted I02; final CSS changes only
+feature/quotation padding and header basis, not controllers or colour roles.
+Normal4page×2mode×2width16conditions at72c retained after actual deltas and final
+home/article rechecks; don't relabel all16 as freshly run at1a. Fixed code and
+S02 role values unchanged; original47foreground/12condition evidence stays at
+its own pins, not a new full-site colour certification.
+
+Root independently reran sequential make build→validate at1a after removing only
+10owned ignored fixture copies outside indexed blog paths: both exit0, no tracked
+drift. Validator13data/11content/4layouts; Pagefind316pages/7502words with retained
+whole-body fallback notice. No tool update. Earlier CC native gates are separate
+attestation. No external download clicked, article commands never executed.
+
+Root-authored actual proof JPGs in artifacts: lfe-home-light.jpg (1280x720) and
+lfe-article-dark-narrow.jpg (390x844), both final1a source. Their consumer is the
+Operator's visual review. Viewport reset and existing tab marked for handoff.
+No screenshot manifest/new maintained checker. Site result is ready for CC to
+reconcile its optional case, commit owning version/history and fresh package;
+all4ledger statuses remain open until that final authored return is independently
+reviewed. Search?q hydration, actual AT/nativezoom/otherbrowsers, human evidence,
+P10 fidelity/main integration and final2.0 remain explicitly outside this pass.
