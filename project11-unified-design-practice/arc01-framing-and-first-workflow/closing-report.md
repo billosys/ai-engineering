@@ -1,7 +1,9 @@
-# Arc01 proposed close — real LFE brief to revision
+# Arc01 close — real LFE brief to revision
 
-**Readiness: all3children accepted; independent arc verdict pending.** Sofie/root
-assembles this close, not its independent approval. Exact local candidates: AI
+**Current verdict: independently accepted; all five arc rows done.** See the
+[fresh CDC gate](cdc-verification.md) and independent disposition below.
+Sofie/root assembled the readiness evidence that follows; it is preserved as
+that context's original proposed close, not its own independent approval. Exact local candidates: AI
 D417319db385f3fe8faa3b4217cad7de5a2a77fa3 (design1.2.1), LFE
 W1a64666cd7273ee97380bff163ed7642d13356df. Source branches are
 codex/project11-arc01-lfe-workflow and codex/design-practice-arc01. Neither is
@@ -88,3 +90,21 @@ arc's independently accepted endpoint; obtain next-arc authorization separately.
 [CDC retrospective](cdc-retrospective.md) synthesizes the three actual slices,
 including root mistakes and follow-through. It makes qualitative prompting
 recommendations, not an efficacy/model comparison or automatic framework change.
+
+## Independent disposition — 2026-10-20
+
+Sofie `/root/p11_arc01_gate`, a fresh approved OpenAI gpt-6.1-sol/high context,
+separate from CC and root's assembly, owns this **PASS**. Actual current D417319db/
+W1a64666 source, isolated package route, native build/validate and connected
+home/Learn/About/Blog/search/article/topic-return behavior were checked, including
+both-theme relevant text pairs, keyboard/focus and positive enlarged reading.
+See [reviewer-authored verification](cdc-verification.md) for exact fresh/retained
+checks, corrections to review locators, package hashes, all five dispositions
+and limits. Root's proposed close is now accepted at that bounded scope.
+
+All three children compose into the promised capability. P11-02 is done from
+actual real brief/content/assumptions/priorities/distinct concepts in the package;
+other nine project criteria remain open. Arc1.4/Project1.5 record this actual
+acceptance. The retrospective is complete, with no efficacy conclusion inferred.
+No source repair or further arc was needed. Stop at Arc01, return ownership to
+root; Arc02/main integration/publication and all larger gates remain separate.

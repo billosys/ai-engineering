@@ -17,12 +17,13 @@ craft. Initial operational scope remains web, product and editorial design.
 Full native-platform specialization, print, spatial/industrial design and full
 service-design practice remain future extensions requiring scope decisions.
 
-Plan revision **1.4**: the Operator requested assessment of Project10's delivery
+Plan revision **1.5**: the Operator requested assessment of Project10's delivery
 amendment `fdb073f5` and a streamlined Project11 plan that lands useful changes
 while retaining quality. This revision replaces the initial seven discipline
 arcs with four delivery arcs, preserving all seven capabilities and ten project
-criteria. Arc01 and its first source-delivery slice now open under the Operator selection
-recorded below; later arcs remain unissued.
+criteria. Was: Arc01 and its first slice opened under the Operator selection
+recorded below. Now: Arc01 is independently accepted locally; later arcs remain
+unissued and this one-arc execution has stopped.
 Planning remains on `planning`; authorized source/package edits belong in the
 source checkout. This amendment changes Project11, not Project10's active work.
 
@@ -45,7 +46,7 @@ handoff under the [corrected project contract](../project10-design-foundations/p
 Project11's **2.0** scope, target and dependency/acceptance gates are unchanged;
 the version milestone alone does not establish foundation/release acceptance.
 
-## Current execution — Operator selection, 2026-10-19
+## Operator selection and completed Arc01 execution — 2026-10-19/20
 
 The Operator agrees to begin2.0, selects the real LFE site as the worked project,
 requests attention to its colour tokens, loads collaboration-framework3.0.1 and
@@ -267,10 +268,12 @@ an unsupported claim of superiority.
 Operator-selected Arc01 Autonomous Mode above supersedes the former relay-only,
 non-Expedited arrangement for this arc. Source implementation and independent
 review remain separate; all final project/Operator gates survive.
-Current: Arc01 uses the accepted1.1 inputs and LFE task; its first slice delivers
-a packaged brief-to-design route and LFE example before site token implementation. Pin exact existing guides and any new guide/example
-paths then; do not prewrite later slice trees. If that input is unavailable, name
-the precise blocker and a ready independent alternative; do not restart the audit.
+Was: Arc01 used the accepted1.1 inputs and LFE task to open a packaged
+brief-to-design route before site token/editorial implementation. Now: its three
+children and fresh independent composition gate are accepted at D417319db/W1a64666.
+The useful generic method and optional real case are packaged; contextual roles
+and editorial controls/reading are implemented on the local LFE task branch.
+Stop at this accepted Arc01 endpoint; do not prewrite or open later slice trees.
 
 At slice close report the accepted source revision, changed usable capability,
 actual checks and remaining blocker/owner. If nothing has landed, state why and
@@ -302,7 +305,7 @@ gate. No close-set records or acceptance claims are created by this revision.
 
 - 1.3 (2026-10-19): Operator selects framework3.0.1, explicit CDC6.1SolHigh/CC6LunaHigh and Arc01-only Autonomous Mode; adopt real LFE example/token work on isolated task branches, pin tagged1.1 scope/deferrals and preserve final criteria/external-action gates.
 
-## Arc01 delivery checkpoint — 2026-10-20
+## Arc01 readiness checkpoint — superseded by acceptance below
 
 Was: Arc01 opening. Now: all3children independently accepted, local design method/
 case D417319db (1.2.1) and actual LFE W1a64666; root's arc assembly awaits the
@@ -317,3 +320,23 @@ project. Read the [arc retrospective](arc01-framing-and-first-workflow/cdc-retro
 before preparing a future authorized increment.
 
 - 1.4 (2026-10-20): Arc01's real local implementation/case and actual adaptation findings reach the independent composition gate; retain roadmap/final gates and stop at the one-arc authorization boundary.
+
+## Independent Arc01 acceptance and stop — 2026-10-20
+
+Fresh approved CDC context `/root/p11_arc01_gate` independently verified the
+actual package-only real brief/concepts task and connected site composition at
+AI `417319db385f3fe8faa3b4217cad7de5a2a77fa3` (design1.2.1) and LFE
+`1a64666cd7273ee97380bff163ed7642d13356df`. See [Arc01 verification](arc01-framing-and-first-workflow/cdc-verification.md).
+All five arc rows are done, its retrospective is complete, and Arc01 closes.
+P11-02 alone becomes done: supplied content/identity yield explicit assumptions,
+priorities, two structural concepts and a reasoned provisional choice through
+a useful isolated route. Other nine criterion texts/statuses stay unchanged/open.
+
+This accepts the local task-branch capability, not main integration or all2.0.
+Retain the four-arc roadmap and exact remaining task families, expert/global/
+source-fidelity/AT/nativezoom/otherbrowser/system/release/Operator gates. Query
+hydration and deeper search/inclusion remain later Arc02 work. This authorized
+run has reached its endpoint: STOP. Arc02 remains unopened; future execution and
+any public action need their own authority. No roadmap/scope expansion occurs.
+
+- 1.5 (2026-10-20): Arc01's fresh independent package/source/browser composition gate accepts its bounded capability and P11-02; record exact local source pins and completed retrospective, retain the other nine project rows and all larger gates, and stop the one-arc run without opening Arc02.

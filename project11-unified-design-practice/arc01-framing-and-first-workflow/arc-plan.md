@@ -1,12 +1,12 @@
 ---
 arc: arc01-framing-and-first-workflow
-status: active
+status: closed
 depends-on: [design-1.1 supported guidance; real LFE source]
 ---
 
 # Arc01 — From brief to a usable LFE design workflow
 
-Revision1.3, 2026-10-19. [Project1.3](../project-plan.md) is authority;
+Revision1.4, 2026-10-20. [Project1.5](../project-plan.md) is authority;
 [arc ledger](ledger.md) defines completion. Autonomous Mode covers this arc only.
 
 ## Capability and actual task
@@ -35,7 +35,8 @@ and return to context. Label those assumptions; no fabricated personas/analytics
 |02 LFE colour roles|Replace scattered live colour choices with contextual semantic roles and light/dark adapters, actually consumed by shared templates and Pagefind; build and inspect representative pages|Accepted01 brief/direction; protect original site tooling/content|
 |03 editorial journey and revision|Demonstrate actual representative LFE editorial flow, fix in-scope consumption issues, exercise package route on the case and reconcile the worked example with actual code/outcomes|Accepted02 tokens/real build; no full IA or unrelated tooling migration|
 
-S01 and S02 are accepted; S03 is the current executable open set.
+Was: S01/S02 accepted and S03 executable. Now: all three children and the fresh
+independent Arc01 composition gate are accepted; the authorized arc is closed.
 A material new dependency can change this roadmap through recorded authority;
 no automatic next arc. Five correction iterations per slice remain the limit.
 
@@ -117,7 +118,7 @@ P10 fidelity, main integration and final2.0 acceptance remain open.
 
 - 1.2 (2026-10-19): Accept S02 real role consumption, open final editorial/revision slice with explicit browser handoff, retain larger gates.
 
-## Final child delivery; independent arc gate pending
+## Final child readiness — superseded by independent closure below
 
 Was: S03 executable. Now: all3slices independently accepted locally, including
 S03 W1a64666/D417319db (design1.2.1). The actual homepage, semantic roles and
@@ -128,3 +129,16 @@ until its verdict. Root must not sign its own composition. CC implementation
 has exited. No new slice/Arc02/public action. This is the authorized endpoint.
 
 - 1.3 (2026-10-20): S03 actual adaptation/control/case corrections accepted; assemble the three delivered increments for the reserved independent arc gate, preserve all larger gaps.
+
+## Independent closure and authorized stop
+
+Was: root's final-child assembly awaited a fresh independent gate. Now:
+`/root/p11_arc01_gate`, approved OpenAI gpt-6.1-sol/high, independently accepts
+all five rows at D417319db/W1a64666; see [actual verification](cdc-verification.md).
+The package-only real brief/concepts task, native build and connected browser/
+reading/control demonstration compose the promised bounded capability. P11-02
+closes; the other nine project criteria and original limits remain open. Root's
+retrospective is complete. Source branches remain local; Arc02 is unopened.
+Stop here and hand back ownership; no next-arc or public action is authorized.
+
+- 1.4 (2026-10-20): Fresh independent CDC composition gate accepts all five Arc01 rows and the real brief-to-concepts project criterion after actual package/source/browser checks; close Arc01, retain later gates and stop at the Operator's one-arc endpoint.
