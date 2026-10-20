@@ -1,9 +1,9 @@
 # Project11 delivery instructions
 
 Read [project-plan.md](project-plan.md) and [ledger.md](ledger.md) before planning
-or implementation. Parent planning-worktree instructions apply. This project
-remains planned in the Two-Contributor Workflow; neither CRC nor Expedited Mode
-is enabled. Planning lives here; source work needs an issued exact-scope prompt.
+or implementation. Parent planning-worktree instructions apply. The Operator now selects Arc01-only Autonomous Mode with two contributors
+and Expedited Mode; no permanent CRC. CDC uses OpenAI gpt-6.1-sol/high, CC uses
+OpenAI gpt-6-luna/high. The project plan records pins, ownership and authority. Planning lives here; source work needs an issued exact-scope prompt.
 
 - Plan the next useful source/package increment, not a separate discovery,
   evidence, correction and validation pipeline. Preserve all seven capabilities,

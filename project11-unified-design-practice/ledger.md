@@ -18,3 +18,11 @@ See [the delivery plan](project-plan.md); no acceptance or release is implied.
 | P11-08 | Packaged routes make supported knowledge usable without excessive or mandatory corpus loading | Fresh-context trials of incrementally packaged task routes; isolated package checks and source/claim admission review | correctness-grade | Capability 7; DES-010/013/015/016 | open | — | Every delivery updates needed routes; Arc04 final composition. Historical confidence is not current claim verification; no duplicate whole-corpus certification. |
 | P11-09 | All capabilities compose into demonstrably useful design practice with retained contextual expression | Connected final task-family demonstrations with criterion-specific expert/behavioral evidence; reuse accepted evidence only where still applicable | serious | Project definition of done | open | — | Arc04; all seven capabilities and six families remain. Retain failed, blocked and unrun attempts; avoid one beauty score. |
 | P11-10 | Independent/Operator gates and release evidence identify exactly what is accepted | Project close identifies accepted source/package/audit pins, finding dispositions, version/history, independent/Operator gates and package checks | serious | Release contract | open | — | Arc04; publication remains separately authorized. No acceptance inferred from this planning amendment. |
+
+## Arc01 opening — 2026-10-19
+
+All ten project criteria remain unchanged/open. [Arc01](arc01-framing-and-first-workflow/arc-plan.md)
+starts from tagged1.1 supported inputs with inherited limits, using the actual
+LFE site and explicit CDC/CC selections. Accepted local task-branch integration
+is distinct from main/publication. Only this arc is authorized; source-original
+and final Project09/10/2.0 release gates remain. No criterion closes on opening.

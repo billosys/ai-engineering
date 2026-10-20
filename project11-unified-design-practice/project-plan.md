@@ -1,6 +1,6 @@
 ---
 project: project11-unified-design-practice
-status: planned
+status: active
 depends-on: [project09-design-audit, project10-design-foundations]
 blocks: []
 related: [project08-concept-card-metadata, project13-collab-refinements]
@@ -17,11 +17,12 @@ craft. Initial operational scope remains web, product and editorial design.
 Full native-platform specialization, print, spatial/industrial design and full
 service-design practice remain future extensions requiring scope decisions.
 
-Plan revision **1.2**: the Operator requested assessment of Project10's delivery
+Plan revision **1.3**: the Operator requested assessment of Project10's delivery
 amendment `fdb073f5` and a streamlined Project11 plan that lands useful changes
 while retaining quality. This revision replaces the initial seven discipline
 arcs with four delivery arcs, preserving all seven capabilities and ten project
-criteria. No arc or slice has been opened, and no implementation prompt is issued.
+criteria. Arc01 and its first source-delivery slice now open under the Operator selection
+recorded below; later arcs remain unissued.
 Planning remains on `planning`; authorized source/package edits belong in the
 source checkout. This amendment changes Project11, not Project10's active work.
 
@@ -37,10 +38,57 @@ silently claim them complete. The [ledger](ledger.md) governs final acceptance.
 
 The Operator corrected Project10's former 1.5 target to **1.1.0**, with 1.0.x
 correction increments continuing through Arc02 and the final minor bump at its
-accepted completion. Consume the actual accepted Project10 inputs and final
+accepted completion. That historical coupling was subsequently superseded by
+the Operator-approved supported1.1 milestone; PR5 was merged and design-1.1
+tagged at f2b1137a. Consume the actual accepted Project10 inputs and final
 handoff under the [corrected project contract](../project10-design-foundations/project-plan.md#release-target--operator-correction-2026-10-15).
 Project11's **2.0** scope, target and dependency/acceptance gates are unchanged;
 the version milestone alone does not establish foundation/release acceptance.
+
+## Current execution — Operator selection, 2026-10-19
+
+The Operator agrees to begin2.0, selects the real LFE site as the worked project,
+requests attention to its colour tokens, loads collaboration-framework3.0.1 and
+Cobalt, and authorizes Autonomous Mode **one arc at a time**. This run covers
+Arc01 only: brief/alternative/critique guidance plus the first real LFE editorial
+journey and contextual colour-token revision. Stop after its independent
+composition/retrospective or a genuine unresolved Operator/input gate; do not
+start Arc02. Full later IA/forms/multilingual/system governance stays roadmap work.
+
+|Role|Approved provider/model/settings|Execution and ownership|
+|---|---|---|
+|CDC planning and independent slice review|OpenAI `gpt-6.1-sol`, high|Sofie `/root`; requested identity/settings are Operator-approved; this chat's backend identity is not independently tool-reported. A fresh CDC context at the same explicit selection gates CDC-authored arc composition.|
+|CC implementation|OpenAI `gpt-6-luna`, high|One explicitly routed subagent; sole source/index/build writer while assigned. No inherited model substitution.|
+
+Use two contributors, direct authorized handoffs and Expedited Mode. No permanent
+CRC. A fresh CDC context is reserved only for required arc-scale separation after
+CC exits, not routine duplicate review. Existing useful records/ten criteria and
+canonical layout remain; one compact slice note when needed, no archival project.
+Local task-branch commits are authorized. No push/PR/merge/public deployment or
+CI-triggering external write is authorized in this run. LFE main pushes would
+automatically deploy Pages; do not trigger them. No separate spending questionnaire.
+
+Foundation: `design-1.1` resolves to f2b1137a3f3d77b0d34d789c2233b48f4dcb15ff;
+its supported outcomes/233-card review limits and original deferral remain in
+Project10, not a new full-corpus certification. Current AI source main
+19de0cf978b0fefb9e184a84e508357bd77731d5 has byte-identical `knowledge/design`
+and current framework3.0.1. Work in `.worktrees/design-practice-arc01`, branch
+`codex/project11-arc01-lfe-workflow`. Project11's integration baseline for this
+local arc is independently accepted commits on that task branch; main integration
+and publication remain separate Operator actions, not silently claimed delivery.
+
+Real LFE source: /Users/oubiwann/lab/lfe/lfe.github.io, committed baseline
+036e231b09c48966da26d2227bccb4fa3b295df9. Its existing dirty Makefile/Rust tools
+and untracked verification brief are protected. Use isolated worktree
+`/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/lfe-design-practice-arc01`,
+branch `codex/design-practice-arc01`, from that committed baseline; no copying or
+reverting unrelated work. LFE commits integrate locally there; no main mutation.
+
+Preserve LFE name/logo/assets, actual prose/code and URLs, supplied font assets,
+light/dark behavior and purposeful exceptions. The site is a task-specific example,
+never a default palette/token scheme for the generic skill. Its current live
+Tailwind/CSS and Pagefind adapters, not just unused legacy Sass, determine changes.
+The [Arc01 plan](arc01-framing-and-first-workflow/arc-plan.md) owns exact sequence.
 
 ## Assessment of the Project10 amendment
 
@@ -216,22 +264,19 @@ an unsupported claim of superiority.
 
 ## Workflow, next action and acceptance
 
-Default Two-Contributor Workflow: CDC plans and independently reviews separate
-CC execution through the Operator. No CRC or Expedited Mode is enabled by this
-amendment. Existing open-set, prompt-preservation and independent/Operator gates
-remain. Publishing a release requires separate authorization.
-
-Next: CDC selects the first sufficiently accepted Project10 inputs, plans Arc01
-and opens a source-scoped first slice that delivers the brief-to-first-design
-route and an editorial example. Pin exact existing guides and any new guide/example
+Operator-selected Arc01 Autonomous Mode above supersedes the former relay-only,
+non-Expedited arrangement for this arc. Source implementation and independent
+review remain separate; all final project/Operator gates survive.
+Current: Arc01 uses the accepted1.1 inputs and LFE task; its first slice delivers
+a packaged brief-to-design route and LFE example before site token implementation. Pin exact existing guides and any new guide/example
 paths then; do not prewrite later slice trees. If that input is unavailable, name
 the precise blocker and a ready independent alternative; do not restart the audit.
 
 At slice close report the accepted source revision, changed usable capability,
 actual checks and remaining blocker/owner. If nothing has landed, state why and
 the next concrete delivery. Use existing close/bubble-up records for learning;
-no new measurement project or mandatory retrospective files in this two-contributor
-project. The Project13 pilot remains completed and inconclusive. This delivery
+no new measurement project. Arc01 Autonomous Mode adds the required concise
+CDC slice/arc retrospectives, not another acceptance system. The Project13 pilot remains completed and inconclusive. This delivery
 amendment is an Operator-authorized planning decision, not proof of trial efficacy.
 
 Project close requires all ten ledger criteria, accepted children, demonstrated
@@ -254,3 +299,5 @@ gate. No close-set records or acceptance claims are created by this revision.
 - 1.0 (2026-10-08): Established Project11 for the 2.0 expansion, depending on
   the shared Project09 audit and Project10 foundation. Recorded the seven initial
   capability arcs, evidence expectations, scope proposals and acceptance boundaries.
+
+- 1.3 (2026-10-19): Operator selects framework3.0.1, explicit CDC6.1SolHigh/CC6LunaHigh and Arc01-only Autonomous Mode; adopt real LFE example/token work on isolated task branches, pin tagged1.1 scope/deferrals and preserve final criteria/external-action gates.
