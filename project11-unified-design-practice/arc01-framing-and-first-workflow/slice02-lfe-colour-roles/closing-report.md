@@ -58,3 +58,11 @@ made.
 - This proposal is not independent verification, CDC acceptance or release
   readiness. S02-01/02 remain open pending targeted CDC hover recheck and
   review; S02-03/04 retain their independently verified done status.
+
+
+## CDC disposition
+
+All four rows independently accepted at9cf7cf86; slice closed. CC's proposal and
+initial failures remain above/in the canonical records. Current verdict is
+[CDC verification](cdc-verification.md); [retrospective](cdc-retrospective.md)
+records the follow-through. S03 owns the editorial/keyboard next delivery.

@@ -1,12 +1,12 @@
 ---
 slice: slice02-lfe-colour-roles
-status: active
+status: closed
 depends-on: [accepted Slice01; LFE036e231]
 ---
 
 # Slice02 — Live LFE light/dark colour roles
 
-Revision1.1,2026-10-19; Project1.3/Arc1.1. Initial cc-prompt.md is current.
+Revision1.2,2026-10-19; Project1.3/Arc1.1. Initial cc-prompt.md is current.
 AM roles unchanged: CC OpenAI6LunaHigh sole LFE source/index/build writer;
 CDC/root independently inspects code and browser; P stays separate. Local commits
 only. No AI source/package change in this site implementation slice; S03 reconciles
@@ -45,3 +45,12 @@ Rows03/04 accepted at the initial scope;01/02 remain open. All other S02 work
 retained; no site composition or next-slice assignment yet.
 
 - 1.1 (2026-10-19): Record CDC's rendered hover-role finding and bounded I01; preserve all initial scope and evidence.
+
+## Independent close
+
+Was: I01 pending. Now: all four rows done, current CDC PASS at9cf7cf86/P9aaa5088.
+Initial prompt and I01 preserved; hover role now reproduces in both modes.
+S03 opens next for editorial/controls and actual worked-case reconciliation.
+See [CDC verification](cdc-verification.md) and [retrospective](cdc-retrospective.md).
+
+- 1.2 (2026-10-19): Close after actual hover recheck; carry search deep-link issue to Arc02 and unchanged native/AT/publication limits forward.

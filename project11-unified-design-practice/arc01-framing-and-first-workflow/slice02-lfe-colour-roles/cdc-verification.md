@@ -23,7 +23,7 @@ in those checks; mobile subnav search remains visibly crowded (owned by S03).
 Direct keyboard/pointer checks covered code focus, current download focus/hover,
 three download foregrounds, About's underlined location, theme changes and live
 search selection. Pointer placement used context-click/Escape without following
-external links. All47sampled actual visible text pairs pass4.5; examples:
+external links. All47sampled foreground observations (text and icon controls) pass the conservative4.5 check; examples:
 
 |Actual consumer|Light|Dark|
 |---|---:|---:|
@@ -70,3 +70,27 @@ hydration did not populate the field in this test, so do not claim it works. The
 inline-search reading flow remains viable; hand the broader deep-link/state issue
 to Arc02 rather than silently broadening this colour slice. Original P10 fidelity,
 project capabilities, main integration and release remain open. No push/deployment.
+
+
+## Iteration01 — independently accepted
+
+Source9cf7cf86f8d6ea6fc50eaf46bf950e1312def82f; P return9aaa5088.
+CDC read the actual single-file source delta, full updated report and appended
+batch evidence. Exact four hover utility additions; generated CSS unchanged;
+P only the three allowed return files; both adjacent parsed trailers correct.
+No palette/content/geometry/API or AI-package change. Fresh CC build/validate
+passes are attestation; CDC's own initial native/browser/preservation evidence
+remains applicable after verifying this tiny delta.
+
+CDC actually context-clicked/Escaped GitHub, Mastodon and the visible theme action
+in each theme: six hovered consumers, each :hover=true, dark rgb(246,217,119)
+(#f6d977), light rgb(83,62,4) (#533e04), exactly the declared role. The first
+unscoped GitHub locator matched header/footer; scoped to observed #lfe-main-nav,
+then all six checks passed. No external link was followed. The brand table now
+explicitly identifies the nominal CSS pair, not bitmap-pixel measurement.
+
+Current verdict: PASS. All four rows independently done at current local source;
+retained initial evidence and fresh targeted browser checks are distinct. Slice02
+closes; S03 may now implement the already-owned editorial/keyboard work. The
+existing full-search ?q hydration issue is handed to Arc02; typing search works.
+No whole-site/AT/native zoom/user study/main/publication or P10-fidelity claim.

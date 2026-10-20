@@ -6,7 +6,7 @@ depends-on: [design-1.1 supported guidance; real LFE source]
 
 # Arc01 — From brief to a usable LFE design workflow
 
-Revision1.1, 2026-10-19. [Project1.3](../project-plan.md) is authority;
+Revision1.2, 2026-10-19. [Project1.3](../project-plan.md) is authority;
 [arc ledger](ledger.md) defines completion. Autonomous Mode covers this arc only.
 
 ## Capability and actual task
@@ -35,7 +35,7 @@ and return to context. Label those assumptions; no fabricated personas/analytics
 |02 LFE colour roles|Replace scattered live colour choices with contextual semantic roles and light/dark adapters, actually consumed by shared templates and Pagefind; build and inspect representative pages|Accepted01 brief/direction; protect original site tooling/content|
 |03 editorial journey and revision|Demonstrate actual representative LFE editorial flow, fix in-scope consumption issues, exercise package route on the case and reconcile the worked example with actual code/outcomes|Accepted02 tokens/real build; no full IA or unrelated tooling migration|
 
-Only01's open set exists now. Detail each next executable slice after acceptance.
+S01 and S02 are accepted; S03 is the current executable open set.
 A material new dependency can change this roadmap through recorded authority;
 no automatic next arc. Five correction iterations per slice remain the limit.
 
@@ -101,3 +101,18 @@ composition remain S03, not a new investigation or full IA rewrite.
 
 - 1.1 (2026-10-19): S01 closes; use its optional brief and actual CDC baseline
   to prepare S02 live roles, retain the same three-slice scope and external gates.
+
+## S02 accepted; final slice opened
+
+S02 closes at LFE9cf7cf86/P9aaa5088. Actual contextual colour consumers and
+light/dark hover recheck pass; initial47foreground observations/12viewport
+conditions remain applicable at their recorded pins. S03 now repairs the actual
+opening/reading/control consumption and reconciles the optional case. Its
+prospective browser ownership passes from CDC to CC during implementation, then
+back to CDC after immutable return; no overlapping build or browser writer.
+AI source remains2bc2ff0b/design1.2.0 until S03's case increment. Existing full
+search ?q hydration did not populate; Arc02 owns deeper state/recovery review.
+Typing search remains functional. Native zoom/AT/other-browser/user research,
+P10 fidelity, main integration and final2.0 acceptance remain open.
+
+- 1.2 (2026-10-19): Accept S02 real role consumption, open final editorial/revision slice with explicit browser handoff, retain larger gates.
