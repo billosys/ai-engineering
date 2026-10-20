@@ -6,7 +6,7 @@ depends-on: [accepted Slice01; accepted Slice02]
 
 # Slice03 — LFE editorial journey and actual revision
 
-Revision1.2,2026-10-19; Project1.3/Arc1.2. Initial assignment cc-prompt.md; ownership amendment cc-prompt-iteration01.md; current correction cc-prompt-iteration02.md.
+Revision1.3,2026-10-19; Project1.3/Arc1.2. Initial assignment cc-prompt.md; ownership amendment cc-prompt-iteration01.md; prior correction cc-prompt-iteration02.md; current correction cc-prompt-iteration03.md.
 Final Arc01 slice: deliver actual homepage orientation, quiet long-form reading,
 keyboard/wayfinding controls and a packaged worked-case revision at real pins.
 Tasks are inferred from supplied content, not participant evidence. Preserve
@@ -61,3 +61,13 @@ then resumes for real observations and CC-authored case. Prior checks retained
 only after applicability review; no claim every prescribed condition ran yet.
 
 - 1.2 (2026-10-20): First actual W review catches nested Build It markup, prose font-context mismatch, denied-storage toggle and resize focus; issue one consolidated bounded source correction.
+
+## Adaptation continuation
+
+I02's specific repairs pass actual targeted rechecks atW72c28e30. The prescribed
+200% authored text fixture now reveals feature/closing/prose overflow and normal
+wide header utility consumption; I03 repairs those existing consumers within the
+initial W allowlist before the case update. No iteration merely for evidence
+spelling or counters. Same phased ownership, four unchanged open criteria.
+
+- 1.3 (2026-10-20): Preserve passing I02 behavior and issue concrete enlarged-text/remaining CTA/header correction from actual adaptation checks.

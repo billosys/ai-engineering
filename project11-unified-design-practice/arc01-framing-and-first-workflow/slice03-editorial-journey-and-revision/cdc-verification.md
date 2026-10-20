@@ -52,3 +52,44 @@ These are the existing explicit source recipe, not new capability scope. I02
 bundles four concrete repairs in existing4source paths, then CDC rechecks before
 CC may claim actual case results. Existing search?q issue remains Arc02. No
 package/AT/native zoom/otherbrowser/user-preference or public result claimed.
+
+
+## I02 W handback — targeted repairs pass; adaptation correction required
+
+W72c28e30, exact4allowed paths/adjacent trailers, full delta read. Actual denied
+storage click sequence now dark→default→dark, matching pressed state with same
+focused button. About and both articles now actual parent/p18px/30.6px Newsreader,
+wide643.5px; About no blanket Learn/Use narrowing. Build It has four native link
+CTAs, no nested buttons. Resize theme→narrow toggle and widened→Learn focus pass
+after actual state settles (an immediate pre-media-event read initially saw body;
+AX/current reread confirms correct visible Learn focus, not another source failure).
+
+CDC sampled all4pages ×2modes ×2widths1280/390 =16 viewport/theme DOM/computed
+conditions, representative visual screenshots, no whole-page overflow in those
+normal cases. Separate authored home/About/technical article text200%, spacing,
+fallback copies are outside indexed blog paths; actual fonts/spacing read, not
+native zoom/network failure claims. Spacing/fallback have no page-wide overflow.
+Enlarged text exposes real additional consumers below, so no complete pass yet.
+
+F05: normal1280 header is124px/two rows despite ample room: base basis-full utility
+wins over components flex auto after wrapping was enabled. Add responsive auto
+basis to actual collapse consumer so normal desktop stays compact and can wrap
+when genuinely needed. The closing Discord Go CTA still nests button in anchor;
+make it one native styled link, literal text/destination retained. Its old h1 CSS
+consumer also needs to target the new h2 rather than silently becoming dead.
+
+F06: actual390px/root32px authored enlarged-text copy has home scrollWidth578,
+About417 and technical article482. Offenders: feature header flex-shrink-0/auto
+min grid sizing (Core Erlang Foundation right578); closing .join-us row/Go
+right405; About blockquote's198px interior contains programming/Erlang321px
+unbroken text; article inline code `(include-lib "clj/include/compose.lfe")`
+extends to482. Fix intrinsic shrink/wrap for feature headers/grid and closing
+row, prose/inline-code long-token wrapping, preserve pre local horizontal scroll,
+assets/data/content. Do not clip overflow or shrink text to hide the failure.
+Header enlargement itself wraps its logo/toggle; no claim all238px tall header
+is a conformance defect. Recheck actual usable body and controls, not width alone.
+
+The planned adaptations found these, not new scope. I03 narrows repair to5initial
+allowlist paths; JS unchanged, I02 behavior evidence may be retained if valid.
+Remaining actual search/route/read adaptation tasks still pending. No D/package
+completion, browser conformance/expert/user research or slice closure claim.
