@@ -80,7 +80,7 @@ claim of browser-rendered or whole-site conformance.
 | Current action text on gold action / hover | 8.4473 / 9.9888 | 9.1501 / 11.6647 | Pass |
 | Previous action text at rest / hover | 10.3547 / 7.5777 | 8.9997 / 6.3795 | Pass |
 | Development action text at rest / hover | 7.0953 / 10.2011 | 7.5627 / 5.6368 | Pass |
-| Wordmark dark text on brand plate | 13.7121 | 13.7121 | Pass |
+| Nominal CSS dark foreground on brand-plate (not bitmap pixel measurement) | 13.7121 | 13.7121 | Pass |
 | Info text on info surface | 9.1549 | 9.4283 | Pass |
 | Warning text on warning surface | 7.6734 | 9.7595 | Pass |
 | Book / video CTA text on preserved blue / red backgrounds | 6.3562 / 5.0621 | same | Pass |
@@ -103,4 +103,62 @@ slice changes no AI skill source/package inputs, so the already accepted S01
 package remains applicable; no package build/check is claimed or required for
 this site-only source change. CC did not inspect the loopback browser and makes
 no rendered light/dark, wide/narrow, About, article or search claim. CDC
-independent review remains outstanding; all four S02 criteria remain open.
+independent review remained outstanding at the initial return, when all four
+S02 criteria were open. CDC's subsequent Iteration01 verification now leaves
+S02-01/02 open and records S02-03/04 done at the initial inspected scope.
+
+## Iteration01 intake and pre-edit readback
+
+At P `d783263a87868dfe08c88242f21cd1c1d8838249`, I read the issued
+`cc-prompt-iteration01.md`, current slice plan/ledger and CDC verification.
+The initial source/return remain `a6c19f4d2c1e064195bb5c10cd0f5a52d26d1845` /
+`30bf31d8072e98c3799d44cc529fadbc17994d36`; AI stays read-only. I retained the
+unchanged framework/design/site evidence at those pins. CDC's reproduced
+47-visible-text pairs and 12 viewport/theme conditions remain independently
+owned evidence; I do not repeat or claim that browser work. The current verdict
+keeps S02-01/02 open and S02-03/04 done at the inspected initial scope.
+
+Readback before edits: the only source correction is adding the already
+generated `hover:text-lfe-link-hover` utility to the four existing GitHub,
+Mastodon and theme-action anchors with `nav-hover-gold`, so utilities-layer
+hover colour wins over the components-layer base colour. Preserve all roles,
+content, identities, semantics, URLs, geometry and palette. `src/css/site.css`
+is allowed only if actual regeneration changes its bytes. Also qualify the
+13.7121:1 wordmark row as a nominal CSS foreground/brand-plate pairing, not a
+pixel measurement of the bitmap. Return only these three P paths; do not alter
+criterion/status fields: 01/02 open, 03/04 done. No AI package gate, browser
+interaction, new artifact, publication or successor work is in scope.
+
+### Iteration01 implementation and checks
+
+- The only W source change is four additions of the already generated
+  `hover:text-lfe-link-hover` class in `src/_includes/nav.liquid`, on GitHub,
+  Mastodon and the two theme-action anchors. Their labels/accessible names,
+  destinations, theme values, structure and all other classes are unchanged.
+  The utilities-layer hover rule was already present in `src/css/site.css`;
+  after regeneration that file's blob still equals its committed source blob
+  (`0c2a3c38febe5026cfb2c22ef488788bbedf46fa`), so no generated CSS change was
+  forced. Generated home and About HTML each contain all four paired anchors.
+- `make build`: passed sequentially, exit 0, using the existing cached tools.
+  Cobalt built successfully; sitemap 147 URLs. Pagefind indexed 316 pages and
+  7,502 words, with 0 filters/sorts and the same single fallback notice for no
+  `data-pagefind-body` (it indexed all `<body>` elements). No failed/retried
+  attempt or other warning/error was reported.
+- `make validate`: passed after build, exit 0; 13 data files, `_md`/`_html`
+  pairing, 11 content files and 4 layouts passed. No warning/failure/retry.
+- `git diff --check`: passed. Before commit the exact W diff was only
+  `src/_includes/nav.liquid`; the exact generated CSS blob remained unchanged.
+  The resulting W commit is
+  `9cf7cf86f8d6ea6fc50eaf46bf950e1312def82f`, with its required adjacent
+  coauthor trailers. No original-site checkout, AI source, package, content,
+  URLs, tooling or other W file was changed.
+- Iteration01 did not repeat CDC's initial 47 visible-text-pair or 12
+  viewport/theme review. Those independently reproduced observations remain
+  pinned to initial source `a6c19f4d`; CDC owns targeted browser rechecks of
+  the four hover consumers. CC made no browser or computed-style claim.
+- The 13.7121:1 wordmark row above is a nominal CSS dark foreground on the
+  light brand plate. It is not a pixel-level contrast measurement of the
+  supplied raster logo; the bitmap asset remains unchanged.
+- The P return remains this batch record, `closing-report.md` and `ledger.md`
+  Evidence/Notes only. S02-01/02 remain open; S02-03/04 retain CDC's done
+  statuses at the initial inspected scope. No AI package gate is applicable.
