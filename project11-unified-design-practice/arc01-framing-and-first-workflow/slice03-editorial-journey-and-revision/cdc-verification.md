@@ -93,3 +93,32 @@ The planned adaptations found these, not new scope. I03 narrows repair to5initia
 allowlist paths; JS unchanged, I02 behavior evidence may be retained if valid.
 Remaining actual search/route/read adaptation tasks still pending. No D/package
 completion, browser conformance/expert/user research or slice closure claim.
+
+
+## I03 W handback — overflow fixed, positive reading check still fails
+
+AtW50fb3491 actual narrow200% copies now all scrollWidth390; no nested buttons;
+normal1280 header72px with actual auto basis. I03 delta5paths exact, JS unchanged.
+Actual search keyboard typing rebar3→ArrowDown→Enter reaches the technical article,
+then Tutorials category and mobile Blog return work; current Categories/Blog both
+underlined with aria-current. First transformed-uppercase Tutorials role query
+matched nothing; observed href selector worked. No external release followed.
+
+All9authored adaptation copies have actual intended properties: text root32px,
+prose36px/61.2; spacing .12em/.16em/2em, fallback Georgia. Skip links operate in
+all9. First body PageDown locator failed; focusable main and actual CUA scroll
+worked. No native zoom/failed-font/AT claim. Source CSS declarations alone were
+not promoted; actual viewport and representative reading screenshots inspected.
+
+F07: width equality is necessary but insufficient. Actual scroll to enlarged
+feature cards shows heading column88px, with Technology split Tech/nolo/gy;
+three-column-like icon/header pairing and doubled inner padding survive despite
+no overflow. About quotation has198px text interior and almost one word per line.
+These are poor reading outcomes under the promised adaptation. Use a wrapping
+feature header that gives its text a meaningful full line when icon+heading do
+not fit, and scoped fluid card/quotation inline padding that preserves content
+width at enlargement. Preserve supplied text/icon; don't shrink text/hide overflow.
+A minimal example is wrap-able header with a text flex basis and clamped local
+padding; exact implementation remains CC's. Recheck actual words/reading, not
+scrollWidth alone. This is completion of F06's usable adaptation, not new scope.
+I04 only3paths; root still withholds case results until actual readability passes.

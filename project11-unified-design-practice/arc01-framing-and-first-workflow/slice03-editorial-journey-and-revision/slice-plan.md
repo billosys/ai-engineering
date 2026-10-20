@@ -6,7 +6,7 @@ depends-on: [accepted Slice01; accepted Slice02]
 
 # Slice03 — LFE editorial journey and actual revision
 
-Revision1.3,2026-10-19; Project1.3/Arc1.2. Initial assignment cc-prompt.md; ownership amendment cc-prompt-iteration01.md; prior correction cc-prompt-iteration02.md; current correction cc-prompt-iteration03.md.
+Revision1.4,2026-10-19; Project1.3/Arc1.2. Initial assignment cc-prompt.md; ownership amendment cc-prompt-iteration01.md; prior correction cc-prompt-iteration02.md; prior correction cc-prompt-iteration03.md; current correction cc-prompt-iteration04.md.
 Final Arc01 slice: deliver actual homepage orientation, quiet long-form reading,
 keyboard/wayfinding controls and a packaged worked-case revision at real pins.
 Tasks are inferred from supplied content, not participant evidence. Preserve
@@ -71,3 +71,13 @@ initial W allowlist before the case update. No iteration merely for evidence
 spelling or counters. Same phased ownership, four unchanged open criteria.
 
 - 1.3 (2026-10-20): Preserve passing I02 behavior and issue concrete enlarged-text/remaining CTA/header correction from actual adaptation checks.
+
+## Positive adaptation completion
+
+I03 fixes overflow and header/CTA behavior atW50fb3491; actual scroll through
+200% text still reveals88px feature-heading columns and over-padded quotation
+reading. I04 completes the already-required usable adaptation with3CSS/template
+paths and a positive visual check. No new corpus/IA/control scope. Search→article
+→topic→Blog now actually exercised successfully. Four rows remain open.
+
+- 1.4 (2026-10-20): Keep I03 passing source/flow evidence; complete enlarged-text reading quality instead of accepting scrollWidth equality alone.
