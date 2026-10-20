@@ -17,7 +17,7 @@ craft. Initial operational scope remains web, product and editorial design.
 Full native-platform specialization, print, spatial/industrial design and full
 service-design practice remain future extensions requiring scope decisions.
 
-Plan revision **1.3**: the Operator requested assessment of Project10's delivery
+Plan revision **1.4**: the Operator requested assessment of Project10's delivery
 amendment `fdb073f5` and a streamlined Project11 plan that lands useful changes
 while retaining quality. This revision replaces the initial seven discipline
 arcs with four delivery arcs, preserving all seven capabilities and ten project
@@ -301,3 +301,19 @@ gate. No close-set records or acceptance claims are created by this revision.
   capability arcs, evidence expectations, scope proposals and acceptance boundaries.
 
 - 1.3 (2026-10-19): Operator selects framework3.0.1, explicit CDC6.1SolHigh/CC6LunaHigh and Arc01-only Autonomous Mode; adopt real LFE example/token work on isolated task branches, pin tagged1.1 scope/deferrals and preserve final criteria/external-action gates.
+
+## Arc01 delivery checkpoint — 2026-10-20
+
+Was: Arc01 opening. Now: all3children independently accepted, local design method/
+case D417319db (1.2.1) and actual LFE W1a64666; root's arc assembly awaits the
+reserved fresh CDC6.1SolHigh composition verdict. See [proposed Arc01 close](arc01-framing-and-first-workflow/closing-report.md).
+No project criterion is promoted by this checkpoint alone. P11-02 may close
+only if that reviewer verifies actual brief/content/concepts in the isolated
+package; the other9criteria remain open. Arc02 is not authorized/opened.
+Keep the original four-arc roadmap/allcapabilities, later expert/global/fidelity/
+main/publication gates and current supported-foundation boundaries. Actual search
+query hydration remains an Arc02 state/recovery consumer, not an added research
+project. Read the [arc retrospective](arc01-framing-and-first-workflow/cdc-retrospective.md)
+before preparing a future authorized increment.
+
+- 1.4 (2026-10-20): Arc01's real local implementation/case and actual adaptation findings reach the independent composition gate; retain roadmap/final gates and stop at the one-arc authorization boundary.

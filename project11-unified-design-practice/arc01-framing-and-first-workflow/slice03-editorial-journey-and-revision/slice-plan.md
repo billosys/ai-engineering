@@ -1,12 +1,12 @@
 ---
 slice: slice03-editorial-journey-and-revision
-status: active
+status: closed
 depends-on: [accepted Slice01; accepted Slice02]
 ---
 
 # Slice03 — LFE editorial journey and actual revision
 
-Revision1.4,2026-10-19; Project1.3/Arc1.2. Initial assignment cc-prompt.md; ownership amendment cc-prompt-iteration01.md; prior correction cc-prompt-iteration02.md; prior correction cc-prompt-iteration03.md; current correction cc-prompt-iteration04.md.
+Revision1.5,2026-10-19; Project1.3/Arc1.2. Initial assignment cc-prompt.md; ownership amendment cc-prompt-iteration01.md; prior correction cc-prompt-iteration02.md; prior correction cc-prompt-iteration03.md; current correction cc-prompt-iteration04.md.
 Final Arc01 slice: deliver actual homepage orientation, quiet long-form reading,
 keyboard/wayfinding controls and a packaged worked-case revision at real pins.
 Tasks are inferred from supplied content, not participant evidence. Preserve
@@ -81,3 +81,15 @@ paths and a positive visual check. No new corpus/IA/control scope. Search→arti
 →topic→Blog now actually exercised successfully. Four rows remain open.
 
 - 1.4 (2026-10-20): Keep I03 passing source/flow evidence; complete enlarged-text reading quality instead of accepting scrollWidth equality alone.
+
+## Independent close
+
+Was: I04 site pass awaited final case/package return. Now: all4rows independently
+done at W1a64666/D417319db, CC return8fdaddb8, current CDC PASS. Source/build/
+browser handback completed; CC role exits. Verification methods restored to exact
+issued text after CC's clerical column change, pointers retained in Evidence.
+No new substantive assignment or capability dropped. Arc closure now goes to its
+fresh approved CDC context; no next slice or Arc02 is opened. See
+[verification](cdc-verification.md) and [retrospective](cdc-retrospective.md).
+
+- 1.5 (2026-10-20): Accept actual editorial/controls/case result and fresh package task; close final slice, retain original verification methods and larger gates.

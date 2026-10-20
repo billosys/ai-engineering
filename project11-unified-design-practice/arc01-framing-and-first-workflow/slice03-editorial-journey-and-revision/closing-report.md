@@ -38,3 +38,12 @@ work. It remains outside this slice and is not a new research programme. Full
 assistive-technology/native-zoom/other-browser checks, audience research,
 Project10 fidelity, main integration and publication also remain with their
 recorded later owners.
+
+
+## CDC disposition
+
+All4criteria independently done at W1a64666/D417319db. Slice closed after actual
+browser/source/package review; CC proposal/history above preserved. Current
+[CDC verification](cdc-verification.md) owns verdict and exact retained/fresh
+scope; [retrospective](cdc-retrospective.md) records lessons. Arc closure remains
+an independent composition gate, no next arc or public action.

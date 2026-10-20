@@ -6,7 +6,7 @@ depends-on: [design-1.1 supported guidance; real LFE source]
 
 # Arc01 — From brief to a usable LFE design workflow
 
-Revision1.2, 2026-10-19. [Project1.3](../project-plan.md) is authority;
+Revision1.3, 2026-10-19. [Project1.3](../project-plan.md) is authority;
 [arc ledger](ledger.md) defines completion. Autonomous Mode covers this arc only.
 
 ## Capability and actual task
@@ -116,3 +116,15 @@ Typing search remains functional. Native zoom/AT/other-browser/user research,
 P10 fidelity, main integration and final2.0 acceptance remain open.
 
 - 1.2 (2026-10-19): Accept S02 real role consumption, open final editorial/revision slice with explicit browser handoff, retain larger gates.
+
+## Final child delivery; independent arc gate pending
+
+Was: S03 executable. Now: all3slices independently accepted locally, including
+S03 W1a64666/D417319db (design1.2.1). The actual homepage, semantic roles and
+quiet reading/control task compose in root's demonstration and optional case;
+see proposed [arc close](closing-report.md). Fresh approved6.1SolHigh context
+now independently gates that root-authored assembly; all5arc rows remain open
+until its verdict. Root must not sign its own composition. CC implementation
+has exited. No new slice/Arc02/public action. This is the authorized endpoint.
+
+- 1.3 (2026-10-20): S03 actual adaptation/control/case corrections accepted; assemble the three delivered increments for the reserved independent arc gate, preserve all larger gaps.

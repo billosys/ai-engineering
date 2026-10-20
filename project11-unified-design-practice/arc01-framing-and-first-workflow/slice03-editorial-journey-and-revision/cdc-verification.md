@@ -166,3 +166,51 @@ reconcile its optional case, commit owning version/history and fresh package;
 all4ledger statuses remain open until that final authored return is independently
 reviewed. Search?q hydration, actual AT/nativezoom/otherbrowsers, human evidence,
 P10 fidelity/main integration and final2.0 remain explicitly outside this pass.
+
+
+## Final authored return — slice PASS
+
+Sofie/root read complete CC return8fdaddb8,104-line batch, final optional case
+and actual D417319db three-file diff. Baseline brief, distinct Workbench/Journal
+concepts, provisional choice and concrete critique/revision remain; actual vs
+assumed/user/unrun evidence stays explicit. The earlier token passage is read
+in its stated baseline/earlier-critique context, not current role authority.
+D owning metadata1.2.1 and appended history match, all predecessor history bytes
+preserved; other233cards/161sources/sixoldguides unchanged by exact object scope.
+W cumulative25paths and individual repair allowlists/trailers were inspected;
+all source content/data/assets/fonts/routes/config/tooling outside them unchanged.
+
+Root fresh sequential check-skills/check-skill-versions/check-package-paths then
+separate make design all exit0.25source/25packages/0version errors;25ZIPs404MD,
+0hard failures,624warnings/623locations,3exceptions,818externalsskipped. Soft
+19description notices/design360chars persist, no new defect. Actual fresh ZIP
+SHA25658608bdc12c97e830bc8aaee3152b74fdde934e478d738e313bc35cdd69645c3;
+all10MD bytes exactly current source. Unpacked private package-only task followed
+entrypoint→workflow→case: supplied identity/inferred tasks→two structural concepts
+→Workbench rationale→actual cramped heading/quotation critique→wrap/padding
+revision/recheck and remaining unknowns. No clone/corpus needed to understand it.
+CC's first missing-PyYAML notice and corrected explicit-interpreter rerun remain
+honest; root own fresh run used explicit interpreter. Root also reran actual
+search keyboard→technical article→category→Blog at final1a, confirming case claim
+at current source, not merely retaining50fb behavior.
+
+Clerical return deviation: CC changed the ledger Verify column despite its
+Evidence/Notes-only rule; criterion/status texts stayed intact. CDC restored all
+four exact issued verification methods from7b6bc350, moved useful CC pointers
+into Evidence and recorded this here. This is restoration of the existing
+contract, no new substantive source repair or reporting-only CC round. No other
+return defect needs a source iteration. Future handoffs should keep column
+ownership explicit; the source's usable capability, not receipt counters, gates.
+
+Current verdict PASS: S03-01/02/03/04 independently done at W1a64666/D417319db.
+Native/browser/package/readback/actual source evidence above meets each issued
+method. Slice closes. Arc composition still needs a fresh independent approved
+CDC context after this CC exits; root's arc assembly is not self-acceptance.
+No Arc02/publication. Inherited fidelity/human/expert/AT/nativezoom/otherbrowser/
+complete capabilities/main integration/2.0 release obligations remain open.
+
+Close-record checks: an old temporary link helper falsely rejected the valid
+artifacts/ directory because it required a regular file. A current temporary
+variant permits existing directory links and requires files for fragments; all
+10changed Markdown files/41local links/1fragment pass, LF/EOF and diff clean. No
+product link changed to satisfy that helper and no maintained checker added.
