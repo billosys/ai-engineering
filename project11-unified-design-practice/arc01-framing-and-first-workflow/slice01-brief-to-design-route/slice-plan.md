@@ -1,12 +1,12 @@
 ---
 slice: slice01-brief-to-design-route
-status: active
+status: closed
 depends-on: [design-1.1 supported inputs; pinned LFE context]
 ---
 
 # Slice01 — Brief to a useful first design route
 
-Revision1.0, 2026-10-19. Project1.3/Arc1.0; initial prompt is immutable once issued.
+Revision1.1, 2026-10-19. Project1.3/Arc1.0; initial prompt is immutable once issued.
 Deliver the first packaged workflow and optional LFE case, not a planning-only packet.
 CC OpenAI gpt-6-luna/high implements; CDC/root requested6.1SolHigh independently reviews.
 
@@ -41,3 +41,11 @@ All four criteria below have concrete positive/negative witnesses in the prompt.
 ## Version History
 
 - 1.0 (2026-10-19): Open first packaged method/LFE case delivery under recorded AM and model choices, leaving live site changes to accepted next slice.
+
+## Current assignment and closure
+
+Initial cc-prompt.md at94a9a830 accepted at source2bc2ff0b/returnb6d23e99.
+All4rows done by independent CDC review; no follow-up source assignment.
+See cdc-verification.md and cdc-retrospective.md.
+
+- 1.1 (2026-10-19): Close accepted packaged method/case; preserve prompt, scope and downstream site/release obligations.

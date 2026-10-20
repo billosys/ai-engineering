@@ -6,7 +6,7 @@ depends-on: [design-1.1 supported guidance; real LFE source]
 
 # Arc01 — From brief to a usable LFE design workflow
 
-Revision1.0, 2026-10-19. [Project1.3](../project-plan.md) is authority;
+Revision1.1, 2026-10-19. [Project1.3](../project-plan.md) is authority;
 [arc ledger](ledger.md) defines completion. Autonomous Mode covers this arc only.
 
 ## Capability and actual task
@@ -84,3 +84,20 @@ all child dispositions and inherited/downstream limits, with independent gate.
 ## Version History
 
 - 1.0 (2026-10-19): Open Operator-selected one-arc AM delivery with the real LFE site, generic packaged method and bounded live token/editorial application.
+
+## Current delivery and next source context
+
+Was: only S01 open. Now: S01 accepted at AI2bc2ff0b (design1.2.0), local task
+branch/package route usable. S02 opens next on LFE036e231; S03 remains unissued.
+CDC baseline make build/validate passed using existing lfesite5.2.0, Tailwind4.3.0
+and Pagefind1.5.2. Only generated src/css/site.css differs after that build; CDC
+authorizes S02 to regenerate/own it. Original site dirty tooling is still protected.
+Browser baseline: wordmark dark letters lose definition on the header; standard
+About prose stretches1216px at1280px; Pagefind results overlay artwork translucently,
+and390px blog subnav crowds search. Root Pagefind variables lose to later vendor
+CSS; component-scoped variables and actual loaded stylesheet order need checking.
+S02 repairs live colours/roles; reading measure, labels/keyboard and mobile subnav
+composition remain S03, not a new investigation or full IA rewrite.
+
+- 1.1 (2026-10-19): S01 closes; use its optional brief and actual CDC baseline
+  to prepare S02 live roles, retain the same three-slice scope and external gates.

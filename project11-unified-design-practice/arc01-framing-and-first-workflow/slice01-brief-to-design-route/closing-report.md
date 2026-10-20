@@ -55,3 +55,11 @@ commit is made.
   rendered state or downstream site repair is claimed.
 - CC's proposal is not independent verification, CRC/CDC acceptance or release
   readiness. This report leaves Slice01 and its four criteria open.
+
+## Bubble-up to the arc — CDC clerical supplement
+
+The independently accepted source/package increment is2bc2ff0b; the seven source
+paths provide the generic method and optional real LFE proposal. No S01 scope is
+omitted. No site implementation is part of S01. Continue the unchanged roadmap
+with S02 live roles, then S03 actual reading/navigation revision. See
+[CDC verification](cdc-verification.md) and [retrospective](cdc-retrospective.md).
