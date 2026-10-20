@@ -224,3 +224,11 @@ distinctions, meaningful alternatives, provisional choice, critique and
 revision. Add an explicitly optional LFE homepage case grounded in its pinned
 source and route the workflow through the entrypoint. No LFE site changes,
 build, browser checks or user research were performed.
+
+## Version 1.2.1 - 2026-10-20
+
+Completed the optional LFE case with a locally pinned implementation, attributed
+browser critique and revision, and bounded rechecks of keyboard routes, responsive
+reading and authored enlarged-text adaptations. The site remains outside the
+package; no participant research, native zoom, assistive-technology, other-browser,
+or publication result is claimed.

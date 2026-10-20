@@ -8,15 +8,18 @@ site or its data.
 
 ## Source and limits
 
-The read-only site context was pinned to commit
+The baseline site context was pinned to commit
 `036e231b09c48966da26d2227bccb4fa3b295df9` in the isolated LFE worktree
 `codex/design-practice-arc01`. The inspected source includes `_cobalt.yml`,
 `src/index.md`, `src/about.md`, the home/page/post layouts, `src/_includes/nav.liquid`,
 `src/_includes/css.liquid`, the home partials and data, `src/_data/site.yml`,
 and `tailwind/site.css` lines 1–175. A pre-existing dirty generated
-`src/css/site.css` was excluded from the pinned-source claims. No site change,
-build, browser inspection, contrast measurement or user study is represented
-here.
+`src/css/site.css` was excluded from those baseline-source claims. The later
+local implementation is separately pinned at
+`1a64666cd7273ee97380bff163ed7642d13356df` on
+`codex/design-practice-arc01`; it is not published and the package contains no
+copy of the LFE site or its data. Browser observations below are attributed to
+CDC. No user study or visitor preference is represented.
 
 The site already supplies its gold header wordmark
 (`/images/logo_developer@2x.png`), a masthead mark
@@ -31,14 +34,14 @@ turn them into defaults for another project.
 | Field | LFE-specific reading |
 |---|---|
 | Task | Give a visitor a clear first route into LFE, show enough of the language to make its character concrete, and let an existing practitioner find learning, use and download routes. |
-| Directly observed | The home layout orders a masthead with selectable code excerpts and a Learn More link, then feature cards, “Build It with LFE”, books, videos, and closing Discord/xkcd callouts. The nav has Learn, Use, Community, About, Blog and a Download menu, plus GitHub, Mastodon and light/dark controls. The home data names excerpts REPL, Simple Types, Compound Types, Records, Functions, Macros, Erlang Interop and OTP. The nav links to `/learn/`; the masthead data supplies `/learn` for its Learn More link, so confirm both resolve as intended before changing route presentation. These are source observations, not evidence of visitor preferences. |
+| Directly observed | The home layout orders a masthead with selectable code excerpts and a Learn More link, then feature cards, “Build It with LFE”, books, videos, and closing Discord/xkcd callouts. The nav has Learn, Use, Community, About, Blog and a Download menu, plus GitHub, Mastodon and light/dark controls. The home data names excerpts REPL, Simple Types, Compound Types, Records, Functions, Macros, Erlang Interop and OTP. The nav links to `/learn/`; the masthead data supplies `/learn`. CDC later checked both routes and reports that they reach the same Learn page. These are source observations and a bounded local check, not evidence of visitor preferences. |
 | Content and identity | Keep the supplied gold wordmark, masthead mark and alien mascot imagery, code examples, feature/build/book/video content, existing labels and destinations. The home source points to `/learn/`, `/use/`, `/community/`, `/about/` and `/blog/`; download URLs are formed from the repository and release values in `src/_data/site.yml`. |
 | Assumed tasks | A newcomer may want to understand what LFE is and where to start; a practitioner may need a current release or a path to the reference material; a reader may want to read an article and return to its topic. These are planning assumptions inferred from the source, not researched user needs. |
-| Constraints | Work with the existing Cobalt Liquid layouts/includes, content, navigation, URLs, supplied identity and light/dark mechanism. Preserve working content and do not assume this slice changes the site. |
+| Constraints | Work with the existing Cobalt Liquid layouts/includes, content, navigation, URLs, supplied identity and light/dark mechanism. Preserve the supplied material and treat revisions as local until separately reviewed and integrated. |
 | Priorities | First clarify the language and provide a direct learning or use route; keep current downloads findable; retain routes into deeper editorial and community material. |
-| Planned observations | Walk the page at narrow and wide widths: identify what LFE is, find Learn and Use, find the current download label, and locate a route to longer reading. Check tab and menu operation with keyboard and confirm the current item is understandable without colour alone. These are planned checks; no result has been collected. |
+| Planned and checked tasks | CDC later checked Learn and Use, the current download, code tabs, mobile navigation, search-to-article-to-topic return, and reading at narrow and wide sizes. Actual revision observations and adaptation limits are recorded below; they are not participant findings. |
 | Credible failures | A dense opening delays the first route; code tabs obscure that examples can be selected; the Download menu blends with navigation; editorial material is visually undifferentiated from quick-start actions; a state relies on colour alone. |
-| Unknown and next check | Which route matters most to actual newcomers and practitioners, and which visual differences help them? Do both Learn URLs resolve to the intended destination? Next, inspect a prototype using those stated tasks, verify the routes, and ask site maintainers or intended readers to try it. Do not fill the gap with analytics or participant claims that were not supplied. |
+| Unknown and next check | The local check confirmed that Learn More `/learn` and header `/learn/` reach the same Learn page, and that Use resolves. Which route matters most to actual newcomers and practitioners, and which visual differences help them, remain unknown without research with those audiences. |
 
 ## Two directions against the same brief
 
@@ -78,12 +81,13 @@ Choose **Language Workbench** for the current homepage task. The actual source
 already opens with selectable code excerpts, a concise language explanation
 and a Learn More route, and its nav exposes Learn, Use and versioned downloads.
 This direction extends that existing code-first structure and makes its next
-actions legible while preserving the editorial resources below. It is a
-source-based design proposal, not a tested visitor preference or an implemented
-homepage. Retain the Community Journal's quieter treatment for the article
-reading path, where continuous text and context can take priority.
+actions legible while preserving the editorial resources below. It began as a
+source-based proposal, not a tested visitor preference; the isolated revision
+and its actual review are recorded below. Retain the Community Journal's quieter
+treatment for the article reading path, where continuous text and context can
+take priority.
 
-One concrete critique is visible in the live style source. The root defines a
+The earlier token critique is visible in the live style source. The root defines a
 gold primitive ramp (`--gold-50` through `--gold-950`) and assigns some values
 to `.nav-active`, `.nav-hover-gold`, `.tab-gold`, `.cta-gold` and
 `.download-dev`. At the same time, the live Tailwind source uses scattered
@@ -96,8 +100,9 @@ their actual component surfaces. The legacy Sass noted in this project is not
 the live token authority; follow the loaded Tailwind stylesheet and the
 Pagefind include path when checking consumption.
 
-The proposal is to review these role questions in the next token-focused work,
-not to claim that new values have already been selected:
+These role questions framed the earlier token-focused work. Arc01 Slice02 owns
+its separate measured-pair evidence and verification; this example does not
+repeat those measurements or treat a screenshot as a pixel-level colour test.
 
 | Role to inspect | Existing consumers or questions |
 |---|---|
@@ -108,19 +113,57 @@ not to claim that new values have already been selected:
 | Boundaries and keyboard focus | Which borders, separators, focus rings and offsets remain visible beside their real background? |
 | Search and status | Which Pagefind input, result, selected, mark, skeleton and focus roles are present? Which warning/status colours must preserve meaning beyond hue? |
 
-Before revision, enumerate the live Tailwind utilities, custom gold classes and
-Pagefind variables consumed by the header, masthead tabs/CTA, downloads,
-content cards and search UI. Capture each actual foreground, resolved
-background and relevant normal, hover, focus, selected or inactive state in
-light and dark modes. After a proposed role mapping, repeat that same consumer
-walk, inspect computed styles and test the same interactions. Check applicable
-text and non-text contrast separately, labels that do not depend on colour,
-keyboard focus, and any alpha, gradient or overlay compositing. Record failed
-and unrun pairs. A source value or a successful site build alone cannot stand
-in for those rendered checks.
+## Implemented revision and recheck
 
-The next concrete check is to implement and build the approved role changes in
-the isolated site worktree, then compare the homepage, an ordinary page, a blog
-article and Pagefind in both modes against this consumer list. That work is
-outside this example's evidence: the values, implementation, build, rendered
-states and downstream repairs remain unverified here.
+**Baseline and choice.** The pinned source supplied a code-first homepage, its
+identity, existing content and routes. The two directions above were alternatives
+for ordering those same materials. Language Workbench was selected provisionally
+because it extended the source's code and action sequence; Community Journal
+remained useful for the long-form reading path. No audience preference was
+inferred.
+
+**Critique.** In CDC's first browser review of the local revision at
+`4fba8807e63467e79c20ee030d47e2190f6dee36`, the Build It CTA still nested a
+button inside a link and paragraphed content, actual About and blog paragraph
+type differed, storage denial prevented a second theme toggle, and resizing
+could lose focus. After those repairs, CDC's authored 200% text checks exposed
+desktop navigation using two rows, a nested Discord button, and horizontal
+overflow in feature, closing and reading content. A later visual scroll showed
+that removing overflow alone had squeezed the feature heading into an 88px
+column and left the About quotation only 198px wide. These were failures against
+the agreed task and adaptation recipe, not evidence of user preference.
+
+**Revision.** Four local commits produced the final site pin above. The first
+implemented the content hierarchy, skip link, native tabs, disclosure, theme
+control, and reading treatment while preserving supplied copy, data, imagery,
+labels and destinations. CDC's concrete critique led to focused corrections for
+valid native links, actual prose typography, storage-independent theme state,
+focus recovery, compact desktop navigation, grid and closing-row sizing, and
+long-token wrapping. The final correction made feature headings wrap below
+their icons when both no longer fit and used scoped fluid inline padding for
+feature cards and the About quotation. Generic design guidance and the LFE case
+remain separate: these local values are not package defaults.
+
+**Recheck.** CDC reports the final 390px/root32px feature heading at 230.8125px
+with “Technology” on one line below its icon, and the About quotation at 302px
+with 12px inline padding and readable multiword lines. All nine authored home,
+About and technical-article adaptation copies had scrollWidth 390 and the
+requested text, spacing and fallback properties. These are authored adaptation
+simulations, not native browser zoom or failed network-font tests. CDC also
+reports 16 normal viewport/theme/page conditions at earlier commit
+`72c28e305efa9955605d21e7aa3d1fdc48bad05e`, retained only after checking their
+applicability; they were not all rerun at the final pin. At the final source,
+CDC retested the home/article paths, the mobile Download and Escape sequence,
+tab wrapping, 320px home overflow, and the search → article → category → Blog
+keyboard route. Learn More and header Learn reach the same page, and Use
+resolves. Browser measurements and task outcomes are CDC observations, not CC
+browser checks: the CC tool surface did not expose the assigned browser.
+
+The local Cobalt build and validator passed after each scoped site handback;
+Pagefind indexed 316 pages and 7,502 words, with its existing whole-body
+fallback notice. A package-only build contains this optional example, not the
+site. Search-query hydration, full contrast recertification, actual assistive
+technology, native zoom, other browsers, failed-network font behavior, user
+research, Project10 source fidelity, main-branch integration and publication
+remain unverified and belong to their later owners. The local task branch is
+not a public release.
