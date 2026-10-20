@@ -17,7 +17,7 @@ craft. Initial operational scope remains web, product and editorial design.
 Full native-platform specialization, print, spatial/industrial design and full
 service-design practice remain future extensions requiring scope decisions.
 
-Plan revision **1.5**: the Operator requested assessment of Project10's delivery
+Plan revision **1.6**: the Operator requested assessment of Project10's delivery
 amendment `fdb073f5` and a streamlined Project11 plan that lands useful changes
 while retaining quality. This revision replaces the initial seven discipline
 arcs with four delivery arcs, preserving all seven capabilities and ten project
@@ -340,3 +340,24 @@ run has reached its endpoint: STOP. Arc02 remains unopened; future execution and
 any public action need their own authority. No roadmap/scope expansion occurs.
 
 - 1.5 (2026-10-20): Arc01's fresh independent package/source/browser composition gate accepts its bounded capability and P11-02; record exact local source pins and completed retrospective, retain the other nine project rows and all larger gates, and stop the one-arc run without opening Arc02.
+
+## Operator publication and Arc02 authorization — 2026-10-20
+
+The Operator now explicitly requests pushing accepted Arc01 and opening Arc02
+in Autonomous Mode with the same models/settings, applying smaller connected
+slices and earlier difficult positive checks. This supersedes Arc01's former
+no-push restriction for publication of its two exact accepted task-branch tips
+and the existing planning branch (including its already-committed ancestors).
+Publish AI417319db and LFE1a64666 to their corresponding origin task branches;
+no main merge, tag, PR, deployment, staging-remote push or new-source publication
+is authorized by this bounded publication step. Inspected workflows trigger CI/
+Pages on main/PR or release tags, not these task/planning branch pushes.
+Remote LFE main595c3d6 differs from the protected original local036e231; do not
+silently integrate or overwrite that external work. Verify remote branch tips
+after publication. Arc02's detailed open set and actual ownership are recorded
+before implementation. Approved CDC OpenAI gpt-6.1-sol/high and CC OpenAI
+gpt-6-luna/high carry forward explicitly; no model/default substitution.
+Stop after Arc02's independent composition/retrospective or a genuine unresolved
+gate. Existing final criteria/expert/fidelity/release/Operator gates survive.
+
+- 1.6 (2026-10-20): Operator authorizes accepted Arc01 task/planning branch push and Arc02-only AM continuation with unchanged explicit roles; preserve main/deployment boundaries and adopt earlier positive checks/smaller increments.
