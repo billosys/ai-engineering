@@ -69,6 +69,10 @@ action roles it uses. The action value still needs its supplied foreground and
 state values checked as complete pairs. Do not force token renaming or add
 primitive, semantic and component layers without a project need.
 
+For an existing system with multiple modes or component-owned exceptions, use
+[Evolve a Semantic Design System in Context](system-evolution.md) to trace the
+actual consumer, alias scope and rollback before changing supplied values.
+
 ## Review themes and state pairs
 
 For each theme or mode, enumerate the rendered combinations users encounter:

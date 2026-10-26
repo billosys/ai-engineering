@@ -83,7 +83,7 @@ make cpp               # build target/skills/cpp-guidelines.zip
 make js                # build target/skills/javascript-deno-guidelines.zip
 make erlang            # build target/skills/erlang-guidelines.zip
 make cobalt            # build target/skills/cobalt-guidelines.zip
-make design            # build target/skills/visual-design-system.zip
+make design            # build target/skills/visual-design-system.zip (Markdown methods and text cases; runnable specimens live in examples/design/)
 make tailwindcss       # build target/skills/tailwindcss.zip
 make deno              # build target/skills/deno-js-linter.zip
 make biome             # build target/skills/biome-js-linter.zip and biome-linter.zip

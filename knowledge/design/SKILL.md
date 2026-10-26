@@ -1,14 +1,15 @@
 ---
 name: visual-design-system
 description: |
-  Visual design principles, colour, typography, layout, and spatial composition.
+  Visual design principles, colour, typography, layout, spatial composition,
+  and interaction/content flows.
   Use when: designing pages or components, selecting or evaluating type and
   colour, setting up type scales, composing layouts, writing CSS, building
   design tokens, creating fluid designs, reviewing visual quality, designing
   wayfinding, theming, or answering a visual design question.
 license: MIT
 metadata:
-  version: "1.1.0"
+  version: "1.15.1"
   hermes:
     tags: [design, css, color, typography, layout, oklch, cube-css, utopia]
     category: web-frontend
@@ -43,24 +44,42 @@ entrypoint.
 
 | Guide | Method | Load it when |
 |---|---|---|
+| [Using the skill](guides/using-the-skill.md) | A short task-to-brief-to-method route with six text-based cases and focused checks. | Starting from a concrete design task or looking for a nearby worked case. |
+| [From a Brief to a Revised Design](guides/design-workflow.md) | A compact route from supplied task and evidence to distinct concepts, a provisional decision, critique and revision. | Framing a design task, comparing directions or turning an inspection into a concrete revision. |
+| [Patterns and contextual adoption](guides/patterns-and-adoption.md) | A source-bounded route from a real task to an adopt/adapt/decline decision and reversible first use. | Reusing or adapting a pattern from another system; tracing evidence, local fit, ownership and the next check. |
 | [Design as Engineering](guides/design.md) | Principles, relationships, constraints and trade-offs, with room for contextual exceptions. | Reviewing or explaining a design decision. |
 | [Foundations of Design](guides/foundations-of-design.md) | Research context, source analysis, technical concepts and cross-domain discussion. | Looking for evidence or conceptual background; check each claim's scope. |
 | [Colour](guides/colour.md) | Start from supplied identity and colour roles, then choose and check actual pairs. | Selecting colours, mapping existing tokens or reviewing states and themes. |
+| [Semantic system evolution](guides/system-evolution.md) | Trace role ownership, aliases, modes and rendered consumers before changing an existing token system. | Evolving a supplied design system across modes or preserving a component-specific exception. |
+| [Semantic system migration](guides/system-migration.md) | Carry compatible roles and resolved values across owners or implementations with a bounded projection, review and rollback. | Handing off or migrating an existing semantic design contract; see the [filled LFE handoff](guides/examples/lfe-system-handoff.md). |
 | [Type](guides/type.md) | Start from scripts, content and reading conditions, then assess roles, fonts, scale and axes. | Choosing typefaces, fallbacks, hierarchy or variable-font settings. |
 | [Layout](guides/layout.md) | Compose from spatial relationships and intrinsic sizing; use fluid values or breakpoints as the content requires. | Structuring pages, spacing, containers or responsive behavior. |
+| [Interaction and Content](guides/interaction-and-content.md) | Connect content, user tasks, interface actions, states, semantics, focus and status into a usable flow. | Designing search, forms, filters, navigation or another interactive content flow. |
+| [Dense data and comparison](guides/data-and-comparison.md) | Choose meaningful groups and units, then compare exact values and changing states with a task-fit display. | Summarizing a dense record set or showing how a comparison follows filters and other existing state. |
+| [Image composition](guides/image-composition.md) | Choose an image's role, frame, focal area, caption, alternative text and links from its meaning in context. | Composing an image-led article or collection, deciding whether to crop, or checking the path when images fail. |
+| [Purposeful motion](guides/motion.md) | Decide whether movement adds meaning, then keep its trigger, finite transition, resting state and reduction paths clear. | Adding an optional transition or motion cue while preserving immediate function at rest. |
+| [Forms and recovery](guides/forms-and-recovery.md) | Choose fields, explain errors, distinguish service failure, and design retry, completion and explicit draft recovery with honest storage limits. | Designing a form, its interrupted-work recovery or its service-failure path. |
+| [Inclusive interfaces](guides/inclusive-interfaces.md) | Adapt language, direction, mixed-script values, content expansion and review to a named audience and task. | Adapting an interface across languages or writing directions. |
 | [Breaking the Layout Monoculture](guides/breaking-the-layout-monoculture.md) | Context-led ways to vary familiar patterns, plus wayfinding and interaction considerations. | A page needs a distinct composition, exploration or navigation. |
 
 ## Routes by task
 
 | Task | Guides |
 |---|---|
+| Start or frame a design task | [From a Brief to a Revised Design](guides/design-workflow.md); use [Patterns and contextual adoption](guides/patterns-and-adoption.md) when a source pattern is proposed; optionally see the [LFE homepage case](guides/examples/lfe-workflow.md) for one project-specific application. |
 | Design a page | [Layout](guides/layout.md), [Colour](guides/colour.md), [Type](guides/type.md) |
+| Design an interactive content flow | [Interaction and Content](guides/interaction-and-content.md), then [Forms and recovery](guides/forms-and-recovery.md) for form tasks, interrupted-work recovery and relevant layout, type and accessibility guidance; use [Patterns and contextual adoption](guides/patterns-and-adoption.md) when reusing another system's pattern; see [Inclusive interfaces](guides/inclusive-interfaces.md) when adapting language or direction. The guides include LFE search and reading-task examples plus English and Arabic versions of the illustrative service form. |
+| Compare dense data in a changing view | [Dense data and comparison](guides/data-and-comparison.md), then the relevant [Interaction and Content](guides/interaction-and-content.md) task. |
+| Compose an image-led article or collection | [Using the skill: image composition](guides/using-the-skill.md#image-composition), then [Image composition](guides/image-composition.md). |
+| Adapt an interface for another language or writing direction | [Using the skill: language and direction](guides/using-the-skill.md#language-and-direction), then [Inclusive interfaces](guides/inclusive-interfaces.md) and [Forms and recovery](guides/forms-and-recovery.md). |
 | Design a homepage or portal | [Breaking the Layout Monoculture](guides/breaking-the-layout-monoculture.md), [Layout](guides/layout.md), then relevant colour and type guidance |
 | Choose colours | [Colour](guides/colour.md), then the perception discussion in [Design as Engineering](guides/design.md) |
 | Set up typography | [Type](guides/type.md), then relevant layout guidance |
-| Build or revise tokens | [Colour](guides/colour.md), [Foundations](guides/foundations-of-design.md), and the adopting project's token contract |
-| Review a page | [Design as Engineering](guides/design.md), then relevant layout, colour, type and accessibility checks |
-| Add transitions or animation | [Breaking the Layout Monoculture](guides/breaking-the-layout-monoculture.md), with target support and preference checks |
+| Compose an editorial reading study | [Using the skill: editorial reading](guides/using-the-skill.md#editorial-reading), then [Type](guides/type.md#compose-editorial-hierarchy-for-the-reading-task). |
+| Build or revise tokens | [Colour](guides/colour.md), [Semantic system evolution](guides/system-evolution.md) when changing an existing mode or ownership contract, [Foundations](guides/foundations-of-design.md), and the adopting project's token contract |
+| Migrate or hand off a semantic token system | [Semantic system migration](guides/system-migration.md), then the adopting project's token contract; use [Semantic system evolution](guides/system-evolution.md) when first tracing an existing system |
+| Review a page or interaction | [Design as Engineering](guides/design.md), [Interaction and Content](guides/interaction-and-content.md) where applicable, then relevant layout, colour, type and accessibility checks |
+| Add a purposeful transition or motion cue | [Purposeful motion](guides/motion.md), then [Breaking the Layout Monoculture](guides/breaking-the-layout-monoculture.md) for scroll-driven or view-transition context; check target behavior and user motion preference. |
 | Design navigation or wayfinding | [Breaking the Layout Monoculture](guides/breaking-the-layout-monoculture.md) |
 | Investigate a mathematical or historical claim | [Foundations of Design](guides/foundations-of-design.md) and its cited sources |
 
@@ -166,3 +185,13 @@ discrete change. Test the target sizes and preferences.
 
 These questions support review; answering them does not by itself establish
 accessibility conformance or fresh-context usability.
+
+## Source and research boundary
+
+The skill is usable from its Markdown guidance without this repository, runnable
+examples, artwork or the complete research corpus. Source extraction confidence
+is not current claim verification; historical excerpts are not current setup
+advice; and unresolved original-source fidelity is not complete. For a
+consequential factual claim, consult relevant available primary support and keep
+its scope visible. Use [the task cases](guides/using-the-skill.md) for practical
+routes without turning optional research into a required skill dependency.

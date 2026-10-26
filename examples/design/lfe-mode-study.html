@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LFE interactive mode study</title>
+  <link rel="stylesheet" href="lfe-mode-study.css">
+</head>
+<body>
+  <main class="study" id="top" tabindex="-1">
+    <header class="study__intro">
+      <p class="study__eyebrow">Design-system witness</p>
+      <h1>LFE interactive roles across modes</h1>
+      <p>This focused projection compares the current and proposed LFE link and
+        focus roles. Each panel owns its values locally; the code example keeps
+        its existing component-specific gold.</p>
+      <p><a href="../../knowledge/design/guides/system-evolution.md">Read the system-evolution method</a>.</p>
+    </header>
+
+    <section class="comparison" aria-label="Before and after mode comparison">
+      <article class="panel before-light" id="before-light" aria-labelledby="before-light-title">
+        <p class="panel__state">Before · light</p>
+        <h2 id="before-light-title">Current light roles</h2>
+        <p class="panel__sample">Ordinary content with an <a href="#contrast-notes">inline reference</a>.</p>
+        <button class="panel__control" type="button">Focus this control</button>
+        <div class="panel__code">
+          <p class="panel__code-label">Code component · unchanged</p>
+          <a href="#contrast-notes">Open code reference</a>
+          <button class="panel__control" type="button">Focus code control</button>
+        </div>
+      </article>
+
+      <article class="panel after-light" id="after-light" aria-labelledby="after-light-title">
+        <p class="panel__state">After · light</p>
+        <h2 id="after-light-title">Proposed light roles</h2>
+        <p class="panel__sample">Ordinary content with an <a href="#contrast-notes">inline reference</a>.</p>
+        <button class="panel__control" type="button">Focus this control</button>
+        <div class="panel__code">
+          <p class="panel__code-label">Code component · unchanged</p>
+          <a href="#contrast-notes">Open code reference</a>
+          <button class="panel__control" type="button">Focus code control</button>
+        </div>
+      </article>
+
+      <article class="panel before-dark" id="before-dark" aria-labelledby="before-dark-title">
+        <p class="panel__state">Before · dark</p>
+        <h2 id="before-dark-title">Current dark roles</h2>
+        <p class="panel__sample">Ordinary content with an <a href="#contrast-notes">inline reference</a>.</p>
+        <button class="panel__control" type="button">Focus this control</button>
+        <div class="panel__code">
+          <p class="panel__code-label">Code component · unchanged</p>
+          <a href="#contrast-notes">Open code reference</a>
+          <button class="panel__control" type="button">Focus code control</button>
+        </div>
+      </article>
+
+      <article class="panel after-dark" id="after-dark" aria-labelledby="after-dark-title">
+        <p class="panel__state">After · dark</p>
+        <h2 id="after-dark-title">Proposed dark roles</h2>
+        <p class="panel__sample">Ordinary content with an <a href="#contrast-notes">inline reference</a>.</p>
+        <button class="panel__control" type="button">Focus this control</button>
+        <div class="panel__code">
+          <p class="panel__code-label">Code component · unchanged</p>
+          <a href="#contrast-notes">Open code reference</a>
+          <button class="panel__control" type="button">Focus code control</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="notes" id="contrast-notes" tabindex="-1" aria-labelledby="notes-title">
+      <h2 id="notes-title">What this study represents</h2>
+      <p>The four panels project selected LFE semantic roles and their local
+        ownership. They are not a full copy of the site, a general token preset,
+        or a claim of whole-page accessibility conformance. Use the browser's
+        keyboard focus to inspect each native link and control.</p>
+      <a href="#top">Return to the comparison</a>
+    </section>
+  </main>
+</body>
+</html>

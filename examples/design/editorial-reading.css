@@ -1,0 +1,265 @@
+/* A local study only: system font roles and colors are proposals for this
+   excerpt, not LFE site tokens, supplied font replacements, or defaults. */
+:root {
+  color-scheme: light;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  color: #25241f;
+  background: #f5f1e8;
+  font-synthesis: none;
+  text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.study {
+  inline-size: min(100%, 84rem);
+  margin-inline: auto;
+  padding: clamp(1.25rem, 4vw, 4rem);
+  container: editorial-study / inline-size;
+}
+
+.study-header {
+  max-inline-size: 58rem;
+  margin: 0 auto 2.5rem;
+}
+
+.site-mark {
+  margin: 0 0 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 750;
+  letter-spacing: .015em;
+}
+
+.site-mark span {
+  margin-inline-start: .5em;
+  color: #615c50;
+  font-size: .875em;
+  font-weight: 500;
+}
+
+.kicker,
+.eyebrow {
+  margin: 0;
+  color: #625544;
+  font-size: .875rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+}
+
+h1,
+h2,
+p {
+  overflow-wrap: anywhere;
+}
+
+h1,
+.archive-excerpt h2,
+.reading-context h2 {
+  font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -.025em;
+}
+
+h1 {
+  max-inline-size: 16ch;
+  margin: .25em 0 .3em;
+  font-size: clamp(2.5rem, 7vw, 5.25rem);
+  line-height: 1.02;
+}
+
+.dek {
+  max-inline-size: 48rem;
+  margin: 0;
+  color: #514d44;
+  font-size: 1.25rem;
+  line-height: 1.45;
+}
+
+code {
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: .92em;
+  overflow-wrap: anywhere;
+}
+
+.study-controls {
+  display: none;
+  max-inline-size: 58rem;
+  margin: 0 auto 2rem;
+  padding: .75rem 1rem 1rem;
+  border: 1px solid #a9a08f;
+  border-radius: .35rem;
+}
+
+.study-controls legend {
+  padding-inline: .35rem;
+  font-weight: 700;
+}
+
+.study-controls label {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  min-block-size: 2.75rem;
+  margin-inline-end: 1.25rem;
+  cursor: pointer;
+}
+
+.study-controls input {
+  inline-size: 1.125rem;
+  block-size: 1.125rem;
+  margin: 0;
+  accent-color: #314d3c;
+}
+
+:where(a, input):focus-visible {
+  outline: .2rem solid #125d8b;
+  outline-offset: .2rem;
+}
+
+.study-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.5rem;
+}
+
+.archive-excerpt,
+.reading-context {
+  min-inline-size: 0;
+  inline-size: 100%;
+}
+
+.archive-excerpt {
+  max-inline-size: 43rem;
+  margin-inline: auto;
+}
+
+.article-header {
+  margin-block-end: 2rem;
+  padding-block-end: 1.25rem;
+  border-block-end: 1px solid #c9c0ae;
+}
+
+.archive-excerpt h2 {
+  margin: .3em 0 .15em;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.08;
+}
+
+.byline {
+  margin: 0;
+  color: #514d44;
+}
+
+blockquote {
+  margin: 0;
+  font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  font-size: 1.25rem;
+  line-height: 1.62;
+  text-align: start;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+blockquote p + p {
+  margin-block-start: 1.1em;
+}
+
+.source-note {
+  display: grid;
+  gap: .65rem;
+  margin-block-start: 2rem;
+  padding-block-start: 1rem;
+  border-block-start: 1px solid #c9c0ae;
+  color: #514d44;
+  font-size: .9375rem;
+}
+
+a {
+  color: #174f70;
+  text-decoration-thickness: .08em;
+  text-underline-offset: .18em;
+}
+
+a:hover {
+  text-decoration-thickness: .14em;
+}
+
+.reading-context {
+  max-inline-size: 43rem;
+  margin-inline: auto;
+  padding: 1.25rem 0 0;
+  border-block-start: .2rem solid #526b57;
+}
+
+.reading-context h2 {
+  margin: .35em 0 .7em;
+  font-size: 1.75rem;
+  line-height: 1.15;
+}
+
+.reading-context p {
+  margin: 0;
+}
+
+.reading-context p + p {
+  margin-block-start: 1rem;
+}
+
+.layout-note {
+  color: #514d44;
+  font-size: .9375rem;
+}
+
+/* The native controls are visible only when both state and room queries work. */
+@supports (container-type: inline-size) and selector(.study:has(input:checked)) {
+  .study-controls {
+    display: block;
+  }
+
+  @container editorial-study (inline-size >= 68em) {
+    .study:has(#context-alongside:checked) .study-layout {
+      grid-template-columns: minmax(0, 2fr) minmax(min(100%, 17em), 1fr);
+      align-items: start;
+      gap: clamp(2em, 5cqi, 5em);
+    }
+
+    .study:has(#context-alongside:checked) .archive-excerpt,
+    .study:has(#context-alongside:checked) .reading-context {
+      max-inline-size: none;
+      margin: 0;
+    }
+
+    .study:has(#context-alongside:checked) .reading-context {
+      padding: 1em 0 0 1.25em;
+      border-block-start: 0;
+      border-inline-start: .2rem solid #526b57;
+    }
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    color: #111;
+    background: #fff;
+  }
+
+  .eyebrow,
+  .kicker,
+  .site-mark span,
+  .dek,
+  .byline,
+  .source-note,
+  .layout-note {
+    color: #222;
+  }
+}

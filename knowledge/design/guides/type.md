@@ -217,6 +217,69 @@ items; [CSS Grid reordering](https://www.w3.org/TR/css-grid-2/#order-accessibili
 cannot replace it. Record untested browser/assistive-technology behavior and
 remaining output checks rather than infer them from markup or geometry.
 
+## Compose editorial hierarchy for the reading task
+
+Start with what the reader is doing. Sustained reading may call for a clear
+entry point, a quiet byline, a comfortable measure and enough separation to
+follow the argument. Contextual discovery may keep a source note, definition or
+related detail beside the passage it explains. These are different reading
+priorities, so compare arrangements through grouping, measure and alignment as
+well as type size or colour.
+
+Give each visible item a role before choosing its style: title, date/byline,
+body, inline code, source attribution or contextual note. Keep heading levels
+and document order tied to meaning. In an editorial specimen, a large title can
+invite reading, while a small section label or metadata line can orient without
+competing with the passage. Let paragraphs and inline code retain their own
+rhythm; a single display treatment applied to every heading and note can flatten
+the relationships the reader needs.
+
+Compare at least two arrangements with the same content and an explicit task.
+For example, keep an excerpt at a reading measure with its context after it,
+then place that context beside the excerpt when there is room for both columns.
+Use intrinsic sizing or a container query tied to the actual content area and
+text size when the arrangement should change as the available reading room
+changes. Begin with a meaningful stacked order, then add the side-by-side state
+as an enhancement; do not reorder content visually in a way that makes keyboard
+or reading order misleading. Controls that depend on a CSS feature should only
+appear when that feature can make them work.
+
+Review the real content in both arrangements. Check whether the title leads the
+hierarchy, whether the excerpt and contextual note still read as related, and
+whether paragraph measure, line length, wrapping and spacing remain
+comfortable. Repeat at narrow widths and with enlarged text and spacing. If the
+two-column arrangement becomes cramped, let it stack even when the viewport is
+wide; the viewport alone does not tell you how much room the text has.
+
+This method adapts Carbon's [productive/expressive distinction](https://www.carbondesignsystem.com/building-blocks/foundations/typography/style-strategies)
+as a prompt to match hierarchy to task and reading intent, and Spectrum 2's
+[applied type roles](https://spectrum.adobe.com/foundations/typography/applying-the-type-system)
+as a way to relate titles, body, metadata and controls. Material Design 3's
+official [Android Jetpack Compose guidance](https://developer.android.com/develop/ui/compose/designsystems/material3#typography)
+groups roles as display, headline, title, body and label, and notes that a
+product may use a subset. These are useful role and hierarchy ideas here, not
+web font, scale or platform defaults.
+The example uses a local system-serif proposal for the archive passage; it does
+not replace LFE's supplied Newsreader or claim to reproduce the live site's
+identity.
+
+The [editorial reading text case](using-the-skill.md#editorial-reading) records
+the two arrangements: a focused passage with context afterward and a wider
+composition with context alongside. The earlier runtime study used one semantic
+source order and native controls. Its title, author, date and historical excerpt
+come from Duncan McGreggor's [“LFE and rebar3”][lfe-rebar3], published 25 March
+2016. That excerpt is historical material, not current setup advice; the short
+editorial note is specimen commentary, not quoted source or reader research.
+The recorded study demonstrates a design option, not an observed improvement in
+readability. This Markdown route does not claim the removed runtime was run.
+
+As a counterexample, a repeated dense task list usually needs comparison,
+status and scan paths to lead. A giant story-style heading would spend emphasis
+where the task needs quick distinctions. Give the repeated values and task
+state the needed hierarchy, then check the actual rows and actions together.
+
+[lfe-rebar3]: https://lfe.io/blog/tutorials/2016/03/25/0858-lfe-and-rebar3/
+
 ## Vary by context and review
 
 Different content, roles, scripts, devices or user preferences may justify

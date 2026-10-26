@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>LFE reading desk — interaction example</title>
+<style>
+:root{color-scheme:light dark;font:1rem/1.5 system-ui,sans-serif;--ink:#20252a;--paper:#fffdf7;--muted:#59636d;--line:#b7b1a3;--gold:#9a7907;--gold-soft:#f3e7b3;--focus:#9a7907;--control-line:#80786a}
+@media(prefers-color-scheme:dark){:root{--ink:#e5e7eb;--paper:#18202a;--muted:#b6c0ca;--line:#58616b;--gold:#d4a90a;--gold-soft:#39402e;--focus:#f0c542;--control-line:#87919c}}
+*{box-sizing:border-box}body{margin:0 auto;max-inline-size:80rem;padding:1rem;color:var(--ink);background:var(--paper)}h1{font-size:clamp(1.5rem,5vw,2.2rem);line-height:1.15}
+a{color:inherit;text-decoration-color:var(--gold);text-underline-offset:.18em}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,[tabindex="0"]:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.intro,.note{max-inline-size:72ch}.controls{display:flex;flex-wrap:wrap;align-items:end;gap:.8rem 1rem;margin-block:1.25rem}.field{display:grid;gap:.25rem}
+input,select,button{font:inherit;color:var(--ink);background:var(--paper);border:1px solid var(--control-line);border-radius:.25rem;padding:.5rem .65rem}button{cursor:pointer}button:hover{border-color:var(--gold)}
+.counts{font-weight:650;margin-block:.75rem}.topic-summary{margin-block:1rem 1.25rem;max-inline-size:46rem}.topic-summary h2{font-size:1.15rem;line-height:1.3;margin-block:.7rem .25rem}.topic-summary-note{color:var(--muted);margin-block:.25rem .6rem}.table-help{color:var(--muted);margin-block:.4rem}.table-scroll{max-inline-size:100%;overflow:auto;border:1px solid var(--line)}
+table{border-collapse:collapse;min-inline-size:50rem;inline-size:100%}.topic-summary-table{min-inline-size:0;table-layout:fixed}.topic-summary-table th:first-child{inline-size:40%}.topic-summary-table th:nth-child(2){inline-size:27%}.topic-summary-table th:nth-child(3){inline-size:33%}.topic-summary-table th,.topic-summary-table td{padding:.45rem .5rem;overflow-wrap:anywhere}.topic-summary-table td.number{text-align:end;font-variant-numeric:lining-nums tabular-nums}.topic-bar{display:block;inline-size:100%;block-size:.35rem;margin-block:.25rem .1rem;background:var(--line);border-radius:999px;overflow:hidden}.topic-bar-fill{display:block;block-size:100%;inline-size:0;background:var(--gold);border-radius:inherit}caption{text-align:start;font-weight:700;padding:.7rem;background:var(--gold-soft)}
+th,td{text-align:start;vertical-align:top;padding:.65rem .7rem;border-block-end:1px solid var(--line)}thead th{background:color-mix(in srgb,var(--gold-soft),var(--paper) 35%)}tbody th{font-weight:600}.article-cell{inline-size:19rem;max-inline-size:19rem;overflow-wrap:anywhere}.selection-cell{text-align:center;inline-size:3rem}.selection-cell input{inline-size:1.15rem;block-size:1.15rem;padding:0;margin:.15rem}.status{white-space:nowrap}.provenance{margin-block:1rem;max-inline-size:72ch}.provenance code{overflow-wrap:anywhere}
+.empty{padding:1rem;border-inline-start:4px solid var(--gold)}.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:30rem){body{padding:.75rem}.controls>*{flex:1 1 100%}.controls input,.controls select,.controls button{inline-size:100%}}
+</style></head><body><main>
+<h1>LFE reading desk</h1>
+<p class="intro">Choose articles for a local reading session. The queue lasts until reload and does not change the LFE site or verify an article.</p>
+<details class="provenance"><summary>Source snapshot and data provenance</summary><p>The table contains the 16 most recent published LFE posts at public source revision <code>1a64666cd7273ee97380bff163ed7642d13356df</code>. Titles, explicit permalinks, first categories and publication dates come from each post’s complete frontmatter. Article bodies are not copied.</p></details>
+<div class="controls"><div class="field"><label for="query">Filter by title or topic</label><input id="query" type="search" autocomplete="off"></div>
+<div class="field"><label for="queue-filter">Show</label><select id="queue-filter"><option value="all">All articles</option><option value="available">Available</option><option value="queued">Queued</option></select></div>
+<button id="queue-selected" type="button">Queue selected visible articles</button><button id="reset" type="button">Reset filters and selection</button><button id="undo" type="button">Undo last queue batch</button></div>
+<p id="counts" class="counts">Visible 16 of 16 · Selected 0 · Queued in this session 0</p>
+<section class="topic-summary" aria-labelledby="topic-summary-title">
+<h2 id="topic-summary-title">Topics in this view</h2>
+<p id="topic-summary-scale" class="topic-summary-note">This is the pinned 16-article snapshot. Bars share a fixed 0–16 article scale; exact counts are shown in the table.</p>
+<table class="topic-summary-table" aria-describedby="topic-summary-scale"><caption>Visible and queued articles by topic</caption><thead><tr><th scope="col">Topic</th><th scope="col">Visible</th><th scope="col">Queued in view</th></tr></thead><tbody id="topic-summary-rows">
+<tr data-topic="tutorials"><th scope="row">tutorials</th><td class="topic-visible number">11<span class="topic-bar" aria-hidden="true"><span class="topic-bar-fill"></span></span></td><td class="topic-queued number">0</td></tr>
+<tr data-topic="languages"><th scope="row">languages</th><td class="topic-visible number">2<span class="topic-bar" aria-hidden="true"><span class="topic-bar-fill"></span></span></td><td class="topic-queued number">0</td></tr>
+<tr data-topic="announcements"><th scope="row">announcements</th><td class="topic-visible number">2<span class="topic-bar" aria-hidden="true"><span class="topic-bar-fill"></span></span></td><td class="topic-queued number">0</td></tr>
+<tr data-topic="news"><th scope="row">news</th><td class="topic-visible number">1<span class="topic-bar" aria-hidden="true"><span class="topic-bar-fill"></span></span></td><td class="topic-queued number">0</td></tr>
+</tbody></table>
+</section>
+<p id="message" role="status" aria-atomic="true">Choose visible articles with their checkboxes. Reloading resets this session’s queue.</p>
+<p id="empty" class="empty" hidden>No articles match these filters. Reset filters to see the full list.</p>
+<p id="table-help" class="table-help">On a narrow screen, scroll this table region horizontally to read every column. Focus this region and use arrow keys or a trackpad to scroll.</p>
+<div id="table-region" class="table-scroll" role="region" tabindex="0" aria-labelledby="desk-caption" aria-describedby="table-help">
+<table><caption id="desk-caption">Published LFE articles available for this reading session</caption>
+<colgroup><col style="inline-size:3rem"><col style="inline-size:19rem"><col style="inline-size:8rem"><col style="inline-size:8rem"><col style="inline-size:12rem"></colgroup><thead><tr><th scope="col">Select</th><th scope="col">Article</th><th scope="col">Published</th><th scope="col">Topic</th><th scope="col">Queue status</th></tr></thead><tbody id="articles"><tr data-key="/blog/tutorials/2026/06/19/0900-lfe-friday---mapsget3" data-title="LFE Friday - maps:get/3" data-topic="tutorials"><td class="selection-cell"><input class="pick" type="checkbox" aria-label="Select LFE Friday - maps:get/3"></td><th class="article-cell" scope="row"><a href="https://lfe.io/blog/tutorials/2026/06/19/0900-lfe-friday---mapsget3/">LFE Friday - maps:get/3</a></th><td><time datetime="2026-06-19T09:00:00+00:00">2026-06-19</time></td><td>tutorials</td><td class="status">Available</td></tr>
+<tr data-key="/blog/languages/2026/06/12/1600-bringing-types-to-lfe" data-title="Bringing Types to LFE: Lessons from Haskell, the Typed Lisps, and Gleam" data-topic="languages"><td class="selection-cell"><input class="pick" type="checkbox" aria-label="Select Bringing Types to LFE: Lessons from Haskell, the Typed Lisps, and Gleam"></td><th class="article-cell" scope="row"><a href="https://lfe.io/blog/languages/2026/06/12/1600-bringing-types-to-lfe/">Bringing Types to LFE: Lessons from Haskell, the Typed Lisps, and Gleam</a></th><td><time datetime="2026-06-12T16:00:00+00:00">2026-06-12</time></td><td>languages</td><td class="status">Available</td></tr>
+<tr data-key="/blog/tutorials/2026/06/05/1008-graph-theory-in-lfe-graffeo-erlang-knowledge" data-title="Graph Theory in LFE: A Knowledge Graph of Erlang Itself" data-topic="tutorials"><td class="selection-cell"><input class="pick" type="checkbox" aria-label="Select Graph Theory in LFE: A Knowledge Graph of Erlang Itself"></td><th class="article-cell" scope="row"><a href="https://lfe.io/blog/tutorials/2026/06/05/1008-graph-theory-in-lfe-graffeo-erlang-knowledge/">Graph Theory in LFE: A Knowledge Graph of Erlang Itself</a></th><td><time datetime="2026-06-05T10:08:00+05:00">2026-06-05</time></td><td>tutorials</td><td class="status">Available</td></tr>
+<tr data-key="/blog/languages/2026/06/04/1800-lykn-a-lisp-born-from-lfe" data-title="Lykn: A Lisp Born from LFE" data-topic="languages"><td class="selection-cell"><input class="pick" type="checkbox" aria-label="Select Lykn: A Lisp Born from LFE"></td><th class="article-cell" scope="row"><a href="https://lfe.io/blog/languages/2026/06/04/1800-lykn-a-lisp-born-from-lfe/">Lykn: A Lisp Born from LFE</a></th><td><time datetime="2026-06-04T18:00:00+00:00">2026-06-04</time></td><td>languages</td><td class="status">Available</td></tr>
+<tr data-key="/blog/tutorials/2026/06/03/0230-welcome-to-the-new-lfe-blog" data-title="Welcome to the New LFE Blog" data-topic="announcements"><td class="selection-cell"><input class="pick" type="checkbox" aria-label="Select Welcome to the New LFE Blog"></td><th class="article-cell" scope="row"><a href="https://lfe.io/blog/tutorials/2026/06/03/0230-welcome-to-the-new-lfe-blog/">Welcome to the New LFE Blog</a></th><td><time datetime="2026-06-03T02:30:00+00:00">2026-06-03</time></td><td>announcements</td><td class="status">Available</td></tr>
+<tr data-key="/blog/tutorials/2026/04/20/0005-lfeio-50-rust-tooling-all-the-way-down" data-title="lfe.io 5.0: Rust Tooling, All the Way Down" data-topic="announcements"><td class="selection-cell"><input class="pick" type="checkbox" aria-label="Select lfe.io 5.0: Rust Tooling, All the Way Down"></td><th class="article-cell" scope="row"><a href="https://lfe.io/blog/tutorials/2026/04/20/0005-lfeio-50-rust-tooling-all-the-way-down/">lfe.io 5.0: Rust Tooling, All the Way Down</a></th><td><time datetime="2026-04-20T00:05:00+00:00">2026-04-20</time></td><td>announcements</td><td class="status">Available</td></tr>
+<tr data-key="/blog/tutorials/2019/05/13/1549-running-lfe-in-docker-updated" data-title="Running LFE in Docker, Updated" data-topic="tutorials"><td class="selection-cell"><input class="pick" type="checkbox" aria-label="Select Running LFE in Docker, Updated"></td><th class="article-cell" scope="row"><a href="https://lfe.io/blog/tutorials/2019/05/13/1549-running-lfe-in-docker-updated/">Running LFE in Docker, Updated</a></th><td><time datetime="2019-05-13T15:49:00+00:00">2019-05-13</time></td><td>tutorials</td><td class="status">Available</td></tr>
+<tr data-key="/blog/news/2019/05/13/0250-catch-up" data-title="Catch Up" data-topic="news"><td class="selection-cell"><input class="pick" type="checkbox" aria-label="Select Catch Up"></td><th class="article-cell" scope="row"><a href="https://lfe.io/blog/news/2019/05/13/0250-catch-up/">Catch Up</a></th><td><time datetime="2019-05-13T02:50:00+00:00">2019-05-13</time></td><td>news</td><td class="status">Available</td></tr>
+<tr data-key="/blog/tutorials/2016/04/27/1647-tracing-lfe-functions" data-title="Tracing LFE Functions" data-topic="tutorials"><td class="selection-cell"><input class="pick" type="checkbox" aria-label="Select Tracing LFE Functions"></td><th class="article-cell" scope="row"><a href="https://lfe.io/blog/tutorials/2016/04/27/1647-tracing-lfe-functions/">Tracing LFE Functions</a></th><td><time datetime="2016-04-27T16:47:00+00:00">2016-04-27</time></td><td>tutorials</td><td class="status">Available</td></tr>
+<tr data-key="/blog/tutorials/2016/03/25/0858-lfe-and-rebar3" data-title="LFE and rebar3" data-topic="tutorials"><td class="selection-cell"><input class="pick" type="checkbox" aria-label="Select LFE and rebar3"></td><th class="article-cell" scope="row"><a href="https://lfe.io/blog/tutorials/2016/03/25/0858-lfe-and-rebar3/">LFE and rebar3</a></th><td><time datetime="2016-03-25T08:58:00+00:00">2016-03-25</time></td><td>tutorials</td><td class="status">Available</td></tr>
+<tr data-key="/blog/tutorials/2016/03/05/0407-lfe-v10-exporting-macros" data-title="Coming in LFE v1.0: exporting macros" data-topic="tutorials"><td class="selection-cell"><input class="pick" type="checkbox" aria-label="Select Coming in LFE v1.0: exporting macros"></td><th class="article-cell" scope="row"><a href="https://lfe.io/blog/tutorials/2016/03/05/0407-lfe-v10-exporting-macros/">Coming in LFE v1.0: exporting macros</a></th><td><time datetime="2016-03-05T04:07:00+00:00">2016-03-05</time></td><td>tutorials</td><td class="status">Available</td></tr>
+<tr data-key="/blog/tutorials/2016/03/03/0104-lfe-v10-multi-module-files" data-title="Coming in LFE v1.0: multi-module files" data-topic="tutorials"><td class="selection-cell"><input class="pick" type="checkbox" aria-label="Select Coming in LFE v1.0: multi-module files"></td><th class="article-cell" scope="row"><a href="https://lfe.io/blog/tutorials/2016/03/03/0104-lfe-v10-multi-module-files/">Coming in LFE v1.0: multi-module files</a></th><td><time datetime="2016-03-03T01:04:00+00:00">2016-03-03</time></td><td>tutorials</td><td class="status">Available</td></tr>
+<tr data-key="/blog/tutorials/2016/01/31/0030-lfe-friday---ets-selects-continuations-and-inserts" data-title="LFE Friday - ETS selects, continuations and inserts" data-topic="tutorials"><td class="selection-cell"><input class="pick" type="checkbox" aria-label="Select LFE Friday - ETS selects, continuations and inserts"></td><th class="article-cell" scope="row"><a href="https://lfe.io/blog/tutorials/2016/01/31/0030-lfe-friday---ets-selects-continuations-and-inserts/">LFE Friday - ETS selects, continuations and inserts</a></th><td><time datetime="2016-01-31T00:30:00+00:00">2016-01-31</time></td><td>tutorials</td><td class="status">Available</td></tr>
+<tr data-key="/blog/tutorials/2016/01/23/0122-lfe-friday---using-ets-select-with-a-limit" data-title="LFE Friday - Using ETS select with a limit" data-topic="tutorials"><td class="selection-cell"><input class="pick" type="checkbox" aria-label="Select LFE Friday - Using ETS select with a limit"></td><th class="article-cell" scope="row"><a href="https://lfe.io/blog/tutorials/2016/01/23/0122-lfe-friday---using-ets-select-with-a-limit/">LFE Friday - Using ETS select with a limit</a></th><td><time datetime="2016-01-23T01:22:00+00:00">2016-01-23</time></td><td>tutorials</td><td class="status">Available</td></tr>
+<tr data-key="/blog/tutorials/2016/01/18/1312-lfe-friday---ets-match_specs-and-functions" data-title="LFE Friday - ETS, match_specs and functions" data-topic="tutorials"><td class="selection-cell"><input class="pick" type="checkbox" aria-label="Select LFE Friday - ETS, match_specs and functions"></td><th class="article-cell" scope="row"><a href="https://lfe.io/blog/tutorials/2016/01/18/1312-lfe-friday---ets-match_specs-and-functions/">LFE Friday - ETS, match_specs and functions</a></th><td><time datetime="2016-01-18T13:12:00+00:00">2016-01-18</time></td><td>tutorials</td><td class="status">Available</td></tr>
+<tr data-key="/blog/tutorials/2016/01/10/2016-lfe-friday---more-ets-data-matching" data-title="LFE Friday - More ETS data matching (and querying)" data-topic="tutorials"><td class="selection-cell"><input class="pick" type="checkbox" aria-label="Select LFE Friday - More ETS data matching (and querying)"></td><th class="article-cell" scope="row"><a href="https://lfe.io/blog/tutorials/2016/01/10/2016-lfe-friday---more-ets-data-matching/">LFE Friday - More ETS data matching (and querying)</a></th><td><time datetime="2016-01-10T20:16:00+00:00">2016-01-10</time></td><td>tutorials</td><td class="status">Available</td></tr></tbody></table></div>
+</main>
+<script>
+(() => {
+"use strict";
+const rows=Array.from(document.querySelectorAll("#articles tr"));
+const topicSummaryRows=Array.from(document.querySelectorAll("#topic-summary-rows tr"));
+const topicSummaryByName=new Map(topicSummaryRows.map(row=>[row.dataset.topic,row]));
+const topicBarMaximum=16;
+const query=document.querySelector("#query"), statusFilter=document.querySelector("#queue-filter");
+const counts=document.querySelector("#counts"), message=document.querySelector("#message"), empty=document.querySelector("#empty");
+const queueButton=document.querySelector("#queue-selected"), resetButton=document.querySelector("#reset"), undoButton=document.querySelector("#undo");
+const queued=new Set(); let undoSnapshot=null;
+function visibleRows(){return rows.filter(row=>!row.hidden)}
+function selectedRows(){return visibleRows().filter(row=>row.querySelector(".pick").checked)}
+function render(){
+ let visible=0;
+ const topicCounts=new Map(Array.from(topicSummaryByName.keys(),topic=>[topic,{visible:0,queued:0}]));
+ for(const row of rows){
+  const text=(row.dataset.title+" "+row.dataset.topic).toLocaleLowerCase().includes(query.value.trim().toLocaleLowerCase());
+  const status=statusFilter.value==="all"||(statusFilter.value==="queued"&&queued.has(row.dataset.key))||(statusFilter.value==="available"&&!queued.has(row.dataset.key));
+  row.hidden=!(text&&status); if(!row.hidden){visible++;const topicCount=topicCounts.get(row.dataset.topic);if(topicCount){topicCount.visible++;if(queued.has(row.dataset.key))topicCount.queued++}}
+  row.querySelector(".status").textContent=queued.has(row.dataset.key)?"Queued in this session":"Available";
+ }
+ for(const [topic,summaryRow] of topicSummaryByName){
+  const topicCount=topicCounts.get(topic);
+  summaryRow.querySelector(".topic-visible").firstChild.textContent=String(topicCount.visible);
+  summaryRow.querySelector(".topic-queued").textContent=String(topicCount.queued);
+  summaryRow.querySelector(".topic-bar-fill").style.inlineSize=(topicCount.visible/topicBarMaximum*100)+"%";
+ }
+ counts.textContent="Visible "+visible+" of "+rows.length+" · Selected "+selectedRows().length+" · Queued in this session "+queued.size;
+ empty.hidden=visible!==0;
+}
+function clearSelection(){for(const row of rows)row.querySelector(".pick").checked=false}
+function filtersChanged(){clearSelection();render();message.textContent="Filters changed. All selection cleared; queued articles and the last undo remain."}
+query.addEventListener("input",filtersChanged);statusFilter.addEventListener("change",filtersChanged);
+for(const row of rows)row.querySelector(".pick").addEventListener("change",()=>{render();message.textContent="Selection updated for visible articles."});
+queueButton.addEventListener("click",()=>{
+ const chosen=selectedRows();
+ if(!chosen.length){message.textContent="Select one or more visible articles before queueing. No queue state changed.";return}
+ const keys=chosen.map(row=>row.dataset.key), additions=keys.filter(key=>!queued.has(key));
+ if(additions.length){undoSnapshot=new Set(queued);for(const key of additions)queued.add(key)}
+ clearSelection();render();
+ message.textContent=additions.length?"Queued "+additions.length+" article"+(additions.length===1?"":"s")+". Undo restores the queue from before this batch.":"Those selected articles were already queued. Nothing new was added; the previous undo is still available.";
+});
+resetButton.addEventListener("click",()=>{query.value="";statusFilter.value="all";clearSelection();render();message.textContent="Filters and selection reset. The session queue and last undo remain."});
+undoButton.addEventListener("click",()=>{
+ if(undoSnapshot===null){message.textContent="There is no queue batch to undo. Queue state did not change.";return}
+ queued.clear();for(const key of undoSnapshot)queued.add(key);undoSnapshot=null;render();message.textContent="Undid the last queue batch. Filters and current selection remain unchanged.";
+});
+render();
+})();
+</script></body></html>

@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Library visit request — illustrative form</title>
+    <link rel="stylesheet" href="library-visit.css">
+    <script src="library-visit.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="page-header">
+        <p class="eyebrow">Illustrative form example</p>
+        <h1>Plan a library visit</h1>
+        <p class="intro">
+          This is a fictional demonstration. Enter fictional details only.
+          Nothing is sent or reserved. Reloading clears unsaved entries; you can
+          explicitly restore a saved draft.
+        </p>
+        <nav class="language-links" aria-label="Language">
+          <a href="library-visit.html" lang="en" dir="ltr" aria-current="page">English</a>
+          <a href="library-visit-ar.html" lang="ar" dir="rtl">العربية</a>
+        </nav>
+        <p class="language-change-warning">Changing language clears unsaved entries. Save a draft first, then restore it after switching.</p>
+      </header>
+
+      <form id="visit-form" novalidate>
+        <div
+          id="error-summary"
+          class="error-summary"
+          role="alert"
+          tabindex="-1"
+          aria-labelledby="error-summary-title"
+          hidden
+        >
+          <h2 id="error-summary-title">Check these fields</h2>
+          <p>Choose an item below to go to that field.</p>
+          <ul id="error-list"></ul>
+        </div>
+
+        <fieldset id="request-fields" class="form-panel" disabled>
+          <legend>Request details</legend>
+
+          <div class="field">
+            <label id="label-for-visitor-name" for="visitor-name">Name <span class="required-mark">(required)</span></label>
+            <p id="name-hint" class="field-hint">Example: Sam Reader.</p>
+            <p id="name-error" class="field-error" hidden>
+              <span class="error-prefix">Error: </span><span class="error-copy">Enter a name.</span>
+            </p>
+            <input
+              id="visitor-name"
+              name="visitor-name"
+              type="text"
+              dir="auto"
+              autocomplete="off"
+              required
+              aria-describedby="name-hint"
+            >
+          </div>
+
+          <div class="field">
+            <label id="label-for-visitor-email" for="visitor-email">Email <span class="required-mark">(required)</span></label>
+            <p id="email-hint" class="field-hint">Example: reader@example.com.</p>
+            <p id="email-error" class="field-error" hidden>
+              <span class="error-prefix">Error: </span><span class="error-copy">Enter a valid email address, such as <bdi dir="ltr">reader@example.com</bdi>.</span>
+            </p>
+            <input
+              id="visitor-email"
+              name="visitor-email"
+              type="email"
+              dir="ltr"
+              autocomplete="off"
+              required
+              aria-describedby="email-hint"
+            >
+          </div>
+
+          <div class="field">
+            <label id="label-for-visit-window" for="visit-window">Visit time <span class="required-mark">(required)</span></label>
+            <p id="window-hint" class="field-hint">Choose one of these example time windows.</p>
+            <p id="window-error" class="field-error" hidden>
+              <span class="error-prefix">Error: </span><span class="error-copy">Choose a visit time.</span>
+            </p>
+            <select
+              id="visit-window"
+              name="visit-window"
+              required
+              aria-describedby="window-hint"
+            >
+              <option value="" selected>Select a time</option>
+              <option value="am-101">Morning</option>
+              <option value="pm-202">Afternoon</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label id="label-for-visitor-count" for="visitor-count">Visitors <span class="required-mark">(required)</span></label>
+            <p id="count-hint" class="field-hint">Choose an example group size from 1 to 6.</p>
+            <p id="count-error" class="field-error" hidden>
+              <span class="error-prefix">Error: </span><span class="error-copy">Choose a group size from 1 to 6.</span>
+            </p>
+            <select
+              id="visitor-count"
+              name="visitor-count"
+              required
+              aria-describedby="count-hint"
+            >
+              <option value="" selected>Select a group size</option>
+              <option value="1">1 visitor</option>
+              <option value="2">2 visitors</option>
+              <option value="3">3 visitors</option>
+              <option value="4">4 visitors</option>
+              <option value="5">5 visitors</option>
+              <option value="6">6 visitors</option>
+            </select>
+          </div>
+
+          <button id="submit-request" class="primary-action" type="submit" disabled>
+            Send example request
+          </button>
+          <p class="button-note">This button runs a local simulation. It does not send a request.</p>
+        </fieldset>
+      </form>
+
+      <section class="draft-panel" aria-labelledby="draft-title">
+        <h2 id="draft-title">Save work in this tab</h2>
+        <p id="draft-instructions">
+          Save only when you choose. Restore draft replaces all four current
+          entries, including unsaved changes; choose it deliberately. These
+          controls never submit the form.
+        </p>
+        <div class="draft-actions">
+          <button
+            id="save-draft"
+            type="button"
+            aria-describedby="draft-instructions draft-help"
+            disabled
+          >Save draft</button>
+          <button
+            id="restore-draft"
+            type="button"
+            aria-describedby="draft-instructions draft-help"
+            disabled
+          >Restore draft</button>
+          <button
+            id="clear-draft"
+            type="button"
+            aria-describedby="draft-instructions draft-help"
+            disabled
+          >Clear draft</button>
+        </div>
+        <p id="draft-help" class="draft-limits">
+          The example will not restore a draft older than 24 hours and does not
+          automatically remove its saved bytes; use Clear draft to remove
+          them. Browser session restoration or storage policy may affect how
+          long the bytes remain available, but not the 24-hour restore limit.
+          Same-origin scripts can read saved values. Use fictional details only;
+          storage is not private and may be unavailable or cleared.
+        </p>
+        <p
+          id="draft-status"
+          class="draft-status"
+          role="status"
+          aria-live="polite"
+          tabindex="-1"
+          hidden
+        ></p>
+      </section>
+
+      <p id="pending-status" class="notice pending-notice" role="status" aria-live="polite" tabindex="-1" hidden>
+        Simulating a request for a moment. Nothing is being sent.
+      </p>
+
+      <section
+        id="service-error"
+        class="notice service-error"
+        role="alert"
+        aria-labelledby="service-error-title"
+        hidden
+      >
+        <h2 id="service-error-title" tabindex="-1">Demo service unavailable</h2>
+        <p>Your details are still here. Turn off the unavailable simulation, then submit again to retry.</p>
+      </section>
+
+      <section id="confirmation" class="confirmation-panel" aria-labelledby="confirmation-title" hidden>
+        <h2 id="confirmation-title" tabindex="-1">Demo complete — nothing was sent</h2>
+        <p>
+          <bdi id="confirmation-name" dir="auto"></bdi>, this fictional request completed in your browser.
+        </p>
+        <dl class="request-summary">
+          <div><dt>Email</dt><dd><bdi id="confirmation-email" dir="ltr"></bdi></dd></div>
+          <div><dt>Visit time</dt><dd><bdi id="confirmation-window" dir="auto"></bdi></dd></div>
+          <div><dt>Visitors</dt><dd><bdi id="confirmation-count" dir="auto"></bdi></dd></div>
+          <div><dt>Example reference</dt><dd><bdi id="confirmation-reference" dir="ltr"></bdi></dd></div>
+        </dl>
+        <button id="edit-request" class="secondary-action" type="button">Change details</button>
+      </section>
+
+      <section class="demo-control" aria-labelledby="demo-control-title">
+        <h2 id="demo-control-title">Try a service problem</h2>
+        <p>Use this separate control to see what happens when a service is unavailable.</p>
+        <label class="check-label" for="simulate-unavailable">
+          <input id="simulate-unavailable" type="checkbox">
+          Simulate the service being unavailable
+        </label>
+        <label class="check-label" for="simulate-draft-unavailable">
+          <input id="simulate-draft-unavailable" type="checkbox">
+          Simulate draft storage being unavailable
+        </label>
+      </section>
+
+      <noscript>
+        <p class="notice">This demonstration needs JavaScript to run. No request can be submitted.</p>
+      </noscript>
+    </main>
+
+    <template id="error-item-template">
+      <li>
+        <a href="#"><span data-field-label></span>: <span data-field-message></span></a>
+      </li>
+    </template>
+
+    <template id="draft-message-copy">
+      <span data-message="save-too-large">This draft is too large for this example to save. Your current entries and previous saved draft are unchanged.</span>
+      <span data-message="saved">Draft saved in this tab. You can restore it after reloading.</span>
+      <span data-message="save-failed">Draft could not be saved. Your current entries are unchanged, and the previous saved draft was not replaced.</span>
+      <span data-message="read-failed">The draft could not be read. Your current entries and saved draft were left unchanged. You can try Clear draft or continue with these entries.</span>
+      <span data-message="missing">No saved draft was found in this tab. Your current entries are unchanged.</span>
+      <span data-message="invalid-too-large">This saved draft is invalid or too large to restore. Your current entries and saved draft were left unchanged. You can clear it or save these entries.</span>
+      <span data-message="invalid-json">This saved draft is invalid. Your current entries and saved draft were left unchanged. You can clear it or save these entries.</span>
+      <span data-message="expired-or-invalid">This saved draft is older than 24 hours or invalid. It was not restored or removed; your current entries and saved draft were left unchanged. You can clear it or save these entries.</span>
+      <span data-message="restored">Draft restored. All four current entries were replaced with the saved values.</span>
+      <span data-message="cleared">Draft cleared from this tab. Your current entries are unchanged.</span>
+      <span data-message="clear-failed">The draft could not be cleared. Your current entries are unchanged, and the saved draft may still be here.</span>
+      <span data-message="completion-cleared">The saved draft was removed when the example completed.</span>
+      <span data-message="completion-clear-failed">The example completed, but its saved draft could not be cleared. The draft may still be in this tab; try Clear draft when storage is available.</span>
+    </template>
+  </body>
+</html>
