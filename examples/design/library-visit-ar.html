@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>طلب زيارة المكتبة — مثال توضيحي</title>
+    <link rel="stylesheet" href="library-visit.css">
+    <script src="library-visit.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="page-header">
+        <p class="eyebrow">مثال توضيحي</p>
+        <h1>طلب زيارة المكتبة</h1>
+        <p class="intro">
+          هذا مثال توضيحي لطلب زيارة مكتبة خيالية. استخدم بيانات وهمية فقط. لا تُرسل أي بيانات ولا يُحجز أي موعد. تُمسح القيم غير المحفوظة عند إعادة تحميل الصفحة، ويمكن استعادة المسودة المحفوظة يدويا.
+        </p>
+        <nav class="language-links" aria-label="اللغة">
+          <a href="library-visit.html" lang="en" dir="ltr">English</a>
+          <a href="library-visit-ar.html" lang="ar" dir="rtl" aria-current="page">العربية</a>
+        </nav>
+        <p class="language-change-warning">يؤدي تغيير اللغة إلى مسح القيم غير المحفوظة. احفظ مسودة أولا، ثم استعدها بعد تغيير اللغة.</p>
+      </header>
+
+      <form id="visit-form" novalidate>
+        <div
+          id="error-summary"
+          class="error-summary"
+          role="alert"
+          tabindex="-1"
+          aria-labelledby="error-summary-title"
+          hidden
+        >
+          <h2 id="error-summary-title">يرجى تصحيح الأخطاء التالية</h2>
+          <p>اختر أحد الروابط للانتقال إلى الحقل المطلوب.</p>
+          <ul id="error-list"></ul>
+        </div>
+
+        <fieldset id="request-fields" class="form-panel" disabled>
+          <legend>تفاصيل الطلب</legend>
+
+          <div class="field">
+            <label id="label-for-visitor-name" for="visitor-name">الاسم <span class="required-mark">(مطلوب)</span></label>
+            <p id="name-hint" class="field-hint">مثال: <bdi dir="auto">ليلى Smith</bdi>.</p>
+            <p id="name-error" class="field-error" hidden>
+              <span class="error-prefix">خطأ: </span><span class="error-copy">أدخل اسما.</span>
+            </p>
+            <input
+              id="visitor-name"
+              name="visitor-name"
+              type="text"
+              dir="auto"
+              autocomplete="off"
+              required
+              aria-describedby="name-hint"
+            >
+          </div>
+
+          <div class="field">
+            <label id="label-for-visitor-email" for="visitor-email">البريد الإلكتروني <span class="required-mark">(مطلوب)</span></label>
+            <p id="email-hint" class="field-hint">مثال: <bdi dir="ltr">reader@example.com</bdi>.</p>
+            <p id="email-error" class="field-error" hidden>
+              <span class="error-prefix">خطأ: </span><span class="error-copy">أدخل بريدا إلكترونيا صالحا، مثل <bdi dir="ltr">reader@example.com</bdi>.</span>
+            </p>
+            <input
+              id="visitor-email"
+              name="visitor-email"
+              type="email"
+              dir="ltr"
+              autocomplete="off"
+              required
+              aria-describedby="email-hint"
+            >
+          </div>
+
+          <div class="field">
+            <label id="label-for-visit-window" for="visit-window">موعد الزيارة <span class="required-mark">(مطلوب)</span></label>
+            <p id="window-hint" class="field-hint">اختر موعدا من القائمة التجريبية.</p>
+            <p id="window-error" class="field-error" hidden>
+              <span class="error-prefix">خطأ: </span><span class="error-copy">اختر موعدا للزيارة.</span>
+            </p>
+            <select
+              id="visit-window"
+              name="visit-window"
+              required
+              aria-describedby="window-hint"
+            >
+              <option value="" selected>اختر موعدا</option>
+              <option value="am-101">صباحا</option>
+              <option value="pm-202">بعد الظهر</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label id="label-for-visitor-count" for="visitor-count">عدد الزوار <span class="required-mark">(مطلوب)</span></label>
+            <p id="count-hint" class="field-hint">اختر عددا من ١ إلى ٦.</p>
+            <p id="count-error" class="field-error" hidden>
+              <span class="error-prefix">خطأ: </span><span class="error-copy">اختر عدد الزوار من ١ إلى ٦.</span>
+            </p>
+            <select
+              id="visitor-count"
+              name="visitor-count"
+              required
+              aria-describedby="count-hint"
+            >
+              <option value="" selected>اختر عدد الزوار</option>
+              <option value="1">١ زائر</option>
+              <option value="2">٢ زائران</option>
+              <option value="3">٣ زوار</option>
+              <option value="4">٤ زوار</option>
+              <option value="5">٥ زوار</option>
+              <option value="6">٦ زوار</option>
+            </select>
+          </div>
+
+          <button id="submit-request" class="primary-action" type="submit" disabled>
+            إكمال الطلب التجريبي
+          </button>
+          <p class="button-note">يحاكي هذا الزر إكمال الطلب محليا. لا يُرسل أي طلب.</p>
+        </fieldset>
+      </form>
+
+      <section class="draft-panel" aria-labelledby="draft-title">
+        <h2 id="draft-title">حفظ العمل في علامة التبويب هذه</h2>
+        <p id="draft-instructions">
+          احفظ المسودة باختيارك. استعادة المسودة تستبدل القيم الأربع الحالية، بما فيها التغييرات غير المحفوظة؛ اخترها عن قصد. لا ترسل هذه الأزرار النموذج.
+        </p>
+        <div class="draft-actions">
+          <button
+            id="save-draft"
+            type="button"
+            aria-describedby="draft-instructions draft-help"
+            disabled
+          >حفظ المسودة</button>
+          <button
+            id="restore-draft"
+            type="button"
+            aria-describedby="draft-instructions draft-help"
+            disabled
+          >استعادة المسودة</button>
+          <button
+            id="clear-draft"
+            type="button"
+            aria-describedby="draft-instructions draft-help"
+            disabled
+          >مسح المسودة</button>
+        </div>
+        <p id="draft-help" class="draft-limits">
+          لا تستعيد هذه التجربة مسودة مضى على حفظها أكثر من ٢٤ ساعة، ولا تحذفها تلقائيا؛ استخدم «مسح المسودة» لإزالتها. قد تؤثر إعدادات المتصفح أو سياسة التخزين في مدة بقاء المسودة، لكنها لا تغيّر حد الاستعادة البالغ ٢٤ ساعة. يمكن للنصوص البرمجية من الموقع نفسه قراءة القيم المحفوظة. استخدم بيانات وهمية فقط؛ فالتخزين غير خاص وقد لا يتاح أو قد يُمسح.
+        </p>
+        <p
+          id="draft-status"
+          class="draft-status"
+          role="status"
+          aria-live="polite"
+          tabindex="-1"
+          hidden
+        ></p>
+      </section>
+
+      <p id="pending-status" class="notice pending-notice" role="status" aria-live="polite" tabindex="-1" hidden>
+        تجري محاكاة الطلب. لا تُرسل أي بيانات.
+      </p>
+
+      <section
+        id="service-error"
+        class="notice service-error"
+        role="alert"
+        aria-labelledby="service-error-title"
+        hidden
+      >
+        <h2 id="service-error-title" tabindex="-1">الخدمة التجريبية غير متاحة</h2>
+        <p>ما زالت بياناتك هنا. أوقف محاكاة عدم التوفر، ثم أعد الإكمال للمحاولة مرة أخرى.</p>
+      </section>
+
+      <section id="confirmation" class="confirmation-panel" aria-labelledby="confirmation-title" hidden>
+        <h2 id="confirmation-title" tabindex="-1">اكتمل المثال — لم تُرسل أي بيانات</h2>
+        <p>
+          <bdi id="confirmation-name" dir="auto"></bdi> — اكتمل هذا الطلب التوضيحي في متصفحك.
+        </p>
+        <dl class="request-summary">
+          <div><dt>البريد الإلكتروني</dt><dd><bdi id="confirmation-email" dir="ltr"></bdi></dd></div>
+          <div><dt>موعد الزيارة</dt><dd><bdi id="confirmation-window" dir="auto"></bdi></dd></div>
+          <div><dt>عدد الزوار</dt><dd><bdi id="confirmation-count" dir="auto"></bdi></dd></div>
+          <div><dt>الرمز التجريبي</dt><dd><bdi id="confirmation-reference" dir="ltr"></bdi></dd></div>
+        </dl>
+        <button id="edit-request" class="secondary-action" type="button">تعديل البيانات</button>
+      </section>
+
+      <section class="demo-control" aria-labelledby="demo-control-title">
+        <h2 id="demo-control-title">جرّب مشكلة في الخدمة</h2>
+        <p>استخدم هذا الخيار المنفصل لمشاهدة ما يحدث عند عدم توفر الخدمة.</p>
+        <label class="check-label" for="simulate-unavailable">
+          <input id="simulate-unavailable" type="checkbox">
+          محاكاة عدم توفر الخدمة
+        </label>
+        <label class="check-label" for="simulate-draft-unavailable">
+          <input id="simulate-draft-unavailable" type="checkbox">
+          محاكاة عدم توفر تخزين المسودة
+        </label>
+      </section>
+
+      <noscript>
+        <p class="notice">تحتاج هذه التجربة إلى تفعيل البرمجة النصية في المتصفح. لا يمكن إرسال أي طلب.</p>
+      </noscript>
+    </main>
+
+    <template id="error-item-template">
+      <li>
+        <a href="#"><span data-field-label></span>: <span data-field-message></span></a>
+      </li>
+    </template>
+
+    <template id="draft-message-copy">
+      <span data-message="save-too-large">هذه المسودة أكبر مما يمكن لهذه التجربة حفظه. لم تتغير القيم الحالية ولا المسودة المحفوظة السابقة.</span>
+      <span data-message="saved">حُفظت المسودة في علامة التبويب هذه. يمكنك استعادتها بعد إعادة تحميل الصفحة.</span>
+      <span data-message="save-failed">تعذر حفظ المسودة. لم تتغير القيم الحالية ولم تُستبدل المسودة المحفوظة السابقة.</span>
+      <span data-message="read-failed">تعذرت قراءة المسودة. لم تتغير القيم الحالية ولا المسودة المحفوظة. يمكنك محاولة مسح المسودة أو متابعة العمل بهذه القيم.</span>
+      <span data-message="missing">لم تُعثر على مسودة محفوظة في علامة التبويب هذه. لم تتغير القيم الحالية.</span>
+      <span data-message="invalid-too-large">المسودة المحفوظة غير صالحة أو أكبر مما يمكن استعادته. لم تتغير القيم الحالية ولا المسودة المحفوظة. يمكنك مسحها أو حفظ هذه القيم.</span>
+      <span data-message="invalid-json">المسودة المحفوظة غير صالحة. لم تتغير القيم الحالية ولا المسودة المحفوظة. يمكنك مسحها أو حفظ هذه القيم.</span>
+      <span data-message="expired-or-invalid">مضى على هذه المسودة أكثر من ٢٤ ساعة أو أنها غير صالحة. لم تُستعد ولم تُحذف؛ لم تتغير القيم الحالية ولا المسودة المحفوظة. يمكنك مسحها أو حفظ هذه القيم.</span>
+      <span data-message="restored">استُعيدت المسودة. استُبدلت القيم الأربع الحالية بالقيم المحفوظة.</span>
+      <span data-message="cleared">مُسحت المسودة من علامة التبويب هذه. لم تتغير القيم الحالية.</span>
+      <span data-message="clear-failed">تعذر مسح المسودة. لم تتغير القيم الحالية، وقد تظل المسودة محفوظة هنا.</span>
+      <span data-message="completion-cleared">أُزيلت المسودة المحفوظة عند اكتمال المثال.</span>
+      <span data-message="completion-clear-failed">اكتمل المثال، لكن تعذر مسح المسودة المحفوظة. قد تظل المسودة في علامة التبويب هذه؛ حاول مسحها عند توفر التخزين.</span>
+    </template>
+  </body>
+</html>

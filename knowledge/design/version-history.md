@@ -5,6 +5,20 @@
 
 # visual-design-system Version History
 
+## Version 1.15.0 - 2026-10-26
+
+- Added a practical Markdown route with six text cases and an optional research
+  boundary; moved runnable specimens outside the skill and removed copied art.
+- Repaired package-local routes and added a design-only guard against non-Markdown
+  guide files. The skill payload is intended to contain Markdown files only.
+
+## Version 1.14.0 - 2026-10-23
+
+- Added a tool-neutral method and filled LFE example for migrating and handing
+  off semantic mode roles while preserving compatible public names and
+  component exceptions. Recorded source/resolved values, ownership, bounded
+  verification and rollback, plus format and evidence limits.
+
 ## Version 1.0.17 - 2026-10-18
 
 - Corrected typography, font resource, pairing, heading, emphasis, capitalization,
@@ -216,3 +230,165 @@ correction milestone: portable identity, scoped colour/type/layout guidance,
 Preserve all prior correction history. Original-source fidelity, named conceptual
 and empirical gaps, isolated-package/final hosted checks, and formal project
 and release-readiness gates remain open; this milestone does not certify them.
+
+## Version 1.2.0 - 2026-10-19
+
+Add an actionable brief-to-design workflow with evidence and assumption
+distinctions, meaningful alternatives, provisional choice, critique and
+revision. Add an explicitly optional LFE homepage case grounded in its pinned
+source and route the workflow through the entrypoint. No LFE site changes,
+build, browser checks or user research were performed.
+
+## Version 1.2.1 - 2026-10-20
+
+Completed the optional LFE case with a locally pinned implementation, attributed
+browser critique and revision, and bounded rechecks of keyboard routes, responsive
+reading and authored enlarged-text adaptations. The site remains outside the
+package; no participant research, native zoom, assistive-technology, other-browser,
+or publication result is claimed.
+
+## Version 1.3.0 — 2026-10-20
+
+Add an actionable interaction-and-content method that connects actual content,
+tasks, actions, states, semantics, focus and status, with a filled LFE search
+example grounded in independent browser observations. Route the guide from the
+entrypoint and package it with the existing recursive guide/example surface.
+The site change remains local; untested recovery, assistive technology, native
+zoom, other browsers, user research and publication are not claimed.
+
+## Version 1.4.0 - 2026-10-20
+
+Add a dense reading-task method and a runnable optional example using a pinned
+snapshot of published LFE posts. Teach stable content identity separately from
+session-only selection and queue state, visible batch scope, one-step undo,
+native table structure and honest reset behavior. Independent browser checks
+covered narrow and wide layouts, an authored enlarged-text fixture and a native
+keyboard batch. Assistive technology, native zoom, user research, live service
+failures and publication are not claimed.
+
+## Version 1.5.0 - 2026-10-20
+
+Add a practical form method for field choices, labels and hints, linked errors,
+pending work, service failures, retry and completion. Route and package a
+runnable fictional library visit request with tested error recovery and an
+explicit simulated-success boundary. The independent browser check covered
+empty and invalid submission, retained values, pending and unavailable states,
+retry, completion, edit, responsive widths and an authored enlarged-text error
+state. Real service validation, interrupted-work recovery, Arabic/RTL review,
+assistive technology, native zoom, other browsers, user research and
+conformance remain open.
+
+## Version 1.6.0 - 2026-10-20
+
+Add explicit Save, Restore and Clear draft behavior to the fictional library
+visit form, with strict validation before restore, a bounded record, a
+24-hour restore limit, and honest storage-failure and retention messages.
+Extend the form method with interrupted-work recovery choices, a filled
+reload-and-restore example, and policy, lifetime and privacy limits. Independent
+Chromium checks covered explicit recovery across reload, no-clobber missing,
+malformed and expired records, completion cleanup, unavailable-storage
+feedback, 390px and 1280px layouts, and an authored 32px text-size failure
+state. The unavailable-storage control is an injected simulation; real browser
+policy/quota behavior, assistive technology, native zoom, another browser,
+service integration, user research, Arabic/RTL review and conformance remain
+open.
+
+## Version 1.7.0 - 2026-10-20
+
+Add a practical inclusive-interface method and a concrete Arabic right-to-left
+version of the shared fictional form. Route both language pages and explain
+language/direction markup, bidi isolation, stable values, natural order,
+content expansion and knowledgeable review. Independent Chromium checks cover
+the same form behavior across both routes, explicit save/switch/restore,
+mixed-script values, errors and recovery. They observe layout at 390px and
+1280px, check an Arabic error view at authored 32px and a separate label
+expansion fixture, and check English functional regression at 390px; they do
+not cross every state with each condition. The actual Arabic wording review
+remains pending; native Arabic
+input, assistive technology, native zoom, other browser engines, user research
+and conformance are not claimed.
+
+## Version 1.8.0 - 2026-10-21
+
+Add a contextual pattern/adoption method with bounded GOV.UK, USWDS and Design
+Council synthesis, a filled library-form adaptation and an editorial counterexample.
+Route the method from the workflow, form guide and skill entrypoint. Record the
+Operator's scoped wording review of the unchanged Arabic example; native input,
+assistive technology, native zoom, other engines, real-service behavior, user
+research and accessibility conformance remain untested.
+
+## Version 1.9.0 - 2026-10-21
+
+Add a contextual editorial hierarchy method and optional LFE archive reading
+study. Compare focused reading with context alongside using the same source
+order, native controls and a room-relative layout change. Adapt role-based
+guidance from Carbon, Spectrum 2 and Android Jetpack Compose Material 3 without
+importing their font or scale defaults; keep actual browser observations and
+human visual review distinct from source synthesis. The independent browser
+checkpoint covered 1280px and 390px layouts, native arrow-key radio selection,
+and authored 32px root text with spacing overrides. Assistive technology,
+native zoom, other browsers, multilingual font support, user research,
+comparative readability and accessibility conformance remain untested.
+
+## Version 1.10.0 - 2026-10-21
+
+Add a contextual data-comparison method and route it through the design skill
+and interaction guidance. Extend the LFE reading desk with visible and queued-
+in-view topic counts on a fixed 0–16 scale; preserve exact values and existing
+task state. The early browser check covered 1280px and 390px views, authored
+32px text and spacing, filtering, queue, empty, reset and undo states, plus
+native keyboard controls and table-region scrolling. Actual numeric glyph
+support, assistive technology, native zoom, other browsers, user research and
+accessibility conformance remain untested; dense visual review remains pending.
+
+## Version 1.11.0 - 2026-10-23
+
+Add an image-composition method and route it through the design skill, layout
+guidance and a distinct LFE image-led collection. Adapt Microsoft Inclusive
+Design questions, WAI's context-dependent image alternatives and CSS Images
+fit/position behavior without claiming participant validation or universal
+crop rules. Preserve three supplied illustration files byte-for-byte for the
+local example; external distribution rights remain for the release owner.
+The browser checkpoint covered 1280px and 390px, authored 32px text and spacing,
+native fragment focus/return, missing-image and no-styles fallback, and full-
+image access. Unstyled intrinsic images overflowed the narrow page; native
+zoom, assistive technology, other browsers, user research and accessibility
+conformance remain untested. The Operator judged the final specimen “Suitable
+for this illustrative image-led example”; this is scoped visual approval, not
+accessibility conformance or independent technical acceptance.
+
+## Version 1.12.0 - 2026-10-23
+
+Add a purposeful-motion method and route it through the design skill, existing
+layout guidance and the accepted image-story navigation. Adapt the pinned
+experimental Material 3 Compose distinction between spatial and effects motion;
+apply WCAG 2.2 interaction-triggered motion scope and CSS reduced-motion
+preference semantics without importing platform APIs, spring values or universal
+timing. The optional 450 ms marker cue is off by default, finite, manually
+reducible and suppressed unless the user agent reports `no-preference`; static
+focus and target state remain complete. The browser checkpoint covered actual
+no-preference default/opt-in, native fragment focus and A→B→A arrival, Back,
+immediate manual off, 390px and authored 32px text/spacing. The system `reduce`
+setting, native zoom, assistive technology, other engines, comfort research and
+accessibility conformance remain untested.
+
+## Version 1.13.0 - 2026-10-23
+
+Add a semantic system-evolution method for role ownership, mode-scoped alias
+propagation, CSS custom-property failure behavior, rendered pair checks and
+explicit component exceptions. Route it through the existing colour guide and
+design entrypoint, with a four-panel LFE witness of ordinary link/focus mode
+changes and the unchanged code-role exception. The native checkpoint covered
+the live LFE mode control and consumers, keyboard focus and return, local alias
+resolution, missing/cyclic/wrong-type CSS fixtures, and a bounded 390px English
+right-to-left layout diagnostic. Forced colours, assistive technology, native
+zoom, other engines, Arabic language/script validation, user research and
+accessibility conformance remain untested.
+
+## Version 1.15.1 - 2026-10-26
+
+Correct the fictional visit-form case so its request for a name and email does
+not imply those details are nonsensitive or establish a real service's privacy
+policy. Describe English/Arabic behavior as retained observations of the
+earlier runnable specimens; the Markdown cases do not run the form. No form
+behavior, wording translation, or runtime evidence changed.

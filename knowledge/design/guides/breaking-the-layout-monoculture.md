@@ -417,6 +417,11 @@ varying column structures section by section. Asymmetric `fr` ratios
 `minmax()` creates intrinsically responsive columns. Implement baseline
 relationships using actual font metrics and line boxes; `cap` alone is no
 baseline guarantee. Check reflow, long content and text-spacing overrides.
+
+For an image-led article or collection, use the [image-composition method](image-composition.md)
+to decide which visual relationships need a crop, which images should retain
+their full proportions, and how captions, alternatives and links support the
+reading path.
 :::
 ::::
 
@@ -429,7 +434,9 @@ across the visibility range; `animation-range` selects a portion, not a one-shot
 trigger. Essential content must be visible at rest, with no feature support and
 under `prefers-reduced-motion: reduce`. Keep a static alternative and test it.
 Content-conditional `:has()` styling may help, while a query remains appropriate
-when the task needs a discrete layout change.
+when the task needs a discrete layout change. For a finite cue attached to a
+user-selected destination rather than scroll progress, see the [purposeful
+motion method](motion.md).
 :::
 ::::
 

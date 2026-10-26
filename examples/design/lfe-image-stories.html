@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Three illustrated LFE stories — image-led collection study</title>
+  <link rel="stylesheet" href="lfe-image-stories.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to selected stories</a>
+
+  <main class="collection" id="main-content" tabindex="-1">
+    <header class="collection-header">
+      <p class="site-mark">LFE <span>archive study</span></p>
+      <p class="eyebrow">Image-led composition · selected reading</p>
+      <h1>Stories from the LFE archive</h1>
+      <p class="collection-intro">Three selected articles, each paired with its supplied cover illustration. This is not a complete or current catalogue.</p>
+    </header>
+
+    <nav class="story-index" id="story-index" aria-labelledby="index-title" tabindex="-1">
+      <h2 id="index-title">Choose a story</h2>
+      <ol>
+        <li><a href="#types"><span class="index-number" aria-hidden="true">01</span><span>Bringing Types to LFE</span></a></li>
+        <li><a href="#graphs"><span class="index-number" aria-hidden="true">02</span><span>Graph Theory in LFE</span></a></li>
+        <li><a href="#docker"><span class="index-number" aria-hidden="true">03</span><span>Running LFE in Docker</span></a></li>
+      </ol>
+    </nav>
+
+    <div class="motion-control">
+      <label for="arrival-cue"><input id="arrival-cue" type="checkbox" aria-describedby="arrival-note">Allow a brief arrival cue</label>
+      <p class="motion-note" id="arrival-note">Off by default; your system reduced-motion preference takes priority.</p>
+    </div>
+
+    <section class="story story--lead" id="types" aria-labelledby="types-title" tabindex="-1">
+      <header class="story-lead-heading">
+        <p class="story-number">01 <span>Language and type systems</span></p>
+        <h2 id="types-title" tabindex="-1">Bringing Types to LFE: Lessons from Haskell, the Typed Lisps, and Gleam</h2>
+        <p class="story-date"><time datetime="2026-06-12">June 12, 2026</time></p>
+      </header>
+      <figure class="story-art story-art--lead">
+        <img class="art-image" src="lfe-image-assets/LFE_AbstractRabitHole_OTH_00257_.png" width="1600" height="666" alt="A painted landscape in teal, amber, and violet, opening toward a luminous circular gateway near the center.">
+        <figcaption>A supplied LFE cover illustration: a luminous opening set within a teal, amber, and violet painted landscape.</figcaption>
+        <a class="image-link" href="lfe-image-assets/LFE_AbstractRabitHole_OTH_00257_.png">Open the full illustration</a>
+      </figure>
+      <div class="story-copy">
+        <p class="source-label">Article summary from LFE</p>
+        <p class="story-summary">Why we started building a gradual type system for Lisp Flavoured Erlang — a tour through how Haskell, Go, Rust, Typed Racket, Coalton, and Typed Clojure each spell the same small idea, the ergonomic quibbles that pushed us, and the strategic moves we borrowed from Gleam.</p>
+        <p class="story-actions"><a class="read-link" href="https://lfe.io/blog/languages/2026/06/12/1600-bringing-types-to-lfe">Read the article on lfe.io</a><a class="back-link" href="#story-index">Back to index</a></p>
+      </div>
+    </section>
+
+    <section class="story story--feature" id="graphs" aria-labelledby="graphs-title" tabindex="-1">
+      <figure class="story-art">
+        <img class="art-image" src="lfe-image-assets/LFE_Graffeo_00409_.png" width="1600" height="666" alt="Books and papers spread across a warm, sunlit study.">
+        <figcaption>A supplied LFE cover illustration of a warm, sunlit study, accompanying the graph theory story.</figcaption>
+        <a class="image-link" href="lfe-image-assets/LFE_Graffeo_00409_.png">Open the full illustration</a>
+      </figure>
+      <div class="story-copy">
+        <p class="story-number">02 <span>Graphs and knowledge</span></p>
+        <h2 id="graphs-title" tabindex="-1">Graph Theory in LFE: A Knowledge Graph of Erlang Itself</h2>
+        <p class="story-date"><time datetime="2026-06-05">June 5, 2026</time></p>
+        <p class="source-label">Article summary from LFE</p>
+        <p class="story-summary">A deep, hands-on tour of graph theory in LFE — built on a real corpus of 1,664 Erlang concept cards, driven by the graffeo library, and unfolded slowly enough to teach the mathematics underneath each query.</p>
+        <p class="story-actions"><a class="read-link" href="https://lfe.io/blog/tutorials/2026/06/05/1008-graph-theory-in-lfe-graffeo-erlang-knowledge">Read the article on lfe.io</a><a class="back-link" href="#story-index">Back to index</a></p>
+      </div>
+    </section>
+
+    <section class="story story--feature" id="docker" aria-labelledby="docker-title" tabindex="-1">
+      <figure class="story-art">
+        <img class="art-image" src="lfe-image-assets/LFE_Docker_00263_.png" width="1600" height="666" alt="A cargo ship loaded with containers crosses the sea.">
+        <figcaption>A supplied LFE cover illustration of a container ship at sea, accompanying the Docker article.</figcaption>
+        <a class="image-link" href="lfe-image-assets/LFE_Docker_00263_.png">Open the full illustration</a>
+      </figure>
+      <div class="story-copy">
+        <p class="story-number">03 <span>Containers and deployment</span></p>
+        <h2 id="docker-title" tabindex="-1">Running LFE in Docker, Updated</h2>
+        <p class="story-date"><time datetime="2019-05-13">May 13, 2019</time></p>
+        <p class="source-label">Article summary from LFE</p>
+        <p class="story-summary">Significant changes have been made to the LFE Docker support of late, least of which is using the official Erlang Docker images as the base.</p>
+        <p class="story-actions"><a class="read-link" href="https://lfe.io/blog/tutorials/2019/05/13/1549-running-lfe-in-docker-updated">Read the article on lfe.io</a><a class="back-link" href="#story-index">Back to index</a></p>
+      </div>
+    </section>
+
+    <details class="collection-notes">
+      <summary>About this selection</summary>
+      <p>The illustrations are local copies of cover files supplied with these LFE articles. Article descriptions and calendar dates come from the articles' frontmatter.</p>
+    </details>
+  </main>
+
+  <!-- Source revision dea8dde5eaa93a2c5d707c27840b7d6123931cf4, LFE site:
+       Types: src/posts/2026/06-12-1600-bringing-types-to-lfe.md and
+       src/images/LFE_AbstractRabitHole_OTH_00257_.png
+       Graphs: src/posts/2026/06-05-1008-graph-theory-in-lfe-graffeo-erlang-knowledge.md and
+       src/images/LFE_Graffeo_00409_.png
+       Docker: src/posts/2019/05-13-1549-running-lfe-in-docker-updated.md and
+       src/images/LFE_Docker_00263_.png. Article summaries and dates are from
+       frontmatter; article bodies were not technically revalidated here. -->
+</body>
+</html>

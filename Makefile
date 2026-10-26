@@ -332,7 +332,14 @@ erlang:
 cobalt:
 	$(call pack_skill,cobalt,SKILL.md)
 
+# The design skill contains Markdown only. Runnable HTML/CSS/JS specimens live
+# in examples/design/; reject executable or binary files under packaged guides.
 design:
+	@non_markdown=$$(find knowledge/design/guides -type f ! -name '*.md' ! -name '.DS_Store' -print -quit); \
+	if [ -n "$$non_markdown" ]; then \
+		echo "ERROR: design skill guides must contain only Markdown files; found: $$non_markdown" >&2; \
+		exit 1; \
+	fi
 	$(call pack_skill,design,SKILL.md)
 
 tailwindcss:

@@ -1,0 +1,407 @@
+:root {
+  color-scheme: light;
+  font: 1rem / 1.55 system-ui, sans-serif;
+  color: #223039;
+  background: #f7f5ef;
+  --paper: #f7f5ef;
+  --panel: #fff;
+  --ink: #223039;
+  --muted: #4a5d63;
+  --line: #68797b;
+  --primary: #15676b;
+  --focus: #6b21a8;
+  --error: #9a2525;
+  --error-paper: #fff1ed;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+body {
+  min-inline-size: 0;
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+button,
+input,
+select {
+  max-inline-size: 100%;
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.16em;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.page-shell {
+  inline-size: min(100%, 52rem);
+  min-inline-size: 0;
+  margin-inline: auto;
+  padding: clamp(1rem, 4vw, 2.5rem);
+}
+
+.page-header {
+  max-inline-size: 66ch;
+  margin-block-end: 1.5rem;
+}
+
+.eyebrow {
+  margin-block: 0 0.3rem;
+  color: var(--muted);
+  font-size: 0.9em;
+  font-weight: 700;
+}
+
+html[lang="en"] .eyebrow {
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.language-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1rem;
+  margin-block-start: 1rem;
+}
+
+.language-links a {
+  min-block-size: 2.75rem;
+  align-content: center;
+  font-weight: 700;
+}
+
+.language-change-warning {
+  max-inline-size: 62ch;
+  margin-block: 0.45rem 0;
+  color: var(--muted);
+  font-size: 0.95em;
+  overflow-wrap: anywhere;
+}
+
+h1,
+h2,
+p {
+  overflow-wrap: anywhere;
+}
+
+h1 {
+  max-inline-size: 18ch;
+  margin-block: 0;
+  font-size: clamp(1.8rem, 7vw, 2.5rem);
+  line-height: 1.12;
+}
+
+h2 {
+  margin-block: 0 0.6rem;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.intro {
+  max-inline-size: 62ch;
+  margin-block: 1rem 0;
+  font-size: 1.1em;
+}
+
+.form-panel,
+.confirmation-panel,
+.demo-control,
+.draft-panel {
+  min-inline-size: 0;
+  margin: 0;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  background: var(--panel);
+}
+
+.form-panel {
+  display: grid;
+  gap: 1.35rem;
+}
+
+.form-panel:disabled {
+  color: var(--ink);
+  opacity: 1;
+}
+
+.form-panel legend {
+  padding-inline: 0.35rem;
+  font-weight: 700;
+}
+
+.field {
+  display: grid;
+  min-inline-size: 0;
+  gap: 0.35rem;
+}
+
+.field label {
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.required-mark {
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.field-hint,
+.field-error {
+  margin: 0;
+}
+
+.field-hint,
+.button-note,
+.demo-control > p {
+  color: var(--muted);
+}
+
+.field-error,
+.error-summary,
+.service-error {
+  color: var(--error);
+  background: var(--error-paper);
+}
+
+.field-error {
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  padding: 0.3rem 0.45rem;
+  border-inline-start: 0.25rem solid var(--error);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.error-prefix {
+  font-weight: 800;
+}
+
+.field input,
+.field select {
+  inline-size: 100%;
+  min-inline-size: 0;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 0.3rem;
+  color: var(--ink);
+  background: var(--panel);
+}
+
+.field [aria-invalid="true"] {
+  border: 2px solid var(--error);
+}
+
+button {
+  inline-size: fit-content;
+  min-block-size: 2.75rem;
+  padding: 0.6rem 1rem;
+  border: 2px solid var(--primary);
+  border-radius: 0.35rem;
+  color: var(--primary);
+  background: var(--panel);
+  cursor: pointer;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+button:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 1;
+}
+
+.primary-action {
+  justify-self: start;
+  border-color: var(--primary);
+  color: #fff;
+  background: var(--primary);
+}
+
+.button-note {
+  margin: -1rem 0 0;
+  font-size: 0.95em;
+}
+
+.error-summary,
+.notice {
+  margin-block: 0 1rem;
+  padding: 1rem;
+  border: 2px solid var(--error);
+  border-inline-start-width: 0.5rem;
+  border-radius: 0.4rem;
+}
+
+.error-summary h2,
+.service-error h2 {
+  color: var(--error);
+}
+
+.error-summary p,
+.service-error p {
+  margin-block: 0.5rem;
+}
+
+.error-summary ul {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-inline-size: 0;
+  gap: 0.45rem;
+  margin-block: 0.65rem 0;
+  padding-inline-start: 1.25rem;
+}
+
+.error-summary li {
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  overflow-wrap: anywhere;
+}
+
+.error-summary a {
+  display: block;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  overflow-wrap: anywhere;
+  font-weight: 650;
+}
+
+.error-summary a span {
+  overflow-wrap: anywhere;
+}
+
+.pending-notice {
+  color: var(--ink);
+  border-color: var(--primary);
+  background: var(--panel);
+}
+
+.confirmation-panel {
+  margin-block-end: 1rem;
+  border-inline-start: 0.5rem solid var(--primary);
+}
+
+.request-summary {
+  display: grid;
+  gap: 0.65rem;
+  margin-block: 1.25rem;
+}
+
+.request-summary > div {
+  display: grid;
+  grid-template-columns: minmax(7rem, 0.4fr) minmax(0, 1fr);
+  gap: 0.5rem 1rem;
+}
+
+.request-summary dt {
+  font-weight: 700;
+}
+
+.request-summary dd {
+  min-inline-size: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.demo-control {
+  margin-block-start: 1.5rem;
+}
+
+.draft-panel {
+  display: grid;
+  gap: 0.8rem;
+  margin-block: 1.5rem;
+}
+
+.draft-panel h2,
+.draft-panel p {
+  margin-block: 0;
+}
+
+.draft-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.draft-status {
+  min-inline-size: 0;
+  padding: 0.65rem 0.8rem;
+  border: 2px solid var(--primary);
+  border-inline-start-width: 0.45rem;
+  border-radius: 0.35rem;
+  color: var(--ink);
+  background: var(--panel);
+  overflow-wrap: anywhere;
+}
+
+.draft-status.is-error {
+  border-color: var(--error);
+  color: var(--error);
+  background: var(--error-paper);
+}
+
+.demo-control h2 {
+  font-size: 1.15rem;
+}
+
+.demo-control > p {
+  margin-block: 0.4rem 0.8rem;
+}
+
+.check-label {
+  display: flex;
+  align-items: start;
+  gap: 0.65rem;
+  max-inline-size: 100%;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.check-label input {
+  flex: 0 0 auto;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  margin-block-start: 0.2rem;
+  accent-color: var(--primary);
+}
+
+noscript .notice {
+  margin-block-start: 1rem;
+}
+
+@media (max-width: 30rem) {
+  .page-shell {
+    padding: 1rem;
+  }
+
+  .request-summary > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.1rem;
+  }
+
+  button {
+    inline-size: 100%;
+  }
+}
