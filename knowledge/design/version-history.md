@@ -392,3 +392,15 @@ not imply those details are nonsensitive or establish a real service's privacy
 policy. Describe English/Arabic behavior as retained observations of the
 earlier runnable specimens; the Markdown cases do not run the form. No form
 behavior, wording translation, or runtime evidence changed.
+
+## Version 2.0.0 - 2026-10-26
+
+Compose the independently accepted supported foundation and Project11
+capabilities into a usable design practice: brief-led alternatives; content,
+interaction and recovery; contextual type, data, image and motion; inclusive
+language and direction; traceable semantic-system evolution and handoff;
+and portable Markdown cases. Keep Project09/10 original-source fidelity,
+complete-card/five-dimension, conceptual/domain/empirical, and final exact-
+revision hosted-card obligations explicitly open under their existing owners.
+This supported local milestone does not certify upstream closure or authorize
+publication.
