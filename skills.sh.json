@@ -22,7 +22,8 @@
       "skills": [
         "biome-js-linter",
         "biome-linter",
-        "deno-js-linter"
+        "deno-js-linter",
+        "code-review"
       ]
     },
     {
@@ -34,7 +35,8 @@
     {
       "title": "Engineering Framework",
       "skills": [
-        "collaboration-framework"
+        "collaboration-framework",
+        "code-review"
       ]
     }
   ]

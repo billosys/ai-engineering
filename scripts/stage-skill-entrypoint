@@ -19,6 +19,7 @@ COLLABORATION_FRAMEWORK_TRANSFORMS = {
     "../agent-coordination/": "./knowledge/agent-coordination/",
     "../biome/": "./knowledge/biome/",
     "../code-auditing/": "./knowledge/code-auditing/",
+    "../code-review/": "./knowledge/code-review/",
     "../contribution-style/": "./knowledge/contribution-style/",
     "../cpp/": "./knowledge/cpp/",
     "../deno/": "./knowledge/deno/",
@@ -43,6 +44,7 @@ COLLABORATION_FRAMEWORK_DEPENDENCY_TRANSFORMS: dict[Path, dict[str, str]] = {
 FRAMEWORK_COMPONENTS = {
     "agent-coordination",
     "code-auditing",
+    "code-review",
     "contribution-style",
     "engineering-methods",
     "methodology-stewardship",

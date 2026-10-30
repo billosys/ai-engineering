@@ -26,7 +26,7 @@ SKILL_PYTHON ?= $(if $(wildcard .venv/bin/python),.venv/bin/python,python3)
 export SKILL_PYTHON
 SKILL_ZIP_NAMES := \
 	collaboration-framework.zip \
-	agent-coordination.zip code-auditing.zip contribution-style.zip \
+	agent-coordination.zip code-auditing.zip code-review.zip contribution-style.zip \
 	engineering-methods.zip project-management.zip testing.zip work-verification.zip \
 	scientific-methods.zip methodology-stewardship.zip laboratory-recordkeeping.zip \
 	document-extraction.zip concept-cards.zip \
@@ -42,7 +42,7 @@ CCDP_STAGE := $(BUILD)/$(CCDP_NAME)
 .PHONY: all skills install _install-skills uninstall test-skill-install clean help check-skills audit-skills audit-live-skills prepare-skill-rewrites test-skill-tools check-package-paths check-skill-versions check-skill-version-source test-skill-versions print-skill-zips \
 	ccdp ccdp-package ccdp-package-clean check-ccdp-package \
 	collab-framework collab-framework-clean \
-	agent-coordination code-auditing contribution-style engineering-methods project-management \
+	agent-coordination code-auditing code-review contribution-style engineering-methods project-management \
 	testing work-verification scientific-methods methodology-stewardship laboratory-recordkeeping document-extraction concept-cards \
 	rust fennel go cpp js erlang cobalt design tailwindcss deno biome
 
@@ -51,6 +51,7 @@ ALL_SKILL_FILES := \
 	knowledge/collaboration-framework/SKILL.md \
 	knowledge/agent-coordination/SKILL.md \
 	knowledge/code-auditing/SKILL.md \
+	knowledge/code-review/SKILL.md \
 	knowledge/contribution-style/SKILL.md \
 	knowledge/engineering-methods/SKILL.md \
 	knowledge/project-management/SKILL.md \
@@ -80,6 +81,7 @@ help:
 	@echo "  make collab-framework   -> $(CF_ZIP) (collaboration framework SKILL.md + framework docs)"
 	@echo "  make agent-coordination -> agent-coordination.zip"
 	@echo "  make code-auditing      -> code-auditing.zip"
+	@echo "  make code-review        -> code-review.zip"
 	@echo "  make contribution-style -> contribution-style.zip"
 	@echo "  make engineering-methods  -> engineering-methods.zip"
 	@echo "  make project-management -> project-management.zip"
@@ -138,6 +140,10 @@ CF_FILES := \
 	knowledge/agent-coordination/version-history.md \
 	knowledge/code-auditing/SKILL.md \
 	knowledge/code-auditing/version-history.md \
+	knowledge/code-review/SKILL.md \
+	knowledge/code-review/version-history.md \
+	knowledge/code-review/guides/01-review-method.md \
+	knowledge/code-review/guides/02-github-reviews.md \
 	knowledge/contribution-style/SKILL.md \
 	knowledge/contribution-style/version-history.md \
 	knowledge/engineering-methods/SKILL.md \
@@ -360,6 +366,9 @@ agent-coordination:
 code-auditing:
 	$(call pack_component_skill,code-auditing)
 
+code-review:
+	$(call pack_component_skill,code-review)
+
 contribution-style:
 	$(call pack_component_skill,contribution-style)
 
@@ -395,11 +404,11 @@ concept-cards:
 # ---------------------------------------------------------------------------
 
 ## skills: build every installable skill zip except collaboration-framework
-skills: agent-coordination code-auditing contribution-style engineering-methods project-management \
+skills: agent-coordination code-auditing code-review contribution-style engineering-methods project-management \
 	testing work-verification scientific-methods methodology-stewardship laboratory-recordkeeping document-extraction concept-cards \
 	rust fennel go cpp js erlang cobalt design tailwindcss deno biome
 
-collab-framework agent-coordination code-auditing contribution-style engineering-methods \
+collab-framework agent-coordination code-auditing code-review contribution-style engineering-methods \
 project-management testing work-verification scientific-methods methodology-stewardship laboratory-recordkeeping document-extraction concept-cards \
 rust fennel go cpp js erlang \
 cobalt design tailwindcss deno biome: check-skill-version-source

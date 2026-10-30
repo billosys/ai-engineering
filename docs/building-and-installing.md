@@ -13,6 +13,7 @@ Use `make help` for the current target list.
 | `make all` | Build every installable skill zip, including the collaboration framework. |
 | `make skills` | Build the installable skill zips except CCDP, including domain/tooling and method skills. |
 | `make collab-framework` | Build `target/skills/collaboration-framework.zip`. |
+| `make code-review` | Build `target/skills/code-review.zip` with the review method and GitHub chapter. |
 | `make methodology-stewardship` | Build `target/skills/methodology-stewardship.zip`. |
 | `make scientific-methods` | Build `target/skills/scientific-methods.zip`. |
 | `make laboratory-recordkeeping` | Build `target/skills/laboratory-recordkeeping.zip`. |
@@ -37,6 +38,9 @@ templates, and examples. `concept-cards.zip` contains the same support shape
 plus its sibling `references/` review material.
 `laboratory-recordkeeping.zip` includes guides, templates, worked examples,
 and the source/adaptation register in `references/`.
+`code-review.zip` contains its entrypoint, sibling history, review-method guide,
+and GitHub review/inline-comment chapter. These files also ship inside the
+collaboration-framework bundle.
 `methodology-stewardship.zip` contains its entrypoint, sibling history, and
 retrospective guide. Those files are also included in the collaboration-framework
 bundle as routed component material.

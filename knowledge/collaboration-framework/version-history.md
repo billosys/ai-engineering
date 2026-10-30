@@ -1,5 +1,12 @@
 # Collaboration Framework Version History
 
+## Version 3.1.0 - 2026-10-29
+
+Route change-focused reviews to the new code-review component, including
+analysis across scales, system consequences, applicable domain guidance, and
+real-substrate evidence. Add GitHub review/inline-comment routing and bundle the
+component entrypoint, guides, and history alongside the existing audit material.
+
 ## Version 3.0.1 - 2026-10-19
 
 Apply the Operator-requested patch version to this Autonomous Mode PR candidate,

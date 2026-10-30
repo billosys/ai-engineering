@@ -47,6 +47,7 @@ Every package listed below is produced by `make all`, included in
 |---|---|---|
 | `engineering-methods.zip` | [`knowledge/engineering-methods/SKILL.md`](../knowledge/engineering-methods/SKILL.md) | Designing LLM-assisted engineering work and turning approved slices into source-grounded, domain-guided implementation prompts. |
 | `testing.zip` | [`knowledge/testing/SKILL.md`](../knowledge/testing/SKILL.md) | Applying testing discipline, coverage hardening, and validation gates. |
+| `code-review.zip` | [`knowledge/code-review/SKILL.md`](../knowledge/code-review/SKILL.md) | Reviewing proposed changes across functions, modules, libraries, and system effects; preparing GitHub reviews and inline comments with verified evidence. |
 | `code-auditing.zip` | [`knowledge/code-auditing/SKILL.md`](../knowledge/code-auditing/SKILL.md) | Commissioning evidence-based diagnosis-only code audits. |
 | `contribution-style.zip` | [`knowledge/contribution-style/SKILL.md`](../knowledge/contribution-style/SKILL.md) | Drafting maintainer-friendly upstream issues, feature requests, doc fixes, and questions. |
 | `agent-coordination.zip` | [`knowledge/agent-coordination/SKILL.md`](../knowledge/agent-coordination/SKILL.md) | Deciding what stays in the main context and what can be delegated to subagents. |
@@ -65,6 +66,7 @@ Every package listed below is produced by `make all`, included in
 
 | Skill package | Source entrypoint | Use when |
 |---|---|---|
+| `code-review.zip` | [`knowledge/code-review/SKILL.md`](../knowledge/code-review/SKILL.md) | Reviewing proposed changes across functions, modules, libraries, and system effects; preparing GitHub reviews and inline comments with verified evidence. |
 | `collaboration-framework.zip` | [`knowledge/collaboration-framework/SKILL.md`](../knowledge/collaboration-framework/SKILL.md) | Structuring long-lived inquiry, implementation, review, and verification work. |
 | `methodology-stewardship.zip` | [`knowledge/methodology-stewardship/SKILL.md`](../knowledge/methodology-stewardship/SKILL.md) | Analyzing collaboration difficulties and successes across slices, arcs, and projects; tracking recommendations and their outcomes. |
 | `scientific-methods.zip` | [`knowledge/scientific-methods/SKILL.md`](../knowledge/scientific-methods/SKILL.md) | Designing controlled comparisons, experiments, evaluation rubrics, evidence capture, and regression analysis. |
@@ -90,6 +92,14 @@ planning, ledgered implementation, code audit, coverage hardening, subagent
 delegation decisions, or contribution-ticket writing. It is a composite
 framework/operational skill: the "how we work" layer and daily-driver
 composer, not a substitute for language or tooling expertise.
+
+Load code review for a proposed change or PR: it follows affected contracts
+through the system, loads applicable language/tooling guidance, and separates
+confirmed findings from non-blocking suggestions and verification limits. Its
+GitHub chapter covers Files changed comments and authorized review publication.
+It ships standalone and inside collaboration-framework. Use code auditing for
+repository-wide diagnosis and modernization; a PR review does not automatically
+require that wider audit or its report set.
 
 Load methodology stewardship for retrospectives and recurring process patterns.
 It owns the analysis and recommendation follow-through; project management owns

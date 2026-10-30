@@ -7,6 +7,8 @@ source entrypoint is
 and its supporting material lives under [`knowledge/`](../knowledge/).
 The generated `collaboration-framework.zip` includes the framework composer,
 its framework component routes, including
+[`code-review`](../knowledge/code-review/SKILL.md) for proposed-change review and
+GitHub inline comments,
 [`methodology-stewardship`](../knowledge/methodology-stewardship/SKILL.md) for
 closing retrospectives, and the adjacent
 [`scientific-methods`](../knowledge/scientific-methods/SKILL.md) method skill
@@ -19,7 +21,7 @@ remains in the entrypoint and knowledge roots.
 
 Use the collaboration framework when the work needs more than a single answer:
 planning a project, executing a ledgered slice, closing or verifying work,
-running a code audit, raising test coverage, coordinating subagents, or writing
+reviewing proposed changes, running a code audit, raising test coverage, coordinating subagents, or writing
 an upstream contribution ticket.
 
 For small, self-contained questions, a domain skill or ordinary repository
@@ -118,6 +120,8 @@ and [execution rules](../knowledge/project-management/guides/README.md#autonomou
 | Engineering method | [`knowledge/engineering-methods/guides/01-engineering-methodology.md`](../knowledge/engineering-methods/guides/01-engineering-methodology.md) | Knowledge substrate, collaborative posture, and process rigor. |
 | Project management | [`knowledge/project-management/guides/README.md`](../knowledge/project-management/guides/README.md) | Project, arc, slice, planning, close, and bubble-up wayfinder. |
 | Work verification | [`knowledge/work-verification/guides/01-ledger-discipline.md`](../knowledge/work-verification/guides/01-ledger-discipline.md) | Ledger discipline and evidence requirements. |
+| Code review | [`knowledge/code-review/guides/01-review-method.md`](../knowledge/code-review/guides/01-review-method.md) | Change-focused review at all scales, system effects, applicable domain guidance, real verification, and calibrated findings. |
+| GitHub review publication | [`knowledge/code-review/guides/02-github-reviews.md`](../knowledge/code-review/guides/02-github-reviews.md) | Revision-pinned reviews, Files changed inline comments, publication authority, and verified submission. |
 | Code audit | [`knowledge/code-auditing/guides/01-audit-scope-and-map.md`](../knowledge/code-auditing/guides/01-audit-scope-and-map.md) | Diagnosis-only code audit discipline, with focused guides for findings, scale, modernization, and handoff. |
 | Testing | [`knowledge/testing/guides/01-testing-discipline.md`](../knowledge/testing/guides/01-testing-discipline.md) | Testing discipline, coverage hardening, and validation gates. |
 | Agent coordination | [`knowledge/agent-coordination/guides/01-when-to-delegate.md`](../knowledge/agent-coordination/guides/01-when-to-delegate.md) | Delegation boundaries, context packets, result integration, and multi-agent coordination. |

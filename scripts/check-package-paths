@@ -61,6 +61,7 @@ DOMAIN_BY_PACKAGE = {
 SKILL_PACKAGE_TOPS = set(DOMAIN_BY_PACKAGE) | {
     "agent-coordination",
     "code-auditing",
+    "code-review",
     "collaboration-framework",
     "contribution-style",
     "engineering-methods",

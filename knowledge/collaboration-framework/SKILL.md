@@ -5,20 +5,20 @@ description: |
   character, craft, and the disciplines holding the quality floor.
   Grounded in the collaboration-framework posture guide set, engineering
   methodology, and operational guidance for ledger discipline, project
-  management, code audit, testing, subagent delegation, contribution style, and
-  scientific-methods routing.
+  management, code review and audit, testing, subagent delegation, contribution
+  style, and scientific-methods routing.
   Use when: sustained, high-stakes sessions — deep study, research,
   expert systems design, or production programming; establishing the peer
   frame; planning or closing a project, arc, or slice (MUST read the
   project-management guides README first); Expedited Mode; running the 9-point
-  SDLC or a ledgered slice; Autonomous Mode; commissioning an audit; hardening tests; delegating
-  lookup work; drafting contribution tickets; or recognizing when controlled
+  SDLC or a ledgered slice; Autonomous Mode; reviewing changes; commissioning
+  an audit; hardening tests; delegating lookup work; drafting contribution
+  tickets; or recognizing when controlled
   inquiry/regression comparison should load scientific-methods.
-  Does NOT load domain/tooling skills under sibling knowledge roots — loaded
-  separately, per-domain.
+  Does NOT load domain/tooling skills — load them separately.
 license: MIT
 metadata:
-  version: "3.0.1"
+  version: "3.1.0"
   hermes:
     tags: [ai-engineering, collaboration, methodology, sdlc, code-audit, test-coverage]
     category: meta-skills
@@ -57,8 +57,8 @@ documents:
   - *In-repo work* — ledger discipline, project management (the scales of
     work, where every planning artifact lives, the confirmation protocol that
     stops sessions inventing their own folders, and the planning + bubble-up/
-    close machinery), the code-audit prompt, the test-coverage prompt, and
-    the subagent-delegation policy.
+    close machinery), change-focused code review, the code-audit prompt, the
+    test-coverage prompt, and the subagent-delegation policy.
   - *Outward-facing contribution* — the contribution style guide and the
     upstream ticket workflow and the on-disk ticket template for upstream
     bugs, features, doc fixes, and questions.
@@ -184,6 +184,11 @@ applies:
   Load project-management's
   [iteration filename contract](../project-management/guides/02-canonical-planning-worktree.md#slice-iteration-filenames-and-preservation)
   and [handoff workflow](../project-management/guides/03-planning-top-down.md#issuing-and-executing-an-iteration).
+- **Reviewing proposed changes, pull requests, or merge requests.** Load
+  [code-review](../code-review/SKILL.md) for change-focused, multi-scale and
+  systems-impact analysis; load its GitHub chapter for Files changed inline
+  comments and authorized review publication. Keep broad repository audits a
+  separately requested scope.
 - Commissioning an **independent, evidence-based audit** of a repo or a body
   of work (load the code-audit prompt).
 - Driving a codebase to a **hard test-coverage threshold** without stopping
@@ -487,6 +492,8 @@ work demands:
 | [`guides/04-silent-drop-checks.md`](../work-verification/guides/04-silent-drop-checks.md) | Verification protocol | When comparing scope-as-specified to scope-as-delivered, checking missing rows, spec-softening, partial adoption, vacuous tests, and inherited composition. |
 | [`guides/05-independent-verification.md`](../work-verification/guides/05-independent-verification.md) | Verification protocol | When assigning or performing CDC/CRC/fresh-context/operator verification, gate review, or sandbox-aware reproduction of evidence. |
 | [`templates/LEDGER-DISCIPLINE.md`](../work-verification/templates/LEDGER-DISCIPLINE.md) | Verification support asset | When a project needs the complete pre-split protocol in one file or copyable slice/arc/project ledger tables. Prefer the focused guides for selective loading. |
+| [Review Method](../code-review/guides/01-review-method.md) | Code review / change assessment | When reviewing a proposed change across functions, modules, libraries, and whole-system effects with real verification evidence. |
+| [GitHub Reviews And Inline Comments](../code-review/guides/02-github-reviews.md) | Code review / GitHub | When preparing revision-pinned GitHub reviews, Files changed inline comments, readable summaries, and authorized publication with read-back verification. |
 | [`guides/01-audit-scope-and-map.md`](../code-auditing/guides/01-audit-scope-and-map.md) | Code audit / scope | When commissioning a diagnosis-only code audit, detecting languages/tools, loading domain skills, and building the audit map. |
 | [`guides/02-findings-and-severity.md`](../code-auditing/guides/02-findings-and-severity.md) | Code audit / findings | When writing severity-graded, file:line-cited findings, report sections, coherence observations, cross-cutting findings, or negative findings. |
 | [`guides/03-scale-aware-auditing.md`](../code-auditing/guides/03-scale-aware-auditing.md) | Code audit / scale | When ensuring the audit covers line/function through workspace/monorepo scale instead of context-window sampling. |

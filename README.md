@@ -50,6 +50,9 @@ The repository currently includes:
   provenance-bearing concept-card extraction, validation, verification,
   reconciliation, relationships, competency questions, and memory-admission
   decisions;
+- the [`code-review`](./knowledge/code-review/SKILL.md) framework/operational
+  skill for reviewing proposed changes across all scales and system effects,
+  with a dedicated GitHub review and inline-comment chapter;
 - the [`collaboration-framework`](./knowledge/collaboration-framework/SKILL.md) composite
   framework/operational skill, with its framework material under
   [`knowledge/`](./knowledge/);
@@ -87,6 +90,7 @@ make design            # build target/skills/visual-design-system.zip (Markdown 
 make tailwindcss       # build target/skills/tailwindcss.zip
 make deno              # build target/skills/deno-js-linter.zip
 make biome             # build target/skills/biome-js-linter.zip and biome-linter.zip
+make code-review       # build target/skills/code-review.zip
 make collab-framework  # build target/skills/collaboration-framework.zip
 make document-extraction  # build target/skills/document-extraction.zip
 make concept-cards      # build target/skills/concept-cards.zip
